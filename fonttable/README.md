@@ -1,5 +1,13 @@
+
 ------------------------------------------------------------------
 The FONTTABLE package
+
+2025-03-12 v1.6d
+
+Issue tracker: https://github.com/LaTeX-Package-Repositories/herries-press/issues/
+
+Licence: LPPL https://www.latex-project.org/lppl.txt
+
 
 The fonttable package enables you to print a table of the characters
 in a font (a font table), and/or some example text, and/or individual

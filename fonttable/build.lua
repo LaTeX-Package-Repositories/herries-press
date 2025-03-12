@@ -1,8 +1,8 @@
 
 module = "fonttable"
 
-ctanreadme = "README-ctan.md"
- 
+textfiles  ={"README.md"}
+
 packtdszip  = false
 
 maxprintline=10000
