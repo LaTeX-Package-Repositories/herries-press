@@ -1,4 +1,9 @@
-fonttable
+fonttable 2025-03-12 v1.6d
+
+Issue tracker: https://github.com/LaTeX-Package-Repositories/herries-press/issues/
+
+Licence: LPPL https://www.latex-project.org/lppl.txt
+
 
 Print font tables from a LaTeX document.
 

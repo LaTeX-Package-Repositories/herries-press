@@ -11,6 +11,7 @@ testfont.tex.
 ------------------------------------------------------------------
 Change History
 
+1.6d (2025/03/12) - Add \relax to terminate number issue #51
 1.6c (2017/06/06) - Fix bug with fonts with `at' in their name
 1.6b (2011/02/13) - Fix bug with Spanish babel
 1.6  (2009/10/15)
@@ -41,6 +42,7 @@ Change History
   Maintainer: Will Robertson (will dot robertson at latex-project dot org)
   Copyright 2005--2009 Peter R. Wilson
   Copyright 2009--2011, 2017 Will Robertson
+  Copyright 2025--  LaTeX Project
 
   This work may be distributed and/or modified under the
   conditions of the Latex Project Public License, either
@@ -48,7 +50,7 @@ Change History
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is LaTeX Project Team.
 
   This work consists of the files:
    - README (this file)
