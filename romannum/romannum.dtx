@@ -4,6 +4,7 @@
 % Author: Peter Wilson, Herries Press
 % Maintainer: Will Robertson (will dot robertson at latex-project dot org)
 % Copyright 1999--2004 Peter R. Wilson
+% Copyright 2009--2005 LaTeX Project Team
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -11,7 +12,7 @@
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is LaTeX Project Team.
 %
 % This work consists of the files listed in the README file.
 %
@@ -28,7 +29,6 @@
 %
 % \fi
 %
-% \CheckSum{252}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -78,6 +78,7 @@
 % \def\fileversion{v1.0}  \def\filedate{8 May 1999}
 % \def\fileversion{v1.0a} \def\filedate{2004/05/24}
 % \def\fileversion{v1.0b} \def\filedate{2009/09/03}
+% \def\fileversion{v1.0c} \def\filedate{2025/03/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -202,7 +203,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{romannum}[2009/09/03 v1.0b roman numerals]
+\ProvidesPackage{romannum}[2025/03/12 v1.0c roman numerals]
 \RequirePackage{stdclsdv}
 %    \end{macrocode}
 %
@@ -384,10 +385,10 @@
     \ifnum#1=0
       o%
     \else
-      -\romannumeral -#1%
+      -\romannumeral -\numexpr#1\relax
     \fi
   \else
-    \romannumeral #1%
+    \romannumeral \numexpr#1\relax
   \fi}
 %    \end{macrocode}
 % \end{macro}
