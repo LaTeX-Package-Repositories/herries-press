@@ -1,8 +1,8 @@
 # The Herries Press Collection
 
 This repository contains a collection of LaTeX packages originally written by
-Peter Wilson. These packages are now maintained by Will Robertson, who hopes
-that they won't require too much upkeep.
+Peter Wilson. These packages are now maintained by the members of this GitHub
+organisation (principally LaTeX Team members).
 
 Please direct all bug reports and feature requests to the [GitHub issue 
 tracker][1].
