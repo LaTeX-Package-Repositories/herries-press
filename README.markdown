@@ -7,11 +7,10 @@ that they won't require too much upkeep.
 Please direct all bug reports and feature requests to the [GitHub issue 
 tracker][1].
 
-[1]: http://github.com/wspr/herries-press/issues
+[1]: http://github.com/LaTeX-Package-Repositories/herries-press/issues
 
-I don't have time to actively develop all of the packages here; if you think
-you would do a better job on any particular package (especially the larger
-ones such as `xtab`), feel free to request maintainership for yourself.
+We don't have time to actively develop all of the packages here; if you think
+you would do a better job on any particular package, feel free to request maintainership for yourself.
 
 The packages in this repository are:
 
@@ -49,17 +48,66 @@ The packages in this repository are:
  - [vertbars](http://tug.ctan.org/pkg/vertbars)
  - [xtab](http://tug.ctan.org/pkg/xtab)
 
-Other packages and classes by Peter Wilson that are not contained within this 
-repository (and not maintained by Will Robertson) include:
+[Peter Wilson](https://ctan.org/author/wilson) has produced many other TeX related packages.
 
- - [memoir](http://tug.ctan.org/pkg/memoir) (now maintained by Lars Madsen)
- - [ledmac/ledpar/ledarab](http://tug.ctan.org/pkg/ledmac)
-   (now maintained by Vafa Khalighi)
- - [expressg](http://tug.ctan.org/pkg/expressg)
- - [iso](http://tug.ctan.org/pkg/iso)
- - [iso10303](http://tug.ctan.org/pkg/iso10303)
- - [isorot](http://tug.ctan.org/pkg/isorot)
+Maintenance of [memoir](https://ctan.org/pkg/memoir) is now with Lars
+Madsen.
+Issues should be reported at [tex.stackexchange](https://tex.stackexchange.com) tagged memoir.
 
 
-Will Robertson  
-2009
+The [cutwin](https://ctan.org/pkg/cutwin) package is maintained in the
+[cutwin](https://github.com/LaTeX-Package-Repositories/cutwin)
+repository in this LaTeX-Package-Repositories organisation.
+
+The remaining packages by Peter Wilson are listed below. Any issues in these packages
+may be reported by opening an issue here. If necessary they will be added to GitHub
+by obtaining the files from CTAN.
+
+
+
+[aramaic](https://ctan.org/pkg/aramaic)  
+[around-the-bend](https://ctan.org/pkg/around-the-bend)  
+[auncial](https://ctan.org/pkg/auncial)  
+[auncial-new](https://ctan.org/pkg/auncial-new)  
+[b1encoding](https://ctan.org/pkg/b1encoding)  
+[bookdb](https://ctan.org/pkg/bookdb)  
+[bookhands](https://ctan.org/pkg/bookhands)  
+[carolmin](https://ctan.org/pkg/carolmin)  
+[chbibref](https://ctan.org/pkg/chbibref)  
+[cypriot](https://ctan.org/pkg/cypriot)  
+[egothic](https://ctan.org/pkg/egothic)  
+[etruscan](https://ctan.org/pkg/etruscan)  
+[expressg](https://ctan.org/pkg/expressg)  
+[flatten](https://ctan.org/pkg/flatten)  
+[greek4cbc](https://ctan.org/pkg/greek4cbc)  
+[greek6cbc](https://ctan.org/pkg/greek6cbc)  
+[hieroglf](https://ctan.org/pkg/hieroglf)  
+[humanist](https://ctan.org/pkg/humanist)  
+[huncial](https://ctan.org/pkg/huncial)  
+[inslrmaj](https://ctan.org/pkg/inslrmaj)  
+[inslrmin](https://ctan.org/pkg/inslrmin)  
+[iso10303](https://ctan.org/pkg/iso10303)  
+[isorot](https://ctan.org/pkg/isorot)  
+[linearb](https://ctan.org/pkg/linearb)  
+[ltx2x](https://ctan.org/pkg/ltx2x)  
+[metafp (no source)](https://ctan.org/pkg/metafp)    
+[nabatean](https://ctan.org/pkg/nabatean)  
+[oands](https://ctan.org/pkg/oands)  
+[oldprsn](https://ctan.org/pkg/oldprsn)  
+[pacioli](https://ctan.org/pkg/pacioli)  
+[pgothic](https://ctan.org/pkg/pgothic)  
+[phoenician](https://ctan.org/pkg/phoenician)  
+[protosem](https://ctan.org/pkg/protosem)  
+[rotunda](https://ctan.org/pkg/rotunda)  
+[runic](https://ctan.org/pkg/runic)  
+[rustic](https://ctan.org/pkg/rustic)  
+[sarabian](https://ctan.org/pkg/sarabian)  
+[sqrcaps](https://ctan.org/pkg/sqrcaps)  
+[sudokubundle](https://ctan.org/pkg/sudokubundle)  
+[tgothic](https://ctan.org/pkg/tgothic)  
+[titlepages](https://ctan.org/pkg/titlepages)  
+[trajan](https://ctan.org/pkg/trajan)  
+[ugarite](https://ctan.org/pkg/ugarite)  
+[uncial](https://ctan.org/pkg/uncial)  
+[webguide](https://ctan.org/pkg/webguide)  
+  
