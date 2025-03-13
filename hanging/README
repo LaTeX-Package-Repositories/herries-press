@@ -8,6 +8,10 @@ recommend this.
 ______________
 Change History
 
+Version 1.2c (2025/03/12)
+- New maintainer (LaTeX Package Repositories)
+- Guard ' in math mode
+
 Version 1.2b (2009/09/02)
 - New maintainer (Will Robertson)
 
