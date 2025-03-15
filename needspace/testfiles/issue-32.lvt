@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{needspace}
+
+\showoutput
+
+\begin{document}
+
+\START
+
+\section{no needspace}
+
+\begin{itemize}
+\item x  \item x  \item x  \item x
+\end{itemize}
+
+
+\begin{itemize}
+\item y  \item y  \item y  \item y
+\end{itemize}
+
+\newpage
+
+\section{with needspace}
+
+\begin{itemize}
+\item x  \item x  \item x  \item x
+\end{itemize}
+
+\needspace{1cm}
+
+\begin{itemize}
+\item y  \item y  \item y  \item y
+\end{itemize}
+
+
+\newpage
+
+\section{with Needspace}
+
+\begin{itemize}
+\item x  \item x  \item x  \item x
+\end{itemize}
+
+\Needspace{1cm}
+
+\begin{itemize}
+\item y  \item y  \item y  \item y
+\end{itemize}
+
+\newpage
+
+\section{with Needspace*}
+
+\begin{itemize}
+\item x  \item x  \item x  \item x
+\end{itemize}
+
+\Needspace*{1cm}
+
+\begin{itemize}
+\item y  \item y  \item y  \item y
+\end{itemize}
+
+\newpage
+
+\OMIT
+
+\end{document}
