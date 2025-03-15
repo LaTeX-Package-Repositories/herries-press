@@ -51,7 +51,7 @@ Please report bugs or request features:
   <https://github.com/LaTeX-Package-Repositories/herries-press/issues>
 
 Developmental and historical versions:  
-  <<https://github.com/LaTeX-Package-Repositories/herries-press>
+  <https://github.com/LaTeX-Package-Repositories/herries-press>
 
 Current release version:   
   <https://ctan.tug.org/pkg/needspace>  
