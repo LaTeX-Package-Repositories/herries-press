@@ -1,12 +1,28 @@
 
 module = "needspace"
 
-textfiles  ={"README.md"}
+textfiles  ={"README.md", "changes.txt"}
 
 packtdszip  = false
 
 maxprintline=10000
 checkruns = 2
+
+-- Upload meta data
+
+uploadconfig = {
+ pkg = "needspace",
+ version = "v1.3e 2025-03-13",
+ author = "LaTeX Project",
+ license = "lppl1.3c",
+ summary = "Insert pagebreak if not enough space",
+ ctanPath = "/macros/latex/contrib/needspace",
+ repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
+ bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
+ uploader = "LaTeX Project Team",
+ email = "latex-team@latex-project.org",
+ update = true ,
+}
 
 
 

@@ -2,3 +2,10 @@
 *build*
 *.zip
 *.pdf
+
+*~
+*.aux
+*.hd
+*.out
+*.log
+
