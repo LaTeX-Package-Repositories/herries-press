@@ -8,4 +8,5 @@
 *.hd
 *.out
 *.log
+*.curlopt
 
