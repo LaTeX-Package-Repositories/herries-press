@@ -24,7 +24,7 @@
 \ProvidesFile{fonttable.dtx}
 %</driver>
 %<*driver|pack>
-  [2025-03-12 v1.6d displays a font]
+  [2026-04-19 v1.6e displays a font]
 %</driver|pack>
 %
 %<*driver>
@@ -119,6 +119,7 @@
 % \changes{v1.6b}{2011/02/13}{Fix bug with Spanish babel}
 % \changes{v1.6c}{2017/06/06}{Fix bug with fonts with `at' in their name}
 % \changes{v1.6d}{2025/03/12}{Missing relax (issue 51)}
+% \changes{v1.6e}{2026/04/19}{Avoid global definitions (https://tex.stackexchange.com/questions/762029)}
 %
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
@@ -594,9 +595,9 @@
 % \begin{macro}{\f@tsetdigs}
 % \cs{f@tsetdigs}
 %    \begin{macrocode}
-\def\f@tsetdigs#1"#2{\gdef\h{#2}% \h=hex prefix; \0\1=corresponding octal
- \f@tm=\f@tn \divide\f@tm by 64 \xdef\0{\the\f@tm}%
- \multiply\f@tm by-64 \advance\f@tm by\f@tn \divide\f@tm by 8 \xdef\1{\the\f@tm}}
+\def\f@tsetdigs#1"#2{\gdef\f@thexpre{#2}% \f@thexpre=hex prefix; \f@tocta\f@toctb=corresponding octal
+ \f@tm=\f@tn \divide\f@tm by 64 \xdef\f@tocta{\the\f@tm}%
+ \multiply\f@tm by-64 \advance\f@tm by\f@tn \divide\f@tm by 8 \xdef\f@toctb{\the\f@tm}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -604,7 +605,7 @@
 % \cs{f@ttestrow} checks if there are any characters in the next block of 
 % 16 slots.
 %    \begin{macrocode}
-\newcommand*{\f@ttestrow}{\setbox0=\hbox{\penalty 1\def\\{\char"\h}%
+\newcommand*{\f@ttestrow}{\setbox0=\hbox{\penalty 1\def\\{\char"\f@thexpre}%
  \\0\\1\\2\\3\\4\\5\\6\\7\\8\\9\\A\\B\\C\\D\\E\\F%
  \global\f@tp=\lastpenalty}} % \f@tp=1 if none of the characters exist
 
@@ -633,7 +634,7 @@
 \newcommand*{\f@toddline}{\cr
   \noalign{\nointerlineskip}
   \multispan{19}\hrulefill&
-  \setbox0=\hbox{\lower 2.3pt\hbox{\f@thex{\h x}}}\smash{\box0}
+  \setbox0=\hbox{\lower 2.3pt\hbox{\f@thex{\f@thexpre x}}}\smash{\box0}
   \cr
   \noalign{\nointerlineskip}}
 
@@ -735,7 +736,7 @@
 % does the same when there are no external numbers.
 %    \begin{macrocode}
 \newcommand*{\f@tmorechart}{\cr\noalign{\hrule\penalty5000}
- \f@tchartline \f@toddline \f@tm=\1 \advance\f@tm 1 \xdef\1{\the\f@tm}
+ \f@tchartline \f@toddline \f@tm=\f@toctb \advance\f@tm 1 \xdef\f@toctb{\the\f@tm}
  \f@tchartline \f@tevenline}
 \newcommand*{\f@tmorechartnonum}{%
   \f@tsimpleline \\ \hline
@@ -751,7 +752,7 @@
 %  and \cs{f@tsimpleline} does an unnumbered line.
 %    \begin{macrocode}
 \newcommand*{\f@tchartline}{%
-  &\f@toct{\0\1x}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&}
+  &\f@toct{\f@tocta\f@toctb x}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&\f@tpsg{}&&}
 \newcommand*{\f@tsimpleline}{%
   \f@tpsg{}\f@tchartstrut& \f@tpsg{} & \f@tpsg{} & \f@tpsg{} & \f@tpsg{} & \f@tpsg{} & \f@tpsg{} & \f@tpsg{}}
 
@@ -1171,9 +1172,9 @@ turpis accumsan semper.\par}
 %    \begin{macrocode}
 \newcommand*{\glyphmixture}[3]{\f@tgettsechars{#1}{#2}{#3}%
                                \f@tdomix\f@tmixpattern}
-\newcommand*{\f@tmixpattern}{\0\1\0\0\1\1\0\0\0\1\1\1\0\1}
-\newcommand*{\f@tdomix}[1]{\par\chardef\0=\f@ttchar \@tempcntb=\f@tschar
-   \loop \chardef\1=\@tempcntb #1\endgraf
+\newcommand*{\f@tmixpattern}{\f@tocta\f@toctb\f@tocta\f@tocta\f@toctb\f@toctb\f@tocta\f@tocta\f@tocta\f@toctb\f@toctb\f@toctb\f@tocta\f@toctb}
+\newcommand*{\f@tdomix}[1]{\par\chardef\f@tocta=\f@ttchar \@tempcntb=\f@tschar
+   \loop \chardef\f@toctb=\@tempcntb #1\endgraf
    \ifnum \@tempcntb<\f@techar \advance\@tempcntb \@ne \repeat}
 
 %    \end{macrocode}
@@ -1188,7 +1189,7 @@ turpis accumsan semper.\par}
 %    \begin{macrocode}
 \newcommand*{\glyphalternation}[3]{\f@tgettsechars{#1}{#2}{#3}%
                                    \f@tdomix\f@taltpattern}
-\newcommand*{\f@taltpattern}{\0\1\0\1\0\1\0\1\0\1\0\1\0\1\0\1\0}
+\newcommand*{\f@taltpattern}{\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta\f@toctb\f@tocta}
 
 %    \end{macrocode}
 % \end{macro}

@@ -19,6 +19,7 @@ testfont.tex.
 ------------------------------------------------------------------
 Change History
 
+1.6e (2026/04/19) - Avoid global definitions of \h \0 \1
 1.6d (2025/03/12) - Add \relax to terminate number issue #51
 1.6c (2017/06/06) - Fix bug with fonts with `at' in their name
 1.6b (2011/02/13) - Fix bug with Spanish babel
