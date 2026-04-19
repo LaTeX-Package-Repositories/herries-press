@@ -2,7 +2,7 @@
 ------------------------------------------------------------------
 The FONTTABLE package
 
-2025-03-12 v1.6d
+2026-04-19 v1.6e
 
 Issue tracker: https://github.com/LaTeX-Package-Repositories/herries-press/issues/
 
