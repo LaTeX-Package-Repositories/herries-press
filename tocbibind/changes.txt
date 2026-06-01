@@ -1,11 +1,8 @@
-_____________________
-The TOCBIBIND package
-
-    The tocbibind package can be used to add the ToC and/or bibliography 
-and/or the index etc., to the Table of Contents listing.
-
-______________
 Change History
+
+Version 1.5l (2016/06/01)
+-  Add support for headings templates when \DocumentMetadata is used,
+https://github.com/latex3/tagging-project/issues/1338
 
 Version 1.5k (2010/10/13)
 -  Remove a superfluous message from the console output:  
@@ -62,45 +59,3 @@ Changes in version 1.2: (1999/01/17)
 - Supports numbered bibliography and index headings
 
 First public release: version 1.0 (1998/10/24) 
-
------------------------------------------------------------------ 
-  Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
-  Copyright 1998--2004 Peter R. Wilson
-  Copyright 2009 Will Robertson
- 
-  This work may be distributed and/or modified under the
-  conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
-  later version: <http://www.latex-project.org/lppl.txt>
-
-  This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
- 
-  This work consists of the files:
-README (this file)
-tocbibind.dtx
-tocbibind.ins
-  and the derived files:
-tocbibind.sty
-
-    The distribution consists of the following files:
-README (this file)
-tocbibind.dtx
-tocbibind.ins
-tocbibind.pdf (user manual)
-
------------------------------------------------------------------ 
-
-    To install the package:
-- run: latex tocbibind.ins (which will generate tocbibind.sty)
-- Move tocbibind.sty to a location where LaTeX will find it
-  (typically in a local texmf tree at tex/latex/***) and refresh the
-  file database. See the FAQ on CTAN at help/uk-tex-faq or
-  https://texfaq.org/ for more information on this.
-
-    To process the manual:
-- run: latex tocbibind.dtx
-- For an index, run: makeindex -s gind.ist tocbibind
-- run: latex tocbibind.dtx
-- Print tocbibind.dvi for a hardcopy of the package manual 
