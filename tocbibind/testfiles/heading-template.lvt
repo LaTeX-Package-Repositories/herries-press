@@ -1,0 +1,15 @@
+\input{regression-test}
+\DocumentMetadata{ }
+\documentclass{report}
+\usepackage{tocbibind}
+
+\begin{document}
+\START\showoutput
+\renewcommand{\simplechapterdelim}{:}
+\simplechapter[Chap]
+
+\chapter{First chapter}
+\restorechapter
+
+\chapter{second chapter}
+\end{document}
