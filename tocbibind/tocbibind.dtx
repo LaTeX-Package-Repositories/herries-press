@@ -16,7 +16,8 @@
 %
 % 
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -107,7 +108,6 @@
 % \def\fileversion{v1.5l} \def\filedate{2026/06/01}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -452,8 +452,8 @@
 \ProvidesPackage{tocbibind}[2026/06/01 v1.5l extra ToC listings]
 %    \end{macrocode}
 %
-% \begin{macro}{\PRWPackageNote}
-% \begin{macro}{\PRWPackageNoteNoLine}
+% \begin{macro}[int]{\PRWPackageNote}
+% \begin{macro}[int]{\PRWPackageNoteNoLine}
 % These two commands write a package Note to the terminal and log file.
 % Use as |\PRWPackageNote{|\meta{package name}|}{|\meta{note text}|}|.
 % The NoLine version does not show the line number. The commands are
@@ -478,8 +478,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@bibquit}
-% \begin{macro}{\if@bibchapter}
+% \begin{macro}[int]{\@bibquit}
+% \begin{macro}[int]{\if@bibchapter}
 %  We need to know what sectional divisions are supported.
 % \changes{v1.5}{2001/04/17}{Major surgery to code for checking divisions}
 %    \begin{macrocode}
@@ -501,7 +501,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@inltxdoc}
+% \begin{macro}[int]{\if@inltxdoc}
 %    This is used as a flag for the \Lpack{ltxdoc} class. This has a
 % particular kind of index that I am not going to mess with.
 %    \begin{macrocode}
@@ -512,11 +512,11 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\if@dotocbib}
-% \begin{macro}{\if@dotocind}
-% \begin{macro}{\if@dotoctoc}
-% \begin{macro}{\if@dotoclot}
-% \begin{macro}{\if@dotoclof}
+% \begin{macro}[int]{\if@dotocbib}
+% \begin{macro}[int]{\if@dotocind}
+% \begin{macro}[int]{\if@dotoctoc}
+% \begin{macro}[int]{\if@dotoclot}
+% \begin{macro}[int]{\if@dotoclof}
 %    A set of booleans for deciding what is to go into the ToC. By
 % default add everything.
 %    \begin{macrocode}
@@ -533,8 +533,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@donumbib}
-% \begin{macro}{\if@donumindex}
+% \begin{macro}[int]{\if@donumbib}
+% \begin{macro}[int]{\if@donumindex}
 %    A set of booleans for deciding whether or not to produce numbered
 % headings (default is to do unnumbered headings).
 %    \begin{macrocode}
@@ -544,7 +544,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@dot@cb@bsection}
+% \begin{macro}[int]{\if@dot@cb@bsection}
 %    If TRUE, use a section heading for the bibliography no matter what
 % the main document divisions are.
 % \changes{v1.5e}{2003/01/22}{Added \cs{if@dot@cb@bsection}}
@@ -624,8 +624,8 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}{\@tocextra}
-% \begin{macro}{\tocotherhead}
+% \begin{macro}[int]{\@tocextra}
+% \begin{macro}[no-user-doc]{\tocotherhead}
 %  |\@tocextra| is the internal command to store the heading command name.
 % |\tocotherhead{|\meta{name}|}| is the user command to set the
 % heading command \meta{name} (without the backslash). 
@@ -639,10 +639,10 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocetcmark}
-% \begin{macro}{\prw@mkboth}
-% \begin{macro}{\toc@section}
-% \begin{macro}{\toc@headstar}
+% \begin{macro}[int]{\tocetcmark}
+% \begin{macro}[int]{\prw@mkboth}
+% \begin{macro}[int]{\toc@section}
+% \begin{macro}[int]{\toc@headstar}
 %    Utility macros, as the code that they represent gets
 %  used several times over. They deal with marking for page headers
 %  (code taken from \file{classes.dtx}),
@@ -684,7 +684,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\toc@chapter}
+% \begin{macro}[int]{\toc@chapter}
 % |\toc@chapter{|\meta{text}|}| is equivalent to |\chapter*{|\meta{text}|}|
 % except that it makes an entry into the ToC.
 %
@@ -708,7 +708,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tocbibname}
+% \begin{macro}[no-user-doc]{\tocbibname}
 %    This holds the text for the Bibliography heading. We try and
 % get the text from the class (either |\bibname| or |\refname|).
 %    \begin{macrocode}
@@ -724,11 +724,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\setindexname}
-% \begin{macro}{\settocname}
-% \begin{macro}{\setlotname}
-% \begin{macro}{\setlofname}
-% \begin{macro}{\settocbibname}
+% \begin{macro}[no-user-doc]{\setindexname}
+% \begin{macro}[no-user-doc]{\settocname}
+% \begin{macro}[no-user-doc]{\setlotname}
+% \begin{macro}[no-user-doc]{\setlofname}
+% \begin{macro}[no-user-doc]{\settocbibname}
 %    The remaining heading texts are simpler as we only need to check
 % if their respective names are defined in the class. Note that these
 % commands in version 1.2 have been changed from version 1.1 in order to
@@ -758,8 +758,8 @@
 % chapterbib', 9 Jan 2003), use |\bibsection| as a hook into 
 % |thebibliography| for the style of the heading.
 %
-% \begin{macro}{\t@cb@bchapsection}
-% \begin{macro}{\t@cb@bsection}
+% \begin{macro}[int]{\t@cb@bchapsection}
+% \begin{macro}[int]{\t@cb@bsection}
 %  Internal macros holding the heading for |thebibliography|.
 % \changes{v1.5e}{2003/01/13}{Added \cs{t@cb@bchapsec} and \cs{t@cb@bsection}}
 %    \begin{macrocode}
@@ -802,7 +802,7 @@
 %    \end{macrocode}
 % The natbib package has not been used (yet), so go ahead and change
 % the environment.
-% \begin{macro}{\bibsection}
+% \begin{macro}[no-user-doc]{\bibsection}
 % Macro holding heading for |thebibliography|.
 % \changes{v1.5e}{2003/01/13}{Added \cs{bibsection}}
 %    \begin{macrocode}
@@ -846,7 +846,7 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\sectionbib}
+% \begin{macro}[no-user-doc]{\sectionbib}
 %    The \Lpack{chapterbib} package defines a macro |\sectionbib|
 % which, if its |sectionbib| option is used, it calls at the beginning 
 % of the document to fiddle with
@@ -987,8 +987,8 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\toc@start}
-% \begin{macro}{\toc@finish}
+% \begin{macro}[int]{\toc@start}
+% \begin{macro}[int]{\toc@finish}
 %  These two macros deal with the start and finish of the |\tableofcontents|
 % and friends by adjusting the column settings if need be.
 %    \begin{macrocode}
@@ -1009,7 +1009,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocfile}
+% \begin{macro}[no-user-doc]{\tocfile}
 %    The code for |\tableofcontents|, |\listoftables| and |\listoffigures|
 % is virtually identical in each case, except for the heading text.
 % |\tocfile| embodies the common code. This is virtually a parameterized copy
@@ -1041,7 +1041,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tableofcontents}
+% \begin{macro}[no-user-doc]{\tableofcontents}
 %    If requested, we redefine this command, using |\tocfile| to do
 % all the work for us.
 %    \begin{macrocode}
@@ -1054,7 +1054,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\listoftables}
+% \begin{macro}[no-user-doc]{\listoftables}
 %  This is almost identical to the code for |\tableofcontents|
 %    \begin{macrocode}
 \if@dotoclot
@@ -1066,7 +1066,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\listoffigures}
+% \begin{macro}[no-user-doc]{\listoffigures}
 %  This is almost identical to the code for |\tableofcontents|
 %    \begin{macrocode}
 \if@dotoclof
@@ -1078,9 +1078,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\simplechapter}
-% \begin{macro}{\restorechapter}
-% \begin{macro}{\simplechapterdelim}
+% \begin{macro}[no-user-doc]{\simplechapter}
+% \begin{macro}[no-user-doc]{\restorechapter}
+% \begin{macro}[no-user-doc]{\simplechapterdelim}
 % The |\simplechapter| command modifies the |\@makechapterhead| command to
 % result in an appearance akin to |\@makeschapterhead|, and is based on the
 % latter. The |\restorechapter| command restores everything back to its
@@ -1160,8 +1160,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocchapter}
-% \begin{macro}{\tocsection}
+% \begin{macro}[no-user-doc]{\tocchapter}
+% \begin{macro}[no-user-doc]{\tocsection}
 % These two commands modify the |\toc@chapter| and |\toc@section| commands
 % to make numbered Listof headings.
 % \changes{v1.4}{2000/03/04}{Added \cs{tocchapter} and \cs{tocsection}
