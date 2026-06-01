@@ -9,7 +9,7 @@ textfiles  ={"README.md", "changes.txt"}
 packtdszip  = false
 
 maxprintline=10000
-checkruns = 4
+typesetruns = 4
 typesetexe=lualatex
 
 -- Upload meta data
