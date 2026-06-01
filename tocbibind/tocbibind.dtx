@@ -1,12 +1,14 @@
 % \iffalse meta-comment
 % tocbibind.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Team https://github.com/LaTeX-Package-Repositories/herries-press}
 % Copyright 1998--2004 Peter R. Wilson
+%           2009—-2026 Will Robertson
+%           2026       LaTeX Project Team
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
@@ -14,9 +16,10 @@
 %
 % This work consists of the files listed in the README file.
 %
-% 
+%
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -27,7 +30,6 @@
 %
 % \fi
 %
-% \CheckSum{464}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -105,9 +107,9 @@
 % \def\fileversion{v1.5i} \def\filedate{2009/09/04}
 % \def\fileversion{v1.5j} \def\filedate{2009/12/28}
 % \def\fileversion{v1.5k} \def\filedate{2010/10/13}
+% \def\fileversion{v1.5l} \def\filedate{2026/06/01}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -117,9 +119,9 @@
 %        \filedate.}}
 %
 % \author{
-%   Author: Peter Wilson, Herries Press\\
-%   Maintainer: Will Robertson\\
-%   \texttt{will dot robertson at latex-project dot org}
+%  Author: Peter Wilson, Herries Press\\
+%  Maintainer: \LaTeX{} Project team\\
+%  \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -138,13 +140,13 @@
 %
 % \StopEventually{}
 %
-% 
+%
 %
 % \section{Introduction}
 %
 % Questions about adding the bibliography to the Table of Contents
 % seem to pop up fairly regularly on the
-% \texttt{comp.text.tex} newsgroup. 
+% \texttt{comp.text.tex} newsgroup.
 %
 %  The \Lpack{tocbibind} package provides a solution for
 % automatically inserting references to a bibliography or an index,
@@ -189,7 +191,7 @@
 % document classes \Lpack{book}, \Lpack{report}, \Lpack{article}, \Lpack{proc}
 % and \Lpack{ltxdoc} class (which is based to a large extent on
 % the \Lpack{article} class).
-% In the \Lpack{article}, \Lpack{proc} and \Lpack{ltxdoc} classes \LaTeX{} 
+% In the \Lpack{article}, \Lpack{proc} and \Lpack{ltxdoc} classes \LaTeX{}
 % uses the |\section*| heading
 % style for the bibliography etc., while for the other two classes
 % it uses the |\chapter*| heading style. \Lpack{tocbibind} honours
@@ -204,7 +206,7 @@
 % height of the title for an index is at a different height than
 % any other in a document (latex bug~3126). The \Lpack{tocbibind} package
 % disables this feature.
-% The disablement has the side effect that 
+% The disablement has the side effect that
 % the |\columnseprule| and |\columnsep| lengths can be
 % set via |\setlength| to alter the column separation and the thickness
 % of a rule between the two columns in the index.
@@ -223,7 +225,7 @@
 % instead of |\section|, |\sclause| instead of |\subsection| and so on.
 % If your document's headings are defined like this and the same
 % heading level is used for the bibliography, etc., then you can use
-% the \Lopt{other} option and 
+% the \Lopt{other} option and
 % the |\tocotherhead{|\meta{headingname}|}| command to cater for this.
 % If your document uses |\clause| then put |\tocotherhead{clause}|
 % in the preamble after loading the package. The package then assumes
@@ -239,7 +241,7 @@
 %  the name text in the |\refname| whilst the \Lpack{book} and \Lpack{report}
 %  classes
 %  store the name in |\bibname|). This package uses |\tocbibname|
-%  to store the name of the bibliography. 
+%  to store the name of the bibliography.
 %
 % \changes{v1.2}{1999/01/17}{Replaced toc\ldots name commands by the set\ldots commands.}
 % \DescribeMacro{\setindexname}
@@ -253,20 +255,20 @@
 % |\contentsname|, |\listtablename| and |\listfigurename| commands
 % respectively. The heading texts can be changed by changing the standard
 % commands, or by using |\setindexname{|\meta{name}|}|, and similarly for
-% the other headings. Thus, the following two lines of code have the 
+% the other headings. Thus, the following two lines of code have the
 % same effect:
 % \begin{verbatim}
 % \renewcommand{\listfigurename}{Figures}
 % \setlofname{Figures}
 % \end{verbatim}
-% \textit{Note that these commands replace the } |\toc...name| 
+% \textit{Note that these commands replace the } |\toc...name|
 % \textit{commands that were in version 1.1.}
 %
 %
 % \subsection{Numbering the List of Figures, etc.}
 %
 %    Some authors like, or are required, to number the Listof headings.
-% Some commands are provided to simplify doing this. 
+% Some commands are provided to simplify doing this.
 %
 % \DescribeMacro{\simplechapter}
 % \DescribeMacro{\simplechapterdelim}
@@ -274,8 +276,8 @@
 % In chaptered documents, the Listof headings are effectively typeset as
 % |\chapter*{}|. The natural way to get numbered headings would be to
 % typeset them as |\chapter{}| but this has the potential disadvantage
-% that the word `Chapter', or equivalent, would be written before the 
-% heading, which is probably not what is required. The 
+% that the word `Chapter', or equivalent, would be written before the
+% heading, which is probably not what is required. The
 % |\simplechapter[|\meta{name}|]|
 % command modifies any subsequent |\chapter| commands so that the result
 % looks like that of |\chapter*| except that the chapter number is put
@@ -295,9 +297,9 @@
 %
 % \DescribeMacro{\tocchapter}
 % \DescribeMacro{\tocsection}
-% Internally, the Listof commands in the \Lpack{tocbibind} package use 
+% Internally, the Listof commands in the \Lpack{tocbibind} package use
 % |\toc@chapter| for typesetting
-% the Listof headings in chaptered documents and |\toc@section| for 
+% the Listof headings in chaptered documents and |\toc@section| for
 % non-chaptered documents. The |\tocchapter| command modifies the
 % |\toc@chapter| command to use a `simple chapter' heading. The |\tocsection|
 % command modifies |\toc@section| to typeset using |\section| instead of
@@ -327,16 +329,16 @@
 %    \tocfile{\contentsname}{toc}
 % \endgroup}
 % \end{verbatim}
-% The |\begingroup| |\endgroup| pairing keeps the changes local. 
+% The |\begingroup| |\endgroup| pairing keeps the changes local.
 %
 % \subsection{Page styles}
 %
 %    The package, by default, supports the standard |empty|, |plain|, and
 % |headings| page styles. Other page styles, for example ones you specify
 % yourself via the \Lpack{fancyhdr} package, are indirectly supported.
-% 
+%
 %    As an example, assume that you are using the \Lpack{fancyhdr} package
-% and you use a |fancy| pagestyle in a \Lpack{book/report} class 
+% and you use a |fancy| pagestyle in a \Lpack{book/report} class
 % document like:
 % \begin{verbatim}
 % \pagestyle{fancy}
@@ -391,11 +393,11 @@
 %
 %    The \Lpack{ccaption} package enables authors to define new kinds of
 % floats (together with their captions) and Listof for each new kind of float.
-% The command to define a new float is essentially 
+% The command to define a new float is essentially
 % |\newfloatlist{|\meta{fenv}|}{|\meta{ext}|}{|\meta{listname}|}{|\meta{capname}|}|,
 % where \meta{fenv} is the name of the new float environment and \meta{ext}
 % is the file extension for the listof file. The typesetting of the
-% Listof listing is called by the command 
+% Listof listing is called by the command
 % |\listoffenv|, where |fenv| is the name \meta{fenv}.
 % For example, a new float environment for diagrams could be
 % defined via \\
@@ -403,9 +405,9 @@
 % called for by \\
 % |\listofdiagram|
 %
-%    In this case, to add the `List of Diagrams' to the ToC it is 
+%    In this case, to add the `List of Diagrams' to the ToC it is
 % necessary to define a
-% new listof command, and use this in place of the |\listoffenv|. 
+% new listof command, and use this in place of the |\listoffenv|.
 % For the diagram example this could be (unnumbered):
 % \begin{verbatim}
 % \newcommand{\listofdia}{\begingroup
@@ -415,13 +417,13 @@
 % and correspondingly for a numbered version:
 % \begin{verbatim}
 % \newcommand{\listofdia}{\begingroup
-%    \tocsection  
-%    \tocchapter  
+%    \tocsection
+%    \tocchapter
 %    \tocfile{List of Diagrams}{dia}
 % \endgroup}
 % \end{verbatim}
 % and then use |\listofdia| instead of |\listofdiagram|.
-% 
+%
 %
 %
 % \subsection{Abstracts}
@@ -429,7 +431,7 @@
 % On rare occasions a publisher may want an abstract listed in the
 % ToC. This package does not provide for that, partly because
 % it is easier to do than the other headings. Just proceed along
-% the lines below, where \texttt{section} might have to be 
+% the lines below, where \texttt{section} might have to be
 % \texttt{chapter}, and if you are using the \Lpack{hyperref} package
 % you have to use the |\phantomsection| macro.
 % \begin{verbatim}
@@ -440,20 +442,20 @@
 % \end{verbatim}
 %
 %
-% 
+%
 % \section{The package code} \label{sec:code}
 %
 %    Announce the name and version of the package, which requires
 % \LaTeXe.
-% \changes{v1.5}{2001/04/17}{Deleted requirement for stdclsdv package} 
+% \changes{v1.5}{2001/04/17}{Deleted requirement for stdclsdv package}
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tocbibind}[2010/10/13 v1.5k extra ToC listings]
+\ProvidesPackage{tocbibind}[2026/06/01 v1.5l extra ToC listings]
 %    \end{macrocode}
 %
-% \begin{macro}{\PRWPackageNote}
-% \begin{macro}{\PRWPackageNoteNoLine}
+% \begin{macro}[int]{\PRWPackageNote}
+% \begin{macro}[int]{\PRWPackageNoteNoLine}
 % These two commands write a package Note to the terminal and log file.
 % Use as |\PRWPackageNote{|\meta{package name}|}{|\meta{note text}|}|.
 % The NoLine version does not show the line number. The commands are
@@ -478,8 +480,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@bibquit}
-% \begin{macro}{\if@bibchapter}
+% \begin{macro}[int]{\@bibquit}
+% \begin{macro}[int]{\if@bibchapter}
 %  We need to know what sectional divisions are supported.
 % \changes{v1.5}{2001/04/17}{Major surgery to code for checking divisions}
 %    \begin{macrocode}
@@ -501,7 +503,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@inltxdoc}
+% \begin{macro}[int]{\if@inltxdoc}
 %    This is used as a flag for the \Lpack{ltxdoc} class. This has a
 % particular kind of index that I am not going to mess with.
 %    \begin{macrocode}
@@ -512,11 +514,11 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\if@dotocbib}
-% \begin{macro}{\if@dotocind}
-% \begin{macro}{\if@dotoctoc}
-% \begin{macro}{\if@dotoclot}
-% \begin{macro}{\if@dotoclof}
+% \begin{macro}[int]{\if@dotocbib}
+% \begin{macro}[int]{\if@dotocind}
+% \begin{macro}[int]{\if@dotoctoc}
+% \begin{macro}[int]{\if@dotoclot}
+% \begin{macro}[int]{\if@dotoclof}
 %    A set of booleans for deciding what is to go into the ToC. By
 % default add everything.
 %    \begin{macrocode}
@@ -533,8 +535,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@donumbib}
-% \begin{macro}{\if@donumindex}
+% \begin{macro}[int]{\if@donumbib}
+% \begin{macro}[int]{\if@donumindex}
 %    A set of booleans for deciding whether or not to produce numbered
 % headings (default is to do unnumbered headings).
 %    \begin{macrocode}
@@ -544,7 +546,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@dot@cb@bsection}
+% \begin{macro}[int]{\if@dot@cb@bsection}
 %    If TRUE, use a section heading for the bibliography no matter what
 % the main document divisions are.
 % \changes{v1.5e}{2003/01/22}{Added \cs{if@dot@cb@bsection}}
@@ -578,7 +580,7 @@
 
 %    \end{macrocode}
 %
-% The \Lopt{other} option makes |\@bibquit| a no-op and cancels any 
+% The \Lopt{other} option makes |\@bibquit| a no-op and cancels any
 % chapter based processing.
 % \changes{v1.3}{1999/08/22}{Added the `other' option}
 %    \begin{macrocode}
@@ -624,11 +626,11 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}{\@tocextra}
-% \begin{macro}{\tocotherhead}
-%  |\@tocextra| is the internal command to store the heading command name.
+% \begin{macro}[int]{\@tocextra}
+% \begin{macro}[no-user-doc]{\tocotherhead}
+%  |\@tocextra| is the internal command to store the heading command name.\\
 % |\tocotherhead{|\meta{name}|}| is the user command to set the
-% heading command \meta{name} (without the backslash). 
+% heading command \meta{name} (without the backslash).
 % The default is section.
 % \changes{v1.3}{1999/08/22}{Renamed tocextrahead command as tocotherhead}
 %    \begin{macrocode}
@@ -639,10 +641,10 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocetcmark}
-% \begin{macro}{\prw@mkboth}
-% \begin{macro}{\toc@section}
-% \begin{macro}{\toc@headstar}
+% \begin{macro}[int]{\tocetcmark}
+% \begin{macro}[int]{\prw@mkboth}
+% \begin{macro}[int]{\toc@section}
+% \begin{macro}[int]{\toc@headstar}
 %    Utility macros, as the code that they represent gets
 %  used several times over. They deal with marking for page headers
 %  (code taken from \file{classes.dtx}),
@@ -684,7 +686,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\toc@chapter}
+% \begin{macro}[int]{\toc@chapter}
 % |\toc@chapter{|\meta{text}|}| is equivalent to |\chapter*{|\meta{text}|}|
 % except that it makes an entry into the ToC.
 %
@@ -697,7 +699,7 @@
 % no idea why there should have been this problem. As part of looking at
 % it I even replaced the \cs{toc@chapter} as used in the |thebibliography|
 % environment with the standard book class definition, which failed as
-% well. 
+% well.
 %
 % \changes{v1.5g}{2003/03/13}{Minor, but vital, change to \cs{toc@chapter}}
 % \changes{v1.5j}{2009/12/28}{Removed \cs{phantomsection}}
@@ -708,7 +710,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tocbibname}
+% \begin{macro}[no-user-doc]{\tocbibname}
 %    This holds the text for the Bibliography heading. We try and
 % get the text from the class (either |\bibname| or |\refname|).
 %    \begin{macrocode}
@@ -724,11 +726,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\setindexname}
-% \begin{macro}{\settocname}
-% \begin{macro}{\setlotname}
-% \begin{macro}{\setlofname}
-% \begin{macro}{\settocbibname}
+% \begin{macro}[no-user-doc]{\setindexname}
+% \begin{macro}[no-user-doc]{\settocname}
+% \begin{macro}[no-user-doc]{\setlotname}
+% \begin{macro}[no-user-doc]{\setlofname}
+% \begin{macro}[no-user-doc]{\settocbibname}
 %    The remaining heading texts are simpler as we only need to check
 % if their respective names are defined in the class. Note that these
 % commands in version 1.2 have been changed from version 1.1 in order to
@@ -755,11 +757,11 @@
 % from \file{classes.dtx}.
 %
 % Following a suggestion by Donald Arseneau (CTT, `Re: memoir, natbib, and
-% chapterbib', 9 Jan 2003), use |\bibsection| as a hook into 
+% chapterbib', 9 Jan 2003), use |\bibsection| as a hook into
 % |thebibliography| for the style of the heading.
 %
-% \begin{macro}{\t@cb@bchapsection}
-% \begin{macro}{\t@cb@bsection}
+% \begin{macro}[int]{\t@cb@bchapsection}
+% \begin{macro}[int]{\t@cb@bsection}
 %  Internal macros holding the heading for |thebibliography|.
 % \changes{v1.5e}{2003/01/13}{Added \cs{t@cb@bchapsec} and \cs{t@cb@bsection}}
 %    \begin{macrocode}
@@ -797,12 +799,12 @@
 \if@dotocbib
 %    \end{macrocode}
 %
-%    \begin{macrocode} 
+%    \begin{macrocode}
   \@ifpackageloaded{natbib}{}{% natbib not loaded
 %    \end{macrocode}
 % The natbib package has not been used (yet), so go ahead and change
 % the environment.
-% \begin{macro}{\bibsection}
+% \begin{macro}[no-user-doc]{\bibsection}
 % Macro holding heading for |thebibliography|.
 % \changes{v1.5e}{2003/01/13}{Added \cs{bibsection}}
 %    \begin{macrocode}
@@ -846,9 +848,9 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\sectionbib}
+% \begin{macro}[no-user-doc]{\sectionbib}
 %    The \Lpack{chapterbib} package defines a macro |\sectionbib|
-% which, if its |sectionbib| option is used, it calls at the beginning 
+% which, if its |sectionbib| option is used, it calls at the beginning
 % of the document to fiddle with
 % the |thebibliography| environment (but it doesn't work when it
 % is renewed as above). We need to disable the macro because we do
@@ -869,7 +871,7 @@
 %    \end{macrocode}
 %
 %    At the end of the preamble we have to check if the \Lpack{natbib}
-% and/or \Lpack{chapterbib} packages have been loaded after the 
+% and/or \Lpack{chapterbib} packages have been loaded after the
 % \Lpack{tocbibind} package. If this is the case, we have to make sure
 % that we have control with respect to their |sectionbib| options.
 % \changes{v1.5e}{2003/01/22}{Added code to cater for natbib and chapterbib
@@ -879,7 +881,7 @@
   \@ifpackagewith{natbib}{sectionbib}{\@dot@cb@bsectiontrue}{}
 %    \end{macrocode}
 % If the \Lpack{chapterbib} package was loaded before \Lpack{tocbibind}
-% we have already killed |\sectionbib|. If \Lpack{chapterbib} has been 
+% we have already killed |\sectionbib|. If \Lpack{chapterbib} has been
 % loaded afterwards
 % we must kill |\sectionbib| now before it gets used.
 %    \begin{macrocode}
@@ -911,7 +913,7 @@
 % package, for reasons that I didn't
 % understand, I had to add/remove some vertical space around the Index heading
 % to make its height match other chapter/section headings. In an unrelated
-% thread on the \texttt{comp.text.tex} newsgroup, 
+% thread on the \texttt{comp.text.tex} newsgroup,
 % Donald Arseneau pointed out that
 % that this effect was a known feature of the standard classes and
 % recorded as latex bug~3126, and was caused by misplaced topskips. The
@@ -987,8 +989,8 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\toc@start}
-% \begin{macro}{\toc@finish}
+% \begin{macro}[int]{\toc@start}
+% \begin{macro}[int]{\toc@finish}
 %  These two macros deal with the start and finish of the |\tableofcontents|
 % and friends by adjusting the column settings if need be.
 %    \begin{macrocode}
@@ -1009,7 +1011,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocfile}
+% \begin{macro}[no-user-doc]{\tocfile}
 %    The code for |\tableofcontents|, |\listoftables| and |\listoffigures|
 % is virtually identical in each case, except for the heading text.
 % |\tocfile| embodies the common code. This is virtually a parameterized copy
@@ -1041,7 +1043,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tableofcontents}
+% \begin{macro}[no-user-doc]{\tableofcontents}
 %    If requested, we redefine this command, using |\tocfile| to do
 % all the work for us.
 %    \begin{macrocode}
@@ -1054,7 +1056,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\listoftables}
+% \begin{macro}[no-user-doc]{\listoftables}
 %  This is almost identical to the code for |\tableofcontents|
 %    \begin{macrocode}
 \if@dotoclot
@@ -1066,7 +1068,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\listoffigures}
+% \begin{macro}[no-user-doc]{\listoffigures}
 %  This is almost identical to the code for |\tableofcontents|
 %    \begin{macrocode}
 \if@dotoclof
@@ -1078,9 +1080,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\simplechapter}
-% \begin{macro}{\restorechapter}
-% \begin{macro}{\simplechapterdelim}
+% \begin{macro}[no-user-doc]{\simplechapter}
+% \begin{macro}[no-user-doc]{\restorechapter}
+% \begin{macro}[no-user-doc]{\simplechapterdelim}
 % The |\simplechapter| command modifies the |\@makechapterhead| command to
 % result in an appearance akin to |\@makeschapterhead|, and is based on the
 % latter. The |\restorechapter| command restores everything back to its
@@ -1090,32 +1092,78 @@
 % commands}
 % \changes{v1.4a}{2000/03/05}{Added \cs{simplechapterdelim} command}
 % \changes{v1.5a}{2000/08/07}{Added undefined test to \cs{restorechapter}}
+% If headings use templates when \cs{DocumentMetadata} is used, a different definition
+% is needed.
+% \changes{v1.5l}{2026/06/01}{Support heading templates with \cs{DocumentMetadata}}
 %    \begin{macrocode}
-\newcommand{\simplechapter}[1][\@empty]{%
-  \let\@tbiold@makechapterhead\@makechapterhead
-  \renewcommand{\@makechapterhead}[1]{%
-    \vspace*{50\p@}%
-    {\parindent \z@ \raggedright
-     \normalfont
-     \interlinepenalty\@M
-     \Huge\bfseries #1\space\thechapter\simplechapterdelim\space 
-        ##1\par\nobreak
-     \vskip 40\p@
-   }}
-}
-\newcommand{\restorechapter}{%
-  \@ifundefined{@tbiold@makechapterhead}{}%
-  {\let\@makechapterhead\@tbiold@makechapterhead}
-}
+\IfDocumentMetadataTF
+  {
+   \newcommand\simplechapter[1][]{%
+%    \end{macrocode}
+%    If we haven't changed the normal \texttt{chapter} instance do it now:
+%    \begin{macrocode}
+         \IfInstanceExistsF{heading}{chapter-orig}{%
+           \DeclareInstanceCopy{heading}{chapter-orig}{chapter}%
+           \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
+         }%
+%    \end{macrocode}
+%    Then alter some of the instance keys, one important part is to
+%    use our own instance for \texttt{headformat-instance}.
+%    \begin{macrocode}
+         \EditInstance{heading}{chapter}{%
+            prefix = #1
+           ,headformat-instance=chapter
+           ,prefix-decls=\Huge
+           ,number-decls=\Huge
+           ,number-format=\thechapter\simplechapterdelim
+         }%
+%    \end{macrocode}
+%    Instead of the default of 20pt we only want a word space after
+%    chapter number. The other adjustment that is neccessary is to
+%    check if the prefix was made empty. In that case we also don't
+%    want a \texttt{prefix-number-sep}.
+%    \begin{macrocode}
+         \DeclareInstance{headformat}{chapter}{hang}{%
+            number-title-sep=\WordSpaceAmount{1}%
+           ,prefix-number-sep:e=\IfBlankTF{#1}{0pt}{\noexpand\WordSpaceAmount{1}}%
+         }%
+       }%
+%    \end{macrocode}
+%    Restoring then works by copying the saved instance back (if it exists).
+%    \begin{macrocode}
+    \newcommand\restorechapter{%
+      \IfInstanceExistsT{heading}{chapter-orig}{%
+        \DeclareInstanceCopy{heading}{chapter}{chapter-orig}%
+        \DeclareInstanceCopy{headformat}{chapter}{chapter-orig}%
+      }%
+    }%
+ }
+ {
+   \newcommand{\simplechapter}[1][\@empty]{%
+     \let\@tbiold@makechapterhead\@makechapterhead
+     \renewcommand{\@makechapterhead}[1]{%
+       \vspace*{50\p@}%
+       {\parindent \z@ \raggedright
+        \normalfont
+        \interlinepenalty\@M
+        \Huge\bfseries #1\space\thechapter\simplechapterdelim\space
+           ##1\par\nobreak
+        \vskip 40\p@
+      }}
+   }
+   \newcommand{\restorechapter}{%
+     \@ifundefined{@tbiold@makechapterhead}{}%
+     {\let\@makechapterhead\@tbiold@makechapterhead}
+   }
+ }
 \newcommand{\simplechapterdelim}{}
-
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocchapter}
-% \begin{macro}{\tocsection}
+% \begin{macro}[no-user-doc]{\tocchapter}
+% \begin{macro}[no-user-doc]{\tocsection}
 % These two commands modify the |\toc@chapter| and |\toc@section| commands
 % to make numbered Listof headings.
 % \changes{v1.4}{2000/03/04}{Added \cs{tocchapter} and \cs{tocsection}
@@ -1130,7 +1178,6 @@
 \newcommand{\tocsection}{%
   \renewcommand{\toc@section}[2]{\@nameuse{##1}{##2}}
 }
-    
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -1179,5 +1226,3 @@
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
-
-
