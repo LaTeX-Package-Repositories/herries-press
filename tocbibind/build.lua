@@ -3,7 +3,8 @@ module = "tocbibind"
 
 version = "2026-06-01 v1.5l"
 
-
+checkengines={"pdftex"}
+checkruns = 2
 textfiles  ={"README.md", "changes.txt"}
 
 packtdszip  = false
