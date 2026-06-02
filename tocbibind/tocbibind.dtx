@@ -20,6 +20,7 @@
 %<*driver>
 \DocumentMetadata{tagging=on}
 \documentclass{l3in2edoc}
+
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -30,6 +31,22 @@
 %
 % \fi
 %
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -627,7 +644,7 @@
 %    \end{macrocode}
 %
 % \begin{macro}[int]{\@tocextra}
-% \begin{macro}[no-user-doc]{\tocotherhead}
+% \begin{macro}{\tocotherhead}
 %  |\@tocextra| is the internal command to store the heading command name.\\
 % |\tocotherhead{|\meta{name}|}| is the user command to set the
 % heading command \meta{name} (without the backslash).
@@ -710,7 +727,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}[no-user-doc]{\tocbibname}
+% \begin{macro}{\tocbibname}
 %    This holds the text for the Bibliography heading. We try and
 % get the text from the class (either |\bibname| or |\refname|).
 %    \begin{macrocode}
@@ -726,11 +743,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}[no-user-doc]{\setindexname}
-% \begin{macro}[no-user-doc]{\settocname}
-% \begin{macro}[no-user-doc]{\setlotname}
-% \begin{macro}[no-user-doc]{\setlofname}
-% \begin{macro}[no-user-doc]{\settocbibname}
+% \begin{macro}{\setindexname}
+% \begin{macro}{\settocname}
+% \begin{macro}{\setlotname}
+% \begin{macro}{\setlofname}
+% \begin{macro}{\settocbibname}
 %    The remaining heading texts are simpler as we only need to check
 % if their respective names are defined in the class. Note that these
 % commands in version 1.2 have been changed from version 1.1 in order to
@@ -1080,9 +1097,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}[no-user-doc]{\simplechapter}
-% \begin{macro}[no-user-doc]{\restorechapter}
-% \begin{macro}[no-user-doc]{\simplechapterdelim}
+% \begin{macro}{\simplechapter}
+% \begin{macro}{\restorechapter}
+% \begin{macro}{\simplechapterdelim}
 % The |\simplechapter| command modifies the |\@makechapterhead| command to
 % result in an appearance akin to |\@makeschapterhead|, and is based on the
 % latter. The |\restorechapter| command restores everything back to its
@@ -1162,8 +1179,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}[no-user-doc]{\tocchapter}
-% \begin{macro}[no-user-doc]{\tocsection}
+% \begin{macro}{\tocchapter}
+% \begin{macro}{\tocsection}
 % These two commands modify the |\toc@chapter| and |\toc@section| commands
 % to make numbered Listof headings.
 % \changes{v1.4}{2000/03/04}{Added \cs{tocchapter} and \cs{tocsection}
