@@ -17,7 +17,7 @@ LaTeX Team https://github.com/LaTeX-Package-Repositories/herries-press
 
 * 1998—2004 Peter R. Wilson
 * 2009—2026 Will Robertson
-  Copyright LaTeX Project, 2026
+* 2026 LaTeX Project
 
 ## License
 LATEX Project Public License, version 1.3c or later.
