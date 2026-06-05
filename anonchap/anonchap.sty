@@ -14,26 +14,55 @@
 %
 % CHANGE HISTORY
 % v1.1a - New maintainer (Will Robertson)
+% v1.2  - Add support for tagged PDF (copied from tocbibind)
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{anonchap}[2009/08/03 v1.1a typeset chapter like section]
+\ProvidesPackage{anonchap}[2026/06/05 v1.2 typeset chapter like section]
 
-\newcommand{\simplechapter}[1][\@empty]{%
-  \let\@tbiold@makechapterhead\@makechapterhead
-  \renewcommand{\@makechapterhead}[1]{%
-    \vspace*{50\p@}%
-    {\parindent \z@ \raggedright
-     \normalfont
-     \interlinepenalty\@M
-     \Huge\bfseries #1\space\thechapter\simplechapterdelim\space
-       ##1\par\nobreak
-     \vskip 40\p@
-  }}
-}
-
-\newcommand{\restorechapter}{%
-  \let\@makechapterhead\@tbiold@makechapterhead
-}
+\IfDocumentMetadataTF
+  {
+   \newcommand\simplechapter[1][]{%
+         \IfInstanceExistsF{heading}{chapter-orig}{%
+           \DeclareInstanceCopy{heading}{chapter-orig}{chapter}%
+           \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
+         }%
+         \EditInstance{heading}{chapter}{%
+            prefix = #1
+           ,headformat-instance=chapter
+           ,prefix-decls=\Huge
+           ,number-decls=\Huge
+           ,number-format=\thechapter\simplechapterdelim
+         }%
+         \DeclareInstance{headformat}{chapter}{hang}{%
+            number-title-sep=\WordSpaceAmount{1}%
+           ,prefix-number-sep:e=\IfBlankTF{#1}{0pt}{\noexpand\WordSpaceAmount{1}}%
+         }%
+       }%
+    \newcommand\restorechapter{%
+      \IfInstanceExistsT{heading}{chapter-orig}{%
+        \DeclareInstanceCopy{heading}{chapter}{chapter-orig}%
+        \DeclareInstanceCopy{headformat}{chapter}{chapter-orig}%
+      }%
+    }%
+ }
+ {
+   \newcommand{\simplechapter}[1][\@empty]{%
+     \let\@tbiold@makechapterhead\@makechapterhead
+     \renewcommand{\@makechapterhead}[1]{%
+       \vspace*{50\p@}%
+       {\parindent \z@ \raggedright
+        \normalfont
+        \interlinepenalty\@M
+        \Huge\bfseries #1\space\thechapter\simplechapterdelim\space
+           ##1\par\nobreak
+        \vskip 40\p@
+      }}
+   }
+   \newcommand{\restorechapter}{%
+     \@ifundefined{@tbiold@makechapterhead}{}%
+     {\let\@makechapterhead\@tbiold@makechapterhead}%
+   }
+ }
 
 \newcommand{\simplechapterdelim}{}
 
