@@ -1,7 +1,7 @@
 
 module = "anonchap"
 
-version = "2009/08/03 v1.1a"
+version = "2026-06-05 v1.2"
 
 checkengines={"pdftex"}
 checkruns = 2
