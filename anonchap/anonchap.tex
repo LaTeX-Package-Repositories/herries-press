@@ -1,0 +1,96 @@
+\documentclass[DIV=8, pagesize=auto]{scrartcl}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{shortvrb}
+
+\addtokomafont{title}{\rmfamily}
+\MakeShortVerb{"}
+\newcommand*{\meta}[1]{\textlangle\textsl{#1}\textrangle}
+
+\title{The \textsf{anonchap} package}
+\author{Peter Wilson, Herries Press; \\ maintained by Will Robertson}
+\date{2009/08/03}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Provides commands to make "\chapter" typeset like "\section".
+  \emph{Do not use with the \textsf{tocbibind} package} (which also supplies these commands).
+\end{abstract}
+
+
+\section{Change history}
+
+\begin{description}
+\item[v1.1a] New maintainer (Will Robertson)
+\end{description}
+
+
+\section{Usage:}
+
+"\simplechapter["\meta{name}"]" and "\simplechapterdelim{"\meta{delim}"}" act together
+so that any subsequent "\chapter" commands, for example
+%
+\begin{verbatim}
+\chapter{First} ... \chapter{Second}...
+\end{verbatim}
+%
+will be typeset in the style of a "\section" (or numbered "\chapter*") as:
+%
+\begin{quote}
+  \meta{name} 1\meta{delim} First\\
+  \ldots\\
+  \meta{name} 2\meta{delim} Second
+\end{quote}
+%
+A subsequent "\restorechapter" command will reset the "\chapter" typesetting
+back to its default style.
+
+Note that the argument to "\simplechapter" is optional, and that by default
+"\simplechapterdelim" is defined as
+%
+\begin{verbatim}
+\newcommand{\simplechapterdelim}{}
+\end{verbatim}
+
+\begin{samepage}
+Extending the above example:
+%
+\begin{verbatim}
+\simplechapter
+\chapter{First}
+...
+\renewcommand{\simplechapterdelim}{:}
+\chapter{Second}
+...
+\restorechapter   % restore before issuing
+                  % a modified \simplechapter
+\simplechapter[Chap]
+\chapter{Third}
+...
+\restorechapter
+\chapter{Fourth}
+...
+\end{verbatim}
+%
+Will be typeset as:
+%
+\begin{quote}
+  1 First\\
+  \ldots\\
+  2: Second\\
+  \ldots\\
+  Chap 3: Third\\
+  \ldots\\
+  Chapter 4\\
+  Fourth\\
+  \ldots
+\end{quote}
+\end{samepage}
+
+\end{document}
