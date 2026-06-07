@@ -26,6 +26,7 @@ https://github.com/latex3/tagging-project/issues/1338
 ]]
 
 
+  
 uploadconfig = {
  pkg = "anonchap",
  version = version,
@@ -40,6 +41,12 @@ uploadconfig = {
  update = true ,
  announcement = announce[version]
 }
+
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
+end
+  
 
 
 

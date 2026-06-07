@@ -33,6 +33,12 @@ announce["2.4c"] = [[
 
 uploadconfig.announcement = announce[version]
 
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
+end
+
+
 checkruns = 3
 recordstatus = true
 textfiles    = {"README"}

@@ -24,6 +24,10 @@ uploadconfig = {
  update = true ,
 }
 
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
+end
 
 
 function update_tag(file,content,tagname,tagdate)
