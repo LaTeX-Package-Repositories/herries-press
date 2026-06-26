@@ -1,6 +1,6 @@
 
 PKG = $(shell basename `pwd`)
-FILES = README $(PKG).ins $(PKG).tex
+FILES = README.md $(PKG).ins $(PKG).tex
 RESULTS = $(PKG).pdf $(PKG).sty
 
 $(PKG).tar.gz: $(FILES) $(RESULTS) Makefile
@@ -20,8 +20,6 @@ $(PKG).pdf: $(PKG).tex
 $(PKG).sty: $(FILES)
 	latex $(PKG).ins
 
-README: README.markdown
-	cp README.markdown README
 
 clean:
 	git clean -dfx
