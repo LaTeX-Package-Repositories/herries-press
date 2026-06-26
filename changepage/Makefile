@@ -1,11 +1,11 @@
 
 PKG = $(shell basename `pwd`)
-FILES = README $(PKG).ins $(PKG).tex
+FILES = README.md $(PKG).ins $(PKG).tex
 RESULTS = $(PKG).pdf $(PKG).sty chngpage.sty
 
 $(PKG).tar.gz: $(FILES) $(RESULTS) Makefile
 	ctanify --noauto \
-	  README \
+	  README.md \
 	  $(PKG).ins \
 	  changepage.tex=source/latex/changepage \
 	  $(RESULTS) \
@@ -20,9 +20,6 @@ $(PKG).pdf: $(PKG).tex
 
 $(PKG).sty: $(FILES)
 	latex $(PKG).ins
-
-README: README.markdown
-	cp README.markdown README
 
 clean:
 	git clean -dfx

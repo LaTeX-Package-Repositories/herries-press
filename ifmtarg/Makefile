@@ -5,7 +5,7 @@ RESULTS = $(PKG).pdf $(PKG).sty
 
 $(PKG).tar.gz: $(FILES) $(RESULTS) Makefile
 	ctanify --noauto \
-	  README \
+	  README.md \
 	  $(PKG).ins \
 	  $(PKG).tex=source/latex/$(PKG) \
 	  $(RESULTS) \
