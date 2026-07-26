@@ -1,0 +1,16 @@
+% test hooks in \@starttoc
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{tocloft}
+\begin{document}
+
+\START
+\showoutput
+
+\tableofcontents
+\section{a}
+
+\cftaddtitleline{toc}{section}{test}{5}
+\cftaddnumtitleline{toc}{5}{section}{test}{5}
+
+\end{document}

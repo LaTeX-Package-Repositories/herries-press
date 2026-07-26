@@ -29,7 +29,7 @@
 %</driver>
 %
 %<*usc>
-\NeedsTeXFormat{LaTeX2e}
+\NeedsTeXFormat{LaTeX2e}[2023-11-01]
 \ProvidesPackage{tocloft}[2022/06/18 v2.3i parameterised ToC, etc., typesetting]
 %</usc>
 %
@@ -248,8 +248,8 @@
 %
 % \DescribeMacro{\contentsline}
 %     The |\addcontentsline| command writes an entry to the given file
-% in the form |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
-% where \meta{page} is the page number.
+% in the form |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}{|\meta{target}|}|
+% where \meta{page} is the page number and \meta{destination} is the anchor name (if \Lpack{hyperref} is used).
 %     For each \meta{kind}, \LaTeX{} provides a command
 % |\l@kind{|\meta{title}|}{|\meta{page}|}| which performs the actual
 % typesetting of the |\contentsline| entry.
@@ -465,7 +465,7 @@
 % would be the following two lines in the \file{.toc} file (assuming that it
 % is the second Part and is on page 34):
 % \begin{verbatim}
-% \contentsline {part}{II\hspace {1em}Part title}{34}
+% \contentsline {part}{I\hspace {1em}Part title}{34}{}%
 % \mbox {}\hrulefill \par
 % \end{verbatim}
 % If the |\protect|s were not used, then the second line would instead be:
@@ -1183,14 +1183,14 @@
 % will write a |\contentsline| entry into \meta{file} for a \meta{kind}
 % entry with title \meta{title} and page number \meta{page}. That is,
 % an entry is made of the form: \\
-% |\contentsline{kind}{title}{page}| \\
+% |\contentsline{kind}{title}{page}{target}| \\
 % Any fragile commands used in the arguments must be protected.
 %
 % \DescribeMacro{\cftaddnumtitleline}
 % The command |\cftaddnumtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
 % is similar except that it also includes \meta{num} as the argument to
 % the |\numberline|. That is, an entry is made of the form: \\
-% |\contentsline{kind}{\numberline{num} title}{page}| \\
+% |\contentsline{kind}{\numberline{num} title}{page}{target}| \\
 % Any fragile commands used in the arguments must be protected.
 %
 % As an example of the use of these commands,
@@ -1712,11 +1712,12 @@ Consider installing the current version of tocbibind.}}
 %
 %     A \file{.toc} (also \file{.lof} and \file{.lot}) file consists
 % of a list of
-% |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
+% |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}{|\meta{target}|}|
 % commands, where \meta{kind} is the kind of heading (e.g., |part| or
 % |section| or |figure|), \meta{title} is the title text (including the number),
-% and \meta{page} is the page number. The entries are inserted into the
-% file by calling the
+% and \meta{page} is the page number. \meta{target} is set by \LPack{hyperref}
+% or by the tagging code for links and structure references. 
+% The entries are inserted into the file by calling the
 % |\addcontentsline{|\meta{file}|}{|\meta{kind}|}{|\meta{title}|}|
 % command, where \meta{file} is the file extension (e.g., |toc|, |lot|)
 % and the other arguments are the same as for the |\contentsline|
@@ -3690,19 +3691,22 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftaddtitleline}
 % |\cftaddtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
 % adds a |\contentsline| entry to \meta{file} with the given information.
+% \changes{v3.0a}{2026-07-26}{Use four arguments for \cs{contentsline}, issue \#59} 
 %    \begin{macrocode}
 \newcommand{\cftaddtitleline}[4]{\addtocontents{#1}{%
-  \protect\contentsline{#2}{#3}{#4}}}
+  \protect\contentsline{#2}{#3}{#4}{\@currentHref}\protected@file@percent}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cftaddnumtitleline}
-% |\cftaddtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
+% |\cftaddnumtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
 % adds a |\contentsline| entry to \meta{file} with the given information.
 % \changes{v2.3c}{2003/09/26}{Removed \cs{ignorespaces} from \cs{cftaddnumtitleline}}
+% \changes{v3.0a}{2026-07-26}{Use four arguments for \cs{contentsline}, issue \#59} 
 %    \begin{macrocode}
 \newcommand{\cftaddnumtitleline}[5]{\addtocontents{#1}{%
-    \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}}}
+  \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}{\@currentHref}%
+    \protected@file@percent}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3710,17 +3714,8 @@ Consider installing the current version of tocbibind.}}
 % two macros.
 % \changes{2003/09/26}{v2.3c}{Hyperref fix for \cs{cftaddtitleline} and
 %                             \cs{cftaddnumtitleline}}
-%    \begin{macrocode}
-\AtBeginDocument{%
-  \@ifpackageloaded{hyperref}{%
-    \renewcommand{\cftaddtitleline}[4]{\addtocontents{#1}{%
-      \protect\contentsline{#2}{#3}{#4}{\@currentHref}}}
-    \renewcommand{\cftaddnumtitleline}[5]{\addtocontents{#1}{%
-      \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}{\@currentHref}}}
-  }{}
-}
-
-%    \end{macrocode}
+% \changes{v3.0a}{2026-07-26}{Remove unneeded hyperref code}. Argument number is
+% identical now.                             
 %
 %
 % \begin{macro}{\@starttoc}

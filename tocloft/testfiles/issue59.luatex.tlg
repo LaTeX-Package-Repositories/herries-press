@@ -1,0 +1,187 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(issue59.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+)
+\tf@toc=\write...
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 428.81863fil, direction TLT
+...\write-{}
+...\glue(\topskip) 0.0
+...\hbox(10.0512+0.1728)x345.0, glue set 281.68323fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\TU/lmr/bx/n/14.4 C
+....\TU/lmr/bx/n/14.4 o
+....\TU/lmr/bx/n/14.4 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/14.4 -
+.....= \kern-0.4464 (font)
+....\TU/lmr/bx/n/14.4 t
+....\TU/lmr/bx/n/14.4 e
+....\TU/lmr/bx/n/14.4 n
+....\kern-0.4464 (font)
+....\TU/lmr/bx/n/14.4 t
+....\TU/lmr/bx/n/14.4 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 10000
+...\glue 9.913 plus 0.86198
+...\glue -9.913 plus -0.86198
+...\glue 10.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.27719
+...\hbox(6.55+0.06)x345.0, glue set 308.90997fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\hbox(6.55+0.0)x15.0, glue set 9.25fil, direction TLT
+.....\TU/lmr/bx/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/bx/n/10 a
+....\penalty 10000
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.56+0.0)x5558.60992, direction TLT
+......\mathon
+......\kern2777.70996 (italic)
+......\hbox(1.56+0.0)x3.19, direction TLT
+.......\TU/lmr/bx/n/10 .
+......\kern2777.70996 (italic)
+......\mathoff
+....\penalty 10000
+....\hbox(6.55+0.0)x15.50003, glue set 9.75003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10 1
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\glue 10.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.39
+...\hbox(6.55+0.11)x345.0, glue set 310.74997fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\TU/lmr/bx/n/10 t
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 t
+....\penalty 10000
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.56+0.0)x5558.60992, direction TLT
+......\mathon
+......\kern2777.70996 (italic)
+......\hbox(1.56+0.0)x3.19, direction TLT
+.......\TU/lmr/bx/n/10 .
+......\kern2777.70996 (italic)
+......\mathoff
+....\penalty 10000
+....\hbox(6.55+0.11)x15.50003, glue set 9.75003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10 5
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\glue(\baselineskip) 5.31999
+...\hbox(6.57+0.11)x269.295, glue set 239.245fil, direction TLT
+....\TU/lmr/m/n/10 s
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 c
+....\discretionary (penalty 50)
+.....< \TU/lmr/m/n/10 -
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 i
+....\TU/lmr/m/n/10 o
+....\TU/lmr/m/n/10 n
+....\glue 0.0 plus 1.0fil
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.23
+...\hbox(6.66+0.22)x345.0, glue set 323.84fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 s
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 5
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 15.08499 plus 4.31 minus 0.86198
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 8.3336
+...\hbox(9.4464+0.0864)x345.0, glue set 314.61603fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(9.4464+0.0)x22.50719, direction TLT
+.....\glue 0.0
+.....\TU/lmr/bx/n/14.4 1
+.....\glue 14.4
+....\TU/lmr/bx/n/14.4 a
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}a}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 9.913 plus 0.86198
+...\write1{\@writefile{toc}{\protect \contentsline {section}{test}{5}{section.1}\protected@file@percent }}
+...\penalty 10000
+...\write1{\@writefile{toc}{\protect \contentsline {5}{\protect \numberline {section}test}{5}{section.1}\protected@file@percent }}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+(issue59.aux)
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0
