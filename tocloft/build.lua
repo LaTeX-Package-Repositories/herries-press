@@ -29,6 +29,10 @@ announce["2.3j"] = [[
 uploadconfig.announcement = announce[version]
 
 checkruns = 3
+checkconfigs = {
+                 "build",
+                 "config-tagging"
+               }
 textfiles    = {"README"}
 tagfiles     = {"*.dtx"}
 
@@ -43,7 +47,7 @@ if pkgdate ~= today then
         "\nToday:    "..today)
 end
 
--- require("l3build-wspr.lua")
+-- require("l3build-wspr.lua") -- UF: 2026-07-26 disabled as not in the repo
 
 --[===========[--
      TAGGING

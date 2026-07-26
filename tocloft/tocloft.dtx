@@ -193,7 +193,34 @@
 %   and Andrew Thurber (\texttt{athurber@emba.uvm.edu})
 %   for their suggestions.}
 %
-% \subsection{\LaTeX 's methods}
+% \subsection{Compatibility with \cs{DocumentMetadata} and the tagging support}
+% To enable tagging of the various lists like the Table of Contents, the code loaded
+% by \cs{DocumentMetadata} in \LaTeX\ since 2025-11-01 changes various internals of
+% the ToC processing and this clashes with the changes made by \Lpack{tocloft} in various way:
+% In some cases \cs{DocumentMetadata} overwrites changes by \Lpack{tocloft} and destroys its
+% features, in other \Lpack{tocloft} destroys tagging. 
+% 
+% Version 3 of the package tries to make the \Lpack{tocloft} 
+% compatible with \cs{DocumentMetadata}. It is recommended to use this together with
+% a current \LaTeX.
+% 
+% Note that the code loaded by \cs{DocumentMetadata} is still changing. At some time
+% ToC and similar lists will be reimplemented with templates and then more adaptions will
+% be needed to keep \Lpack{tocloft} compatible. 
+% 
+% The following problems are handled by the new version if \cs{DocumentMetadata} is detected:
+% 
+% \begin{description}
+% \item[\cs{@starttoc}] \Lpack{tocloft} patches the \cs{@starttoc} command to insert
+% hooks like \cs{cfttocprehook} and \cs{cfttocposthook} but it does it only if \cs{@starttoc}
+% has its original definition. As \cs{DocumentMetadata} changes \cs{@starttoc} the
+% patch is lost. The new code reinstates the patch. Note that the hooks are before and
+% after (outside) the tagging sockets that create the TOC-structure.
+% They should not contain code that creates structures that are not allowed in this place.
+% 
+%  \end{description} 
+% 
+% \subsection{Legacy \LaTeX 's methods}
 %
 %    This is a general description of how \LaTeX{} does the processing
 % for a Table of Contents. As the processing for List of Figures and
@@ -1281,6 +1308,7 @@
 %
 %    \begin{macrocode}
 %<*usc>
+\RequirePackage{etoolbox}
 %    \end{macrocode}
 %
 % In order to try and avoid name clashes with other packages, each internal
@@ -3737,28 +3765,34 @@ Consider installing the current version of tocbibind.}}
    \fi
   \@nobreakfalse
 \endgroup}
-\ifx\@starttoc\@starttoc@latex@orig
-  \def\@starttoc#1{%
-    \csname cft#1prehook\endcsname
-    \begingroup
-      \makeatletter
-      \@input{\jobname.#1}%
-      \if@filesw
-        \expandafter\newwrite\csname tf@#1\endcsname
-        \immediate\openout \csname tf@#1\endcsname \jobname.#1\relax
-      \fi
-      \@nobreakfalse
-    \endgroup
-    \csname cft#1posthook\endcsname}
-  \newcommand\cfttocprehook{}
-  \newcommand\cftlofprehook{}
-  \newcommand\cftlotprehook{}
-  \newcommand\cfttocposthook{}
-  \newcommand\cftlofposthook{}
-  \newcommand\cftlotposthook{}
-\else
-  \PackageWarning{tocloft}{\string\@starttoc\space has already been redefined; \string\cfttocprehook\space et al. not installed.}
-\fi
+\newif\if@cft@patch@starttoc
+\IfDocumentMetadataTF
+ {   
+   \@cft@patch@starttoctrue
+ }  
+ {
+   \ifx\@starttoc\@starttoc@latex@orig
+   \@cft@patch@starttoctrue
+   \fi
+ }
+\if@cft@patch@starttoc 
+   \patchcmd\@starttoc
+     {\begingroup}
+     {\csname cft#1prehook\endcsname\begingroup}
+     {}{\@cft@fail}
+   \patchcmd\@starttoc
+     {\endgroup}
+     {\endgroup\csname cft#1posthook\endcsname}
+     {}{\@cft@fail}  
+   \newcommand\cfttocprehook{}
+   \newcommand\cftlofprehook{}
+   \newcommand\cftlotprehook{}
+   \newcommand\cfttocposthook{}
+   \newcommand\cftlofposthook{}
+   \newcommand\cftlotposthook{}
+\else    
+   \PackageWarning{tocloft}{\string\@starttoc\space has already been redefined; \string\cfttocprehook\space et al. not installed.}
+\fi   
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3850,5 +3884,3 @@ Consider installing the current version of tocbibind.}}
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
-
-
