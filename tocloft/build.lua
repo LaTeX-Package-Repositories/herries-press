@@ -33,6 +33,7 @@ checkconfigs = {
                  "build",
                  "config-tagging"
                }
+recordstatus=true               
 textfiles    = {"README"}
 tagfiles     = {"*.dtx"}
 
