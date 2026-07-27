@@ -2000,7 +2000,7 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftchapaftersnum
      \let\@cftasnumb \cftchapaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-     \UseHookWithArguments{contentsline/text/after}{4}
+     \UseHookWithArguments{contentsline/text/before}{4}
          {0}{#1}{#2}{\@contentsline@destination}%
      {\cftchapfont #1}\nobreak
      \UseHookWithArguments{contentsline/text/after}{4}
@@ -2051,7 +2051,7 @@ Consider installing the current version of tocbibind.}}
     }\nobreak
     \UseHookWithArguments{contentsline/page/before}{4}{0}{}{#1}{\@contentsline@destination}%
     \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}%
-    \UseHookWithArguments{contentsline/page/before}{4}{0}{}{#1}{\@contentsline@destination}%
+    \UseHookWithArguments{contentsline/page/after}{4}{0}{}{#1}{\@contentsline@destination}%
     \cftchapafterpnum\cftchappnumfinal\par
   }
 %    \end{macrocode}
