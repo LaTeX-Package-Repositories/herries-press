@@ -718,9 +718,9 @@
 % and unnumbered entries.
 % \begin{verbatim}
 % {\cftXfont {\cftXpresnum SNUM\cftXaftersnum\hfil} \cftXaftersnumb TITLE}%
-%         {\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\par
+%         {\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\cftXpnumfinal\par
 %
-% {\cftXfont TITLE}{\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\par
+% {\cftXfont TITLE}{\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\cftXpnumfinal\par
 % \end{verbatim}
 % where |SNUM| is the section number, |TITLE| is the title text and |PAGE|
 % is the page number. In the numbered entry the pseudo-code \\
@@ -778,7 +778,18 @@
 % \DescribeMacro{\cftXafterpnum}
 % This macro is called after the page number has been typeset. Its default
 % is to do nothing. It can be changed by |\renewcommand|.
+% 
+% \DescribeMacro{\cftXpnumfinal}
+% This macro is called after |\cftXafterpnum|. By default is contains a 
+% pair of kerns (stored in the command |\cftpnumfinaldefault|) 
+% that with \LPack{microtype} suppresses protrusion in this place. Such kerns
+% are also used in the \LaTeX{} kernel and normally there should be no need to remove
+% or change them, but with this command it is possible. 
+% It can be changed by |\renewcommand|.
 %
+% \DescribeMacro{\cftpnumfinaldefault}
+% The default kerns used in |\cftXpnumfinal|. 
+% 
 % \DescribeMacro{\cftsetindents}
 % The command
 % |\cftsetindents{|\meta{entry}|}{|\meta{indent}|}{|\meta{numwidth}|}|
@@ -1032,8 +1043,9 @@
 % |\cftXaftersnumb|,
 % |\cftXleader|,
 % |\cftXdotsep|,
-% |\cftXpagefont|, and
-% |\cftXafterpnum|,
+% |\cftXpagefont|, 
+% |\cftXafterpnum|, and
+% |\cftXpnumfinal|
 %  are analogous to the commands of the same names
 % described in section~\ref{sec:entries}. Their default values are also
 % as described earlier.
@@ -1533,7 +1545,15 @@ Consider installing the current version of tocbibind.}}
 
 %    \end{macrocode}
 % \end{macro}
-%
+
+% \begin{macro}{\cftpnumfinaldefault}
+% A kern pair used at the end of entries to avoid problems with 
+% protrusion. 
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftpnumfinaldefault}}
+%    \begin{macrocode}
+\newcommand\cftpnumfinaldefault{\kern-\p@\kern\p@}
+%    \end{macrocode}
+% \end{macro}
 %
 % \begin{macro}{\tableofcontents}
 % This is a parameterised version of the default |\tableofcontents| command.
@@ -1879,12 +1899,14 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftpartdotsep}
 % \begin{macro}{\cftpartpagefont}
 % \begin{macro}{\cftpartafterpnum}
+% \begin{macro}{\cftpartpnumfinal}
 % \begin{macro}{\cftpartindent}
 % \begin{macro}{\cftpartfillnum}
 %  These are the user commands to control the typesetting of Part entries.
 %  They are initialised to give the standard appearance.
 % \changes{v2.3a}{2002/10/03}{Deleted \cs{cftpartaftersnum} and \cs{cftpartaftersnumb}}
 % \changes{v2.3b}{2003/01/20}{Reinstated \cs{cftpartaftersnum} and \cs{cftpartaftersnumb}}
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftpartpnumfinal}}
 %    \begin{macrocode}
 \if@cfthaspart
   \newlength{\cftbeforepartskip}
@@ -1899,11 +1921,12 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftpartdotsep}{\cftnodots}
   \newcommand{\cftpartpagefont}{\large\bfseries}
   \newcommand{\cftpartafterpnum}{}
+  \newcommand{\cftpartpnumfinal}{\cftpnumfinaldefault}
   \newlength{\cftpartindent}
     \setlength{\cftpartindent}{0em}
   \newcommand{\cftpartfillnum}[1]{%
     {\cftpartleader}%
-    {\makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}\cftpartafterpnum\par}%
+    {\makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}\cftpartafterpnum\cftpartpnumfinal\par}%
   }
 %    \end{macrocode}
 % \Lpack{koma} classes use some different settings.
@@ -1916,6 +1939,7 @@ Consider installing the current version of tocbibind.}}
   \fi
 \fi
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -1969,9 +1993,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftchapdotsep}
 % \begin{macro}{\cftchappagefont}
 % \begin{macro}{\cftchapafterpnum}
+% \begin{macro}{\cftchappnumfinal}
 % \begin{macro}{\cftchapfillnum}
 %  These are the user commands to control the typesetting of Chapter entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftchappnumfinal}}
 %    \begin{macrocode}
 \if@cfthaschapter
   \newlength{\cftbeforechapskip}
@@ -1988,9 +2014,10 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftchapdotsep}{\cftnodots}
   \newcommand{\cftchappagefont}{\bfseries}
   \newcommand{\cftchapafterpnum}{}
+  \newcommand{\cftchappnumfinal}{\cftpnumfinaldefault}
   \newcommand{\cftchapfillnum}[1]{%
     {\cftchapleader}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}\cftchapafterpnum\par
+    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}\cftchapafterpnum\cftchappnumfinal\par
   }
 %    \end{macrocode}
 % \Lpack{koma} classes have different chapter settings.
@@ -2002,6 +2029,7 @@ Consider installing the current version of tocbibind.}}
 \fi
 
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -2056,9 +2084,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsecdotsep}
 % \begin{macro}{\cftsecpagefont}
 % \begin{macro}{\cftsecafterpnum}
+% \begin{macro}{\cftsecpnumfinal}
 % \begin{macro}{\cftsecfillnum}
 %  These are the user commands to control the typesetting of Section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesecskip}
 \newlength{\cftsecindent}
@@ -2084,11 +2114,14 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftsecpagefont}{\bfseries}
 \fi
 \newcommand{\cftsecafterpnum}{}
+\newcommand{\cftsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsecfillnum}[1]{%
   {\cftsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsecpagefont #1}\cftsecafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsecpagefont #1}%
+    \cftsecafterpnum\cftsecpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -2181,8 +2214,10 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubsecdotsep}
 % \begin{macro}{\cftsubsecpagefont}
 % \begin{macro}{\cftsubsecafterpnum}
+% \begin{macro}{\cftsubsecpnumfinal}
 %  These are the user commands to control the typesetting of Sub-section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubsecskip}
   \setlength{\cftbeforesubsecskip}{\z@ \@plus.2\p@}
@@ -2203,6 +2238,7 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubsecdotsep}{\cftdotsep}
 \newcommand{\cftsubsecpagefont}{\normalfont}
 \newcommand{\cftsubsecafterpnum}{}
+\newcommand{\cftsubsecpnumfinal}{\cftpnumfinaldefault}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -2215,7 +2251,8 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
+% 
 % \begin{macro}{\cftsubsecfillnum}
 % |\cftsubsecfillnum{|\meta{page}|}| typesets the leader and the \meta{page}
 % number of a |subsection| entry.
@@ -2225,7 +2262,8 @@ Consider installing the current version of tocbibind.}}
 %    \begin{macrocode}
 \newcommand{\cftsubsecfillnum}[1]{%
   {\cftsubsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsecpagefont #1}\cftsubsecafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsecpagefont #1}%
+    \cftsubsecafterpnum\cftsubsecpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2267,9 +2305,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubsubsecdotsep}
 % \begin{macro}{\cftsubsubsecpagefont}
 % \begin{macro}{\cftsubsubsecafterpnum}
+% \begin{macro}{\cftsubsubsecpnumfinal}
 % \begin{macro}{\cftsubsubsecfillnum}
 %  These are the user commands to control the typesetting of Sub-sub-section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubsubsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubsubsecskip}
   \setlength{\cftbeforesubsubsecskip}{\z@ \@plus.2\p@}
@@ -2290,11 +2330,14 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubsubsecdotsep}{\cftdotsep}
 \newcommand{\cftsubsubsecpagefont}{\normalfont}
 \newcommand{\cftsubsubsecafterpnum}{}
+\newcommand{\cftsubsubsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubsubsecfillnum}[1]{%
   {\cftsubsubsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsubsecpagefont #1}\cftsubsubsecafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsubsecpagefont #1}%
+   \cftsubsubsecafterpnum\cftsubsubsecpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -2345,9 +2388,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftparadotsep}
 % \begin{macro}{\cftparapagefont}
 % \begin{macro}{\cftparaafterpnum}
+% \begin{macro}{\cftparapnumfinal}
 % \begin{macro}{\cftparafillnum}
 %  These are the user commands to control the typesetting of Paragraph entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftparapnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforeparaskip}
   \setlength{\cftbeforeparaskip}{\z@ \@plus.2\p@}
@@ -2368,11 +2413,14 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftparadotsep}{\cftdotsep}
 \newcommand{\cftparapagefont}{\normalfont}
 \newcommand{\cftparaafterpnum}{}
+\newcommand{\cftparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftparafillnum}[1]{%
   {\cftparaleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftparapagefont #1}\cftparaafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftparapagefont #1}%
+   \cftparaafterpnum\cftparapnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -2423,9 +2471,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubparadotsep}
 % \begin{macro}{\cftsubparapagefont}
 % \begin{macro}{\cftsubparaafterpnum}
+% \begin{macro}{\cftsubparapnumfinal} 
 % \begin{macro}{\cftsubparafillnum}
 %  These are the user commands to control the typesetting of Sub-paragraph entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubparapnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubparaskip}
   \setlength{\cftbeforesubparaskip}{\z@ \@plus.2\p@}
@@ -2446,9 +2496,11 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubparadotsep}{\cftdotsep}
 \newcommand{\cftsubparapagefont}{\normalfont}
 \newcommand{\cftsubparaafterpnum}{}
+\newcommand{\cftsubparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubparafillnum}[1]{%
   {\cftsubparaleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubparapagefont #1}\cftsubparaafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubparapagefont #1}%
+   \cftsubparaafterpnum\cftsubparapnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2463,7 +2515,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
 %
 % \begin{macro}{\@cftdobiblof}
 % If the \Lpack{tocbibind} package has been used and it has
@@ -2480,7 +2532,6 @@ Consider installing the current version of tocbibind.}}
       \addcontentsline{toc}{\@tocextra}{\listfigurename}
     \fi
   \fi}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2626,9 +2677,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftfigdotsep}
 % \begin{macro}{\cftfigpagefont}
 % \begin{macro}{\cftfigafterpnum}
+% \begin{macro}{\cftfigpnumfinal}
 % \begin{macro}{\cftfigfillnum}
 %  These are the user commands to control the typesetting of Figure caption entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftfigpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforefigskip}
   \setlength{\cftbeforefigskip}{\z@ \@plus.2\p@}
@@ -2644,9 +2697,11 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftfigdotsep}{\cftdotsep}
 \newcommand{\cftfigpagefont}{\normalfont}
 \newcommand{\cftfigafterpnum}{}
+\newcommand{\cftfigpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftfigfillnum}[1]{%
   {\cftfigleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftfigpagefont #1}\cftfigafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftfigpagefont #1}%
+   \cftfigafterpnum\cftfigpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2661,7 +2716,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
 % \begin{macro}{lofdepth}
 % \begin{macro}{lotdepth}
 % The counters |lofdepth| and |lotdepth| are defined by the
@@ -2839,9 +2894,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cfttabdotsep}
 % \begin{macro}{\cfttabpagefont}
 % \begin{macro}{\cfttabafterpnum}
+% \begin{macro}{\cfttabpnumfinal}
 % \begin{macro}{\cfttabfillnum}
 %  These are the user commands to control the typesetting of Table caption entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cfttabpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforetabskip}
   \setlength{\cftbeforetabskip}{\z@ \@plus.2\p@}
@@ -2857,9 +2914,11 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cfttabdotsep}{\cftdotsep}
 \newcommand{\cfttabpagefont}{\normalfont}
 \newcommand{\cfttabafterpnum}{}
+\newcommand{\cfttabpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cfttabfillnum}[1]{%
   {\cfttableader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cfttabpagefont #1}\cfttabafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cfttabpagefont #1}%
+   \cfttabafterpnum\cfttabpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2874,7 +2933,8 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
+% 
 % \subsection{Support for the \Lpack{subfigure} package}
 % \changes{v1.1}{2000/02/12}{Added subfigure support}
 %
@@ -2920,6 +2980,7 @@ Consider installing the current version of tocbibind.}}
 %
 % \begin{macro}{\@cftsetsubfig}
 % This command initialises the setup for subfigure captions in the LoF.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftsubfigpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftsetsubfig}{%
 %    \end{macrocode}
@@ -2934,6 +2995,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubfigdotsep}
 % \begin{macro}{\cftsubfigpagefont}
 % \begin{macro}{\cftsubfigafterpnum}
+% \begin{macro}{\cftsubfigpnumfinal}
 % \begin{macro}{\toclevel@subfig}
 % \begin{macro}{\cftsubfigfillnum}
 %    \begin{macrocode}
@@ -2951,12 +3013,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubfigdotsep}{\cftdotsep}
 \newcommand{\cftsubfigpagefont}{\normalfont}
 \newcommand{\cftsubfigafterpnum}{}
+\newcommand{\cftsubfigpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subfigure}{1}
 \newcommand{\cftsubfigfillnum}[1]{%
   {\cftsubfigleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubfigpagefont ##1}\cftsubfigafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubfigpagefont ##1}%
+   \cftsubfigafterpnum\cftsubfigpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -3013,6 +3078,7 @@ Consider installing the current version of tocbibind.}}
 %
 % \begin{macro}{\@cftsetsubtab}
 % This command sets up the defaults for subtable entries in the LoT.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftsubtabpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftsetsubtab}{%
 %    \end{macrocode}
@@ -3027,6 +3093,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubtabdotsep}
 % \begin{macro}{\cftsubtabpagefont}
 % \begin{macro}{\cftsubtabafterpnum}
+% \begin{macro}{\cftsubtabpnumfinal}
 % \begin{macro}{\toclevel@subtable}
 % \begin{macro}{\cftsubtabfillnum}
 %  These are the user commands to control the typesetting of Subtable
@@ -3047,12 +3114,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubtabdotsep}{\cftdotsep}
 \newcommand{\cftsubtabpagefont}{\normalfont}
 \newcommand{\cftsubtabafterpnum}{}
+\newcommand{\cftsubtabpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subtable}{1}
 \newcommand{\cftsubtabfillnum}[1]{%
   {\cftsubtableader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtabpagefont ##1}\cftsubtabafterpnum\par
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtabpagefont ##1}%
+   \cftsubtabafterpnum\cftsubtabpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -3092,7 +3162,7 @@ Consider installing the current version of tocbibind.}}
 %
 % \subsection{New list of\ldots}
 % \changes{v2.0}{2001/03/03}{Added \cs{newlistof} and \cs{newlistentry}}
-%
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
 % \begin{macro}{\newlistentry}
 % |\newlistentry[|\meta{within}|]{|\meta{counter}|}{|\meta{ext}|}{|\meta{level-1}|}| creates a set of commands for a new kind of entry into a List of.
 %    \begin{macrocode}
@@ -3199,6 +3269,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftXleader}
 % \begin{macro}{\cftXpagefont}
 % \begin{macro}{\cftXafterpnum}
+% \begin{macro}{\cftXpnumfinal}
 % And the remaining commands.
 %    \begin{macrocode}
   \@namedef{cft#2font}{\normalfont}
@@ -3209,7 +3280,9 @@ Consider installing the current version of tocbibind.}}
   \@namedef{cft#2leader}{\normalfont\cftdotfill{\@nameuse{cft#2dotsep}}}
   \@namedef{cft#2pagefont}{\normalfont}
   \@namedef{cft#2afterpnum}{}
+  \@namedef{cft#2pnumfinal}{\cftpnumfinaldefault}
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -3232,7 +3305,8 @@ Consider installing the current version of tocbibind.}}
 %    \begin{macrocode}
   \@namedef{cft#2fillnum}##1{%
     {\@nameuse{cft#2leader}}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#2pagefont}##1}\@nameuse{cft#2afterpnum}\par
+    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#2pagefont}##1}%
+     \@nameuse{cft#2afterpnum}\@nameuse{cft#2pnumfinal}\par
   }
 %    \end{macrocode}
 % \end{macro}
@@ -3463,10 +3537,11 @@ Consider installing the current version of tocbibind.}}
 % shorthand name of the entry (e.g. |subsec| for |subsection|).
 % The macro redefines the |\cftXnumfill| command so that there is no leader
 % and the page number is ignored.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftpnumoff}[1]{%
   \@namedef{cft#1fillnum}##1{%
-    \cftparfillskip\@nameuse{cft#1afterpnum}\par}}
+    \cftparfillskip\@nameuse{cft#1afterpnum}\@nameuse{cft#1pnumfinal}\par}}
 
 %    \end{macrocode}
 % \end{macro}
@@ -3605,11 +3680,13 @@ Consider installing the current version of tocbibind.}}
 % shorthand name of the entry (e.g. |subsec| for |subsection|).
 % The macro defines the |\cftXnumfill| command to correspond to
 % the default definition.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftpnumon}[1]{%
   \@namedef{cft#1fillnum}##1{%
     {\@nameuse{cft#1leader}}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#1pagefont}##1}\@nameuse{cft#1afterpnum}\par
+    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#1pagefont}##1}%
+     \@nameuse{cft#1afterpnum}\@nameuse{cft#1pnumfinal}\par
   }%
 }
 %    \end{macrocode}

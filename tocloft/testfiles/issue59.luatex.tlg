@@ -77,6 +77,8 @@ Completed box being shipped out [1]
 ....\hbox(6.55+0.0)x15.50003, glue set 9.75003fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\TU/lmr/bx/n/10 1
+....\kern-1.0
+....\kern1.0
 ....\penalty 10000
 ....\glue(\parfillskip) -25.50003
 ....\glue(\rightskip) 25.50003
@@ -112,6 +114,8 @@ Completed box being shipped out [1]
 ....\hbox(6.55+0.11)x15.50003, glue set 9.75003fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\TU/lmr/bx/n/10 5
+....\kern-1.0
+....\kern1.0
 ....\penalty 10000
 ....\glue(\parfillskip) -25.50003
 ....\glue(\rightskip) 25.50003
