@@ -1779,17 +1779,21 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\numberline}
+% \begin{macro}{\numberline,\@cftinitnumwidth}
 % \changes{v1.1}{2000/02/11}{Added \cs{@cftbsnum} to \cs{numberline}}
 % The purpose of the |\numberline{|\meta{secnum}|}| command is to typeset
 % \meta{secnum} left justified in a box of width |\@tempdima|. I redefine
 % it to add three additional parameters, namely |\@cftbsnum|,
 % |\@cftasnum| and |\@cftasnumb|
 % (see \file{ltsect.dtx} for the original
-% definition).
+% definition). |\@cftinitnumwidth| can be used to change |\@tempdima| 
+% based on the number e.g. in |\part|.
 % \changes{v3.0a}{2026-07-27}{Added tagging sockets to \cs{numberline}}
+% \changes{v3.0a}{2026-07-27}{Added tagging sockets to \cs{@cftinitnumwidth}}
 %    \begin{macrocode}
+\newcommand\@cftinitnumwidth[1]{}
 \renewcommand{\numberline}[1]{%
+  \@cftinitnumwidth{#1}%
   \hb@xt@\@tempdima{%
   \UseHookWithArguments{contentsline/number/before}{1}{#1}%
   \@cftbsnum #1\@cftasnum\hfil
@@ -1869,6 +1873,7 @@ Consider installing the current version of tocbibind.}}
        \interlinepenalty\@M
        \leavevmode
        \@tempdima \cftpartnumwidth\relax
+       \let\@cftinitnumwidth\cftpartinitnumwidth
        \let\@cftbsnum \cftpartpresnum
        \let\@cftasnum \cftpartaftersnum
        \let\@cftasnumb \cftpartaftersnumb
@@ -1924,11 +1929,12 @@ Consider installing the current version of tocbibind.}}
   \newlength{\cftbeforepartskip}
     \setlength{\cftbeforepartskip}{2.25em \@plus\p@}
   \newlength{\cftpartnumwidth}
-    \setlength{\cftpartnumwidth}{0em}
+    \setlength{\cftpartnumwidth}{3em}
   \newcommand{\cftpartfont}{\large\bfseries}
+  \newcommand{\cftpartinitnumwidth}[1]{\settowidth\@tempdima{#1}}
   \newcommand{\cftpartpresnum}{}
-  \newcommand{\cftpartaftersnum}{\hspace{1em}}
-  \newcommand{\cftpartaftersnumb}{}
+  \newcommand{\cftpartaftersnum}{}
+  \newcommand{\cftpartaftersnumb}{\hspace{1em}}
   \newcommand{\cftpartleader}{\large\bfseries\cftdotfill{\cftpartdotsep}}
   \newcommand{\cftpartdotsep}{\cftnodots}
   \newcommand{\cftpartpagefont}{\large\bfseries}
@@ -2954,7 +2960,7 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnumb \cfttabaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
      \UseHookWithArguments{contentsline/text/before}{4}{1}{#1}{#2}{\@contentsline@destination}%
-      {\cfttagfont #1}\nobreak
+      {\cfttabfont #1}\nobreak
      \UseHookWithArguments{contentsline/text/after}{4}{1}{#1}{#2}{\@contentsline@destination}%
      \cfttabfillnum{#2}}%
    \fi
