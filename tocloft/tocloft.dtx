@@ -217,7 +217,9 @@
 % patch is lost. The new code reinstates the patch. Note that the hooks are before and
 % after (outside) the tagging sockets that create the TOC-structure.
 % They should not contain code that creates structures that are not allowed in this place.
-% 
+% \item[Tagging of list entries] In standard \LaTeX{} the tagging support for this is mostly handled
+% through a redefinition of |\@dottedtocline|. As \Lpack{tocloft} doesn't use (and also overwrites
+% |\l@part| and |\l@chapter|) none of the entries were correctly tagged. 
 %  \end{description} 
 % 
 % \subsection{Legacy \LaTeX 's methods}
@@ -1785,9 +1787,15 @@ Consider installing the current version of tocbibind.}}
 % |\@cftasnum| and |\@cftasnumb|
 % (see \file{ltsect.dtx} for the original
 % definition).
+% \changes{v3.0a}{2026-07-27}{Added tagging sockets to \cs{numberline}}
 %    \begin{macrocode}
 \renewcommand{\numberline}[1]{%
-  \hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}
+  \hb@xt@\@tempdima{%
+  \UseHookWithArguments{contentsline/number/before}{1}{#1}%
+  \@cftbsnum #1\@cftasnum\hfil
+  \UseHookWithArguments{contentsline/number/after}{1}{#1}}%
+  \@cftasnumb
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1869,8 +1877,12 @@ Consider installing the current version of tocbibind.}}
 % In default \LaTeX, the part ToC entry is written without \verb|\numberline|
 % and hence the `presnum' needs to be inserted manually.
 % In Koma-Script and titlesec (and probably others---let me know!), however, this is not the case.
-%    \begin{macrocode}
+%    \begin{macrocode}       
+      \UseHookWithArguments{contentsline/text/before}{4}
+         {-1}{#1}{#2}{\@contentsline@destination}%
        {\cftpartfont \if@cftkoma\else\if@cfttitlesec\else\cftpartpresnum\fi\fi #1}%
+      \UseHookWithArguments{contentsline/text/after}{4}
+         {-1}{#1}{#2}{\@contentsline@destination}%  
        \cftpartfillnum{#2}}
       \nobreak
       \if@cfthaschapter
@@ -1915,7 +1927,7 @@ Consider installing the current version of tocbibind.}}
     \setlength{\cftpartnumwidth}{0em}
   \newcommand{\cftpartfont}{\large\bfseries}
   \newcommand{\cftpartpresnum}{}
-  \newcommand{\cftpartaftersnum}{}
+  \newcommand{\cftpartaftersnum}{\hspace{1em}}
   \newcommand{\cftpartaftersnumb}{}
   \newcommand{\cftpartleader}{\large\bfseries\cftdotfill{\cftpartdotsep}}
   \newcommand{\cftpartdotsep}{\cftnodots}
@@ -1925,8 +1937,15 @@ Consider installing the current version of tocbibind.}}
   \newlength{\cftpartindent}
     \setlength{\cftpartindent}{0em}
   \newcommand{\cftpartfillnum}[1]{%
-    {\cftpartleader}%
-    {\makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}\cftpartafterpnum\cftpartpnumfinal\par}%
+    {%
+     \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \cftpartleader
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }%
+    {\UseHookWithArguments{contentsline/page/before}{4}{-1}{}{#1}{\@contentsline@destination}%
+     \makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}%
+     \UseHookWithArguments{contentsline/page/after}{4}{-1}{}{#1}{\@contentsline@destination}%
+     \cftpartafterpnum\cftpartpnumfinal\par}%
   }
 %    \end{macrocode}
 % \Lpack{koma} classes use some different settings.
@@ -1975,7 +1994,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftchapaftersnum
      \let\@cftasnumb \cftchapaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/after}{4}
+         {0}{#1}{#2}{\@contentsline@destination}%
      {\cftchapfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+         {0}{#1}{#2}{\@contentsline@destination}%
      \cftchapfillnum{#2}}%
   \fi}%
 \fi
@@ -2016,8 +2039,14 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftchapafterpnum}{}
   \newcommand{\cftchappnumfinal}{\cftpnumfinaldefault}
   \newcommand{\cftchapfillnum}[1]{%
-    {\cftchapleader}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}\cftchapafterpnum\cftchappnumfinal\par
+    {\UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \cftchapleader
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }\nobreak
+    \UseHookWithArguments{contentsline/page/before}{4}{0}{}{#1}{\@contentsline@destination}%
+    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}%
+    \UseHookWithArguments{contentsline/page/before}{4}{0}{}{#1}{\@contentsline@destination}%
+    \cftchapafterpnum\cftchappnumfinal\par
   }
 %    \end{macrocode}
 % \Lpack{koma} classes have different chapter settings.
@@ -2067,7 +2096,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsecaftersnum
      \let\@cftasnumb \cftsecaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{1}{#1}{#2}{\@contentsline@destination}%
      {\cftsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{1}{#1}{#2}{\@contentsline@destination}%
      \cftsecfillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2116,8 +2147,14 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsecafterpnum}{}
 \newcommand{\cftsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsecfillnum}[1]{%
-  {\cftsecleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{1}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftsecpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}{1}{}{#1}{\@contentsline@destination}%
     \cftsecafterpnum\cftsecpnumfinal\par
 }
 %    \end{macrocode}
@@ -2194,7 +2231,9 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % Print the (number and) title, prohibiting any breaking.
 %    \begin{macrocode}
+     \UseHookWithArguments{contentsline/text/before}{4}{2}{#1}{#2}{\@contentsline@destination}%
      {\cftsubsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{2}{#1}{#2}{\@contentsline@destination}%
 %    \end{macrocode}
 % Print the leader and the page number, and close the group.
 %    \begin{macrocode}
@@ -2261,8 +2300,14 @@ Consider installing the current version of tocbibind.}}
 % not forgetting to finish the paragraph.
 %    \begin{macrocode}
 \newcommand{\cftsubsecfillnum}[1]{%
-  {\cftsubsecleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{2}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsecpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}{2}{}{#1}{\@contentsline@destination}%
     \cftsubsecafterpnum\cftsubsecpnumfinal\par
 }
 %    \end{macrocode}
@@ -2288,7 +2333,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubsubsecaftersnum
      \let\@cftasnumb \cftsubsubsecaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{3}{#1}{#2}{\@contentsline@destination}%
      {\cftsubsubsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{3}{#1}{#2}{\@contentsline@destination}%
      \cftsubsubsecfillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2332,9 +2379,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubsubsecafterpnum}{}
 \newcommand{\cftsubsubsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubsubsecfillnum}[1]{%
-  {\cftsubsubsecleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubsubsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{3}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsubsecpagefont #1}%
-   \cftsubsubsecafterpnum\cftsubsubsecpnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}{3}{}{#1}{\@contentsline@destination}%
+    \cftsubsubsecafterpnum\cftsubsubsecpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2371,7 +2424,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftparaaftersnum
      \let\@cftasnumb \cftparaaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{4}{#1}{#2}{\@contentsline@destination}%
      {\cftparafont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{4}{#1}{#2}{\@contentsline@destination}%
      \cftparafillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2415,9 +2470,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftparaafterpnum}{}
 \newcommand{\cftparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftparafillnum}[1]{%
-  {\cftparaleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftparaleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{4}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftparapagefont #1}%
-   \cftparaafterpnum\cftparapnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}{4}{}{#1}{\@contentsline@destination}%
+    \cftparaafterpnum\cftparapnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2454,7 +2515,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubparaaftersnum
      \let\@cftasnumb \cftsubparaaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{5}{#1}{#2}{\@contentsline@destination}%
      {\cftsubparafont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{5}{#1}{#2}{\@contentsline@destination}%
      \cftsubparafillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2498,9 +2561,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubparaafterpnum}{}
 \newcommand{\cftsubparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubparafillnum}[1]{%
-  {\cftsubparaleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubparaleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{5}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftsubparapagefont #1}%
-   \cftsubparaafterpnum\cftsubparapnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}{5}{}{#1}{\@contentsline@destination}%
+    \cftsubparaafterpnum\cftsubparapnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2659,7 +2728,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftfigaftersnum
      \let\@cftasnumb \cftfigaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{1}{#1}{#2}{\@contentsline@destination}%
      {\cftfigfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{1}{#1}{#2}{\@contentsline@destination}%
      \cftfigfillnum{#2}}%
    \fi
   }
@@ -2699,9 +2770,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftfigafterpnum}{}
 \newcommand{\cftfigpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftfigfillnum}[1]{%
-  {\cftfigleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftfigleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{1}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftfigpagefont #1}%
-   \cftfigafterpnum\cftfigpnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}{1}{}{#1}{\@contentsline@destination}%
+    \cftfigafterpnum\cftfigpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2876,7 +2953,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cfttabaftersnum
      \let\@cftasnumb \cfttabaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-     {\cfttabfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/before}{4}{1}{#1}{#2}{\@contentsline@destination}%
+      {\cfttagfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{1}{#1}{#2}{\@contentsline@destination}%
      \cfttabfillnum{#2}}%
    \fi
   }
@@ -2916,9 +2995,15 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cfttabafterpnum}{}
 \newcommand{\cfttabpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cfttabfillnum}[1]{%
-  {\cfttableader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cfttableader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}{1}{}{#1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cfttabpagefont #1}%
-   \cfttabafterpnum\cfttabpnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}{1}{}{#1}{\@contentsline@destination}%
+    \cfttabafterpnum\cfttabpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2955,7 +3040,8 @@ Consider installing the current version of tocbibind.}}
 % of |lofdepth|.
 %    \begin{macrocode}
 \renewcommand*{\l@subfigure}[2]{%
-  \ifnum \c@lofdepth > \toclevel@subfigure
+  \ifnum \toclevel@subfigure > \c@lofdepth 
+  \else
     \vskip \cftbeforesubfigskip
     {\leftskip \cftsubfigindent\relax
      \rightskip \@tocrmarg
@@ -2968,7 +3054,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubfigaftersnum
      \let\@cftasnumb \cftsubfigaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {\toclevel@subfigure}{##1}{##2}{\@contentsline@destination}%
      {\cftsubfigfont ##1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {\toclevel@subfigure}{##1}{##2}{\@contentsline@destination}%
      \cftsubfigfillnum{##2}}%
   \fi
   }%
@@ -3016,9 +3106,17 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubfigpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subfigure}{1}
 \newcommand{\cftsubfigfillnum}[1]{%
-  {\cftsubfigleader}\nobreak
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubfigleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {\toclevel@subfigure}{}{##1}{\@contentsline@destination}%
   \makebox[\@pnumwidth][\cftpnumalign]{\cftsubfigpagefont ##1}%
-   \cftsubfigafterpnum\cftsubfigpnumfinal\par
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {\toclevel@subfigure}{}{##1}{\@contentsline@destination}%
+    \cftsubfigafterpnum\cftsubfigpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -3054,7 +3152,8 @@ Consider installing the current version of tocbibind.}}
 % |lotdepth|.
 %    \begin{macrocode}
 \renewcommand*{\l@subtable}[2]{%
-  \ifnum \c@lotdepth > \toclevel@subtable
+  \ifnum \toclevel@subtable > \c@lofdepth 
+  \else
     \vskip \cftbeforesubtabskip
     {\leftskip \cftsubtabindent\relax
      \rightskip \@tocrmarg
@@ -3067,7 +3166,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubtabaftersnum
      \let\@cftasnumb \cftsubtabaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {\toclevel@subtable}{##1}{##2}{\@contentsline@destination}%
      {\cftsubtabfont ##1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {\toclevel@subtable}{##1}{##2}{\@contentsline@destination}%
      \cftsubtabfillnum{##2}}%
   \fi
   }%
@@ -3116,10 +3219,18 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubtabafterpnum}{}
 \newcommand{\cftsubtabpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subtable}{1}
-\newcommand{\cftsubtabfillnum}[1]{%
-  {\cftsubtableader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtabpagefont ##1}%
-   \cftsubtabafterpnum\cftsubtabpnumfinal\par
+\newcommand{\cftsubtagfillnum}[1]{%
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubtagleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {\toclevel@subtable}{}{##1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtagpagefont ##1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {\toclevel@subtable}{}{##1}{\@contentsline@destination}%
+    \cftsubtagafterpnum\cftsubtagpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -3216,7 +3327,9 @@ Consider installing the current version of tocbibind.}}
        \expandafter\let\expandafter\@cftasnum\csname cft#2aftersnum\endcsname
        \expandafter\let\expandafter\@cftasnumb\csname cft#2aftersnumb\endcsname
        \advance\leftskip\@tempdima \null\nobreak\hskip -\leftskip
-       {\@nameuse{cft#2font}##1}\nobreak
+       \UseHookWithArguments{contentsline/text/before}{4}{\@nameuse{toclevel@#2}}{##1}{##2}{\@contentsline@destination}%
+        {\@nameuse{cft#2font} ##1}\nobreak
+       \UseHookWithArguments{contentsline/text/after}{4}{\@nameuse{toclevel@#2}}{##1}{##2}{\@contentsline@destination}%       
        \@nameuse{cft#2fillnum}{##2}}%
     \fi
   }  % end of \l@#2
@@ -3294,9 +3407,10 @@ Consider installing the current version of tocbibind.}}
 %
 % \begin{macro}{\toclevel@X}
 % The hyperref package needs a command |\toclevel@X|, holding
-% the \meta{level-1} value.
+% the \meta{level} value.
+% \changes{v3.0a}{2026-07-27}{Corrected the value, issue \#60}
 %    \begin{macrocode}
-  \@namedef{toclevel@#2}{#4}
+  \ExpandArgs{ce}\def{toclevel@#2}{\inteval{#4+1}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3304,8 +3418,15 @@ Consider installing the current version of tocbibind.}}
 % Typeset the leader and page number.
 %    \begin{macrocode}
   \@namedef{cft#2fillnum}##1{%
-    {\@nameuse{cft#2leader}}\nobreak
+    {\UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \@nameuse{cft#2leader}%
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }\nobreak
+    \UseHookWithArguments{contentsline/page/before}{4}
+      {\@nameuse{toclevel@#2}}{}{##1}{\@contentsline@destination}
     \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#2pagefont}##1}%
+    \UseHookWithArguments{contentsline/page/after}{4}
+      {\@nameuse{toclevel@#2}}{}{##1}{\@contentsline@destination}%
      \@nameuse{cft#2afterpnum}\@nameuse{cft#2pnumfinal}\par
   }
 %    \end{macrocode}

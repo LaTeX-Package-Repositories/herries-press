@@ -1,0 +1,26 @@
+\DocumentMetadata{tagging=on}
+\input{regression-test}
+\documentclass{report}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\newlistentry{anothersection}{toc}{0}
+\begin{document}
+\START
+\tableofcontents
+\listoffigures
+\listoftables
+\part{part}
+\section{section}
+\phantomsection\addcontentsline{toc}{anothersection}{blub}
+\subsubsection{subsubsec}
+\paragraph{paragraph} some text
+\subparagraph{subpara} some text
+\part{part}
+\section{sec}
+\subsection{subsec}
+\subsubsection{subsubsec}
+\paragraph{paragraph} some text
+\subparagraph{subpara} some text
+
+\SHOWPDFTAGS
+\end{document}
