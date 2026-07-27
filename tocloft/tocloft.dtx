@@ -57,7 +57,13 @@
 % \changes{v2.3c}{2003/09/26}{More fixes for hyperref}
 % \changes{v2.3d}{2009/09/04}{New maintainer and tiny bug fix}
 % \changes{v2.3e}{2010/10/13}{Remove a message from the console output}
-%
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to all \cs{l@X} commands}
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to all \cs{cftXfillnum} commands}
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to \cs{numberline} command}   
+%     
 % \def\dtxfile{\texttt{tocloft.dtx}}
 % \def\fileversion{v1.1a} \def\filedate{2000/02/11}
 % \def\fileversion{v2.0}  \def\filedate{2001/03/15}
@@ -217,9 +223,15 @@
 % patch is lost. The new code reinstates the patch. Note that the hooks are before and
 % after (outside) the tagging sockets that create the TOC-structure.
 % They should not contain code that creates structures that are not allowed in this place.
-% \item[Tagging of list entries] In standard \LaTeX{} the tagging support for this is mostly handled
-% through a redefinition of |\@dottedtocline|. As \Lpack{tocloft} doesn't use (and also overwrites
+
+% \item[Tagging of list entries] In standard \LaTeX{} the tagging support 
+% for the list entries is mostly handled
+% through a redefinition of |\@dottedtocline|. 
+% As \Lpack{tocloft} doesn't use |\@dottedtocline| (and also overwrites
 % |\l@part| and |\l@chapter|) none of the entries were correctly tagged. 
+% Version 3.0 now add hooks and tagging sockets to all |\l@X| 
+% (|\l@part|, |\l@chapter| etc), to all |\cftXfillnum| commands and to the 
+% |\numberline| command to enable the tagging support.  
 %  \end{description} 
 % 
 % \subsection{Legacy \LaTeX 's methods}
@@ -546,7 +558,7 @@
 % \item[\Lopt{subfigure}] This option is required if, and only if,
 % the \Lpack{tocloft} and
 % \Lpack{subfigure} packages are being used together. The two packages
-% can be specified in any order.
+% can be specified in any order. Note that the \Lpack{subfigure} is obsolete.
 %
 % \item[\Lopt{titles}]
 % The \Lopt{titles} option causes
@@ -736,7 +748,9 @@
 % \DescribeMacro{\cftXpresnum}
 % \DescribeMacro{\cftXaftersnum}
 % \DescribeMacro{\cftXaftersnumb}
+% \DescribeMacro{\cftpartinitnumwidth}
 % \changes{v1.1}{2000/02/11}{Added description of \cs{cftXpresnum}}
+% \changes{v3.0a}{2026-07-27}{Added description of \cs{cftpartinitnumwidth}}
 % Normally the section number is typeset within a box of width |\cftXnumwidth|.
 % Within the box the macro |\cftXpresnum| is first called, then the
 % number is typeset, and next the |\cftXaftersnum|
@@ -757,10 +771,17 @@
 % the KomaScript classes and for the |titlesec| package; please contact the maintainer
 % to add further corrections if you discover other packages which also exhibit this mis-behaviour.
 %
-% When a standard class is used the |\cftpartaftersnum| and
-% |\cftpartaftersnumb| macros have no effect, but they may do something
-% if a non-standard class is used.
-%
+% When a standard class is used the entry for |\part| doesn't use
+% |\numberline| and so |\cftpartaftersnum| and
+% |\cftpartaftersnumb| macros have no effect (but they may do something
+% if a non-standard class is used). This changes if |\DocumentMetadata| is used:
+% then also |\part| uses |\numberline|. To allow to adapt the formatting
+% to the one used in the standard classes, the command uses |\cftpartinitnumwidth|
+% to reset the width of the box with the number to the natural width. 
+% It default definition is 
+% \begin{verbatim}
+% \newcommand{\cftpartinitnumwidth}[1]{\settowidth\@tempdima{#1}}
+% \end{verbatim}
 %
 % \DescribeMacro{\cftXleader}
 % \DescribeMacro{\cftXdotsep}

@@ -1,6 +1,6 @@
 \DocumentMetadata{tagging=on}
 \input{regression-test}
-\documentclass{article}
+\documentclass{report}
 \usepackage[titles]{tocloft}
 \usepackage{hyperref}
 \newlistentry{anothersection}{toc}{0}
@@ -11,6 +11,7 @@
 \listoffigures
 \listoftables
 \part{part}
+\chapter{Chapter}
 \section{section}
 \subsection{subsec}
 \phantomsection\addcontentsline{toc}{anothersection}{blub}
@@ -19,6 +20,7 @@
 \subparagraph{subpara} some text
 \setcounter{part}{15}
 \part{part}
+\chapter{Chapter}
 \section{sec}
 \subsection{subsec}
 \subsubsection{subsubsec}
