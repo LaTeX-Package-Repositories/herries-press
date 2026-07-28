@@ -1595,7 +1595,8 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 %
 % \begin{macro}{\cfttitlecommand}
-% This command is used to typeset the title if the \texttt{titles} option is not used.
+% This command is used to typeset the title if \cs{DocumentMetadata} \emph{is} used \emph{and}
+% the \texttt{titles} option is \emph{not} used.
 % \changes{3.0a}{2026-07-28}{Add \cs{cfttitlecommand}}
 %    \begin{macrocode}
 \if@cfthaschapter
@@ -1606,6 +1607,68 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 % 
+%    \begin{macrocode}
+\IfDocumentMetadataTF
+ {
+   \DeclareDocumentCommand \cftchapter {O{}m}
+     {%
+       \chapter
+         [
+           toc={},
+           placement=normal,
+           unnumbered,
+           after-penalty-vspace=\UseName{cftbefore#2titleskip},
+           after-vspace=\UseName{cftafter#2titleskip},
+           final-code=\@cftpagestyle\@afterheading,
+           title-decls=\UseName{cft#2titlefont},
+           #1      
+         ] {\UseName{cft#2titlename}}%
+     }    
+   \DeclareDocumentCommand \cftsection {O{}m}
+     {%
+      \section[ 
+           toc={},
+           placement=normal,
+           unnumbered,
+           after-penalty-vspace=\UseName{cftbefore#2titleskip},
+           after-vspace=\UseName{cftafter#2titleskip},
+           final-code=\@cftpagestyle\@afterheading,
+           title-decls=\UseName{cft#2titlefont},
+          #1      
+         ] {\UseName{cft#2titlename}}%
+     } 
+  }
+  {
+   \DeclareDocumentCommand \cftchapter {O{}m}
+    {%
+      \addpenalty\@secpenalty
+      \vspace*{\UseName{cftbefore#2titleskip}}%
+      \@cftpagestyle
+      {\interlinepenalty\@M
+      {\UseName{cft#2titlefont}\UseName{cft#2titlename}}%
+      {\UseName{cftafter#2title}}%
+      \UseName{cftmark#2}%
+      \par\nobreak
+      \vskip \UseName{cftafter#2titleskip}%
+      \@afterheading}%
+    }
+   \DeclareDocumentCommand \cftsection {O{}m}
+    {%
+      \addpenalty\@secpenalty
+      \vspace{\UseName{cftbefore#2titleskip}}%
+      \@cftpagestyle
+      {\interlinepenalty\@M
+      {\UseName{cft#2titlefont}\UseName{cft#2titlename}}%
+      {\UseName{cftafter#2title}}%
+      \UseName{cftmark#2}%
+      \par\nobreak
+      \vskip \UseName{cftafter#2titleskip}%
+      \@afterheading}%
+    } 
+  } 
+%    \end{macrocode}
+%
+
 % \begin{macro}{\tableofcontents}
 % This is a parameterised version of the default |\tableofcontents| command.
 % Each class has its own definition, but we have to cater for all classes
@@ -1658,21 +1721,9 @@ Consider installing the current version of tocbibind.}}
 % This command typesets the title for the ToC.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmaketoctitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmaketoctitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmaketoctitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforetoctitleskip}%
-  \else
-    \vspace{\cftbeforetoctitleskip}%
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cfttoctitlefont\cfttoctitlename}{\cftaftertoctitle}%
-  \cftmarktoc
-  \par\nobreak
-  \vskip \cftaftertoctitleskip
-  \@afterheading}}
+\newcommand{\@cftmaketoctitle}{\cfttitlecommand{toc}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2699,22 +2750,9 @@ Consider installing the current version of tocbibind.}}
 % This command typesets the title for the LoF.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{cftmakeloftitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{cftmakeloftitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmakeloftitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforeloftitleskip}
-  \else
-    \vspace{\cftbeforeloftitleskip}
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cftloftitlefont\cftloftitlename}{\cftafterloftitle}
-  \cftmarklof
-  \par\nobreak
-  \vskip \cftafterloftitleskip
-  \@afterheading}}
-
+\newcommand{\@cftmakeloftitle}{\cfttitlecommand{lof}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2924,22 +2962,9 @@ Consider installing the current version of tocbibind.}}
 % This command typesets the title for the LoT.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmakelottitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmakelottitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmakelottitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforelottitleskip}
-  \else
-    \vspace{\cftbeforelottitleskip}
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cftlottitlefont\cftlottitlename}{\cftafterlottitle}
-  \cftmarklot
-  \par\nobreak
-  \vskip \cftafterlottitleskip
-  \@afterheading}}
-
+\newcommand{\@cftmakelottitle}{\cfttitlecommand{lot}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3577,22 +3602,9 @@ Consider installing the current version of tocbibind.}}
 % Typeset the title.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmakeZtitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmakeZtitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-  \@namedef{@cftmake#3title}{%
-    \addpenalty\@secpenalty
-    \if@cfthaschapter
-      \vspace*{\@nameuse{cftbefore#3titleskip}}%
-    \else
-      \vspace{\@nameuse{cftbefore#3titleskip}}%
-    \fi
-    \@cftpagestyle
-    {\interlinepenalty\@M
-    {\@nameuse{cft#3titlefont}\UseName{cft#3titlename}}{\@nameuse{cftafter#3title}}%
-    \@nameuse{cftmark#3}%
-    \par\nobreak
-    \vskip \@nameuse{cftafter#3titleskip}%
-    \@afterheading}}
-
+  \@namedef{@cftmake#3title}{\cfttitlecommand{#3}}%
 %    \end{macrocode}
 % \end{macro}
 %
