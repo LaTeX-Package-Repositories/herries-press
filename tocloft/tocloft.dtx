@@ -1584,7 +1584,28 @@ Consider installing the current version of tocbibind.}}
 \newcommand\cftpnumfinaldefault{\kern-\p@\kern\p@}
 %    \end{macrocode}
 % \end{macro}
+% 
+% \begin{macro}{\cftZtitlename}
+% \changes{3.0a}{2026-07-28}{Parametrize also the list title names}
+%    \begin{macrocode}
+\newcommand\cfttoctitlename{\contentsname}
+\newcommand\cftloftitlename{\listfigurename}
+\newcommand\cftlottitlename{\listtablename}
+%    \end{macrocode}
+% \end{macro}
 %
+% \begin{macro}{\cfttitlecommand}
+% This command is used to typeset the title if the \texttt{titles} option is not used.
+% \changes{3.0a}{2026-07-28}{Add \cs{cfttitlecommand}}
+%    \begin{macrocode}
+\if@cfthaschapter
+ \newcommand\cfttitlecommand[1]{\cftchapter{#1}}
+\else
+ \newcommand\cfttitlecommand[1]{\cftsection{#1}}
+\fi 
+%    \end{macrocode}
+% \end{macro}
+% 
 % \begin{macro}{\tableofcontents}
 % This is a parameterised version of the default |\tableofcontents| command.
 % Each class has its own definition, but we have to cater for all classes
@@ -1655,14 +1676,6 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\cftZtitlename}
-% \changes{3.0a}{2026-07-28}{Parametrize also the list title names}
-%    \begin{macrocode}
-\newcommand\cfttoctitlename{\contentsname}
-\newcommand\cftloftitlename{\listfigurename}
-\newcommand\cftlottitlename{\listtablename}
-%    \end{macrocode}
-% \end{macro}
 % \begin{macro}{\cftbeforetoctitleskip}
 % \begin{macro}{\cftaftertoctitleskip}
 %  These two lengths control the vertical spacing before and after the
