@@ -3690,9 +3690,10 @@ Consider installing the current version of tocbibind.}}
 % The macro redefines the |\cftXnumfill| command so that there is no leader
 % and the page number is ignored.
 % \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
+% \changes{v3.0a}{2026-07-27}{Close the Reference structure}
 %    \begin{macrocode}
 \newcommand{\@cftpnumoff}[1]{%
-  \@namedef{cft#1fillnum}##1{%
+  \@namedef{cft#1fillnum}##1{\UseTaggingSocket{struct/end}%
     \cftparfillskip\@nameuse{cft#1afterpnum}\@nameuse{cft#1pnumfinal}\par}}
 
 %    \end{macrocode}
@@ -3738,7 +3739,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftpagenumbersoff}
 % The user level command for switching off page numbers is
 % |\cftpagenumbersoff{|\meta{entry}|}| where \meta{entry} is the longhand
-% name of the entry. The principal task opf this macro is to determine
+% name of the entry. The principal task of this macro is to determine
 % the corresponding shorthand name of the \meta{entry} and then call
 % |\@cftpnumoff| to do the work. For |part| and user-defined entries
 % the long- and short-hand entry names are identical.
