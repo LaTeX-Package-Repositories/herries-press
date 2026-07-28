@@ -580,7 +580,8 @@
 %
 %    Commands are provided for controlling the appearance of the
 % titles. Following \LaTeX{} custom, the title texts are the values
-% of the |\contentsname|, |\listfigurename| and |\listtablename| commands.
+% of the |\contentsname|, |\listfigurename| and |\listtablename| commands 
+% (stored inside |\cfttoctitlename|, |\cftloftitlename|, |\cftlottitlename|).
 %
 % Similar sets of commands are provided for ToC, LoF and LoT title
 % typsetting control. For convenience (certainly mine, and hopefully yours)
@@ -599,10 +600,12 @@
 % You can change them from their default values by using |\setlength|.
 %
 % \DescribeMacro{\cftZtitlefont}
+% \DescribeMacro{\cftZtitlename}
 % \DescribeMacro{\cftafterZtitle}
 % The code used for typesetting the ToC title looks like
+% \changes{3.0a}{2026-07-28}{Added \cs{cftZtitlename}}
 % \begin{verbatim}
-% {\cfttoctitlefont \contentsname}{\cftaftertoctitle}\par
+% {\cfttoctitlefont \cftZtitlename}{\cftaftertoctitle}\par
 % \end{verbatim}
 % By default, |\cftZtitlefont| is defined as a font specification
 % (e.g., |\Large\bfseries|), and |\cftafterZtitle| is empty.
@@ -1488,18 +1491,18 @@ Consider installing the current version of tocbibind.}}
 % \changes{v2.3}{2002/06/15}{Marking commands are different for koma}
 %    \begin{macrocode}
 \newcommand{\cftmarktoc}{%
-  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+  \@mkboth{\MakeUppercase\cfttoctitlename}{\MakeUppercase\cfttoctitlename}}
 \newcommand{\cftmarklof}{%
-  \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}}
+  \@mkboth{\MakeUppercase\cftloftitlename}{\MakeUppercase\cftloftitlename}}
 \newcommand{\cftmarklot}{%
-  \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+  \@mkboth{\MakeUppercase\cftlottitlename}{\MakeUppercase\cftlottitlename}}
 \if@cftkoma
   \renewcommand{\cftmarktoc}{%
-    \@mkboth{\contentsname}{\contentsname}}
+    \@mkboth{\cfttoctitlename}{\cfttoctitlename}}
   \renewcommand{\cftmarklof}{%
-    \@mkboth{\listfigurename}{\listfigurename}}
+    \@mkboth{\cftloftitlename}{\cftloftitlename}}
   \renewcommand{\cftmarklot}{%
-    \@mkboth{\listtablename}{\listtablename}}
+    \@mkboth{\cftlottitlename}{\cftlottitlename}}
 \fi
 %    \end{macrocode}
 % \end{macro}
@@ -1553,10 +1556,10 @@ Consider installing the current version of tocbibind.}}
   \if@dotoctoc
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\contentsname}
+      \addcontentsline{toc}{chapter}{\cfttoctitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\contentsname}
+      \addcontentsline{toc}{\@tocextra}{\cfttoctitlename}
     \fi
   \fi}
 
@@ -1644,7 +1647,7 @@ Consider installing the current version of tocbibind.}}
   \fi
   \@cftpagestyle
   {\interlinepenalty\@M
-  {\cfttoctitlefont\contentsname}{\cftaftertoctitle}%
+  {\cfttoctitlefont\cfttoctitlename}{\cftaftertoctitle}%
   \cftmarktoc
   \par\nobreak
   \vskip \cftaftertoctitleskip
@@ -1652,6 +1655,14 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\cftZtitlename}
+% \changes{3.0a}{2026-07-28}{Parametrize also the list title names}
+%    \begin{macrocode}
+\newcommand\cfttoctitlename{\contentsname}
+\newcommand\cftloftitlename{\listfigurename}
+\newcommand\cftlottitlename{\listtablename}
+%    \end{macrocode}
+% \end{macro}
 % \begin{macro}{\cftbeforetoctitleskip}
 % \begin{macro}{\cftaftertoctitleskip}
 %  These two lengths control the vertical spacing before and after the
@@ -2626,10 +2637,10 @@ Consider installing the current version of tocbibind.}}
   \if@dotoclof
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\listfigurename}
+      \addcontentsline{toc}{chapter}{\cftloftitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\listfigurename}
+      \addcontentsline{toc}{\@tocextra}{\cftloftitlename}
     \fi
   \fi}
 %    \end{macrocode}
@@ -2685,7 +2696,7 @@ Consider installing the current version of tocbibind.}}
   \fi
   \@cftpagestyle
   {\interlinepenalty\@M
-  {\cftloftitlefont\listfigurename}{\cftafterloftitle}
+  {\cftloftitlefont\cftloftitlename}{\cftafterloftitle}
   \cftmarklof
   \par\nobreak
   \vskip \cftafterloftitleskip
@@ -2849,10 +2860,10 @@ Consider installing the current version of tocbibind.}}
   \if@dotoclot
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\listtablename}
+      \addcontentsline{toc}{chapter}{\cftlottitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\listtablename}
+      \addcontentsline{toc}{\@tocextra}{\cftlottitlename}
     \fi
   \fi}
 
@@ -2910,7 +2921,7 @@ Consider installing the current version of tocbibind.}}
   \fi
   \@cftpagestyle
   {\interlinepenalty\@M
-  {\cftlottitlefont\listtablename}{\cftafterlottitle}
+  {\cftlottitlefont\cftlottitlename}{\cftafterlottitle}
   \cftmarklot
   \par\nobreak
   \vskip \cftafterlottitleskip
@@ -3494,17 +3505,21 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
-%
+% \begin{macro}{\cftZtitlename}
+%    \begin{macrocode}
+  \@namedef{cft#3titlename}{#4}
+%    \end{macrocode}
+% \end{macro}
 % \begin{macro}{\cftmarkZ}
 % The heading marks for the listing.
 % \changes{v2.3}{2002/06/15}{different koma settings in \cs{newlistof}}
 %    \begin{macrocode}
   \if@cftkoma
     \@namedef{cftmark#3}{%
-      \@mkboth{#4}{#4}}
+      \@mkboth{\UseName{cft#3titlename}}{\UseName{cft#3titlename}}}
   \else
     \@namedef{cftmark#3}{%
-      \@mkboth{\MakeUppercase{#4}}{\MakeUppercase{#4}}}
+      \@mkboth{\MakeUppercase{\UseName{cft#3titlename}}}{\MakeUppercase{\UseName{cft#3titlename}}}}
   \fi
 %    \end{macrocode}
 % \end{macro}
@@ -3520,9 +3535,9 @@ Consider installing the current version of tocbibind.}}
   \@namedef{listof#2}{%
     \@cfttocstart
     \if@cfthaschapter
-      \chapter*{#4}
+      \chapter*{\UseName{cft#3titlename}}
     \else
-      \section*{#4}
+      \section*{\UseName{cft#3titlename}}
     \fi
     \@nameuse{cftmark#3}
     \@starttoc{#3}%
@@ -3559,7 +3574,7 @@ Consider installing the current version of tocbibind.}}
     \fi
     \@cftpagestyle
     {\interlinepenalty\@M
-    {\@nameuse{cft#3titlefont}#4}{\@nameuse{cftafter#3title}}%
+    {\@nameuse{cft#3titlefont}\UseName{cft#3titlename}}{\@nameuse{cftafter#3title}}%
     \@nameuse{cftmark#3}%
     \par\nobreak
     \vskip \@nameuse{cftafter#3titleskip}%
