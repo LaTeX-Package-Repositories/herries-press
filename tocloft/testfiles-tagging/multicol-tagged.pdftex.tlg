@@ -1,0 +1,1995 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(multicol-tagged.toc)
+\tf@toc=\write...
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\pdfinterwordspaceon
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\pdfrunninglinkoff
+...\pdfliteral page{/Artifact BMC}
+...\marks4{b-,62,-1,}
+...\marks4{b+,62,-1,}
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+...\pdfliteral page{EMC}
+...\marks4{e-,62,5,}
+...\marks4{e+,62,5,}
+...\pdfrunninglinkon
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 400.89386fil
+...\hbox(0.0+0.0)x0.0
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 15.06577 plus 4.3045 minus 0.86089
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 8.06242
+...\hbox(9.93758+0.0)x345.0, glue set 283.1645fil
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+....\write1{\new@label@record{mcid-1}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{1}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/14.4 C
+....\T1/cmr/bx/n/14.4 o
+....\T1/cmr/bx/n/14.4 n
+....\kern-0.4399
+....\T1/cmr/bx/n/14.4 t
+....\T1/cmr/bx/n/14.4 e
+....\T1/cmr/bx/n/14.4 n
+....\kern-0.4399
+....\T1/cmr/bx/n/14.4 t
+....\T1/cmr/bx/n/14.4 s
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,1,6,section,,,}
+...\marks4{b+,1,6,section,,,}
+...\marks4{e-,1,6,}
+...\marks4{e+,1,6,}
+...\penalty 10000
+...\glue 9.90036 plus 0.86089
+...\glue -9.90036 plus -0.86089
+...\penalty 0
+...\glue 9.90036 plus 0.86089
+...\glue -9.90036 plus -0.86089
+...\glue 12.0 plus 4.0 minus 3.0
+...\kern 2.0
+...\hbox(79.99756+1.94397)x345.0, glue set 5.0fil
+....\vbox(79.99756+0.0)x167.5
+.....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus -2.0
+.....\glue(\splittopskip) 3.51547 plus 2.0
+.....\hbox(6.48453+0.0)x167.5, glue set 131.41852fill
+......\glue(\leftskip) 14.99634
+......\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -14.99634
+......\write1{\new@label@record{mcid-2}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{2}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x14.99634, glue set 9.24774fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,2,9,}
+.......\marks4{e+,2,9,}
+.......\write1{\new@label@record{mcid-3}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{3}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,3,10,Lbl,,,}
+.......\marks4{b+,3,10,Lbl,,,}
+.......\T1/cmr/bx/n/10 1
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,3,10,}
+.......\marks4{e+,3,10,}
+.......\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,4,9,Reference,,,}
+.......\marks4{b+,4,9,Reference,,,}
+......\T1/cmr/bx/n/10 a
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.55518+0.0)x5558.61359
+........\mathon
+........\kern 2777.70996
+........\hbox(1.55518+0.0)x3.19366
+.........\T1/cmr/bx/n/10 .
+........\kern 2777.70996
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-6}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{6}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x15.49623, glue set 9.74763fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/bx/n/10 2
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,2,9,Reference,,,}
+.....\marks4{b+,2,9,Reference,,,}
+.....\marks4{e-,4,9,}
+.....\marks4{e+,4,9,}
+.....\marks4{b-,5,-1,}
+.....\marks4{b+,5,-1,}
+.....\marks4{e-,5,9,}
+.....\marks4{e+,5,9,}
+.....\marks4{b-,6,9,Reference,,,}
+.....\marks4{b+,6,9,Reference,,,}
+.....\marks4{e-,6,9,}
+.....\marks4{e+,6,9,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.5849
+.....\hbox(6.4151+0.0)x167.5, glue set 104.01547fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-7}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{7}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,7,13,}
+.......\marks4{e+,7,13,}
+.......\write1{\new@label@record{mcid-8}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{8}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,8,14,Lbl,,,}
+.......\marks4{b+,8,14,Lbl,,,}
+.......\T1/cmr/m/n/10 1
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 1
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,8,14,}
+.......\marks4{e+,8,14,}
+.......\write1{\new@label@record{mcid-9}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{9}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,9,13,Reference,,,}
+.......\marks4{b+,9,13,Reference,,,}
+......\T1/cmr/m/n/10 a
+......\T1/cmr/m/n/10 a
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-11}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{11}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 2
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,7,13,Reference,,,}
+.....\marks4{b+,7,13,Reference,,,}
+.....\marks4{e-,9,13,}
+.....\marks4{e+,9,13,}
+.....\marks4{b-,10,-1,}
+.....\marks4{b+,10,-1,}
+.....\marks4{e-,10,13,}
+.....\marks4{e+,10,13,}
+.....\marks4{b-,11,13,Reference,,,}
+.....\marks4{b+,11,13,Reference,,,}
+.....\marks4{e-,11,13,}
+.....\marks4{e+,11,13,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.1128
+.....\hbox(6.8872+0.0)x167.5, glue set 103.46005fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-12}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{12}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,12,16,}
+.......\marks4{e+,12,16,}
+.......\write1{\new@label@record{mcid-13}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{13}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,13,17,Lbl,,,}
+.......\marks4{b+,13,17,Lbl,,,}
+.......\T1/cmr/m/n/10 1
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 2
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,13,17,}
+.......\marks4{e+,13,17,}
+.......\write1{\new@label@record{mcid-14}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{14}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,14,16,Reference,,,}
+.......\marks4{b+,14,16,Reference,,,}
+......\T1/cmr/m/n/10 a
+......\T1/cmr/m/n/10 b
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-16}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{16}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 2
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,12,16,Reference,,,}
+.....\marks4{b+,12,16,Reference,,,}
+.....\marks4{e-,14,16,}
+.....\marks4{e+,14,16,}
+.....\marks4{b-,15,-1,}
+.....\marks4{b+,15,-1,}
+.....\marks4{e-,15,16,}
+.....\marks4{e+,15,16,}
+.....\marks4{b-,16,16,Reference,,,}
+.....\marks4{b+,16,16,Reference,,,}
+.....\marks4{e-,16,16,}
+.....\marks4{e+,16,16,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.5849
+.....\hbox(6.4151+0.0)x167.5, glue set 104.57089fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-17}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{17}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,17,19,}
+.......\marks4{e+,17,19,}
+.......\write1{\new@label@record{mcid-18}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{18}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,18,20,Lbl,,,}
+.......\marks4{b+,18,20,Lbl,,,}
+.......\T1/cmr/m/n/10 1
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 3
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,18,20,}
+.......\marks4{e+,18,20,}
+.......\write1{\new@label@record{mcid-19}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{19}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,19,19,Reference,,,}
+.......\marks4{b+,19,19,Reference,,,}
+......\T1/cmr/m/n/10 a
+......\T1/cmr/m/n/10 c
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-21}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{21}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 2
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,17,19,Reference,,,}
+.....\marks4{b+,17,19,Reference,,,}
+.....\marks4{e-,19,19,}
+.....\marks4{e+,19,19,}
+.....\marks4{b-,20,-1,}
+.....\marks4{b+,20,-1,}
+.....\marks4{e-,20,19,}
+.....\marks4{e+,20,19,}
+.....\marks4{b-,21,19,Reference,,,}
+.....\marks4{b+,21,19,Reference,,,}
+.....\marks4{e-,21,19,}
+.....\marks4{e+,21,19,}
+.....\penalty -300
+.....\glue 9.99756 plus 1.0
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.0989
+.....\hbox(6.9011+0.0)x167.5, glue set 130.6201fill
+......\glue(\leftskip) 14.99634
+......\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -14.99634
+......\write1{\new@label@record{mcid-22}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{22}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x14.99634, glue set 9.24774fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,22,22,}
+.......\marks4{e+,22,22,}
+.......\write1{\new@label@record{mcid-23}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{23}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,23,23,Lbl,,,}
+.......\marks4{b+,23,23,Lbl,,,}
+.......\T1/cmr/bx/n/10 2
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,23,23,}
+.......\marks4{e+,23,23,}
+.......\write1{\new@label@record{mcid-24}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{24}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,24,22,Reference,,,}
+.......\marks4{b+,24,22,Reference,,,}
+......\T1/cmr/bx/n/10 b
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.55518+0.0)x5558.61359
+........\mathon
+........\kern 2777.70996
+........\hbox(1.55518+0.0)x3.19366
+.........\T1/cmr/bx/n/10 .
+........\kern 2777.70996
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-26}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{26}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x15.49623, glue set 9.74763fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/bx/n/10 3
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,22,22,Reference,,,}
+.....\marks4{b+,22,22,Reference,,,}
+.....\marks4{e-,24,22,}
+.....\marks4{e+,24,22,}
+.....\marks4{b-,25,-1,}
+.....\marks4{b+,25,-1,}
+.....\marks4{e-,25,22,}
+.....\marks4{e+,25,22,}
+.....\marks4{b-,26,22,Reference,,,}
+.....\marks4{b+,26,22,Reference,,,}
+.....\marks4{e-,26,22,}
+.....\marks4{e+,26,22,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.1128
+.....\hbox(6.8872+0.0)x167.5, glue set 103.46005fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-27}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{27}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,27,26,}
+.......\marks4{e+,27,26,}
+.......\write1{\new@label@record{mcid-28}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{28}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,28,27,Lbl,,,}
+.......\marks4{b+,28,27,Lbl,,,}
+.......\T1/cmr/m/n/10 2
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 1
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,28,27,}
+.......\marks4{e+,28,27,}
+.......\write1{\new@label@record{mcid-29}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{29}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,29,26,Reference,,,}
+.......\marks4{b+,29,26,Reference,,,}
+......\T1/cmr/m/n/10 b
+......\T1/cmr/m/n/10 a
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-31}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{31}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 3
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,27,26,Reference,,,}
+.....\marks4{b+,27,26,Reference,,,}
+.....\marks4{e-,29,26,}
+.....\marks4{e+,29,26,}
+.....\marks4{b-,30,-1,}
+.....\marks4{b+,30,-1,}
+.....\marks4{e-,30,26,}
+.....\marks4{e+,30,26,}
+.....\marks4{b-,31,26,Reference,,,}
+.....\marks4{b+,31,26,Reference,,,}
+.....\marks4{e-,31,26,}
+.....\marks4{e+,31,26,}
+.....\kern 0.0
+.....\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(*+*)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\vbox(79.99756+0.0)x167.5
+.....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus -2.0
+.....\glue(\splittopskip) 3.1128 plus 2.0
+.....\hbox(6.8872+0.0)x167.5, glue set 102.90463fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-32}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{32}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,32,29,}
+.......\marks4{e+,32,29,}
+.......\write1{\new@label@record{mcid-33}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{33}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,33,30,Lbl,,,}
+.......\marks4{b+,33,30,Lbl,,,}
+.......\T1/cmr/m/n/10 2
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 2
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,33,30,}
+.......\marks4{e+,33,30,}
+.......\write1{\new@label@record{mcid-34}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{34}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,34,29,Reference,,,}
+.......\marks4{b+,34,29,Reference,,,}
+......\T1/cmr/m/n/10 b
+......\T1/cmr/m/n/10 b
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-36}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{36}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 3
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,32,29,Reference,,,}
+.....\marks4{b+,32,29,Reference,,,}
+.....\marks4{e-,34,29,}
+.....\marks4{e+,34,29,}
+.....\marks4{b-,35,-1,}
+.....\marks4{b+,35,-1,}
+.....\marks4{e-,35,29,}
+.....\marks4{e+,35,29,}
+.....\marks4{b-,36,29,Reference,,,}
+.....\marks4{b+,36,29,Reference,,,}
+.....\marks4{e-,36,29,}
+.....\marks4{e+,36,29,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.1128
+.....\hbox(6.8872+0.0)x167.5, glue set 103.73776fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-37}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{37}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,37,32,}
+.......\marks4{e+,37,32,}
+.......\write1{\new@label@record{mcid-38}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{38}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,38,33,Lbl,,,}
+.......\marks4{b+,38,33,Lbl,,,}
+.......\T1/cmr/m/n/10 2
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 3
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,38,33,}
+.......\marks4{e+,38,33,}
+.......\write1{\new@label@record{mcid-39}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{39}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,39,32,Reference,,,}
+.......\marks4{b+,39,32,Reference,,,}
+......\T1/cmr/m/n/10 b
+......\kern0.27771
+......\T1/cmr/m/n/10 c
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-41}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{41}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 3
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,37,32,Reference,,,}
+.....\marks4{b+,37,32,Reference,,,}
+.....\marks4{e-,39,32,}
+.....\marks4{e+,39,32,}
+.....\marks4{b-,40,-1,}
+.....\marks4{b+,40,-1,}
+.....\marks4{e-,40,32,}
+.....\marks4{e+,40,32,}
+.....\marks4{b-,41,32,Reference,,,}
+.....\marks4{b+,41,32,Reference,,,}
+.....\marks4{e-,41,32,}
+.....\marks4{e+,41,32,}
+.....\penalty -300
+.....\glue 9.99756 plus 1.0
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.51547
+.....\hbox(6.48453+0.0)x167.5, glue set 131.89757fill
+......\glue(\leftskip) 14.99634
+......\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -14.99634
+......\write1{\new@label@record{mcid-42}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{42}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x14.99634, glue set 9.24774fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,42,35,}
+.......\marks4{e+,42,35,}
+.......\write1{\new@label@record{mcid-43}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{43}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,43,36,Lbl,,,}
+.......\marks4{b+,43,36,Lbl,,,}
+.......\T1/cmr/bx/n/10 3
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,43,36,}
+.......\marks4{e+,43,36,}
+.......\write1{\new@label@record{mcid-44}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{44}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,44,35,Reference,,,}
+.......\marks4{b+,44,35,Reference,,,}
+......\T1/cmr/bx/n/10 c
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.55518+0.0)x5558.61359
+........\mathon
+........\kern 2777.70996
+........\hbox(1.55518+0.0)x3.19366
+.........\T1/cmr/bx/n/10 .
+........\kern 2777.70996
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-46}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{46}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.48453+0.0)x15.49623, glue set 9.74763fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/bx/n/10 4
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,42,35,Reference,,,}
+.....\marks4{b+,42,35,Reference,,,}
+.....\marks4{e-,44,35,}
+.....\marks4{e+,44,35,}
+.....\marks4{b-,45,-1,}
+.....\marks4{b+,45,-1,}
+.....\marks4{e-,45,35,}
+.....\marks4{e+,45,35,}
+.....\marks4{b-,46,35,Reference,,,}
+.....\marks4{b+,46,35,Reference,,,}
+.....\marks4{e-,46,35,}
+.....\marks4{e+,46,35,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.5849
+.....\hbox(6.4151+0.0)x167.5, glue set 104.57089fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-47}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{47}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,47,39,}
+.......\marks4{e+,47,39,}
+.......\write1{\new@label@record{mcid-48}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{48}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,48,40,Lbl,,,}
+.......\marks4{b+,48,40,Lbl,,,}
+.......\T1/cmr/m/n/10 3
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 1
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,48,40,}
+.......\marks4{e+,48,40,}
+.......\write1{\new@label@record{mcid-49}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{49}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,49,39,Reference,,,}
+.......\marks4{b+,49,39,Reference,,,}
+......\T1/cmr/m/n/10 c
+......\T1/cmr/m/n/10 a
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-51}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{51}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 4
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,47,39,Reference,,,}
+.....\marks4{b+,47,39,Reference,,,}
+.....\marks4{e-,49,39,}
+.....\marks4{e+,49,39,}
+.....\marks4{b-,50,-1,}
+.....\marks4{b+,50,-1,}
+.....\marks4{e-,50,39,}
+.....\marks4{e+,50,39,}
+.....\marks4{b-,51,39,Reference,,,}
+.....\marks4{b+,51,39,Reference,,,}
+.....\marks4{e-,51,39,}
+.....\marks4{e+,51,39,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.1128
+.....\hbox(6.8872+0.0)x167.5, glue set 104.01547fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-52}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{52}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,52,42,}
+.......\marks4{e+,52,42,}
+.......\write1{\new@label@record{mcid-53}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{53}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,53,43,Lbl,,,}
+.......\marks4{b+,53,43,Lbl,,,}
+.......\T1/cmr/m/n/10 3
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 2
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,53,43,}
+.......\marks4{e+,53,43,}
+.......\write1{\new@label@record{mcid-54}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{54}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,54,42,Reference,,,}
+.......\marks4{b+,54,42,Reference,,,}
+......\T1/cmr/m/n/10 c
+......\T1/cmr/m/n/10 b
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-56}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{56}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 4
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,52,42,Reference,,,}
+.....\marks4{b+,52,42,Reference,,,}
+.....\marks4{e-,54,42,}
+.....\marks4{e+,54,42,}
+.....\marks4{b-,55,-1,}
+.....\marks4{b+,55,-1,}
+.....\marks4{e-,55,42,}
+.....\marks4{e+,55,42,}
+.....\marks4{b-,56,42,Reference,,,}
+.....\marks4{b+,56,42,Reference,,,}
+.....\marks4{e-,56,42,}
+.....\marks4{e+,56,42,}
+.....\glue 0.0 plus 0.2
+.....\glue(\parskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 5.5849
+.....\hbox(6.4151+0.0)x167.5, glue set 105.12631fill
+......\glue(\leftskip) 37.99074
+......\hbox(0.0+0.0)x14.99634
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\glue -37.99074
+......\write1{\new@label@record{mcid-57}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{57}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x22.9944, glue set 10.21974fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,57,45,}
+.......\marks4{e+,57,45,}
+.......\write1{\new@label@record{mcid-58}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{58}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,58,46,Lbl,,,}
+.......\marks4{b+,58,46,Lbl,,,}
+.......\T1/cmr/m/n/10 3
+.......\T1/cmr/m/n/10 .
+.......\T1/cmr/m/n/10 3
+.......\glue 0.0 plus 1.0fil
+.......\pdfliteral page{EMC}
+.......\marks4{e-,58,46,}
+.......\marks4{e+,58,46,}
+.......\write1{\new@label@record{mcid-59}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{59}{tagmcid}{\__property_code_tagmcid: }}}
+.......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+.......\marks4{b-,59,45,Reference,,,}
+.......\marks4{b+,59,45,Reference,,,}
+......\T1/cmr/m/n/10 c
+......\T1/cmr/m/n/10 c
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\pdfliteral page{/Artifact BMC}
+......\penalty 10000
+......\leaders 0.0 plus 1.0fill
+.......\hbox(1.0553+0.0)x7.77698
+........\mathon
+........\kern 2.49994
+........\hbox(1.0553+0.0)x2.7771
+.........\T1/cmr/m/n/10 .
+........\kern 2.49994
+........\mathoff
+......\penalty 10000
+......\pdfliteral page{EMC}
+......\penalty 10000
+......\write1{\new@label@record{mcid-61}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{61}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\hbox(6.4151+0.0)x15.49623, glue set 10.49745fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\T1/cmr/m/n/10 4
+......\pdfliteral page{EMC}
+......\kern -1.0
+......\kern 1.0
+......\penalty 10000
+......\glue(\parfillskip) -25.49379
+......\glue(\rightskip) 25.49379
+.....\marks4{b-,57,45,Reference,,,}
+.....\marks4{b+,57,45,Reference,,,}
+.....\marks4{e-,59,45,}
+.....\marks4{e+,59,45,}
+.....\marks4{b-,60,-1,}
+.....\marks4{b+,60,-1,}
+.....\marks4{e-,60,45,}
+.....\marks4{e+,60,45,}
+.....\marks4{b-,61,45,Reference,,,}
+.....\marks4{b+,61,45,Reference,,,}
+.....\marks4{e-,61,45,}
+.....\marks4{e+,61,45,}
+.....\kern 0.0
+.....\hbox(0.0+0.0)x0.0
+....\hbox(4.3045+1.94397)x0.0, glue set - 5.5542fil
+.....\hbox(4.3045+1.94397)x5.5542
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+...\kern -1.94397
+...\penalty 0
+...\penalty 10000
+...\penalty 0
+...\glue 12.0 plus 4.0 minus 3.0
+...\kern 0.0
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfrunninglinkoff
+..\pdfliteral page{/Artifact BMC}
+..\marks4{b-,63,-1,}
+..\marks4{b+,63,-1,}
+..\glue(\baselineskip) 23.5849
+..\hbox(6.4151+0.0)x345.0
+...\hbox(6.4151+0.0)x345.0, glue set 170.00061fil
+....\glue 0.0 plus 1.0fil
+....\T1/cmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page{EMC}
+..\marks4{e-,63,5,}
+..\marks4{e+,63,5,}
+..\pdfrunninglinkon
+.\kern 0.0
+.\kern 0.0
+Completed box being shipped out [2]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\pdfrunninglinkoff
+...\pdfliteral page{/Artifact BMC}
+...\marks4{b-,72,-1,}
+...\marks4{b+,72,-1,}
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+...\pdfliteral page{EMC}
+...\marks4{e-,72,56,}
+...\marks4{e+,72,56,}
+...\pdfrunninglinkon
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 468.6793fil
+...\hbox(0.0+0.0)x0.0
+...\glue(\topskip) 0.79082
+...\hbox(9.20918+0.0)x345.0, glue set 313.32756fil
+....\write1{\new@label@record{mcid-64}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{64}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(9.20918+0.0)x23.75433
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/14.4 1
+.....\glue 15.83623
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-65}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{65}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/14.4 a
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,64,49,section-number,,,}
+...\marks4{b+,64,49,section-number,,,}
+...\marks4{e-,64,49,}
+...\marks4{e+,64,49,}
+...\marks4{b-,65,48,section,,,}
+...\marks4{b+,65,48,section,,,}
+...\marks4{e-,65,48,}
+...\marks4{e+,65,48,}
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}a}{\thepage }{target*.2}\protected@file@percent }}
+...\penalty 10000
+...\glue 9.90036 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 6.21857
+...\hbox(7.78143+0.0)x345.0, glue set 301.13571fil
+....\write1{\new@label@record{mcid-66}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{66}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 1
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 1
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-67}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{67}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 a
+....\T1/cmr/bx/n/12 a
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,66,52,section-number,,,}
+...\marks4{b+,66,52,section-number,,,}
+...\marks4{e-,66,52,}
+...\marks4{e+,66,52,}
+...\marks4{b-,67,51,subsection,,,}
+...\marks4{b+,67,51,subsection,,,}
+...\marks4{e-,67,51,}
+...\marks4{e+,67,51,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {1.1}aa}{\thepage }{target*.3}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71869
+...\hbox(8.28131+0.0)x345.0, glue set 300.19844fil
+....\write1{\new@label@record{mcid-68}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{68}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 1
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 2
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-69}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{69}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 a
+....\T1/cmr/bx/n/12 b
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,68,55,section-number,,,}
+...\marks4{b+,68,55,section-number,,,}
+...\marks4{e-,68,55,}
+...\marks4{e+,68,55,}
+...\marks4{b-,69,54,subsection,,,}
+...\marks4{b+,69,54,subsection,,,}
+...\marks4{e-,69,54,}
+...\marks4{e+,69,54,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {1.2}ab}{\thepage }{target*.4}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 6.21857
+...\hbox(7.78143+0.0)x345.0, glue set 301.69807fil
+....\write1{\new@label@record{mcid-70}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{70}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 1
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 3
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-71}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{71}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 a
+....\T1/cmr/bx/n/12 c
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,70,58,section-number,,,}
+...\marks4{b+,70,58,section-number,,,}
+...\marks4{e-,70,58,}
+...\marks4{e+,70,58,}
+...\marks4{b-,71,57,subsection,,,}
+...\marks4{b+,71,57,subsection,,,}
+...\marks4{e-,71,57,}
+...\marks4{e+,71,57,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {1.3}ac}{\thepage }{target*.5}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\kern 0.0
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfrunninglinkoff
+..\pdfliteral page{/Artifact BMC}
+..\marks4{b-,73,-1,}
+..\marks4{b+,73,-1,}
+..\glue(\baselineskip) 23.5849
+..\hbox(6.4151+0.0)x345.0
+...\hbox(6.4151+0.0)x345.0, glue set 170.00061fil
+....\glue 0.0 plus 1.0fil
+....\T1/cmr/m/n/10 2
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page{EMC}
+..\marks4{e-,73,56,}
+..\marks4{e+,73,56,}
+..\pdfrunninglinkon
+.\kern 0.0
+Completed box being shipped out [3]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\pdfrunninglinkoff
+...\pdfliteral page{/Artifact BMC}
+...\marks4{b-,82,-1,}
+...\marks4{b+,82,-1,}
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+...\pdfliteral page{EMC}
+...\marks4{e-,82,68,}
+...\marks4{e+,82,68,}
+...\pdfrunninglinkon
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 468.6793fil
+...\hbox(0.0+0.0)x0.0
+...\glue(\topskip) 0.06242
+...\hbox(9.93758+0.0)x345.0, glue set 312.44775fil
+....\write1{\new@label@record{mcid-74}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{74}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(9.20918+0.0)x23.75433
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/14.4 2
+.....\glue 15.83623
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-75}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{75}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/14.4 b
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,74,61,section-number,,,}
+...\marks4{b+,74,61,section-number,,,}
+...\marks4{e-,74,61,}
+...\marks4{e+,74,61,}
+...\marks4{b-,75,60,section,,,}
+...\marks4{b+,75,60,section,,,}
+...\marks4{e-,75,60,}
+...\marks4{e+,75,60,}
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2}b}{\thepage }{target*.6}\protected@file@percent }}
+...\penalty 10000
+...\glue 9.90036 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71869
+...\hbox(8.28131+0.0)x345.0, glue set 300.19844fil
+....\write1{\new@label@record{mcid-76}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{76}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 2
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 1
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-77}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{77}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 b
+....\T1/cmr/bx/n/12 a
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,76,64,section-number,,,}
+...\marks4{b+,76,64,section-number,,,}
+...\marks4{e-,76,64,}
+...\marks4{e+,76,64,}
+...\marks4{b-,77,63,subsection,,,}
+...\marks4{b+,77,63,subsection,,,}
+...\marks4{e-,77,63,}
+...\marks4{e+,77,63,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {2.1}ba}{\thepage }{target*.7}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71869
+...\hbox(8.28131+0.0)x345.0, glue set 299.26117fil
+....\write1{\new@label@record{mcid-78}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{78}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 2
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 2
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-79}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{79}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 b
+....\T1/cmr/bx/n/12 b
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,78,67,section-number,,,}
+...\marks4{b+,78,67,section-number,,,}
+...\marks4{e-,78,67,}
+...\marks4{e+,78,67,}
+...\marks4{b-,79,66,subsection,,,}
+...\marks4{b+,79,66,subsection,,,}
+...\marks4{e-,79,66,}
+...\marks4{e+,79,66,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {2.2}bb}{\thepage }{target*.8}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71869
+...\hbox(8.28131+0.0)x345.0, glue set 300.3859fil
+....\write1{\new@label@record{mcid-80}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{80}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 2
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 3
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-81}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{81}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 b
+....\kern0.37491
+....\T1/cmr/bx/n/12 c
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,80,70,section-number,,,}
+...\marks4{b+,80,70,section-number,,,}
+...\marks4{e-,80,70,}
+...\marks4{e+,80,70,}
+...\marks4{b-,81,69,subsection,,,}
+...\marks4{b+,81,69,subsection,,,}
+...\marks4{e-,81,69,}
+...\marks4{e+,81,69,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {2.3}bc}{\thepage }{target*.9}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\kern 0.0
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfrunninglinkoff
+..\pdfliteral page{/Artifact BMC}
+..\marks4{b-,83,-1,}
+..\marks4{b+,83,-1,}
+..\glue(\baselineskip) 23.5849
+..\hbox(6.4151+0.0)x345.0
+...\hbox(6.4151+0.0)x345.0, glue set 170.00061fil
+....\glue 0.0 plus 1.0fil
+....\T1/cmr/m/n/10 3
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page{EMC}
+..\marks4{e-,83,68,}
+..\marks4{e+,83,68,}
+..\pdfrunninglinkon
+.\kern 0.0
+============================================================
+TEST 1: Show PDF Tags
+============================================================
+-------- multicol-tagged.xml (start) ---------
+<PDF>
+ <StructTreeRoot>
+  <Document xmlns="http://iso.org/pdf2/ssn"
+     id="ID.002"
+    >
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.005"
+     >
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.006"
+       title="Contents"
+       rolemaps-to="H1"
+      >
+     <?MarkedContent page="1" ?>Contents
+    </section>
+    <TOC xmlns="http://iso.org/pdf/ssn"
+       id="ID.007"
+       title="toc"
+      >
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.008"
+        title="a"
+       >
+       <?References objects="1" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.009"
+        >
+       <?MarkedContent page="1" ?>
+       <Lbl xmlns="http://iso.org/pdf2/ssn"
+          id="ID.010"
+         >
+        <?MarkedContent page="1" ?>1
+       </Lbl>
+       <?MarkedContent page="1" ?>a
+       <?MarkedContent page="1" ?>2
+      </Reference>
+     </TOCI>
+     <TOC xmlns="http://iso.org/pdf/ssn"
+        id="ID.011"
+       >
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.012"
+         title="aa"
+        >
+        <?References objects="2" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.013"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.014"
+          >
+         <?MarkedContent page="1" ?>1.1
+        </Lbl>
+        <?MarkedContent page="1" ?>aa
+        <?MarkedContent page="1" ?>2
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.015"
+         title="ab"
+        >
+        <?References objects="3" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.016"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.017"
+          >
+         <?MarkedContent page="1" ?>1.2
+        </Lbl>
+        <?MarkedContent page="1" ?>ab
+        <?MarkedContent page="1" ?>2
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.018"
+         title="ac"
+        >
+        <?References objects="4" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.019"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.020"
+          >
+         <?MarkedContent page="1" ?>1.3
+        </Lbl>
+        <?MarkedContent page="1" ?>ac
+        <?MarkedContent page="1" ?>2
+       </Reference>
+      </TOCI>
+     </TOC>
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.021"
+        title="b"
+       >
+       <?References objects="5" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.022"
+        >
+       <?MarkedContent page="1" ?>
+       <Lbl xmlns="http://iso.org/pdf2/ssn"
+          id="ID.023"
+         >
+        <?MarkedContent page="1" ?>2
+       </Lbl>
+       <?MarkedContent page="1" ?>b
+       <?MarkedContent page="1" ?>3
+      </Reference>
+     </TOCI>
+     <TOC xmlns="http://iso.org/pdf/ssn"
+        id="ID.024"
+       >
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.025"
+         title="ba"
+        >
+        <?References objects="6" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.026"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.027"
+          >
+         <?MarkedContent page="1" ?>2.1
+        </Lbl>
+        <?MarkedContent page="1" ?>ba
+        <?MarkedContent page="1" ?>3
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.028"
+         title="bb"
+        >
+        <?References objects="7" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.029"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.030"
+          >
+         <?MarkedContent page="1" ?>2.2
+        </Lbl>
+        <?MarkedContent page="1" ?>bb
+        <?MarkedContent page="1" ?>3
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.031"
+         title="bc"
+        >
+        <?References objects="8" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.032"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.033"
+          >
+         <?MarkedContent page="1" ?>2.3
+        </Lbl>
+        <?MarkedContent page="1" ?>bc
+        <?MarkedContent page="1" ?>3
+       </Reference>
+      </TOCI>
+     </TOC>
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.034"
+        title="c"
+       >
+       <?References objects="9" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.035"
+        >
+       <?MarkedContent page="1" ?>
+       <Lbl xmlns="http://iso.org/pdf2/ssn"
+          id="ID.036"
+         >
+        <?MarkedContent page="1" ?>3
+       </Lbl>
+       <?MarkedContent page="1" ?>c
+       <?MarkedContent page="1" ?>4
+      </Reference>
+     </TOCI>
+     <TOC xmlns="http://iso.org/pdf/ssn"
+        id="ID.037"
+       >
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.038"
+         title="ca"
+        >
+        <?References objects="10" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.039"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.040"
+          >
+         <?MarkedContent page="1" ?>3.1
+        </Lbl>
+        <?MarkedContent page="1" ?>ca
+        <?MarkedContent page="1" ?>4
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.041"
+         title="cb"
+        >
+        <?References objects="11" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.042"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.043"
+          >
+         <?MarkedContent page="1" ?>3.2
+        </Lbl>
+        <?MarkedContent page="1" ?>cb
+        <?MarkedContent page="1" ?>4
+       </Reference>
+      </TOCI>
+      <TOCI xmlns="http://iso.org/pdf/ssn"
+         id="ID.044"
+         title="cc"
+        >
+        <?References objects="12" ?>
+       <Reference xmlns="http://iso.org/pdf/ssn"
+          id="ID.045"
+         >
+        <?MarkedContent page="1" ?>
+        <Lbl xmlns="http://iso.org/pdf2/ssn"
+           id="ID.046"
+          >
+         <?MarkedContent page="1" ?>3.3
+        </Lbl>
+        <?MarkedContent page="1" ?>cc
+        <?MarkedContent page="1" ?>4
+       </Reference>
+      </TOCI>
+     </TOC>
+    </TOC>
+   </Sect>
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.047"
+     >
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.048"
+       title="a"
+       rolemaps-to="H1"
+      >
+     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.049"
+        rolemaps-to="Span"
+        referenced-as="1"
+       >
+      <?MarkedContent page="2" ?>1
+     </section-number>
+     <?MarkedContent page="2" ?>a
+    </section>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.050"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.051"
+        title="aa"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.052"
+         rolemaps-to="Span"
+         referenced-as="2"
+        >
+       <?MarkedContent page="2" ?>1.1
+      </section-number>
+      <?MarkedContent page="2" ?>aa
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.053"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.054"
+        title="ab"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.055"
+         rolemaps-to="Span"
+         referenced-as="3"
+        >
+       <?MarkedContent page="2" ?>1.2
+      </section-number>
+      <?MarkedContent page="2" ?>ab
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.056"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.057"
+        title="ac"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.058"
+         rolemaps-to="Span"
+         referenced-as="4"
+        >
+       <?MarkedContent page="2" ?>1.3
+      </section-number>
+      <?MarkedContent page="2" ?>ac
+     </subsection>
+    </Sect>
+   </Sect>
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.059"
+     >
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.060"
+       title="b"
+       rolemaps-to="H1"
+      >
+     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.061"
+        rolemaps-to="Span"
+        referenced-as="5"
+       >
+      <?MarkedContent page="3" ?>2
+     </section-number>
+     <?MarkedContent page="3" ?>b
+    </section>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.062"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.063"
+        title="ba"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.064"
+         rolemaps-to="Span"
+         referenced-as="6"
+        >
+       <?MarkedContent page="3" ?>2.1
+      </section-number>
+      <?MarkedContent page="3" ?>ba
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.065"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.066"
+        title="bb"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.067"
+         rolemaps-to="Span"
+         referenced-as="7"
+        >
+       <?MarkedContent page="3" ?>2.2
+      </section-number>
+      <?MarkedContent page="3" ?>bb
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.068"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.069"
+        title="bc"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.070"
+         rolemaps-to="Span"
+         referenced-as="8"
+        >
+       <?MarkedContent page="3" ?>2.3
+      </section-number>
+      <?MarkedContent page="3" ?>bc
+     </subsection>
+    </Sect>
+   </Sect>
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.071"
+     >
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.072"
+       title="c"
+       rolemaps-to="H1"
+      >
+     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.073"
+        rolemaps-to="Span"
+        referenced-as="9"
+       >
+      <?MarkedContent page="4" ?>3
+     </section-number>
+     <?MarkedContent page="4" ?>c
+    </section>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.074"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.075"
+        title="ca"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.076"
+         rolemaps-to="Span"
+         referenced-as="10"
+        >
+       <?MarkedContent page="4" ?>3.1
+      </section-number>
+      <?MarkedContent page="4" ?>ca
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.077"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.078"
+        title="cb"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.079"
+         rolemaps-to="Span"
+         referenced-as="11"
+        >
+       <?MarkedContent page="4" ?>3.2
+      </section-number>
+      <?MarkedContent page="4" ?>cb
+     </subsection>
+    </Sect>
+    <Sect xmlns="http://iso.org/pdf2/ssn"
+       id="ID.080"
+      >
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.081"
+        title="cc"
+        rolemaps-to="H2"
+       >
+      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.082"
+         rolemaps-to="Span"
+         referenced-as="12"
+        >
+       <?MarkedContent page="4" ?>3.3
+      </section-number>
+      <?MarkedContent page="4" ?>cc
+     </subsection>
+    </Sect>
+   </Sect>
+  </Document>
+ </StructTreeRoot>
+</PDF>
+-------- multicol-tagged.xml (end) -----------
+============================================================
+Completed box being shipped out [4]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\pdfrunninglinkoff
+...\pdfliteral page{/Artifact BMC}
+...\marks4{b-,92,-1,}
+...\marks4{b+,92,-1,}
+...\hbox(0.0+0.0)x345.0
+....\hbox(0.0+0.0)x345.0
+...\pdfliteral page{EMC}
+...\marks4{e-,92,80,}
+...\marks4{e+,92,80,}
+...\pdfrunninglinkon
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 468.6793fil
+...\hbox(0.0+0.0)x0.0
+...\glue(\topskip) 0.79082
+...\hbox(9.20918+0.0)x345.0, glue set 314.20734fil
+....\write1{\new@label@record{mcid-84}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{84}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(9.20918+0.0)x23.75433
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/14.4 3
+.....\glue 15.83623
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-85}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{85}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/14.4 c
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,84,73,section-number,,,}
+...\marks4{b+,84,73,section-number,,,}
+...\marks4{e-,84,73,}
+...\marks4{e+,84,73,}
+...\marks4{b-,85,72,section,,,}
+...\marks4{b+,85,72,section,,,}
+...\marks4{e-,85,72,}
+...\marks4{e+,85,72,}
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {3}c}{\thepage }{target*.10}\protected@file@percent }}
+...\penalty 10000
+...\glue 9.90036 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 6.21857
+...\hbox(7.78143+0.0)x345.0, glue set 301.69807fil
+....\write1{\new@label@record{mcid-86}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{86}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 3
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 1
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-87}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{87}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 c
+....\T1/cmr/bx/n/12 a
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,86,76,section-number,,,}
+...\marks4{b+,86,76,section-number,,,}
+...\marks4{e-,86,76,}
+...\marks4{e+,86,76,}
+...\marks4{b-,87,75,subsection,,,}
+...\marks4{b+,87,75,subsection,,,}
+...\marks4{e-,87,75,}
+...\marks4{e+,87,75,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {3.1}ca}{\thepage }{target*.11}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71869
+...\hbox(8.28131+0.0)x345.0, glue set 300.7608fil
+....\write1{\new@label@record{mcid-88}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{88}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 3
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 2
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-89}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{89}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 c
+....\T1/cmr/bx/n/12 b
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,88,79,section-number,,,}
+...\marks4{b+,88,79,section-number,,,}
+...\marks4{e-,88,79,}
+...\marks4{e+,88,79,}
+...\marks4{b-,89,78,subsection,,,}
+...\marks4{b+,89,78,subsection,,,}
+...\marks4{e-,89,78,}
+...\marks4{e+,89,78,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {3.2}cb}{\thepage }{target*.12}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 6.21857
+...\hbox(7.78143+0.0)x345.0, glue set 302.26044fil
+....\write1{\new@label@record{mcid-90}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{90}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\hbox(7.78143+0.0)x30.7425
+.....\hbox(0.0+0.0)x0.0
+.....\penalty 10000
+.....\glue 0.0
+.....\T1/cmr/bx/n/12 3
+.....\T1/cmr/bx/n/12 .
+.....\T1/cmr/bx/n/12 3
+.....\glue 13.4967
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-91}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{91}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/subsection <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\T1/cmr/bx/n/12 c
+....\T1/cmr/bx/n/12 c
+....\pdfliteral page{EMC}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\marks4{b-,90,82,section-number,,,}
+...\marks4{b+,90,82,section-number,,,}
+...\marks4{e-,90,82,}
+...\marks4{e+,90,82,}
+...\marks4{b-,91,81,subsection,,,}
+...\marks4{b+,91,81,subsection,,,}
+...\marks4{e-,91,81,}
+...\marks4{e+,91,81,}
+...\write1{\@writefile{toc}{\protect \contentsline {subsection}{\protect \numberline {3.3}cc}{\thepage }{target*.13}\protected@file@percent }}
+...\penalty 10000
+...\penalty 10000
+...\glue 6.45676 plus 0.86089
+...\kern 0.0
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfrunninglinkoff
+..\pdfliteral page{/Artifact BMC}
+..\marks4{b-,93,-1,}
+..\marks4{b+,93,-1,}
+..\glue(\baselineskip) 23.5849
+..\hbox(6.4151+0.0)x345.0
+...\hbox(6.4151+0.0)x345.0, glue set 170.00061fil
+....\glue 0.0 plus 1.0fil
+....\T1/cmr/m/n/10 4
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page{EMC}
+..\marks4{e-,93,80,}
+..\marks4{e+,93,80,}
+..\pdfrunninglinkon
+.\kern 0.0
+.\kern -633.0
+.\hbox(0.0+0.0)x0.0
+.\kern 633.0
+<<latex-list-css.html>><<latex-align-css.html>> (multicol-tagged.aux)
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~82 structure objects
+(tagpdf)             with ~93 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0
