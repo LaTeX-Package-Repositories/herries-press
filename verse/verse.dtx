@@ -60,7 +60,7 @@
 %
 % \fi
 %
-% \CheckSum{553}
+% \CheckSum{591}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -116,6 +116,7 @@
 % \changes{v2.4a}{2009/09/04}{New maintainer (Will Robertson)}
 % \changes{v2.4b}{2014/05/10}{Documentation updates}
 % \changes{v2.4c}{2024/02/11}{Avoid clash with tagging}
+% \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
 %
 % \def\dtxfile{verse.dtx}
 % ^^A \def\fileversion{v1.0}
@@ -135,6 +136,7 @@
 % \def\fileversion{v2.4a} \def\filedate{2009/09/04}
 % \def\fileversion{v2.4b} \def\filedate{2014/05/10}
 % \def\fileversion{v2.4c} \def\filedate{2024/02/12}
+% \def\fileversion{v2.5} \def\filedate{2026/08/08}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -147,9 +149,9 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
+%   Maintainer: The \LaTeX{} Project Team \\
 %   \large
-%   \texttt{http://github.com/wspr/herries-press/}
+%   \texttt{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\fileversion\qquad\filedate}
 % \maketitle
@@ -507,7 +509,7 @@
 % \subsubsection{Titles}
 %
 % \DescribeMacro{\poemtitle}
-% |\poemtitle[|\meta{short}|}{|\meta{long}|}| typesets the title
+% |\poemtitle[|\meta{short}|]{|\meta{long}|}| typesets the title
 % of a poem and makes an entry into the ToC. There is a starred version
 % that makes no ToC entry.
 %
@@ -1280,6 +1282,17 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\@vsdelayfortaggingcode}
+% This delays the redefinition of verse to begindocument if tagging is enabled
+% since otherwise the block code will overwrite our definition.
+% \changes{v2.5}{2026/08/08}{Added \cs{@vsdelayfortaggingcode}}
+%    \begin{macrocode}
+\IfDocumentMetadataTF
+  {\newcommand{\@vsdelayfortaggingcode}{\AtBeginDocument}}
+  {\newcommand{\@vsdelayfortaggingcode}{\@firstofone}}
+%    \end{macrocode}
+% \end{macro}
+%
 % \begin{environment}{verse}
 % The extended |verse| environment. It sets the verse line counter,
 % then defines the particular list environment adjusting the margins
@@ -1292,28 +1305,31 @@
 %                of the original (misplaced close brace)}
 % \changes{v2.2}{2002/07/18}{Added \cs{stanzaskip} to the verse environment}
 % \changes{v2.22}{2005/08/22}{Added verse@envctr to the verse environment}
+% \changes{v2.5}{2026/08/08}{Delay redefinition of verse if tagging is enabled}
 %    \begin{macrocode}
-\renewenvironment{verse}[1][\linewidth]{%
-  \stepcounter{verse@envctr}%
-  \setcounter{poemline}{0}\refstepcounter{poemline}%
-  \setcounter{vslineno}{1}%
-  \let\\=\@vscentercr
-  \list{}{\itemsep \z@
-          \itemindent  -\vindent%
-          \listparindent\itemindent
-          \parsep       \stanzaskip
-          \ifdim #1 < \linewidth
-            \rightmargin        \z@
-            \setlength{\leftmargin}{\linewidth}%
-            \addtolength{\leftmargin}{-#1}%
-            \addtolength{\leftmargin}{-0.5\leftmargin}%
-          \else
-            \rightmargin        \leftmargin
-          \fi
-          \addtolength{\leftmargin}{\vindent}}%
-  \item[]%
+\@vsdelayfortaggingcode{%
+  \renewenvironment{verse}[1][\linewidth]{%
+    \stepcounter{verse@envctr}%
+    \setcounter{poemline}{0}\refstepcounter{poemline}%
+    \setcounter{vslineno}{1}%
+    \let\\=\@vscentercr
+    \list{}{\itemsep \z@
+            \itemindent  -\vindent%
+            \listparindent\itemindent
+            \parsep       \stanzaskip
+            \ifdim #1 < \linewidth
+              \rightmargin        \z@
+              \setlength{\leftmargin}{\linewidth}%
+              \addtolength{\leftmargin}{-#1}%
+              \addtolength{\leftmargin}{-0.5\leftmargin}%
+            \else
+              \rightmargin        \leftmargin
+            \fi
+            \addtolength{\leftmargin}{\vindent}}%
+    \item[]%
+  }
+  {\endlist}
 }
-{\endlist}
 %    \end{macrocode}
 % \end{environment}
 %
@@ -1643,11 +1659,48 @@
 % \begin{macro}{\poemtitle}
 % Typeset a poem title (like |\section| or other). The actual work
 % is done by |\@vsptitle| (plain) or |\@vssptitle| (starred).
+% If tagging is enabled, we set up a heading instance and use that.
+% \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
 %    \begin{macrocode}
-\newcommand{\poemtitle}{%
-  \par
-  \secdef\@vsptitle\@vssptitle
-}
+\IfDocumentMetadataTF
+  {
+    \DeclareInstance{heading}{poemtitle}{display}
+      {
+        , name = poemtitle
+        , placement = normal
+        , before-vspace = \beforepoemtitleskip
+        , after-vspace = \afterpoemtitleskip
+        , heading-decls = \centering
+        , title-decls = \poemtitlefont
+        , mark-cmd = \poemtitlemark{#1}
+        , para-indent = false
+      }
+    \IfFormatAtLeastTF{2026-11-01}
+      {
+        \EditInstance{heading}{poemtitle}{force-unnumbered = true}
+        \NewDocumentCommand \poemtitle {s ={shorttitle}O{} m}
+          {%
+            \IfBooleanF{#1}%
+              {\addtocontents{toc}{\protect\ExpandArgs{cc}\let{l@poemtitle}{l@\poemtoc}}}%
+            \ParseLaTeXeHeading{poemtitle}{#1}{#2}{#3}%
+          }
+      }
+      {
+        \NewDocumentCommand \poemtitle {s ={shorttitle}O{} m}
+          {%
+            \IfBooleanTF{#1}%
+              {\ParseLaTeXeHeading{poemtitle}{\BooleanTrue}{#2}{#3}}%
+              {\addtocontents{toc}{\protect\ExpandArgs{cc}\let{l@poemtitle}{l@\poemtoc}}%
+                \ParseLaTeXeHeading{poemtitle}{\BooleanTrue}{toc=#3,#2}{#3}}%
+          }
+      }
+  }
+  {
+    \newcommand{\poemtitle}{%
+      \par
+      \secdef\@vsptitle\@vssptitle
+    }
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1739,5 +1792,3 @@
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
-
-
