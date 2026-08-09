@@ -14,8 +14,8 @@ uploadconfig = {
   license     = "lppl1.3c",
   summary     = "Aids for typesetting simple verse",
   ctanPath    = "/macros/latex/contrib/"..module,
-  repository  = "https://github.com/wspr/herries-press/",
-  bugtracker  = "https://github.com/wspr/herries-press/issues",
+  repository  = "https://github.com/latex-package-repositories/herries-press/",
+  bugtracker  = "https://github.com/latex-package-repositories/herries-press/issues",
   description = [[
 The package documentation discusses approaches to the problem; the package is strong on layout, from simple alternate-line indentation to the Mouse's tale from Alice in Wonderland.
   ]]
@@ -24,6 +24,9 @@ The package documentation discusses approaches to the problem; the package is st
 announce = {}
 announce["2.4c"] = [[
   * Avoid conflict with experimental LaTeX tagging code.
+]]
+announce["2.5"] = [[
+  * Avoid conflict with LaTeX tagging code.
 ]]
 
 
@@ -55,7 +58,7 @@ if pkgdate ~= today then
         "\nToday:    "..today)
 end
 
-require("l3build-wspr.lua")
+-- require("l3build-wspr.lua")
 
 --[===========[--
      TAGGING
