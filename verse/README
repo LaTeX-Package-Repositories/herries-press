@@ -3,6 +3,9 @@ The VERSE package
 
     verse provides some aids for typesetting simple verse (poems).
 
+Changes in version 2.5 (2028-08-08)
+More support for LaTeX tagging
+
 Changes in version 2.4b (2014/05/10)
 - Documentation updates
 - Minor, largely cosmetic, code changes
