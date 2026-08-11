@@ -1222,6 +1222,8 @@
 % ...
 % \end{verbatim}
 %
+% If tagging is enabled, the toc entry is currently tagged as an individual toc entry. 
+% 
 % \DescribeMacro{\cftchapterprecishere}
 % \DescribeMacro{\cftchapterprecistoc}
 % The |\cftchapterprecis| command calls these two commands to print the
@@ -3952,13 +3954,15 @@ Consider installing the current version of tocbibind.}}
 % |\cftchapterprecistoc{|\meta{text}|}| adds \meta{text} to the \file{.toc}
 % file. The \meta{text} will be typeset within the same margins as the
 % the title text of a |\chapter| heading, using an italic font.
+% \changes{3.0a}{2026-08-11}{Add tagging socket}
 %    \begin{macrocode}
 \newcommand{\cftchapterprecistoc}[1]{\addtocontents{toc}{%
 %    \end{macrocode}
 % Start a group to localize changes to the paragraphing. Set the
 % left margin to the chapter indent plus the chapter number width.
 %    \begin{macrocode}
-  {\leftskip \cftchapindent\relax
+  {\UseTaggingSocket{struct-mc}{tag=\protect\UseStructureName{toc/item}}{%
+  \leftskip \cftchapindent\relax
    \advance\leftskip \cftchapnumwidth\relax
 %    \end{macrocode}
 % Set the right hand margin to |\@tocrmarg|.
@@ -3969,7 +3973,7 @@ Consider installing the current version of tocbibind.}}
 % is finished (to use the local skips). Finally close the group and we
 % are done.
 %    \begin{macrocode}
-   \textit{#1}\protect\par}}}
+   \textit{#1}\protect\par}}}}
 
 %    \end{macrocode}
 % \end{macro}
