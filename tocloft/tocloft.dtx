@@ -236,6 +236,28 @@
 % Version 3.0 now add hooks and tagging sockets to all |\l@X| 
 % (|\l@part|, |\l@chapter| etc), to all |\cftXfillnum| commands and to the 
 % |\numberline| command to enable the tagging support.  
+% 
+% \item[Tagging of list headings] 
+% If the package option \texttt{titles} is used, \Lpack{tocloft} doesn't redefine the list
+% commands and the list headings are tagged as in standard \LaTeX. The various commands
+% offered by the package to configure the look of the heading then do nothing. 
+%  
+% If the package option \texttt{titles} is \emph{not} used, \Lpack{tocloft} 
+% doesn't use heading commands to typeset the headings of lists, instead it uses a combination of
+% spacing and font commands to get the right look and the headings are not
+% properly tagged as headings. 
+% 
+% There are theoretically two options to add the proper tagging support:
+% suitable structures could be added manually, e.g. with a tagging socket, or the 
+% headings could be typeset with standard heading commands always. 
+% The new code uses the second approach and passes the various \Lpack{tocloft} commands
+% as keys to the heading commands to emulate the configuration options. 
+%
+% This means that the headings can be configured by using the legacy \Lpack{tocloft} commands,
+% but also react (to some extend) if the template instances are edited. 
+% It also leads to small incompatible changes: As a heading command finishes with a \cs{par}
+% the command \cs{cftafterZtitle} should not start with a newline command (and if used together
+% with tagging, the tagging should be carefully checked.
 %  \end{description} 
 % 
 % \subsection{Legacy \LaTeX 's methods}
@@ -624,7 +646,9 @@
 % \end{verbatim}
 %       will put the word `Page' flushright on the line following the title.
 %       (If you do this, then you may need to decrease
-%        |\cftafterZtitleskip|).
+%        |\cftafterZtitleskip|). Note that if \cs{DocumentMetadata} is used, the command
+%        should not start with a \verb+\\+, as it is will be inserted after the 
+%        heading command. 
 % \item |\renewcommand{\cftafterZtitle}{\thispagestyle{empty}}| will
 %       make the page with the title empty (i.e., the page
 %       number will not be printed).
