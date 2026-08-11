@@ -1644,7 +1644,7 @@ Consider installing the current version of tocbibind.}}
            toc={},
            placement=normal,
            unnumbered,
-           after-penalty-vspace=\UseName{cftbefore#2titleskip},
+           after-penalty-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
            after-vspace=\UseName{cftafter#2titleskip},
            final-code=\@cftpagestyle\@afterheading,
            title-decls=\UseName{cft#2titlefont},
