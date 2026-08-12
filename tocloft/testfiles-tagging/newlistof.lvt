@@ -1,0 +1,20 @@
+% test hooks in \@starttoc
+\DocumentMetadata{tagging=on}
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{tocloft}
+\newcommand{\listanswername}{List of Answers}
+\newlistof[chapter]{answer}{ans}{\listanswername}
+\begin{document}
+\START
+\listofanswer
+
+ \newcommand{\answer}[1]{%
+   \refstepcounter{answer}
+   \par\noindent\textbf{Answer \theanswer. #1}
+   \addcontentsline{ans}{answer}{\protect\numberline{\theanswer}#1}\par}
+   
+\answer{Hard} The \ldots
+
+\SHOWPDFTAGS
+\end{document}
