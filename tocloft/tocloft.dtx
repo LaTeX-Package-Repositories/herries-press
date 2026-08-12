@@ -243,11 +243,11 @@
 % \subsection{Compatibility with \cs{DocumentMetadata} and the tagging support}
 % To enable tagging of the various lists like the Table of Contents, the code loaded
 % by \cs{DocumentMetadata} in \LaTeX\ since 2025-11-01 changes various internals of
-% the ToC processing and this clashes with the changes made by \Lpack{tocloft} in various way:
+% the ToC processing and this clashes with the changes made by \Lpack{tocloft} in various ways:
 % In some cases \cs{DocumentMetadata} overwrites changes by \Lpack{tocloft} and destroys its
 % features, in other \Lpack{tocloft} destroys tagging. 
 % 
-% Version 3 of the package tries to make the \Lpack{tocloft} 
+% Version 3 of the package tries to make the \Lpack{tocloft} package
 % compatible with \cs{DocumentMetadata}. It is recommended to use this together with
 % a current \LaTeX.
 % 
@@ -869,7 +869,7 @@
 % then also |\part| uses |\numberline|. To allow to adapt the formatting
 % to the one used in the standard classes, the command uses |\cftpartinitnumwidth|
 % to reset the width of the box with the number to the natural width. 
-% It default definition is 
+% Its default definition is 
 % \begin{verbatim}
 % \newcommand{\cftpartinitnumwidth}[1]{\settowidth\@tempdima{#1}}
 % \end{verbatim}
@@ -886,7 +886,7 @@
 % is in terms of \emph{math units} where there are 18mu to 1em.
 %
 % \DescribeMacro{\cftXfillnum}\cftlabelentrycommand{}{fillnum}
-% This commands typeset the leader. It contains the sockets for tagging support and
+% This commands typesets the leader. It contains the sockets for tagging support and
 % should normally not be redefined by a user. 
 % 
 % \DescribeMacro{\cftXpagefont}\cftlabelentrycommand{}{pagefont}
@@ -898,7 +898,7 @@
 % is to do nothing. It can be changed by |\renewcommand|.
 % 
 % \DescribeMacro{\cftXpnumfinal}\cftlabelentrycommand{}{pnumfinal}
-% This macro is called after |\cftXafterpnum|. By default is contains a 
+% This macro is called after |\cftXafterpnum|. By default it contains a 
 % pair of kerns (stored in the command |\cftpnumfinaldefault|) 
 % that with \Lpack{microtype} suppresses protrusion in this place. Such kerns
 % are also used in the \LaTeX{} kernel and normally there should be no need to remove
