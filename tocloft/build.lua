@@ -4,13 +4,13 @@
 --]========================]--
 
 module  = "tocloft"
-version = "2.3j"
-pkgdate = "2020/01/10"
+version = "3.0a"
+pkgdate = "2026-08-12"
 gittag  = module.."-v"..version
 
 uploadconfig = {
   version     = version,
-  author      = "Peter R Wilson; Will Robertson",
+  author      = "Peter R Wilson; Will Robertson; LaTeX Project",
   license     = "lppl1.3c",
   summary     = "Control table of contents, figures, etc",
   ctanPath    = "/macros/latex/contrib/tocloft",
@@ -22,9 +22,11 @@ Provides control over the typography of the Table of Contents, List of Figures a
 }
 
 announce = {}
-announce["2.3j"] = [[
-  * Add documentation around lofdepth and lotdepth when using subfigure captions.
-  * Allow paragraph skip to be set even if the [titles] option is in effect.
+announce["3.0a"] = [[
+  * added kern pair at end of toc entries for microtype, issue #56
+  * use four arguments with contentsline, issue #59
+  * faulty `\toclevel@X` setting, issue #60
+  * added tagging support
 ]]
 uploadconfig.announcement = announce[version]
 
