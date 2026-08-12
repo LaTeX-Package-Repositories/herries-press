@@ -2,9 +2,10 @@
 %
 % tocloft.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project, Will Robertson (will dot robertson at latex-project dot org)
 % Copyright 1998-2003 Peter R. Wilson
 % Copyright 2009-2022 Will Robertson
+% Copyright 2026 LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -29,8 +30,12 @@
 %</driver>
 %
 %<*usc>
+\providecommand\DeclareRelease[3]{}
+\providecommand\DeclareCurrentRelease[2]{}
+\DeclareRelease{v2}{0000-00-00}{tocloft-2022-06-18.sty}
+\DeclareCurrentRelease{}{2026-08-12}
 \NeedsTeXFormat{LaTeX2e}[2023-11-01]
-\ProvidesPackage{tocloft}[2022/06/18 v2.3i parameterised ToC, etc., typesetting]
+\ProvidesPackage{tocloft}[2026-08-12 v3.0a parameterised ToC, etc., typesetting]
 %</usc>
 %
 % \fi
@@ -79,8 +84,9 @@
 % \def\fileversion{v2.3g} \def\filedate{2014/06/14}
 % \def\fileversion{v2.3h} \def\filedate{2017/08/29}
 % \def\fileversion{v2.3i} \def\filedate{2017/08/31}
-% \def\fileversion{v2.3j} \def\filedate{2020/01/10}
-%
+% \def\fileversion{v2.3j} \def\filedate{2022/06/18}
+% \def\fileversion{v3.0a} \def\filedate{2026/08/12}
+% 
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
 % \DoNotIndex{\@dotsep,\@empty,\@float,\@gobble,\@gobbletwo,\@ignoretrue}
@@ -202,7 +208,13 @@
 % The package is not compatible with the KOMA-class. 
 % The memoir class suppresses the package
 % and emulates it. 
-%
+% 
+% Version 3 adds support for \cs{DocumentMetadata} and tagging. It requires a current \LaTeX\ format.
+% The previous version can be loaded with 
+% \begin{verbatim}
+% \usepackage{tocloft}[=v2]
+% \end{verbatim}
+% 
 % \subsection{Compatibility with \cs{DocumentMetadata} and the tagging support}
 % To enable tagging of the various lists like the Table of Contents, the code loaded
 % by \cs{DocumentMetadata} in \LaTeX\ since 2025-11-01 changes various internals of
