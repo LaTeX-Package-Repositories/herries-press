@@ -291,7 +291,7 @@
 % as keys to the heading commands to emulate the configuration options. 
 %
 % This means that the headings can be configured by using the legacy \Lpack{tocloft} commands,
-% but also react (to some extend) if the template instances are edited. 
+% but also react (to some extent) if the template instances are edited. 
 % It also leads to small incompatible changes: As a heading command finishes with a \cs{par}
 % the command \cs{cftafterZtitle} should not start with a newline command (and if used together
 % with tagging, the tagging should be carefully checked.
@@ -542,7 +542,7 @@
 % would be the following two lines in the \file{.toc} file (assuming that it
 % is the second Part and is on page 34):
 % \begin{verbatim}
-% \contentsline {part}{I\hspace {1em}Part title}{34}{}%
+% \contentsline {part}{II\hspace {1em}Part title}{34}{}%
 % \mbox {}\hrulefill \par
 % \end{verbatim}
 % If the |\protect|s were not used, then the second line would instead be:

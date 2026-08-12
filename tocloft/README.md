@@ -13,4 +13,3 @@ Version: 2026-08-12 v3.0a
 
 ## License
 LATEX Project Public License, version 1.3c or later.
-Project
