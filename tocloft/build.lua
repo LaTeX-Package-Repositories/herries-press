@@ -37,6 +37,9 @@ recordstatus=true
 textfiles    = {"README"}
 tagfiles     = {"*.dtx"}
 
+typesetexe="lualatex-dev"
+typesetruns=4
+
 --[=================[--
      CUSTOMISATION
 --]=================]--
