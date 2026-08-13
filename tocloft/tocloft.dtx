@@ -1100,17 +1100,17 @@
 %
 %    As mentioned above, the |\newlistof| command creates several new
 % commands, most of which you should now be familiar with. For convenience,
-% assume that |\newlistof{X}{Z}{...}| has been issued; so |X| is the name
+% assume that |\newlistof{X}{ZZ}{...}| has been issued; so |X| is the name
 % of the new counter and corresponds to the |X| in section~\ref{sec:entries},
-% and |Z| is the new file extension and corresponds to the |Z| in
+% and |ZZ| is the new file extension and corresponds to the |Z| in
 % section~\ref{sec:titles}. Then, among others, the following new commands
 % will be made available.
 %
-% The five commands, |\cftmarkZ|,
-% |\cftbeforeZtitleskip|,
-% |\cftafterZtitleskip|,
-% |\cftZtitlefont|, and
-% |\cftafterZtitle|,
+% The five commands, |\cftmarkZZ|,
+% |\cftbeforeZZtitleskip|,
+% |\cftafterZZtitleskip|,
+% |\cftZZtitlefont|, and
+% |\cftafterZZtitle|,
 % are analogous to the commands of the same names
 % described in section~\ref{sec:titles}.
 %
@@ -1119,13 +1119,13 @@
 % in that it typesets
 % the new listing at the point where it is called.
 %
-% \DescribeMacro{\Zdepth}
-% The command |\Zdepth{|\meta{number}|}| is analogous to the standard
+% \DescribeMacro{\ZZdepth}
+% The command |\ZZdepth{|\meta{number}|}| is analogous to the standard
 % |\tocdepth{|\meta{number}|}| command, in that it specifies that entries
 % in the new listing should not be typeset if their numbering level
 % is greater
 % than \meta{number}. The default definition is
-% |\setcounter{Zdepth}{1}|.
+% |\setcounter{ZZdepth}{1}|.
 %
 % \DescribeMacro{\newlistentry}
 % The command
@@ -1150,7 +1150,7 @@
 %
 %
 %    Calling |\newlistentry| creates several new commands. Assuming that
-% it is called as |\newlistentry[within]{X}{Z}{N}|, where |X| and |Z| are
+% it is called as |\newlistentry[within]{X}{ZZ}{N}|, where |X| and |ZZ| are
 % similar to the
 % previous uses of them, and |N| is an integer number, then the following
 % commands are made available.
@@ -1184,7 +1184,7 @@
 % \DescribeMacro{\l@X}
 %  |\l@X| is an internal command that typesets an entry in the list, and
 % is defined in terms of the above |\cft*X*| commands. It will not typeset
-% an entry if |\Zdepth| is |N| or less, where |Z| is the listing's file
+% an entry if |\ZZdepth| is |N| or less, where |ZZ| is the listing's file
 % extension.
 %
 % \DescribeMacro{\theX}
