@@ -10,7 +10,7 @@ Completed box being shipped out [1]
 ....\hbox(0.0+0.0)x345.0
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 366.04791fil
+..\vbox(550.0+0.0)x345.0, glue set 363.99814fil
 ...\write-{}
 ...\glue(\topskip) 0.00641
 ...\hbox(9.99359+2.79358)x345.0, glue set 229.35365fil
@@ -202,7 +202,6 @@ Completed box being shipped out [1]
 ....\glue(\rightskip) 0.0
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
-...\glue -2.04999
 ...\glue 0.0 plus 1.0fil
 ...\glue 0.0
 ...\glue 0.0 plus 0.0001fil
@@ -222,7 +221,7 @@ Completed box being shipped out [2]
 ....\hbox(0.0+0.0)x345.0
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 366.04791fil
+..\vbox(550.0+0.0)x345.0, glue set 363.99814fil
 ...\glue(\topskip) 0.00641
 ...\hbox(9.99359+2.79358)x345.0, glue set 214.93925fil
 ....\hbox(9.4464+0.0)x22.50719
@@ -421,7 +420,6 @@ Completed box being shipped out [2]
 ....\glue(\rightskip) 0.0
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
-...\glue -2.04999
 ...\glue 0.0 plus 1.0fil
 ...\glue 0.0
 ...\glue 0.0 plus 0.0001fil
@@ -441,7 +439,7 @@ Completed box being shipped out [3]
 ....\hbox(0.0+0.0)x345.0
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 366.04791fil
+..\vbox(550.0+0.0)x345.0, glue set 363.99814fil
 ...\glue(\topskip) 0.00641
 ...\hbox(9.99359+2.79358)x345.0, glue set 211.26726fil
 ....\hbox(9.4464+0.17279)x22.50719
@@ -635,7 +633,6 @@ Completed box being shipped out [3]
 ....\glue(\rightskip) 0.0
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
-...\glue -2.04999
 ...\glue 0.0 plus 1.0fil
 ...\glue 0.0
 ...\glue 0.0 plus 0.0001fil
@@ -655,7 +652,7 @@ Completed box being shipped out [4]
 ....\hbox(0.0+0.0)x345.0
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 365.24799fil
+..\vbox(550.0+0.0)x345.0, glue set 363.19823fil
 ...\glue(\topskip) 0.0
 ...\hbox(10.8+2.79358)x345.0, glue set 203.16006fil
 ....\hbox(9.47519+0.0)x22.50719
@@ -849,7 +846,6 @@ Completed box being shipped out [4]
 ....\glue(\rightskip) 0.0
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
-...\glue -2.04999
 ...\glue 0.0 plus 1.0fil
 ...\glue 0.0
 ...\glue 0.0 plus 0.0001fil
