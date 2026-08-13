@@ -31,5 +31,6 @@ jobs:
           package_file: .github/tl_packages
 
       - name: checks
-        run: cd tocloft; l3build check -S 
+        # run all the package tests each time for now
+        run: for i in */build.lua; do (cd `dirname $i` ; l3build check -S;) ; done
       
