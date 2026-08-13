@@ -12,4 +12,4 @@ Version: 2026-08-12 v3.0a
 *    2026 LaTeX Project
 
 ## License
-LATEX Project Public License, version 1.3c or later.
+LaTeX Project Public License, version 1.3c or later.

@@ -36,7 +36,7 @@ checkconfigs = {
                  "config-tagging"
                }
 recordstatus=true               
-textfiles    = {"README"}
+textfiles    = {"README.md"}
 tagfiles     = {"*.dtx"}
 
 typesetexe="lualatex-dev"
