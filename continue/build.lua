@@ -31,7 +31,7 @@ uploadconfig.announcement = announce[version]
 
 
 
-require("../build-herries.lua")
+-- require("../build-herries.lua")
 
 --[===================[--
    WSPR UPLOAD DETAILS
@@ -43,4 +43,4 @@ local function prequire(m) -- from: https://stackoverflow.com/a/17878208
   return err
 end
 
-prequire("l3build-wspr.lua")
+-- prequire("l3build-wspr.lua")
