@@ -60,7 +60,6 @@
 %
 % \fi
 %
-% \CheckSum{553}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -116,6 +115,7 @@
 % \changes{v2.4a}{2009/09/04}{New maintainer (Will Robertson)}
 % \changes{v2.4b}{2014/05/10}{Documentation updates}
 % \changes{v2.4c}{2024/02/11}{Avoid clash with tagging}
+% \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
 %
 % \def\dtxfile{verse.dtx}
 % ^^A \def\fileversion{v1.0}
@@ -135,6 +135,7 @@
 % \def\fileversion{v2.4a} \def\filedate{2009/09/04}
 % \def\fileversion{v2.4b} \def\filedate{2014/05/10}
 % \def\fileversion{v2.4c} \def\filedate{2024/02/12}
+% \def\fileversion{v2.5} \def\filedate{2026/08/08}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -147,9 +148,9 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
+%   Maintainer: The \LaTeX{} Project Team \\
 %   \large
-%   \texttt{http://github.com/wspr/herries-press/}
+%   \texttt{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\fileversion\qquad\filedate}
 % \maketitle
@@ -507,7 +508,7 @@
 % \subsubsection{Titles}
 %
 % \DescribeMacro{\poemtitle}
-% |\poemtitle[|\meta{short}|}{|\meta{long}|}| typesets the title
+% |\poemtitle[|\meta{short}|]{|\meta{long}|}| typesets the title
 % of a poem and makes an entry into the ToC. There is a starred version
 % that makes no ToC entry.
 %
@@ -937,7 +938,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{verse}[2014/05/10 v2.4b verse typesetting]
+\ProvidesPackage{verse}[2026-08-08  v2.5 verse typesetting]
 %    \end{macrocode}
 %
 % For reference, here is the original definition of the |verse| environment
@@ -1280,6 +1281,17 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\@vsdelayfortaggingcode}
+% This delays the redefinition of verse to begindocument if tagging is enabled
+% since otherwise the block code will overwrite our definition.
+% \changes{v2.5}{2026/08/08}{Added \cs{@vsdelayfortaggingcode}}
+%    \begin{macrocode}
+\IfDocumentMetadataTF
+  {\newcommand{\@vsdelayfortaggingcode}{\AtBeginDocument}}
+  {\newcommand{\@vsdelayfortaggingcode}{\@firstofone}}
+%    \end{macrocode}
+% \end{macro}
+%
 % \begin{environment}{verse}
 % The extended |verse| environment. It sets the verse line counter,
 % then defines the particular list environment adjusting the margins
@@ -1292,28 +1304,31 @@
 %                of the original (misplaced close brace)}
 % \changes{v2.2}{2002/07/18}{Added \cs{stanzaskip} to the verse environment}
 % \changes{v2.22}{2005/08/22}{Added verse@envctr to the verse environment}
+% \changes{v2.5}{2026/08/08}{Delay redefinition of verse if tagging is enabled}
 %    \begin{macrocode}
-\renewenvironment{verse}[1][\linewidth]{%
-  \stepcounter{verse@envctr}%
-  \setcounter{poemline}{0}\refstepcounter{poemline}%
-  \setcounter{vslineno}{1}%
-  \let\\=\@vscentercr
-  \list{}{\itemsep \z@
-          \itemindent  -\vindent%
-          \listparindent\itemindent
-          \parsep       \stanzaskip
-          \ifdim #1 < \linewidth
-            \rightmargin        \z@
-            \setlength{\leftmargin}{\linewidth}%
-            \addtolength{\leftmargin}{-#1}%
-            \addtolength{\leftmargin}{-0.5\leftmargin}%
-          \else
-            \rightmargin        \leftmargin
-          \fi
-          \addtolength{\leftmargin}{\vindent}}%
-  \item[]%
+\@vsdelayfortaggingcode{%
+  \renewenvironment{verse}[1][\linewidth]{%
+    \stepcounter{verse@envctr}%
+    \setcounter{poemline}{0}\refstepcounter{poemline}%
+    \setcounter{vslineno}{1}%
+    \let\\=\@vscentercr
+    \list{}{\itemsep \z@
+            \itemindent  -\vindent%
+            \listparindent\itemindent
+            \parsep       \stanzaskip
+            \ifdim #1 < \linewidth
+              \rightmargin        \z@
+              \setlength{\leftmargin}{\linewidth}%
+              \addtolength{\leftmargin}{-#1}%
+              \addtolength{\leftmargin}{-0.5\leftmargin}%
+            \else
+              \rightmargin        \leftmargin
+            \fi
+            \addtolength{\leftmargin}{\vindent}}%
+    \item[]%
+  }
+  {\endlist}
 }
-{\endlist}
 %    \end{macrocode}
 % \end{environment}
 %
@@ -1643,11 +1658,48 @@
 % \begin{macro}{\poemtitle}
 % Typeset a poem title (like |\section| or other). The actual work
 % is done by |\@vsptitle| (plain) or |\@vssptitle| (starred).
+% If tagging is enabled, we set up a heading instance and use that.
+% \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
 %    \begin{macrocode}
-\newcommand{\poemtitle}{%
-  \par
-  \secdef\@vsptitle\@vssptitle
-}
+\IfDocumentMetadataTF
+  {
+    \DeclareInstance{heading}{poemtitle}{display}
+      {
+        , name = poemtitle
+        , placement = normal
+        , before-vspace = \beforepoemtitleskip
+        , after-vspace = \afterpoemtitleskip
+        , heading-decls = \centering
+        , title-decls = \poemtitlefont
+        , mark-cmd = \poemtitlemark{#1}
+        , para-indent = false
+      }
+    \IfFormatAtLeastTF{2026-11-01}
+      {
+        \EditInstance{heading}{poemtitle}{force-unnumbered = true}
+        \NewDocumentCommand \poemtitle {s ={shorttitle}O{} m}
+          {%
+            \IfBooleanF{#1}%
+              {\addtocontents{toc}{\protect\ExpandArgs{cc}\let{l@poemtitle}{l@\poemtoc}}}%
+            \ParseLaTeXeHeading{poemtitle}{#1}{#2}{#3}%
+          }
+      }
+      {
+        \NewDocumentCommand \poemtitle {s ={shorttitle}O{} m}
+          {%
+            \IfBooleanTF{#1}%
+              {\ParseLaTeXeHeading{poemtitle}{\BooleanTrue}{#2}{#3}}%
+              {\addtocontents{toc}{\protect\ExpandArgs{cc}\let{l@poemtitle}{l@\poemtoc}}%
+                \ParseLaTeXeHeading{poemtitle}{\BooleanTrue}{toc=#3,#2}{#3}}%
+          }
+      }
+  }
+  {
+    \newcommand{\poemtitle}{%
+      \par
+      \secdef\@vsptitle\@vssptitle
+    }
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1724,20 +1776,72 @@
 % \PrintIndex
 %
 \endinput
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
 
+% Notes on possible further support for block templates
+% Originally from latex-lab firstaid
 
+%    Of course, this means that the
+%    optional argument of the environment then only accepts a length
+%    value and not any more a key value list for altering the
+%    environment settings.
+%
+%    A more elaborate version could be something like this that allows
+%    key/val and legacy interface. Or one could extend the list
+%    template to support a \texttt{list-width} key.
+%\begin{verbatim}
+% \ExplSyntaxOn
+% \cs_new_protected:Npn \ExtractAndDropKey #1#2#3#4#5 {
+%   \tl_set_eq:NN #4 \c_novalue_tl      % or empty?
+%   \keys_define:nn { #1 } { #2 .code:n = \tl_set:Nn #4{##1} }
+%   \keys_set_known:nnN { #1 } { #3 } #5
+% }
+% \ExplSyntaxOff
+%
+% % Change the env definition for verse matching verse.sty
+% % This keeps the verse.sty interface as it is and only adjusts the
+% % main environment to use the basic list env with the verse.sty
+% % specific settings.
+% \makeatletter
+%
+% \AddToHook{package/verse/after}{%
+%   \AtBeginDocument{%
+%   \RenewDocumentEnvironment{verse}{={verse-width}!O{\linewidth}}%
+%     {%
+%       \stepcounter{verse@envctr}%
+%       \setcounter{poemline}{0}\refstepcounter{poemline}%
+%       \setcounter{vslineno}{1}%
+%       \let\\=\@vscentercr
+%   %
+%       \ExtractAndDropKey{verse}{verse-width}{#1}\@vswidth\@vsremainingkvlist
+%   % If other keys have been specified but not verse-width we have no
+%   % default for \@vswidth and need to set it again
+%       \ExpandArgs{o}\IfNoValueT \@vswidth
+%                         {\def\@vswidth{\linewidth}}%
+%   %
+%   % This is a bit ugly but we can't stick \cs{@vsremainingkvlist} into
+%   % the instance argument as keys are expected to be visible on
+%   % top-level not hidden inside a macro.  The alternative is to push
+%   % in \verb=#1= but then the key/value \verb/verse-width=.../ is
+%   % passed into the instance which is not known there (not harmful as
+%   % it will get ignored but noticeably more and unnecessary
+%   % processing).
+%   %
+%       \def\next##1{%
+%         \UseInstance{blockenv}{list}%
+%           {%
+%             item-indent  = -\vindent,%
+%             para-indent  = -\vindent,%
+%             para-vspace  = \stanzaskip,%
+%             item-skip    = 0pt,%
+%             left-margin  = (\linewidth-\@vswidth)/2+\vindent,%
+%             right-margin = \ifdim\@vswidth<\linewidth 0pt
+%                             \else (\linewidth-\@vswidth)/2\fi,%
+%             ##1%
+%            }}%
+%       \ExpandArgs{o}\next\@vsremainingkvlist
+%       \item\relax
+%     }{\endblockenv}%
+%   }%
+% }
+% \makeatother
+%\end{verbatim}
