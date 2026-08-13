@@ -1,0 +1,38 @@
+\DocumentMetadata{tagging=on}
+\input{regression-test}
+\documentclass{report}
+\usepackage[titles]{tocloft}
+\usepackage{hyperref}
+\newlistentry{anothersection}{toc}{0}
+\setcounter{tocdepth}{6}
+\begin{document}
+\START
+\tableofcontents
+\listoffigures
+\listoftables
+\part{part}
+\chapter{Chapter}
+\section{section}
+\subsection{subsec}
+\phantomsection\addcontentsline{toc}{anothersection}{blub}
+\subsubsection{subsubsec}
+\paragraph{paragraph} some text
+\subparagraph{subpara} some text
+\setcounter{part}{15}
+\part{part}
+\chapter{Chapter}
+\section{sec}
+\subsection{subsec}
+\subsubsection{subsubsec}
+\paragraph{paragraph} some text
+\subparagraph{subpara} some text
+
+\begin{figure}
+\caption{a figure}
+\end{figure}
+
+\begin{table}
+\caption{a table}
+\end{table}
+\SHOWPDFTAGS
+\end{document} 

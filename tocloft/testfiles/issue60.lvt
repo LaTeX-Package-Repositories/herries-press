@@ -1,0 +1,16 @@
+\input{regression-test}
+\documentclass{article}
+\setlength{\textwidth}{120mm}
+\usepackage{tocloft}
+\newlistentry{anothersection}{toc}{0}
+\usepackage{hyperref}
+\begin{document}
+\START
+\makeatletter 
+\TEST{toclevels}
+{
+  \ASSERT{1}{\toclevel@section}
+  \ASSERT{1}{\toclevel@anothersection}
+}
+
+\end{document} 

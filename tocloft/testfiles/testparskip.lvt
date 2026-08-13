@@ -1,13 +1,15 @@
 % https://github.com/wspr/herries-press/issues/45
 % A package that redefines \@starttoc, so we can see the warning message
 % emitted by tocloft.
+\input{regression-test}
 \documentclass{book}
 \usepackage{parskip}
 
 %\makeatletter
 %\show\@starttoc
-
+\START
 \usepackage{tocloft}
+\OMIT
 \begin{document}
 \tableofcontents
 \section{foo}

@@ -2,9 +2,10 @@
 %
 % tocloft.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project, Will Robertson https://github.com/LaTeX-Package-Repositories/herries-press
 % Copyright 1998-2003 Peter R. Wilson
 % Copyright 2009-2022 Will Robertson
+% Copyright 2026 LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -12,25 +13,40 @@
 % later version. <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is LaTeX Project, Will Robertson.
 %
-% This work consists of the files listed in the README file.
+% This work consists of the files 
+% tocloft.dtx
+% tocloft.ins
+% tocloft-2022-06-18.sty
+%  and the derived file:
+% tocloft.sty
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
 \usepackage{hypdoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
+\ExplSyntaxOn
+\newcommand\cftlabelentrycommand[2]{%
+ \clist_map_inline:nn{part,chap,sec,subsec,subsubsec,para,subpara,fig,subfig,tab,subtab}
+  {\label{doc/function//cft#1##1#2}}}
+\ExplSyntaxOff
 \begin{document}
   \DocInput{tocloft.dtx}
 \end{document}
 %</driver>
 %
 %<*usc>
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tocloft}[2022/06/18 v2.3i parameterised ToC, etc., typesetting]
+\providecommand\DeclareRelease[3]{}
+\providecommand\DeclareCurrentRelease[2]{}
+\DeclareRelease{v2}{0000-00-00}{tocloft-2022-06-18.sty}
+\DeclareCurrentRelease{}{2026-08-12}
+\NeedsTeXFormat{LaTeX2e}[2023-11-01]
+\ProvidesPackage{tocloft}[2026-08-12 v3.0a parameterised ToC, etc., typesetting]
 %</usc>
 %
 % \fi
@@ -57,7 +73,13 @@
 % \changes{v2.3c}{2003/09/26}{More fixes for hyperref}
 % \changes{v2.3d}{2009/09/04}{New maintainer and tiny bug fix}
 % \changes{v2.3e}{2010/10/13}{Remove a message from the console output}
-%
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to all \cs{l@X} commands}
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to all \cs{cftXfillnum} commands}
+% \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
+%   tagging support to \cs{numberline} command}   
+%     
 % \def\dtxfile{\texttt{tocloft.dtx}}
 % \def\fileversion{v1.1a} \def\filedate{2000/02/11}
 % \def\fileversion{v2.0}  \def\filedate{2001/03/15}
@@ -73,8 +95,9 @@
 % \def\fileversion{v2.3g} \def\filedate{2014/06/14}
 % \def\fileversion{v2.3h} \def\filedate{2017/08/29}
 % \def\fileversion{v2.3i} \def\filedate{2017/08/31}
-% \def\fileversion{v2.3j} \def\filedate{2020/01/10}
-%
+% \def\fileversion{v2.3j} \def\filedate{2022/06/18}
+% \def\fileversion{v3.0a} \def\filedate{2026/08/12}
+% 
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
 % \DoNotIndex{\@dotsep,\@empty,\@float,\@gobble,\@gobbletwo,\@ignoretrue}
@@ -118,7 +141,7 @@
 %
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
+% \newcommand*{\Lfile}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -126,12 +149,11 @@
 %
 % \title{The \Lpack{tocloft} package\thanks{This
 %        file (\dtxfile) has version number \fileversion, last revised
-%        \filedate.}}
+%        \filedate. Issues can be reported at \url{https://github.com/LaTeX-Package-Repositories/herries-press}}}
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX\ Project, Will Robertson 
 % }
 % \date{\filedate}
 % \maketitle
@@ -156,7 +178,22 @@
 % \listoftables
 % \StopEventually{}
 %
-%
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \section{Introduction}
 %
@@ -192,8 +229,75 @@
 %   Lee Nave (\texttt{nave@math.washington.edu}),
 %   and Andrew Thurber (\texttt{athurber@emba.uvm.edu})
 %   for their suggestions.}
+%   
+% The package is not compatible with the KOMA-class. 
+% The memoir class suppresses the package
+% and emulates it. 
+% 
+% Version 3 adds support for \cs{DocumentMetadata} and tagging. It requires a current \LaTeX\ format.
+% The previous version can be loaded with 
+% \begin{verbatim}
+% \usepackage{tocloft}[=v2]
+% \end{verbatim}
+% 
+% \subsection{Compatibility with \cs{DocumentMetadata} and the tagging support}
+% To enable tagging of the various lists like the Table of Contents, the code loaded
+% by \cs{DocumentMetadata} in \LaTeX\ since 2025-11-01 changes various internals of
+% the ToC processing and this clashes with the changes made by \Lpack{tocloft} in various ways:
+% In some cases \cs{DocumentMetadata} overwrites changes by \Lpack{tocloft} and destroys its
+% features, in other \Lpack{tocloft} destroys tagging. 
+% 
+% Version 3 of the package tries to make the \Lpack{tocloft} package
+% compatible with \cs{DocumentMetadata}. It is recommended to use this together with
+% a current \LaTeX.
+% 
+% Note that the code loaded by \cs{DocumentMetadata} is still changing. At some time
+% ToC and similar lists will be reimplemented with templates and then more adaptions will
+% be needed to keep \Lpack{tocloft} compatible. 
+% 
+% The following problems are handled by the new version if \cs{DocumentMetadata} is detected:
+% 
+% \begin{description}
+% \item[\cs{@starttoc}] \Lpack{tocloft} patches the \cs{@starttoc} command to insert
+% hooks like \cs{cfttocprehook} and \cs{cfttocposthook} but it does it only if \cs{@starttoc}
+% has its original definition. As \cs{DocumentMetadata} changes \cs{@starttoc} the
+% patch is lost. The new code reinstates the patch. Note that the hooks are before and
+% after (outside) the tagging sockets that create the TOC-structure.
+% They should not contain code that creates structures that are not allowed in this place.
+
+% \item[Tagging of list entries] In standard \LaTeX{} the tagging support 
+% for the list entries is mostly handled
+% through a redefinition of |\@dottedtocline|. 
+% As \Lpack{tocloft} doesn't use |\@dottedtocline| (and also overwrites
+% |\l@part| and |\l@chapter|) none of the entries were correctly tagged. 
+% Version 3.0 now add hooks and tagging sockets to all |\l@X| 
+% (|\l@part|, |\l@chapter| etc), to all |\cftXfillnum| commands and to the 
+% |\numberline| command to enable the tagging support.  
+% 
+% \item[Tagging of list headings] 
+% If the package option \texttt{titles} is used, \Lpack{tocloft} doesn't redefine the list
+% commands and the list headings are tagged as in standard \LaTeX. The various commands
+% offered by the package to configure the look of the heading then do nothing. 
+%  
+% If the package option \texttt{titles} is \emph{not} used, \Lpack{tocloft} 
+% doesn't use heading commands to typeset the headings of lists, instead it uses a combination of
+% spacing and font commands to get the right look and the headings are not
+% properly tagged as headings. 
+% 
+% There are theoretically two options to add the proper tagging support:
+% suitable structures could be added manually, e.g. with a tagging socket, or the 
+% headings could be typeset with standard heading commands always. 
+% The new code uses the second approach and passes the various \Lpack{tocloft} commands
+% as keys to the heading commands to emulate the configuration options. 
 %
-% \subsection{\LaTeX 's methods}
+% This means that the headings can be configured by using the legacy \Lpack{tocloft} commands,
+% but also react (to some extent) if the template instances are edited. 
+% It also leads to small incompatible changes: As a heading command finishes with a \cs{par}
+% the command \cs{cftafterZtitle} should not start with a newline command (and if used together
+% with tagging, the tagging should be carefully checked.
+%  \end{description} 
+% 
+% \subsection{Legacy \LaTeX 's methods}
 %
 %    This is a general description of how \LaTeX{} does the processing
 % for a Table of Contents. As the processing for List of Figures and
@@ -221,8 +325,8 @@
 %
 % \DescribeMacro{\contentsline}
 %     The |\addcontentsline| command writes an entry to the given file
-% in the form |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
-% where \meta{page} is the page number.
+% in the form |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}{|\meta{target}|}|
+% where \meta{page} is the page number and \meta{destination} is the anchor name (if \Lpack{hyperref} is used).
 %     For each \meta{kind}, \LaTeX{} provides a command
 % |\l@kind{|\meta{title}|}{|\meta{page}|}| which performs the actual
 % typesetting of the |\contentsline| entry.
@@ -253,7 +357,7 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(\maxx,\maxy)
+% \begin{picture}[alt=schematic description of the layout](\maxx,\maxy)
 %     ^^A side lines and linewidth
 %   \put(0,0){\line(0,1){\maxy}}
 %   \put(\maxx,0){\line(0,1){\maxy}}
@@ -438,7 +542,7 @@
 % would be the following two lines in the \file{.toc} file (assuming that it
 % is the second Part and is on page 34):
 % \begin{verbatim}
-% \contentsline {part}{II\hspace {1em}Part title}{34}
+% \contentsline {part}{II\hspace {1em}Part title}{34}{}%
 % \mbox {}\hrulefill \par
 % \end{verbatim}
 % If the |\protect|s were not used, then the second line would instead be:
@@ -517,7 +621,7 @@
 % \item[\Lopt{subfigure}] This option is required if, and only if,
 % the \Lpack{tocloft} and
 % \Lpack{subfigure} packages are being used together. The two packages
-% can be specified in any order.
+% can be specified in any order. Note that the \Lpack{subfigure} is obsolete.
 %
 % \item[\Lopt{titles}]
 % The \Lopt{titles} option causes
@@ -535,7 +639,8 @@
 %
 %    Commands are provided for controlling the appearance of the
 % titles. Following \LaTeX{} custom, the title texts are the values
-% of the |\contentsname|, |\listfigurename| and |\listtablename| commands.
+% of the |\contentsname|, |\listfigurename| and |\listtablename| commands 
+% (stored inside |\cfttoctitlename|, |\cftloftitlename|, |\cftlottitlename|).
 %
 % Similar sets of commands are provided for ToC, LoF and LoT title
 % typsetting control. For convenience (certainly mine, and hopefully yours)
@@ -544,20 +649,38 @@
 % example, |\cftmarkZ| stands for |\cftmarktoc| or |\cftmarklof| or
 % |\cftmarklot|.
 %
-% \DescribeMacro{\cftmarkZ}
+% \DescribeMacro{\cftmarkZ}%
+% \label{doc/function//cftmarktoc}\label{doc/function//cftmarklof}\label{doc/function//cftmarklot}
 % These macros set the appearance of the running heads on the ToC, LoF, and
 % LoT pages. You probably don't need to change these.
 %
 % \DescribeMacro{\cftbeforeZtitleskip}
 % \DescribeMacro{\cftafterZtitleskip}
+% \label{doc/function//cftbeforetoctitleskip}
+% \label{doc/function//cftbeforeloftitleskip}
+% \label{doc/function//cftbeforelottitleskip}
+% \label{doc/function//cftaftertoctitleskip}
+% \label{doc/function//cftafterloftitleskip}
+% \label{doc/function//cftafterlottitleskip}
 % These lengths control the vertical spacing before and after the titles.
 % You can change them from their default values by using |\setlength|.
 %
 % \DescribeMacro{\cftZtitlefont}
+% \DescribeMacro{\cftZtitlename}
 % \DescribeMacro{\cftafterZtitle}
+% \label{doc/function//cfttoctitlefont}
+% \label{doc/function//cfttoctitlename}
+% \label{doc/function//cftaftertoctitle}
+% \label{doc/function//cftloftitlefont}
+% \label{doc/function//cftloftitlename}
+% \label{doc/function//cftafterloftitle}
+% \label{doc/function//cftlottitlefont}
+% \label{doc/function//cftlottitlename}
+% \label{doc/function//cftafterlottitle}
 % The code used for typesetting the ToC title looks like
+% \changes{3.0a}{2026-07-28}{Added \cs{cftZtitlename}}
 % \begin{verbatim}
-% {\cfttoctitlefont \contentsname}{\cftaftertoctitle}\par
+% {\cfttoctitlefont \cftZtitlename}{\cftaftertoctitle}\par
 % \end{verbatim}
 % By default, |\cftZtitlefont| is defined as a font specification
 % (e.g., |\Large\bfseries|), and |\cftafterZtitle| is empty.
@@ -567,7 +690,7 @@
 % \item |\renewcommand{\cftZtitlefont}{\hfill\Large\itshape}| will
 %       result in a Large italic title typeset flushright.
 % \item |\renewcommand{\cftZtitlefont}{\hfill\Large\bfseries}| together
-%       with |\renewcommand{\cftafterZtitle}{\hfill}| will give
+%       with~\\ |\renewcommand{\cftafterZtitle}{\hfill}| will give
 %       a centered Large bold title.
 % \item Doing
 % \begin{verbatim}
@@ -576,13 +699,22 @@
 % \end{verbatim}
 %       will put the word `Page' flushright on the line following the title.
 %       (If you do this, then you may need to decrease
-%        |\cftafterZtitleskip|).
+%        |\cftafterZtitleskip|). Note that if \cs{DocumentMetadata} is used, the command
+%        should not start with a \verb+\\+, as it is will be inserted after the 
+%        heading command. 
 % \item |\renewcommand{\cftafterZtitle}{\thispagestyle{empty}}| will
 %       make the page with the title empty (i.e., the page
 %       number will not be printed).
 % \end{itemize}
 %
-%
+% \DescribeMacro{\cfttitlecommand}
+% \DescribeMacro{\cftchapter}
+% \DescribeMacro{\cftsection}
+% |\cfttitlecommand| is used to typeset the heading of a list if \cs{DocumentMetadata} \emph{is} used \emph{and}
+% the \texttt{titles} option is \emph{not} used. It has one argument and by default it calls 
+% |\cftchapter| or |\cftsection| depending on if the class knows chapters or not. 
+% 
+% 
 % \subsection{Typesetting the entries} \label{sec:entries}
 %
 % Commands are also provided to enable finer control over the typesetting
@@ -591,7 +723,7 @@
 % package or in~\cite[page 34]{GOOSSENS94}, and are repeated in
 % Figure~\ref{fig:ltoc}.
 %
-% \DescribeMacro{\Zdepth}
+% \DescribeMacro{\Zdepth}\label{doc/function//lofdepth}\label{doc/function//lotdepth}
 % The command |\Zdepth{|\meta{number}|}| is analogous to the standard
 % |\tocdepth{|\meta{number}|}| command, in that it specifies that entries
 % in the new listing should not be typeset if their numbering level
@@ -670,16 +802,16 @@
 % \item |subtab| for subtable |\caption| titles
 % \end{itemize}
 %
-% \DescribeMacro{\cftbeforeXskip}
+% \DescribeMacro{\cftbeforeXskip}\cftlabelentrycommand{before}{skip}
 % This controls the vertical space before an entry. It can be changed
 % by using |\setlength|.
 %
-% \DescribeMacro{\cftXindent}
+% \DescribeMacro{\cftXindent}\cftlabelentrycommand{}{indent}
 % This controls the indentation of an entry from the left margin
 % (\textit{indent} in Figure~\ref{fig:ltoc}). It
 % can be changed using |\setlength|.
 %
-% \DescribeMacro{\cftXnumwidth}
+% \DescribeMacro{\cftXnumwidth}\cftlabelentrycommand{}{numwidth}
 % This controls the space allowed for typesetting title numbers
 % (\textit{numwidth} in Figure~\ref{fig:ltoc}). It can
 % be changed using |\setlength|. Second and subsequent lines of a multiline
@@ -691,23 +823,25 @@
 % and unnumbered entries.
 % \begin{verbatim}
 % {\cftXfont {\cftXpresnum SNUM\cftXaftersnum\hfil} \cftXaftersnumb TITLE}%
-%         {\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\par
+%         {\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\cftXpnumfinal\par
 %
-% {\cftXfont TITLE}{\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\par
+% {\cftXfont TITLE}{\cftXleader}{\cftXpagefont PAGE}\cftXafterpnum\cftXpnumfinal\par
 % \end{verbatim}
 % where |SNUM| is the section number, |TITLE| is the title text and |PAGE|
 % is the page number. In the numbered entry the pseudo-code \\
 % |{\cftXpresnum SNUM\cftaftersnum\hfil}| \\
 % is typeset within a box of width |\cftXnumwidth|.
 %
-% \DescribeMacro{\cftXfont}
+% \DescribeMacro{\cftXfont}\cftlabelentrycommand{}{font}
 % This controls the appearance of the title (and its preceding number,
 % if any). It may be changed using |\renewcommand|.
 %
-% \DescribeMacro{\cftXpresnum}
-% \DescribeMacro{\cftXaftersnum}
-% \DescribeMacro{\cftXaftersnumb}
+% \DescribeMacro{\cftXpresnum}\cftlabelentrycommand{}{presnum}
+% \DescribeMacro{\cftXaftersnum}\cftlabelentrycommand{}{aftersnum}
+% \DescribeMacro{\cftXaftersnumb}\cftlabelentrycommand{}{aftersnumb}
+% \DescribeMacro{\cftpartinitnumwidth}
 % \changes{v1.1}{2000/02/11}{Added description of \cs{cftXpresnum}}
+% \changes{v3.0a}{2026-07-27}{Added description of \cs{cftpartinitnumwidth}}
 % Normally the section number is typeset within a box of width |\cftXnumwidth|.
 % Within the box the macro |\cftXpresnum| is first called, then the
 % number is typeset, and next the |\cftXaftersnum|
@@ -728,13 +862,20 @@
 % the KomaScript classes and for the |titlesec| package; please contact the maintainer
 % to add further corrections if you discover other packages which also exhibit this mis-behaviour.
 %
-% When a standard class is used the |\cftpartaftersnum| and
-% |\cftpartaftersnumb| macros have no effect, but they may do something
-% if a non-standard class is used.
+% When a standard class is used the entry for |\part| doesn't use
+% |\numberline| and so |\cftpartaftersnum| and
+% |\cftpartaftersnumb| macros have no effect (but they may do something
+% if a non-standard class is used). This changes if |\DocumentMetadata| is used:
+% then also |\part| uses |\numberline|. To allow to adapt the formatting
+% to the one used in the standard classes, the command uses |\cftpartinitnumwidth|
+% to reset the width of the box with the number to the natural width. 
+% Its default definition is 
+% \begin{verbatim}
+% \newcommand{\cftpartinitnumwidth}[1]{\settowidth\@tempdima{#1}}
+% \end{verbatim}
 %
-%
-% \DescribeMacro{\cftXleader}
-% \DescribeMacro{\cftXdotsep}
+% \DescribeMacro{\cftXleader}\cftlabelentrycommand{}{leader}
+% \DescribeMacro{\cftXdotsep}\cftlabelentrycommand{}{dotsep}
 % |\cftXleader| defines the leader between the title and the page number;
 % it can be changed by |\renewcommand|.
 % The spacing between any dots in the leader is controlled by |\cftXdotsep|
@@ -744,14 +885,29 @@
 % The spacing
 % is in terms of \emph{math units} where there are 18mu to 1em.
 %
-% \DescribeMacro{\cftXpagefont}
+% \DescribeMacro{\cftXfillnum}\cftlabelentrycommand{}{fillnum}
+% This commands typesets the leader. It contains the sockets for tagging support and
+% should normally not be redefined by a user. 
+% 
+% \DescribeMacro{\cftXpagefont}\cftlabelentrycommand{}{pagefont}
 % This defines the font to be used for typesetting the page number. It
 % can be changed by |\renewcommand|.
 %
-% \DescribeMacro{\cftXafterpnum}
+% \DescribeMacro{\cftXafterpnum}\cftlabelentrycommand{}{afterpnum}
 % This macro is called after the page number has been typeset. Its default
 % is to do nothing. It can be changed by |\renewcommand|.
+% 
+% \DescribeMacro{\cftXpnumfinal}\cftlabelentrycommand{}{pnumfinal}
+% This macro is called after |\cftXafterpnum|. By default it contains a 
+% pair of kerns (stored in the command |\cftpnumfinaldefault|) 
+% that with \Lpack{microtype} suppresses protrusion in this place. Such kerns
+% are also used in the \LaTeX{} kernel and normally there should be no need to remove
+% or change them, but with this command it is possible. 
+% It can be changed by |\renewcommand|.
 %
+% \DescribeMacro{\cftpnumfinaldefault}
+% The default kerns used in |\cftXpnumfinal|. 
+% 
 % \DescribeMacro{\cftsetindents}
 % The command
 % |\cftsetindents{|\meta{entry}|}{|\meta{indent}|}{|\meta{numwidth}|}|
@@ -850,6 +1006,7 @@
 % \renewcommand{\cftXafterpnum}{\cftparfillskip}
 % \renewcommand{\cftpnumalign}{l}
 % \end{verbatim}
+% \DescribeMacro{\cftparfillskip}
 % By default the |\parfillskip| value is locally set to fill up the last
 % line of a paragraph. Just changing |\cftXleader| puts horrible interword
 % spaces into the last line of the title. The |\cftparfillskip|
@@ -1005,8 +1162,9 @@
 % |\cftXaftersnumb|,
 % |\cftXleader|,
 % |\cftXdotsep|,
-% |\cftXpagefont|, and
-% |\cftXafterpnum|,
+% |\cftXpagefont|, 
+% |\cftXafterpnum|, and
+% |\cftXpnumfinal|
 %  are analogous to the commands of the same names
 % described in section~\ref{sec:entries}. Their default values are also
 % as described earlier.
@@ -1129,6 +1287,8 @@
 % ...
 % \end{verbatim}
 %
+% If tagging is enabled, the toc entry is currently tagged as an individual toc entry. 
+% 
 % \DescribeMacro{\cftchapterprecishere}
 % \DescribeMacro{\cftchapterprecistoc}
 % The |\cftchapterprecis| command calls these two commands to print the
@@ -1156,14 +1316,14 @@
 % will write a |\contentsline| entry into \meta{file} for a \meta{kind}
 % entry with title \meta{title} and page number \meta{page}. That is,
 % an entry is made of the form: \\
-% |\contentsline{kind}{title}{page}| \\
+% |\contentsline{kind}{title}{page}{target}| \\
 % Any fragile commands used in the arguments must be protected.
 %
 % \DescribeMacro{\cftaddnumtitleline}
 % The command |\cftaddnumtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
 % is similar except that it also includes \meta{num} as the argument to
 % the |\numberline|. That is, an entry is made of the form: \\
-% |\contentsline{kind}{\numberline{num} title}{page}| \\
+% |\contentsline{kind}{\numberline{num} title}{page}{target}| \\
 % Any fragile commands used in the arguments must be protected.
 %
 % As an example of the use of these commands,
@@ -1281,12 +1441,13 @@
 %
 %    \begin{macrocode}
 %<*usc>
+\RequirePackage{etoolbox}
 %    \end{macrocode}
 %
 % In order to try and avoid name clashes with other packages, each internal
 % name will include the character string \texttt{@cft}.
 %
-% \begin{macro}{\@cftifundefined}
+% \begin{macro}[no-user-doc]{\@cftifundefined}
 % \changes{v2.3h}{2017/08/29}{Use internal ifundefined macro to fix conflict with fancyhdr}
 % Due to a conflict with how this package and fancyhdr checked for undefinedness.
 %    \begin{macrocode}
@@ -1300,7 +1461,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftquit}
+% \begin{macro}[no-user-doc]{\@cftquit}
 % \begin{macro}{\if@cfthaschapter}
 % We will be using either chapter or section type headings for the ToC, etc.,
 % so we need to know which of these the document class supports.
@@ -1312,7 +1473,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@cftkoma}
+% \begin{macro}[no-user-doc]{\if@cftkoma}
 % The \Lpack{koma} classes have different defaults than the standard classes,
 % so we need to know if a \Lpack{koma} class has been loaded.
 % \changes{v2.3}{2002/06/15}{Added check for a koma class}
@@ -1325,7 +1486,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@cfttitlesec}
+% \begin{macro}[no-user-doc]{\if@cfttitlesec}
 % \changes{v2.3f}{2013/04/30}{Added check for titlesec package}
 %    \begin{macrocode}
 \newif\if@cfttitlesec
@@ -1353,7 +1514,7 @@
 %
 % Use chapter style if |\if@cfthaschapter| is TRUE, otherwise section style.
 %
-% \begin{macro}{\if@cfttocbibind}
+% \begin{macro}[no-user-doc]{\if@cfttocbibind}
 % A flag that is set TRUE iff the \Lpack{tocbibind} package has been loaded.
 % The 1998/11/15 version of \Lpack{tocbibind} does not necessarily work well
 % with \Lpack{tocloft}.
@@ -1373,7 +1534,7 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@cftnctoc}
+% \begin{macro}[no-user-doc]{\if@cftnctoc}
 % A boolean used to implement the \Lopt{titles} option. It is TRUE
 % if the ToC, LoT, LoF titles should use the default styles.
 %    \begin{macrocode}
@@ -1383,7 +1544,7 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@cftsubfigopt}
+% \begin{macro}[no-user-doc]{\if@cftsubfigopt}
 % A boolean used to implement the \Lopt{subfigure} option.
 %    \begin{macrocode}
 \newif\if@cftsubfigopt\@cftsubfigoptfalse
@@ -1421,26 +1582,26 @@ Consider installing the current version of tocbibind.}}
 % \changes{v2.3}{2002/06/15}{Marking commands are different for koma}
 %    \begin{macrocode}
 \newcommand{\cftmarktoc}{%
-  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+  \@mkboth{\MakeUppercase\cfttoctitlename}{\MakeUppercase\cfttoctitlename}}
 \newcommand{\cftmarklof}{%
-  \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}}
+  \@mkboth{\MakeUppercase\cftloftitlename}{\MakeUppercase\cftloftitlename}}
 \newcommand{\cftmarklot}{%
-  \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+  \@mkboth{\MakeUppercase\cftlottitlename}{\MakeUppercase\cftlottitlename}}
 \if@cftkoma
   \renewcommand{\cftmarktoc}{%
-    \@mkboth{\contentsname}{\contentsname}}
+    \@mkboth{\cfttoctitlename}{\cfttoctitlename}}
   \renewcommand{\cftmarklof}{%
-    \@mkboth{\listfigurename}{\listfigurename}}
+    \@mkboth{\cftloftitlename}{\cftloftitlename}}
   \renewcommand{\cftmarklot}{%
-    \@mkboth{\listtablename}{\listtablename}}
+    \@mkboth{\cftlottitlename}{\cftlottitlename}}
 \fi
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@cfttocstart}
-% \begin{macro}{\@cfttocfinish}
+% \begin{macro}[no-user-doc]{\@cfttocstart}
+% \begin{macro}[no-user-doc]{\@cfttocfinish}
 % Two macros to perform the actions at the beginning and end of the
 % |\tableofcontents| command (and friends). |\@cfttocstart| deals with
 % chaptered documents, ensuring that the ToC is typeset in a single
@@ -1466,7 +1627,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\phantomsection}
+% \begin{macro}[no-user-doc]{\phantomsection}
 % This is provided because the \Lopt{hyperref} package screws with
 % |\addcontentsline|.
 % \changes{v2.2}{2001/04/17}{Provided \cs{phantomsection}}
@@ -1477,7 +1638,7 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftdobibtoc}
+% \begin{macro}[no-user-doc]{\@cftdobibtoc}
 % If the \Lpack{tocbibind} package has been used and it has
 % redefined |\tableofcontents| we need to cater for that. The contents
 % of the definition are defined in \Lpack{tocbibind}.
@@ -1486,10 +1647,10 @@ Consider installing the current version of tocbibind.}}
   \if@dotoctoc
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\contentsname}
+      \addcontentsline{toc}{chapter}{\cfttoctitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\contentsname}
+      \addcontentsline{toc}{\@tocextra}{\cfttoctitlename}
     \fi
   \fi}
 
@@ -1505,8 +1666,102 @@ Consider installing the current version of tocbibind.}}
 
 %    \end{macrocode}
 % \end{macro}
+
+% \begin{macro}{\cftpnumfinaldefault}
+% A kern pair used at the end of entries to avoid problems with 
+% protrusion. 
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftpnumfinaldefault}}
+%    \begin{macrocode}
+\newcommand\cftpnumfinaldefault{\kern-\p@\kern\p@}
+%    \end{macrocode}
+% \end{macro}
+% 
+% \begin{macro}{\cftZtitlename}
+% \changes{3.0a}{2026-07-28}{Parametrize also the list title names}
+%    \begin{macrocode}
+\newcommand\cfttoctitlename{\contentsname}
+\newcommand\cftloftitlename{\listfigurename}
+\newcommand\cftlottitlename{\listtablename}
+%    \end{macrocode}
+% \end{macro}
 %
+% \begin{macro}{\cfttitlecommand}
+% This command is used to typeset the title if \cs{DocumentMetadata} \emph{is} used \emph{and}
+% the \texttt{titles} option is \emph{not} used.
+% \changes{3.0a}{2026-07-28}{Add \cs{cfttitlecommand}}
+%    \begin{macrocode}
+\if@cfthaschapter
+ \newcommand\cfttitlecommand[1]{\cftchapter{#1}}
+\else
+ \newcommand\cfttitlecommand[1]{\cftsection{#1}}
+\fi 
+%    \end{macrocode}
+% \end{macro}
+% 
+% \begin{macro}{\cftchapter,\cftsection}
+%    \begin{macrocode}
+\IfDocumentMetadataTF
+ {
+   \DeclareDocumentCommand \cftchapter {O{}m}
+     {%
+       \chapter
+         [
+           toc={},
+           placement=normal,
+           unnumbered,
+           after-penalty-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
+           after-vspace=\UseName{cftafter#2titleskip},
+           final-code=\@cftpagestyle\@afterheading,
+           title-decls=\UseName{cft#2titlefont},
+           #1      
+         ] {\UseName{cft#2titlename}}%
+     }    
+   \DeclareDocumentCommand \cftsection {O{}m}
+     {%
+      \section[ 
+           toc={},
+           placement=normal,
+           unnumbered,
+           after-penalty-vspace=\UseName{cftbefore#2titleskip},
+           after-vspace=\UseName{cftafter#2titleskip},
+           final-code=\@cftpagestyle\@afterheading,
+           title-decls=\UseName{cft#2titlefont},
+          #1      
+         ] {\UseName{cft#2titlename}}%
+     } 
+  }
+  {
+   \DeclareDocumentCommand \cftchapter {O{}m}
+    {%
+      \addpenalty\@secpenalty
+      \vspace*{\UseName{cftbefore#2titleskip}}%
+      \@cftpagestyle
+      {\interlinepenalty\@M
+      {\UseName{cft#2titlefont}\UseName{cft#2titlename}}%
+      {\UseName{cftafter#2title}}%
+      \UseName{cftmark#2}%
+      \par\nobreak
+      \vskip \UseName{cftafter#2titleskip}%
+      \@afterheading}%
+    }
+   \DeclareDocumentCommand \cftsection {O{}m}
+    {%
+      \addpenalty\@secpenalty
+      \vspace{\UseName{cftbefore#2titleskip}}%
+      \@cftpagestyle
+      {\interlinepenalty\@M
+      {\UseName{cft#2titlefont}\UseName{cft#2titlename}}%
+      {\UseName{cftafter#2title}}%
+      \UseName{cftmark#2}%
+      \par\nobreak
+      \vskip \UseName{cftafter#2titleskip}%
+      \@afterheading}%
+    } 
+  } 
+%    \end{macrocode}
+% \end{macro}
 %
+
 % \begin{macro}{\tableofcontents}
 % This is a parameterised version of the default |\tableofcontents| command.
 % Each class has its own definition, but we have to cater for all classes
@@ -1555,25 +1810,13 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftmaketoctitle}
+% \begin{macro}[no-user-doc]{\@cftmaketoctitle}
 % This command typesets the title for the ToC.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmaketoctitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmaketoctitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmaketoctitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforetoctitleskip}%
-  \else
-    \vspace{\cftbeforetoctitleskip}%
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cfttoctitlefont\contentsname}{\cftaftertoctitle}%
-  \cftmarktoc
-  \par\nobreak
-  \vskip \cftaftertoctitleskip
-  \@afterheading}}
+\newcommand{\@cftmaketoctitle}{\cfttitlecommand{toc}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1683,12 +1926,14 @@ Consider installing the current version of tocbibind.}}
 % entries.
 %
 %     A \file{.toc} (also \file{.lof} and \file{.lot}) file consists
-% of a list of
-% |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
+% of a list of\\
+% |\contentsline{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}{|\meta{target}|}|
+% \\
 % commands, where \meta{kind} is the kind of heading (e.g., |part| or
 % |section| or |figure|), \meta{title} is the title text (including the number),
-% and \meta{page} is the page number. The entries are inserted into the
-% file by calling the
+% and \meta{page} is the page number. \meta{target} is set by \Lpack{hyperref}
+% or by the tagging code for links and structure references. 
+% The entries are inserted into the file by calling the
 % |\addcontentsline{|\meta{file}|}{|\meta{kind}|}{|\meta{title}|}|
 % command, where \meta{file} is the file extension (e.g., |toc|, |lot|)
 % and the other arguments are the same as for the |\contentsline|
@@ -1728,17 +1973,27 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\numberline}
+% \begin{macro}{\numberline,\@cftinitnumwidth}
 % \changes{v1.1}{2000/02/11}{Added \cs{@cftbsnum} to \cs{numberline}}
 % The purpose of the |\numberline{|\meta{secnum}|}| command is to typeset
 % \meta{secnum} left justified in a box of width |\@tempdima|. I redefine
 % it to add three additional parameters, namely |\@cftbsnum|,
 % |\@cftasnum| and |\@cftasnumb|
 % (see \file{ltsect.dtx} for the original
-% definition).
+% definition). |\@cftinitnumwidth| can be used to change |\@tempdima| 
+% based on the number e.g. in |\part|.
+% \changes{v3.0a}{2026-07-27}{Added tagging sockets to \cs{numberline}}
+% \changes{v3.0a}{2026-07-27}{Added tagging sockets to \cs{@cftinitnumwidth}}
 %    \begin{macrocode}
+\newcommand\@cftinitnumwidth[1]{}
 \renewcommand{\numberline}[1]{%
-  \hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}
+  \@cftinitnumwidth{#1}%
+  \hb@xt@\@tempdima{%
+  \UseHookWithArguments{contentsline/number/before}{1}{#1}%
+  \@cftbsnum #1\@cftasnum\hfil
+  \UseHookWithArguments{contentsline/number/after}{1}{#1}}%
+  \@cftasnumb
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1764,8 +2019,8 @@ Consider installing the current version of tocbibind.}}
 %
 %
 %
-% \begin{macro}{\l@part}
-% \begin{macro}{\if@cftdopart}
+% \begin{macro}[no-user-doc]{\l@part}
+% \begin{macro}[no-user-doc]{\if@cftdopart}
 % \changes{v1.1}{2000/02/11}{Added \cs{@cftbsnum} and \cs{cftXpresnum} to
 %                            all \cs{\l@X} commands}
 % \changes{v1.1}{2000/02/11}{Added \cs{cftXpresnum} commands}
@@ -1812,6 +2067,7 @@ Consider installing the current version of tocbibind.}}
        \interlinepenalty\@M
        \leavevmode
        \@tempdima \cftpartnumwidth\relax
+       \let\@cftinitnumwidth\cftpartinitnumwidth
        \let\@cftbsnum \cftpartpresnum
        \let\@cftasnum \cftpartaftersnum
        \let\@cftasnumb \cftpartaftersnumb
@@ -1820,8 +2076,12 @@ Consider installing the current version of tocbibind.}}
 % In default \LaTeX, the part ToC entry is written without \verb|\numberline|
 % and hence the `presnum' needs to be inserted manually.
 % In Koma-Script and titlesec (and probably others---let me know!), however, this is not the case.
-%    \begin{macrocode}
+%    \begin{macrocode}       
+      \UseHookWithArguments{contentsline/text/before}{4}
+         {-1}{#1}{#2}{\@contentsline@destination}%
        {\cftpartfont \if@cftkoma\else\if@cfttitlesec\else\cftpartpresnum\fi\fi #1}%
+      \UseHookWithArguments{contentsline/text/after}{4}
+         {-1}{#1}{#2}{\@contentsline@destination}%  
        \cftpartfillnum{#2}}
       \nobreak
       \if@cfthaschapter
@@ -1850,31 +2110,44 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftpartdotsep}
 % \begin{macro}{\cftpartpagefont}
 % \begin{macro}{\cftpartafterpnum}
+% \begin{macro}{\cftpartpnumfinal}
 % \begin{macro}{\cftpartindent}
 % \begin{macro}{\cftpartfillnum}
 %  These are the user commands to control the typesetting of Part entries.
 %  They are initialised to give the standard appearance.
 % \changes{v2.3a}{2002/10/03}{Deleted \cs{cftpartaftersnum} and \cs{cftpartaftersnumb}}
 % \changes{v2.3b}{2003/01/20}{Reinstated \cs{cftpartaftersnum} and \cs{cftpartaftersnumb}}
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftpartpnumfinal}}
 %    \begin{macrocode}
 \if@cfthaspart
   \newlength{\cftbeforepartskip}
     \setlength{\cftbeforepartskip}{2.25em \@plus\p@}
   \newlength{\cftpartnumwidth}
-    \setlength{\cftpartnumwidth}{0em}
+    \setlength{\cftpartnumwidth}{3em}
   \newcommand{\cftpartfont}{\large\bfseries}
+  \newcommand{\cftpartinitnumwidth}[1]{\settowidth\@tempdima{#1}}
   \newcommand{\cftpartpresnum}{}
   \newcommand{\cftpartaftersnum}{}
-  \newcommand{\cftpartaftersnumb}{}
+  \newcommand{\cftpartaftersnumb}{\hspace{1em}}
   \newcommand{\cftpartleader}{\large\bfseries\cftdotfill{\cftpartdotsep}}
   \newcommand{\cftpartdotsep}{\cftnodots}
   \newcommand{\cftpartpagefont}{\large\bfseries}
   \newcommand{\cftpartafterpnum}{}
+  \newcommand{\cftpartpnumfinal}{\cftpnumfinaldefault}
   \newlength{\cftpartindent}
     \setlength{\cftpartindent}{0em}
   \newcommand{\cftpartfillnum}[1]{%
-    {\cftpartleader}%
-    {\makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}\cftpartafterpnum\par}%
+    {%
+     \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \cftpartleader
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }%
+    {\UseHookWithArguments{contentsline/page/before}{4}
+       {-1}{}{#1}{\@contentsline@destination}%
+     \makebox[\@pnumwidth][\cftpnumalign]{\cftpartpagefont #1}%
+     \UseHookWithArguments{contentsline/page/after}{4}
+       {-1}{}{#1}{\@contentsline@destination}%
+     \cftpartafterpnum\cftpartpnumfinal\par}%
   }
 %    \end{macrocode}
 % \Lpack{koma} classes use some different settings.
@@ -1899,8 +2172,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-% \begin{macro}{\l@chapter}
+% \begin{macro}[no-user-doc]{\l@chapter}
 %  |\l@chapter{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |chapter| heading. It is a parameterised copy of the default |\l@chapter|
 % (see \file{classes.dtx} for the original definition). This only applies
@@ -1922,7 +2196,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftchapaftersnum
      \let\@cftasnumb \cftchapaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+         {0}{#1}{#2}{\@contentsline@destination}%
      {\cftchapfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+         {0}{#1}{#2}{\@contentsline@destination}%
      \cftchapfillnum{#2}}%
   \fi}%
 \fi
@@ -1940,9 +2218,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftchapdotsep}
 % \begin{macro}{\cftchappagefont}
 % \begin{macro}{\cftchapafterpnum}
+% \begin{macro}{\cftchappnumfinal}
 % \begin{macro}{\cftchapfillnum}
 %  These are the user commands to control the typesetting of Chapter entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftchappnumfinal}}
 %    \begin{macrocode}
 \if@cfthaschapter
   \newlength{\cftbeforechapskip}
@@ -1959,9 +2239,18 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftchapdotsep}{\cftnodots}
   \newcommand{\cftchappagefont}{\bfseries}
   \newcommand{\cftchapafterpnum}{}
+  \newcommand{\cftchappnumfinal}{\cftpnumfinaldefault}
   \newcommand{\cftchapfillnum}[1]{%
-    {\cftchapleader}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}\cftchapafterpnum\par
+    {\UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \cftchapleader
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }\nobreak
+    \UseHookWithArguments{contentsline/page/before}{4}
+       {0}{}{#1}{\@contentsline@destination}%
+    \makebox[\@pnumwidth][\cftpnumalign]{\cftchappagefont #1}%
+    \UseHookWithArguments{contentsline/page/after}{4}
+       {0}{}{#1}{\@contentsline@destination}%
+    \cftchapafterpnum\cftchappnumfinal\par
   }
 %    \end{macrocode}
 % \Lpack{koma} classes have different chapter settings.
@@ -1985,8 +2274,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-% \begin{macro}{\l@section}
+% \begin{macro}[no-user-doc]{\l@section}
 %  |\l@section{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |section| heading. It is a parameterised copy of the default |\l@section|
 % (see \file{classes.dtx} for the original definition).
@@ -2010,7 +2300,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsecaftersnum
      \let\@cftasnumb \cftsecaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
      {\cftsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
      \cftsecfillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2027,9 +2321,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsecdotsep}
 % \begin{macro}{\cftsecpagefont}
 % \begin{macro}{\cftsecafterpnum}
+% \begin{macro}{\cftsecpnumfinal}
 % \begin{macro}{\cftsecfillnum}
 %  These are the user commands to control the typesetting of Section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesecskip}
 \newlength{\cftsecindent}
@@ -2055,9 +2351,19 @@ Consider installing the current version of tocbibind.}}
   \newcommand{\cftsecpagefont}{\bfseries}
 \fi
 \newcommand{\cftsecafterpnum}{}
+\newcommand{\cftsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsecfillnum}[1]{%
-  {\cftsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsecpagefont #1}\cftsecafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsecpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+    \cftsecafterpnum\cftsecpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2072,8 +2378,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-% \begin{macro}{\l@subsection}
+% \begin{macro}[no-user-doc]{\l@subsection}
 %  |\l@subsection{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |subsection| heading. It is a parameterised copy of the default
 % |\l@subsection|
@@ -2132,7 +2439,9 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % Print the (number and) title, prohibiting any breaking.
 %    \begin{macrocode}
+     \UseHookWithArguments{contentsline/text/before}{4}{2}{#1}{#2}{\@contentsline@destination}%
      {\cftsubsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{2}{#1}{#2}{\@contentsline@destination}%
 %    \end{macrocode}
 % Print the leader and the page number, and close the group.
 %    \begin{macrocode}
@@ -2152,8 +2461,10 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubsecdotsep}
 % \begin{macro}{\cftsubsecpagefont}
 % \begin{macro}{\cftsubsecafterpnum}
+% \begin{macro}{\cftsubsecpnumfinal}
 %  These are the user commands to control the typesetting of Sub-section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubsecskip}
   \setlength{\cftbeforesubsecskip}{\z@ \@plus.2\p@}
@@ -2174,6 +2485,7 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubsecdotsep}{\cftdotsep}
 \newcommand{\cftsubsecpagefont}{\normalfont}
 \newcommand{\cftsubsecafterpnum}{}
+\newcommand{\cftsubsecpnumfinal}{\cftpnumfinaldefault}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -2186,7 +2498,8 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
+% 
 % \begin{macro}{\cftsubsecfillnum}
 % |\cftsubsecfillnum{|\meta{page}|}| typesets the leader and the \meta{page}
 % number of a |subsection| entry.
@@ -2195,13 +2508,22 @@ Consider installing the current version of tocbibind.}}
 % not forgetting to finish the paragraph.
 %    \begin{macrocode}
 \newcommand{\cftsubsecfillnum}[1]{%
-  {\cftsubsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsecpagefont #1}\cftsubsecafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {2}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsecpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {2}{}{#1}{\@contentsline@destination}%
+    \cftsubsecafterpnum\cftsubsecpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@subsubsection}
+% \begin{macro}[no-user-doc]{\l@subsubsection}
 %  |\l@subsubsection{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |subsubsection| heading. It is a parameterised copy of the default
 % |\l@subsubsection|
@@ -2221,7 +2543,9 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubsubsecaftersnum
      \let\@cftasnumb \cftsubsubsecaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}{3}{#1}{#2}{\@contentsline@destination}%
      {\cftsubsubsecfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}{3}{#1}{#2}{\@contentsline@destination}%
      \cftsubsubsecfillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2238,9 +2562,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubsubsecdotsep}
 % \begin{macro}{\cftsubsubsecpagefont}
 % \begin{macro}{\cftsubsubsecafterpnum}
+% \begin{macro}{\cftsubsubsecpnumfinal}
 % \begin{macro}{\cftsubsubsecfillnum}
 %  These are the user commands to control the typesetting of Sub-sub-section entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubsubsecpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubsubsecskip}
   \setlength{\cftbeforesubsubsecskip}{\z@ \@plus.2\p@}
@@ -2261,9 +2587,19 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubsubsecdotsep}{\cftdotsep}
 \newcommand{\cftsubsubsecpagefont}{\normalfont}
 \newcommand{\cftsubsubsecafterpnum}{}
+\newcommand{\cftsubsubsecpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubsubsecfillnum}[1]{%
-  {\cftsubsubsecleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsubsecpagefont #1}\cftsubsubsecafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubsubsecleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {3}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubsubsecpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {3}{}{#1}{\@contentsline@destination}%
+    \cftsubsubsecafterpnum\cftsubsubsecpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2278,8 +2614,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-% \begin{macro}{\l@paragraph}
+% \begin{macro}[no-user-doc]{\l@paragraph}
 %  |\l@paragraph{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |paragraph| heading. It is a parameterised copy of the default
 % |\l@paragraph|
@@ -2299,7 +2636,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftparaaftersnum
      \let\@cftasnumb \cftparaaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {4}{#1}{#2}{\@contentsline@destination}%
      {\cftparafont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {4}{#1}{#2}{\@contentsline@destination}%
      \cftparafillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2316,9 +2657,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftparadotsep}
 % \begin{macro}{\cftparapagefont}
 % \begin{macro}{\cftparaafterpnum}
+% \begin{macro}{\cftparapnumfinal}
 % \begin{macro}{\cftparafillnum}
 %  These are the user commands to control the typesetting of Paragraph entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftparapnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforeparaskip}
   \setlength{\cftbeforeparaskip}{\z@ \@plus.2\p@}
@@ -2339,9 +2682,19 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftparadotsep}{\cftdotsep}
 \newcommand{\cftparapagefont}{\normalfont}
 \newcommand{\cftparaafterpnum}{}
+\newcommand{\cftparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftparafillnum}[1]{%
-  {\cftparaleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftparapagefont #1}\cftparaafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftparaleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {4}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftparapagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4} 
+    {4}{}{#1}{\@contentsline@destination}%
+    \cftparaafterpnum\cftparapnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2356,8 +2709,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-% \begin{macro}{\l@subparagraph}
+% \begin{macro}[no-user-doc]{\l@subparagraph}
 %  |\l@subparagraph{|\meta{title}|}{|\meta{page}|}| typesets the ToC entry for
 % a |subparagraph| heading. It is a parameterised copy of the default
 % |\l@subparagraph|
@@ -2377,7 +2731,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubparaaftersnum
      \let\@cftasnumb \cftsubparaaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {5}{#1}{#2}{\@contentsline@destination}%
      {\cftsubparafont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {5}{#1}{#2}{\@contentsline@destination}%
      \cftsubparafillnum{#2}}%
   \fi}
 %    \end{macrocode}
@@ -2394,9 +2752,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubparadotsep}
 % \begin{macro}{\cftsubparapagefont}
 % \begin{macro}{\cftsubparaafterpnum}
+% \begin{macro}{\cftsubparapnumfinal} 
 % \begin{macro}{\cftsubparafillnum}
 %  These are the user commands to control the typesetting of Sub-paragraph entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftsubparapnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforesubparaskip}
   \setlength{\cftbeforesubparaskip}{\z@ \@plus.2\p@}
@@ -2417,9 +2777,19 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubparadotsep}{\cftdotsep}
 \newcommand{\cftsubparapagefont}{\normalfont}
 \newcommand{\cftsubparaafterpnum}{}
+\newcommand{\cftsubparapnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftsubparafillnum}[1]{%
-  {\cftsubparaleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubparapagefont #1}\cftsubparaafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubparaleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {5}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubparapagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {5}{}{#1}{\@contentsline@destination}%
+    \cftsubparaafterpnum\cftsubparapnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2434,9 +2804,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
+% \end{macro}
 %
-%
-% \begin{macro}{\@cftdobiblof}
+% \begin{macro}[no-user-doc]{\@cftdobiblof}
 % If the \Lpack{tocbibind} package has been used and it has
 % redefined |\listoffigures| we need to cater for that. The contents
 % of the definition are defined in \Lpack{tocbibind}.
@@ -2445,13 +2815,12 @@ Consider installing the current version of tocbibind.}}
   \if@dotoclof
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\listfigurename}
+      \addcontentsline{toc}{chapter}{\cftloftitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\listfigurename}
+      \addcontentsline{toc}{\@tocextra}{\cftloftitlename}
     \fi
   \fi}
-
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2491,26 +2860,13 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftmakeloftitle}
+% \begin{macro}[no-user-doc]{\@cftmakeloftitle}
 % This command typesets the title for the LoF.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{cftmakeloftitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{cftmakeloftitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmakeloftitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforeloftitleskip}
-  \else
-    \vspace{\cftbeforeloftitleskip}
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cftloftitlefont\listfigurename}{\cftafterloftitle}
-  \cftmarklof
-  \par\nobreak
-  \vskip \cftafterloftitleskip
-  \@afterheading}}
-
+\newcommand{\@cftmakeloftitle}{\cfttitlecommand{lof}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2559,7 +2915,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@figure}
+% \begin{macro}[no-user-doc]{\l@figure}
 %  |\l@figure{|\meta{title}|}{|\meta{page}|}| typesets the LoF entry for
 % a |figure| caption heading. It is a parameterised copy of the default
 % |\l@figure|
@@ -2579,7 +2935,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftfigaftersnum
      \let\@cftasnumb \cftfigaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
      {\cftfigfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
      \cftfigfillnum{#2}}%
    \fi
   }
@@ -2597,9 +2957,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftfigdotsep}
 % \begin{macro}{\cftfigpagefont}
 % \begin{macro}{\cftfigafterpnum}
+% \begin{macro}{\cftfigpnumfinal}
 % \begin{macro}{\cftfigfillnum}
 %  These are the user commands to control the typesetting of Figure caption entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cftfigpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforefigskip}
   \setlength{\cftbeforefigskip}{\z@ \@plus.2\p@}
@@ -2615,9 +2977,19 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftfigdotsep}{\cftdotsep}
 \newcommand{\cftfigpagefont}{\normalfont}
 \newcommand{\cftfigafterpnum}{}
+\newcommand{\cftfigpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cftfigfillnum}[1]{%
-  {\cftfigleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftfigpagefont #1}\cftfigafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftfigleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftfigpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+    \cftfigafterpnum\cftfigpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2632,7 +3004,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
 % \begin{macro}{lofdepth}
 % \begin{macro}{lotdepth}
 % The counters |lofdepth| and |lotdepth| are defined by the
@@ -2648,7 +3020,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@cftdobiblot}
+% \begin{macro}[no-user-doc]{\@cftdobiblot}
 % If the \Lpack{tocbibind} package has been used and it has
 % redefined |\listoftables| we need to cater for that. The contents
 % of the definition are defined in \Lpack{tocbibind}.
@@ -2657,10 +3029,10 @@ Consider installing the current version of tocbibind.}}
   \if@dotoclot
     \if@bibchapter
       \phantomsection
-      \addcontentsline{toc}{chapter}{\listtablename}
+      \addcontentsline{toc}{chapter}{\cftlottitlename}
     \else
       \phantomsection
-      \addcontentsline{toc}{\@tocextra}{\listtablename}
+      \addcontentsline{toc}{\@tocextra}{\cftlottitlename}
     \fi
   \fi}
 
@@ -2704,26 +3076,13 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftmakelottitle}
+% \begin{macro}[no-user-doc]{\@cftmakelottitle}
 % This command typesets the title for the LoT.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmakelottitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmakelottitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-\newcommand{\@cftmakelottitle}{%
-  \addpenalty\@secpenalty
-  \if@cfthaschapter
-    \vspace*{\cftbeforelottitleskip}
-  \else
-    \vspace{\cftbeforelottitleskip}
-  \fi
-  \@cftpagestyle
-  {\interlinepenalty\@M
-  {\cftlottitlefont\listtablename}{\cftafterlottitle}
-  \cftmarklot
-  \par\nobreak
-  \vskip \cftafterlottitleskip
-  \@afterheading}}
-
+\newcommand{\@cftmakelottitle}{\cfttitlecommand{lot}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -2772,7 +3131,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@table}
+% \begin{macro}[no-user-doc]{\l@table}
 %  |\l@table{|\meta{title}|}{|\meta{page}|}| typesets the LoT entry for
 % a |table| caption heading. It is a parameterised copy of the default
 % |\l@table|
@@ -2792,7 +3151,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cfttabaftersnum
      \let\@cftasnumb \cfttabaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-     {\cfttabfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
+      {\cfttabfont #1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {1}{#1}{#2}{\@contentsline@destination}%
      \cfttabfillnum{#2}}%
    \fi
   }
@@ -2810,9 +3173,11 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cfttabdotsep}
 % \begin{macro}{\cfttabpagefont}
 % \begin{macro}{\cfttabafterpnum}
+% \begin{macro}{\cfttabpnumfinal}
 % \begin{macro}{\cfttabfillnum}
 %  These are the user commands to control the typesetting of Table caption entries.
 %  They are initialised to give the standard appearance.
+%  \changes{v3.0a}{2026-07-27}{Added \cs{cfttabpnumfinal}}
 %    \begin{macrocode}
 \newlength{\cftbeforetabskip}
   \setlength{\cftbeforetabskip}{\z@ \@plus.2\p@}
@@ -2828,9 +3193,19 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cfttabdotsep}{\cftdotsep}
 \newcommand{\cfttabpagefont}{\normalfont}
 \newcommand{\cfttabafterpnum}{}
+\newcommand{\cfttabpnumfinal}{\cftpnumfinaldefault}
 \newcommand{\cfttabfillnum}[1]{%
-  {\cfttableader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cfttabpagefont #1}\cfttabafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cfttableader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cfttabpagefont #1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {1}{}{#1}{\@contentsline@destination}%
+    \cfttabafterpnum\cfttabpnumfinal\par
 }
 %    \end{macrocode}
 % \end{macro}
@@ -2845,7 +3220,8 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 % \end{macro}
-%
+% \end{macro}
+% 
 % \subsection{Support for the \Lpack{subfigure} package}
 % \changes{v1.1}{2000/02/12}{Added subfigure support}
 %
@@ -2854,19 +3230,20 @@ Consider installing the current version of tocbibind.}}
 % names are changed. However, the code need only be executed if the
 % \Lpack{subfigure} package is actually loaded.
 %
-% \begin{macro}{\@cftl@subfig}
+% \begin{macro}[no-user-doc]{\@cftl@subfig}
 %    This command redefines the |\l@subfigure| command.
 %    \begin{macrocode}
 \newcommand{\@cftl@subfig}{%
 %    \end{macrocode}
-% \begin{macro}{\l@subfigure}
+% \begin{macro}[no-user-doc]{\l@subfigure}
 %  |\l@subfigure{|\meta{title}|}{|\meta{page}|}| typesets the LoF entry for
 % a |subfigure| caption heading. It is essentially the same as the
 % parameterised code for |\l@figure| except that account has to be taken
 % of |lofdepth|.
 %    \begin{macrocode}
 \renewcommand*{\l@subfigure}[2]{%
-  \ifnum \c@lofdepth > \toclevel@subfigure
+  \ifnum \toclevel@subfigure > \c@lofdepth 
+  \else
     \vskip \cftbeforesubfigskip
     {\leftskip \cftsubfigindent\relax
      \rightskip \@tocrmarg
@@ -2879,7 +3256,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubfigaftersnum
      \let\@cftasnumb \cftsubfigaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {\toclevel@subfigure}{##1}{##2}{\@contentsline@destination}%
      {\cftsubfigfont ##1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {\toclevel@subfigure}{##1}{##2}{\@contentsline@destination}%
      \cftsubfigfillnum{##2}}%
   \fi
   }%
@@ -2889,8 +3270,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@cftsetsubfig}
+% \begin{macro}[no-user-doc]{\@cftsetsubfig}
 % This command initialises the setup for subfigure captions in the LoF.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftsubfigpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftsetsubfig}{%
 %    \end{macrocode}
@@ -2905,6 +3287,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubfigdotsep}
 % \begin{macro}{\cftsubfigpagefont}
 % \begin{macro}{\cftsubfigafterpnum}
+% \begin{macro}{\cftsubfigpnumfinal}
 % \begin{macro}{\toclevel@subfig}
 % \begin{macro}{\cftsubfigfillnum}
 %    \begin{macrocode}
@@ -2922,12 +3305,23 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubfigdotsep}{\cftdotsep}
 \newcommand{\cftsubfigpagefont}{\normalfont}
 \newcommand{\cftsubfigafterpnum}{}
+\newcommand{\cftsubfigpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subfigure}{1}
 \newcommand{\cftsubfigfillnum}[1]{%
-  {\cftsubfigleader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubfigpagefont ##1}\cftsubfigafterpnum\par
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubfigleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {\toclevel@subfigure}{}{##1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubfigpagefont ##1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {\toclevel@subfigure}{}{##1}{\@contentsline@destination}%
+    \cftsubfigafterpnum\cftsubfigpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -2948,19 +3342,20 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftl@subtab}
+% \begin{macro}[no-user-doc]{\@cftl@subtab}
 %    This code redefines the code for |\l@subtable|.
 %    \begin{macrocode}
 \newcommand{\@cftl@subtab}{%
 %    \end{macrocode}
-% \begin{macro}{\l@subtable}
+% \begin{macro}[no-user-doc]{\l@subtable}
 %  |\l@subtable{|\meta{title}|}{|\meta{page}|}| typesets the LoT entry for
 % a |subtable| caption heading. It is essentially the same as the
 % parameterised code for |\l@table| except account has to be taken of
 % |lotdepth|.
 %    \begin{macrocode}
 \renewcommand*{\l@subtable}[2]{%
-  \ifnum \c@lotdepth > \toclevel@subtable
+  \ifnum \toclevel@subtable > \c@lofdepth 
+  \else
     \vskip \cftbeforesubtabskip
     {\leftskip \cftsubtabindent\relax
      \rightskip \@tocrmarg
@@ -2973,7 +3368,11 @@ Consider installing the current version of tocbibind.}}
      \let\@cftasnum \cftsubtabaftersnum
      \let\@cftasnumb \cftsubtabaftersnumb
      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     \UseHookWithArguments{contentsline/text/before}{4}
+       {\toclevel@subtable}{##1}{##2}{\@contentsline@destination}%
      {\cftsubtabfont ##1}\nobreak
+     \UseHookWithArguments{contentsline/text/after}{4}
+       {\toclevel@subtable}{##1}{##2}{\@contentsline@destination}%
      \cftsubtabfillnum{##2}}%
   \fi
   }%
@@ -2982,8 +3381,9 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@cftsetsubtab}
+% \begin{macro}[no-user-doc]{\@cftsetsubtab}
 % This command sets up the defaults for subtable entries in the LoT.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftsubtabpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftsetsubtab}{%
 %    \end{macrocode}
@@ -2998,6 +3398,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftsubtabdotsep}
 % \begin{macro}{\cftsubtabpagefont}
 % \begin{macro}{\cftsubtabafterpnum}
+% \begin{macro}{\cftsubtabpnumfinal}
 % \begin{macro}{\toclevel@subtable}
 % \begin{macro}{\cftsubtabfillnum}
 %  These are the user commands to control the typesetting of Subtable
@@ -3018,12 +3419,23 @@ Consider installing the current version of tocbibind.}}
 \newcommand{\cftsubtabdotsep}{\cftdotsep}
 \newcommand{\cftsubtabpagefont}{\normalfont}
 \newcommand{\cftsubtabafterpnum}{}
+\newcommand{\cftsubtabpnumfinal}{\cftpnumfinaldefault}
 \providecommand{\toclevel@subtable}{1}
-\newcommand{\cftsubtabfillnum}[1]{%
-  {\cftsubtableader}\nobreak
-  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtabpagefont ##1}\cftsubtabafterpnum\par
+\newcommand{\cftsubtagfillnum}[1]{%
+  {%
+   \UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+   \cftsubtagleader
+   \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+  }\nobreak
+  \UseHookWithArguments{contentsline/page/before}{4}
+    {\toclevel@subtable}{}{##1}{\@contentsline@destination}%
+  \makebox[\@pnumwidth][\cftpnumalign]{\cftsubtagpagefont ##1}%
+  \UseHookWithArguments{contentsline/page/after}{4}
+    {\toclevel@subtable}{}{##1}{\@contentsline@destination}%
+    \cftsubtagafterpnum\cftsubtagpnumfinal\par
 }
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -3063,9 +3475,10 @@ Consider installing the current version of tocbibind.}}
 %
 % \subsection{New list of\ldots}
 % \changes{v2.0}{2001/03/03}{Added \cs{newlistof} and \cs{newlistentry}}
-%
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
 % \begin{macro}{\newlistentry}
-% |\newlistentry[|\meta{within}|]{|\meta{counter}|}{|\meta{ext}|}{|\meta{level-1}|}| creates a set of commands for a new kind of entry into a List of.
+% |\newlistentry[|\meta{within}|]{|\meta{counter}|}{|\meta{ext}|}{|\meta{level-1}|}| 
+% creates a set of commands for a new kind of entry into a List of.
 %    \begin{macrocode}
 \newcommand{\newlistentry}[4][\@empty]{%
 %    \end{macrocode}
@@ -3117,7 +3530,11 @@ Consider installing the current version of tocbibind.}}
        \expandafter\let\expandafter\@cftasnum\csname cft#2aftersnum\endcsname
        \expandafter\let\expandafter\@cftasnumb\csname cft#2aftersnumb\endcsname
        \advance\leftskip\@tempdima \null\nobreak\hskip -\leftskip
-       {\@nameuse{cft#2font}##1}\nobreak
+       \UseHookWithArguments{contentsline/text/before}{4}
+         {\@nameuse{toclevel@#2}}{##1}{##2}{\@contentsline@destination}%
+        {\@nameuse{cft#2font} ##1}\nobreak
+       \UseHookWithArguments{contentsline/text/after}{4}
+         {\@nameuse{toclevel@#2}}{##1}{##2}{\@contentsline@destination}%       
        \@nameuse{cft#2fillnum}{##2}}%
     \fi
   }  % end of \l@#2
@@ -3170,6 +3587,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftXleader}
 % \begin{macro}{\cftXpagefont}
 % \begin{macro}{\cftXafterpnum}
+% \begin{macro}{\cftXpnumfinal}
 % And the remaining commands.
 %    \begin{macrocode}
   \@namedef{cft#2font}{\normalfont}
@@ -3180,7 +3598,9 @@ Consider installing the current version of tocbibind.}}
   \@namedef{cft#2leader}{\normalfont\cftdotfill{\@nameuse{cft#2dotsep}}}
   \@namedef{cft#2pagefont}{\normalfont}
   \@namedef{cft#2afterpnum}{}
+  \@namedef{cft#2pnumfinal}{\cftpnumfinaldefault}
 %    \end{macrocode}
+% \end{macro}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -3192,9 +3612,10 @@ Consider installing the current version of tocbibind.}}
 %
 % \begin{macro}{\toclevel@X}
 % The hyperref package needs a command |\toclevel@X|, holding
-% the \meta{level-1} value.
+% the \meta{level} value.
+% \changes{v3.0a}{2026-07-27}{Corrected the value, issue \#60}
 %    \begin{macrocode}
-  \@namedef{toclevel@#2}{#4}
+  \ExpandArgs{ce}\def{toclevel@#2}{\inteval{#4+1}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3202,8 +3623,16 @@ Consider installing the current version of tocbibind.}}
 % Typeset the leader and page number.
 %    \begin{macrocode}
   \@namedef{cft#2fillnum}##1{%
-    {\@nameuse{cft#2leader}}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#2pagefont}##1}\@nameuse{cft#2afterpnum}\par
+    {\UseTaggingSocket{toc/leaders/before}\SuspendTagging{toc/leaders}%
+     \@nameuse{cft#2leader}%
+     \ResumeTagging{toc/leaders}\UseTaggingSocket{toc/leaders/after}%
+    }\nobreak
+    \UseHookWithArguments{contentsline/page/before}{4}
+      {\@nameuse{toclevel@#2}}{}{##1}{\@contentsline@destination}
+    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#2pagefont}##1}%
+    \UseHookWithArguments{contentsline/page/after}{4}
+      {\@nameuse{toclevel@#2}}{}{##1}{\@contentsline@destination}%
+     \@nameuse{cft#2afterpnum}\@nameuse{cft#2pnumfinal}\par
   }
 %    \end{macrocode}
 % \end{macro}
@@ -3229,7 +3658,7 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ext@Z}
+% \begin{macro}[no-user-doc]{\ext@Z}
 % \begin{macro}{\Zdepth}
 % The file extension and listing depth.
 %    \begin{macrocode}
@@ -3239,17 +3668,22 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
-%
+% \begin{macro}{\cftZtitlename}
+%    \begin{macrocode}
+  \@namedef{cft#3titlename}{#4}
+%    \end{macrocode}
+% \end{macro}
 % \begin{macro}{\cftmarkZ}
 % The heading marks for the listing.
 % \changes{v2.3}{2002/06/15}{different koma settings in \cs{newlistof}}
 %    \begin{macrocode}
   \if@cftkoma
     \@namedef{cftmark#3}{%
-      \@mkboth{#4}{#4}}
+      \@mkboth{\UseName{cft#3titlename}}{\UseName{cft#3titlename}}}
   \else
     \@namedef{cftmark#3}{%
-      \@mkboth{\MakeUppercase{#4}}{\MakeUppercase{#4}}}
+      \@mkboth{\MakeUppercase{\UseName{cft#3titlename}}}
+              {\MakeUppercase{\UseName{cft#3titlename}}}}
   \fi
 %    \end{macrocode}
 % \end{macro}
@@ -3265,9 +3699,9 @@ Consider installing the current version of tocbibind.}}
   \@namedef{listof#2}{%
     \@cfttocstart
     \if@cfthaschapter
-      \chapter*{#4}
+      \chapter*{\UseName{cft#3titlename}}
     \else
-      \section*{#4}
+      \section*{\UseName{cft#3titlename}}
     \fi
     \@nameuse{cftmark#3}
     \@starttoc{#3}%
@@ -3290,26 +3724,13 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftmakeZtitle}
+% \begin{macro}[no-user-doc]{\@cftmakeZtitle}
 % Typeset the title.
 % \changes{v2.3}{2002/06/15}{Added \cs{@secpenalty} to \cs{@cftmakeZtitle}}
 % \changes{v2.3}{2002/06/15}{Added \cs{@cftpagestyle} to \cs{@cftmakeZtitle}}
+% \changes{v3.0a}{2026-07-29}{Use \cs{cfttitlecommand}}
 %    \begin{macrocode}
-  \@namedef{@cftmake#3title}{%
-    \addpenalty\@secpenalty
-    \if@cfthaschapter
-      \vspace*{\@nameuse{cftbefore#3titleskip}}%
-    \else
-      \vspace{\@nameuse{cftbefore#3titleskip}}%
-    \fi
-    \@cftpagestyle
-    {\interlinepenalty\@M
-    {\@nameuse{cft#3titlefont}#4}{\@nameuse{cftafter#3title}}%
-    \@nameuse{cftmark#3}%
-    \par\nobreak
-    \vskip \@nameuse{cftafter#3titleskip}%
-    \@afterheading}}
-
+  \@namedef{@cftmake#3title}{\cfttitlecommand{#3}}%
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3411,7 +3832,7 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftsetindents}
+% \begin{macro}[no-user-doc]{\@cftsetindents}
 % |\@cftsetindents{|\meta{X}|}{|\meta{indent}|}{|\meta{numwidth}|}| is
 % the internal version of |\cftsetindents|, where in this case \meta{X}
 % is the internal (shorthand) name of the entry.
@@ -3428,30 +3849,32 @@ Consider installing the current version of tocbibind.}}
 % \subsection{Switching page numbering}
 % \changes{v2.0}{2001/03/03}{Added page number switching off/on}
 %
-% \begin{macro}{\@cftpnumoff}
+% \begin{macro}[no-user-doc]{\@cftpnumoff}
 % |\@cftpnumoff{|\meta{shorthand}|}| is the workhorse
 % for switching page numbering off. The \meta{shorthand} argument is the
 % shorthand name of the entry (e.g. |subsec| for |subsection|).
 % The macro redefines the |\cftXnumfill| command so that there is no leader
 % and the page number is ignored.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
+% \changes{v3.0a}{2026-07-27}{Close the Reference structure}
 %    \begin{macrocode}
 \newcommand{\@cftpnumoff}[1]{%
-  \@namedef{cft#1fillnum}##1{%
-    \cftparfillskip\@nameuse{cft#1afterpnum}\par}}
+  \@namedef{cft#1fillnum}##1{\UseTaggingSocket{struct/end}%
+    \cftparfillskip\@nameuse{cft#1afterpnum}\@nameuse{cft#1pnumfinal}\par}}
 
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\cftchapname}
-% \begin{macro}{\cftsecname}
-% \begin{macro}{\cftsubsecname}
-% \begin{macro}{\cftsubsubsecname}
-% \begin{macro}{\cftparaname}
-% \begin{macro}{\cftsubparaname}
-% \begin{macro}{\cftfigname}
-% \begin{macro}{\cftsubfigname}
-% \begin{macro}{\cfttabname}
-% \begin{macro}{\cftsubtabname}
+% \begin{macro}[no-user-doc]{\cftchapname}
+% \begin{macro}[no-user-doc]{\cftsecname}
+% \begin{macro}[no-user-doc]{\cftsubsecname}
+% \begin{macro}[no-user-doc]{\cftsubsubsecname}
+% \begin{macro}[no-user-doc]{\cftparaname}
+% \begin{macro}[no-user-doc]{\cftsubparaname}
+% \begin{macro}[no-user-doc]{\cftfigname}
+% \begin{macro}[no-user-doc]{\cftsubfigname}
+% \begin{macro}[no-user-doc]{\cfttabname}
+% \begin{macro}[no-user-doc]{\cftsubtabname}
 %  Unfortunately an early design decision was the use shorthands like |sec|
 % for |section|. For the page switching I need to be able to correlate the
 % shorthands and longhands.
@@ -3482,7 +3905,7 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftpagenumbersoff}
 % The user level command for switching off page numbers is
 % |\cftpagenumbersoff{|\meta{entry}|}| where \meta{entry} is the longhand
-% name of the entry. The principal task opf this macro is to determine
+% name of the entry. The principal task of this macro is to determine
 % the corresponding shorthand name of the \meta{entry} and then call
 % |\@cftpnumoff| to do the work. For |part| and user-defined entries
 % the long- and short-hand entry names are identical.
@@ -3570,17 +3993,19 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 %
 %
-% \begin{macro}{\@cftpnumon}
+% \begin{macro}[no-user-doc]{\@cftpnumon}
 % |\@cftpnumon{|\meta{shorthand}|}| is the workhorse
 % for switching page numbering off. The \meta{shorthand} argument is the
 % shorthand name of the entry (e.g. |subsec| for |subsection|).
 % The macro defines the |\cftXnumfill| command to correspond to
 % the default definition.
+% \changes{v3.0a}{2026-07-27}{Added \cs{cftXpnumfinal}}
 %    \begin{macrocode}
 \newcommand{\@cftpnumon}[1]{%
   \@namedef{cft#1fillnum}##1{%
     {\@nameuse{cft#1leader}}\nobreak
-    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#1pagefont}##1}\@nameuse{cft#1afterpnum}\par
+    \makebox[\@pnumwidth][\cftpnumalign]{\@nameuse{cft#1pagefont}##1}%
+     \@nameuse{cft#1afterpnum}\@nameuse{cft#1pnumfinal}\par
   }%
 }
 %    \end{macrocode}
@@ -3627,13 +4052,15 @@ Consider installing the current version of tocbibind.}}
 % |\cftchapterprecistoc{|\meta{text}|}| adds \meta{text} to the \file{.toc}
 % file. The \meta{text} will be typeset within the same margins as the
 % the title text of a |\chapter| heading, using an italic font.
+% \changes{3.0a}{2026-08-11}{Add tagging socket}
 %    \begin{macrocode}
 \newcommand{\cftchapterprecistoc}[1]{\addtocontents{toc}{%
 %    \end{macrocode}
 % Start a group to localize changes to the paragraphing. Set the
 % left margin to the chapter indent plus the chapter number width.
 %    \begin{macrocode}
-  {\leftskip \cftchapindent\relax
+  {\UseTaggingSocket{struct-mc}{tag=\protect\UseStructureName{toc/item}}{%
+  \leftskip \cftchapindent\relax
    \advance\leftskip \cftchapnumwidth\relax
 %    \end{macrocode}
 % Set the right hand margin to |\@tocrmarg|.
@@ -3644,7 +4071,7 @@ Consider installing the current version of tocbibind.}}
 % is finished (to use the local skips). Finally close the group and we
 % are done.
 %    \begin{macrocode}
-   \textit{#1}\protect\par}}}
+   \textit{#1}\protect\par}}}}
 
 %    \end{macrocode}
 % \end{macro}
@@ -3662,19 +4089,22 @@ Consider installing the current version of tocbibind.}}
 % \begin{macro}{\cftaddtitleline}
 % |\cftaddtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{title}|}{|\meta{page}|}|
 % adds a |\contentsline| entry to \meta{file} with the given information.
+% \changes{v3.0a}{2026-07-26}{Use four arguments for \cs{contentsline}, issue \#59} 
 %    \begin{macrocode}
 \newcommand{\cftaddtitleline}[4]{\addtocontents{#1}{%
-  \protect\contentsline{#2}{#3}{#4}}}
+  \protect\contentsline{#2}{#3}{#4}{\@currentHref}\protected@file@percent}}
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{\cftaddnumtitleline}
-% |\cftaddtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
+% |\cftaddnumtitleline{|\meta{file}|}{|\meta{kind}|}{|\meta{num}|}{|\meta{title}|}{|\meta{page}|}|
 % adds a |\contentsline| entry to \meta{file} with the given information.
 % \changes{v2.3c}{2003/09/26}{Removed \cs{ignorespaces} from \cs{cftaddnumtitleline}}
+% \changes{v3.0a}{2026-07-26}{Use four arguments for \cs{contentsline}, issue \#59} 
 %    \begin{macrocode}
 \newcommand{\cftaddnumtitleline}[5]{\addtocontents{#1}{%
-    \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}}}
+  \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}{\@currentHref}%
+    \protected@file@percent}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3682,20 +4112,11 @@ Consider installing the current version of tocbibind.}}
 % two macros.
 % \changes{2003/09/26}{v2.3c}{Hyperref fix for \cs{cftaddtitleline} and
 %                             \cs{cftaddnumtitleline}}
-%    \begin{macrocode}
-\AtBeginDocument{%
-  \@ifpackageloaded{hyperref}{%
-    \renewcommand{\cftaddtitleline}[4]{\addtocontents{#1}{%
-      \protect\contentsline{#2}{#3}{#4}{\@currentHref}}}
-    \renewcommand{\cftaddnumtitleline}[5]{\addtocontents{#1}{%
-      \protect\contentsline{#2}{\protect\numberline{#3}#4}{#5}{\@currentHref}}}
-  }{}
-}
-
-%    \end{macrocode}
+% \changes{v3.0a}{2026-07-26}{Remove unneeded hyperref code}. Argument number is
+% identical now.                             
 %
 %
-% \begin{macro}{\@starttoc}
+% \begin{macro}[no-user-doc]{\@starttoc}
 %
 % Okay, here's a roughly-comprehensive list where \cs{@starttoc} is redefined in \TeX{} Live 2014.
 % \begin{itemize}
@@ -3723,9 +4144,11 @@ Consider installing the current version of tocbibind.}}
 % \item devanagari
 % \end{itemize}
 % This makes things difficult if we want to redefine \cs{@starttoc} here.
-% Many of the packages/classes above will not be used in conjunction with tocloft; on the other hand, we don't want to trample too much on others' code.
+% Many of the packages/classes above will not be used in conjunction with tocloft; 
+% on the other hand, we don't want to trample too much on others' code.
 %
-% So for our own work here, let's be extra conservative, at least for now, and only hook into \cs{starttoc} if it's the standard \LaTeX{} version.
+% So for our own work here, let's be extra conservative, at least for now,
+%  and only hook into \cs{starttoc} if it's the standard \LaTeX{} version.
 %    \begin{macrocode}
 \def\@starttoc@latex@orig#1{%
  \begingroup
@@ -3737,28 +4160,35 @@ Consider installing the current version of tocbibind.}}
    \fi
   \@nobreakfalse
 \endgroup}
-\ifx\@starttoc\@starttoc@latex@orig
-  \def\@starttoc#1{%
-    \csname cft#1prehook\endcsname
-    \begingroup
-      \makeatletter
-      \@input{\jobname.#1}%
-      \if@filesw
-        \expandafter\newwrite\csname tf@#1\endcsname
-        \immediate\openout \csname tf@#1\endcsname \jobname.#1\relax
-      \fi
-      \@nobreakfalse
-    \endgroup
-    \csname cft#1posthook\endcsname}
-  \newcommand\cfttocprehook{}
-  \newcommand\cftlofprehook{}
-  \newcommand\cftlotprehook{}
-  \newcommand\cfttocposthook{}
-  \newcommand\cftlofposthook{}
-  \newcommand\cftlotposthook{}
-\else
-  \PackageWarning{tocloft}{\string\@starttoc\space has already been redefined; \string\cfttocprehook\space et al. not installed.}
-\fi
+\newif\if@cft@patch@starttoc
+\IfDocumentMetadataTF
+ {   
+   \@cft@patch@starttoctrue
+ }  
+ {
+   \ifx\@starttoc\@starttoc@latex@orig
+   \@cft@patch@starttoctrue
+   \fi
+ }
+\if@cft@patch@starttoc 
+   \patchcmd\@starttoc
+     {\begingroup}
+     {\csname cft#1prehook\endcsname\begingroup}
+     {}{\@cft@fail}
+   \patchcmd\@starttoc
+     {\endgroup}
+     {\endgroup\csname cft#1posthook\endcsname}
+     {}{\@cft@fail}  
+   \newcommand\cfttocprehook{}
+   \newcommand\cftlofprehook{}
+   \newcommand\cftlotprehook{}
+   \newcommand\cfttocposthook{}
+   \newcommand\cftlofposthook{}
+   \newcommand\cftlotposthook{}
+\else    
+   \PackageWarning{tocloft}{\string\@starttoc\space has already been redefined; 
+   \string\cfttocprehook\space et al. not installed.}
+\fi   
 %    \end{macrocode}
 % \end{macro}
 %
@@ -3850,5 +4280,3 @@ Consider installing the current version of tocbibind.}}
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
-
-

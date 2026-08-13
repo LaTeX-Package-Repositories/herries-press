@@ -1,0 +1,14 @@
+\DocumentMetadata{tagging=on}
+\input{regression-test}
+\documentclass{book}
+\usepackage{tocloft}
+\begin{document}
+\START\showoutput
+\tableofcontents
+\newpage
+\chapter{First chapter} 
+\cftchapterprecis
+ {Our hero is introduced; family tree; early days.}
+
+\SHOWPDFTAGS
+\end{document} 
