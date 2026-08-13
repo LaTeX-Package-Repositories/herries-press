@@ -56,7 +56,7 @@ if pkgdate ~= today then
         "\nToday:    "..today)
 end
 
-require("l3build-wspr.lua")
+-- require("l3build-wspr.lua")
 
 --[===========[--
      TAGGING
