@@ -1,0 +1,35 @@
+
+name:  l3build-tests
+
+# Create pdf for all commits (perhaps should just do on main) 
+on:
+  push:
+    branches:
+      - "main"
+
+
+jobs:
+  # Update the TeX Live tree if necessary
+  texlive-cache:
+    runs-on: ubuntu-latest
+    name: Update TeX Live
+    outputs:
+      cache_key: ${{ steps.texlive.outputs.cache_key }}
+    steps:
+      # Boilerplate
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      
+      - name: Install TeX Live
+        id: texlive
+        uses: zauguin/install-texlive@v4
+        with:
+          # List the required TeX Live packages in a separate file to allow reuse in
+          # different workflows.
+          package_file: .github/tl_packages
+
+      - name: checks
+        run: cd tocloft; l3build check -S 
+      
