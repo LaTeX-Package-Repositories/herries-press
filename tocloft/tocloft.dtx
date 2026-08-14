@@ -313,7 +313,7 @@
 % |\addcontentsline{|\meta{file}|}{|\meta{kind}|}{|\meta{title}|}|
 % command, where \meta{file} is the file extension (e.g., |toc|),
 % \meta{kind} is the kind of entry (e.g., |section| or |subsection|),
-% and \meta{title} is the (numberered) title text. In the cases where
+% and \meta{title} is the (numbered) title text. In the cases where
 % there is a number, the \meta{title} argument is given in the
 % form |{\numberline{number} title-text}|.
 %
@@ -643,7 +643,7 @@
 % (stored inside |\cfttoctitlename|, |\cftloftitlename|, |\cftlottitlename|).
 %
 % Similar sets of commands are provided for ToC, LoF and LoT title
-% typsetting control. For convenience (certainly mine, and hopefully yours)
+% typesetting control. For convenience (certainly mine, and hopefully yours)
 % in the following
 % descriptions I will use |Z| to stand for `toc' or `lof' or `lot'. For
 % example, |\cftmarkZ| stands for |\cftmarktoc| or |\cftmarklof| or
@@ -856,7 +856,7 @@
 % the number and title, followed by the page number, with the
 % |\cftpartpresnum|
 % macro being called before typesetting the number and title.
-% Due to \LaTeX\ ideosyncracies, |\cftpartpresnum| may become doubled in the output
+% Due to \LaTeX\ idiosyncrasies, |\cftpartpresnum| may become doubled in the output
 % if a third-party package behaves differently to that of the default internal \LaTeX\ commands.
 % The |tocloft| package contains specific code to prevent this in the case of
 % the KomaScript classes and for the |titlesec| package; please contact the maintainer
@@ -1084,7 +1084,7 @@
 % |\chapter{...}|. Any answer titles will be written to the file
 % \file{jobname.ans} and |\listanswername| will be used as the list heading.
 % A command |\listofanswer| is created which can be used just like the
-% |\listoftables| or |tableofcontents| commands to generate a listing.
+% |\listoftables| or |\tableofcontents| commands to generate a listing.
 % It is up to you to specify how the entries are put into the
 % new List of Answers. Here is a very simple example, remembering that an
 % |answer| counter has been created.
@@ -1198,13 +1198,13 @@
 % As an example of the independent use of |\newlistentry|, the following
 % will set up for sub-answers.
 % \begin{verbatim}
-% \newlistentry[answer]{subanswer}{1}
+% \newlistentry[answer]{subanswer}{ans}{1}
 % \cftsetindents{subanswer}{1.5em}{3.0em}
 % \renewcommand{\thesubanswer}{\theanswer.\alph{subanswer}}
 % \newcommand{\subanswer}[1]{%
 %    \refstepcounter{subanswer}
 %    \par\textbf{\thesubanswer) #1}
-%    \addcontentsline{ans}{subanswer{\protect\numberline{\thesubanswer}#1}}
+%    \addcontentsline{ans}{subanswer}{\protect\numberline{\thesubanswer}#1}}
 % \setcounter{ansdepth}{2}
 % \end{verbatim}
 % And then:
@@ -1677,7 +1677,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % 
 % \begin{macro}{\cftZtitlename}
-% \changes{3.0a}{2026-07-28}{Parametrize also the list title names}
+% \changes{3.0a}{2026-07-28}{Parameterize also the list title names}
 %    \begin{macrocode}
 \newcommand\cfttoctitlename{\contentsname}
 \newcommand\cftloftitlename{\listfigurename}
@@ -1949,7 +1949,7 @@ Consider installing the current version of tocbibind.}}
 % of a title and its number separately, as both are bundled into the
 % \meta{title} argument within |\contentsline|. They could be handled
 % separately if the |\contentsline| command was suitably modified. If
-% this was done, then the |\addtocontentsline| command would also need
+% this was done, then the |\addcontentsline| command would also need
 % to be changed which would then require the sectioning and captioning
 % commands to be modified as well. This is certainly possible, but would
 % cause problems if any other package also modified the sectioning or
@@ -4077,7 +4077,7 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 %
 % \begin{macro}{\cftlocalchange}
-% |\cftmakelocalchange{|\meta{file}|}{|\meta{pnumwidth}|}{|\meta{tocrmarg}|}|
+% |\cftlocalchange{|\meta{file}|}{|\meta{pnumwidth}|}{|\meta{tocrmarg}|}|
 % makes an entry into \meta{file} to change the |\@pnumwidth| and
 % the |\@tocrmarg| values.
 %    \begin{macrocode}
