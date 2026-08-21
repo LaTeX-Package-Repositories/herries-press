@@ -1733,6 +1733,9 @@ Consider installing the current version of tocbibind.}}
       , heading-indent = 0pt
       , title-format      = #1\UseName{cftafter\cft@listname title}
     }  
+%    \end{macrocode}
+% \changes{v3.0b}{2026-08-21}{change spacing, issue \#63}   
+%    \begin{macrocode}
    \DeclareDocumentCommand \cftsection {O{}m}
      {%
       \renewcommand\cft@listname{#2}%
@@ -1740,14 +1743,14 @@ Consider installing the current version of tocbibind.}}
            toc={},
            placement=normal,
            unnumbered,
-           after-penalty-vspace=\UseName{cftbefore#2titleskip},
+           before-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
            after-vspace=\UseName{cftafter#2titleskip},
            final-code=\@cftpagestyle\@afterheading,
            heading-decls=\tagpdfparaOff\UseName{cft#2titlefont}\tagpdfparaOn,
            headformat-instance=cftsection,
           #1      
          ] {\UseName{cft#2titlename}}%
-     } 
+     }   
   }
   {
    \DeclareDocumentCommand \cftchapter {O{}m}

@@ -1,0 +1,676 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(issue63.ans)
+\tf@ans=\write...
+(issue63.toc)
+\tf@toc=\write...
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, shifted 794.96999, direction TLT
+.....\kern0.0
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\pdflinkstate 1
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdfcolorstack 0 push {0 g 0 G}
+....\hbox(0.0+0.0)x345.0, direction TLT
+....\pdfcolorstack 0 pop
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate 0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 334.79688fil, direction TLT
+...\write-{}
+...\pdfcolorstack 0 push {0 g 0 G}
+...\glue(\topskip) 3.85
+...\hbox(6.15+0.11)x345.0, glue set 312.5fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x15.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 x
+....\TU/lmr/m/n/10 t
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 5.08499
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.474
+...\hbox(17.416+0.14928)x345.0, glue set 154.76747fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\penalty 10000
+.....\glue 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/24.88 L
+....\TU/lmr/bx/n/24.88 i
+....\TU/lmr/bx/n/24.88 s
+....\TU/lmr/bx/n/24.88 t
+....\TU/lmr/bx/n/24.88  
+....\glue(\spaceskip) 0.0 plus 4.66501 minus 3.11
+....\TU/lmr/bx/n/24.88 o
+....\TU/lmr/bx/n/24.88 f
+....\TU/lmr/bx/n/24.88  
+....\glue(\spaceskip) 0.0 plus 4.66501 minus 3.11
+....\TU/lmr/bx/n/24.88 A
+....\TU/lmr/bx/n/24.88 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/24.88 -
+....\TU/lmr/bx/n/24.88 s
+....\TU/lmr/bx/n/24.88 w
+....\kern-0.77129 (font)
+....\TU/lmr/bx/n/24.88 e
+....\TU/lmr/bx/n/24.88 r
+....\TU/lmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 10000
+...\glue 9.913 plus 0.86198
+...\glue 0.0 plus 0.2
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.80072
+...\hbox(7.05+0.22)x345.0, glue set 251.37996fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+....\hbox(6.66+0.22)x15.0, glue set 2.22fil, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/m/n/10 0
+.....\TU/lmr/m/n/10 .
+.....\TU/lmr/m/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 S
+....\TU/lmr/m/n/10 o
+....\TU/lmr/m/n/10 m
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10  
+....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 a
+....\TU/lmr/m/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/m/n/10 -
+....\TU/lmr/m/n/10 s
+....\TU/lmr/m/n/10 w
+....\kern-0.28 (font)
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 r
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.06+0.0)x7.77988, direction TLT
+......\mathon
+......\kern2.49994 (italic)
+......\hbox(1.06+0.0)x2.78, direction TLT
+.......\TU/lmr/m/n/10 .
+......\kern2.49994 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10  
+....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+....\hbox(6.66+0.0)x15.50003, glue set 10.50003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/m/n/10 1
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\glue 0.0 plus 0.2
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.62
+...\hbox(7.16+0.22)x345.0, glue set 238.83997fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+....\hbox(6.66+0.22)x15.0, glue set 2.22fil, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/m/n/10 0
+.....\TU/lmr/m/n/10 .
+.....\TU/lmr/m/n/10 2
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 A
+....\TU/lmr/m/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/m/n/10 -
+....\TU/lmr/m/n/10 o
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 h
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 r
+....\TU/lmr/m/n/10  
+....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 a
+....\TU/lmr/m/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/m/n/10 -
+....\TU/lmr/m/n/10 s
+....\TU/lmr/m/n/10 w
+....\kern-0.28 (font)
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 r
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.06+0.0)x7.77988, direction TLT
+......\mathon
+......\kern2.49994 (italic)
+......\hbox(1.06+0.0)x2.78, direction TLT
+.......\TU/lmr/m/n/10 .
+......\kern2.49994 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10  
+....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+....\hbox(6.66+0.0)x15.50003, glue set 10.50003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/m/n/10 1
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.8
+...\hbox(6.98+0.11)x345.0, glue set 211.89333fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/10 A
+....\TU/lmr/bx/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 w
+....\kern-0.32 (font)
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 r
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 0
+....\TU/lmr/bx/n/10 .
+....\TU/lmr/bx/n/10 1
+....\TU/lmr/bx/n/10 .
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 1.27667 plus 5.74498 minus 0.42555
+....\TU/lmr/bx/n/10 S
+....\TU/lmr/bx/n/10 o
+....\TU/lmr/bx/n/10 m
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 a
+....\TU/lmr/bx/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 w
+....\kern-0.32 (font)
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 r
+....\kern0.0 (italic)
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) -0.5 plus 1.665 minus 1.11
+....\write1{\@writefile{ans}{\protect \contentsline {answer}{\protect \numberline {0.1}Some answer}{\thepage }{answer.0.1}\protected@file@percent }}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.74
+...\hbox(6.15+0.11)x345.0, glue set 312.5fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x15.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 x
+....\TU/lmr/m/n/10 t
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.91
+...\hbox(6.98+0.11)x345.0, glue set 197.18332fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/10 A
+....\TU/lmr/bx/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 w
+....\kern-0.32 (font)
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 r
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 0
+....\TU/lmr/bx/n/10 .
+....\TU/lmr/bx/n/10 2
+....\TU/lmr/bx/n/10 .
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 1.27667 plus 5.74498 minus 0.42555
+....\TU/lmr/bx/n/10 A
+....\TU/lmr/bx/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 o
+....\TU/lmr/bx/n/10 t
+....\TU/lmr/bx/n/10 h
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 r
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 a
+....\TU/lmr/bx/n/10 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 w
+....\kern-0.32 (font)
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 r
+....\kern0.0 (italic)
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) -0.5 plus 1.665 minus 1.11
+....\write1{\@writefile{ans}{\protect \contentsline {answer}{\protect \numberline {0.2}Another answer}{\thepage }{answer.0.2}\protected@file@percent }}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.74
+...\hbox(6.15+0.11)x345.0, glue set 287.47998fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x15.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 m
+....\TU/lmr/m/n/10 o
+....\TU/lmr/m/n/10 r
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10  
+....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 t
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 x
+....\TU/lmr/m/n/10 t
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 5.08499
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 7.8388
+...\hbox(10.0512+0.1728)x345.0, glue set 281.68323fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\penalty 10000
+.....\glue 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/14.4 C
+....\TU/lmr/bx/n/14.4 o
+....\TU/lmr/bx/n/14.4 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/14.4 -
+.....= \kern-0.4464 (font)
+....\TU/lmr/bx/n/14.4 t
+....\TU/lmr/bx/n/14.4 e
+....\TU/lmr/bx/n/14.4 n
+....\kern-0.4464 (font)
+....\TU/lmr/bx/n/14.4 t
+....\TU/lmr/bx/n/14.4 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 10000
+...\glue 9.913 plus 0.86198
+...\glue -9.913 plus -0.86198
+...\glue 10.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.88719
+...\hbox(6.94+0.06)x345.0, glue set 292.13995fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\hbox(6.55+0.0)x15.0, glue set 9.25fil, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/10 b
+....\TU/lmr/bx/n/10 l
+....\TU/lmr/bx/n/10 u
+....\TU/lmr/bx/n/10 b
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.56+0.0)x5558.60992, direction TLT
+......\mathon
+......\kern2777.70996 (italic)
+......\hbox(1.56+0.0)x3.19, direction TLT
+.......\TU/lmr/bx/n/10 .
+......\kern2777.70996 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\hbox(6.55+0.0)x15.50003, glue set 9.75003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/10 1
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\penalty -300
+...\glue 15.08499 plus 4.31 minus 0.86198
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 7.94641
+...\hbox(9.99359+0.0864)x345.0, glue set 290.9856fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(9.4464+0.0)x22.50719, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\penalty 10000
+.....\glue 0.0
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/14.4 1
+.....\TU/lmr/bx/n/14.4  
+.....\glue 9.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/14.4 b
+....\TU/lmr/bx/n/14.4 l
+....\TU/lmr/bx/n/14.4 u
+....\TU/lmr/bx/n/14.4 b
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}blub}{\thepage }{target*.3}\protected@file@percent }}
+...\penalty 10000
+...\glue 9.913 plus 0.86198
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdflinkstate 1
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdfcolorstack 0 push {0 g 0 G}
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+...\pdfcolorstack 0 pop
+..\pdfliteral page <lua data reference ...>
+..\pdfliteral page <lua data reference ...>
+..\pdflinkstate 0
+.\kern-633.0
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(794.96999+0.0)x0.0, shifted 794.96999, direction TLT
+.....\kern0.0
+.....\pdfcolorstack 0 push {0 g 0 G}
+.....\hbox(0.0+794.96999)x0.0, shifted -794.96999, direction TLT
+......\kern0.0
+......\hbox(794.96999+0.0)x0.0, glue set - 614.29498fil, shifted 794.96999, direction TLT
+.......\kern0.0
+.......\hbox(794.96999+0.0)x614.295, direction TLT
+........\glue -0.8
+........\vbox(794.96999+0.0)x615.895, direction TLT
+.........\glue -0.8
+.........\rule(0.8+0.0)x*
+.........\hbox(794.96999+0.0)x615.895, direction TLT
+..........\rule(*+*)x0.8
+..........\vbox(794.96999+0.0)x614.295, glue set 397.48499fil, direction TLT
+...........\glue 0.0 plus 1.0fil minus 1.0fil
+...........\hbox(0.0+0.0)x614.295, glue set 307.14749fil, direction TLT
+............\glue 0.0 plus 1.0fil minus 1.0fil
+............\glue 0.0 plus 1.0fil minus 1.0fil
+...........\glue 0.0 plus 1.0fil minus 1.0fil
+...........\kern0.0
+..........\rule(*+*)x0.8
+.........\rule(0.8+0.0)x*
+.........\glue -0.8
+........\glue -0.8
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(0.0+675.26999)x0.0, shifted -794.96999, direction TLT
+......\kern0.0
+......\hbox(0.0+550.0)x0.0, glue set - 134.26999fil, shifted 125.26999, direction TLT
+.......\kern134.26999
+.......\hbox(550.0+0.0)x0.0, glue set - 345.0fil, shifted 550.0, direction TLT
+........\kern0.0
+........\hbox(550.0+0.0)x345.0, direction TLT
+.........\glue -0.8
+.........\vbox(550.0+0.0)x346.6, direction TLT
+..........\glue -0.8
+..........\rule(0.8+0.0)x*
+..........\hbox(550.0+0.0)x346.6, direction TLT
+...........\rule(*+*)x0.8
+...........\vbox(550.0+0.0)x345.0, glue set 275.0fil, direction TLT
+............\glue 0.0 plus 1.0fil minus 1.0fil
+............\hbox(0.0+0.0)x345.0, glue set 172.5fil, direction TLT
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+............\glue 0.0 plus 1.0fil minus 1.0fil
+............\kern0.0
+...........\rule(*+*)x0.8
+..........\rule(0.8+0.0)x*
+..........\glue -0.8
+.........\glue -0.8
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(0.0+125.26999)x0.0, shifted -794.96999, direction TLT
+......\kern0.0
+......\hbox(37.0+0.0)x0.0, glue set - 134.26999fil, shifted 125.26999, direction TLT
+.......\kern134.26999
+.......\hbox(12.0+0.0)x0.0, glue set - 345.0fil, shifted -25.0, direction TLT
+........\kern0.0
+........\hbox(12.0+0.0)x345.0, direction TLT
+.........\glue -0.8
+.........\vbox(12.0+0.0)x346.6, direction TLT
+..........\glue -0.8
+..........\rule(0.8+0.0)x*
+..........\hbox(12.0+0.0)x346.6, direction TLT
+...........\rule(*+*)x0.8
+...........\vbox(12.0+0.0)x345.0, glue set 6.0fil, direction TLT
+............\glue 0.0 plus 1.0fil minus 1.0fil
+............\hbox(0.0+0.0)x345.0, glue set 172.5fil, direction TLT
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+............\glue 0.0 plus 1.0fil minus 1.0fil
+............\kern0.0
+...........\rule(*+*)x0.8
+..........\rule(0.8+0.0)x*
+..........\glue -0.8
+.........\glue -0.8
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(0.0+705.66998)x0.0, shifted -794.96999, direction TLT
+......\kern0.0
+......\hbox(0.0+580.4)x0.0, glue set - 134.26999fil, shifted 125.26999, direction TLT
+.......\kern134.26999
+.......\hbox(0.0+30.4)x0.0, shifted 550.0, direction TLT
+........\kern0.0
+........\hbox(0.4+0.4)x0.0, glue set - 345.0fil, shifted 30.0, direction TLT
+.........\kern0.0
+.........\rule(0.4+0.4)x345.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(0.0+675.26999)x0.0, shifted -794.96999, direction TLT
+......\kern0.0
+......\hbox(0.0+550.0)x0.0, glue set - 134.26999fil, shifted 125.26999, direction TLT
+.......\kern134.26999
+.......\hbox(550.0+0.0)x0.0, shifted 550.0, direction TLT
+........\kern0.0
+........\hbox(550.0+0.0)x0.0, glue set - 421.0fil, direction TLT
+.........\kern356.0
+.........\hbox(550.0+0.0)x65.0, direction TLT
+..........\glue -0.8
+..........\vbox(550.0+0.0)x66.6, direction TLT
+...........\glue -0.8
+...........\rule(0.8+0.0)x*
+...........\hbox(550.0+0.0)x66.6, direction TLT
+............\rule(*+*)x0.8
+............\vbox(550.0+0.0)x65.0, glue set 275.0fil, direction TLT
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\hbox(0.0+0.0)x65.0, glue set 32.5fil, direction TLT
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\kern0.0
+............\rule(*+*)x0.8
+...........\rule(0.8+0.0)x*
+...........\glue -0.8
+..........\glue -0.8
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 pop
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern633.0
+.\kern0.0
+.\kern-633.0
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\kern633.0
+.\pdfliteral page <lua data reference ...>
+<<latex-list-css.html>><<latex-align-css.html>> (issue63.aux)
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~33 structure objects
+(tagpdf)             with ~26 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0
