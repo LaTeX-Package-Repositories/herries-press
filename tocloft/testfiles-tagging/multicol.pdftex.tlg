@@ -21,16 +21,9 @@ Completed box being shipped out [1]
 ...\pdfrunninglinkon
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 400.89386fil
+..\vbox(550.0+0.0)x345.0, glue set 433.95609fil
 ...\write-{}
-...\glue(\topskip) 10.0
-...\rule(0.0+0.0)x*
-...\penalty 10000
-...\glue 15.06577 plus 4.3045 minus 0.86089
-...\glue 0.0
-...\glue(\parskip) 0.0
-...\glue(\parskip) 0.0
-...\glue(\baselineskip) 8.06242
+...\glue(\topskip) 0.06242
 ...\hbox(9.93758+0.0)x345.0, glue set 283.1645fil
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
