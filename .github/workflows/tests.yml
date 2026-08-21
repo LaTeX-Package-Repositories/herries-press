@@ -5,8 +5,8 @@ name:  l3build-tests
 on:
   push:
     branches:
-      - "main"
-
+      - "**"
+  pull_request:
 
 jobs:
   # Update the TeX Live tree if necessary
