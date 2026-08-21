@@ -2,7 +2,8 @@
 
 All notable changes to the `tocloft` package will be documented in this file.
 
-## [Unreleased]
+## [2026-08-21]
+Version 3.0b 
 
 ### Fixed
  - missing cftafterZtitle, tagging/1537
