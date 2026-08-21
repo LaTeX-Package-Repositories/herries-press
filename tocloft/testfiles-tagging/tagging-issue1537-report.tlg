@@ -1,0 +1,671 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(tagging-issue1537-report.toc)
+\tf@toc=\write...
+(tagging-issue1537-report.lof)
+\tf@lof=\write...
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\pdflinkstate 1
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+...\pdflinkstate 0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 253.97287fil, direction TLT
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 40.0
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 12.63376
+...\hbox(17.36624+0.29855)x345.0, glue set 117.80132fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/24.88 C
+....\TU/lmr/bx/n/24.88 o
+....\TU/lmr/bx/n/24.88 n
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/24.88 -
+.....= \kern-0.77129 (font)
+....\TU/lmr/bx/n/24.88 t
+....\TU/lmr/bx/n/24.88 e
+....\TU/lmr/bx/n/24.88 n
+....\kern-0.77129 (font)
+....\TU/lmr/bx/n/24.88 t
+....\TU/lmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\penalty 10000
+...\glue 40.0
+...\glue 10.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 4.70145
+...\hbox(7.0+2.01)x345.0, glue set 256.33997fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/10 L
+....\TU/lmr/bx/n/10 i
+....\TU/lmr/bx/n/10 s
+....\TU/lmr/bx/n/10 t
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 o
+....\TU/lmr/bx/n/10 f
+....\TU/lmr/bx/n/10  
+....\glue(\spaceskip) 0.0 plus 1.915 minus 1.27667
+....\TU/lmr/bx/n/10 F
+....\TU/lmr/bx/n/10 i
+....\TU/lmr/bx/n/10 g
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/10 -
+....\TU/lmr/bx/n/10 u
+....\TU/lmr/bx/n/10 r
+....\TU/lmr/bx/n/10 e
+....\TU/lmr/bx/n/10 s
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.56+0.0)x5558.60992, direction TLT
+......\mathon
+......\kern2777.70996 (italic)
+......\hbox(1.56+0.0)x3.19, direction TLT
+.......\TU/lmr/bx/n/10 .
+......\kern2777.70996 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\hbox(6.55+0.0)x15.50003, glue set 9.75003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/10 1
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\penalty -301
+...\glue 10.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 3.05
+...\hbox(6.94+2.0)x345.0, glue set 287.78998fill, direction TLT
+....\glue(\leftskip) 15.0
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -15.0
+....\hbox(6.55+0.0)x15.0, glue set 9.25fil, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/10 B
+....\TU/lmr/bx/n/10 o
+....\kern0.32 (font)
+....\TU/lmr/bx/n/10 d
+....\TU/lmr/bx/n/10 y
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.56+0.0)x5558.60992, direction TLT
+......\mathon
+......\kern2777.70996 (italic)
+......\hbox(1.56+0.0)x3.19, direction TLT
+.......\TU/lmr/bx/n/10 .
+......\kern2777.70996 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\hbox(6.55+0.0)x15.50003, glue set 9.75003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/bx/n/10 2
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\penalty -300
+...\glue 0.0
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 40.0
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 10.584
+...\hbox(17.416+5.00089)x345.0, glue set 83.51666fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/24.88 L
+....\TU/lmr/bx/n/24.88 i
+....\TU/lmr/bx/n/24.88 s
+....\TU/lmr/bx/n/24.88 t
+....\TU/lmr/bx/n/24.88  
+....\glue(\spaceskip) 0.0 plus 4.66501 minus 3.11
+....\TU/lmr/bx/n/24.88 o
+....\TU/lmr/bx/n/24.88 f
+....\TU/lmr/bx/n/24.88  
+....\glue(\spaceskip) 0.0 plus 4.66501 minus 3.11
+....\TU/lmr/bx/n/24.88 F
+....\TU/lmr/bx/n/24.88 i
+....\TU/lmr/bx/n/24.88 g
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/24.88 -
+....\TU/lmr/bx/n/24.88 u
+....\TU/lmr/bx/n/24.88 r
+....\TU/lmr/bx/n/24.88 e
+....\TU/lmr/bx/n/24.88 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\penalty 10000
+...\glue 40.0
+...\write1{\@writefile{toc}{\protect \contentsline {chapter}{List of Figures}{\thepage }{target*.2}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.0
+...\glue 0.0 plus 0.2
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.33911
+...\hbox(6.66+0.0)x345.0, glue set 286.21994fill, direction TLT
+....\glue(\leftskip) 38.00003
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x15.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue -38.00003
+....\hbox(6.66+0.0)x23.00003, glue set 10.22003fil, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/m/n/10 1
+.....\TU/lmr/m/n/10 .
+.....\TU/lmr/m/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 x
+....\penalty 10000
+....\penalty 10000
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\leaders 0.0 plus 1.0fill
+.....\hbox(1.06+0.0)x7.77988, direction TLT
+......\mathon
+......\kern2.49994 (italic)
+......\hbox(1.06+0.0)x2.78, direction TLT
+.......\TU/lmr/m/n/10 .
+......\kern2.49994 (italic)
+......\mathoff
+....\penalty 10000
+....\penalty 10000
+....\hbox(6.66+0.0)x15.50003, glue set 10.50003fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\TU/lmr/m/n/10 2
+....\kern-1.0
+....\kern1.0
+....\penalty 10000
+....\glue(\parfillskip) -25.50003
+....\glue(\rightskip) 25.50003
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfliteral page <lua data reference ...>
+..\pdfliteral page <lua data reference ...>
+..\pdflinkstate 1
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page <lua data reference ...>
+..\pdfliteral page <lua data reference ...>
+..\pdflinkstate 0
+.\kern0.0
+.\pdfliteral page <lua data reference ...>
+Floatstructure:28
+============================================================
+TEST 1: Show PDF Tags
+============================================================
+-------- tagging-issue1537-report.xml (start) ---------
+<PDF>
+ <StructTreeRoot>
+  <Document xmlns="http://iso.org/pdf2/ssn"
+     id="ID.002"
+    >
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.006"
+     >
+    <chapter xmlns="https://www.latex-project.org/ns/book"
+       id="ID.007"
+       title="Contents"
+       rolemaps-to="H1"
+      >
+     <Span xmlns="http://iso.org/pdf2/ssn"
+        id="ID.008"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+       >
+      <?MarkedContent page="1" ?>Contents
+     </Span>
+    </chapter>
+    <TOC xmlns="http://iso.org/pdf/ssn"
+       id="ID.009"
+       title="toc"
+      >
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.010"
+        title="List of Figures"
+       >
+       <?References objects="1" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.011"
+        >
+       <?MarkedContent page="1" ?>List of Figures
+       <?MarkedContent page="1" ?>1
+      </Reference>
+     </TOCI>
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.012"
+        title="Body"
+       >
+       <?References objects="2" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.013"
+        >
+       <Lbl xmlns="http://iso.org/pdf2/ssn"
+          id="ID.014"
+         >
+        <?MarkedContent page="1" ?>1
+       </Lbl>
+       <?MarkedContent page="1" ?>Body
+       <?MarkedContent page="1" ?>2
+      </Reference>
+     </TOCI>
+    </TOC>
+   </Sect>
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.015"
+     >
+    <chapter xmlns="https://www.latex-project.org/ns/book"
+       id="ID.016"
+       title="List of Figures"
+       rolemaps-to="H1"
+      >
+     <Span xmlns="http://iso.org/pdf2/ssn"
+        id="ID.017"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+        referenced-as="1"
+       >
+      <?MarkedContent page="1" ?>List of Figures
+     </Span>
+    </chapter>
+    <TOC xmlns="http://iso.org/pdf/ssn"
+       id="ID.018"
+       title="lof"
+      >
+     <TOCI xmlns="http://iso.org/pdf/ssn"
+        id="ID.019"
+        title="x"
+       >
+       <?References objects="3" ?>
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.020"
+        >
+       <Lbl xmlns="http://iso.org/pdf2/ssn"
+          id="ID.021"
+         >
+        <?MarkedContent page="1" ?>1.1
+       </Lbl>
+       <?MarkedContent page="1" ?>x
+       <?MarkedContent page="1" ?>2
+      </Reference>
+     </TOCI>
+    </TOC>
+   </Sect>
+   <Sect xmlns="http://iso.org/pdf2/ssn"
+      id="ID.022"
+     >
+    <chapter xmlns="https://www.latex-project.org/ns/book"
+       id="ID.023"
+       title="Body"
+       rolemaps-to="H1"
+       referenced-as="2"
+      >
+     <Span xmlns="http://iso.org/pdf2/ssn"
+        id="ID.024"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Start"
+       >
+      <?MarkedContent page="2" ?>Chapter 1
+     </Span>
+     <Span xmlns="http://iso.org/pdf2/ssn"
+        id="ID.025"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Start"
+       >
+      <?MarkedContent page="2" ?>Body
+     </Span>
+    </chapter>
+    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.026"
+       rolemaps-to="Part"
+      >
+     <text xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.027"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+        rolemaps-to="P"
+       >
+      <?MarkedContent page="2" ?>Placeholder.
+     </text>
+    </text-unit>
+   </Sect>
+   <figures xmlns="https://www.latex-project.org/ns/dflt"
+      id="ID.004"
+      rolemaps-to="Sect"
+     >
+    <float xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.028"
+       rolemaps-to="Aside"
+       referenced-as="3"
+      >
+     <Caption xmlns="http://iso.org/pdf2/ssn"
+        id="ID.029"
+       >
+      <Lbl xmlns="http://iso.org/pdf2/ssn"
+         id="ID.030"
+        >
+       <?MarkedContent page="2" ?>Figure 1.1: 
+      </Lbl>
+      <text xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.031"
+         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+         Layout:TextAlign="Justify"
+         rolemaps-to="P"
+        >
+       <?MarkedContent page="2" ?>x
+      </text>
+     </Caption>
+    </float>
+   </figures>
+  </Document>
+ </StructTreeRoot>
+</PDF>
+-------- tagging-issue1537-report.xml (end) -----------
+============================================================
+Completed box being shipped out [2]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\pdflinkstate 1
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+...\pdflinkstate 0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 323.99539fil, direction TLT
+...\write-{}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 50.0
+...\glue 0.0
+...\latelua0{}
+...\penalty 10000
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 10.52348
+...\hbox(14.47652+4.02356)x345.0, glue set 121.07516fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue 0.0
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/20.74 C
+....\TU/lmr/bx/n/20.74 h
+....\TU/lmr/bx/n/20.74 a
+....\TU/lmr/bx/n/20.74 p
+....\discretionary (penalty 50)
+.....< \TU/lmr/bx/n/20.74 -
+....\TU/lmr/bx/n/20.74 t
+....\TU/lmr/bx/n/20.74 e
+....\TU/lmr/bx/n/20.74 r
+....\penalty 10000
+....\TU/lmr/bx/n/20.74  
+....\glue 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty 10000
+...\glue 20.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 8.70972
+...\hbox(17.26672+4.976)x345.0, glue set 139.99426fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x0.0, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/bx/n/24.88 B
+....\TU/lmr/bx/n/24.88 o
+....\kern0.77129 (font)
+....\TU/lmr/bx/n/24.88 d
+....\TU/lmr/bx/n/24.88 y
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}Body}{\thepage }{target*.3}\protected@file@percent }}
+...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\penalty 10000
+...\glue 40.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.084
+...\hbox(6.94+0.11)x345.0, glue set 291.48999fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 P
+....\TU/lmr/m/n/10 l
+....\TU/lmr/m/n/10 a
+....\TU/lmr/m/n/10 c
+....\TU/lmr/m/n/10 e
+....\discretionary (penalty 50)
+.....< \TU/lmr/m/n/10 -
+....\TU/lmr/m/n/10 h
+....\TU/lmr/m/n/10 o
+....\TU/lmr/m/n/10 l
+....\TU/lmr/m/n/10 d
+....\TU/lmr/m/n/10 e
+....\TU/lmr/m/n/10 r
+....\TU/lmr/m/n/10 .
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 0
+...\penalty 10000
+...\glue 20.0 plus 2.0 minus 4.0
+...\vbox(18.86+0.0)x345.0, direction TLT
+....\vbox(18.86+0.0)x345.0, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\latelua0{}
+.....\write1{\@writefile{lof}{\protect \contentsline {figure}{\protect \numberline {1.1}{\ignorespaces x}}{\thepage }{figure.struct.28}\protected@file@percent }}
+.....\glue 10.0
+.....\hbox(6.8+2.06)x345.0, glue set 144.08fil, direction TLT
+......\glue 0.0 plus 1.0fil
+......\pdfliteral page <lua data reference ...>
+......\pdfliteral page <lua data reference ...>
+......\TU/lmr/m/n/10 F
+......\TU/lmr/m/n/10 i
+......\TU/lmr/m/n/10 g
+......\discretionary (penalty 50)
+.......< \TU/lmr/m/n/10 -
+......\TU/lmr/m/n/10 u
+......\TU/lmr/m/n/10 r
+......\TU/lmr/m/n/10 e
+......\penalty 10000
+......\TU/lmr/m/n/10  
+......\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
+......\TU/lmr/m/n/10 1
+......\TU/lmr/m/n/10 .
+......\TU/lmr/m/n/10 1
+......\TU/lmr/m/n/10 :
+......\TU/lmr/m/n/10  
+......\glue(\spaceskip) 1.11 plus 3.32999 minus 0.555
+......\pdfliteral page <lua data reference ...>
+......\pdfliteral page <lua data reference ...>
+......\TU/lmr/m/n/10 x
+......\glue 0.0 plus 1.0fil
+.....\glue 0.0
+.....\glue 0.0
+...\glue 12.0 plus 2.0 minus 2.0
+...\glue -12.0 plus -2.0 minus -2.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\pdfliteral page <lua data reference ...>
+..\pdfliteral page <lua data reference ...>
+..\pdflinkstate 1
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\TU/lmr/m/n/10 2
+....\glue 0.0 plus 1.0fil
+..\pdfliteral page <lua data reference ...>
+..\pdfliteral page <lua data reference ...>
+..\pdflinkstate 0
+.\kern0.0
+.\kern-633.0
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\kern633.0
+.\pdfliteral page <lua data reference ...>
+<<latex-list-css.html>><<latex-align-css.html>> (tagging-issue1537-report.aux)
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~31 structure objects
+(tagpdf)             with ~24 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0

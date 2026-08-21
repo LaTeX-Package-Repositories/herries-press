@@ -79,7 +79,8 @@
 %   tagging support to all \cs{cftXfillnum} commands}
 % \changes{v3.0a}{2026-07-28}{Add hooks and sockets for 
 %   tagging support to \cs{numberline} command}   
-%     
+% \changes{v3.0b}{2026-08-21}{Fix tagging-issue 1537}   
+%        
 % \def\dtxfile{\texttt{tocloft.dtx}}
 % \def\fileversion{v1.1a} \def\filedate{2000/02/11}
 % \def\fileversion{v2.0}  \def\filedate{2001/03/15}
@@ -97,6 +98,7 @@
 % \def\fileversion{v2.3i} \def\filedate{2017/08/31}
 % \def\fileversion{v2.3j} \def\filedate{2022/06/18}
 % \def\fileversion{v3.0a} \def\filedate{2026/08/12}
+% \def\fileversion{v3.0b} \def\filedate{2026/08/21}
 % 
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -1698,12 +1700,21 @@ Consider installing the current version of tocbibind.}}
 %    \end{macrocode}
 % \end{macro}
 % 
-% \begin{macro}{\cftchapter,\cftsection}
+% \begin{macro}{\cftchapter,\cftsection,\cft@listname}
+% \changes{v3.0b}{2026-08-21}{Add \cs{cftafterZtitle} for tagging issue 1537}   
 %    \begin{macrocode}
+\newcommand\cft@listname{}
 \IfDocumentMetadataTF
  {
+   \DeclareInstance{headformat}{cftchapter}{display}
+    {
+     , heading-indent    = 0pt
+     , prefix-number-sep = \WordSpaceAmount{1}
+     , title-format      = #1\UseName{cftafter\cft@listname title}
+    }
    \DeclareDocumentCommand \cftchapter {O{}m}
      {%
+       \renewcommand\cft@listname{#2}%
        \chapter
          [
            toc={},
@@ -1712,12 +1723,19 @@ Consider installing the current version of tocbibind.}}
            after-penalty-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
            after-vspace=\UseName{cftafter#2titleskip},
            final-code=\@cftpagestyle\@afterheading,
-           title-decls=\UseName{cft#2titlefont},
+           heading-decls=\UseName{cft#2titlefont},
+           headformat-instance=cftchapter,
            #1      
          ] {\UseName{cft#2titlename}}%
      }    
+   \DeclareInstance{headformat}{cftsection}{hang}
+    {
+      , heading-indent = 0pt
+      , title-format      = #1\UseName{cftafter\cft@listname title}
+    }  
    \DeclareDocumentCommand \cftsection {O{}m}
      {%
+      \renewcommand\cft@listname{#2}%
       \section[ 
            toc={},
            placement=normal,
@@ -1725,7 +1743,8 @@ Consider installing the current version of tocbibind.}}
            after-penalty-vspace=\UseName{cftbefore#2titleskip},
            after-vspace=\UseName{cftafter#2titleskip},
            final-code=\@cftpagestyle\@afterheading,
-           title-decls=\UseName{cft#2titlefont},
+           heading-decls=\tagpdfparaOff\UseName{cft#2titlefont}\tagpdfparaOn,
+           headformat-instance=cftsection,
           #1      
          ] {\UseName{cft#2titlename}}%
      } 

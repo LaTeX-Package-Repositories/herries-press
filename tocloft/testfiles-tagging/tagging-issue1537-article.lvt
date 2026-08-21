@@ -1,0 +1,24 @@
+\DocumentMetadata{tagging=on}
+\input{regression-test}
+\documentclass{article}
+\usepackage{tocloft}
+\usepackage[nottoc]{tocbibind}
+
+\renewcommand\cfttoctitlefont{\hfil\Huge\bfseries}
+\renewcommand\cftaftertoctitle{\hfill}   % classic tocloft centering idiom
+%
+\renewcommand\cftloftitlefont{\hfil\Huge\bfseries}
+\renewcommand\cftafterloftitle{\hfill}
+%
+\usepackage{hyperref}
+\begin{document}
+\START\showoutput
+\tableofcontents
+\listoffigures
+\section{Body}
+Placeholder.
+
+
+\begin{figure}\caption{x}\end{figure}
+\SHOWPDFTAGS
+\end{document}
