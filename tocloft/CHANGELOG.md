@@ -2,7 +2,12 @@
 
 All notable changes to the `tocloft` package will be documented in this file.
 
+## [Unreleased]
 
+### Fixed
+ - missing cftafterZtitle, tagging/1537
+ - spacing with article, issue #63
+ 
 ## [2026-08-12]
 Version 3.0a 
  
@@ -85,4 +90,4 @@ Version 3.0a
 - Now doesn't fail with packages like float
 
 ## Changes in version 0.1 (1998/12/31)
-- First public beta release
+- First public beta release 
