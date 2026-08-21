@@ -46,7 +46,7 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 12.8301
-...\hbox(17.1699+0.0)x345.0, glue set 121.68466fil
+...\hbox(17.1699+0.0)x345.0, glue set 243.36932fil
 ....\write1{\new@label@record{mcid-1}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{1}{tagmcid}{\__property_code_tagmcid: }}}
 ....\pdfliteral shipout page{/Span <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x0.0
@@ -64,7 +64,7 @@ Completed box being shipped out [1]
 ....\pdfliteral page{EMC}
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
-....\glue(\rightskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
 ...\marks4{b-,1,7,Span,,,}
 ...\marks4{b+,1,7,Span,,,}
 ...\marks4{e-,1,7,}
@@ -326,7 +326,7 @@ TEST 1: Show PDF Tags
      <Span xmlns="http://iso.org/pdf2/ssn"
         id="ID.007"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+        Layout:TextAlign="Justify"
        >
       <?MarkedContent page="1" ?>Contents
      </Span>

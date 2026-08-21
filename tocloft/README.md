@@ -4,7 +4,7 @@
 Table of Contents, List of Figures, and List of Tables. You can also
 define your own kinds of `List of ...'
 
-Version: 2026-08-12 v3.0a
+Version: 2026-08-21 v3.0b
 
 ## Copyright (C)
 *    1998-2003 Peter R. Wilson

@@ -39,7 +39,7 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 12.63376
-...\hbox(17.36624+0.29855)x345.0, glue set 117.80132fil, direction TLT
+...\hbox(17.36624+0.29855)x345.0, glue set 235.60262fil, direction TLT
 ....\localpar
 .....\localinterlinepenalty=0
 .....\localbrokenpenalty=0
@@ -63,7 +63,7 @@ Completed box being shipped out [1]
 ....\TU/lmr/bx/n/24.88 s
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
-....\glue(\rightskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
 ...\pdfliteral page <lua data reference ...>
 ...\pdfliteral page <lua data reference ...>
 ...\marks1{\__mark_value:nn {1}{\MakeUppercase    []{Contents}}}
@@ -310,7 +310,7 @@ TEST 1: Show PDF Tags
      <Span xmlns="http://iso.org/pdf2/ssn"
         id="ID.008"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+        Layout:TextAlign="Justify"
        >
       <?MarkedContent page="1" ?>Contents
      </Span>
