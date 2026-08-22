@@ -37,7 +37,6 @@
 %
 % \fi
 %
-% \CheckSum{12458}
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -86,6 +85,8 @@
 % \def\fileversion{v0.1} \def\filedate{2015/12/09}
 % \changes{v0.2}{2018/12/09}{Second trial release, markers can be on all pages and stopped and started at will}
 % \def\fileversion{v0.2} \def\filedate{2018/12/09}
+% \changes{v0.2a}{2026/08/15}{Remove deprecated picture package}
+% \def\fileversion{v0.2a} \def\filedate{2026/08/17}
 
 % ^^A Flag an option
 % \makeatletter
@@ -168,7 +169,7 @@
 % of the page. Another instance is when documents are printed in the expectation
 % that they will be read by someone in front of an audience, so in order to minimise
 % any hesitation as a page is turned over, the first word on the following page is printed
-% at the bottom of the preceeding page.
+% at the bottom of the preceding page.
 %
 % This manual is typeset according to the conventions of the
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
@@ -229,7 +230,7 @@
 %
 % ...
 %
-%  ... labelling does not make much sense when |\chapter| generates a page
+%  ... labeling does not make much sense when |\chapter| generates a page
 %  break, so the last page before a |\chapter| (or any |\clearpage|) gets 
 %  a blank "next word" ...
 %
@@ -271,7 +272,7 @@
 % When the \Lopt{word} option is used the following macros are available:
 %
 % \DescribeMacro{\flagword}
-%     This command specifies how the continuation word is formated. Its definition is: \\
+%     This command specifies how the continuation word is formatted. Its definition is: \\
 %    |\newcommand*{\flagword}{\preflagword\usebox\NextWordBox\postflagword}| \\
 % where |\NextWordBox| holds the first word on the next recto page (empty if there
 % is no next recto page).
@@ -358,13 +359,13 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \section{The \Lpack{continue} code} \label{sec:code}
 %
 %    Announce the name and version of the package, which requires
-% \LaTeXe{} and the \Lpack{atbegshi}, \Lpack{picture}, \Lpack{zref-abspage} and
+% \LaTeXe{} and the \Lpack{atbegshi}, \Lpack{zref-abspage} and
 % \Lpack{zref-lastpage} packages and has options \Lopt{margin}, \Lopt{word} and \Lopt{allpages}
 % (added \Lopt{allpages} 2018/11/30).
 %    \begin{macrocode}
 %<*usc>
  \NeedsTeXFormat{LaTeX2e}
- \ProvidesPackage{continue}[2018/12/09 v0.2 Continues on the following page]
+ \ProvidesPackage{continue}[2026/08/17 v0.2a Continues on the following page]
  \PackageInfo{continue}{This is continue using e-TeX.}
 
 %    \end{macrocode}
@@ -403,7 +404,6 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %
 %    \begin{macrocode}
  \RequirePackage{atbegshi}
- \RequirePackage{picture}
  \RequirePackage{zref-abspage}
  \RequirePackage{zref-lastpage}
 
@@ -706,21 +706,3 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \Finale
 %
 % \endinput
-
-
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
