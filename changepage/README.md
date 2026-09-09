@@ -1,19 +1,22 @@
 
-The CHANGEPAGE and CHNGPAGE packages
+The CHANGEPAGE 
 ================
 
 Provides commands to change the page layout in the middle of a document,
 and to robustly check for typesetting on odd or even pages.
 
 The changepage package is an extraction of code from the memoir class.
-It is a functionally-equivalent replacement for chngpage package.
-Because chngpage is not compatible with memoir, its use is now deprecated.
+It is a functionally-equivalent replacement for the older chngpage package (which is deprecated but still provided).
 
 
 CHANGE HISTORIES
 ---------------
 
 ### CHANGEPAGE
+
+version 2.0 (2026/09/09)
+
+- Add support for tagging
 
 version 1.0c (2009/10/20)
 
@@ -71,21 +74,20 @@ version 1.1 (2000/07/22)
 INSTALLATION
 ---------------
 
-Run `latex` on changepage.tex to produce the files
-  changepage.ins, changepage.sty, and chngpage.sty,
-as well as to compile the PDF documentation.
+Run `latex` on changepage.ins to produce the files
+  changepage.sty and run `lualatex` on changepage.dtx
+  to compile the PDF documentation.
 
-Execute `latex changepage.ins` to produce the files above
-except changepage.ins itself (and the PDF file, obviously).
 
 
 COPYRIGHT AND LICENSING
 ---------------
 
 Author: Peter Wilson (Herries Press)  
-Maintainer: Will Robertson (will dot robertson at latex-project dot org)  
+Maintainer: LaTeX Project  
 Copyright 2000–2008 Peter R. Wilson  
 Copyright 2009 Will Robertson
+Copyright 2026 LaTeX Project
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either
@@ -95,20 +97,19 @@ later version: <http://www.latex-project.org/lppl.txt>
 This work has the LPPL maintenance status "maintained".
 The Current Maintainer of this work is Will Robertson.
 
-This work consists of the files changepage.tex and the
-derived files changepage.sty, chngpage.sty, changepage.ins.
+This work consists of the files changepage.dtx, changepage.ins,
+chngpage.sty and the derived file changepage.sty.
 
 
 MAINTENANCE
 ---------------
 
 Please report bugs or request features:  
-  <http://github.com/wspr/herries-press/issues>
+  <https://github.com/LaTeX-Package-Repositories/herries-press>
 
 Developmental and historical versions:  
-  <http://github.com/wspr/herries-press>
+  <https://github.com/LaTeX-Package-Repositories/herries-press>
 
 Current release versions:  
   <http://ctan.tug.org/pkg/changepage>  
-  <http://ctan.tug.org/pkg/chngpage>
 
