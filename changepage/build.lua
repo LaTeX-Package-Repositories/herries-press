@@ -12,7 +12,7 @@ packtdszip  = false
 
 maxprintline=10000
 typesetruns = 4
-typesetexe="pdflatex"
+typesetexe="lualatex"
 
 -- Upload meta data
 

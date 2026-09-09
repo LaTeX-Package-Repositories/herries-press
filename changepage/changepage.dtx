@@ -1,15 +1,12 @@
 % \iffalse meta-comment
 %
 %<*driver>
-\documentclass{article}
-\usepackage{doc}
-\usepackage[it,medium]{titlesec}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
 
 \usepackage{bigfoot,xcolor}
-\usepackage[colorlinks,linktocpage]{hyperref}
-%
-%
-\usepackage{tocloft,varwidth}
+\makeatletter\def\@cft@fail{}\makeatother
+\usepackage{tocloft}
 \setcounter{tocdepth}{1}
 \def\tocwidthA{0.55}
 \def\tocwidthB{0.44}
@@ -25,6 +22,19 @@
 \def\pkgopt#1{\texttt{[#1]}}
 \newcommand\chng[1]{\marginpar{\footnotesize\raggedright\textsf{#1}}}
 
+% copied from ltxdoc
+\providecommand\marg[1]{%
+  {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`\}}}
+\providecommand\oarg[1]{%
+  {\ttfamily[}\meta{#1}{\ttfamily]}}
+\providecommand\parg[1]{%
+  {\ttfamily(}\meta{#1}{\ttfamily)}}
+\makeatletter  
+\def\cmd#1{\texttt{\char`\\\expandafter\cmd@to@cs\string#1}}
+\def\cmd@to@cs#1#2{\char\number`#2\relax}
+\makeatother 
+
+
 \def\PDF{\textsc{pdf}}
 \def\PS{\textsc{ps}}
 \def\DVI{\textsc{dvi}}
@@ -36,28 +46,45 @@
 \def\chngpagev{v1.2b}  
 %
 \usepackage{changepage}
-\usepackage[T1]{fontenc}
 \usepackage{microtype}
-\usepackage{lmodern}
-\usepackage[sc,osf]{mathpazo}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella}
+\usepackage{lua-unicode-math}
 \linespread{1.1}
 \frenchspacing
 \MakeShortVerb|
 \GetFileInfo{changepage.sty}
+
 \begin{document}
    \DocInput{changepage.dtx}%
 \end{document}
 %</driver>
 % \fi
-%  {\addtocontents{toc}{\protect\begin{varwidth}[t]{\tocwidthA\linewidth}}}
 %  
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
+%
 %  \title{The \pkg{changepage} and \pkg{chngpage} packages}
 %  \author{%
 %   Author: Peter Wilson, Herries Press\\
-%   Maintainer: Will Robertson\\
-%   \texttt{will dot robertson at latex-project dot org}%
+%   Maintainer: \LaTeX{} Project\\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press/}%
 %  }
-%  \date{\chngpagev\ and \fileversion, \filedate}
+%  \date{\fileversion, \filedate\ and \chngpagev}
 %  
 %  \maketitle
 %  
@@ -89,6 +116,8 @@
 %  \clearpage
 %  \section{Detecting odd or even pages}
 %  
+%  \DescribeMacro{\checkoddpage}
+%  \DescribeMacro{\ifoddpage}
 %  The |\checkoddpage| command can be used anywhere in the body of
 %  a document to determine if \TeX\ is typesetting on an odd or
 %  even numbered page. If on an odd page then |\ifoddpage| is
@@ -112,6 +141,8 @@
 %  
 %  \chng{For chngpage, use \cs{cplabelprefix} instead of \cs{cplabel}.}
 %  
+%  \DescribeMacro{\strictpagecheck}
+%  \DescribeMacro{\easypagecheck}
 %  The package option `strict' turns on strict page checking --- the default
 %  is not to use strict checking. Strict page checking can be turned on or
 %  off at any time by the commands |\strictpagecheck| or |\easypagecheck|.
@@ -130,6 +161,7 @@
 %  
 %  \section{Adjusting the margins}
 %  
+%  \DescribeEnv{adjustwidth}
 %  Within an |adjustwidth| environment the left and right margins can be
 %  adjusted. The environment takes two required length arguments:
 %  \begin{quote}
@@ -185,7 +217,8 @@
 %  
 %  A disadvantage of the strict option is that the package generates
 %  a new label for each adjustwidth environment, and \TeX\ may run out
-%  of space if there are an excessive number of labels in the document.
+%  of space if there are an excessive number of labels in the document
+%  (but nowadays this shouldn't be a problem anymore).
 %  
 %  Whether or not the strict option is used, `strict adjustwidths'
 %  can be turned on by putting the command |\strictpagecheck| before
@@ -205,6 +238,7 @@
 %  
 %  \section{Changing the text block}
 %  
+%  \DescribeMacro{\changetext}
 %  The |\changetext| command is for changing the size and horizontal position
 %  of the text block on a page. The command takes 5 arguments, each of which
 %  is a length or is empty. i.e.,
@@ -220,6 +254,7 @@
 %  
 %  \section{Changing the entire page design}
 %  
+%  \DescribeMacro{\changepage}
 %  The |\changepage| command is for changing the general layout of
 %  a page. The command takes 9 arguments, each of which is a length or is empty.
 %  The first 5 arguments are the same as for |\changetext| and have the same effect.
@@ -276,8 +311,6 @@
 %  Similarly it may work in a heading style used for |\thispagestyle| to change
 %  a single page.
 %  
-%  {\addtocontents{toc}{\protect\end{varwidth}\protect\hfill}}
-%  {\addtocontents{toc}{\protect\begin{varwidth}[t]{\protect\tocwidthB\protect\linewidth}}}
 %  \clearpage
 %  \parindent=0pt
 %  
@@ -288,28 +321,40 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{changepage}[2026-09-09 v2.0a check page and change page layout]
 
+%    \end{macrocode}
 % Don't use this with memoir
+% \begin{macro}[no-user-doc]{\cp@whoopsusingmemoir}
+%    \begin{macrocode} 
 \newcommand*{\cp@whoopsusingmemoir}{}
 \@ifclassloaded{memoir}{\def\cp@whoopsusingmemoir{\endinput}}
 \cp@whoopsusingmemoir
-
+%    \end{macrocode}
+% \end{macro}
 % New \verb|\if| for the strict option
+%    \begin{macrocode}
 \newif\ifstrictpagecheck
   \strictpagecheckfalse
-
+%    \end{macrocode}
+% \begin{macro}{\strictpagecheck,\easypagecheck}
 % User commands for switching strict page checking on/off
+%    \begin{macrocode}
 \newcommand*{\strictpagecheck}{\strictpagechecktrue}
 \newcommand*{\easypagecheck}{\strictpagecheckfalse}
-
+%    \end{macrocode}
+% \end{macro}
 % Declare and process options
+%    \begin{macrocode}
 \DeclareOption{strict}{\strictpagechecktrue}
 \ProcessOptions\relax
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% New commands for strict checking of odd/even page.
-%% Works by writing a label and then checking its pageref.
-
+%    \end{macrocode}
+% \subsection{Strict checking of odd/even page.}
+% Works by writing a label and then checking its pageref.
+% \begin{macro}{\ifoddpage}
+%    \begin{macrocode}
 \newif\ifoddpage
+%    \end{macrocode}
+% \end{macro}
+%    \begin{macrocode}
 \newcounter{cp@cntr}
 \newcount\cp@tempcnt % instead of  \verb|\@memcnta|
 \newcommand{\cplabel}{^_}
@@ -338,7 +383,10 @@
   \else
     \csname m@#1\endcsname
   \fi}
-
+%    \end{macrocode}
+%
+% \begin{macro}{\checkoddpage}
+%    \begin{macrocode}
 \DeclareRobustCommand{\checkoddpage}{%
   \oddpagefalse%
   \ifstrictpagecheck%
@@ -348,18 +396,22 @@
   \else
     \ifodd\c@page\oddpagetrue\fi
   \fi}
-
+%    \end{macrocode}
+% \end{macro}
 % End newcommands for strict checking of odd/even page.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Copy of some of the code from the ifmtarg package to save requiring ifmtarg
+% 
+% \subsection{Layout changes}
+% 
+% Copy of some of the code from the ifmtarg package to save requiring ifmtarg:
+%    \begin{macrocode}
 \begingroup
 \catcode`\Q=3
 \long\gdef\@ifmtarg#1{\@xifmtarg#1QQ\@secondoftwo\@firstoftwo\@nil}
 \long\gdef\@xifmtarg#1#2Q#3#4#5\@nil{#4}
 \endgroup
-
+%    \end{macrocode}
 % Set the page output parameters
+%    \begin{macrocode}
 \DeclareRobustCommand{\ch@ngetext}{%
   \setlength{\@colht}{\textheight}\setlength{\@colroom}{\textheight}%
   \setlength{\vsize}{\textheight}\setlength{\columnwidth}{\textwidth}%
@@ -369,7 +421,10 @@
   \fi%
   \setlength{\hsize}{\columnwidth}%
   \setlength{\linewidth}{\hsize}}
+%    \end{macrocode}
 
+% \begin{macro}{\changetext}
+%    \begin{macrocode}
 \DeclareRobustCommand{\changetext}[5]{%
   \@ifmtarg{#1}{}{\addtolength{\textheight}{#1}}%
   \@ifmtarg{#2}{}{\addtolength{\textwidth}{#2}}%
@@ -377,7 +432,11 @@
   \@ifmtarg{#4}{}{\addtolength{\oddsidemargin}{#4}}%
   \@ifmtarg{#5}{}{\addtolength{\columnsep}{#5}}%
   \ch@ngetext}
-
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\changepage}
+%    \begin{macrocode}
 \DeclareRobustCommand{\changepage}[9]{%
   \@ifmtarg{#1}{}{\addtolength{\textheight}{#1}}%
   \@ifmtarg{#2}{}{\addtolength{\textwidth}{#2}}%
@@ -389,7 +448,38 @@
   \@ifmtarg{#7}{}{\addtolength{\headheight}{#7}}%
   \@ifmtarg{#8}{}{\addtolength{\headsep}{#8}}%
   \@ifmtarg{#9}{}{\addtolength{\footskip}{#9}}}
-
+%    \end{macrocode}
+% \end{macro}
+%    \begin{macrocode}
+\IfDocumentMetadataTF
+ {
+   \NewDocumentEnvironment{adjustwidth}{mm}
+    {%
+      \begin{displayblock}%
+       [tagging-recipe=noop,
+        left-margin=\dimeval{#1+0pt},
+        right-margin={#2+0pt},
+        para-indent=\parindent,
+        begin-vspace=0pt,
+        end-vspace=0pt]
+    }
+    {\end{displayblock}}
+%    \end{macrocode}
+% TODO: add check! see below
+%    \begin{macrocode}
+  \NewDocumentEnvironment{adjustwidth*}{mm}
+    {%
+      \begin{displayblock}%
+       [tagging-recipe=noop,
+        left-margin=\dimeval{#1+0pt},
+        right-margin={#2+0pt},
+        para-indent=\parindent,
+        begin-vspace=0pt,
+        end-vspace=0pt]
+    }
+    {\end{displayblock}}
+ }
+ {
 \newenvironment{adjustwidth}[2]{%
   \begin{list}{}{%
     \topsep\z@%
@@ -420,6 +510,7 @@
                    {\setlength{\rightmargin}{#1}}%
     \fi}
     \item[]}{\end{list}}
+   } 
 %</package>
 %    \end{macrocode}
 %  
@@ -556,5 +647,4 @@
 %</chgnpage>
 %    \end{macrocode}
 %  
-%  {\addtocontents{toc}{\protect\end{varwidth}}}
   
