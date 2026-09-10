@@ -3,8 +3,16 @@ module = "changepage"
 
 version = "2026-09-09 v2.0a"
 
-checkengines={"pdftex"}
+specialformats = specialformats or {}
+specialformats["latex"] = specialformats["latex"] or
+  {
+    luatexdev     = {binary="luahbtex",format = "lualatex-dev"},
+  }  
+checkengines={"luatex","luatexdev"}
+
 checkruns = 2
+
+recordstatus=true
 
 textfiles  ={"README.md"}
 

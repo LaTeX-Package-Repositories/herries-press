@@ -457,7 +457,7 @@
     {%
       \begin{displayblock}%
        [tagging-recipe=noop,
-        left-margin=\dimeval{#1+0pt},
+        left-margin ={#1+0pt},
         right-margin={#2+0pt},
         para-indent=\parindent,
         begin-vspace=0pt,
@@ -467,49 +467,75 @@
 %    \end{macrocode}
 % TODO: add check! see below
 %    \begin{macrocode}
-  \NewDocumentEnvironment{adjustwidth*}{mm}
-    {%
-      \begin{displayblock}%
-       [tagging-recipe=noop,
-        left-margin=\dimeval{#1+0pt},
-        right-margin={#2+0pt},
-        para-indent=\parindent,
-        begin-vspace=0pt,
-        end-vspace=0pt]
+    \IfFormatAtLeastTF{2026-11-01}
+     {
+      \NewDocumentEnvironment{adjustwidth*}{mm}
+       {%
+        \begin{displayblock}%
+         [tagging-recipe=noop,
+          early-legacy-code={
+           \checkoddpage
+           \ifoddpage 
+            \gdef\cp@adjustwidth@leftmargin{#1+0pt}
+            \gdef\cp@adjustwidth@rightmargin{#2+0pt}
+           \else 
+            \gdef\cp@adjustwidth@leftmargin{#2+0pt}
+            \gdef\cp@adjustwidth@rightmargin{#1+0pt}            
+           \fi
+           },
+          left-margin= \cp@adjustwidth@leftmargin,
+          right-margin=\cp@adjustwidth@rightmargin,
+          para-indent=\parindent,
+          begin-vspace=0pt,
+          end-vspace=0pt]
+       }
+       {\end{displayblock}}
+     }
+     {      
+       \NewDocumentEnvironment{adjustwidth*}{mm}
+         {%
+           \begin{displayblock}%
+            [tagging-recipe=noop,             
+             left-margin= {\ifodd\c@page #1+0pt\else #2+0pt\fi},
+             right-margin={\ifodd\c@page #2+0pt\else #1+0pt\fi},
+             para-indent=\parindent,
+             begin-vspace=0pt,
+             end-vspace=0pt]
+         }
+         {\end{displayblock}}
     }
-    {\end{displayblock}}
  }
  {
-\newenvironment{adjustwidth}[2]{%
-  \begin{list}{}{%
-    \topsep\z@%
-    \listparindent\parindent%
-    \parsep\parskip%
-    \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
-                 {\setlength{\leftmargin}{#1}}%
-    \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
-                 {\setlength{\rightmargin}{#2}}%
-    }
-    \item[]}{\end{list}}
+   \newenvironment{adjustwidth}[2]{%
+     \begin{list}{}{%
+       \topsep\z@%
+       \listparindent\parindent%
+       \parsep\parskip%
+       \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
+                    {\setlength{\leftmargin}{#1}}%
+       \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
+                    {\setlength{\rightmargin}{#2}}%
+       }
+       \item[]}{\end{list}}
 
-\newenvironment{adjustwidth*}[2]{%
-  \begin{list}{}{%
-    \topsep\z@%
-    \listparindent\parindent%
-    \parsep\parskip%
-    \checkoddpage
-    \ifoddpage%     odd numbered page
-      \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
-                   {\setlength{\leftmargin}{#1}}%
-      \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
-                   {\setlength{\rightmargin}{#2}}%
-    \else%          even numbered page
-      \@ifmtarg{#2}{\setlength{\leftmargin}{\z@}}%
-                   {\setlength{\leftmargin}{#2}}%
-      \@ifmtarg{#1}{\setlength{\rightmargin}{\z@}}%
-                   {\setlength{\rightmargin}{#1}}%
-    \fi}
-    \item[]}{\end{list}}
+   \newenvironment{adjustwidth*}[2]{%
+     \begin{list}{}{%
+       \topsep\z@%
+       \listparindent\parindent%
+       \parsep\parskip%
+       \checkoddpage
+       \ifoddpage%     odd numbered page
+         \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
+                      {\setlength{\leftmargin}{#1}}%
+         \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
+                      {\setlength{\rightmargin}{#2}}%
+       \else%          even numbered page
+         \@ifmtarg{#2}{\setlength{\leftmargin}{\z@}}%
+                      {\setlength{\leftmargin}{#2}}%
+         \@ifmtarg{#1}{\setlength{\rightmargin}{\z@}}%
+                      {\setlength{\rightmargin}{#1}}%
+       \fi}
+       \item[]}{\end{list}}
    } 
 %</package>
 %    \end{macrocode}
