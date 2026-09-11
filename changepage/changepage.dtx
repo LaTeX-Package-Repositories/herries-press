@@ -398,6 +398,22 @@
   \fi}
 %    \end{macrocode}
 % \end{macro}
+% \begin{macro}{\cp@checkoddpage@nextpar}
+% A variant that delays the label until the next par.
+% \changes{2.0a}{2026-09-11}{Variant of check that delays to the next par}
+%    \begin{macrocode}
+\DeclareRobustCommand{\cp@checkoddpage@nextpar}{%
+  \oddpagefalse%
+  \ifstrictpagecheck%
+    \stepcounter{cp@cntr}%
+    \AddToHookNext{para/begin}{\pmemlabel{\cplabel\thecp@cntr}}%
+    \cp@tempcnt=\pmemlabelref{\cplabel\thecp@cntr}\relax
+    \ifodd\cp@tempcnt\oddpagetrue\fi
+  \else
+    \ifodd\c@page\oddpagetrue\fi
+  \fi}  
+%    \end{macrocode}
+% \end{macro}
 % End newcommands for strict checking of odd/even page.
 % 
 % \subsection{Layout changes}
@@ -455,55 +471,32 @@
  {
    \NewDocumentEnvironment{adjustwidth}{mm}
     {%
+      \par 
       \begin{displayblock}%
        [tagging-recipe=noop,
         left-margin ={#1+0pt},
         right-margin={#2+0pt},
         para-indent=\parindent,
         begin-vspace=0pt,
-        end-vspace=0pt]
+        end-vspace=0pt,
+        begin-extra-vspace=0pt,
+        end-extra-vspace=0pt]
     }
-    {\end{displayblock}}
-%    \end{macrocode}
-% TODO: add check! see below
-%    \begin{macrocode}
-    \IfFormatAtLeastTF{2026-11-01}
-     {
-      \NewDocumentEnvironment{adjustwidth*}{mm}
-       {%
-        \begin{displayblock}%
-         [tagging-recipe=noop,
-          early-legacy-code={
-           \checkoddpage
-           \ifoddpage 
-            \gdef\cp@adjustwidth@leftmargin{#1+0pt}
-            \gdef\cp@adjustwidth@rightmargin{#2+0pt}
-           \else 
-            \gdef\cp@adjustwidth@leftmargin{#2+0pt}
-            \gdef\cp@adjustwidth@rightmargin{#1+0pt}            
-           \fi
-           },
-          left-margin= \cp@adjustwidth@leftmargin,
-          right-margin=\cp@adjustwidth@rightmargin,
-          para-indent=\parindent,
-          begin-vspace=0pt,
-          end-vspace=0pt]
-       }
-       {\end{displayblock}}
+    {\end{displayblock}\par}
+    \NewDocumentEnvironment{adjustwidth*}{mm}
+     {%
+      \par\cp@checkoddpage@nextpar
+      \begin{displayblock}%
+       [tagging-recipe=noop,
+        left-margin= \ifoddpage #1+0pt \else #2+0pt\fi,
+        right-margin=\ifoddpage #2+0pt \else #1+0pt\fi,
+        para-indent=\parindent,
+        begin-vspace=0pt,
+        end-vspace=0pt,
+        begin-extra-vspace=0pt,
+        end-extra-vspace=0pt]
      }
-     {      
-       \NewDocumentEnvironment{adjustwidth*}{mm}
-         {%
-           \begin{displayblock}%
-            [tagging-recipe=noop,             
-             left-margin= {\ifodd\c@page #1+0pt\else #2+0pt\fi},
-             right-margin={\ifodd\c@page #2+0pt\else #1+0pt\fi},
-             para-indent=\parindent,
-             begin-vspace=0pt,
-             end-vspace=0pt]
-         }
-         {\end{displayblock}}
-    }
+     {\end{displayblock}\par}
  }
  {
    \newenvironment{adjustwidth}[2]{%

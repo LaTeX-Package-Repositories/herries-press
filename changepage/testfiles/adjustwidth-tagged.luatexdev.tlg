@@ -24,7 +24,7 @@ Completed box being shipped out [1]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x425.0, glue set 169.0fil, direction TLT
+..\vbox(550.0+0.0)x425.0, glue set 171.0fil, direction TLT
 ...\write-{}
 ...\write-{}
 ...\glue(\topskip) 10.0
@@ -590,7 +590,7 @@ Completed box being shipped out [1]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 1.0 minus 1.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.01
@@ -2588,7 +2588,7 @@ Completed box being shipped out [3]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x425.0, glue set 287.0fil, direction TLT
+..\vbox(550.0+0.0)x425.0, glue set 291.0fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -2913,7 +2913,8 @@ Completed box being shipped out [3]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 2.0 minus 1.0
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.0
@@ -3150,7 +3151,7 @@ Completed box being shipped out [3]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 1.0 minus 1.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.01
@@ -3468,7 +3469,7 @@ Completed box being shipped out [4]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x425.0, glue set 452.0fil, direction TLT
+..\vbox(550.0+0.0)x425.0, glue set 456.0fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 3.06
 ...\hbox(6.94+2.06)x345.0, glue set 0.85997, direction TLT
@@ -3701,7 +3702,8 @@ Completed box being shipped out [4]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 2.0 minus 1.0
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 4.95
@@ -3938,7 +3940,7 @@ Completed box being shipped out [4]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 1.0 minus 1.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.01
@@ -5838,7 +5840,7 @@ Completed box being shipped out [7]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x425.0, glue set 287.0fil, direction TLT
+..\vbox(550.0+0.0)x425.0, glue set 291.0fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
@@ -6164,7 +6166,8 @@ Completed box being shipped out [7]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 2.0 minus 1.0
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 2.44
@@ -6404,7 +6407,7 @@ Completed box being shipped out [7]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 1.0 minus 1.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.01
@@ -7176,7 +7179,7 @@ Completed box being shipped out [8]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 452.0fil, direction TLT
+..\vbox(550.0+0.0)x345.0, glue set 456.0fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 3.06
 ...\hbox(6.94+2.06)x345.0, glue set 0.85997, direction TLT
@@ -7409,7 +7412,8 @@ Completed box being shipped out [8]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 2.0 minus 1.0
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 4.39
@@ -7649,7 +7653,7 @@ Completed box being shipped out [8]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 2.0 plus 1.0 minus 1.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.01
