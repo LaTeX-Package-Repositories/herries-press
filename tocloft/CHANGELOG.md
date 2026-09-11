@@ -2,6 +2,12 @@
 
 All notable changes to the `tocloft` package will be documented in this file.
 
+## [Unreleased]
+Version 3.0c
+
+### Fixed
+ - do not error if patching `\@starttoc` fails.
+
 ## [2026-08-21]
 Version 3.0b 
 

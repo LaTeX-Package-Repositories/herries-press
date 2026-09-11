@@ -99,6 +99,7 @@
 % \def\fileversion{v2.3j} \def\filedate{2022/06/18}
 % \def\fileversion{v3.0a} \def\filedate{2026/08/12}
 % \def\fileversion{v3.0b} \def\filedate{2026/08/21}
+% \def\fileversion{v3.0c} \def\filedate{2026/09/11}
 % 
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -4192,15 +4193,26 @@ Consider installing the current version of tocbibind.}}
    \@cft@patch@starttoctrue
    \fi
  }
+%    \end{macrocode}
+% \changes{3.0c}{2026-09-11}{Do not error if patch fails.}
+%    \begin{macrocode}
 \if@cft@patch@starttoc 
    \patchcmd\@starttoc
      {\begingroup}
      {\csname cft#1prehook\endcsname\begingroup}
-     {}{\@cft@fail}
+     {}
+     {%
+      \PackageWarning{tocloft}
+       {Patching of \string\@starttoc\space failed.\MessageBreak Prehook not inserted.} 
+     }
    \patchcmd\@starttoc
      {\endgroup}
      {\endgroup\csname cft#1posthook\endcsname}
-     {}{\@cft@fail}  
+     {}
+     {%
+      \PackageWarning{tocloft}
+       {Patching of \string\@starttoc\space failed.\MessageBreak Posthook not inserted.} 
+     }  
    \newcommand\cfttocprehook{}
    \newcommand\cftlofprehook{}
    \newcommand\cftlotprehook{}
