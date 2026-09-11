@@ -22,11 +22,10 @@ Provides control over the typography of the Table of Contents, List of Figures a
 }
 
 announce = {}
-announce["3.0a"] = [[
-  * added kern pair at end of toc entries for microtype, issue #56
-  * use four arguments with contentsline, issue #59
-  * faulty `\toclevel@X` setting, issue #60
-  * added tagging support
+announce["3.0c"] = [[
+  * do not error if patching `\@starttoc` fails.
+  * added missing Reference structure in `\chapterprecis` toc entry
+  * adapt templates to planed changes in LaTeX
 ]]
 uploadconfig.announcement = announce[version]
 

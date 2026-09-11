@@ -2,12 +2,16 @@
 
 All notable changes to the `tocloft` package will be documented in this file.
 
-## [Unreleased]
+## [2026-09-12]
 Version 3.0c
 
 ### Fixed
  - do not error if patching `\@starttoc` fails.
-
+ - missing Reference structure in `\chapterprecis` toc entry
+ 
+### Changed
+ - adapt templates to planed changes in latex-dev
+ 
 ## [2026-08-21]
 Version 3.0b 
 
