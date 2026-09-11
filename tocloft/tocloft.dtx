@@ -1702,18 +1702,21 @@ Consider installing the current version of tocbibind.}}
 % \end{macro}
 % 
 % \begin{macro}{\cftchapter,\cftsection,\cft@listname}
-% \changes{v3.0b}{2026-08-21}{Add \cs{cftafterZtitle} for tagging issue 1537}   
+% \changes{v3.0b}{2026-08-21}{Add \cs{cftafterZtitle} for tagging issue 1537} 
+% \changes{3.0c}{2026-09-11}{Adapt templates for release 2026-11-01}  
 %    \begin{macrocode}
 \newcommand\cft@listname{}
 \IfDocumentMetadataTF
  {
-   \DeclareInstance{headformat}{cftchapter}{display}
-    {
-     , heading-indent    = 0pt
-     , prefix-number-sep = \WordSpaceAmount{1}
-     , title-format      = #1\UseName{cftafter\cft@listname title}
-    }
-   \DeclareDocumentCommand \cftchapter {O{}m}
+   \@ifundefined{IfTemplateExistsTF}
+    { 
+      \DeclareInstance{headformat}{cftchapter}{display}
+       {
+        , heading-indent    = 0pt
+        , prefix-number-sep = \WordSpaceAmount{1}
+        , title-format      = #1\UseName{cftafter\cft@listname title}
+       }
+     \DeclareDocumentCommand \cftchapter {O{}m}
      {%
        \renewcommand\cft@listname{#2}%
        \chapter
@@ -1752,6 +1755,57 @@ Consider installing the current version of tocbibind.}}
           #1      
          ] {\UseName{cft#2titlename}}%
      }   
+    }
+%    \end{macrocode}
+% New code for the next release:
+%    \begin{macrocode}
+    {         
+      \DeclareInstance{headformat}{cftchapter}{display}
+       {
+        , heading-indent    = 0pt
+        , separator-a       = \nobreakspace 
+       }    
+      \DeclareDocumentCommand \cftchapter {O{}m}
+       {%
+        \renewcommand\cft@listname{#2}%
+        \chapter
+          [
+            toc={},
+            placement=normal,
+            unnumbered,
+            after-penalty-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
+            after-vspace=\UseName{cftafter#2titleskip},
+            final-code=\@cftpagestyle\@afterheading,
+            heading-decls=\UseName{cft#2titlefont},
+            headformat-instance=cftchapter,
+            title-format      = ##1\UseName{cftafter\cft@listname title},
+            #1      
+          ] {\UseName{cft#2titlename}}%
+       }            
+      \DeclareInstance{headformat}{cftsection}{hang}
+       {
+         , heading-indent = 0pt
+       }  
+%    \end{macrocode}
+% \changes{v3.0b}{2026-08-21}{change spacing, issue \#63}   
+%    \begin{macrocode}
+      \DeclareDocumentCommand \cftsection {O{}m}
+        {%
+         \renewcommand\cft@listname{#2}%
+         \section[ 
+              toc={},
+              placement=normal,
+              unnumbered,
+              before-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
+              after-vspace=\UseName{cftafter#2titleskip},
+              final-code=\@cftpagestyle\@afterheading,
+              heading-decls=\tagpdfparaOff\UseName{cft#2titlefont}\tagpdfparaOn,
+              headformat-instance=cftsection,
+              title-format      = ##1\UseName{cftafter\cft@listname title},
+             #1      
+            ] {\UseName{cft#2titlename}}%
+        }    
+    } 
   }
   {
    \DeclareDocumentCommand \cftchapter {O{}m}
@@ -4063,11 +4117,12 @@ Consider installing the current version of tocbibind.}}
 % negative vertical space to move it closer to the chapter heading.
 %    \begin{macrocode}
 \newcommand{\cftchapterprecishere}[1]{%
-  \vspace*{-2\baselineskip}
+  \par\vspace*{-2\baselineskip}
 %    \end{macrocode}
 % Typeset its argument using italic font in a |quote| environment.
 %    \begin{macrocode}
-  \begin{quote}\textit{#1}\end{quote}}
+  \begin{quote}\textit{#1}\end{quote}
+  \par\nobreak\@afterheading}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -4082,7 +4137,8 @@ Consider installing the current version of tocbibind.}}
 % Start a group to localize changes to the paragraphing. Set the
 % left margin to the chapter indent plus the chapter number width.
 %    \begin{macrocode}
-  {\UseTaggingSocket{struct-mc}{tag=\protect\UseStructureName{toc/item}}{%
+  {\UseTaggingSocket{struct/begin}{tag=\protect\UseStructureName{toc/item}}%
+   \UseTaggingSocket{struct-mc}{tag=\protect\UseStructureName{toc/item/text}}{%
   \leftskip \cftchapindent\relax
    \advance\leftskip \cftchapnumwidth\relax
 %    \end{macrocode}
@@ -4094,7 +4150,8 @@ Consider installing the current version of tocbibind.}}
 % is finished (to use the local skips). Finally close the group and we
 % are done.
 %    \begin{macrocode}
-   \textit{#1}\protect\par}}}}
+   \textit{#1}\protect\par}%
+   \UseTaggingSocket{struct/end}}}}
 
 %    \end{macrocode}
 % \end{macro}

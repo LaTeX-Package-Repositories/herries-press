@@ -35,6 +35,19 @@ checkconfigs = {
                  "build",
                  "config-tagging"
                }
+
+specialformats = specialformats or {}
+               
+specialformats["latex"] = specialformats["latex"] or
+  {
+    pdftexdev   = {binary="pdftex",format = "pdflatex-dev"},
+    luatexdev   = {binary="luahbtex",format = "lualatex-dev"},
+  }    
+
+stdengine="pdftex"        
+checkengines= {"pdftex", "xetex", "luatex", "pdftexdev"}     
+
+
 recordstatus=true               
 textfiles    = {"README.md"}
 tagfiles     = {"*.dtx"}
