@@ -4,7 +4,8 @@
 \DocumentMetadata{tagging=on}
 \documentclass{l3in2edoc}
 
-\usepackage{bigfoot,xcolor}
+\usepackage{xcolor}
+%work around tocloft's failure to patch \@starttoc, will be fixed there soon
 \makeatletter\def\@cft@fail{}\makeatother
 \usepackage{tocloft}
 \setcounter{tocdepth}{1}
@@ -40,11 +41,10 @@
 \def\DVI{\textsc{dvi}}
 \def\EPS{\textsc{eps}}
 
-\usepackage{amsmath,listings}
-\lstset{basicstyle=\ttfamily,columns=fullflexible}
-%
+\usepackage{amsmath,multicol}
+
 \def\chngpagev{v1.2b}  
-%
+
 \usepackage{changepage}
 \usepackage{microtype}
 \usepackage{fontspec}
@@ -101,7 +101,7 @@
 %  \end{abstract}
 %
 %  \tableofcontents
-%  
+%  \addtocontents{toc}{\protect\begin{multicols}{2}}
 %  \part{User documentation}
 %  
 %  Load the package like this:
@@ -178,7 +178,10 @@
 %  |\begin{adjustwidth}{}{-8em}|
 %  \end{quote}
 %  The starred version, |adjustwidth*|, causes the values of the
-%  margins to switch between odd and even pages.
+%  margins to switch between odd and even pages, or more precisely: 
+%  they switch depending on if the environment \emph{starts} on an odd
+%  or even page. They do not switch if there is a page break inside 
+%  the environment. 
 %  
 %  \chng{For chngpage use \cs{begin}\texttt{\{adjustwidth\}[]}
 %  instead of \cs{begin}\texttt{\{adjustwidth*\}}.}
@@ -215,6 +218,11 @@
 %  option `strict' (i.e., |\usepackage[strict]{chngpage}|), which causes
 %  adjustwidth to use the |\checkoddpage| command (see below).
 %  
+%  The strict option uses a label that is issued at the begin of environment. If 
+%  the environment begin just at a page break the label can be issued at the wrong place
+%  and the check is wrong (this should work better if \cs{DocumentMetadata} is used,
+%  see below section \ref{sec:tagging} about tagging support. 
+%  
 %  A disadvantage of the strict option is that the package generates
 %  a new label for each adjustwidth environment, and \TeX\ may run out
 %  of space if there are an excessive number of labels in the document
@@ -235,6 +243,21 @@
 %  will be at the left of any column. You can get interesting effects
 %  by careful hand tuning on two column pages.
 %  
+%  \section{Tagging support}
+%  
+%  The original |adjustwidth| environment is implemented as a list. 
+%  If \cs{DocumentMetadata}
+%  is used, a |displayblock| environment is used together with the tagging recipe |noop|.
+%  This means that the environment does not produce additional
+%  structures. 
+%  
+%  The new implementation also changes \emph{intentionally} the appearance in some cases: 
+%  The original |adjustwidth| environment does not indent its first paragraph 
+%  (which is in my opinion a bug), the new one does it (naturally only if 
+%  \cs{parindent} has a positive value). 
+%  The new implementation also uses for |adjustwidth*| a slightly different check
+%  for odd pages if the option |strict| is in effect, this should improve the 
+%  behaviour at page breaks. 
 %  
 %  \section{Changing the text block}
 %  
@@ -466,72 +489,76 @@
   \@ifmtarg{#9}{}{\addtolength{\footskip}{#9}}}
 %    \end{macrocode}
 % \end{macro}
+% \begin{environment}{adjustwidth,adjustwidth*}
 %    \begin{macrocode}
-\IfDocumentMetadataTF
- {
-   \NewDocumentEnvironment{adjustwidth}{mm}
-    {%
-      \par 
-      \begin{displayblock}%
-       [tagging-recipe=noop,
-        left-margin ={#1+0pt},
-        right-margin={#2+0pt},
-        para-indent=\parindent,
-        begin-vspace=0pt,
-        end-vspace=0pt,
-        begin-extra-vspace=0pt,
-        end-extra-vspace=0pt]
+\newenvironment{adjustwidth}[2]{%
+  \begin{list}{}{%
+    \topsep\z@%
+    \listparindent\parindent%
+    \parsep\parskip%
+    \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
+                 {\setlength{\leftmargin}{#1}}%
+    \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
+                 {\setlength{\rightmargin}{#2}}%
     }
-    {\end{displayblock}\par}
-    \NewDocumentEnvironment{adjustwidth*}{mm}
-     {%
-      \par\cp@checkoddpage@nextpar
-      \begin{displayblock}%
-       [tagging-recipe=noop,
-        left-margin= \ifoddpage #1+0pt \else #2+0pt\fi,
-        right-margin=\ifoddpage #2+0pt \else #1+0pt\fi,
-        para-indent=\parindent,
-        begin-vspace=0pt,
-        end-vspace=0pt,
-        begin-extra-vspace=0pt,
-        end-extra-vspace=0pt]
-     }
-     {\end{displayblock}\par}
- }
- {
-   \newenvironment{adjustwidth}[2]{%
-     \begin{list}{}{%
-       \topsep\z@%
-       \listparindent\parindent%
-       \parsep\parskip%
-       \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
-                    {\setlength{\leftmargin}{#1}}%
-       \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
-                    {\setlength{\rightmargin}{#2}}%
-       }
-       \item[]}{\end{list}}
+    \item[]}{\end{list}}
 
-   \newenvironment{adjustwidth*}[2]{%
-     \begin{list}{}{%
-       \topsep\z@%
-       \listparindent\parindent%
-       \parsep\parskip%
-       \checkoddpage
-       \ifoddpage%     odd numbered page
-         \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
-                      {\setlength{\leftmargin}{#1}}%
-         \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
-                      {\setlength{\rightmargin}{#2}}%
-       \else%          even numbered page
-         \@ifmtarg{#2}{\setlength{\leftmargin}{\z@}}%
-                      {\setlength{\leftmargin}{#2}}%
-         \@ifmtarg{#1}{\setlength{\rightmargin}{\z@}}%
-                      {\setlength{\rightmargin}{#1}}%
-       \fi}
-       \item[]}{\end{list}}
-   } 
+\newenvironment{adjustwidth*}[2]{%
+  \begin{list}{}{%
+    \topsep\z@%
+    \listparindent\parindent%
+    \parsep\parskip%
+    \checkoddpage
+    \ifoddpage%     odd numbered page
+      \@ifmtarg{#1}{\setlength{\leftmargin}{\z@}}%
+                   {\setlength{\leftmargin}{#1}}%
+      \@ifmtarg{#2}{\setlength{\rightmargin}{\z@}}%
+                   {\setlength{\rightmargin}{#2}}%
+    \else%          even numbered page
+      \@ifmtarg{#2}{\setlength{\leftmargin}{\z@}}%
+                   {\setlength{\leftmargin}{#2}}%
+      \@ifmtarg{#1}{\setlength{\rightmargin}{\z@}}%
+                   {\setlength{\rightmargin}{#1}}%
+    \fi}
+    \item[]}{\end{list}}
+    
+\IfFormatAtLeastTF{2026-06-01}
+ {
+   \IfDocumentMetadataT
+    {
+      \RenewDocumentEnvironment{adjustwidth}{mm}
+       {%
+         \par 
+         \begin{displayblock}%
+          [tagging-recipe=noop,
+           left-margin ={#1+0pt},
+           right-margin={#2+0pt},
+           para-indent=\parindent,
+           begin-vspace=0pt,
+           end-vspace=0pt,
+           begin-extra-vspace=0pt,
+           end-extra-vspace=0pt]
+       }
+       {\end{displayblock}\par}
+       \RenewDocumentEnvironment{adjustwidth*}{mm}
+        {%
+         \par\cp@checkoddpage@nextpar
+         \begin{displayblock}%
+          [tagging-recipe=noop,
+           left-margin= \ifoddpage #1+0pt \else #2+0pt\fi,
+           right-margin=\ifoddpage #2+0pt \else #1+0pt\fi,
+           para-indent=\parindent,
+           begin-vspace=0pt,
+           end-vspace=0pt,
+           begin-extra-vspace=0pt,
+           end-extra-vspace=0pt]
+        }
+        {\end{displayblock}\par}
+    }
+ } 
 %</package>
 %    \end{macrocode}
+% \end{environment}
 %  
 %  \clearpage
 %  \section{The \pkg{chngpage} package}
@@ -665,5 +692,5 @@
     \item[]}{\end{list}}
 %</chgnpage>
 %    \end{macrocode}
-%  
+%  \addtocontents{toc}{\protect\end{multicols}}
   
