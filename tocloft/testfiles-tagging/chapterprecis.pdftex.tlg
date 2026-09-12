@@ -1,10 +1,6 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-(chapterprecis.toc
-Package tagpdf Warning: Parent-Child 'pdf:TOCI' --> 'MC (realcontent)'.
-(tagpdf)                Relation is not allowed! on line ...
-(tagpdf)                struct 12, /TOCI 
-)
+(chapterprecis.toc)
 \tf@toc=\write...
 Completed box being shipped out [1]
 \vbox(627.36243+0.0)x380.0
@@ -157,9 +153,9 @@ Completed box being shipped out [1]
 ...\marks4{e-,6,10,}
 ...\marks4{e+,6,10,}
 ...\write1{\new@label@record{mcid-7}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{7}{tagmcid}{\__property_code_tagmcid: }}}
-...\pdfliteral shipout page{/TOCI <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-...\marks4{b-,7,12,TOCI,,,}
-...\marks4{b+,7,12,TOCI,,,}
+...\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+...\marks4{b-,7,13,Reference,,,}
+...\marks4{b+,7,13,Reference,,,}
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.16882
@@ -227,8 +223,8 @@ Completed box being shipped out [1]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 25.49379
 ...\pdfliteral page{EMC}
-...\marks4{e-,7,12,}
-...\marks4{e+,7,12,}
+...\marks4{e-,7,13,}
+...\marks4{e+,7,13,}
 ...\kern -1.94397
 ...\hbox(0.0+1.94397)x0.0
 ...\glue -1.94397
@@ -356,28 +352,32 @@ TEST 1: Show PDF Tags
      <TOCI xmlns="http://iso.org/pdf/ssn"
         id="ID.012"
        >
-      <?MarkedContent page="1" ?>Our hero is introduced; family tree; early days.
+      <Reference xmlns="http://iso.org/pdf/ssn"
+         id="ID.013"
+        >
+       <?MarkedContent page="1" ?>Our hero is introduced; family tree; early days.
+      </Reference>
      </TOCI>
     </TOC>
    </Sect>
    <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.013"
+      id="ID.014"
      >
     <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.014"
+       id="ID.015"
        title="First chapter"
        rolemaps-to="H1"
        referenced-as="1"
       >
      <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.015"
+        id="ID.016"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Start"
        >
       <?MarkedContent page="3" ?>Chapter 1
      </Span>
      <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.016"
+        id="ID.017"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Start"
        >
@@ -385,19 +385,19 @@ TEST 1: Show PDF Tags
      </Span>
     </chapter>
     <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.017"
+       id="ID.018"
        rolemaps-to="Part"
       >
      <quote xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.018"
+        id="ID.019"
         rolemaps-to="BlockQuote"
        >
       <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.019"
+         id="ID.020"
          rolemaps-to="Part"
         >
        <text xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.020"
+          id="ID.021"
           xmlns:Layout="http://iso.org/pdf/ssn/Layout"
           Layout:TextAlign="Justify"
           rolemaps-to="P"
@@ -433,8 +433,8 @@ Completed box being shipped out [3]
 ...\hbox(0.0+0.0)x345.0
 ....\hbox(0.0+0.0)x345.0
 ...\pdfliteral page{EMC}
-...\marks4{e-,15,13,}
-...\marks4{e+,15,13,}
+...\marks4{e-,15,14,}
+...\marks4{e+,15,14,}
 ...\pdfrunninglinkon
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
@@ -469,10 +469,10 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
-...\marks4{b-,12,15,Span,,,}
-...\marks4{b+,12,15,Span,,,}
-...\marks4{e-,12,15,}
-...\marks4{e+,12,15,}
+...\marks4{b-,12,16,Span,,,}
+...\marks4{b+,12,16,Span,,,}
+...\marks4{e-,12,16,}
+...\marks4{e+,12,16,}
 ...\penalty 10000
 ...\glue 20.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -500,10 +500,10 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
-...\marks4{b-,13,16,Span,,,}
-...\marks4{b+,13,16,Span,,,}
-...\marks4{e-,13,16,}
-...\marks4{e+,13,16,}
+...\marks4{b-,13,17,Span,,,}
+...\marks4{b+,13,17,Span,,,}
+...\marks4{e-,13,17,}
+...\marks4{e+,13,17,}
 ...\marks1{\__mark_value:nn {3}{\MakeUppercase    []{Chapter\ 1. \ First chapter}}}
 ...\marks2{\__mark_value:nn {4}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}First chapter}{\thepage }{target*.2}\protected@file@percent }}
@@ -583,13 +583,15 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,14,20,text,,,}
-...\marks4{b+,14,20,text,,,}
-...\marks4{e-,14,20,}
-...\marks4{e+,14,20,}
+...\marks4{b-,14,21,text,,,}
+...\marks4{b+,14,21,text,,,}
+...\marks4{e-,14,21,}
+...\marks4{e+,14,21,}
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
-...\write1{\@writefile{toc}{{\UseTaggingSocket {struct-mc}{tag=\protect \UseStructureName {toc/item}}{\leftskip \cftchapindent \relax \advance \leftskip \cftchapnumwidth \relax \rightskip 2.55em\relax \protect \textit  {Our hero is introduced; family tree; early days.}\protect \par }}}}
+...\penalty 10000
+...\write1{\@writefile{toc}{{\UseTaggingSocket {struct/begin}{tag=\protect \UseStructureName {toc/item}}\UseTaggingSocket {struct-mc}{tag=\protect \UseStructureName {toc/item/text}}{\leftskip \cftchapindent \relax \advance \leftskip \cftchapnumwidth \relax \rightskip 2.55em\relax \protect \textit  {Our hero is introduced; family tree; early days.}\protect \par }\UseTaggingSocket {struct/end}}}}
+...\penalty 10000
 ...\kern 0.0
 ...\hbox(0.0+0.0)x0.0
 ...\glue 0.0 plus 1.0fil
@@ -605,8 +607,8 @@ Completed box being shipped out [3]
 ....\T1/cmr/m/n/10 3
 ....\glue 0.0 plus 1.0fil
 ..\pdfliteral page{EMC}
-..\marks4{e-,16,13,}
-..\marks4{e+,16,13,}
+..\marks4{e-,16,14,}
+..\marks4{e+,16,14,}
 ..\pdfrunninglinkon
 .\kern 0.0
 .\kern -627.36243
@@ -614,7 +616,7 @@ Completed box being shipped out [3]
 .\kern 627.36243
 <<latex-list-css.html>><<latex-align-css.html>> (chapterprecis.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~20 structure objects
+(tagpdf)             Writing out ~21 structure objects
 (tagpdf)             with ~16 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree

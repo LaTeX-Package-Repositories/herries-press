@@ -1,0 +1,9 @@
+\DocumentMetadata{}
+\input{regression-test}
+\documentclass{l3doc}
+\START
+\usepackage{tocloft}
+\OMIT
+\begin{document}
+abc
+\end{document}
