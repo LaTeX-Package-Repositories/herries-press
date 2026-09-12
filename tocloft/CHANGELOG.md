@@ -10,7 +10,7 @@ Version 3.0c
  - missing Reference structure in `\chapterprecis` toc entry
  
 ### Changed
- - adapt templates to planed changes in latex-dev
+ - adapt templates to planned changes in latex-dev
  
 ## [2026-08-21]
 Version 3.0b 
