@@ -64,8 +64,8 @@ Completed box being shipped out [1]
 ...\pdfliteral page <lua data reference ...>
 ...\marks1{\__mark_value:nn {1}{\MakeUppercase    []{Contents}}}
 ...\marks2{\__mark_value:nn {2}{}}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue 10.0 plus 1.0
@@ -367,7 +367,7 @@ TEST 1: Show PDF Tags
       <?MarkedContent page="3" ?>First chapter
      </Span>
     </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.019"
        rolemaps-to="Part"
       >
@@ -375,21 +375,21 @@ TEST 1: Show PDF Tags
         id="ID.020"
         rolemaps-to="BlockQuote"
        >
-      <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+      <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.021"
          rolemaps-to="Part"
         >
-       <text xmlns="https://www.latex-project.org/ns/dflt"
+       <text-block xmlns="https://www.latex-project.org/ns/dflt"
           id="ID.022"
           xmlns:Layout="http://iso.org/pdf/ssn/Layout"
           Layout:TextAlign="Justify"
           rolemaps-to="P"
          >
         <?MarkedContent page="3" ?>Our hero is introduced; family tree; early days.
-       </text>
-      </text-unit>
+       </text-block>
+      </semantic-para>
      </quote>
-    </text-unit>
+    </semantic-para>
    </Sect>
   </Document>
  </StructTreeRoot>
@@ -493,8 +493,8 @@ Completed box being shipped out [3]
 ...\marks1{\__mark_value:nn {3}{\MakeUppercase    []{Chapter\ 1. \ First chapter}}}
 ...\marks2{\__mark_value:nn {4}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}First chapter}{\thepage }{target*.2}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\rule(0.0+0.0)x*
