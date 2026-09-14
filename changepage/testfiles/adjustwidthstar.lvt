@@ -1,0 +1,15 @@
+\input{regression-test}
+\documentclass{book}
+\usepackage[strict]{changepage}
+\usepackage{lipsum}
+\begin{document}
+% leftmargin is wrong as label is on the wrong page
+\START\showoutput 
+\vspace*{42\baselineskip}
+\lipsum[1][1-3]
+\begin{adjustwidth*}{}{-8em}
+\IfDocumentMetadataT{X}**\itshape\lipsum[1][1-3]
+\end{adjustwidth*}
+\lipsum[1][1-3]
+
+\end{document} 
