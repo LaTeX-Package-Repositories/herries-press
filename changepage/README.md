@@ -59,5 +59,5 @@ Developmental and historical versions:
   <https://github.com/LaTeX-Package-Repositories/herries-press>
 
 Current release versions:  
-  <http://ctan.tug.org/pkg/changepage>  
+  <https://ctan.org/pkg/changepage>  
 
