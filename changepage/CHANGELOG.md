@@ -7,7 +7,11 @@ CHANGE HISTORIES
 
 ### CHANGEPAGE
 
-version 2.0 (2026/09/14)
+version 2.0b (2026/09/15)
+
+- corrected file name chgnpage.sty to chngpage.sty
+
+version 2.0a (2026/09/14)
 
 - New maintainer: LaTeX Project
 - Repository is now https://github.com/LaTeX-Package-Repositories/herries-press

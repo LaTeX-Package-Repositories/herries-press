@@ -11,7 +11,7 @@ It is a functionally-equivalent replacement for the older chngpage package (whic
 VERSION 
 --------
 
-2026-09-14 v2.0
+2026-09-15 v2.0b
 
 TAGGING SUPPORT
 ---------------
@@ -23,7 +23,7 @@ INSTALLATION
 ---------------
 
 Run `latex` on changepage.ins to produce the files
-  changepage.sty and run `lualatex` on changepage.dtx
+  changepage.sty and chngpage.sty and run `lualatex` on changepage.dtx
   to compile the PDF documentation.
 
 
