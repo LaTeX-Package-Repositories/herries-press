@@ -6,22 +6,23 @@ Don't change this file in any respect.
 TEST 1: Show PDF Tags
 ============================================================
 -------- newlistof.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.006"
+      rolemaps-to="Sect"
       referenced-as="1"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.007"
        title="List of Answers"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>List of Answers
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.008"
        title="ans"
@@ -70,7 +71,7 @@ TEST 1: Show PDF Tags
       <?MarkedContent page="1" ?>The …
      </text-block>
     </semantic-para>
-   </Sect>
+   </section>
   </Document>
  </StructTreeRoot>
 </PDF>
