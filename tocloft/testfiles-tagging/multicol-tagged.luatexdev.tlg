@@ -723,8 +723,12 @@ Completed box being shipped out [2]
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 1
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4  
 .....\glue 9.0
+.....\TU/lmr/bx/n/14.4  
+.....\glue -5.4
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/14.4 a
@@ -754,8 +758,12 @@ Completed box being shipped out [2]
 .....\TU/lmr/bx/n/12 1
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 1
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 a
@@ -787,8 +795,12 @@ Completed box being shipped out [2]
 .....\TU/lmr/bx/n/12 1
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 2
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 a
@@ -820,8 +832,12 @@ Completed box being shipped out [2]
 .....\TU/lmr/bx/n/12 1
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 3
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 a
@@ -888,8 +904,12 @@ Completed box being shipped out [3]
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 2
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4  
 .....\glue 9.0
+.....\TU/lmr/bx/n/14.4  
+.....\glue -5.4
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/14.4 b
@@ -919,8 +939,12 @@ Completed box being shipped out [3]
 .....\TU/lmr/bx/n/12 2
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 1
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 b
@@ -952,8 +976,12 @@ Completed box being shipped out [3]
 .....\TU/lmr/bx/n/12 2
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 2
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 b
@@ -985,8 +1013,12 @@ Completed box being shipped out [3]
 .....\TU/lmr/bx/n/12 2
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 3
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 b
@@ -1022,21 +1054,22 @@ Completed box being shipped out [3]
 TEST 1: Show PDF Tags
 ============================================================
 -------- multicol-tagged.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.007"
        title="Contents"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>Contents
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.008"
        title="toc"
@@ -1258,223 +1291,247 @@ TEST 1: Show PDF Tags
       </TOCI>
      </TOC>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.048"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.049"
        title="a"
        rolemaps-to="H1"
+       referenced-as="1"
       >
-     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.050"
-        rolemaps-to="Span"
-        referenced-as="1"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="2" ?>1 
-     </section-number>
+      <?MarkedContent page="2" ?>1
+     </heading-number>
+     <?MarkedContent page="2" ?>  
      <?MarkedContent page="2" ?>a
-    </section>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+    </section-heading>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.051"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.052"
         title="aa"
         rolemaps-to="H2"
+        referenced-as="2"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.053"
-         rolemaps-to="Span"
-         referenced-as="2"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="2" ?>1.1 
-      </section-number>
+       <?MarkedContent page="2" ?>1.1
+      </heading-number>
+      <?MarkedContent page="2" ?>  
       <?MarkedContent page="2" ?>aa
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.054"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.055"
         title="ab"
         rolemaps-to="H2"
+        referenced-as="3"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.056"
-         rolemaps-to="Span"
-         referenced-as="3"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="2" ?>1.2 
-      </section-number>
+       <?MarkedContent page="2" ?>1.2
+      </heading-number>
+      <?MarkedContent page="2" ?>  
       <?MarkedContent page="2" ?>ab
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.057"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.058"
         title="ac"
         rolemaps-to="H2"
+        referenced-as="4"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.059"
-         rolemaps-to="Span"
-         referenced-as="4"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="2" ?>1.3 
-      </section-number>
+       <?MarkedContent page="2" ?>1.3
+      </heading-number>
+      <?MarkedContent page="2" ?>  
       <?MarkedContent page="2" ?>ac
-     </subsection>
-    </Sect>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.060"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.061"
        title="b"
        rolemaps-to="H1"
+       referenced-as="5"
       >
-     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.062"
-        rolemaps-to="Span"
-        referenced-as="5"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="3" ?>2 
-     </section-number>
+      <?MarkedContent page="3" ?>2
+     </heading-number>
+     <?MarkedContent page="3" ?>  
      <?MarkedContent page="3" ?>b
-    </section>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+    </section-heading>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.063"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.064"
         title="ba"
         rolemaps-to="H2"
+        referenced-as="6"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.065"
-         rolemaps-to="Span"
-         referenced-as="6"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="3" ?>2.1 
-      </section-number>
+       <?MarkedContent page="3" ?>2.1
+      </heading-number>
+      <?MarkedContent page="3" ?>  
       <?MarkedContent page="3" ?>ba
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.066"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.067"
         title="bb"
         rolemaps-to="H2"
+        referenced-as="7"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.068"
-         rolemaps-to="Span"
-         referenced-as="7"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="3" ?>2.2 
-      </section-number>
+       <?MarkedContent page="3" ?>2.2
+      </heading-number>
+      <?MarkedContent page="3" ?>  
       <?MarkedContent page="3" ?>bb
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.069"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.070"
         title="bc"
         rolemaps-to="H2"
+        referenced-as="8"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.071"
-         rolemaps-to="Span"
-         referenced-as="8"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="3" ?>2.3 
-      </section-number>
+       <?MarkedContent page="3" ?>2.3
+      </heading-number>
+      <?MarkedContent page="3" ?>  
       <?MarkedContent page="3" ?>bc
-     </subsection>
-    </Sect>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.072"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.073"
        title="c"
        rolemaps-to="H1"
+       referenced-as="9"
       >
-     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.074"
-        rolemaps-to="Span"
-        referenced-as="9"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="4" ?>3 
-     </section-number>
+      <?MarkedContent page="4" ?>3
+     </heading-number>
+     <?MarkedContent page="4" ?>  
      <?MarkedContent page="4" ?>c
-    </section>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+    </section-heading>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.075"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.076"
         title="ca"
         rolemaps-to="H2"
+        referenced-as="10"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.077"
-         rolemaps-to="Span"
-         referenced-as="10"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="4" ?>3.1 
-      </section-number>
+       <?MarkedContent page="4" ?>3.1
+      </heading-number>
+      <?MarkedContent page="4" ?>  
       <?MarkedContent page="4" ?>ca
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.078"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.079"
         title="cb"
         rolemaps-to="H2"
+        referenced-as="11"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.080"
-         rolemaps-to="Span"
-         referenced-as="11"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="4" ?>3.2 
-      </section-number>
+       <?MarkedContent page="4" ?>3.2
+      </heading-number>
+      <?MarkedContent page="4" ?>  
       <?MarkedContent page="4" ?>cb
-     </subsection>
-    </Sect>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
+     </subsection-heading>
+    </subsection>
+    <subsection xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.081"
+       rolemaps-to="Sect"
       >
-     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+     <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.082"
         title="cc"
         rolemaps-to="H2"
+        referenced-as="12"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.083"
-         rolemaps-to="Span"
-         referenced-as="12"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="4" ?>3.3 
-      </section-number>
+       <?MarkedContent page="4" ?>3.3
+      </heading-number>
+      <?MarkedContent page="4" ?>  
       <?MarkedContent page="4" ?>cc
-     </subsection>
-    </Sect>
-   </Sect>
+     </subsection-heading>
+    </subsection>
+   </section>
   </Document>
  </StructTreeRoot>
 </PDF>
@@ -1516,8 +1573,12 @@ Completed box being shipped out [4]
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 3
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4  
 .....\glue 9.0
+.....\TU/lmr/bx/n/14.4  
+.....\glue -5.4
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/14.4 c
@@ -1547,8 +1608,12 @@ Completed box being shipped out [4]
 .....\TU/lmr/bx/n/12 3
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 1
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 c
@@ -1580,8 +1645,12 @@ Completed box being shipped out [4]
 .....\TU/lmr/bx/n/12 3
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 2
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 c
@@ -1613,8 +1682,12 @@ Completed box being shipped out [4]
 .....\TU/lmr/bx/n/12 3
 .....\TU/lmr/bx/n/12 .
 .....\TU/lmr/bx/n/12 3
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/12  
 .....\glue 7.5
+.....\TU/lmr/bx/n/12  
+.....\glue -4.5
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/12 c
@@ -1651,7 +1724,7 @@ Completed box being shipped out [4]
 <<latex-list-css.html>><<latex-align-css.html>> (multicol-tagged.aux)
 Package tagpdf Info: Finalizing the tagging structure:
 (tagpdf)             Writing out ~83 structure objects
-(tagpdf)             with ~93 'MC' leaf nodes.
+(tagpdf)             with ~105 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

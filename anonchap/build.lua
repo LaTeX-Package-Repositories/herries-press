@@ -1,7 +1,7 @@
 
 module = "anonchap"
 
-version = "2026-06-05 v1.2"
+version = "2026-06-30 v1.2b"
 
 checkengines={"pdftex"}
 checkruns = 2
@@ -20,9 +20,8 @@ sourcefiles={"anonchap.sty"}
 -- Upload meta data
 
 announce = {}
-announce["2026-06-05 v1.2"] = [[
-Update to support for headings templates when \DocumentMetadata is used
-https://github.com/latex3/tagging-project/issues/1338
+announce["2026-09-30 v1.2b"] = [[
+Adjust to use new heading templates with LaTeX 2026-11-01 release.
 ]]
 
 

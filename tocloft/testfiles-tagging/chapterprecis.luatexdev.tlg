@@ -290,41 +290,36 @@ Completed box being shipped out [2]
 TEST 1: Show PDF Tags
 ============================================================
 -------- chapterprecis.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <chapter xmlns="https://www.latex-project.org/ns/book"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
        id="ID.007"
        title="Contents"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.008"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-       >
-      <?MarkedContent page="1" ?>Contents
-     </Span>
-    </chapter>
+     <?MarkedContent page="1" ?>Contents
+    </chapter-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
-       id="ID.009"
+       id="ID.008"
        title="toc"
       >
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.010"
+        id="ID.009"
         title="First chapter"
        >
        <?References objects="1" ?>
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.011"
+         id="ID.010"
         >
        <Lbl xmlns="http://iso.org/pdf2/ssn"
-          id="ID.012"
+          id="ID.011"
          >
         <?MarkedContent page="1" ?>1
        </Lbl>
@@ -333,54 +328,49 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.013"
+        id="ID.012"
        >
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.014"
+         id="ID.013"
         >
        <?MarkedContent page="1" ?>Our hero is introduced; family tree; early days.
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.015"
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.014"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.016"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.015"
        title="First chapter"
        rolemaps-to="H1"
        referenced-as="1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.017"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="3" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.016"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="3" ?>Chapter 1
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.018"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="3" ?>First chapter
-     </Span>
-    </chapter>
+      <?MarkedContent page="3" ?>1
+     </heading-number>
+     <?MarkedContent page="3" ?>First chapter
+    </chapter-heading>
     <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.019"
+       id="ID.017"
        rolemaps-to="Part"
       >
      <quote xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.020"
+        id="ID.018"
         rolemaps-to="BlockQuote"
        >
       <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.021"
+         id="ID.019"
          rolemaps-to="Part"
         >
        <text-block xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.022"
+          id="ID.020"
           xmlns:Layout="http://iso.org/pdf/ssn/Layout"
           Layout:TextAlign="Justify"
           rolemaps-to="P"
@@ -390,7 +380,7 @@ TEST 1: Show PDF Tags
       </semantic-para>
      </quote>
     </semantic-para>
-   </Sect>
+   </chapter>
   </Document>
  </StructTreeRoot>
 </PDF>
@@ -449,13 +439,18 @@ Completed box being shipped out [3]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 1
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.70972
@@ -614,8 +609,8 @@ Completed box being shipped out [3]
 .\pdfliteral page <lua data reference ...>
 <<latex-list-css.html>><<latex-align-css.html>> (chapterprecis.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~22 structure objects
-(tagpdf)             with ~16 'MC' leaf nodes.
+(tagpdf)             Writing out ~20 structure objects
+(tagpdf)             with ~17 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

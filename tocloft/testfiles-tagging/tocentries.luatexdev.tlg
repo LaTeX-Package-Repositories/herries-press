@@ -8,27 +8,28 @@ Don't change this file in any respect.
 \tf@lot=\write...
 [1
 ]
-Floatstructure:122
-Floatstructure:126
+Floatstructure:120
+Floatstructure:124
 ============================================================
 TEST 1: Show PDF Tags
 ============================================================
 -------- tocentries.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.0002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.0006"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.0007"
        title="Contents"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>Contents
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.0008"
        title="toc"
@@ -343,17 +344,18 @@ TEST 1: Show PDF Tags
       </TOC>
      </TOC>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.0066"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.0067"
        title="List of Figures"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>List of Figures
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.0068"
        title="lof"
@@ -382,17 +384,18 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.0073"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.0074"
        title="List of Tables"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>List of Tables
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.0075"
        title="lot"
@@ -421,101 +424,103 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Part xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <part xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.0080"
+      rolemaps-to="Part"
      >
-    <part xmlns="https://www.latex-project.org/ns/dflt"
+    <part-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.0081"
        title="part"
        rolemaps-to="Title"
        referenced-as="1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
+     <?MarkedContent page="1" ?>Part  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.0082"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="1" ?>Part I
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0083"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="1" ?>part
-     </Span>
-    </part>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
-       id="ID.0084"
+      <?MarkedContent page="1" ?>I
+     </heading-number>
+     <?MarkedContent page="1" ?>part
+    </part-heading>
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.0083"
+       rolemaps-to="Sect"
       >
-     <section xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.0085"
+     <section-heading xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.0084"
         title="section"
         rolemaps-to="H1"
+        referenced-as="2"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0086"
-         rolemaps-to="Span"
-         referenced-as="2"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0085"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="1" ?>1 
-      </section-number>
+       <?MarkedContent page="1" ?>1
+      </heading-number>
+      <?MarkedContent page="1" ?>  
       <?MarkedContent page="1" ?>section
-     </section>
-     <Sect xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0087"
+     </section-heading>
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.0086"
+        rolemaps-to="Sect"
         referenced-as="4"
        >
-      <subsection xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0088"
+      <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0087"
          title="subsec"
          rolemaps-to="H2"
+         referenced-as="3"
         >
-       <section-number xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.0089"
-          rolemaps-to="Span"
-          referenced-as="3"
+       <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0088"
+          rolemaps-to="Lbl"
          >
-        <?MarkedContent page="1" ?>1.1 
-       </section-number>
+        <?MarkedContent page="1" ?>1.1
+       </heading-number>
+       <?MarkedContent page="1" ?>  
        <?MarkedContent page="1" ?>subsec
-      </subsection>
-      <Sect xmlns="http://iso.org/pdf2/ssn"
-         id="ID.0090"
+      </subsection-heading>
+      <subsubsection xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0089"
+         rolemaps-to="Sect"
         >
-       <subsubsection xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.0091"
+       <subsubsection-heading xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0090"
           title="subsubsec"
           rolemaps-to="H3"
+          referenced-as="5"
          >
-        <section-number xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0092"
-           rolemaps-to="Span"
-           referenced-as="5"
+        <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0091"
+           rolemaps-to="Lbl"
           >
-         <?MarkedContent page="1" ?>1.1.1 
-        </section-number>
+         <?MarkedContent page="1" ?>1.1.1
+        </heading-number>
+        <?MarkedContent page="1" ?>  
         <?MarkedContent page="1" ?>subsubsec
-       </subsubsection>
-       <Sect xmlns="http://iso.org/pdf2/ssn"
-          id="ID.0093"
+       </subsubsection-heading>
+       <paragraph xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0092"
+          rolemaps-to="Sect"
          >
-        <paragraph xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0094"
+        <paragraph-heading xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0093"
            xmlns:Layout="http://iso.org/pdf/ssn/Layout"
            Layout:TextAlign="Justify"
            rolemaps-to="H4"
            referenced-as="6"
           >
          <?MarkedContent page="1" ?>paragraph
-        </paragraph>
+        </paragraph-heading>
         <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0095"
+           id="ID.0094"
            rolemaps-to="Part"
           >
          <text-block xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0096"
+            id="ID.0095"
             xmlns:Layout="http://iso.org/pdf/ssn/Layout"
             Layout:TextAlign="Justify"
             rolemaps-to="P"
@@ -523,24 +528,25 @@ TEST 1: Show PDF Tags
           <?MarkedContent page="1" ?> some text
          </text-block>
         </semantic-para>
-        <Sect xmlns="http://iso.org/pdf2/ssn"
-           id="ID.0097"
+        <subparagraph xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0096"
+           rolemaps-to="Sect"
           >
-         <subparagraph xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0098"
+         <subparagraph-heading xmlns="https://www.latex-project.org/ns/dflt"
+            id="ID.0097"
             xmlns:Layout="http://iso.org/pdf/ssn/Layout"
             Layout:TextAlign="Justify"
             rolemaps-to="H5"
             referenced-as="7"
            >
           <?MarkedContent page="1" ?> subpara
-         </subparagraph>
+         </subparagraph-heading>
          <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0099"
+            id="ID.0098"
             rolemaps-to="Part"
            >
           <text-block xmlns="https://www.latex-project.org/ns/dflt"
-             id="ID.0100"
+             id="ID.0099"
              xmlns:Layout="http://iso.org/pdf/ssn/Layout"
              Layout:TextAlign="Justify"
              rolemaps-to="P"
@@ -548,105 +554,107 @@ TEST 1: Show PDF Tags
            <?MarkedContent page="1" ?> some text
           </text-block>
          </semantic-para>
-        </Sect>
-       </Sect>
-      </Sect>
-     </Sect>
-    </Sect>
-   </Part>
-   <Part xmlns="http://iso.org/pdf2/ssn"
-      id="ID.0101"
+        </subparagraph>
+       </paragraph>
+      </subsubsection>
+     </subsection>
+    </section>
+   </part>
+   <part xmlns="https://www.latex-project.org/ns/dflt"
+      id="ID.0100"
+      rolemaps-to="Part"
      >
-    <part xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.0102"
+    <part-heading xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.0101"
        title="part"
        rolemaps-to="Title"
        referenced-as="8"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0103"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="2" ?>Part  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.0102"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="2" ?>Part XVI
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0104"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="2" ?>part
-     </Span>
-    </part>
-    <Sect xmlns="http://iso.org/pdf2/ssn"
-       id="ID.0105"
+      <?MarkedContent page="2" ?>XVI
+     </heading-number>
+     <?MarkedContent page="2" ?>part
+    </part-heading>
+    <section xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.0103"
+       rolemaps-to="Sect"
       >
-     <section xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.0106"
+     <section-heading xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.0104"
         title="sec"
         rolemaps-to="H1"
+        referenced-as="9"
        >
-      <section-number xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0107"
-         rolemaps-to="Span"
-         referenced-as="9"
+      <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0105"
+         rolemaps-to="Lbl"
         >
-       <?MarkedContent page="2" ?>2 
-      </section-number>
+       <?MarkedContent page="2" ?>2
+      </heading-number>
+      <?MarkedContent page="2" ?>  
       <?MarkedContent page="2" ?>sec
-     </section>
-     <Sect xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0108"
+     </section-heading>
+     <subsection xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.0106"
+        rolemaps-to="Sect"
        >
-      <subsection xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0109"
+      <subsection-heading xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0107"
          title="subsec"
          rolemaps-to="H2"
+         referenced-as="10"
         >
-       <section-number xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.0110"
-          rolemaps-to="Span"
-          referenced-as="10"
+       <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0108"
+          rolemaps-to="Lbl"
          >
-        <?MarkedContent page="2" ?>2.1 
-       </section-number>
+        <?MarkedContent page="2" ?>2.1
+       </heading-number>
+       <?MarkedContent page="2" ?>  
        <?MarkedContent page="2" ?>subsec
-      </subsection>
-      <Sect xmlns="http://iso.org/pdf2/ssn"
-         id="ID.0111"
+      </subsection-heading>
+      <subsubsection xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.0109"
+         rolemaps-to="Sect"
         >
-       <subsubsection xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.0112"
+       <subsubsection-heading xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0110"
           title="subsubsec"
           rolemaps-to="H3"
+          referenced-as="11"
          >
-        <section-number xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0113"
-           rolemaps-to="Span"
-           referenced-as="11"
+        <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0111"
+           rolemaps-to="Lbl"
           >
-         <?MarkedContent page="2" ?>2.1.1 
-        </section-number>
+         <?MarkedContent page="2" ?>2.1.1
+        </heading-number>
+        <?MarkedContent page="2" ?>  
         <?MarkedContent page="2" ?>subsubsec
-       </subsubsection>
-       <Sect xmlns="http://iso.org/pdf2/ssn"
-          id="ID.0114"
+       </subsubsection-heading>
+       <paragraph xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.0112"
+          rolemaps-to="Sect"
          >
-        <paragraph xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0115"
+        <paragraph-heading xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0113"
            xmlns:Layout="http://iso.org/pdf/ssn/Layout"
            Layout:TextAlign="Justify"
            rolemaps-to="H4"
            referenced-as="12"
           >
          <?MarkedContent page="2" ?>paragraph
-        </paragraph>
+        </paragraph-heading>
         <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-           id="ID.0116"
+           id="ID.0114"
            rolemaps-to="Part"
           >
          <text-block xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0117"
+            id="ID.0115"
             xmlns:Layout="http://iso.org/pdf/ssn/Layout"
             Layout:TextAlign="Justify"
             rolemaps-to="P"
@@ -654,24 +662,25 @@ TEST 1: Show PDF Tags
           <?MarkedContent page="2" ?> some text
          </text-block>
         </semantic-para>
-        <Sect xmlns="http://iso.org/pdf2/ssn"
-           id="ID.0118"
+        <subparagraph xmlns="https://www.latex-project.org/ns/dflt"
+           id="ID.0116"
+           rolemaps-to="Sect"
           >
-         <subparagraph xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0119"
+         <subparagraph-heading xmlns="https://www.latex-project.org/ns/dflt"
+            id="ID.0117"
             xmlns:Layout="http://iso.org/pdf/ssn/Layout"
             Layout:TextAlign="Justify"
             rolemaps-to="H5"
             referenced-as="13"
            >
           <?MarkedContent page="2" ?> subpara
-         </subparagraph>
+         </subparagraph-heading>
          <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
-            id="ID.0120"
+            id="ID.0118"
             rolemaps-to="Part"
            >
           <text-block xmlns="https://www.latex-project.org/ns/dflt"
-             id="ID.0121"
+             id="ID.0119"
              xmlns:Layout="http://iso.org/pdf/ssn/Layout"
              Layout:TextAlign="Justify"
              rolemaps-to="P"
@@ -679,31 +688,31 @@ TEST 1: Show PDF Tags
            <?MarkedContent page="2" ?> some text
           </text-block>
          </semantic-para>
-        </Sect>
-       </Sect>
-      </Sect>
-     </Sect>
-    </Sect>
-   </Part>
+        </subparagraph>
+       </paragraph>
+      </subsubsection>
+     </subsection>
+    </section>
+   </part>
    <figures xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.0004"
       rolemaps-to="Sect"
      >
     <float xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.0122"
+       id="ID.0120"
        rolemaps-to="Aside"
        referenced-as="14"
       >
      <Caption xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0123"
+        id="ID.0121"
        >
       <Lbl xmlns="http://iso.org/pdf2/ssn"
-         id="ID.0124"
+         id="ID.0122"
         >
        <?MarkedContent page="2" ?>Figure 1: 
       </Lbl>
       <text-block xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0125"
+         id="ID.0123"
          xmlns:Layout="http://iso.org/pdf/ssn/Layout"
          Layout:TextAlign="Justify"
          rolemaps-to="P"
@@ -718,20 +727,20 @@ TEST 1: Show PDF Tags
       rolemaps-to="Sect"
      >
     <float xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.0126"
+       id="ID.0124"
        rolemaps-to="Aside"
        referenced-as="15"
       >
      <Caption xmlns="http://iso.org/pdf2/ssn"
-        id="ID.0127"
+        id="ID.0125"
        >
       <Lbl xmlns="http://iso.org/pdf2/ssn"
-         id="ID.0128"
+         id="ID.0126"
         >
        <?MarkedContent page="2" ?>Table 1: 
       </Lbl>
       <text-block xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.0129"
+         id="ID.0127"
          xmlns:Layout="http://iso.org/pdf/ssn/Layout"
          Layout:TextAlign="Justify"
          rolemaps-to="P"
@@ -748,8 +757,8 @@ TEST 1: Show PDF Tags
 ============================================================
 [2]<<latex-list-css.html>><<latex-align-css.html>> (tocentries.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~129 structure objects
-(tagpdf)             with ~130 'MC' leaf nodes.
+(tagpdf)             Writing out ~127 structure objects
+(tagpdf)             with ~138 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

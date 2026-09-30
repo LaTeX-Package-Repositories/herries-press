@@ -1,0 +1,37 @@
+\DocumentMetadata
+  {
+    lang=en-US,
+    pdfversion=2.0,
+    pdfstandard=ua-2,
+    tagging=on
+  }
+\documentclass{book}
+
+\input{regression-test}
+
+\START
+
+\usepackage{anonchap}
+
+\title{anonchap tagging test}
+
+\begin{document}
+
+\simplechapter
+\chapter{First}
+text
+\renewcommand{\simplechapterdelim}{:}
+\chapter{Second}
+text
+\restorechapter % restore before issuing
+% a modified \simplechapter
+\simplechapter[Chap]
+\chapter{Third}
+text
+\simplechapter
+\chapter{Fourth}
+text
+\restorechapter
+\chapter{Fifth}
+
+\end{document}

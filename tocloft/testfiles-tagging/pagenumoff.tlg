@@ -19,7 +19,7 @@ Floatstructure:143
 TEST 1: Show PDF Tags
 ============================================================
 -------- pagenumoff.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.0002"

@@ -9,21 +9,22 @@ Floatstructure:28
 TEST 1: Show PDF Tags
 ============================================================
 -------- tagging-issue1537-article.xml (start) ---------
-<PDF>
+<PDF version="2.0">
  <StructTreeRoot>
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.007"
        title="Contents"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>Contents
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.008"
        title="toc"
@@ -69,18 +70,19 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.016"
+      rolemaps-to="Sect"
       referenced-as="1"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.017"
        title="List of Figures"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>List of Figures
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.018"
        title="lof"
@@ -109,24 +111,26 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.023"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.024"
        title="Body"
        rolemaps-to="H1"
+       referenced-as="2"
       >
-     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.025"
-        rolemaps-to="Span"
-        referenced-as="2"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="1" ?>1 
-     </section-number>
+      <?MarkedContent page="1" ?>1
+     </heading-number>
+     <?MarkedContent page="1" ?>  
      <?MarkedContent page="1" ?>Body
-    </section>
+    </section-heading>
     <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.026"
        rolemaps-to="Part"
@@ -140,7 +144,7 @@ TEST 1: Show PDF Tags
       <?MarkedContent page="1" ?>Placeholder.
      </text-block>
     </semantic-para>
-   </Sect>
+   </section>
    <figures xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.004"
       rolemaps-to="Sect"
@@ -540,9 +544,15 @@ Completed box being shipped out [1]
 ........\penalty 10000
 ......\kern0.0
 ......\glue 0.0
+......\pdfliteral page <lua data reference ...>
+......\pdfliteral page <lua data reference ...>
 ......\TU/lmr/bx/n/14.4 1
+......\pdfliteral page <lua data reference ...>
+......\pdfliteral page <lua data reference ...>
 ......\TU/lmr/bx/n/14.4  
 ......\glue 9.0
+......\TU/lmr/bx/n/14.4  
+......\glue -5.4
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 B
@@ -615,7 +625,7 @@ Completed box being shipped out [1]
 <<latex-list-css.html>><<latex-align-css.html>> (tagging-issue1537-article.aux)
 Package tagpdf Info: Finalizing the tagging structure:
 (tagpdf)             Writing out ~31 structure objects
-(tagpdf)             with ~28 'MC' leaf nodes.
+(tagpdf)             with ~29 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree
