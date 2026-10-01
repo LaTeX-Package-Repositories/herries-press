@@ -1716,7 +1716,6 @@
 % \changes{v2.5a}{2026/09/30}{Fix definition of \cs{@vsptitle} (gh/50)}
 %    \begin{macrocode}
 \def\@vsptitle[#1]#2{%
-  \@nameuse{phantomsection}%
   \@vstypeptitle{#2}%
   \addcontentsline{toc}{\poemtoc}{#1}%
   \poemtitlemark{#1}%
@@ -1740,7 +1739,7 @@
 %    \begin{macrocode}
 \newcommand{\@vstypeptitle}[1]{%
   \vspace{\beforepoemtitleskip}%
-  {\poemtitlefont #1\par}%
+  {\poemtitlefont\leavevmode\MakeLinkTarget[poem]{}#1\par}%
   \vspace{\afterpoemtitleskip}%
 }
 %    \end{macrocode}
