@@ -2,8 +2,7 @@
 %
 % verse.dtx
 % Author: Peter Wilson
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
-%         Herries Press
+% Maintainer: LaTeX Project Team
 % Copyright 2001--2007 Peter R. Wilson
 %
 % This work may be distributed and/or modified under the
@@ -12,7 +11,7 @@
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project Team.
 %
 % This work consists of the files listed in the README file.
 %
@@ -116,6 +115,7 @@
 % \changes{v2.4b}{2014/05/10}{Documentation updates}
 % \changes{v2.4c}{2024/02/11}{Avoid clash with tagging}
 % \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
+% \changes{v2.5}{2026/09/30}{Fix definition of \cs{@vsptitle} (gh/50)}
 %
 % \def\dtxfile{verse.dtx}
 % ^^A \def\fileversion{v1.0}
@@ -136,6 +136,7 @@
 % \def\fileversion{v2.4b} \def\filedate{2014/05/10}
 % \def\fileversion{v2.4c} \def\filedate{2024/02/12}
 % \def\fileversion{v2.5} \def\filedate{2026/08/08}
+% \def\fileversion{v2.5a} \def\filedate{2026/09/30}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -149,8 +150,7 @@
 % \author{
 %   Author: Peter Wilson, Herries Press \\
 %   Maintainer: The \LaTeX{} Project Team \\
-%   \large
-%   \texttt{https://github.com/LaTeX-Package-Repositories/herries-press}
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\fileversion\qquad\filedate}
 % \maketitle
@@ -938,7 +938,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{verse}[2026-08-08  v2.5 verse typesetting]
+\ProvidesPackage{verse}[2026-09-30  v2.5a verse typesetting]
 %    \end{macrocode}
 %
 % For reference, here is the original definition of the |verse| environment
@@ -1713,12 +1713,13 @@
 % \begin{macro}{\@vsptitle}
 % Typeset a |poemtitle|.
 % \changes{v2.22}{2005/08/22}{Added hyperref anchor to \cs{@vsptitle}}
+% \changes{v2.5a}{2026/09/30}{Fix definition of \cs{@vsptitle} (gh/50)}
 %    \begin{macrocode}
 \def\@vsptitle[#1]#2{%
   \@nameuse{phantomsection}%
+  \@vstypeptitle{#2}%
   \addcontentsline{toc}{\poemtoc}{#1}%
   \poemtitlemark{#1}%
-  \@vstypeptitle{#2}%
   \@afterheading
 }
 %    \end{macrocode}
