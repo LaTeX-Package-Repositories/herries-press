@@ -4,7 +4,7 @@
 % Author: Peter Wilson, Herries Press
 % Maintainer: LaTeX Project Team
 % Copyright 1998--2004 Peter R. Wilson
-% Copyright 2009--2005 LaTeX Project
+% Copyright 2009--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -18,8 +18,9 @@
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
-\usepackage{url}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
+\usepackage{hologo}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -30,6 +31,22 @@
 %
 % \fi
 %
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -79,6 +96,7 @@
 % \changes{v1.2a}{2004/04/22}{Updated license and contact info}
 % \changes{v1.2b}{2009/09/02}{New maintainer (Will Robertson)}
 % \changes{v1.2c}{2025/03/12}{Avoid single quote looping in math}
+% \changes{v1.2d}{2026/10/05}{Tag documentation}
 %
 % \def\dtxfile{hanging.dtx}
 % \def\fileversion{v1.1a}  \def\filedate{1999/07/28}
@@ -86,15 +104,15 @@
 % \def\fileversion{v1.2a}  \def\filedate{2004/04/22}
 % \def\fileversion{v1.2b}  \def\filedate{2009/09/02}
 % \def\fileversion{v1.2c}  \def\filedate{2025/03/12}
+% \def\fileversion{v1.2d}  \def\filedate{2026/10/05}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
 %  ^^A fake a hangpara for demo purposes
 % \newcommand{\hpdemo}[2]{\hangindent#1\hangafter#2\noindent}
-% \newcommand{\Han}{H\`{a}n \ensuremath{\mathrm{Th\acute{\hat{e}}}} Th\`{a}nh}
+% \newcommand{\Han}{\hologo{HanTheThanh}}
 %
 % \title{The \Lpack{hanging} package\thanks{This
 %        file (\texttt{\dtxfile}) has version number \fileversion, last revised
@@ -102,8 +120,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project Team \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\filedate}
 % \maketitle
@@ -251,7 +269,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{hanging}[2025/03/12 v1.2c hanging paragraphs and punctuation]
+\ProvidesPackage{hanging}[2026/10/05 v1.2d hanging paragraphs and punctuation]
 %    \end{macrocode}
 %
 % \subsection{Hanging paragraphs}
@@ -303,14 +321,14 @@
 % \hyphenchar\font=127
 % \end{verbatim}
 %
-% \begin{macro}{\ifh@ngcomma}
-% \begin{macro}{\ifh@ngfstop}
-% \begin{macro}{\ifh@ngquote}
-% \begin{macro}{\ifh@ngquery}
-% \begin{macro}{\ifh@ngexcl}
-% \begin{macro}{\ifh@ngcolon}
-% \begin{macro}{\ifh@ngscolon}
-% \begin{macro}{\ifh@ngfine}
+% \begin{macro}[int]{\ifh@ngcomma}
+% \begin{macro}[int]{\ifh@ngfstop}
+% \begin{macro}[int]{\ifh@ngquote}
+% \begin{macro}[int]{\ifh@ngquery}
+% \begin{macro}[int]{\ifh@ngexcl}
+% \begin{macro}[int]{\ifh@ngcolon}
+% \begin{macro}[int]{\ifh@ngscolon}
+% \begin{macro}[int]{\ifh@ngfine}
 %  We need some booleans for the options.
 % \changes{v1.1}{1999/05/01}{Added options to switch off hanging particular characters}
 % \changes{v1.2}{2001/03/15}{Added the fine option.}
@@ -350,14 +368,14 @@
 \fi
 %    \end{macrocode}
 %
-% \begin{macro}{\h@ngcommawd}
-% \begin{macro}{\h@ngfstopwd}
-% \begin{macro}{\h@ngquotewd}
-% \begin{macro}{\h@ngdquotewd}
-% \begin{macro}{\h@ngquerywd}
-% \begin{macro}{\h@ngexclwd}
-% \begin{macro}{\h@ngcolonwd}
-% \begin{macro}{\h@ngscolonwd}
+% \begin{macro}[int]{\h@ngcommawd}
+% \begin{macro}[int]{\h@ngfstopwd}
+% \begin{macro}[int]{\h@ngquotewd}
+% \begin{macro}[int]{\h@ngdquotewd}
+% \begin{macro}[int]{\h@ngquerywd}
+% \begin{macro}[int]{\h@ngexclwd}
+% \begin{macro}[int]{\h@ngcolonwd}
+% \begin{macro}[int]{\h@ngscolonwd}
 % We need some lengths for kerning for each punctuation mark that might be 
 % hung. These are set to the width of the character.
 %    \begin{macrocode}
@@ -393,7 +411,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\h@ngallowhyphens}
+% \begin{macro}[int]{\h@ngallowhyphens}
 % An incantation to be used to allow hyphenation in a `word' beginning
 % with a quote mark.\footnote{Hubert Gaesslein 
 % (\texttt{hubertjg@virtualphotonics.cm})
@@ -421,16 +439,16 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\h@nglqq}
-% \begin{macro}{\h@ngrqq}
-% \begin{macro}{\h@ngrquote}
-% \begin{macro}{\h@nglquote}
-% \begin{macro}{\h@ngcomma}
-% \begin{macro}{\h@ngfstop}
-% \begin{macro}{\h@ngquery}
-% \begin{macro}{\h@ngexcl}
-% \begin{macro}{\h@ngcolon}
-% \begin{macro}{\h@ngscolon}
+% \begin{macro}[int]{\h@nglqq}
+% \begin{macro}[int]{\h@ngrqq}
+% \begin{macro}[int]{\h@ngrquote}
+% \begin{macro}[int]{\h@nglquote}
+% \begin{macro}[int]{\h@ngcomma}
+% \begin{macro}[int]{\h@ngfstop}
+% \begin{macro}[int]{\h@ngquery}
+% \begin{macro}[int]{\h@ngexcl}
+% \begin{macro}[int]{\h@ngcolon}
+% \begin{macro}[int]{\h@ngscolon}
 % Commands for punctuation with kerning.
 %    \begin{macrocode}
 \newcommand{\h@nglqq}{``}
@@ -456,7 +474,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\activatepunct}
+% \begin{macro}[no-user-doc]{\activatepunct}
 % At this point we make the punctuation characters 
 % active.\footnote{My thanks to Harald Hanche-Olsen 
 % \texttt{hanche@math.ntnu.no}
@@ -500,10 +518,10 @@
   \global\everydisplay{\let'\active@math@prime}
 %    \end{macrocode}
 %
-% \begin{macro}{\h@ngrqtest}
-% \begin{macro}{\h@nglqtest}
-% \begin{macro}{\h@ngrquotes}
-% \begin{macro}{\h@nglquotes}
+% \begin{macro}[int]{\h@ngrqtest}
+% \begin{macro}[int]{\h@nglqtest}
+% \begin{macro}[int]{\h@ngrquotes}
+% \begin{macro}[int]{\h@nglquotes}
 % Commands for left and right quotes ligature tests.
 %    \begin{macrocode}
   \gdef\h@ngrqtest{\ifx\next'\let\next=\h@ngrquotes\else\let\next=\h@ngrquote\fi\next}

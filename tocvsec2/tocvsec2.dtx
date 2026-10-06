@@ -2,7 +2,7 @@
 %
 % tocvsec2.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project Team
 % Copyright 1999-2004 Peter R. Wilson
 % Copyright 2010-2011 Will Robertson
 %
@@ -22,11 +22,12 @@
 %</driver>
 %<usc>\ProvidesPackage{tocvsec2}
 %<*usc>
-    [2014/03/10 v1.3a variable ToC section entries]    
+    [2026/10/05 v1.3b variable ToC section entries]    
 %</usc>
 % 
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -37,7 +38,22 @@
 %
 % \fi
 %
-% \CheckSum{142}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -87,12 +103,12 @@
 % \changes{v1.2}{2004/05/24}{Eliminated requirement for stdclsdv package}
 % \changes{v1.2a}{2009/09/04}{New maintainer (Will Robertson)}
 % \changes{v1.3a}{2011/03/10}{Some missing comment chars causing space issues}
+% \changes{v1.3b}{2026/10/05}{Tag documentation; update maintainer to LaTeX Project Team}
 %
 % \def\dtxfile{tocvsec2.dtx}
 % \GetFileInfo{\dtxfile}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -103,8 +119,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project Team \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\filedate}
 % \maketitle
@@ -369,8 +385,8 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}{\if@knownsect@c}
-% \begin{macro}{\@setseccntt@c}
+% \begin{macro}[int]{\if@knownsect@c}
+% \begin{macro}[int]{\@setseccntt@c}
 % A helper macro to set a sectioning-related counter. Call as
 % |\@setseccntt@c{|\meta{sec}|}{|\meta{counter}|}| to set
 % \Lcount{counter} to the level of \meta{sec}.
@@ -474,21 +490,18 @@
 %    \end{macrocode}
 % \end{macro}
 %
-%
-% \begin{macro}{\tableofcontents}
 % \changes{v1.3}{2011/08/07}{Patch to reset \Lcount{tocdepth}}
 %    \begin{macrocode}
 \g@addto@macro\tableofcontents{%
   \setcounter{tocdepth}{\value{max@tocdepth}}%
 }
 %    \end{macrocode}
-% \end{macro}
 %
 %
 % \begin{macro}{\setsecnumdepth}
-% \changes{v1.2b}{2010/02/27}{Remove occasional extraneous vertical space}
 % |\setsecnumdepth{|\meta{sec}|}| is the user command for setting
 % \Lcount{secnumdepth} to the value corresponding to \meta{sec}.
+% \changes{v1.2b}{2010/02/27}{Remove occasional extraneous vertical space}%
 %    \begin{macrocode}
 \newcommand{\setsecnumdepth}[1]{%
   \save@secnumdepth
@@ -517,11 +530,11 @@
 %
 %
 % \begin{macro}{\resetsecnumdepth}
-% \changes{v1.3}{2011/08/07}{New command}
 % It would be nice to be able to `reset' the tocdepth or secnumdepth
 % to a previous value.
 % Unfortunately this can't be done with grouping so we use a stack-based
 % approach.
+% \changes{v1.3}{2011/08/07}{New command}
 %    \begin{macrocode}
 \let\stack@secnumdepth\@empty
 \newcommand\save@secnumdepth{%
@@ -551,9 +564,9 @@
 % \end{macro}
 %
 % \begin{macro}{\resettocdepth}
-% \changes{v1.3}{2011/08/07}{New command}
 % The idea the same is as above but because it all happens inside an auxiliary
 % file there's a couple of extra steps.
+% \changes{v1.3}{2011/08/07}{New command}
 %    \begin{macrocode}
 \let\stack@tocdepth\@empty
 \protected\def\save@tocdepth{%
@@ -626,21 +639,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
