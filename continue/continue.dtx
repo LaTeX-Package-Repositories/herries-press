@@ -4,6 +4,7 @@
 %
 %  Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
 %  Copyright 2015, 2018 Peter R. Wilson, Donald Arseneau and Merciadri Luca
+%  Maintainer 2025 - present: LaTeX Project Team
 %
 %  This work may be distributed and/or modified under the
 %  conditions of the Latex Project Public License, either
@@ -19,7 +20,8 @@
 %  This work consists of the files listed in the README file.
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -37,6 +39,22 @@
 %
 % \fi
 %
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -85,31 +103,8 @@
 % \def\fileversion{v0.1} \def\filedate{2015/12/09}
 % \changes{v0.2}{2018/12/09}{Second trial release, markers can be on all pages and stopped and started at will}
 % \def\fileversion{v0.2} \def\filedate{2018/12/09}
-% \changes{v0.2a}{2026/08/15}{Remove deprecated picture package}
-% \def\fileversion{v0.2a} \def\filedate{2026/08/17}
-
-% ^^A Flag an option
-% \makeatletter
-% \newcommand{\OptFont}{\fontencoding\encodingdefault
-%   \fontfamily\sfdefault
-%   \fontseries\mddefault
-%   \fontshape\updefault
-%   \small}
-% 
-% \newcommand{\DescribeOption}{\leavevmode\@bsphack
-%   \begingroup\MakePrivateLetters\Describe@Opt}
-% \newcommand{\Describe@Opt}[1]{\endgroup
-%   \marginpar{\raggedleft\PrintDescribeOption{#1}}%
-%   \SpecialOptIndex{#1}\@esphack\ignorespaces}
-%   \newcommand*{\PrintDescribeOption}[1]{\strut \OptFont #1\ }
-%   \newcommand*{\PrintOptionName}[1]{\strut \OptFont #1\ }
-% \newcommand*{\SpecialOptIndex}[1]{\@bsphack
-%   \index{#1\actualchar{\protect\sffamily#1}
-%     (option)\encapchar usage}%
-%   \index{options:\levelchar#1\actualchar
-%     {\protect\sffamily#1}\encapchar usage}\@esphack}
-% 
-% \makeatother
+% \changes{v0.2a}{2026/10/06}{Remove deprecated picture package; tag documentation; update maintainer}
+% \def\fileversion{v0.2a} \def\filedate{2026/10/06}
 % 
 % \providecommand{\phantomsection}{}
 % %\OnlyDescription ^^A comment this out for the full glory
@@ -117,22 +112,11 @@
 % \makeatletter
 %   \@mparswitchfalse
 % \makeatother
-% \renewcommand{\MakeUppercase}[1]{#1}
 % \pagestyle{headings}
-% \newenvironment{addtomargins}[1]{%
-%   \begin{list}{}{%
-%     \topsep 0pt%
-%     \addtolength{\leftmargin}{#1}%
-%     \addtolength{\rightmargin}{#1}%
-%     \listparindent \parindent
-%     \itemindent \parindent
-%     \parsep \parskip}%
-%   \item[]}{\end{list}}
 % \MakeShortVerb{\|}
 %
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -144,9 +128,9 @@
 %        \filedate.}}
 %
 % \author{%
-% Peter Wilson\thanks{\texttt{herries dot press at earthlink dot net}} with 
-% Donald Arseneau and Merciadri Luca \\
-% Herries Press
+% Author: Peter Wilson with Donald Arseneau and Merciadri Luca\\
+% Maintainer: \LaTeX{} Project team\\
+% \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -365,12 +349,12 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \begin{macrocode}
 %<*usc>
  \NeedsTeXFormat{LaTeX2e}
- \ProvidesPackage{continue}[2026/08/17 v0.2a Continues on the following page]
+ \ProvidesPackage{continue}[2026/10/06 v0.2a Continues on the following page]
  \PackageInfo{continue}{This is continue using e-TeX.}
 
 %    \end{macrocode}
-% \begin{macro}{\ifcontmargin}
-% \begin{macro}{\ifcontword}
+% \begin{macro}[no-user-doc]{\ifcontmargin}
+% \begin{macro}[no-user-doc]{\ifcontword}
 % Now for the options.
 %    \begin{macrocode}
  \newif{\ifcontmargin} \contmarginfalse
@@ -385,7 +369,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ifc@go}
+% \begin{macro}[int]{\ifc@go}
 % \begin{macro}{\contgo}
 % \begin{macro}{\contstop}
 % Continuation marks will stop after |\contstop| but will continue after |\contgo| 
@@ -418,18 +402,18 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %
 %    \end{macrocode}
 %
-% \begin{macro}{\LWC@pen}
+% \begin{macro}[int]{\LWC@pen}
 % Declare a \textit{unique} penalty flag as a value.
 %    \begin{macrocode}
  \mathchardef\LWC@pen 13452
 %    \end{macrocode} 
 % \end{macro}
 %
-% \begin{macro}{\FirstWordBox}
-% \begin{macro}{\NextWordBox}
-% \begin{macro}{\LastWordBox}
-% \begin{macro}{\LWC@box}
-% \begin{macro}{\LWC@saved}
+% \begin{macro}[no-user-doc]{\FirstWordBox}
+% \begin{macro}[no-user-doc]{\NextWordBox}
+% \begin{macro}[no-user-doc]{\LastWordBox}
+% \begin{macro}[int]{\LWC@box}
+% \begin{macro}[int]{\LWC@saved}
 % Allocate box registers
 %    \begin{macrocode}
  \newbox\FirstWordBox     \global\setbox\FirstWordBox\hbox{}
@@ -444,7 +428,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\FWLWCnormal@L@output}
+% \begin{macro}[int]{\FWLWCnormal@L@output}
 %  Shell around old output routine.  Gets first word from next page by
 %  letting TeX continue with |\vsize=0| to get a look at the next line.
 %  Values of |\outputpenalty| for |\specialoutput| ( -10001 to -19999 ) are
@@ -500,7 +484,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\LWC@getlast@word}
+% \begin{macro}[int]{\LWC@getlast@word}
 % Globally get last "word" from a box |#1| into another box |#2|
 %
 %    \begin{macrocode}
@@ -513,7 +497,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\LWC@getfirst@word}
+% \begin{macro}[int]{\LWC@getfirst@word}
 % Globally get first "word" from a box |#1| into another box |#2|
 %
 %    \begin{macrocode}
@@ -530,7 +514,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\LWC@getall@boxes}
+% \begin{macro}[int]{\LWC@getall@boxes}
 % Go through a vertical list that starts with special penalty
 %
 %    \begin{macrocode}
@@ -545,7 +529,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\LWC@repack}
+% \begin{macro}[int]{\LWC@repack}
 % Put contents of |\LWC@box| into hbox |#1|
 %
 %    \begin{macrocode}
@@ -595,7 +579,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\c@ntoddpagepos}
+% \begin{macro}[int]{\c@ntoddpagepos}
 % |\c@ntoddpagepos| calculates the position of the marker on odd pages.
 %    \begin{macrocode}
  \newcommand{\c@ntoddpagepos}{%
@@ -616,7 +600,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\c@ntevenpagepos}
+% \begin{macro}[int]{\c@ntevenpagepos}
 % |\c@ntevenpagepos| calculates the position of the marker on even pages.
 %    \begin{macrocode}
  \newcommand{\c@ntevenpagepos}{%
@@ -638,7 +622,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \end{macro}
 %
 %
-% \begin{macro}{\c@outcontpage}
+% \begin{macro}[int]{\c@outcontpage}
 % Output continued marked page.
 %    \begin{macrocode}
 \newcommand{\c@outcontpage}{%
