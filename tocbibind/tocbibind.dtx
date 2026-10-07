@@ -125,6 +125,7 @@
 % \def\fileversion{v1.5j} \def\filedate{2009/12/28}
 % \def\fileversion{v1.5k} \def\filedate{2010/10/13}
 % \def\fileversion{v1.5l} \def\filedate{2026/06/01}
+% \def\fileversion{v1.5m} \def\filedate{2026/10/01}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -468,7 +469,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tocbibind}[2026/06/01 v1.5l extra ToC listings]
+\ProvidesPackage{tocbibind}[2026/10/01 v1.5m extra ToC listings]
 %    \end{macrocode}
 %
 % \begin{macro}[int]{\PRWPackageNote}
@@ -1112,50 +1113,78 @@
 % If headings use templates when \cs{DocumentMetadata} is used, a different definition
 % is needed.
 % \changes{v1.5l}{2026/06/01}{Support heading templates with \cs{DocumentMetadata}}
+% \changes{v1.5m}{2026/10/01}{Fix template key names for new format, gh/72}
 %    \begin{macrocode}
 \IfDocumentMetadataTF
   {
-   \newcommand\simplechapter[1][]{%
+    \IfFormatAtLeastTF{2026-11-01}%
+      {%
+        \newcommand\simplechapter[1][]{%
 %    \end{macrocode}
 %    If we haven't changed the normal \texttt{chapter} instance do it now:
 %    \begin{macrocode}
-         \IfInstanceExistsF{heading}{chapter-orig}{%
-           \DeclareInstanceCopy{heading}{chapter-orig}{chapter}%
-           \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
-         }%
+          \IfInstanceExistsF{heading}{chapter-orig}{%
+            \DeclareInstanceCopy{heading}{chapter-orig}{chapter}%
+            \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
+          }%
 %    \end{macrocode}
 %    Then alter some of the instance keys, one important part is to
 %    use our own instance for \texttt{headformat-instance}.
 %    \begin{macrocode}
-         \EditInstance{heading}{chapter}{%
-            prefix = #1
-           ,headformat-instance=chapter
-           ,prefix-decls=\Huge
-           ,number-decls=\Huge
-           ,number-format=\thechapter\simplechapterdelim
-         }%
+          \EditInstance{heading}{chapter}{%
+             prefix = #1
+            ,headformat-instance=chapter
+            ,prefix-decls=\Huge
+            ,number-decls=\Huge
+            ,number-format=\thechapter\simplechapterdelim
+          }%
 %    \end{macrocode}
-%    Instead of the default of 20pt we only want a word space after
+%    Instead of the default of 20pt we only want a \cs{nobreakspace} after
 %    chapter number. The other adjustment that is neccessary is to
 %    check if the prefix was made empty. In that case we also don't
-%    want a \texttt{prefix-number-sep}.
+%    want a \cs{nobreakspace}.
 %    \begin{macrocode}
-         \DeclareInstance{headformat}{chapter}{hang}{%
-            number-title-sep=\WordSpaceAmount{1}%
-           ,prefix-number-sep:e=\IfBlankTF{#1}{0pt}{\noexpand\WordSpaceAmount{1}}%
-         }%
-       }%
+          \DeclareInstance{headformat}{chapter}{hang}{%
+            separator-a:e=\IfBlankF{#1}{\noexpand\nobreakspace}%
+            ,separator-b=\nobreakspace
+          }%
+        }%
+      }%
+      {%
+        \newcommand\simplechapter[1][]{%
+          \IfInstanceExistsF{heading}{chapter-orig}{%
+            \DeclareInstanceCopy{heading}{chapter-orig}{chapter}%
+            \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
+          }%
+          \EditInstance{heading}{chapter}{%
+             prefix = #1
+            ,headformat-instance=chapter
+            ,prefix-decls=\Huge
+            ,number-decls=\Huge
+            ,number-format=\thechapter\simplechapterdelim
+          }%
+%    \end{macrocode}
+%    For older formats, we use the \texttt{number-title-sep} and
+%    \texttt{prefix-number-sep} keys which have been replaced by the
+%    \texttt{separator-\meta{letter}} keys.
+%    \begin{macrocode}
+          \DeclareInstance{headformat}{chapter}{hang}{%
+             number-title-sep=\WordSpaceAmount{1}%
+            ,prefix-number-sep:e=\IfBlankTF{#1}{0pt}{\noexpand\WordSpaceAmount{1}}%
+          }%
+        }%
+      }%
 %    \end{macrocode}
 %    Restoring then works by copying the saved instance back (if it exists).
 %    \begin{macrocode}
-    \newcommand\restorechapter{%
-      \IfInstanceExistsT{heading}{chapter-orig}{%
-        \DeclareInstanceCopy{heading}{chapter}{chapter-orig}%
-        \DeclareInstanceCopy{headformat}{chapter}{chapter-orig}%
-      }%
-    }%
- }
- {
+        \newcommand\restorechapter{%
+          \IfInstanceExistsT{heading}{chapter-orig}{%
+            \DeclareInstanceCopy{heading}{chapter}{chapter-orig}%
+            \DeclareInstanceCopy{headformat}{chapter}{chapter-orig}%
+          }%
+        }%
+ }%
+ {%
    \newcommand{\simplechapter}[1][\@empty]{%
      \let\@tbiold@makechapterhead\@makechapterhead
      \renewcommand{\@makechapterhead}[1]{%
@@ -1166,13 +1195,13 @@
         \Huge\bfseries #1\space\thechapter\simplechapterdelim\space
            ##1\par\nobreak
         \vskip 40\p@
-      }}
-   }
+      }}%
+   }%
    \newcommand{\restorechapter}{%
      \@ifundefined{@tbiold@makechapterhead}{}%
      {\let\@makechapterhead\@tbiold@makechapterhead}
-   }
- }
+   }%
+ }%
 \newcommand{\simplechapterdelim}{}
 %    \end{macrocode}
 % \end{macro}
