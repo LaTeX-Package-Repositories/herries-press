@@ -3,7 +3,7 @@
 --]=========================]--
 
 module  = "continue"
-version = "0.2a"
+version = "2026-10-05 v0.2a"
 pkgdate = "2026/10/06"
 copyrightyear = "2026"
 
