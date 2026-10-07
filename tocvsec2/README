@@ -8,6 +8,10 @@ NB. The package also requires the ifthen package.
 ______________
 Change history
 
+version 1.3b (2026/10/05)
+- Tag documentation
+- Update maintainer to LaTeX Project Team
+
 version 1.3a (2014/03/10)
 - Missing % in a definition was causing a spacing issue.
   Thanks: http://tex.stackexchange.com/a/164612
@@ -37,7 +41,7 @@ version 1.2 (2004/05/24)
 
 ----------------------------------------------------------------- 
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project Team
   Copyright 1999-2004 Peter R. Wilson
   Copyright 2010-2011 Will Robertson
  
@@ -47,7 +51,7 @@ version 1.2 (2004/05/24)
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project Team.
  
   This work consists of the files:
 README (this file)
@@ -72,6 +76,6 @@ tocvsec2.pdf (user manual)
   https://texfaq.org/ for more information on this.
 
     To regenerate the user manual:
-- run: pdflatex tocvsec2.dtx
+- run: lualatex tocvsec2.dtx
 - run: makeindex -s gind.ist tocvsec2
-- run: pdflatex tocvsec2.dtx
+- run: lualatex tocvsec2.dtx

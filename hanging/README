@@ -8,9 +8,10 @@ recommend this.
 ______________
 Change History
 
-Version 1.2c (2025/03/12)
-- New maintainer (LaTeX Package Repositories)
-- Guard ' in math mode
+Version 1.2c (2026/10/05)
+- New maintainer (LaTeX Project Team)
+- Guard ' in math mode (gh/47)
+- Tag documentation
 
 Version 1.2b (2009/09/02)
 - New maintainer (Will Robertson)
@@ -24,7 +25,7 @@ Version 1.1
 
 ----------------------------------------------------------------- 
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project Team
   Copyright 1998--2004 Peter R. Wilson
  
   This work may be distributed and/or modified under the
@@ -33,7 +34,7 @@ Version 1.1
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project Team.
  
   This work consists of the files:
 README (this file)
@@ -59,10 +60,10 @@ hanging.pdf (user manual)
   https://texfaq.org/ for more information on this.
 
    To process the user manual:
-- run: latex hanging.dtx
+- run: lualatex hanging.dtx
 - If you want an index then run: makeindex -s gind.ist hanging
-- run: latex hanging.dtx
-- Print hanging.dvi for a hardcopy of the package manual 
+- run: lualatex hanging.dtx
+- Print hanging.pdf for a hardcopy of the package manual 
 
 2004/04/22
 Peter Wilson
