@@ -1,45 +1,46 @@
+--[=========================[--
+   L3BUILD FILE FOR ROMANNUM
+--]=========================]--
 
-module = "romannum"
+module  = "romannum"
+version = "2026-10-07 v1.0c"
+pkgdate = "2026/10/07"
+copyrightyear = "2026"
 
-textfiles  ={"README.md"}
+textfiles = {"README.md"}
 
-packtdszip  = false
+packtdszip = false
 
-maxprintline=10000
-checkruns = 0
+maxprintline = 10000
+typesetruns = 4
+typesetexe = "lualatex"
 
+announce = {}
+announce["2026-10-07 v1.0c"] = [[
+Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)
+]]
 
+uploadconfig = {
+  pkg          = "romannum",
+  version      = version,
+  author       = "Peter R Wilson; LaTeX Project Team",
+  license      = "lppl1.3c",
+  summary      = "Generate roman numerals instead of arabic digits",
+  ctanPath     = "/macros/latex/contrib/romannum",
+  repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
+  bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
+  uploader     = "LaTeX Project Team",
+  email        = "latex-team@latex-project.org",
+  update       = true,
+  announcement = announce[version],
+  description  = [[
+    The romannum package changes LaTeX generated numbers to be printed with roman numerals instead of arabic digits.
+    It requires the [stdclsdv](https://www.ctan.org/pkg/stdclsdv) package.
+    Users of the [bookhands](https://www.ctan.org/pkg/bookhands) fonts may find this package useful.
+  ]]
+}
 
-function update_tag(file,content,tagname,tagdate)
-
-local tagpattern="(%d%d%d%d[-/]%d%d[-/]%d%d) v(%d+[.])(%d+)"
-local oldv,newv
-if tagname == 'auto' then
-  local i,j,olddate,a,b
-  i,j,olddate,a,b= string.find(content, tagpattern)
-  if i == nil then
-    print('OLD TAG NOT FOUND')
-    return content
-  else
-    print ('FOUND: ' .. olddate .. ' v' .. a .. b )
-    oldv = olddate .. ' v' .. a .. b
-    newv = tagdate .. ' v'  .. a .. math.floor(b + 1)
-    print('USING OLD TAG: ' .. oldv)
-    print('USING NEW TAG: ' .. newv)
-    local oldpattern = string.gsub(oldv,"[-/]", "[-/]")
-    content=string.gsub(content,"{Version}{" .. oldpattern,'##OLDV##')
-    content=string.gsub(content,oldpattern,newv)
-    content=string.gsub(content,'##OLDV##',"{Version}{" .. oldv)
-    content=string.gsub(content,'%-%d%d%d%d Oberdiek Package','-' .. os.date("%Y") .. " Oberdiek Package")
-    content = string.gsub(content,
-        '%% \\end{History}',
-	'%%   \\begin{Version}{' .. newv .. '}\n%%   \\item Updated\n%%   \\end{Version}\n%% \\end{History}')
-    return content
-  end
-else
-  error("only automatic tagging supported")
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
 end
-
-end
-
-

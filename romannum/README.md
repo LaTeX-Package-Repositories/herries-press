@@ -5,11 +5,12 @@ The ROMANNUM package
 with roman numerals instead of arabic digits. This package requires the
 stdclsdv package.
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project Team
   Copyright 1999 -- 2004 Peter R. Wilson
- 
+  Copyright 2009 -- present LaTeX Project Team
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
   version 1.3c of this license or (at your option) any 
@@ -31,11 +32,12 @@ romannum.ins
 romannum.dtx
 romannum.pdf (User manual)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
 v1.0b (2009/09/03) - New maintainer (Will Robertson)
+v1.0c (2026/10/07) - Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex romannum.ins (which will generate romannum.sty)
@@ -45,7 +47,7 @@ v1.0b (2009/09/03) - New maintainer (Will Robertson)
   https://texfaq.org/ for more information on this.
 
     To regenerate the user manual
-- run: latex romannum.dtx
+- run: lualatex romannum.dtx
 - if you want an index, then run: makeindex -s gind.ist romannum
-- run: latex romannum.dtx
-- Print romannum.dvi for a hardcopy of the package manual 
+- run: lualatex romannum.dtx
+- Print romannum.pdf for a hardcopy of the package manual 

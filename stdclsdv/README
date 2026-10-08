@@ -12,6 +12,10 @@ stdclsdv.dtx
     The distribution is provided under the terms of the LaTeX
 Project Public License (LPPL).
 
+Changes in version 1.1b:
+- Tag documentation
+- Update maintainer to LaTeX Project Team
+
 Changes in version 1.1a:
 - New maintainer (Will Robertson)
 
@@ -20,8 +24,8 @@ Changes in version 1.1:
 
     To install the package:
 - run: latex stdclsdv.ins (which will generate stdclsdv.sty)
-- run: latex stdclsdv.dtx
+- run: lualatex stdclsdv.dtx
 - run: makeindex -s gind.ist stdclsdv
-- run: latex stdclsdv.dtx
+- run: lualatex stdclsdv.dtx
 - Print stdclsdv.dvi for a hardcopy of the package manual 
 - Move stdclsdv.sty to a location where LaTeX will find it.

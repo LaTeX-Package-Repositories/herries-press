@@ -2,9 +2,9 @@
 %
 % romannum.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project Team
 % Copyright 1999--2004 Peter R. Wilson
-% Copyright 2009--2005 LaTeX Project Team
+% Copyright 2009--present LaTeX Project Team
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -18,7 +18,8 @@
 %
 % 
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -29,6 +30,22 @@
 %
 % \fi
 %
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -73,15 +90,15 @@
 %
 % \changes{v1.0}{1999/05/08}{First public release}
 % \changes{v1.0b}{2009/09/03}{New maintainer (Will Robertson)}
+% \changes{v1.0c}{2026/10/07}{Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)}
 %
 % \def\dtxfile{romannum.dtx}
 % \def\fileversion{v1.0}  \def\filedate{8 May 1999}
 % \def\fileversion{v1.0a} \def\filedate{2004/05/24}
 % \def\fileversion{v1.0b} \def\filedate{2009/09/03}
-% \def\fileversion{v1.0c} \def\filedate{2025/03/12}
+% \def\fileversion{v1.0c} \def\filedate{2026/10/07}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -92,8 +109,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project Team \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -210,9 +227,9 @@
 %    To try and avoid name clashes with other packages, the internal commands
 % all contain the character string |rn@m|.
 %
-% \begin{macro}{\ifrn@mYear}
-% \begin{macro}{\ifrn@mDay}
-% \begin{macro}{\ifrn@mday}
+% \begin{macro}[int]{\ifrn@mYear}
+% \begin{macro}[int]{\ifrn@mDay}
+% \begin{macro}[int]{\ifrn@mday}
 % We need some booleans for the date related options.
 %    \begin{macrocode}
 \newif\ifrn@mYear \rn@mYearfalse
@@ -347,9 +364,9 @@
 %
 %  
 %
-% \begin{macro}{\theday}
-% \begin{macro}{\theyear}
-% \begin{macro}{\today}
+% \begin{macro}[no-user-doc]{\theday}
+% \begin{macro}[no-user-doc]{\theyear}
+% \begin{macro}[no-user-doc]{\today}
 %    Change the date related numerals, if asked for. This involves redefining
 % the |\today| command.
 %    \begin{macrocode}
@@ -432,21 +449,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
