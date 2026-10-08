@@ -25,7 +25,6 @@ Adjust to use new heading templates with LaTeX 2026-11-01 release.
 ]]
 
 
-  
 uploadconfig = {
  pkg = "anonchap",
  version = version,
@@ -45,9 +44,3 @@ if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
 end
-  
-
-
-
-
-

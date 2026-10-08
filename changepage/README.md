@@ -8,7 +8,7 @@ and to robustly check for typesetting on odd or even pages.
 The changepage package is an extraction of code from the memoir class.
 It is a functionally-equivalent replacement for the older chngpage package (which is deprecated but still provided).
 
-VERSION 
+VERSION
 --------
 
 2026-09-14 v2.0
@@ -31,11 +31,11 @@ Run `latex` on changepage.ins to produce the files
 COPYRIGHT AND LICENSING
 ---------------
 
-Author: Peter Wilson (Herries Press)  
-Maintainer: LaTeX Project  
-Copyright 2000–2008 Peter R. Wilson  
+Author: Peter Wilson (Herries Press)
+Maintainer: LaTeX Project Team
+Copyright 2000–2008 Peter R. Wilson
 Copyright 2009 Will Robertson
-Copyright 2026 LaTeX Project
+Copyright 2026 LaTeX Project Team
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either
@@ -52,12 +52,12 @@ chngpage.sty and the derived file changepage.sty.
 MAINTENANCE
 ---------------
 
-Please report bugs or request features:  
+Please report bugs or request features:
   <https://github.com/LaTeX-Package-Repositories/herries-press>
 
-Developmental and historical versions:  
+Developmental and historical versions:
   <https://github.com/LaTeX-Package-Repositories/herries-press>
 
-Current release versions:  
-  <https://ctan.org/pkg/changepage>  
+Current release versions:
+  <https://ctan.org/pkg/changepage>
 

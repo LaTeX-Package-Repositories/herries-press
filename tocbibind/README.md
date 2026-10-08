@@ -2,22 +2,22 @@
 
 Version: 2026-06-01 v1.5l
 
-The tocbibind package can be used to add the ToC and/or bibliography 
+The tocbibind package can be used to add the ToC and/or bibliography
 and/or the index etc., to the Table of Contents listing.
 
-## Author 
+## Author
 
 Peter Wilson, Herries Press
-  
-##  Maintainer 
 
-LaTeX Team https://github.com/LaTeX-Package-Repositories/herries-press
+##  Maintainer
+
+LaTeX Project Team https://github.com/LaTeX-Package-Repositories/herries-press
 
 ## Copyright (C)
 
 * 1998—2004 Peter R. Wilson
 * 2009—2026 Will Robertson
-* 2026 LaTeX Project
+* 2026 LaTeX Project Team
 
 ## License
 LATEX Project Public License, version 1.3c or later.
@@ -32,7 +32,7 @@ LATEX Project Public License, version 1.3c or later.
 
 ##    To install the package
 
-Use the package manager of your TeX-system or 
+Use the package manager of your TeX-system or
 
 - run: latex tocbibind.ins (which will generate tocbibind.sty)
 - Move tocbibind.sty to a location where LaTeX will find it
@@ -41,7 +41,6 @@ Use the package manager of your TeX-system or
   https://texfaq.org/ for more information on this.
 
 ##    To process the manual
-- run: pdflatex tocbibind.dtx
+- run: lualatex tocbibind.dtx
 - For an index, run: makeindex -s gind.ist tocbibind
-- run: pdflatex tocbibind.dtx
-
+- run: lualatex tocbibind.dtx

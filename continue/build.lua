@@ -23,7 +23,7 @@ Remove deprecated picture package; tag documentation; update maintainer to LaTeX
 uploadconfig = {
   pkg          = "continue",
   version      = version,
-  author       = "Peter R Wilson; Donald Arseneau; Luca Merciadri; Will Robertson; LaTeX Project",
+  author       = "Peter R Wilson; Donald Arseneau; Luca Merciadri; Will Robertson; LaTeX Project Team",
   license      = "lppl1.3c",
   summary      = "Prints ‘continuation’ marks on pages of multipage documents",
   ctanPath     = "/macros/latex/contrib/continue",

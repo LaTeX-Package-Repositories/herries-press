@@ -2,6 +2,7 @@
 %
 % stdclsdv.dtx
 % Copyright 1999 Peter R. Wilson
+% Copyright 2026--present LaTeX Project Team
 %
 % This program is provided under the terms of the
 % LaTeX Project Public License distributed from CTAN
@@ -244,7 +245,7 @@
 % \begin{macro}{\ifSCDnodivs}
 %    These are used when we need to decide what sectional
 % divisions are supported by the document's class.
-% We will assume assume an unknown class that has |\part| and |\section| 
+% We will assume assume an unknown class that has |\part| and |\section|
 % but not
 % |\chapter| divisions.
 %    \begin{macrocode}
@@ -254,7 +255,7 @@
 \newif\ifSCDsection\SCDsectiontrue
 \newif\ifSCDnodivs\SCDnodivsfalse
 %    \end{macrocode}
-%    Check the actual class.\footnote{Thanks to David Carlisle for 
+%    Check the actual class.\footnote{Thanks to David Carlisle for
 %    information on how to check on the class.}
 %    \begin{macrocode}
 \@ifclassloaded{book}{\SCDknownclasstrue\SCDchaptertrue}{}
@@ -320,7 +321,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SCDCheckCommand}
-% This is identical to the kernel |\CheckCommand| except that it sets 
+% This is identical to the kernel |\CheckCommand| except that it sets
 % the |\ifSCDSameCommand| flag rather than issuing a warning. See
 % \file{ltdefns.dtx} for the coding for |\CheckCommand|.
 %    \begin{macrocode}

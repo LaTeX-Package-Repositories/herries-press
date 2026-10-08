@@ -9,7 +9,7 @@ Version: 2026-09-12 v3.0c
 ## Copyright (C)
 *    1998-2003 Peter R. Wilson
 *    2009-2022 Will Robertson
-*    2026 LaTeX Project
+*    2026 LaTeX Project Team
 
 ## License
 LaTeX Project Public License, version 1.3c or later.
