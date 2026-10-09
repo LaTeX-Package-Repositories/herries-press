@@ -2,16 +2,18 @@
 %
 % makecmds.dtx
 % Copyright 2000 Peter R. Wilson
+% Copyright 2026--present LaTeX Team
 %
 % This program is provided under the terms of the
 % LaTeX Project Public License distributed from CTAN
 % archives in directory macros/latex/base/lppl.txt.
 %
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Team
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -22,7 +24,22 @@
 %
 % \fi
 %
-% \CheckSum{113}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -67,12 +84,12 @@
 %
 % \changes{v1.0}{2000/05/27}{First public release}
 % \changes{v1.0a}{2009/09/03}{New maintainer (Will Robertson)}
+% \changes{v1.0b}{2026/10/09}{Tag documentation; new maintainer (LaTeX Team)}
 %
-% \def\fileversion{v1.0a}
-% \def\filedate{2009/09/03}
+% \def\fileversion{v1.0b}
+% \def\filedate{2026/10/09}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -83,13 +100,13 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: LaTeX Team \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
 % \begin{abstract}
-%    The \Lpack{makecmds} package provides several additional commands 
+%    The \Lpack{makecmds} package provides several additional commands
 % along the lines of the traditional |\(re)newcommand| and friends.
 % \end{abstract}
 % \tableofcontents
@@ -110,8 +127,8 @@
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
 %
-%    Section~\ref{sec:usc} describes the usage of the \Lpack{makecmds} 
-% package and 
+%    Section~\ref{sec:usc} describes the usage of the \Lpack{makecmds}
+% package and
 % commented source code is in Section~\ref{sec:code}.
 %
 % \section{The \Lpack{makecmds} package} \label{sec:usc}
@@ -121,7 +138,7 @@
 % provided by the \Lpack{makecmds} package.
 %
 %    This package extends the basic commands with |\make...| versions
-% of |command|, |environment|, |length| and |counter| macros, and 
+% of |command|, |environment|, |length| and |counter| macros, and
 % |\provide...| versions for |environment|, |length| and |counter| macros.
 %
 % \begin{table}
@@ -129,16 +146,16 @@
 % \caption{Macro making commands} \label{tab:newc}
 % \begin{tabular}{lp{0.3\textwidth}p{0.3\textwidth}} \hline
 % Command & Action & Condition \\ \hline
-% |\new...{|\meta{name}|}|\meta{...} & 
+% |\new...{|\meta{name}|}|\meta{...} &
 % Creates new macro definition for \meta{name} &
 % \meta{name} must not have been previously defined \\
-% |\renew...{|\meta{name}|}|\meta{...} & 
+% |\renew...{|\meta{name}|}|\meta{...} &
 % Redefines the macro definition for \meta{name} &
 % \meta{name} must have been previously defined \\
-% |\provide...{|\meta{name}|}|\meta{...} & 
-% If \meta{name} has not been previously defined, creates new macro 
+% |\provide...{|\meta{name}|}|\meta{...} &
+% If \meta{name} has not been previously defined, creates new macro
 % definition for \meta{name} otherwise does nothing &  \\
-% |\make...{|\meta{name}|}|\meta{...} & 
+% |\make...{|\meta{name}|}|\meta{...} &
 % Creates or changes the macro definition for \meta{name} & \\ \hline
 % \end{tabular}
 % \end{table}
@@ -148,14 +165,14 @@
 %    Several commands of the form |\make...| are provided by the package.
 % For example, |\makecommand{\foo}{...}| will define a new command
 % |\foo| if it does not already exist, otherwise it will silently
-% redefine |\foo|. The package takes a single option, namely \Lopt{warn}. 
+% redefine |\foo|. The package takes a single option, namely \Lopt{warn}.
 % This option will generate a warning message whenever one of the
 % |\make...| commands redefines an existing definition.
 %
 % \subsection{Commands}
 %
 % \DescribeMacro{\makecommand}
-%  The |\makecommand| command takes the same arguments as the 
+%  The |\makecommand| command takes the same arguments as the
 % |\(re)newcommand| family does, and likewise there is also a starred
 % version of the command. |\makecommand{\foo}...}| is equivalent to
 % first calling |\providecommand{\foo}{}| and then |\renewcommand{\foo}...}|.
@@ -164,15 +181,15 @@
 %
 % \DescribeMacro{\provideenvironment}
 % \DescribeMacro{\makeenvironment}
-%    The |\provideenvironment| macro is like |\providecommand| except 
+%    The |\provideenvironment| macro is like |\providecommand| except
 % that it applies
 % to an environment instead of a command. Similarly |\makeenvironment|
-% is analagous to |\makecommand|. Both macros take the same arguments
+% is analogous to |\makecommand|. Both macros take the same arguments
 % as the |\newenvironment| command.
 %
 % \DescribeMacro{\providelength}
 % \DescribeMacro{\makelength}
-%    These are |\provide...| and |\make...| versions of the |\newlength| 
+%    These are |\provide...| and |\make...| versions of the |\newlength|
 % command. They take the same argument as |\newlength|.
 %
 % \DescribeMacro{\providecounter}
@@ -181,7 +198,7 @@
 % command. They take the same arguments as |\newcounter|.
 %
 %
-% 
+%
 % \section{The class code} \label{sec:code}
 %
 %    To try and avoid name clashes, all the internal commands include
@@ -198,11 +215,11 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{makecmds}[2009/09/03 v1.0a extra command making commands]
+\ProvidesPackage{makecmds}[2026/10/09 v1.0b extra command making commands]
 
 %    \end{macrocode}
 %
-% \begin{macro}{\ifm@kwarn}
+% \begin{macro}[int]{\ifm@kwarn}
 % This is used for implementing the \Lopt{warn} option.
 %    \begin{macrocode}
 \newif\ifm@kwarn
@@ -216,15 +233,15 @@
 \ProcessOptions\relax
 
 %    \end{macrocode}
-% 
+%
 % \subsection{The commands}
 %
 %    Much of the code consists of copying and then making minor alterations
 % to the code in the \LaTeX{} kernel.
 %
 % \begin{macro}{\makecommand}
-% \begin{macro}{\m@ke@command}
-% The |\make...| version of |\newcommand|, originally defined in 
+% \begin{macro}[int]{\m@ke@command}
+% The |\make...| version of |\newcommand|, originally defined in
 % \file{ltdefns.dtx}. |\m@ke@command| is the internal code that does the work.
 %    \begin{macrocode}
 \def\makecommand{\@star@or@long\m@ke@command}
@@ -243,9 +260,9 @@
 %
 %
 % \begin{macro}{\provideenvironment}
-% \begin{macro}{\m@kprovide@environment}
+% \begin{macro}[int]{\m@kprovide@environment}
 %     The environment version of |\providecommand|, and is based
-% on the code in \file{ltdefns.dtx}. The internal version is 
+% on the code in \file{ltdefns.dtx}. The internal version is
 % |\m@kprovide@environment|. The kernel command |\new@environment| actually
 % creates a new environment.
 %    \begin{macrocode}
@@ -261,9 +278,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\m@kdiscardenvargs}
-% \begin{macro}{\m@kenva}
-% \begin{macro}{\m@kenvb}
+% \begin{macro}[int]{\m@kdiscardenvargs}
+% \begin{macro}[int]{\m@kenva}
+% \begin{macro}[int]{\m@kenvb}
 % |\m@kdiscardenvargs| gathers up the arguments to |\provideenvironment|, and
 % then proceeds to discard them.
 %    \begin{macrocode}
@@ -277,7 +294,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\m@kthrowenv}
+% \begin{macro}[int]{\m@kthrowenv}
 %  |\m@kthrowenv| takes all the possible (4) arguments to a |\(re)newenvironment|
 % command and throws them away.
 %    \begin{macrocode}
@@ -287,8 +304,8 @@
 % \end{macro}
 %
 % \begin{macro}{\makeenvironment}
-% \begin{macro}{\m@ke@environment}
-% The |\make...| version of |\newenvironment|, originally defined in 
+% \begin{macro}[int]{\m@ke@environment}
+% The |\make...| version of |\newenvironment|, originally defined in
 % \file{ltdefns.dtx}. |\m@ke@environment| is the internal code that does the work.
 %    \begin{macrocode}
 \def\makeenvironment{\@star@or@long\m@ke@environment}
@@ -306,7 +323,7 @@
 %
 % \begin{macro}{\providelength}
 % \begin{macro}{\makelength}
-%  These are |\provide...| and |\make...| versions of |\newlength| 
+%  These are |\provide...| and |\make...| versions of |\newlength|
 % (from \file{ltlength.dtx}).
 %    \begin{macrocode}
 \def\providelength#1{%
@@ -331,7 +348,7 @@
 %
 % \begin{macro}{\providecounter}
 % \begin{macro}{\makecounter}
-%  These are |\provide...| and |\make...| versions of |\newcounter| 
+%  These are |\provide...| and |\make...| versions of |\newcounter|
 % (from \file{ltcounts.dtx}).
 %    \begin{macrocode}
 \def\providecounter#1{%
@@ -353,7 +370,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\m@k@gobbleendoptarg}
+% \begin{macro}[int]{\m@k@gobbleendoptarg}
 %    A macro that discards an optional argument coming at the end of
 % a list of (optional) arguments (i.e., the tokens |...[optarg]|).
 %    \begin{macrocode}
@@ -391,21 +408,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
