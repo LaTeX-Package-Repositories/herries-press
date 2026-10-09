@@ -13,7 +13,6 @@ version 2.0 (2026/09/14)
 - Repository is now https://github.com/LaTeX-Package-Repositories/herries-press
 - Added support for tagging of the adjustwidth and adjustwidth* environments.
   If `\DocumentMetadata` is used, they are no longer defined as a list.
-  
 
 version 1.0c (2009/10/20)
 
