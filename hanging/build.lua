@@ -17,19 +17,19 @@ typesetexe = "lualatex"
 
 announce = {}
 announce["2026/10/05 v1.2c"] = [[
-Tag documentation; new maintainer (LaTeX Project Team); guard ' in math mode (gh/47)
+Tag documentation; new maintainer (LaTeX Project); guard ' in math mode (gh/47)
 ]]
 
 uploadconfig = {
   pkg          = "hanging",
   version      = version,
-  author       = "Peter R Wilson; LaTeX Project Team",
+  author       = "Peter R Wilson; LaTeX Project",
   license      = "lppl1.3c",
   summary      = "Paragraphs with a hanging indent",
   ctanPath     = "/macros/latex/contrib/hanging",
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],

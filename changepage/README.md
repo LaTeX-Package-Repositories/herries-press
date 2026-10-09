@@ -32,10 +32,10 @@ COPYRIGHT AND LICENSING
 ---------------
 
 Author: Peter Wilson (Herries Press)
-Maintainer: LaTeX Project Team
+Maintainer: LaTeX Project
 Copyright 2000–2008 Peter R. Wilson
 Copyright 2009 Will Robertson
-Copyright 2026 LaTeX Project Team
+Copyright 2026 LaTeX Project
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either

@@ -22,19 +22,19 @@ tagfiles = {"*.dtx"}
 
 announce = {}
 announce["2026/10/08 v1.2d"] = [[
-Tag documentation; new maintainer (LaTeX Project Team)
+Tag documentation; new maintainer (LaTeX Project)
 ]]
 
 uploadconfig = {
   pkg          = "appendix",
   version      = version,
-  author       = "Peter R Wilson; LaTeX Project Team",
+  author       = "Peter R Wilson; LaTeX Project",
   license      = "lppl1.3c",
   summary      = "Extra control of appendices",
   ctanPath     = "/macros/latex/contrib/"..module,
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],

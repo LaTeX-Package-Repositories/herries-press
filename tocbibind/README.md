@@ -11,13 +11,13 @@ Peter Wilson, Herries Press
 
 ##  Maintainer
 
-LaTeX Project Team https://github.com/LaTeX-Package-Repositories/herries-press
+LaTeX Project https://github.com/LaTeX-Package-Repositories/herries-press
 
 ## Copyright (C)
 
 * 1998—2004 Peter R. Wilson
 * 2009—2026 Will Robertson
-* 2026 LaTeX Project Team
+* 2026 LaTeX Project
 
 ## License
 LATEX Project Public License, version 1.3c or later.

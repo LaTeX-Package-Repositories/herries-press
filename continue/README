@@ -12,12 +12,12 @@ o Marking can be stopped and started
 Changes in version 0.2a (2026/10/06)
 o Remove deprecated picture package
 o Tag documentation
-o Update maintainer to LaTeX Project Team
+o Update maintainer to LaTeX Project
 
 ------------------------------------------------------------------
   Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
           with Donald Arseneau and Luca Merciadri
-  Maintainer 2025 - present: LaTeX Project Team
+  Maintainer 2025 - present: LaTeX Project
   Copyright 2015, 2018 Peter R. Wilson, Donald Arseneau, Luca Merciadri
 
   This work may be distributed and/or modified under the

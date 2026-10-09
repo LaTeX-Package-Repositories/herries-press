@@ -10,7 +10,7 @@ gittag  = module.."-v"..version
 
 uploadconfig = {
   version     = version,
-  author      = "Peter R Wilson; Will Robertson; LaTeX Project Team",
+  author      = "Peter R Wilson; Will Robertson; LaTeX Project",
   license     = "lppl1.3c",
   summary     = "Aids for typesetting simple verse",
   ctanPath    = "/macros/latex/contrib/"..module,

@@ -10,7 +10,7 @@ Peter Wilson, Herries Press
 
 ##  Maintainer
 
-LaTeX Project Team https://github.com/LaTeX-Package-Repositories/herries-press
+LaTeX Project https://github.com/LaTeX-Package-Repositories/herries-press
 
 ## License
 

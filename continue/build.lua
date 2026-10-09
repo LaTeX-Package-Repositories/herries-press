@@ -17,19 +17,19 @@ typesetexe = "lualatex"
 
 announce = {}
 announce["2026-10-05 v0.2a"] = [[
-Remove deprecated picture package; tag documentation; update maintainer to LaTeX Project Team
+Remove deprecated picture package; tag documentation; update maintainer to LaTeX Project
 ]]
 
 uploadconfig = {
   pkg          = "continue",
   version      = version,
-  author       = "Peter R Wilson; Donald Arseneau; Luca Merciadri; Will Robertson; LaTeX Project Team",
+  author       = "Peter R Wilson; Donald Arseneau; Luca Merciadri; Will Robertson; LaTeX Project",
   license      = "lppl1.3c",
   summary      = "Prints ‘continuation’ marks on pages of multipage documents",
   ctanPath     = "/macros/latex/contrib/continue",
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],
