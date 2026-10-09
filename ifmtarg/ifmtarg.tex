@@ -1,15 +1,14 @@
 
 %%%%%%%%%1%%%%%%%%%2%%%%%%%%%3%%%%%%%%%4%%%%%%%%%5
-% Bundled source file for the IFMTARG package 
+% Bundled source file for the IFMTARG package
 %--------1---------2---------3---------4---------5
 % Please see the accompanying README for author,
 % license, documentation and installation information
 %%%%%%%%%1%%%%%%%%%2%%%%%%%%%3%%%%%%%%%4%%%%%%%%%5
 
-\RequirePackage{filecontents}
 \begin{filecontents*}{ifmtarg.sty}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{ifmtarg}[2018/04/16 v1.2b check for an empty argument]
+\ProvidesPackage{ifmtarg}[2026/10/09 v1.2c check for an empty argument]
 \begingroup
 \catcode`\Q=3
 \long\gdef\@ifmtarg#1{\@xifmtarg#1QQ\@secondoftwo\@firstoftwo\@nil}
@@ -36,34 +35,18 @@
 \csname@@end\endcsname
 \end{filecontents*}
 
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\PassOptionsToPackage{colorlinks,linktocpage}{hyperref}
+\documentclass[twocolumn]{l3in2edoc}
 
-
-
-\makeatletter
-\documentclass[twocolumn]{ltxdoc}
-
-\usepackage{shortvrb}
 \MakeShortVerb\|
-\usepackage[it,medium]{titlesec}
 
-\usepackage{array,ifmtarg,bigfoot,fancyvrb}
+\usepackage{array,ifmtarg,fancyvrb}
+\fvset{gobble=0,fontsize=\small}
 \usepackage[svgnames]{xcolor}
-\usepackage[colorlinks,linktocpage]{hyperref}
 
 \usepackage{geometry}
 \geometry{margin=2cm}
-
-\usepackage{tocloft,varwidth}
-\setcounter{tocdepth}{1}
-\def\tocwidthA{0.55}
-\def\tocwidthB{0.44}
-\def\cftpartfont{\scshape}
-\def\cftsecfont{\small}
-\cftbeforesecskip=0pt
-\def\cftpartleader{}
-\def\cftpartafterpnum{\cftparfillskip}
-\def\cftsecleader{}
-\def\cftsecafterpnum{\cftparfillskip}
 
 \DeclareRobustCommand\pkg{\textsf}
 \def\pkgopt#1{\texttt{[#1]}}
@@ -74,26 +57,25 @@
 \def\DVI{\textsc{dvi}}
 \def\EPS{\textsc{eps}}
 
-\usepackage{amsmath,listings}
-\lstset{basicstyle=\ttfamily,columns=fullflexible}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\usepackage{lum-pagella}
+\setmainfont{TeX Gyre Pagella}[Numbers=OldStyle]
 
-\usepackage{changepage}
-\usepackage[T1]{fontenc}
 \usepackage{microtype}
-\usepackage{lmodern}
-\usepackage[sc,osf]{mathpazo}
 \linespread{1.1}
 \frenchspacing
 
+\EditInstance{heading}{section}{heading-decls=\itshape\Large}
+
 \GetFileInfo{ifmtarg.sty}
 \begin{document}
-{\addtocontents{toc}{\protect\begin{varwidth}[t]{\tocwidthA\linewidth}}}
 
 \title{The \pkg{ifmtarg} package}
 \author{%
- Author: Donald Arseneau, and Peter Wilson, Herries Press\\
- Maintainer: Will Robertson\\
- \texttt{will dot robertson at latex-project dot org}%
+ Author: Donald Arseneau and Peter Wilson, Herries Press\\
+ Maintainer: LaTeX Project\\
+ \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 }
 \date{\fileversion \qquad \filedate}
 
@@ -102,7 +84,7 @@
 \section{Documentation}
 
 The \pkg{ifmtarg} package provides an if--then--else programmer's command \verb|\@ifmtarg| for testing for an empty macro argument.
-`Empty' here refers to an argument of zero or more spaces only.\footnote{If you need a command to test for emptiness that doesn't include spaces, use the \verb|\tl_if_empty:nTF| conditional from the \pkg{expl3} package. \verb|\@ifmtarg| is equivalent to \pkg{expl3}'s \verb|\tl_if_blank:nTF|.}
+`Empty' here refers to an argument of zero or more spaces only.\footnote{If you need a command to test for emptiness that doesn't include spaces, use the \cs{tl_if_empty:nTF} conditional from the \pkg{expl3} package. \verb|\@ifmtarg| is equivalent to \pkg{expl3}'s \cs{tl_if_blank:nTF}.}
 The command is fully expandable; its syntax is:
 \begin{quote}
 \cmd{\@ifmtarg}\marg{arg}\marg{Code for arg empty}
@@ -148,16 +130,16 @@ failings with my original definition of the \cmd{\@ifmtarg} command:
 %
 \begin{verbatim}
 \newcommand{\@ifmtarg}[3]{%
-  \edef\@mtarg{\zap@space#1 \@empty}%  
+  \edef\@mtarg{\zap@space#1 \@empty}%
   \ifx\@empty\@mtarg\relax #2\else #3\fi}
 \end{verbatim}
 %
-It works most of the time correctly but Donald showed that it can 
-give unexpected results 
-under conditions that I had not thought of. He suggested the coding 
-that now appears in the package above for the \cmd{\@ifmtarg} and 
-\cmd{\@ifnotmtarg} commands. For a discussion on detecting empty arguments 
-see \href{http://www.ctan.org/pub/tex-archive/info/aro-bend/answer.002}{\texttt{CTAN/info/aro-bend/answer.002}}
+It works most of the time correctly but Donald showed that it can
+give unexpected results
+under conditions that I had not thought of. He suggested the coding
+that now appears in the package above for the \cmd{\@ifmtarg} and
+\cmd{\@ifnotmtarg} commands. For a discussion on detecting empty arguments
+see \href{https://mirrors.ctan.org/info/challenges/aro-bend/answer.002}{\texttt{CTAN/info/challenges/aro-bend/answer.002}}.
 
 
 \section*{Change History}
@@ -165,29 +147,28 @@ see \href{http://www.ctan.org/pub/tex-archive/info/aro-bend/answer.002}{\texttt{
 \begin{itemize}
 \item[v1.2a] New maintainer (Will Robertson)
 \item[v1.2b] Typo in documentation example code
+\item[v1.2c] Tag documentation; new maintainer (\LaTeX{} team)
 \end{itemize}
 
 
 
 \section*{Licence and copyright}
-  
+
 This work may be modified and/or distributed under the terms and
-conditions of the \LaTeX\ Project Public License\footnote{\url{http://www.latex-project.org/lppl.txt}}, version~1.3c or later (your choice).
-The current maintainer of this work is Will Robertson.
+conditions of the \LaTeX\ Project Public License\footnote{\url{https://www.latex-project.org/lppl.txt}}, version~1.3c or later (your choice).
+The current maintainer of this work is the \LaTeX{} Team.
 
 \bigskip
   \noindent
   Copyright Peter Wilson, 1996 \\
-  Copyright Peter Wilson and Donald Arseneau, 2000
+  Copyright Peter Wilson and Donald Arseneau, 2000 \\
+  Copyright \LaTeX{} Team, 2026
 
-{\addtocontents{toc}{\protect\end{varwidth}\protect\hfill}}
-{\addtocontents{toc}{\protect\begin{varwidth}[t]{\protect\tocwidthB\protect\linewidth}}}
 \clearpage
 \parindent=0pt
 
 \section{Implementation}
 \VerbatimInput{ifmtarg.sty}
-
 {\addtocontents{toc}{\protect\end{varwidth}}}
 
 \end{document}
