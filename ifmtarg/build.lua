@@ -36,7 +36,7 @@ uploadconfig = {
  uploader = "LaTeX Project",
  email = "latex-team@latex-project.org",
  update = true ,
- announcement = announce[version]
+ announcement = announce[version],
  description  = [[
    This package provides a command for the LaTeX programmer for testing whether an argument is empty.
  ]]
