@@ -59,7 +59,7 @@ Change History
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is LaTeX Project Team.
+  The Current Maintainer of this work is LaTeX Project.
 
   This work consists of the files:
    - README (this file)

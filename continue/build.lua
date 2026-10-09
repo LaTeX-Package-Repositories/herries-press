@@ -17,7 +17,7 @@ typesetexe = "lualatex"
 
 announce = {}
 announce["2026-10-05 v0.2a"] = [[
-Remove deprecated picture package; tag documentation; update maintainer to LaTeX Project Team
+Remove deprecated picture package; tag documentation; update maintainer to LaTeX Project
 ]]
 
 uploadconfig = {
@@ -29,7 +29,7 @@ uploadconfig = {
   ctanPath     = "/macros/latex/contrib/continue",
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],

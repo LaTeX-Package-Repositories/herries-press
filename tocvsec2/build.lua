@@ -17,19 +17,19 @@ typesetexe = "lualatex"
 
 announce = {}
 announce["2026/10/05 v1.3b"] = [[
-Tag documentation; update maintainer to LaTeX Project Team
+Tag documentation; update maintainer to LaTeX Project
 ]]
 
 uploadconfig = {
   pkg          = "tocvsec2",
   version      = version,
-  author       = "Peter R Wilson; LaTeX Project Team",
+  author       = "Peter R Wilson; LaTeX Project",
   license      = "lppl1.3c",
   summary      = "Section numbering and table of contents control",
   ctanPath     = "/macros/latex/contrib/tocvsec2",
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],

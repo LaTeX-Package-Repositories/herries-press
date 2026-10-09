@@ -7,18 +7,18 @@ stdclsdv package.
 
 -----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: LaTeX Project Team
+  Maintainer: LaTeX Project
   Copyright 1999 -- 2004 Peter R. Wilson
-  Copyright 2009 -- present LaTeX Project Team
+  Copyright 2009 -- present LaTeX Project
 
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
- 
+  The Current Maintainer of this work is the LaTeX Project.
+
   This work consists of the files:
 README (this file)
 romannum.dtx
@@ -34,8 +34,8 @@ romannum.pdf (User manual)
 
 -----------------------------------------------------------------
 
+v1.0c (2026/10/07) - Fix gh/46; tag documentation; new maintainer (LaTeX Project)
 v1.0b (2009/09/03) - New maintainer (Will Robertson)
-v1.0c (2026/10/07) - Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)
 
 -----------------------------------------------------------------
 
@@ -50,4 +50,4 @@ v1.0c (2026/10/07) - Fix gh/46; tag documentation; new maintainer (LaTeX Project
 - run: lualatex romannum.dtx
 - if you want an index, then run: makeindex -s gind.ist romannum
 - run: lualatex romannum.dtx
-- Print romannum.pdf for a hardcopy of the package manual 
+- Print romannum.pdf for a hardcopy of the package manual

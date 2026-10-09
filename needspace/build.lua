@@ -19,7 +19,7 @@ uploadconfig = {
  ctanPath = "/macros/latex/contrib/needspace",
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
- uploader = "LaTeX Project Team",
+ uploader = "LaTeX Project",
  email = "latex-team@latex-project.org",
  update = true ,
 }

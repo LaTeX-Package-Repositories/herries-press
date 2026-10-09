@@ -14,7 +14,7 @@ Project Public License (LPPL).
 
 Changes in version 1.1b:
 - Tag documentation
-- Update maintainer to LaTeX Project Team
+- Update maintainer to LaTeX Project
 
 Changes in version 1.1a:
 - New maintainer (Will Robertson)
@@ -27,5 +27,5 @@ Changes in version 1.1:
 - run: lualatex stdclsdv.dtx
 - run: makeindex -s gind.ist stdclsdv
 - run: lualatex stdclsdv.dtx
-- Print stdclsdv.dvi for a hardcopy of the package manual 
+- Print stdclsdv.pdf for a hardcopy of the package manual
 - Move stdclsdv.sty to a location where LaTeX will find it.

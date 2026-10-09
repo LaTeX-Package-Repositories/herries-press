@@ -30,10 +30,10 @@
   {\ttfamily[}\meta{#1}{\ttfamily]}}
 \providecommand\parg[1]{%
   {\ttfamily(}\meta{#1}{\ttfamily)}}
-\makeatletter  
+\makeatletter
 \def\cmd#1{\texttt{\char`\\\expandafter\cmd@to@cs\string#1}}
 \def\cmd@to@cs#1#2{\char\number`#2\relax}
-\makeatother 
+\makeatother
 
 
 \def\PDF{\textsc{pdf}}
@@ -43,7 +43,7 @@
 
 \usepackage{amsmath,multicol}
 
-\def\chngpagev{v1.2b}  
+\def\chngpagev{v1.2b}
 
 \usepackage{changepage}
 \usepackage{microtype}
@@ -60,7 +60,7 @@
 \end{document}
 %</driver>
 % \fi
-%  
+%
 %\makeatletter
 %\def\@doc@describe#1#2{^^A
 %    \ifdoc@noprint\else
@@ -85,16 +85,16 @@
 %   \url{https://github.com/LaTeX-Package-Repositories/herries-press/}%
 %  }
 %  \date{\fileversion, \filedate\ and \chngpagev}
-%  
+%
 %  \maketitle
-%  
+%
 %  \begin{abstract}
 %  \noindent Provides command
 %  |\ifoddpage| to detect the current page `side',
 %  environment |adjustwidth| to locally change the margins of the text,
 %  and commands |\changetext| and |\changepage| for more
 %  radical changes to the page design mid-way through a document.
-%  
+%
 %  \pkg{changepage} is the new version of \pkg{chngpage} to be
 %  compatible with \pkg{memoir}. \pkg{chngpage} is now deprecated
 %  for this reason.
@@ -103,7 +103,7 @@
 %  \tableofcontents
 %  \addtocontents{toc}{\protect\begin{multicols}{2}}
 %  \part{User documentation}
-%  
+%
 %  Load the package like this:
 %  \begin{verbatim}
 %  \usepackage[strict]{changepage}
@@ -112,10 +112,10 @@
 %  \begin{verbatim}
 %  \usepackage[strict]{chngpage}
 %  \end{verbatim}
-%  
+%
 %  \clearpage
 %  \section{Detecting odd or even pages}
-%  
+%
 %  \DescribeMacro{\checkoddpage}
 %  \DescribeMacro{\ifoddpage}
 %  The |\checkoddpage| command can be used anywhere in the body of
@@ -123,24 +123,24 @@
 %  even numbered page. If on an odd page then |\ifoddpage| is
 %  set \meta{true}, otherwise (on an even page) |\ifoddpage| is set
 %  \meta{false}.
-%  
+%
 %  \chng{Use \cs{ifcpoddpage} instead if you're using chngpage.}
-%  
+%
 %  Strict page checking works by the |\checkoddpage| command generating
 %  a label and then checking the |\pageref| for the label (actually, a special
 %  version of |\pageref| is required and is used internally by |\checkoddpage|).
 %  This mechanism requires at least two \LaTeX\ passes to ensure that
 %  the labels have settled (on the initial pass there will be no labels
 %  in the *.aux file to be checked).
-%  
+%
 %  The label identifier is composed of the command |\cplabel|
 %  and an automatically generated number. |\cplabel|, initially
 %  defined as `|^_|', can be changed in the preamble if it will cause
 %  a clash with any author-defined labels. The default labels will
 %  be of the form `|^_|\meta{N}' where \meta{N} is a positive integer.
-%  
+%
 %  \chng{For chngpage, use \cs{cplabelprefix} instead of \cs{cplabel}.}
-%  
+%
 %  \DescribeMacro{\strictpagecheck}
 %  \DescribeMacro{\easypagecheck}
 %  The package option `strict' turns on strict page checking --- the default
@@ -149,7 +149,7 @@
 %  The easy page check just tests the page number to see if it is odd or even,
 %  which often does not give the correct result because of \TeX's asynchronous
 %  output mechanism.
-%  
+%
 %  If you use |\checkoddpage| between two paragraphs of text it is possible even
 %  in strict mode that the label gets `attached' to the preceding paragraph.
 %  In some cases you can fix this by writing |\leavevmode\checkoddpage| so that the label
@@ -157,10 +157,10 @@
 %  something like a section heading this approach will also insert an empty, unwanted,
 %  paragraph. Therefore use some care when choosing where and how this command is used
 %  in your document.
-%  
-%  
+%
+%
 %  \section{Adjusting the margins}
-%  
+%
 %  \DescribeEnv{adjustwidth}
 %  Within an |adjustwidth| environment the left and right margins can be
 %  adjusted. The environment takes two required length arguments:
@@ -172,20 +172,20 @@
 %  (lengthening text lines). An empty length argument means no change
 %  to the margin. At the end of the environment the margins revert to
 %  their original values.
-%  
+%
 %  For example, to extend the text into the right margin:
 %  \begin{quote}
 %  |\begin{adjustwidth}{}{-8em}|
 %  \end{quote}
 %  The starred version, |adjustwidth*|, causes the values of the
-%  margins to switch between odd and even pages, or more precisely: 
+%  margins to switch between odd and even pages, or more precisely:
 %  they switch depending on if the environment \emph{starts} on an odd
-%  or even page. They do not switch if there is a page break inside 
-%  the environment. 
-%  
+%  or even page. They do not switch if there is a page break inside
+%  the environment.
+%
 %  \chng{For chngpage use \cs{begin}\texttt{\{adjustwidth\}[]}
 %  instead of \cs{begin}\texttt{\{adjustwidth*\}}.}
-%  
+%
 %  For example, if the document is being set two-sided it might be
 %  advantageous to have any wider text extending into the outside
 %  margin:
@@ -217,24 +217,24 @@
 %  near the top of a page. This can be corrected by using the package
 %  option `strict' (i.e., |\usepackage[strict]{chngpage}|), which causes
 %  adjustwidth to use the |\checkoddpage| command (see below).
-%  
-%  The strict option uses a label that is issued at the begin of environment. If 
+%
+%  The strict option uses a label that is issued at the begin of environment. If
 %  the environment begin just at a page break the label can be issued at the wrong place
 %  and the check is wrong (this should work better if \cs{DocumentMetadata} is used,
-%  see below section \ref{sec:tagging} about tagging support. 
-%  
+%  see below section \ref{sec:tagging} about tagging support.
+%
 %  A disadvantage of the strict option is that the package generates
 %  a new label for each adjustwidth environment, and \TeX\ may run out
 %  of space if there are an excessive number of labels in the document
 %  (but nowadays this shouldn't be a problem anymore).
-%  
+%
 %  Whether or not the strict option is used, `strict adjustwidths'
 %  can be turned on by putting the command |\strictpagecheck| before
 %  the environment, and turned off by using |\easypagecheck|.
-%  
+%
 %  \chng{In chngpage, use \cs{cpstricttrue} and \cs{cpstrictfalse}
 %  instead of \cs{strictpagecheck} and \cs{easypagecheck}.}
-%  
+%
 %  \textsc{note:}
 %  In a twocolumn document, the |adjustwidth| environment
 %  treats both columns equally. For example, if the width is meant
@@ -242,25 +242,25 @@
 %  will be at the right of any column, and on even pages the extra
 %  will be at the left of any column. You can get interesting effects
 %  by careful hand tuning on two column pages.
-%  
+%
 %  \section{Tagging support}
-%  
-%  The original |adjustwidth| environment is implemented as a list. 
+%
+%  The original |adjustwidth| environment is implemented as a list.
 %  If \cs{DocumentMetadata}
 %  is used, a |displayblock| environment is used together with the tagging recipe |noop|.
 %  This means that the environment does not produce additional
-%  structures. 
-%  
-%  The new implementation also changes \emph{intentionally} the appearance in some cases: 
-%  The original |adjustwidth| environment does not indent its first paragraph 
-%  (which is in my opinion a bug), the new one does it (naturally only if 
-%  \cs{parindent} has a positive value). 
+%  structures.
+%
+%  The new implementation also changes \emph{intentionally} the appearance in some cases:
+%  The original |adjustwidth| environment does not indent its first paragraph
+%  (which is in my opinion a bug), the new one does it (naturally only if
+%  \cs{parindent} has a positive value).
 %  The new implementation also uses for |adjustwidth*| a slightly different check
-%  for odd pages if the option |strict| is in effect, this should improve the 
-%  behaviour at page breaks. 
-%  
+%  for odd pages if the option |strict| is in effect, this should improve the
+%  behaviour at page breaks.
+%
 %  \section{Changing the text block}
-%  
+%
 %  \DescribeMacro{\changetext}
 %  The |\changetext| command is for changing the size and horizontal position
 %  of the text block on a page. The command takes 5 arguments, each of which
@@ -273,10 +273,10 @@
 %  the remainder of the current page is typeset using the changed text block
 %  layout. The new layout remains in effect until another |\change...| command
 %  is issued.
-%  
-%  
+%
+%
 %  \section{Changing the entire page design}
-%  
+%
 %  \DescribeMacro{\changepage}
 %  The |\changepage| command is for changing the general layout of
 %  a page. The command takes 9 arguments, each of which is a length or is empty.
@@ -290,11 +290,11 @@
 %  remainder of the current page is typeset using the changed text block
 %  and page layout. The new layout remains in effect until another
 %  |\change...| command is issued.
-%  
+%
 %  \begin{itemize}
 %  \item[\textsc{note} 1] Not supplying a value for a length argument is equivalent
 %           to giving it a zero length value.
-%  
+%
 %  \item[\textsc{note} 2] For any given page, everything is constant except for the textwidth
 %           and columnsep (for example, what is the meaning of two
 %           topmargins on a single column page?).
@@ -319,13 +319,13 @@
 %  \end{verbatim}
 %  Note the adjustments to the margins which will keep the vertical centerline
 %  of the textblock at the same position on the page.
-%  
+%
 %  As another example, to increase the width of a single paragraph:
 %  \begin{verbatim}
 %  \changetext{0pt}{5em}{}{}{}%
 %  Start of wider paragraph text ...
 %  ... end of paragraph.
-%  
+%
 %  \changetext{0pt}{-5em}{}{}{}
 %  Start of a normal paragraph ...
 %  \end{verbatim}
@@ -333,10 +333,10 @@
 %  the argument to |\afterpage| (from the \pkg{afterpage} package) and it may work.
 %  Similarly it may work in a heading style used for |\thispagestyle| to change
 %  a single page.
-%  
+%
 %  \clearpage
 %  \parindent=0pt
-%  
+%
 %  \part{Implementation}
 %  \section{The \pkg{changepage} package}
 %    \begin{macrocode}
@@ -347,7 +347,7 @@
 %    \end{macrocode}
 % Don't use this with memoir
 % \begin{macro}[no-user-doc]{\cp@whoopsusingmemoir}
-%    \begin{macrocode} 
+%    \begin{macrocode}
 \newcommand*{\cp@whoopsusingmemoir}{}
 \@ifclassloaded{memoir}{\def\cp@whoopsusingmemoir{\endinput}}
 \cp@whoopsusingmemoir
@@ -434,13 +434,13 @@
     \ifodd\cp@tempcnt\oddpagetrue\fi
   \else
     \ifodd\c@page\oddpagetrue\fi
-  \fi}  
+  \fi}
 %    \end{macrocode}
 % \end{macro}
 % End newcommands for strict checking of odd/even page.
-% 
+%
 % \subsection{Layout changes}
-% 
+%
 % Copy of some of the code from the ifmtarg package to save requiring ifmtarg:
 %    \begin{macrocode}
 \begingroup
@@ -521,14 +521,14 @@
                    {\setlength{\rightmargin}{#1}}%
     \fi}
     \item[]}{\end{list}}
-    
+
 \IfFormatAtLeastTF{2026-06-01}
  {
    \IfDocumentMetadataT
     {
       \RenewDocumentEnvironment{adjustwidth}{mm}
        {%
-         \par 
+         \par
          \begin{displayblock}%
           [tagging-recipe=noop,
            left-margin ={#1+0pt},
@@ -555,11 +555,11 @@
         }
         {\end{displayblock}\par}
     }
- } 
+ }
 %</package>
 %    \end{macrocode}
 % \end{environment}
-%  
+%
 %  \clearpage
 %  \section{The \pkg{chngpage} package}
 %    \begin{macrocode}
@@ -693,4 +693,3 @@
 %</chgnpage>
 %    \end{macrocode}
 %  \addtocontents{toc}{\protect\end{multicols}}
-  

@@ -4,13 +4,13 @@ Version 2026/06/05 v1.2
 
 Provides commands to make \chapter typeset like \section.
 
-## Author 
+## Author
 
 Peter Wilson, Herries Press
-  
-##  Maintainer 
 
-LaTeX Team https://github.com/LaTeX-Package-Repositories/herries-press
+##  Maintainer
+
+LaTeX Project https://github.com/LaTeX-Package-Repositories/herries-press
 
 ## License
 

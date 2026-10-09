@@ -6,11 +6,12 @@
 % Usage of this package is described after the source code, below.
 %
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1996--2000 Peter Wilson
+% Copyright 2026--present LaTeX Project
 %
 % Released under the LaTeX Project Public License, v1.3c or later.
-% The current maintainer of this work is Will Robertson.
+% The current maintainer of this work is the LaTeX Project.
 %
 % CHANGE HISTORY
 % v1.1a - New maintainer (Will Robertson)
@@ -37,7 +38,7 @@
             ,number-decls=\Huge
             ,number-format=\thechapter\simplechapterdelim
           }%
-% headformat template has changed in 2026-11-01          
+% headformat template has changed in 2026-11-01
           \DeclareInstance{headformat}{chapter}{hang}{%
             separator-a:e=\IfBlankF{#1}{\noexpand\nobreakspace}%
             ,separator-b=\nobreakspace
@@ -57,7 +58,7 @@
             ,number-decls=\Huge
             ,number-format=\thechapter\simplechapterdelim
           }%
-% headformat template before 2026-11-01          
+% headformat template before 2026-11-01
           \DeclareInstance{headformat}{chapter}{hang}{%
             number-title-sep=\WordSpaceAmount{1}%
             ,prefix-number-sep:e=\IfBlankTF{#1}{0pt}{\noexpand\WordSpaceAmount{1}}%
@@ -72,7 +73,7 @@
     }%
   }%
   {%
-% original definitions not using templates.    
+% original definitions not using templates.
    \newcommand{\simplechapter}[1][\@empty]{%
      \let\@tbiold@makechapterhead\@makechapterhead
      \renewcommand{\@makechapterhead}[1]{%

@@ -1,7 +1,7 @@
     The continue package provides for a variety of continuation indicators
-by default on recto (odd numbered) pages in a twosided document when the text 
-continues on the following (verso) page. All pages may be marked and the marking 
-stopped and started. 
+by default on recto (odd numbered) pages in a twosided document when the text
+continues on the following (verso) page. All pages may be marked and the marking
+stopped and started.
 
 Changes in version 0.1 (2015/12/09)
 o First public release
@@ -12,12 +12,12 @@ o Marking can be stopped and started
 Changes in version 0.2a (2026/10/06)
 o Remove deprecated picture package
 o Tag documentation
-o Update maintainer to LaTeX Project Team
+o Update maintainer to LaTeX Project
 
 ------------------------------------------------------------------
   Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
           with Donald Arseneau and Luca Merciadri
-  Maintainer 2025 - present: LaTeX Project Team
+  Maintainer 2025 - present: LaTeX Project
   Copyright 2015, 2018 Peter R. Wilson, Donald Arseneau, Luca Merciadri
 
   This work may be distributed and/or modified under the
@@ -61,10 +61,10 @@ o Refresh the database
 o run: (pdf)latex trycontinue for a test of the package
 
     To generate a second copy of the manual (which is already supplied as a PDF file):
-o run: (pdf)latex continue.dtx
+o run: lualatex continue.dtx
 o (for an index run: makeindex -s gind.ist *.idx)
-o run: (pdf)latex *.dtx
-o Print *.(pdf|dvi) for a hardcopy of the package manual
+o run: lualatex *.dtx
+o Print *.pdf for a hardcopy of the package manual
 
 2018/12/09
 Peter Wilson

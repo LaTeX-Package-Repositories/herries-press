@@ -2,9 +2,9 @@
 %
 % romannum.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: LaTeX Project Team
+% Maintainer: LaTeX Project
 % Copyright 1999--2004 Peter R. Wilson
-% Copyright 2009--present LaTeX Project Team
+% Copyright 2009--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -12,11 +12,11 @@
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is LaTeX Project Team.
+% The Current Maintainer of this work is LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
-% 
+%
 %<*driver>
 \DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
 \documentclass{l3in2edoc}
@@ -90,7 +90,7 @@
 %
 % \changes{v1.0}{1999/05/08}{First public release}
 % \changes{v1.0b}{2009/09/03}{New maintainer (Will Robertson)}
-% \changes{v1.0c}{2026/10/07}{Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)}
+% \changes{v1.0c}{2026/10/07}{Fix gh/46; tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{romannum.dtx}
 % \def\fileversion{v1.0}  \def\filedate{8 May 1999}
@@ -109,7 +109,7 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: \LaTeX{} Project Team \\
+%   Maintainer: \LaTeX{} Project \\
 %   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
@@ -123,7 +123,7 @@
 %
 % \StopEventually{}
 %
-% 
+%
 %
 % \section{Introduction}
 %
@@ -131,7 +131,7 @@
 % figure and table captions, and page numbers. Normally these are printed
 % using arabic digits. The \Lpack{romannum} package modifies the typesetting
 % of such generated numbers so that they are printed as roman numerals.
-% 
+%
 % This manual is typeset according to the conventions of the
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
@@ -141,7 +141,7 @@
 %
 % \section{The \Lpack{romannum} package} \label{sec:usc}
 %
-%    Using the \Lpack{romannum} package, numbers that \LaTeX{} generates will 
+%    Using the \Lpack{romannum} package, numbers that \LaTeX{} generates will
 % be typeset as
 % lowercase roman numerals. For example, `iv' instead of 4.
 %
@@ -160,7 +160,7 @@
 %                         level items in lowercase roman.
 % \item[\Lopt{enumerate}] First level items in lowercase roman and third
 %                         level items in uppercase roman.
-% \item[\Lopt{Year}] The year number from the |\today| command in uppercase 
+% \item[\Lopt{Year}] The year number from the |\today| command in uppercase
 %                    roman.
 % \item[\Lopt{Day}] The year number from the |\today| command in uppercase
 %                   roman and the day number in uppercase roman.
@@ -197,7 +197,7 @@
 %
 % \DescribeMacro{\Romannum}
 %    The command |\Romannum{|\meta{integer}|}| typesets \meta{integer} using
-% uppercase roman numerals. Strictly speaking, the roman numbering system 
+% uppercase roman numerals. Strictly speaking, the roman numbering system
 % system does not cater for numbers less than 1 (i.e., zero or negative
 % numbers), however the command does what might be expected for zero and
 % negative numbers. As normal with a \LaTeX{} command it gobbles any following
@@ -326,7 +326,7 @@
 %    \end{macrocode}
 %
 % The enumerate.
-%    Two of |enumerate| environment numbers need changing. First level 
+%    Two of |enumerate| environment numbers need changing. First level
 % enumerations are normally arabic digits, and the third level are normally
 % lowercase roman. These get changed to lowercase and uppercase roman.
 %    \begin{macrocode}
@@ -362,7 +362,7 @@
 \ProcessOptions\relax
 %    \end{macrocode}
 %
-%  
+%
 %
 % \begin{macro}[no-user-doc]{\theday}
 % \begin{macro}[no-user-doc]{\theyear}

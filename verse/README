@@ -3,7 +3,7 @@ The VERSE package
 
     verse provides some aids for typesetting simple verse (poems).
 
-Changes in version 2.5 (2028-08-08)
+Changes in version 2.5 (2026-08-08)
 More support for LaTeX tagging
 
 Changes in version 2.4b (2014/05/10)
@@ -12,7 +12,7 @@ Changes in version 2.4b (2014/05/10)
 
 Changes in version 2.4a (2009/09/04)
 - New maintainer (Will Robertson)
-  
+
 Changes in version 2.4 (2007/01/10)
 - Can specify the number of the first verse line and the line number
   where the first of the line numbers will be displayed
@@ -45,25 +45,25 @@ Changes in version 1.2 (2001/10/28)
 - Vertical spacing matches the original verse environment
 
 Changes in version 1.1 (2001/08/03)
-- Added pattern-based line indents 
+- Added pattern-based line indents
 
 Changes in version 1.0 (2001/07/21)
 - First public release
 
------------------------------------------------------------------ 
-  Author: Peter Wilson
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
-          Herries Press
+-----------------------------------------------------------------
+  Author: Peter Wilson, Herries Press
+  Maintainer: LaTeX Project
   Copyright 2001--2007 Peter R. Wilson
- 
+  Copyright 2026--present LaTeX Project
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
- 
+  The Current Maintainer of this work is the LaTeX Project.
+
   This work consists of the files:
 README (this file)
 verse.dtx
@@ -77,11 +77,11 @@ verse.dtx
 verse.ins
 verse.pdf (user manual)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex verse.ins (which will generate verse.sty)
-- Move verse.sty to a location where LaTeX will find it (see the FAQ 
+- Move verse.sty to a location where LaTeX will find it (see the FAQ
                  on CTAN at help/uk-tex-faq for more information on this).
 
     To regenerate the user manual

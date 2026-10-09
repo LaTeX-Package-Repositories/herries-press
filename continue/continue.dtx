@@ -4,7 +4,7 @@
 %
 %  Author: Peter Wilson (Herries Press) herries dot press at earthlink dot net
 %  Copyright 2015, 2018 Peter R. Wilson, Donald Arseneau and Merciadri Luca
-%  Maintainer 2025 - present: LaTeX Project Team
+%  Maintainer 2025 - present: LaTeX Project
 %
 %  This work may be distributed and/or modified under the
 %  conditions of the Latex Project Public License, either
@@ -105,7 +105,7 @@
 % \def\fileversion{v0.2} \def\filedate{2018/12/09}
 % \changes{v0.2a}{2026/10/06}{Remove deprecated picture package; tag documentation; update maintainer}
 % \def\fileversion{v0.2a} \def\filedate{2026/10/06}
-% 
+%
 % \providecommand{\phantomsection}{}
 % %\OnlyDescription ^^A comment this out for the full glory
 % \setcounter{StandardModuleDepth}{1}
@@ -129,7 +129,7 @@
 %
 % \author{%
 % Author: Peter Wilson with Donald Arseneau and Merciadri Luca\\
-% Maintainer: \LaTeX{} Project team\\
+% Maintainer: \LaTeX{} Project\\
 % \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
@@ -138,18 +138,18 @@
 %    The \Lpack{continue} package provides for a variety of continuation indicators on
 % pages in a twosided document when the text continues on the following
 % page. The default is to only mark odd pages but all pages can be marked or marking
-% can be stopped or started at any point.  
+% can be stopped or started at any point.
 % \end{abstract}
 % \tableofcontents
 %
-% 
+%
 %
 % \section{Introduction}
 %
 %    In some types of documents it is customary or convenient to indicate at the
 % bottom of a page that the text continues on the following page. For example, when
 % a two page exam sheet is printed twosided it could be advantageous for the student
-% to have an indication on the first page that there are further questions on the back 
+% to have an indication on the first page that there are further questions on the back
 % of the page. Another instance is when documents are printed in the expectation
 % that they will be read by someone in front of an audience, so in order to minimise
 % any hesitation as a page is turned over, the first word on the following page is printed
@@ -166,10 +166,10 @@
 % \section{The \Lpack{continue} package} \label{sec:usc}
 %
 %    The \Lpack{continue} package is an amalgam of modified versions of
-% two packages --- \Lpack{fwlw} (First Word, Last Word) by Donald 
+% two packages --- \Lpack{fwlw} (First Word, Last Word) by Donald
 % Arseneau~\cite{FWLW} which% among other things gets the first word
 % on the next page and \Lpack{turnpageetex} by Merciadri Luca~\cite{TURNPAGEETEX}
-% for placing something at the bottom of the text block. 
+% for placing something at the bottom of the text block.
 %
 % The \Lpack{fwlw} package includes the following statement:
 %
@@ -202,7 +202,7 @@
 % specified marker is employed.
 %
 % \DescribeOption{allpages}
-%    With this option the package tries to provide a marker on each page, whether 
+%    With this option the package tries to provide a marker on each page, whether
 % odd or even.
 % The default is to only provide markers on odd pages.
 %
@@ -215,7 +215,7 @@
 % ...
 %
 %  ... labelling does not make much sense when |\chapter| generates a page
-%  break, so the last page before a |\chapter| (or any |\clearpage|) gets 
+%  break, so the last page before a |\chapter| (or any |\clearpage|) gets
 %  a blank "next word" ...
 %
 %  Note that `words' may unfortunately be things like:
@@ -269,7 +269,7 @@
 %    |\renewcommand*{\preflagword}{[}|
 %
 % \DescribeMacro{\postflagword}
-%    Similar to |\preflagword| except that it is printed after the marker. Its default 
+%    Similar to |\preflagword| except that it is printed after the marker. Its default
 %  definition is: \\
 %    |\newcommand*{\postflagword}{}| \\
 %
@@ -292,10 +292,10 @@
 %% trycontinue.tex  An example usage of the continue package (2018/12/09)
 %%
 %% The document is set with footnotes on A6 paper (I wanted
-%% to get many pages from little text). It is not pretty but does shows 
-%% some of the continue package's capabilities. Try modifying it by changing 
+%% to get many pages from little text). It is not pretty but does shows
+%% some of the continue package's capabilities. Try modifying it by changing
 %% options, etc., and see what happens.
-%% 
+%%
 %% You can try and contact me, Peter Wilson at herries.press@earthlink.net, if there
 %% are problems other than the aesthetics.
 %%
@@ -372,7 +372,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \begin{macro}[int]{\ifc@go}
 % \begin{macro}{\contgo}
 % \begin{macro}{\contstop}
-% Continuation marks will stop after |\contstop| but will continue after |\contgo| 
+% Continuation marks will stop after |\contstop| but will continue after |\contgo|
 % (the default)
 %    \begin{macrocode}
 \newif{\ifc@go} \c@gotrue
@@ -406,7 +406,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % Declare a \textit{unique} penalty flag as a value.
 %    \begin{macrocode}
  \mathchardef\LWC@pen 13452
-%    \end{macrocode} 
+%    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}[no-user-doc]{\FirstWordBox}
@@ -421,7 +421,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
  \newbox\LastWordBox      \global\setbox\LastWordBox\hbox{}
  \newbox\LWC@box           \global\setbox\LWC@box\hbox{}
  \newbox\LWC@saved
-%    \end{macrocode} 
+%    \end{macrocode}
 % \end{macro}
 % \end{macro}
 % \end{macro}
@@ -450,16 +450,16 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \message{End of real page}%
       \global\setbox\LWC@saved\copy\@cclv % save page
 %\begin{comment}
-      \setbox\@tempboxa\vbox{\unvbox\@cclv \unskip\unkern\unpenalty%     
+      \setbox\@tempboxa\vbox{\unvbox\@cclv \unskip\unkern\unpenalty%
        \unskip\unkern\unpenalty \unskip\unkern\unpenalty
         \setbox\@tempboxa\lastbox
         \LWC@getlast@word\@tempboxa\LastWordBox
       }
 %\end{comment}
       \ifnum\outputpenalty>-\@MM % not \supereject
-        \xdef\LWC@vsize{\global\vsize\the\vsize 
+        \xdef\LWC@vsize{\global\vsize\the\vsize
            \global\holdinginserts\the\holdinginserts}%
-        \global\vsize\z@ \global\holdinginserts\@ne 
+        \global\vsize\z@ \global\holdinginserts\@ne
       \else % \supereject, just output, don't look for word on next page
 %      \message{caused by super-eject.}
         \global\setbox\@cclv\box\LWC@saved
@@ -489,7 +489,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %
 %    \begin{macrocode}
  \def\LWC@getlast@word#1#2{\setbox\@tempboxa\vbox{\hsize\maxdimen \@parboxrestore
-   \hyphenpenalty\@M \exhyphenpenalty\@M 
+   \hyphenpenalty\@M \exhyphenpenalty\@M
    \rightskip\fill \looseness\@M \linepenalty\z@
    \noindent\unhbox#1\endgraf
    \unskip\unkern\unpenalty \global\setbox\LWC@box\lastbox
@@ -503,7 +503,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 %    \begin{macrocode}
  \def\LWC@getfirst@word#1#2{\setbox\@tempboxa\vbox{\@parboxrestore
    \parshape\thr@@ \z@\z@ \z@\z@ \z@\maxdimen \parfillskip\fill
-   \hyphenpenalty\@M \exhyphenpenalty\@M 
+   \hyphenpenalty\@M \exhyphenpenalty\@M
    \hbadness\@MM \overfullrule\z@ \hfuzz\maxdimen
    \ifhbox#1\noindent
     \vadjust{\penalty\LWC@pen}\penalty-\@M\unhbox#1% eliminate previous \leftskip
@@ -536,7 +536,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
  \def\LWC@repack#1{\global\setbox#1\hbox{\ifhbox\LWC@box
     \unhbox\LWC@box\unskip\unskip\unpenalty\unskip
    \else\ifvbox\LWC@box\box\LWC@box\fi\fi}}
-%    \end{macrocode} 
+%    \end{macrocode}
 % \end{macro}
 %
 % The next chunk of code is a revised version of the original \Lpack{turnpageetex} package.
@@ -686,7 +686,7 @@ Sixth\footnote{Foot 6} \lipsum[6]
 % \end{thebibliography}
 %
 % \PrintIndex
-%     
+%
 % \Finale
 %
 % \endinput

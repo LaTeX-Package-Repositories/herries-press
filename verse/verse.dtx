@@ -2,16 +2,17 @@
 %
 % verse.dtx
 % Author: Peter Wilson
-% Maintainer: LaTeX Project Team
+% Maintainer: LaTeX Project
 % Copyright 2001--2007 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is the LaTeX Project Team.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
@@ -149,7 +150,7 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: The \LaTeX{} Project Team \\
+%   Maintainer: The \LaTeX{} Project \\
 %   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\fileversion\qquad\filedate}
@@ -161,7 +162,7 @@
 % \end{abstract}
 % \tableofcontents
 %
-% 
+%
 %
 % \section{Introduction}
 %
@@ -175,12 +176,12 @@
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
 %
-%    Section~\ref{sec:usc} describes the usage of the \Lpack{verse} 
-% package and 
+%    Section~\ref{sec:usc} describes the usage of the \Lpack{verse}
+% package and
 % commented source code is in Section~\ref{sec:code}.
 % Colour is used to indicate input and output material; a \colorbox[rgb]{0.97,0.97,1}{blue} background indicates \LaTeX\ input source, and a \colorbox[rgb]{0.97,1,0.97}{green} background shows the corresponding output one should expect.
 %
-% The doggerel used as illustrative material has been taken 
+% The doggerel used as illustrative material has been taken
 % from~\cite{RUMOUR}.
 %
 % \section{Verses in \LaTeX\ \emph{without} this package}
@@ -210,7 +211,7 @@
 % \end{ltxoutput}
 % Typesetting it within \LaTeX's |verse| environment produces:
 % \begin{ltxoutput}
-% \begin{verse}  
+% \begin{verse}
 % \garden
 % \end{verse}
 % \end{ltxoutput}
@@ -219,18 +220,18 @@
 % line endings.
 % \begin{lstlisting}
 % \begin{alltt}\normalfont
-% I used to love my garden 
-% But now my love is dead 
-% For I found a bachelor's button 
+% I used to love my garden
+% But now my love is dead
+% For I found a bachelor's button
 % In black-eyed Susan's bed.
 % \end{alltt}\end{lstlisting}
 % which produces:
 % \begin{ltxoutput}
 % \begin{alltt}\catcode\%=9
 %\normalfont
-%I used to love my garden 
-%But now my love is dead 
-%For I found a bachelor's button 
+%I used to love my garden
+%But now my love is dead
+%For I found a bachelor's button
 %In black-eyed Susan's bed.
 % \end{alltt}
 % \end{ltxoutput}
@@ -238,7 +239,7 @@
 % you can use LaTeX macros inside it.
 %
 %    In the |verse| environment long lines will be wrapped and indented
-% but in the |alltt| environment there is no indentation. 
+% but in the |alltt| environment there is no indentation.
 %
 % Some stanzas have certain lines indented, often alternate ones. To
 % typeset stanzas like this you have to add your own spacing. For
@@ -252,7 +253,7 @@
 % And bigamy, sir, is a crime.'
 % \end{verse}
 % \end{lstlisting}
-% will be typeset in a verse environment as: 
+% will be typeset in a verse environment as:
 % \begin{ltxoutput}
 % \begin{verse}
 % There was an old party of Lyme \\
@@ -268,8 +269,8 @@
 % \begin{alltt}\normalfont
 % There was an old party of Lyme
 % Who married three wives at one time.
-%       When asked: `Why the third?' 
-%       He replied: `One's absurd, 
+%       When asked: `Why the third?'
+%       He replied: `One's absurd,
 % And bigamy, sir, is a crime.'
 % \end{alltt}
 % \end{lstlisting}
@@ -278,15 +279,15 @@
 % \begin{alltt}\catcode\%=9\normalfont
 %There was an old party of Lyme
 %Who married three wives at one time.
-%      When asked: `Why the third?' 
-%      He replied: `One's absurd, 
+%      When asked: `Why the third?'
+%      He replied: `One's absurd,
 %And bigamy, sir, is a crime.'
 % \end{alltt}
 % \end{ltxoutput}
 %
 % More exotically you could use the TeX |\parshape| command:
 % \begin{lstlisting}
-% \parshape = 5 0pt \linewidth 0pt \linewidth 
+% \parshape = 5 0pt \linewidth 0pt \linewidth
 %               2em \linewidth 2em \linewidth 0pt \linewidth
 % \noindent There was an old party of Lyme \\
 % Who married three wives at one time. \\
@@ -296,7 +297,7 @@
 % \end{lstlisting}
 % which will be typeset as:
 % \begin{ltxoutput*}
-% \parshape = 5 0pt \linewidth 0pt \linewidth 
+% \parshape = 5 0pt \linewidth 0pt \linewidth
 %               2em \linewidth 2em \linewidth 0pt \linewidth
 % \noindent There was an old party of Lyme \\
 % Who married three wives at one time. \\
@@ -348,7 +349,7 @@
 % \DescribeMacro{\versewidth}
 % The length |\versewidth| is provided as a convenience. It may be used,
 % for example, to calculate the length of a line of text for use
-% as the optional argument to the |verse| environment: 
+% as the optional argument to the |verse| environment:
 % \begin{lstlisting}
 % \settowidth{\versewidth}{This is the average line,}
 % \begin{verse}[\versewidth]
@@ -356,7 +357,7 @@
 %
 % \DescribeEnv{altverse}
 % Within the |verse| environment verses are separated by a blank line
-% in the input. Individual verses within |verse| may, however, 
+% in the input. Individual verses within |verse| may, however,
 % be enclosed in the |altverse| environment. This has the effect of
 % indenting the 2nd, 4th, etc., lines of the verse by the length |\vgap|.
 %
@@ -385,7 +386,7 @@
 % end of each line of a verse, except for the last line in each stanza.
 % If the lines in a poem are to be numbered then
 % \DescribeMacro{\\!}
-% |\\!| must be used at the 
+% |\\!| must be used at the
 % end of the last line in each stanza (the |\\| macro increments the line
 % numbers).
 %
@@ -395,7 +396,7 @@
 % \DescribeMacro{\\>}
 % The |\\>| version causes a linebreak within a verse line.
 %
-% The |\\| macro in its various forms can also take an optional length 
+% The |\\| macro in its various forms can also take an optional length
 % argument, like |\\[30pt]|
 % which will insert |30pt| of vertical space; in the case of |\\>[30pt]|
 % an additional 30pt of horizontal space will be inserted after the
@@ -420,10 +421,10 @@
 % length \cs{vindent}.
 %
 % \DescribeMacro{\verselinebreak}
-% Using the command |\verselinebreak[|\meta{length}|]| will cause 
+% Using the command |\verselinebreak[|\meta{length}|]| will cause
 % later text in the
 % line of the verse to be typeset indented on the following line.
-% If the optional length argument is not given the indentation is 
+% If the optional length argument is not given the indentation is
 % |\vgap|, otherwise the indentation is given by \meta{length} plus |\vgap|.
 % The broken
 % line will count as a single line as far as the |altverse| and |patverse|
@@ -469,11 +470,11 @@
 % should be for line number \meta{startnumsat}. If used the command must be
 % given within the \texttt{verse} environment before the first line of the
 % verses. For example, if you were quoting portions of poems from a source
-% where the lines were numbered, your first line might be the 112th of the 
+% where the lines were numbered, your first line might be the 112th of the
 % original and that line was originally numbered: \\
 % \verb?\setverselinenums{112}{112}? \\
 % or if it was line 115 that was first numbered: \\
-% \verb?\setverselinenums{112}{115}? 
+% \verb?\setverselinenums{112}{115}?
 %
 % Note that the numbers must be such that the following relationship holds: \\
 % \verb?firstlinenum <= startnumsat < firstlinenum + poemlines?
@@ -481,7 +482,7 @@
 %
 % \DescribeMacro{\thepoemline}
 % \DescribeMacro{\verselinenumfont}
-% Lines are numbered via \cs{thepoemline} which defaults to typesetting 
+% Lines are numbered via \cs{thepoemline} which defaults to typesetting
 % arabic numerals via: \\
 % \verb?\renewcommand*{\thepoemline}{\arabic{poemline}}? \\
 % The particular font is defined by \cs{verselinenumfont}\marg{font-spec},
@@ -491,7 +492,7 @@
 % \DescribeMacro{\vrightskip}
 % \DescribeMacro{\verselinenumbersleft}
 % \DescribeMacro{\verselinenumbersright}
-% By default the numbers are typeset at the distance \cs{vrightskip} into the 
+% By default the numbers are typeset at the distance \cs{vrightskip} into the
 % right margin.
 % If you want line numbers set at the left use the \cs{verselinenumbersleft}
 % declaration. To revert to the default use \cs{verselinenumbersright}.
@@ -500,8 +501,8 @@
 % \DescribeMacro{\label}
 % \DescribeMacro{\ref}
 % The standard |\label{|meta{key}|}| command
-% can be used inside the |verse| environment, between the end of the text 
-% of a line and the line-ending |\\|, to grab that line number, no matter 
+% can be used inside the |verse| environment, between the end of the text
+% of a line and the line-ending |\\|, to grab that line number, no matter
 % what the setting of |\poemlines|. Elsewhere the standard
 % |\ref{|\meta{key}|}| command can be used to refer to the line number.
 %
@@ -554,7 +555,7 @@
 %
 % \DescribeMacro{\setarrayelement}
 % |\setarrayelement{|\meta{arrayname}|}{|\meta{index}|}{|\meta{text}|}|
-% sets the \meta{index} location in the \meta{arrayname} array to be 
+% sets the \meta{index} location in the \meta{arrayname} array to be
 % \meta{text}. For example: \\
 %  |\setarrayelement{MyArray}{23}{$2^{23}$}|.
 %
@@ -584,7 +585,7 @@
 %
 % \DescribeMacro{\checkifinteger}
 % |\checkifinteger{|\meta{num}|}| checks if \meta{num} is an integer (not less
-% than zero). If it is then |\ifinteger| is set TRUE, otherwise it is set 
+% than zero). If it is then |\ifinteger| is set TRUE, otherwise it is set
 % FALSE.
 %
 % \subsection{Examples}
@@ -968,7 +969,7 @@
 % hyperref anchors (based on the verse environment). Also one for specifying
 % the start of line numbering.
 % \changes{v2.0}{2002/03/24}{Added poemline and modulo@vs counters}
-% \changes{v2.22}{2005/08/22}{Added verse@envctr counter and 
+% \changes{v2.22}{2005/08/22}{Added verse@envctr counter and
 %                \cs{theHpoemlines} for hyperref}
 % \changes{v2.4}{2007/01/10}{Added fvsline counter}
 % \changes{v2.4c}{2024/02/12}{Use provide/renew instead of newcommand}
@@ -990,7 +991,7 @@
 % \end{macro}
 %
 % \begin{macro}{\poemlines}
-% |\poemlines{|\meta{nth}|}| specifies that every \meta{nth} poem line 
+% |\poemlines{|\meta{nth}|}| specifies that every \meta{nth} poem line
 % should be numbered. Default is not to number any lines.
 % \changes{v2.0}{2002/03/24}{Added \cs{poemlines}}
 %    \begin{macrocode}
@@ -1384,7 +1385,7 @@
 %
 % \begin{macro}{\newarray}
 % |\newarray{|\meta{arrayname}|}{|\meta{low}|}{|\meta{high}|}| defines
-% an array called \meta{arrayname} (no backslash e.g. |MyArray|), 
+% an array called \meta{arrayname} (no backslash e.g. |MyArray|),
 % with low and high limits \meta{low} and \meta{high}.
 %    \begin{macrocode}
 \newcommand{\newarray}[3]{%

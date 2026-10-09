@@ -2,13 +2,14 @@
 %
 % stdclsdv.dtx
 % Copyright 1999 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This program is provided under the terms of the
 % LaTeX Project Public License distributed from CTAN
 % archives in directory macros/latex/base/lppl.txt.
 %
 % Author: Peter Wilson, Herries Press
-% Maintainer: LaTeX Project Team
+% Maintainer: LaTeX Project
 %
 %<*driver>
 \DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
@@ -85,7 +86,7 @@
 % \changes{v1.0}{1999/01/17}{First public release}
 % \changes{v1.1}{2000/07/16}{Added koma classes}
 % \changes{v1.1a}{2009/09/04}{New maintainer (Will Robertson)}
-% \changes{v1.1b}{2026/10/05}{Tag documentation; update maintainer to LaTeX Project Team}
+% \changes{v1.1b}{2026/10/05}{Tag documentation; update maintainer to LaTeX Project}
 %
 % \def\fileversion{v1.0}  \def\filedate{1999/01/17}
 % \def\fileversion{v1.1}  \def\filedate{2000/07/16}
@@ -105,7 +106,7 @@
 % Peter Wilson, Herries Press\thanks{This work was originally
 % performed as
 % a Guest Researcher at the National Institute of Standards and Technology.}\\
-%   Maintainer: \LaTeX{} Project Team \\
+%   Maintainer: \LaTeX{} Project \\
 %   \url{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\filedate}
@@ -244,7 +245,7 @@
 % \begin{macro}{\ifSCDnodivs}
 %    These are used when we need to decide what sectional
 % divisions are supported by the document's class.
-% We will assume assume an unknown class that has |\part| and |\section| 
+% We will assume assume an unknown class that has |\part| and |\section|
 % but not
 % |\chapter| divisions.
 %    \begin{macrocode}
@@ -254,7 +255,7 @@
 \newif\ifSCDsection\SCDsectiontrue
 \newif\ifSCDnodivs\SCDnodivsfalse
 %    \end{macrocode}
-%    Check the actual class.\footnote{Thanks to David Carlisle for 
+%    Check the actual class.\footnote{Thanks to David Carlisle for
 %    information on how to check on the class.}
 %    \begin{macrocode}
 \@ifclassloaded{book}{\SCDknownclasstrue\SCDchaptertrue}{}
@@ -320,7 +321,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SCDCheckCommand}
-% This is identical to the kernel |\CheckCommand| except that it sets 
+% This is identical to the kernel |\CheckCommand| except that it sets
 % the |\ifSCDSameCommand| flag rather than issuing a warning. See
 % \file{ltdefns.dtx} for the coding for |\CheckCommand|.
 %    \begin{macrocode}

@@ -5,6 +5,10 @@ The APPENDIX package
 of appendices. Also (sub)appendices environments are provided that can be
 used, for example, for per chapter/section appendices.
 
+Changes v1.2d (2026-10-08)
+- Tag documentation
+- New maintainer (LaTeX Project)
+
 Changes v1.2c (2020-02-08)
 - Fix clash with hyperref
 
@@ -28,9 +32,10 @@ Changes in version 1.1 (2000/02/29)
 
 -----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 1998--2004 Peter R. Wilson
   Copyright 2009--2020 Will Robertson
+  Copyright 2009--present LaTeX Project
 
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
@@ -38,7 +43,7 @@ Changes in version 1.1 (2000/02/29)
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project.
 
   This work consists of the files:
 README (this file)

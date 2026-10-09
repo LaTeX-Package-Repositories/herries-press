@@ -1,9 +1,10 @@
 % \iffalse meta-comment
 % apendix.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
 % Copyright 2009--2020 Will Robertson
+% Copyright 2020--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -11,13 +12,14 @@
 % later version: <http://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -79,6 +81,7 @@
 % \changes{v1.2a}{2004/04/16}{Changed license and contact details}
 % \changes{v1.2b}{2009/09/02}{New maintainer (Will Robertson)}
 % \changes{v1.2c}{2020/02/08}{Fix clash with hyperref}
+% \changes{v1.2d}{2026/10/08}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{appendix.dtx}
 % \def\fileversion{v1.1}  \def\filedate{2000/02/29}
@@ -87,10 +90,10 @@
 % \def\fileversion{v1.2a} \def\filedate{2004/04/16}
 % \def\fileversion{v1.2b} \def\filedate{2009/09/02}
 % \def\fileversion{v1.2c} \def\filedate{2020/02/08}
+% \def\fileversion{v1.2d} \def\filedate{2026/10/08}
 %
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -101,8 +104,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press\\
-%   Maintainer: Will Robertson\\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project\\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -357,7 +360,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{appendix}[2020/02/08 v1.2c extra appendix facilities]
+\ProvidesPackage{appendix}[2026/10/08 v1.2d extra appendix facilities]
 %    \end{macrocode}
 %
 % Check that an \cs{appendix} command is actually defined and emit a warning
@@ -1044,21 +1047,3 @@
 % \Finale
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-

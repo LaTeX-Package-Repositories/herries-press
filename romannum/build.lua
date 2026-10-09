@@ -17,19 +17,19 @@ typesetexe = "lualatex"
 
 announce = {}
 announce["2026-10-07 v1.0c"] = [[
-Fix gh/46; tag documentation; new maintainer (LaTeX Project Team)
+Fix gh/46; tag documentation; new maintainer (LaTeX Project)
 ]]
 
 uploadconfig = {
   pkg          = "romannum",
   version      = version,
-  author       = "Peter R Wilson; LaTeX Project Team",
+  author       = "Peter R Wilson; LaTeX Project",
   license      = "lppl1.3c",
   summary      = "Generate roman numerals instead of arabic digits",
   ctanPath     = "/macros/latex/contrib/romannum",
   repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
   bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
-  uploader     = "LaTeX Project Team",
+  uploader     = "LaTeX Project",
   email        = "latex-team@latex-project.org",
   update       = true,
   announcement = announce[version],

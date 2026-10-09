@@ -3,7 +3,7 @@ The ABSTRACT package
 
     The abstract package gives you control over the typesetting of the
 abstract environment, and in particular provides for a one column abstract
-in a two column paper. 
+in a two column paper.
 
     Will Robertson is now maintaining this package. Please contact him
 in preference to the original author, Peter Wilson, for feature requests
@@ -21,27 +21,27 @@ Changes in version 1.2 (2009/05/23)
 - Added style option
 - \abstitleskip now works as described
 
-Changes (2004/04/16) 
+Changes (2004/04/16)
 - Changed license from LPPL v1.0 to v1.3
 - Updated contact details
 
 Changes in version 1.1
 - Added an option for a run-in heading
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
   Maintainer: Will Robertson (will dot robertson at latex-project dot org)
- 
+
   Copyright 2000--2009 Peter R. Wilson
- 
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
   The Current Maintainer of this work is Will Robertson.
- 
+
   This work consists of the files:
 README (this file)
 abstract.dtx
@@ -55,19 +55,19 @@ abstract.dtx
 abstract.ins
 abstract.pdf (the user manual)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex abstract.ins (which will generate abstract.sty)
 - Move abstract.sty to a location where LaTeX will find it (typically
-  in a local texmf tree at tex/latex/abstract) and refresh the 
+  in a local texmf tree at tex/latex/abstract) and refresh the
   file database. See the FAQ on CTAN at help/uk-tex-faq or
   https://texfaq.org/ for more information on this.
     To process the user manual
 - run: pdflatex abstract.dtx
 - For an index, run: makeindex -s gind.ist abstract
 - run: pdflatex abstract.dtx
-- Print abstract.pdf for a hardcopy of the user manual 
+- Print abstract.pdf for a hardcopy of the user manual
 
 
 2009/05/23

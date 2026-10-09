@@ -36,18 +36,18 @@ checkconfigs = {
                }
 
 specialformats = specialformats or {}
-               
+
 specialformats["latex"] = specialformats["latex"] or
   {
     pdftexdev   = {binary="pdftex",format = "pdflatex-dev"},
     luatexdev   = {binary="luahbtex",format = "lualatex-dev"},
-  }    
+  }
 
-stdengine="pdftex"        
-checkengines= {"pdftex", "xetex", "luatex", "pdftexdev"}     
+stdengine="pdftex"
+checkengines= {"pdftex", "xetex", "luatex", "pdftexdev"}
 
 
-recordstatus=true               
+recordstatus=true
 textfiles    = {"README.md"}
 tagfiles     = {"*.dtx"}
 
