@@ -56,7 +56,7 @@ Change History
   This work may be distributed and/or modified under the
   conditions of the Latex Project Public License, either
   version 1.3c of this license or (at your option) any
-  later version: <http://www.latex-project.org/lppl.txt>
+  later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
   The Current Maintainer of this work is LaTeX Project.

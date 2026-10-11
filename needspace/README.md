@@ -26,16 +26,16 @@ See changes.txt
 COPYRIGHT AND LICENSING
 -----------------------
 
-Authors: Donald Arseneau and Peter Wilson (Herries Press)  
+Authors: Donald Arseneau and Peter Wilson (Herries Press)
 Maintainer: LaTeX Project
-Copyright 1996-2003 Peter Wilson  
-Copyright 2010 Will Robertson  
+Copyright 1996-2003 Peter Wilson
+Copyright 2010 Will Robertson
 Copyright 2025 LaTeX Project
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either
 version 1.3c of this license or (at your option) any
-later version: <http://www.latex-project.org/lppl.txt>
+later version: <https://www.latex-project.org/lppl.txt>
 
 This work has the LPPL maintenance status "maintained".
 The Current Maintainer of this work is the LaTeX Project.
@@ -47,12 +47,12 @@ derived files needspace.sty and needspace.ins.
 MAINTENANCE
 -----------
 
-Please report bugs or request features:  
+Please report bugs or request features:
   <https://github.com/LaTeX-Package-Repositories/herries-press/issues>
 
-Developmental and historical versions:  
+Developmental and historical versions:
   <https://github.com/LaTeX-Package-Repositories/herries-press>
 
-Current release version:   
-  <https://ctan.tug.org/pkg/needspace>  
+Current release version:
+  <https://ctan.tug.org/pkg/needspace>
 
