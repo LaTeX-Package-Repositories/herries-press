@@ -11,21 +11,23 @@ for environments, lengths and counters.
 ______________
 Change History
 
+v1.0b (2026/10/09) - Tag documentation; new maintainer (LaTeX Team)
 v1.0a (2009/09/03) - New Maintainer (Will Robertson)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson (Herries Press)
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Team
   Copyright 2000 Peter R. Wilson
- 
+  Copyright 2026--present LaTeX Team
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <http://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
------------------------------------------------------------------ 
+  The Current Maintainer of this work is the LaTeX Team.
+-----------------------------------------------------------------
 
 
     The distribution consists of the following files:
@@ -38,9 +40,9 @@ Project Public License (LPPL).
 
     To install the class:
 - run: latex makecmds.ins (which will generate makecmds.sty)
-- run: latex makecmds.dtx
+- run: lualatex makecmds.dtx
 - For an index, run: makeindex -s gind.ist makecmds
-- run: latex makecmds.dtx
-- Print makecmds.dvi for a hardcopy of the user manual 
+- run: lualatex makecmds.dtx
+- Print makecmds.pdf for a hardcopy of the user manual
 - Move makecmds.sty to a location where LaTeX will find it.
 

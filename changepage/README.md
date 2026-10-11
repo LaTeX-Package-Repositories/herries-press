@@ -43,7 +43,7 @@ version 1.3c of this license or (at your option) any
 later version: <http://www.latex-project.org/lppl.txt>
 
 This work has the LPPL maintenance status "maintained".
-The Current Maintainer of this work is Will Robertson.
+The Current Maintainer of this work is the LaTeX Project.
 
 This work consists of the files changepage.dtx, changepage.ins,
 chngpage.sty and the derived file changepage.sty.
