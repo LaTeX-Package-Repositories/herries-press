@@ -7,46 +7,46 @@ organisation (principally LaTeX Team members).
 Please direct all bug reports and feature requests to the [GitHub issue
 tracker][1].
 
-[1]: http://github.com/LaTeX-Package-Repositories/herries-press/issues
+[1]: https://github.com/LaTeX-Package-Repositories/herries-press/issues
 
 We don't have time to actively develop all of the packages here; if you think
 you would do a better job on any particular package, feel free to request maintainership for yourself.
 
 The packages in this repository are:
 
- - [abstract](http://tug.ctan.org/pkg/abstract)
- - [tocloft](http://tug.ctan.org/pkg/tocloft)
- - [anonchap](http://tug.ctan.org/pkg/anonchap)
- - [appendix](http://tug.ctan.org/pkg/appendix)
- - [bez123 & multiply](http://tug.ctan.org/pkg/bez123)
- - [booklet](http://tug.ctan.org/pkg/booklet)
- - [ccaption](http://tug.ctan.org/pkg/ccaption)
- - [chngcntr](http://tug.ctan.org/pkg/chngcntr)
- - [chngpage](http://tug.ctan.org/pkg/chngpage) and
-   [changepage](http://tug.ctan.org/pkg/changepage)
- - [combine](http://tug.ctan.org/pkg/combine)
- - [docmfp](http://tug.ctan.org/pkg/docmfp)
- - [epigraph](http://tug.ctan.org/pkg/epigraph)
- - [fonttable](http://tug.ctan.org/pkg/fonttable)
- - [hanging](http://tug.ctan.org/pkg/hanging)
- - [hyphenat](http://tug.ctan.org/pkg/hyphenat)
- - [ifmtarg](http://tug.ctan.org/pkg/ifmtarg)
- - [layouts](http://tug.ctan.org/pkg/layouts)
- - [makecmds](http://tug.ctan.org/pkg/makecmds)
- - [midpage](http://tug.ctan.org/pkg/midpage)
- - [needspace](http://tug.ctan.org/pkg/needspace)
- - [newfile](http://tug.ctan.org/pkg/newfile)
- - [nextpage](http://tug.ctan.org/pkg/nextpage)
- - [pagenote](http://tug.ctan.org/pkg/pagenote)
- - [printlen](http://tug.ctan.org/pkg/printlen)
- - [romannum](http://tug.ctan.org/pkg/romannum)
- - [stdclsdv](http://tug.ctan.org/pkg/stdclsdv)
- - [titling](http://tug.ctan.org/pkg/titling)
- - [tocbibind](http://tug.ctan.org/pkg/tocbibind)
- - [tocvsec2](http://tug.ctan.org/pkg/tocvsec2)
- - [verse](http://tug.ctan.org/pkg/verse)
- - [vertbars](http://tug.ctan.org/pkg/vertbars)
- - [xtab](http://tug.ctan.org/pkg/xtab)
+ - [abstract](https://ctan.org/pkg/abstract)
+ - [tocloft](https://ctan.org/pkg/tocloft)
+ - [anonchap](https://ctan.org/pkg/anonchap)
+ - [appendix](https://ctan.org/pkg/appendix)
+ - [bez123 & multiply](https://ctan.org/pkg/bez123)
+ - [booklet](https://ctan.org/pkg/booklet)
+ - [ccaption](https://ctan.org/pkg/ccaption)
+ - [chngcntr](https://ctan.org/pkg/chngcntr)
+ - [chngpage](https://ctan.org/pkg/chngpage) and
+   [changepage](https://ctan.org/pkg/changepage)
+ - [combine](https://ctan.org/pkg/combine)
+ - [docmfp](https://ctan.org/pkg/docmfp)
+ - [epigraph](https://ctan.org/pkg/epigraph)
+ - [fonttable](https://ctan.org/pkg/fonttable)
+ - [hanging](https://ctan.org/pkg/hanging)
+ - [hyphenat](https://ctan.org/pkg/hyphenat)
+ - [ifmtarg](https://ctan.org/pkg/ifmtarg)
+ - [layouts](https://ctan.org/pkg/layouts)
+ - [makecmds](https://ctan.org/pkg/makecmds)
+ - [midpage](https://ctan.org/pkg/midpage)
+ - [needspace](https://ctan.org/pkg/needspace)
+ - [newfile](https://ctan.org/pkg/newfile)
+ - [nextpage](https://ctan.org/pkg/nextpage)
+ - [pagenote](https://ctan.org/pkg/pagenote)
+ - [printlen](https://ctan.org/pkg/printlen)
+ - [romannum](https://ctan.org/pkg/romannum)
+ - [stdclsdv](https://ctan.org/pkg/stdclsdv)
+ - [titling](https://ctan.org/pkg/titling)
+ - [tocbibind](https://ctan.org/pkg/tocbibind)
+ - [tocvsec2](https://ctan.org/pkg/tocvsec2)
+ - [verse](https://ctan.org/pkg/verse)
+ - [vertbars](https://ctan.org/pkg/vertbars)
+ - [xtab](https://ctan.org/pkg/xtab)
 
 [Peter Wilson](https://ctan.org/author/wilson) has produced many other TeX related packages.
 

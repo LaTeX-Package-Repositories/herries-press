@@ -36,13 +36,13 @@
   \newpage%
   \ifodd\c@page\hbox{}#1\newpage\fi}
 
-% clear to next odd numbered page, 
+% clear to next odd numbered page,
 % putting optional arg on skipped page, if any
 \newcommand{\cleartooddpage}[1][\@empty]{%
   \clearpage%
   \ifodd\c@page\else\hbox{}#1\clearpage\fi}
 
-% move to next odd numbered page without flushing floats, 
+% move to next odd numbered page without flushing floats,
 % putting optional arg on skipped page, if any
 \newcommand{\movetooddpage}[1][\@empty]{%
   \newpage%
