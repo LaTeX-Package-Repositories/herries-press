@@ -84,7 +84,7 @@
 \section{Documentation}
 
 The \pkg{ifmtarg} package provides an if--then--else programmer's command \verb|\@ifmtarg| for testing for an empty macro argument.
-`Empty' here refers to an argument of zero or more spaces only.\footnote{If you need a command to test for emptiness that doesn't include spaces, use the \cs{tl_if_empty:nTF} conditional from the \pkg{expl3} package. \verb|\@ifmtarg| is equivalent to \pkg{expl3}'s \cs{tl_if_blank:nTF}.}
+`Empty' here refers to an argument of zero or more spaces only.\footnote{If you need a command to test for emptiness that doesn't include spaces, use the \cs{tl_if_empty:nTF} conditional from the \pkg{expl3} package. \cs{@ifmtarg} is equivalent to \pkg{expl3}'s \cs{tl_if_blank:nTF}.}
 The command is fully expandable; its syntax is:
 \begin{quote}
 \cmd{\@ifmtarg}\marg{arg}\marg{Code for arg empty}
