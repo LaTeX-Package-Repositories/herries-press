@@ -5,12 +5,15 @@ The ABSTRACT package
 abstract environment, and in particular provides for a one column abstract
 in a two column paper.
 
-    Will Robertson is now maintaining this package. Please contact him
-in preference to the original author, Peter Wilson, for feature requests
-and bug reports.
+    The LaTeX Project is now maintaining this package. Please report feature
+    requests and bug reports at https://github.com/LaTeX-Package-Repositories/herries-press.
 
 _______________
 Change history:
+
+Version 1.2b (2026/10/10)
+- Tag documentation
+- New package maintainer (LaTeX Project)
 
 Version 1.2a (2009/06/08)
 - New package maintainer (Will)
@@ -30,17 +33,18 @@ Changes in version 1.1
 
 -----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
 
   Copyright 2000--2009 Peter R. Wilson
+  Copyright 2026--present LaTeX Project
 
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
   version 1.3c of this license or (at your option) any
-  later version: <http://www.latex-project.org/lppl.txt>
+  later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project.
 
   This work consists of the files:
 README (this file)
@@ -64,9 +68,9 @@ abstract.pdf (the user manual)
   file database. See the FAQ on CTAN at help/uk-tex-faq or
   https://texfaq.org/ for more information on this.
     To process the user manual
-- run: pdflatex abstract.dtx
+- run: lualatex abstract.dtx
 - For an index, run: makeindex -s gind.ist abstract
-- run: pdflatex abstract.dtx
+- run: lualatex abstract.dtx
 - Print abstract.pdf for a hardcopy of the user manual
 
 
