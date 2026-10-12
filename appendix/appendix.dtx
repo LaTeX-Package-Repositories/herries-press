@@ -1,5 +1,5 @@
 % \iffalse meta-comment
-% apendix.dtx
+% appendix.dtx
 % Author: Peter Wilson, Herries Press
 % Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
@@ -29,6 +29,23 @@
 %</driver>
 %
 % \fi
+%
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -381,8 +398,8 @@
 % name will include the character string |@pp|.
 %
 %
-% \begin{macro}{\if@knownclass@pp}
-% \begin{macro}{\if@chapter@pp}
+% \begin{macro}[int]{\if@knownclass@pp}
+% \begin{macro}[int]{\if@chapter@pp}
 %    These are used when we need to decide what appendix style is being used
 %    for the document. Assume the \Lpack{article} class or other without
 % chapters.
@@ -400,9 +417,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\phantomsection}
-% \begin{macro}{\the@pps}
-% \begin{macro}{\if@pphyper}
+% \begin{macro}[no-user-doc]{\phantomsection}
+% \begin{macro}[int]{\the@pps}
+% \begin{macro}[int]{\if@pphyper}
 % We need to provide |\phantomsection| if \Lpack{hyperref} is not
 % used and, whether or not \Lpack{hyperref} is used, we need to define
 % a counter here to support potential hyperrefs (used to disambiguate
@@ -424,11 +441,11 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@dotoc@pp}
-% \begin{macro}{\if@dotitle@pp}
-% \begin{macro}{\if@dotitletoc@pp}
-% \begin{macro}{\if@dohead@pp}
-% \begin{macro}{\if@dopage@pp}
+% \begin{macro}[int]{\if@dotoc@pp}
+% \begin{macro}[int]{\if@dotitle@pp}
+% \begin{macro}[int]{\if@dotitletoc@pp}
+% \begin{macro}[int]{\if@dohead@pp}
+% \begin{macro}[int]{\if@dopage@pp}
 %    A set of booleans for the options. Default is the |appendices|
 % environment does nothing more than the |\appendix| command does
 % unless one or more options are set.
@@ -523,9 +540,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@ppsavesec}
-% \begin{macro}{\@pprestoresec}
-% \begin{macro}{\@ppsaveapp}
+% \begin{macro}[int]{\@ppsavesec}
+% \begin{macro}[int]{\@pprestoresec}
+% \begin{macro}[int]{\@ppsaveapp}
 % \begin{macro}{\restoreapp}
 %  For the |appendices| environment we need to save and restore the
 % main document division number and the appendix number. The |\restoreapp|
@@ -578,7 +595,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\clear@ppage}
+% \begin{macro}[int]{\clear@ppage}
 %  The non-chaptered classes do not define |\if@openright|, but we need to
 % use this for chaptered documents to clear the appropriate pages.
 % |\clear@ppage| does the right thing, but must only be called in
@@ -591,7 +608,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@chap@pppage}
+% \begin{macro}[int]{\@chap@pppage}
 % Do an appendix page in chapter style.
 % Copy code from the \Lpack{book} class |\part| command, but use
 % |\appendixpagename| as the title.
@@ -635,7 +652,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@sec@pppage}
+% \begin{macro}[int]{\@sec@pppage}
 % Copy code from the \Lpack{article} class |\part| command, but use
 % |\appendixpagename| as
 % the title.
@@ -663,7 +680,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@pptocpage}
+% \begin{macro}[int]{\if@pptocpage}
 % \begin{macro}{\noappendicestocpagenum}
 % \begin{macro}{\appendicestocpagenum}
 % \begin{macro}{\addappheadtotoc}
@@ -755,7 +772,7 @@
 % }
 % \end{verbatim}
 %
-% \begin{macro}{\theH@pps}
+% \begin{macro}[int]{\theH@pps}
 % We are going to use |\theH@pps| to disambiguate contents of appendices
 % that might have the same hyperref marks. It is |\provide|d as if
 % the \Lpack{appendix} and \Lpack{hyperref} are in the `wrong' order
@@ -768,7 +785,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@resets@pp}
+% \begin{macro}[int]{\@resets@pp}
 % Resets the appropriate sectioning counters and names. This does almost
 % exactly
 % what the default |\appendix| command does, except that it saves and
@@ -890,7 +907,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@resets@ppsub}
+% \begin{macro}[int]{\@resets@ppsub}
 % Similar to |\@resets@pp| except that it is for use within the
 % |subappendices| environment; as such, it is a bit simpler.
 % \changes{v1.1}{2000/02/29}{Added \cs{@resets@ppsub} command}
@@ -958,7 +975,7 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\@formatsecmark@pp}
+% \begin{macro}[int]{\@formatsecmark@pp}
 % Formats the page header for a redefined |\sectionmark|.
 %    \begin{macrocode}
 \newcommand{\@formatsecmark@pp}[1]{%
@@ -970,7 +987,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@redotocentry@pp}
+% \begin{macro}[int]{\@redotocentry@pp}
 % In order to implement the \Lopt{titletoc} option we redefine the
 % |\addcontentsline| command which is used to put entries into the ToC.
 % |\@redotocentry@pp{|\meta{sect}|}| does the redefinition, where \meta{sect}
