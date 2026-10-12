@@ -1,22 +1,24 @@
 % \iffalse meta-comment
 % newfile.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 2002--2004 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
-% 
+%
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -27,7 +29,22 @@
 %
 % \fi
 %
-% \CheckSum{329}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -74,6 +91,7 @@
 % \changes{v1.0a}{2002/07/07}{Corrected documentation}
 % \changes{v1.0b}{2004/05/10}{Changed license from LPPL v1.0 to v1.3}
 % \changes{v1.0c}{2009/09/03}{New maintainer (Will Robertson)}
+% \changes{v1.0d}{2026/10/11}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{newfile.dtx}
 % \def\fileversion{v1.0}
@@ -82,9 +100,12 @@
 % \def\filedate{2002/07/07}
 % \def\fileversion{v1.0b}
 % \def\filedate{2004/05/10}
+% \def\fileversion{v1.0c}
+% \def\filedate{2009/09/03}
+% \def\fileversion{v1.0d}
+% \def\filedate{2026/10/11}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -95,13 +116,13 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
 % \begin{abstract}
-%    The \Lpack{newfile} package provides convenient user level commands 
+%    The \Lpack{newfile} package provides convenient user level commands
 % for reading and writing new files during a LaTeX run.
 % \end{abstract}
 % \tableofcontents
@@ -109,12 +130,12 @@
 %
 % \section{Introduction}
 %
-% TeX has a maximum of 16 input and 16 output \emph{streams} 
+% TeX has a maximum of 16 input and 16 output \emph{streams}
 % for reading and writing
 % files. The \Lpack{newfile} package provides means of associating
 % several different files with a particular stream.
 %
-% The \Lpack{newfile} package requires the \Lpack{verbatim} 
+% The \Lpack{newfile} package requires the \Lpack{verbatim}
 % package~\cite{VERBATIM}, which is one of the required packages in
 % a LaTeX distribution.
 %
@@ -137,14 +158,14 @@
 % reading from a file. The \meta{stream} names must be unique --- you cannot
 % use the same name for both an input and an output stream.
 %
-% If you try and create too many streams, TeX will tell you via an error 
+% If you try and create too many streams, TeX will tell you via an error
 % message.
 %
-% These two commands also attempt to create two other new commands, 
+% These two commands also attempt to create two other new commands,
 % called respectively
 % |\atstreamopen<stream>| and |\atstreamclose<stream>|. If these commands
 % already exist then they are left untouched, otherwise they are
-% created (like using |\providecommand{\atstreamopen<stream}{}|). 
+% created (like using |\providecommand{\atstreamopen<stream}{}|).
 % For example if
 % if you have used |mystr| as the name of a stream (either input or output),
 % then the macros |\atstreamopenmystr| and |\atstreamclosemystr| are
@@ -213,22 +234,22 @@
 %
 % \DescribeMacro{\streamvfont}
 % Text read in verbatim is typeset using the font specified by
-% |\streamvfont|\marg{font}. The default is 
+% |\streamvfont|\marg{font}. The default is
 % |\streamvfont{\normalfont\ttfamily}|. To typeset in a smaller font, try
 % for example,
-% |\streamvfont{\small\ttfamily}|. 
+% |\streamvfont{\small\ttfamily}|.
 %
 %
 % \DescribeMacro{\numbervstream}
 % \DescribeMacro{\marginnumbervstream}
 % \DescribeMacro{\streamvnumfont}
-% The declaration |\numbervstream| causes |\readverbatim| to number each 
+% The declaration |\numbervstream| causes |\readverbatim| to number each
 % line it reads.
 % The declaration |\marginnumbervstream| is similar to |\numbervstream|
 % except it puts the numbers in the margin.
 % The |streamvline| counter is used for the line numbering. Both
 % the numbering declarations (re)set it to zero. The numbers are
-% typeset in the font specified by |\streamvnumfont|\marg{font}. 
+% typeset in the font specified by |\streamvnumfont|\marg{font}.
 % The default is |\streamvnumfont{\footnotesize}|.
 %
 % \DescribeMacro{\plainvstream}
@@ -239,7 +260,7 @@
 % The |comment| environment, which is part of the \Lpack{verbatim}
 % package, throws away everything inside the environment.
 %
-% The \Lpack{verbatim} package~\cite{VERBATIM} provides some other 
+% The \Lpack{verbatim} package~\cite{VERBATIM} provides some other
 % facilities, apart from
 % the |comment| environment, and its documentation explains them.
 %
@@ -280,7 +301,7 @@
 ...
 %    \end{macrocode}
 % After the last |figure| is written to |figs|, close the |figs| output
-% stream, which also closes the |figures.out| file. 
+% stream, which also closes the |figures.out| file.
 %    \begin{macrocode}
 \begin{writeverbatim}{figs}
 \begin{figure}
@@ -298,7 +319,7 @@
 %
 % \subsection{An output and input stream}
 %
-% This example is the kind of thing that the \Lpack{answers} 
+% This example is the kind of thing that the \Lpack{answers}
 % package~\cite{ANSWERS} does rather better. The example illustrates
 % the use of an output and an input stream.
 %
@@ -313,9 +334,9 @@
 \usepackage{newfile}
 ...
 %    \end{macrocode}
-% Create new output and input streams called |ans| and |ansin|. Just to 
+% Create new output and input streams called |ans| and |ansin|. Just to
 % demonstrate the use of the |\atstreamopen...| command, redefine
-% |\atstreamopenansin| so that it will start a section called 
+% |\atstreamopenansin| so that it will start a section called
 % `Answers to all the questions'. Then open the |ans| stream to write to
 % a file called |answers.all|.
 %    \begin{macrocode}
@@ -365,7 +386,7 @@ This is the answer to a question.
 \openoutputfile{\jobname\thechapter.ans}{ansout}
 %    \end{macrocode}
 % The |\jobname| is the name of the main LaTeX document file, without
-% the |.tex| extension, so if the name of the LaTeX source file is 
+% the |.tex| extension, so if the name of the LaTeX source file is
 % |mybook.tex| the above line creates a file called |mybook1.ans|.
 %    \begin{macrocode}
 ...
@@ -399,9 +420,9 @@ An answer
 % \subsection{Multiple streams}
 %
 % This is a more complex example, again inspired by the \Lpack{endfloat}
-% package. In a \Lpack{book} class document you want 
+% package. In a \Lpack{book} class document you want
 % all the
-% figures and tables to be collected at the end, 
+% figures and tables to be collected at the end,
 % but to specify them at the appropriate
 % places in the body of the text.
 %
@@ -411,7 +432,7 @@ An answer
 \usepackage{newfile}
 ...
 %    \end{macrocode}
-% Create and open two new output streams, one for figures (|figs|) and the 
+% Create and open two new output streams, one for figures (|figs|) and the
 % other (|tabs|) for tables.
 % For demonstration purposes, also create a new input stream called figtab.
 %    \begin{macrocode}
@@ -463,7 +484,7 @@ An answer
 % The next bit of code results in the following two lines in the output files:\\
 % |\refstepcounter{chapter}| \\
 % |\addtocounter{chapter}{-1}| \\
-% The first of these has the effect of resetting the figure and table 
+% The first of these has the effect of resetting the figure and table
 % counters by increasing the chapter counter by one. The second line resets
 % the chapter counter back to its original value.
 %    \begin{macrocode}
@@ -490,14 +511,14 @@ An answer
 \end{writeverbatim}
 ...
 %    \end{macrocode}
-% When we have done all the chapters, figures and tables, 
+% When we have done all the chapters, figures and tables,
 % close the two output streams.
 %    \begin{macrocode}
 \closeoutputstream{figs}
 \closeoutputstream{tabs}
 %    \end{macrocode}
 % Then if we want the figures to be typeset before the tables, open
-% the |figtab| stream to read from |figures.out|, read the stream and 
+% the |figtab| stream to read from |figures.out|, read the stream and
 % close it.
 %    \begin{macrocode}
 \openinputfile{figures.out}{figtab}
@@ -525,13 +546,13 @@ An answer
 % \section{The package code} \label{sec:code}
 %
 %    This package can only be used with LaTeX2e, and requires the
-% \Lpack{verbatim} package~\cite{VERBATIM}, which is one of the required 
+% \Lpack{verbatim} package~\cite{VERBATIM}, which is one of the required
 % packages for a LaTeX distribution.
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*outin>
 \NeedsTeXFormat{LaTeX2e}[1996/06/01]
-\ProvidesPackage{newfile}[2009/09/03 v1.0c Output and input files]
+\ProvidesPackage{newfile}[2026/10/11 v1.0d Output and input files]
 \RequirePackage{verbatim}
 %    \end{macrocode}
 %
@@ -587,7 +608,7 @@ An answer
 %    Some checking macros will be useful as some of the checks occur in
 % multiple places.
 %
-% \begin{macro}{\@ifstre@mopen}
+% \begin{macro}[int]{\@ifstre@mopen}
 % |\@ifstre@mopen|\marg{stream}\marg{TRUE code}\marg{FALSE code}
 % checks if stream \meta{stream} is currently open.
 %    \begin{macrocode}
@@ -596,7 +617,7 @@ An answer
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\instre@mandopen}
+% \begin{macro}[int]{\instre@mandopen}
 % |\instre@mandopen|\marg{stream}\marg{TRUE code} checks if \meta{stream}
 % is an input stream and is open. If so, it executes \meta{TRUE code}.
 %    \begin{macrocode}
@@ -609,9 +630,9 @@ An answer
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\instre@mandclosed}
+% \begin{macro}[int]{\instre@mandclosed}
 % |\instre@mandclosed|\marg{stream}\marg{TRUE code} checks if \meta{stream}
-% is an input stream and is closed (not open). 
+% is an input stream and is closed (not open).
 % If so, it executes \meta{TRUE code}.
 %    \begin{macrocode}
 \newcommand{\instre@mandclosed}[2]{%
@@ -623,7 +644,7 @@ An answer
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\outstre@mandopen}
+% \begin{macro}[int]{\outstre@mandopen}
 % |\outstre@mandopen|\marg{stream}\marg{TRUE code} checks if \meta{stream}
 % is an output stream and is open. If so, it executes \meta{TRUE code}.
 %    \begin{macrocode}
@@ -636,9 +657,9 @@ An answer
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\outstre@mandclosed}
+% \begin{macro}[int]{\outstre@mandclosed}
 % |\outtre@mandclosed|\marg{stream}\marg{TRUE code} checks if \meta{stream}
-% is an output stream and is closed (not open). 
+% is an output stream and is closed (not open).
 % If so, it executes \meta{TRUE code}.
 %    \begin{macrocode}
 \newcommand{\outstre@mandclosed}[2]{%
@@ -651,16 +672,16 @@ An answer
 % \end{macro}
 %
 % \begin{macro}{\openoutputfile}
-% |\openoutputfile|\marg{filename}\marg{stream} opens the file called 
+% |\openoutputfile|\marg{filename}\marg{stream} opens the file called
 % \meta{filename} and attaches it to the stream \meta{stream} for
 % writing. However, if the |\nofiles| command has been given the
-% file is \emph{not} attached to the stream. No more than one file can be 
+% file is \emph{not} attached to the stream. No more than one file can be
 % attached to a stream at any given time.
 %    \begin{macrocode}
 \newcommand{\openoutputfile}[2]{%
   \outstre@mandclosed{#2}{%
     \global\@namedef{#1@filename}{#1}%
-    \if@filesw 
+    \if@filesw
       \immediate\openout\@nameuse{#2outstre@m}=\@nameuse{#1@filename}%
     \fi
     \global\csname stre@m#2opentrue\endcsname%
@@ -685,15 +706,15 @@ An answer
 % \end{macro}
 %
 % \begin{macro}{\openinputfile}
-% |\openinputfile|\marg{filename}\marg{stream} opens the file called 
+% |\openinputfile|\marg{filename}\marg{stream} opens the file called
 % \meta{filename} and attaches it to the stream \meta{stream} for
-% reading. The file is added to the list of files. 
+% reading. The file is added to the list of files.
 % No more than one file can be attached to a stream at
 % any given time.
 %    \begin{macrocode}
 \newcommand{\openinputfile}[2]{%
   \IfFileExists{#1}{%                   file exists
-    \instre@mandclosed{#2}{% 
+    \instre@mandclosed{#2}{%
       \@addtofilelist{#1}%
       \global\@namedef{#1@filename}{#1}%
       \immediate\openin\@nameuse{#2instre@m}=\@nameuse{#1@filename}%
@@ -755,8 +776,8 @@ An answer
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifstre@mnoteof}
-% \begin{macro}{\checkstre@mnoteof}
+% \begin{macro}[int]{\ifstre@mnoteof}
+% \begin{macro}[int]{\checkstre@mnoteof}
 % |\checkstre@mnoteof|\marg{stream} sets |\ifstre@mnoteof| to TRUE if
 % \meta{stream} is not at the end of the file (i.e., it is the opposite
 % of |\ifeof|).
@@ -781,7 +802,7 @@ An answer
     \repeat
     }%
 }
-  
+
 %    \end{macrocode}
 % \end{macro}
 %
@@ -799,14 +820,14 @@ An answer
     \fi
     }%
 }
-  
+
 %    \end{macrocode}
 % \end{macro}
 %
 %
 % \begin{macro}{\readverbatim}
-% \begin{macro}{\stre@mverbatim@input}
-% \begin{macro}{\verbatim@readstre@m}
+% \begin{macro}[int]{\stre@mverbatim@input}
+% \begin{macro}[int]{\verbatim@readstre@m}
 % |\readverbatim|\marg{stream} reads the contents of
 % the given \meta{stream} as verbatim text.
 %
@@ -852,7 +873,7 @@ An answer
 % \end{macro}
 %
 % \begin{macro}{\streamvnumfont}
-% \begin{macro}{\stre@mvnfont}
+% \begin{macro}[int]{\stre@mvnfont}
 % We need a counter for numbering lines read in verbatim.
 %
 % |\streamvnumfont|\marg{font} defines |\stre@mvnfont| to be \meta{font}.
@@ -866,7 +887,7 @@ An answer
 % \end{macro}
 %
 % \begin{macro}{\streamvfont}
-% \begin{macro}{\verbatim@font}
+% \begin{macro}[int]{\verbatim@font}
 % |\streamvfont|\marg{font} defines |\verbatim@font| to use \meta{font}.
 %    \begin{macrocode}
 \newcommand{\verbatimfont}[1]{%
@@ -896,7 +917,7 @@ An answer
 % \end{macro}
 %
 % \begin{macro}{\marginnumbervstream}
-% |\marginnumbervstream| puts numbers in the margin at the start of 
+% |\marginnumbervstream| puts numbers in the margin at the start of
 % each line read verbatim.
 %    \begin{macrocode}
 \newcommand{\marginnumbervstream}{%
@@ -939,7 +960,7 @@ An answer
 %
 % \bibitem[SRR99]{VERBATIM}
 % Rainer Sch\"{o}pf, Bernd Raichle, and Chris Rowley.
-% \newblock `A New Implementation of LaTeX's \texttt{verbatim} and 
+% \newblock `A New Implementation of LaTeX's \texttt{verbatim} and
 %            \texttt{verbatim*} Environments'.
 % \newblock December, 1999.
 %
@@ -950,20 +971,3 @@ An answer
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
