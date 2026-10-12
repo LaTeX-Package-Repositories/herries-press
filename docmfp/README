@@ -1,7 +1,7 @@
 __________________
 The DOCMFP package
 
-    The docmfp package extends the doc package to cater for documenting 
+    The docmfp package extends the doc package to cater for documenting
 non-LaTeX code, such as Metafont and Metapost, or even C code.
 
 ______________
@@ -18,19 +18,19 @@ Version 1.1
 - Added a general \Describe macro
 - Added a general Code environment
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson (Herries Press)
   Maintainer: Will Robertson (will dot robertson at latex-project dot org)
   Copyright 1999--2005 Peter R. Wilson
- 
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
   The Current Maintainer of this work is Will Robertson.
- 
+
   This work consists of the files:
 README (this file)
 docmfp.dtx
@@ -45,7 +45,7 @@ docmfp.ins
 docmfp.dtx
 docmfp.pdf
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex docmfp.ins (which will generate docmfp.sty)
@@ -58,7 +58,7 @@ docmfp.pdf
 - run: latex docmfp.dtx
 - run: makeindex -s gind.ist docmfp
 - run: latex docmfp.dtx
-- Print docmfp.dvi for a hardcopy of the package manual 
+- Print docmfp.dvi for a hardcopy of the package manual
 
 2005/03/23
 Peter Wilson

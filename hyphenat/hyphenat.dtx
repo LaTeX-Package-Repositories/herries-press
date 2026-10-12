@@ -4,22 +4,24 @@
 %
 % hyphenat.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
-% 
+%
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -30,7 +32,22 @@
 %
 % \fi
 %
-% \CheckSum{401}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -77,6 +94,7 @@
 % \changes{v2.3}{2001/01/02}{Fixed problem with non-CMR fonts doing double hyphens}
 % \changes{v2.3b}{2004/04/22}{Updated license and contact details}
 % \changes{v2.3c}{2009/09/02}{New maintainer (Will Robertson)}
+% \changes{v2.3d}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{hyphenat.dtx}
 % ^^A \def\fileversion{v2.3}
@@ -85,9 +103,10 @@
 % \def\filedate{2001/01/02}
 % \def\fileversion{v2.3b}
 % \def\filedate{2004/04/22}
+% \def\fileversion{v2.3d}
+% \def\filedate{2026/10/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -98,8 +117,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -113,7 +132,7 @@
 %
 % \StopEventually{}
 %
-% 
+%
 %
 % \section{Introduction}
 %
@@ -151,7 +170,7 @@
 %
 % The other option, \Lopt{htt}, enables hyphenation of text typeset
 % using Computer Modern Typewriter fonts (or their equivalent, such as
-% Adobe Courier). 
+% Adobe Courier).
 % If this option is used, then text typeset via
 % either |\texttt| or |\ttfamily| will be in the default TT font and
 % may be automatically hyphenated. Note that this will not affect any
@@ -180,7 +199,7 @@
 % of text.
 %
 %    An \textit{analphabetic} character is a character than does not appear
-% in the alphabet. Analphabetic characters include the numerals and 
+% in the alphabet. Analphabetic characters include the numerals and
 % punctuation characters. If a `word' contains any analphabetic characters,
 % \TeX's automatic hyphenation capability is disabled for any syllables
 % following the (first) of the analphabetic characters in the word.
@@ -190,7 +209,7 @@
 % hyphenation of words containing analphabetics.
 %
 % \DescribeMacro{\_}
-%  In \LaTeX{} a `word' containing an underscore 
+%  In \LaTeX{} a `word' containing an underscore
 %  (e.g., |`letters_with_underscores'|) can be hyphenated at
 %  the underscore by using a discretionary hyphen. That is, write the
 % word like |letters\_\-with\_\-underscores|. This has two potential
@@ -207,20 +226,20 @@
 % \DescribeMacro{\bshyp}
 %    The |\bshyp| command can be used to print a backslash and have
 % following hyphenation.
-% 
+%
 % \DescribeMacro{\fshyp}
 %    The |\fshyp| command can be used to print a forward slash and have
 % following hyphenation.
-% 
+%
 % \DescribeMacro{\dothyp}
 %    The |\dothyp| command can be used to print a period (full stop) and have
 % following hyphenation.
-% 
+%
 % \DescribeMacro{\colonhyp}
 %    The |\colonhyp| command can be used to print a colon and have
 % following hyphenation.
 %
-% 
+%
 %    For example, to typeset |first\second/third.fourth:fifth_sixth|,
 % allowing hyphenation at the analphabetic characters the source would be:
 % \begin{verbatim}
@@ -256,7 +275,7 @@
 % Hyphenation throughout a document can be disabled in at least the following
 % ways:
 % \begin{enumerate}
-% \item Set |\exhyphenpenalty| and |\hyphenpenalty| to 10000 
+% \item Set |\exhyphenpenalty| and |\hyphenpenalty| to 10000
 %       (the \textit{\TeX book} exercise 14.6);
 % \item Use an `unknown' language (i.e., one that has no hyphenation
 %   patterns, but for a complete document this would cause problems
@@ -265,7 +284,7 @@
 %   \file{lthyphen.dtx}) to prevent hyphenation in the first |\lefthyphenmin|
 %    characters and in the last |\righthyphenmin| characters.
 % \end{enumerate}
-% I have chosen the \textit{\TeX book} solution for global hyphenation 
+% I have chosen the \textit{\TeX book} solution for global hyphenation
 % suppression as it is generic.
 %    \begin{macrocode}
 \DeclareOption{none}%
@@ -273,11 +292,11 @@
 %    \end{macrocode}
 % \changes{v2.2}{1998/12/31}{Added the `htt' option}
 % \changes{v2.2a}{1999/01/30}{Added warning with the `htt' option}
-%     An option is provided whereby TT text may be hyphenated. 
+%     An option is provided whereby TT text may be hyphenated.
 % See~\S\ref{sec:tt} for how it is implemented via the |\touchttfonts|
 % and |\touchextrattfonts| commands. At the end we have to ensure that the
 % normal text font is selected.
-%    \begin{macrocode} 
+%    \begin{macrocode}
 \DeclareOption{htt}{%
   \PackageWarningNoLine{hyphenat}{%
       *******************************\MessageBreak
@@ -289,8 +308,8 @@
 \ProcessOptions
 %    \end{macrocode}
 %
-% \begin{macro}{\langwohyphens}
-% We will use a non-existent language as a local means of disabling 
+% \begin{macro}[no-user-doc]{\langwohyphens}
+% We will use a non-existent language as a local means of disabling
 % hyphenation.
 %    \begin{macrocode}
 \newlanguage\langwohyphens
@@ -299,8 +318,8 @@
 %
 %    This package redefines the |\_| command to include a
 %    discretionary hyphen.\footnote{Thanks to Donald Arseneau for pointing
-%    the author in the right direction.} 
-%    The new definition provides for full hyphenation throughout 
+%    the author in the right direction.}
+%    The new definition provides for full hyphenation throughout
 %    a construct such as |long\_identifier|.
 %    The default \LaTeX{} behaviour
 %    is that this kind of construct has to be written as
@@ -341,21 +360,21 @@
 %
 % \changes{v2}{1997/11/30}{Removed the uschypne package}
 %
-%    Now for the \Lopt{hyphenat} version. This is reduced from Donald Arseneau's code 
+%    Now for the \Lopt{hyphenat} version. This is reduced from Donald Arseneau's code
 %    (Email from him on Friday 10 October 1997) with my comments.
 %
 %    This version includes macros for breakable backslashes,
 %    forward slashes and periods as well as underscores.
 %
-% \begin{macro}{\prw@zbreak}
+% \begin{macro}[int]{\prw@zbreak}
 %    |\prw@zbreak| is just defined to save some potential typos further on.
 %    \begin{macrocode}
 \newcommand{\prw@zbreak}{\nobreak\hskip\z@skip}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\BreakableUnderscore}
-%    This macro adds a discretionary hyphen after an underscore. As Ray 
+% \begin{macro}[no-user-doc]{\BreakableUnderscore}
+%    This macro adds a discretionary hyphen after an underscore. As Ray
 % Goult discovered, using the shorthand |\-| for |\discretionary{-}{}{}|
 % causes problems in a \Lenv{tabbing} environment which modifies the
 % definition of |\-|, so we have to use the long form.
@@ -372,7 +391,7 @@
 %    \begin{verbatim}
 %    \def\UnderOrSub0{\ifmmode\sb\else\BreakableUnderscore\fi}
 %    \end{verbatim}
-%    Originally the underscore was made active only at the beginning 
+%    Originally the underscore was made active only at the beginning
 %    of the document
 %    to avoid possibly upsetting other packages that had been loaded:
 %    \begin{verbatim}
@@ -385,17 +404,17 @@
 %    \@firstofone{\endgroup\def_{\protect\UnderOrSub0}}
 %    \end{verbatim}
 %    but again this broke file names.
-% 
+%
 %    And finally redefine the |\_| command.
 %    \begin{macrocode}
 \DeclareRobustCommand{\_}{%
   \ifmmode\nfss@text{\textunderscore}\else\BreakableUnderscore\fi}
 %    \end{macrocode}
 %
-% \begin{macro}{\BreakableBackslash}
-% \begin{macro}{\BreakableSlash}
-% \begin{macro}{\BreakablePeriod}
-% \begin{macro}{\BreakableColon}
+% \begin{macro}[no-user-doc]{\BreakableBackslash}
+% \begin{macro}[no-user-doc]{\BreakableSlash}
+% \begin{macro}[no-user-doc]{\BreakablePeriod}
+% \begin{macro}[no-user-doc]{\BreakableColon}
 %    We do similar breakable definitions for |\|, |/| and |.| characters.
 %    \begin{macrocode}
 \newcommand{\BreakableBackslash}{\leavevmode%
@@ -427,7 +446,7 @@
 % \begin{itemize}
 % \item |\dothyp| is more consistent with the other breakable commands;
 % \item |\?| might be used in other classes or packages;
-% \item I, or someone else, might want to later use |\?| for a breakable 
+% \item I, or someone else, might want to later use |\?| for a breakable
 %       question mark.
 % \end{itemize}
 %
@@ -454,7 +473,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\BreakableHyphen}
+% \begin{macro}[no-user-doc]{\BreakableHyphen}
 % \begin{macro}{\hyp}
 %  Gabriel Zachmann (\texttt{zach@igd.fhg.de}) discovered on 2000/12/21 that
 % my original code for this which included |\discretionary{-}{}{}| in some
@@ -493,7 +512,7 @@
 % \begin{macro}{\textnhtt}
 % \begin{macro}{\nhttfamily}
 % |\textnhtt| is equivalent to |\texttt| but it ensures that its argument
-% will never be hyphenated. Similarly the |\nhttfamily| declaration is 
+% will never be hyphenated. Similarly the |\nhttfamily| declaration is
 % the corresponding equivalent to the |\ttfamily| declaration.
 % On the assumption that this will only be used for short pieces of
 % text we will implement this by using a non-existent language; this does
@@ -516,7 +535,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\touchttfonts}
+% \begin{macro}[no-user-doc]{\touchttfonts}
 % There is a fourth way of specifying hyphenatable TT fonts that does not
 % depend on generating any extra \file{.fd} files but does depend on the fact
 % that \TeX{} only touches (loads) a font once. The method is to select
@@ -525,8 +544,8 @@
 % set to the default hyphen character for the font rather than to the -1
 % as specified in the \file{.fd} files.
 % The command |\touchttfonts| selects all likely TT fonts once. (This has
-% been tested with no font packages (i.e., vanilla \LaTeX{} cmtt fonts), 
-% with the PSNFSS 
+% been tested with no font packages (i.e., vanilla \LaTeX{} cmtt fonts),
+% with the PSNFSS
 % font packages, and with the \Lpack{pandora} package using the Pandora pntt
 % TT font).
 %
@@ -614,7 +633,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\touchextrattfonts}
+% \begin{macro}[no-user-doc]{\touchextrattfonts}
 % This macro is provided as a hook in case |\touchttfonts| does not cover
 % the required range. It should be redefined in the preamble after loading
 % the \Lpack{hyphenat} package. The definition of |\touchttfonts| can be
@@ -886,21 +905,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-

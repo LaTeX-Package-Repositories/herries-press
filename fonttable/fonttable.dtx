@@ -163,7 +163,7 @@
 % from the font.
 %
 % \DescribeMacro{\fnthours}
-% As a convenience, \cs{fnthours} prints the time of day when the file was 
+% As a convenience, \cs{fnthours} prints the time of day when the file was
 % processed; it uses the 24 hour clock notation. (The macro \cs{today} prints
 % the date when the file was processed.)
 %
@@ -174,15 +174,15 @@
 % The command \\
 % \cs{fonttable}\marg{testfont} \\
 % typesets a table showing all the
-% glyphs in the \meta{testfont}, where \meta{testfont} is the name of a 
+% glyphs in the \meta{testfont}, where \meta{testfont} is the name of a
 % font file\footnote{More precisely, the name of a \texttt{.tfm} file.}
-% like \texttt{cmr10} (for Computer Modern Roman) or \texttt{pzdr} 
+% like \texttt{cmr10} (for Computer Modern Roman) or \texttt{pzdr}
 % (for Zapf Dingbats).
 %
-% NOTE: The \Lpack{mftinc} package~\cite{MFTINC} for pretty-printing 
-% METAFONT code also defines a \cs{fonttable} macro that is akin to this 
+% NOTE: The \Lpack{mftinc} package~\cite{MFTINC} for pretty-printing
+% METAFONT code also defines a \cs{fonttable} macro that is akin to this
 % one. If you want to use both packages together then you can use the following
-% general procedure for when a macro \cs{macro} is defined in both 
+% general procedure for when a macro \cs{macro} is defined in both
 % \Lpack{packA} and \Lpack{packB} packages.
 % \begin{verbatim}
 % \usepackage{packA}
@@ -190,8 +190,8 @@
 % \let\macro\relax%    undefine \macro
 % \usepackage{packB}%  now it's packB's definition of \macro
 % ...
-% \macro %   use the packB defintion
-% \macroA %  use the packA definition   
+% \macro %   use the packB definition
+% \macroA %  use the packA definition
 % \end{verbatim}
 %
 % \DescribeMacro{\xfonttable}
@@ -229,9 +229,9 @@
 % \verb?\fontsize{12}{15}\selectfont? \\
 % for a 12pt font with 15pts between baselines.
 %
-% If you are unsure about the meaning of the various arguments 
+% If you are unsure about the meaning of the various arguments
 % of \cs{xfonttable} and \cs{pikfont} see
-% \textit{The Companion}~\cite[Chapter 7]{COMPANION} or the 
+% \textit{The Companion}~\cite[Chapter 7]{COMPANION} or the
 % \textit{LaTeX2e font selection} manual (\texttt{fntguide.tex}; try
 % \verb?texdoc fntguide?).
 %
@@ -258,8 +258,8 @@
 %
 % \DescribeMacro{\hexoct}
 % \DescribeMacro{\nohexoct}
-% Normally the columns and rows in the table are numbered using hexadecimal 
-% and octal numbers. These can be turned off by \cs{nohexoct} and turned 
+% Normally the columns and rows in the table are numbered using hexadecimal
+% and octal numbers. These can be turned off by \cs{nohexoct} and turned
 % on again with \cs{hexoct}, which is the default.
 %
 % \DescribeMacro{\ftablewidth}
@@ -295,19 +295,19 @@
 % The macro \cs{fonttexts}\marg{testfont}\marg{text} typesets \meta{text} using
 % the \meta{testfont} (e.g., \texttt{cmr10}). Similarly the macro
 % \cs{regulartexts}\marg{fontspec}\marg{text} typesets \meta{text}
-% using \meta{fontspec} (e.g., \verb?\rmfamily\itshape? or 
+% using \meta{fontspec} (e.g., \verb?\rmfamily\itshape? or
 % \verb?\pikfont{T1}{ppl}{m}{it}?).
 %
 % \DescribeMacro{\germanparatext}
 % \DescribeMacro{\latinparatext}
-% \cs{germanparatext} expands to a German language paragraph, borrowed from the 
-% \Lpack{blindtext} package~\cite{BLINDTEXT}. 
+% \cs{germanparatext} expands to a German language paragraph, borrowed from the
+% \Lpack{blindtext} package~\cite{BLINDTEXT}.
 % \cs{latinparatext} expands to one version of
 % a paragraph of the traditional \textit{lorem ipsum} dummy Latin text.
 % Either, or both, of these could be used as the \meta{text} argument
 % to \cs{fonttexts} or \cs{regulartexts}. \\
 % NOTE: These were originally called \cs{germantext} and \cs{latintext}
-%  but on 2009/05/14 I was told that the \Lpack{babel} package defines \cs{latintext}, 
+%  but on 2009/05/14 I was told that the \Lpack{babel} package defines \cs{latintext},
 %  which causes unexpected results if it is used in the same document as this
 %  package. To try and be on the safe side I renamed \cs{germantext}
 % as well as \cs{latintext}.
@@ -317,35 +317,35 @@
 % \DescribeMacro{\digitstext}
 % \DescribeMacro{\punctext}
 % \cs{aztext} expands to the lowercase Latin alphabet a to z, and \cs{AZtext}
-% is the corresponding command for the uppercase A to Z. 
+% is the corresponding command for the uppercase A to Z.
 % The macros \cs{digitstext} and \cs{punctext} expand respectively to the
-% digits 0 to 9, and to the typical punctuation marks. In all cases there 
-% is a space between each character. 
+% digits 0 to 9, and to the typical punctuation marks. In all cases there
+% is a space between each character.
 %
 % \subsection{Testing a glyph}
 %
-%    The macros here are a reimplementation of Donald Knuth's 
-% \texttt{testfont.tex}, which is available from CTAN. 
+%    The macros here are a reimplementation of Donald Knuth's
+% \texttt{testfont.tex}, which is available from CTAN.
 %
 %    In the following, the value of a glyph argument can be specified as
 % its location in the font (i.e., as a decimal number). With a few exceptions,
-% if the glyph is within the visible ASCII range (33--126) it may instead be 
-% specified by the ASCII character prefixed with a single open quote 
+% if the glyph is within the visible ASCII range (33--126) it may instead be
+% specified by the ASCII character prefixed with a single open quote
 % mark\footnote{Sometimes called a
 % `backquote'.} (`). The exceptions are nos: 37 (\verb?%?), 92 (\verb?\?)
-% 123 (\verb?{?) and 125 (\verb?}?) (but there may be others). 
+% 123 (\verb?{?) and 125 (\verb?}?) (but there may be others).
 % In any case, the glyph representing the
-% character \texttt{p} can be specified either as \texttt{`p} or as 
-% \texttt{112}. 
+% character \texttt{p} can be specified either as \texttt{`p} or as
+% \texttt{112}.
 %
 %    The glyphs are taken from the current font. If the font does not
-% have Latin alphabet glyphs in the ASCII locations then 
+% have Latin alphabet glyphs in the ASCII locations then
 % in the descriptions below phrases like `lowercase alphabet' or `uppercase
-% alphabet' or `digits', should be taken to mean (the glyphs in) those 
+% alphabet' or `digits', should be taken to mean (the glyphs in) those
 % locations.
 %
 % \DescribeMacro{\glyphmixture}
-% \cs{glyphmixture}\marg{T}\marg{S}\marg{E} typesets the \meta{T} (test) glyph 
+% \cs{glyphmixture}\marg{T}\marg{S}\marg{E} typesets the \meta{T} (test) glyph
 % between the glyphs in the range from \meta{S} (start) to \meta{E} (end).
 % For example \\
 % \verb?\glyphmixture{`e}{`f}{`g}? will produce \\
@@ -353,8 +353,8 @@
 % \texttt{egeeggeeegggeg}
 %
 % \DescribeMacro{\glyphalternation}
-% \cs{glyphalternation}\marg{T}\marg{S}\marg{E} typesets the \meta{T} 
-% glyph alternately between each glyph in the range from \meta{S} 
+% \cs{glyphalternation}\marg{T}\marg{S}\marg{E} typesets the \meta{T}
+% glyph alternately between each glyph in the range from \meta{S}
 % to \meta{E}.
 % For example \\
 % \verb?\glyphalternation{`e}{`f}{`g}? will produce \\
@@ -372,7 +372,7 @@
 % \DescribeMacro{\glyphalphabet}
 % \DescribeMacro{\GLYPHALPHABET}
 % \cs{glyphalphabet}\marg{T} typesets the \meta{T} glyph between
-% each letter of the lowercase Latin alphabet plus a few others. 
+% each letter of the lowercase Latin alphabet plus a few others.
 % \cs{GLYPHALPHABET}\marg{T}
 % does the same but using the uppercase Latin alphabet.
 % For example, the output of \\
@@ -385,7 +385,7 @@
 % \cs{glyphlowers} takes each character of the lowercase alphabet in turn as
 % a test glyph and sets it interspersed among the other lowercase characters.
 % \cs{glyphuppers} and \cs{glyphdigits} are similar except that they use
-% the uppercase alphabet and the ten digits instead. For example, 
+% the uppercase alphabet and the ten digits instead. For example,
 % \cs{glyphdigits} produces output like \\
 % \texttt{000102030405060708090} \\
 % \texttt{101112131415161718191} \\
@@ -440,7 +440,7 @@
 %
 % \subsection{Table and texts}
 %
-% Most of the code below is an edited version of code used in 
+% Most of the code below is an edited version of code used in
 % \texttt{nfssfont.tex} for displaying aspects of the set of glyphs in a font.
 %
 % \begin{macro}{\sevenrm}
@@ -465,13 +465,13 @@
 % \end{macro}
 %
 % \begin{macro}{\fonttable}
-% \cs{fonttable}\marg{font} typesets a table of all the glyphs in the 
+% \cs{fonttable}\marg{font} typesets a table of all the glyphs in the
 % \meta{font} (e.g., auncl10).
 %    \begin{macrocode}
 \newcommand*{\fonttable}[1]{%
   \def\f@tfontname{#1}%
   \bgroup
-  \f@tstartfont 
+  \f@tstartfont
   \ftable
   \egroup}
 
@@ -479,7 +479,7 @@
 % \end{macro}
 %
 % \begin{macro}{\pikfont}
-% \cs{pikfont}\marg{encoding}\marg{family}\marg{series}\marg{shape} 
+% \cs{pikfont}\marg{encoding}\marg{family}\marg{series}\marg{shape}
 % selects the font with \meta{encoding},
 % \meta{family}, \meta{series} and \meta{shape}.
 % \changes{v1.4}{2009/05/06}{Added \cs{pikfont}}
@@ -491,7 +491,7 @@
 % \end{macro}
 %
 % \begin{macro}{\xfonttable}
-% \cs{xfonttable}\marg{encoding}\marg{family}\marg{series}\marg{shape} 
+% \cs{xfonttable}\marg{encoding}\marg{family}\marg{series}\marg{shape}
 % typesets a table of all the glyphs in the font with \meta{encoding},
 % \meta{family}, \meta{series} and \meta{shape}
 % (e.g., \verb?\xfonttable{T1}{pnc}{m}{it}? for New Century Schoolbook italic).
@@ -602,7 +602,7 @@
 % \end{macro}
 %
 % \begin{macro}{\f@ttestrow}
-% \cs{f@ttestrow} checks if there are any characters in the next block of 
+% \cs{f@ttestrow} checks if there are any characters in the next block of
 % 16 slots.
 %    \begin{macrocode}
 \newcommand*{\f@ttestrow}{\setbox0=\hbox{\penalty 1\def\\{\char"\f@thexpre}%
@@ -626,7 +626,7 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
-% 
+%
 %
 % \begin{macro}{\f@toddlinenum}
 % \cs{f@toddline}
@@ -653,7 +653,7 @@
 % \end{macro}
 %
 % \begin{macro}{\fontrange}
-% \cs{fontrange}\marg{low}\marg{high} sets the character range to be 
+% \cs{fontrange}\marg{low}\marg{high} sets the character range to be
 % output.
 %    \begin{macrocode}
 \newcommand*{\fontrange}[2]{%
@@ -763,7 +763,7 @@
 % \begin{macro}{\f@tchartstrut}
 % \begin{macro}{\ftablewidth}
 % \begin{macro}{\fntcolwidth}
-% \cs{f@tchartstrut} is a strut used in each table line. \cs{ftablewidth} is 
+% \cs{f@tchartstrut} is a strut used in each table line. \cs{ftablewidth} is
 % width of an externally numbered table. \cs{fntcolwidth} is the minimum
 % width of a column in an unnumbered table.
 %    \begin{macrocode}
@@ -794,7 +794,7 @@
 % \begin{macro}{\f@tftablenum}
 % \begin{macro}{\f@tftablenonum}
 % \cs{ftable} sets a complete character table. The actual code is in either
-% \cs{f@tftablenum} or \cs{f@tftablenonum} for externally numbered or 
+% \cs{f@tftablenum} or \cs{f@tftablenonum} for externally numbered or
 % plain tables, respectively.
 % \changes{v1.0a}{2005/12/06}{Added missing zeroing of \cs{f@tn} to \cs{f@tftablenonum}}
 %    \begin{macrocode}
@@ -870,7 +870,7 @@
   \renewcommand*\f@placechar{\@firstoftwo}%
 }
 %    \end{macrocode}
-% 
+%
 %    \begin{macrocode}
 \newcommand{\decimals}{%
   \renewcommand*\f@placechar{\f@placedecimal}%
@@ -905,7 +905,7 @@
 % \end{macro}
 %
 % \begin{macro}{\regulartext}
-% \cs{regulartext}\marg{fontspec} typesets \cs{knutext} using \meta{fontspec} 
+% \cs{regulartext}\marg{fontspec} typesets \cs{knutext} using \meta{fontspec}
 % (e.g., \cs{aunclfamily}).
 %    \begin{macrocode}
 \def\regulartext#1{%
@@ -935,7 +935,7 @@ publick welfare by exercising an influence in behalf of humanity and
 civilization, teaching the blessings of liberty regulated by law, and
 inculcating love and reverence for the great principles of government
 as derived from the inalienable rights of man to life, liberty, and
-the pursuit of happiness.'' 
+the pursuit of happiness.''
 
 \moreknutext
 
@@ -1008,7 +1008,7 @@ official r\^ole in fluffy souffl\'es? }
 % \changes{v1.51}{2009/05/14}{Changed \cs{germantext} to \cs{germanparatext}}
 %    \begin{macrocode}
 \providecommand*{\germantext}{%
-  \PackageWarning{fonttable}{\protect\germantext\space is deprecated, 
+  \PackageWarning{fonttable}{\protect\germantext\space is deprecated,
                  \MessageBreak use \protect\germanparatext\space instead}}
 \newcommand*{\germanparatext}{%
 Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer
@@ -1034,11 +1034,11 @@ falsche Anmutung vermitteln.\par}
 % \begin{macro}{\latinparatext}
 % The traditional printers' text.
 % \changes{v1.1}{2006/10/02}{Added \cs{latintext}}
-% \changes{v1.51}{2009/05/14}{Changed \cs{latintext} to \cs{latinparatext} 
+% \changes{v1.51}{2009/05/14}{Changed \cs{latintext} to \cs{latinparatext}
 % because of a clash with the babel package}
 %    \begin{macrocode}
 \providecommand*{\latintext}{%
-  \PackageWarning{fonttable}{\protect\latintext\space may be overridden by the 
+  \PackageWarning{fonttable}{\protect\latintext\space may be overridden by the
    babel package \MessageBreak use
                  \protect\latinparatext\space instead}}
 \newcommand*{\latinparatext}{%
@@ -1094,7 +1094,7 @@ turpis accumsan semper.\par}
 % \end{macro}
 %
 % \begin{macro}{\regulartexts}
-% \cs{regulartext}\marg{fontspec}\marg{text} typesets \meta{text} using \meta{fontspec} 
+% \cs{regulartext}\marg{fontspec}\marg{text} typesets \meta{text} using \meta{fontspec}
 % (e.g., \cs{aunclfamily}).
 % \changes{v1.1}{2006/10/02}{Added \cs{regulartexts}}
 %    \begin{macrocode}
@@ -1231,9 +1231,9 @@ turpis accumsan semper.\par}
 %    \begin{macrocode}
 \newcommand*{\glyphalphabet}{\f@tcomplower}
 \newcommand*{\GLYPHALPHABET}{\f@tcompupper}
-\newcommand*{\f@tcomplower}[1]{\chardef\f@ttchar=#1 
+\newcommand*{\f@tcomplower}[1]{\chardef\f@ttchar=#1
   \f@tdisc\f@tdoseries{`a}{`z}\f@tdoseries{31}{34}\par}
-\newcommand*{\f@tcompupper}[1]{\chardef\f@ttchar=#1 
+\newcommand*{\f@tcompupper}[1]{\chardef\f@ttchar=#1
   \f@tdisc\f@tdoseries{`A}{`Z}\f@tdoseries{35}{37}\par}
 
 %    \end{macrocode}

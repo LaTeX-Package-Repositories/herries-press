@@ -33,7 +33,7 @@ Change History
 - Eliminated a clash with the babel package.
 - Described how to avoid a clash with the mftinc package.
 
-1.5  (2009/05/12) 
+1.5  (2009/05/12)
 - Added code providing a packaged version of Donald Knuth's
   testfont.tex, principally as an aid for font designers in
   testing their font.
@@ -80,7 +80,7 @@ The distribution consists of the following files:
 
 To install the package:
 
-- To generate fonttable.sty run: 
+- To generate fonttable.sty run:
     tex fonttable.ins
 - Move fonttable.sty to a location where LaTeX will find it, for example:
     /usr/local/texlive/texmf-local/tex/latex/fonttable.sty

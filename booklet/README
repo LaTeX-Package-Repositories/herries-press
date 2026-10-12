@@ -29,19 +29,19 @@ Changes in version 0.6 of bkltprnt.sty (2001/08/26)
 Changes in version 0.5 (2001/08/11)
 - First public release
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson (Herries Press)
   Maintainer: Will Robertson (will dot robertson at latex-project dot org)
   Copyright 2001 -- 2005 Peter R. Wilson
- 
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
   The Current Maintainer of this work is Will Robertson.
- 
+
   This work consists of the files:
 README (this file)
 booklet.dtx
@@ -51,7 +51,7 @@ booklet.pdf (user manual)
 booklet.sty
 bkltprnt.sty
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex booklet.ins (which will generate booklet.sty & bkltprnt.sty)

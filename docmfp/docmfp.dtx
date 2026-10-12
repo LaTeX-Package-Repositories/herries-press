@@ -7,7 +7,7 @@
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
@@ -15,8 +15,8 @@
 %
 % This work consists of the files listed in the README file.
 %
-% 
-% 
+%
+%
 %<*driver>
 \documentclass[twoside]{ltxdoc}
 %% %% %%\usepackage{docmfp}
@@ -132,16 +132,16 @@
 % \section{Introduction}
 %
 %     It is common practice to document \LaTeX{} packages using the
-% \Lpack{doc} system~\cite{GOOSSENS94}. 
+% \Lpack{doc} system~\cite{GOOSSENS94}.
 % The \Lpack{docmfp} package extends the \Lpack{doc}
 % package so that similar facilities are provided for the documentation
 % of non-LaTeX{} code, such as Metafont and Metapost code, or code in
-% other more common programming languages. 
+% other more common programming languages.
 % For example, a single \file{.dtx} file
 % can contain the documented sources of both the Metafont code for a new
 % font, together with the documented \LaTeX{} code for the accompanying
 % package.
-% 
+%
 % This manual is typeset according to the conventions of the
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
@@ -169,14 +169,14 @@
 %
 % \DescribeMacro{\routinestring}
 % \DescribeMacro{\routineheadname}
-%  These two commands contain the texts that are used in indexing 
-% routine names. They can be changed via |\renewcommand|. Their default 
+%  These two commands contain the texts that are used in indexing
+% routine names. They can be changed via |\renewcommand|. Their default
 % definitions are:
 % \begin{verbatim}
 % \newcommand{\routinestring}{\space(routine)}
 % \newcommand{\routineheadname}{routines:}
 % \end{verbatim}
-% 
+%
 % \DescribeMacro{\DescribeVariable}
 % The |\DescribeVariable{|\meta{name}|}| is like the \Lpack{doc}
 % |\DescribeMacro{|\meta{name}|}| command, except that it is intended
@@ -192,8 +192,8 @@
 %
 % \DescribeMacro{\variablestring}
 % \DescribeMacro{\variableheadname}
-%  These two commands contain the texts that are used in indexing 
-% variable names. They can be changed via |\renewcommand|. Their default 
+%  These two commands contain the texts that are used in indexing
+% variable names. They can be changed via |\renewcommand|. Their default
 % definitions are:
 % \begin{verbatim}
 % \newcommand{\variablestring}{\space(variable)}
@@ -241,7 +241,7 @@
 % |\begin{Code}{\ometh}{\meth}{...}| for object methods. \\
 %
 %
-% 
+%
 % \subsection{Usage with \file{.dtx} and \file{.ins} files}
 %
 %    I assume that the major use of the \Lpack{docmfp} package will be in
@@ -264,7 +264,7 @@
 % %</driver>
 % \end{verbatim}
 %
-%    The source of this document also includes several calls of the 
+%    The source of this document also includes several calls of the
 % \Lpack{docmfp} commands, which I have commented out (use your editor
 % to look for the occurrences of the string |^^A| after this point). You can
 % edit the source to include the |\usepackage{docmfp}| command and uncomment
@@ -293,13 +293,13 @@
 % at the end of each file it generates (\file{myfile.drv} and \file{mypackage.sty}
 % in the example above). This is fine provided the generated files are to be
 % processed by \LaTeX{} which understands |\endinput|. If a generated file is
-% to be processed by something that treats |\endinput| as an error, as \Mfp{} 
+% to be processed by something that treats |\endinput| as an error, as \Mfp{}
 % will, then there is a problem.
 %
 % \DescribeMacro{\usepostamble}
 % \DescribeMacro{\empty}
 % \DescribeMacro{\defaultpostamble}
-%    The documentation system provides these three commands which can be used 
+%    The documentation system provides these three commands which can be used
 % within an \file{.ins} file to
 % either prevent or enable the addition of |\endinput| to the generated files.
 % Extending the above example \file{.ins} file to include both Metafont and
@@ -322,7 +322,7 @@
 %
 % \DescribeMacro{\usepreamble}
 % \DescribeMacro{\defaultpreamble}
-%    The documentation system provides these commands which can be used 
+%    The documentation system provides these commands which can be used
 % within an \file{.ins} file to
 % either prevent or enable the addition of preamble information at the
 % beginning of the generated files. The preamble information is in
@@ -386,7 +386,7 @@
 % \end{macro}
 % \end{macro}
 %
-% ^^A \begin{routine}{an_mfp_macro} 
+% ^^A \begin{routine}{an_mfp_macro}
 % ^^A \begin{variable}{macro_variable}
 % ^^A \begin{routine}{nested_macro}
 % ^^A \end{routine}
@@ -420,7 +420,7 @@
 %
 % \begin{macro}{\m@fpm@cro@}
 %  This command does all the work for both the |routine| and |variable|
-% environments. The first part is a straight copy of the \Lpack{doc} 
+% environments. The first part is a straight copy of the \Lpack{doc}
 % package |\m@cro@| command.
 %    \begin{macrocode}
 \long\def\m@fpm@cro@#1#2{\endgroup \topsep\MacroTopsep \trivlist
@@ -547,7 +547,7 @@
 %
 %
 % \begin{macro}{\PrintMfpName}
-% This typesets the name of a \Mfp{} routine or variable, or in general 
+% This typesets the name of a \Mfp{} routine or variable, or in general
 % \meta{name}. If there is a pre-existing
 % definition, then the package does not modify it.
 %    \begin{macrocode}
@@ -560,10 +560,10 @@
 % |variable| environments. It is also used for the |Code| environment.
 %
 % \begin{macro}{\SpecialMainMfpIndex}
-% The command 
+% The command
 % |\SpecialMainMfpIndex{|\meta{name}|}{|\meta{string}|}{|\meta{heading}|}|
 % writes \meta{name} to the \file{.idx} file, firstly as a `main' entry (flagged
-% with \meta{string}) and then as a subsidiary entry under \meta{heading}. 
+% with \meta{string}) and then as a subsidiary entry under \meta{heading}.
 % Both entries are treated as definitional.
 % \changes{v1.1}{2000/10/28}{Changed subsidiary environment index entry to be definitional}
 %    \begin{macrocode}
@@ -628,7 +628,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SpecialMfpIndex}
-% The command 
+% The command
 % |\SpecialMfpIndex{|\meta{name}|}{|\meta{string}|}{|\meta{heading}|}|
 % writes \meta{name} to the \file{.idx} file, firstly as a `main' entry (flagged
 % with \meta{string}) and then as a subsidiary entry under \meta{heading}. Both
