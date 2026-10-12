@@ -1,23 +1,27 @@
 % \iffalse meta-comment
 % bez123.dtx
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
-% 
+%
 %<*driver>
-\documentclass{ltxdoc}
+\RequirePackage{trace} % see https://github.com/latex3/tagging-project/issues/1633
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
+\usepackage{lua-unicode-math}
 \usepackage{bez123}
 \EnableCrossrefs
 \CodelineIndex
@@ -29,7 +33,22 @@
 %
 % \fi
 %
-% \CheckSum{988}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -79,22 +98,23 @@
 % \def\filedate{2004/04/16}
 % \def\fileversion{v1.1b}
 % \def\filedate{2009/09/02}
+% \def\fileversion{v1.1c}
+% \def\filedate{2026/10/11}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}        ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}         ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}         ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}} ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}       ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}         ^^A typeset an environment
-% \newcommand{\eqref}[1]{equation~(\ref{#1})}  ^^A typeset ref to an equation
+% \DeclareDocumentCommand{\eqref}{m}{equation~(\ref{#1})}  ^^A typeset ref to an equation
 %
 % \title{The \Lpack{bez123} and \Lpack{multiply} packages\thanks{This
-%        file (\texttt{\dtxfile}) has version number \fileversion, 
+%        file (\texttt{\dtxfile}) has version number \fileversion,
 %        last revised \filedate.}}
 %
 % \author{%
 % Author: Peter Wilson, Herries Press\\
-% Maintainer: Will Robertson\\
-% \texttt{will dot robertson at latex-project dot org}
+% Maintainer: \LaTeX{} Project\\
+% \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -109,25 +129,25 @@
 %
 % \StopEventually{}
 %
-% 
+%
 %
 % \section{Introduction}
 %
 % This document provides the commented source for a \LaTeX{}
 % package file that extends the \LaTeX{} facilities for drawing
-% Bezier curves. The package was originally developed as part of 
+% Bezier curves. The package was originally developed as part of
 % a suite designed for the typesetting of
-% documents according to the rules for ISO international 
+% documents according to the rules for ISO international
 % standards~\cite{PRW96i}.
 % This manual is typeset according to the conventions of the
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
 %
-%    Drawing a non-rational quadratic Bezier curve is provided as part 
+%    Drawing a non-rational quadratic Bezier curve is provided as part
 % of the standard \LaTeX{} system.
 %    Section~\ref{sec:usage} provides the user manual for the new commands
 % supplied by this package for drawing a variety of Bezier curves.
-% These include commands for drawing linear and cubic non-rational Bezier 
+% These include commands for drawing linear and cubic non-rational Bezier
 % curves and rational quadratic curves.
 %
 %    Section~\ref{sec:bez} describes the implementation of the package.
@@ -148,20 +168,20 @@
 %    Bezier curves are named after Pierre Bezier who invented them. They
 % are widely used within Computer Aided Design (CAD) programs and other
 % graphics systems; descriptions can be found in many places, with varying
-% degrees of mathematical complexity, such 
+% degrees of mathematical complexity, such
 % as~\cite{FandP,MORTENSON85,FARIN90}.
 %
-%    The Bezier curve is a parameterized curve of degree $n$ and can 
-% therefore be specified by $(n+1)$ points 
+%    The Bezier curve is a parameterized curve of degree $n$ and can
+% therefore be specified by $(n+1)$ points
 % (i.e., point $p_{0}$ through $p_{n}$).
-% Among its other properties, a Bezier curve of degree $n$ passes through 
-% through the points $p_{0}$ and $p_{n}$ and passes close to the other 
+% Among its other properties, a Bezier curve of degree $n$ passes through
+% through the points $p_{0}$ and $p_{n}$ and passes close to the other
 % defining points. The general equation for a Bezier curve of degree $n$ with
 % parameter $t$ is
 % \begin{equation}
 %  p(t) = a_{0} + a_{1}t + a_{2}t^{2} + \cdots + a_{n}t^{n} \label{eq:gen}
 % \end{equation}
-% where the coefficients $a_{i}$ depend on the defining points, and 
+% where the coefficients $a_{i}$ depend on the defining points, and
 % traditionally $0 \leq t \leq 1$.
 %
 %    For a linear (degree $1$) curve, the equation is
@@ -175,7 +195,7 @@
 %  p(t) - p_{0} = (p_{1} - p_{0})t  \label{eq:lin2}
 % \end{equation}
 % In other words, we can march along the curve from the starting point to
-% the ending point by evaluating the right hand side of 
+% the ending point by evaluating the right hand side of
 % \eqref{eq:lin2} for increasing values of the parameter $t$.
 %
 %   In order to shorten the equations slightly, and also make them more
@@ -187,16 +207,16 @@
 % \begin{equation}
 % p(t) - p_{0} = l_{10}t  \label{eq:lin3}
 % \end{equation}
-% 
+%
 % \DescribeMacro{\lbezier}
 % The command |\lbezier[|\meta{N}|](|\meta{p0}|)(|\meta{p1}|)| draws a
 % linear Bezier curve with \meta{N} plotted points from the point \meta{p0}
 % (with coordinates \meta{x0,y0}) to the point \meta{p1} (with
 % coordinates \meta{x1,y1}). \meta{N} is an optional argument. If it is
-% either not given or is given with a value of zero, 
-% then the command will calculate the number of points to be 
-% plotted, subject to a maximum number. 
-% There must be no spaces between the arguments to the 
+% either not given or is given with a value of zero,
+% then the command will calculate the number of points to be
+% plotted, subject to a maximum number.
+% There must be no spaces between the arguments to the
 % |\lbezier| command; this restriction also applies to the other Bezier
 % drawing commands provided by the \Lpack{bez123} package.
 %
@@ -217,7 +237,7 @@
 %    The `points' used in drawing the Bezier curves are small squares. The
 % size of these squares are controlled by the standard \LaTeX{}
 % |\thinlines|, |\thicklines| and/or |\linethickness| commands.
-% Consult Lamport~\cite{LAMPORT94} for descriptions of these, and 
+% Consult Lamport~\cite{LAMPORT94} for descriptions of these, and
 % |\qbeziermax|, commands.
 %
 %
@@ -235,7 +255,7 @@
 % line $l_{10} = p_{1}-p_{0}$.
 % \item At $t=1$ the curve passes through $p_{n}$ and is tangent to the
 % line $l_{(n)(n-1)} = p_{n}-p_{(n-1)}$.
-% \item A \emph{non-rational} Bezier curve lies within the \emph{convex 
+% \item A \emph{non-rational} Bezier curve lies within the \emph{convex
 % hull}\footnote{The convex hull can be thought of as the shape that a rubber
 % band will take if it is stretched around pins placed at each point.}
 % of the points $p_{0}$ through $p_{n}$. For examples of convex hulls see
@@ -246,9 +266,11 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(70,80)
+% \begin{picture}[alt=Four sets of points and their convex hulls](70,80)
 %  ^^A degree 3
-% \put(0,5){\begin{picture}(30,30)
+% \put(0,5){\begin{picture}[
+%             alt=Four points whose convex hull forms a parallelogram,
+%             ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -272,7 +294,9 @@
 %   \thinlines
 %   \end{picture}}
 %  ^^A degree 3
-% \put(0,45){\begin{picture}(30,30)
+% \put(0,45){\begin{picture}[
+%             alt=Three points whose convex hull forms a right triangle,
+%             ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0, 3}}
@@ -293,7 +317,9 @@
 %   \thinlines
 %   \end{picture}}
 %  ^^A degree 3
-% \put(45,0){\begin{picture}(30,30)
+% \put(45,0){\begin{picture}[
+%             alt=Another four points whose convex hull forms a parallelogram,
+%             ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -316,7 +342,9 @@
 %   ^^A \cbezier(0,0)(30,30)(10,30)(20,0)
 %   \thinlines
 %   \end{picture}}
-% \put(45,45){\begin{picture}(30,30)
+% \put(45,45){\begin{picture}[
+%             alt=Four points whose convex hull forms a right triangle,
+%             ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -340,7 +368,7 @@
 %   \end{picture}}
 % \end{picture}
 % \setlength{\unitlength}{1pt}
-% \caption{Four sets of points and their convex hulls} \label{fig:ch} 
+% \caption{Four sets of points and their convex hulls} \label{fig:ch}
 % \end{figure}
 %
 %    The equation for cubic Bezier curves is
@@ -355,13 +383,21 @@
 % draws a cubic Bezier curve, as defined by \eqref{eq:cubic},
 % from point \meta{p0} to point \meta{p3}, where \meta{p1} and \meta{p2}
 % are the intermediate points defining the control polygon.
-% 
+%
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(70,80)
+% \begin{picture}[
+%   alt={Four sets of points, the cubic Bezier curves and their control
+%        polygons. Left --- curves plotted with N=30; Right ---
+%        curves plotted with N=0},
+%        ](70,80)
 %  ^^A degree 3
-% \put(0,5){\begin{picture}(30,30)
+% \put(0,5){\begin{picture}[
+%              alt={The cubic Bezier curve connecting (0,0) to (30,30) controlled by
+%                   the intermediate points (10,30) and (20,0) along with the corresponding
+%                   control polygon},
+%              ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -385,7 +421,11 @@
 %   \thinlines
 %   \end{picture}}
 %  ^^A degree 3
-% \put(0,45){\begin{picture}(30,30)
+% \put(0,45){\begin{picture}[
+%              alt={The cubic Bezier curve connecting (0,0) with itself controlled by
+%                   the intermediate points (0,30) and (30,0) along with the corresponding
+%                   control polygon},
+%              ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0, 3}}
@@ -406,7 +446,11 @@
 %   \thinlines
 %   \end{picture}}
 %  ^^A degree 3
-% \put(45,0){\begin{picture}(30,30)
+% \put(45,0){\begin{picture}[
+%              alt={The cubic Bezier curve connecting (0,0) to (20,0) controlled by
+%                   the intermediate points (30,30) and (10,30) along with the corresponding
+%                   control polygon},
+%              ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -429,7 +473,11 @@
 %   \cbezier(0,0)(30,30)(10,30)(20,0)
 %   \thinlines
 %   \end{picture}}
-% \put(45,45){\begin{picture}(30,30)
+% \put(45,45){\begin{picture}[
+%              alt={The cubic Bezier curve connecting (0,0) to (10,10) controlled by
+%                   the intermediate points (30,0) and (0,30) along with the corresponding
+%                   control polygon},
+%              ](30,30)
 %   \thinlines
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{0}}
@@ -453,11 +501,11 @@
 %   \end{picture}}
 % \end{picture}
 % \setlength{\unitlength}{1pt}
-% \caption{Four sets of points, the cubic Bezier curves and their control 
+% \caption{Four sets of points, the cubic Bezier curves and their control
 %          polygons. Left --- curves plotted with $N=30$; Right ---
-%          curves plotted with $N=0$} \label{fig:cp} 
+%          curves plotted with $N=0$} \label{fig:cp}
 % \end{figure}
-% 
+%
 %    Figure~\ref{fig:cp} shows four such cubic Bezier curves, their
 % defining points and their control polygons. These are the same points
 % that were used in figure~\ref{fig:ch} to illustrate convex hulls. It is
@@ -491,17 +539,17 @@
 % {w_{0} + 2\omega_{10}t + (\omega_{20} - \omega_{10})t^{2}}
 % \label{eq:rqfull}
 % \end{equation}
-% where the $w_{i}$ are the \emph{weights} corresponding to the 
-% points $p_{i}$ and $\omega_{pq} = w_{p} - w_{q}$. The shape of a 
+% where the $w_{i}$ are the \emph{weights} corresponding to the
+% points $p_{i}$ and $\omega_{pq} = w_{p} - w_{q}$. The shape of a
 % non-rational curve can be changed by changing the positions of the defining
-% points. The shape of a rational curve can also be modified by changing 
+% points. The shape of a rational curve can also be modified by changing
 % the values of the weights. A rational curve
 % has the same general properties, outlined above, as a non-rational curve
 % with the exception that the curve may lie outside the convex hull of the
 % control polygon.
 %
 %    For the purposes at hand, we use a more restricted form of a
-% rational quadratic Bezier curve, obtained by putting 
+% rational quadratic Bezier curve, obtained by putting
 % $W = w_{1}/w_{0}$ and then making
 % $w_{0} = w_{2} = 1$ in \eqref{eq:rqfull}. Performing these
 % substitutions we end up with
@@ -542,8 +590,8 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(30,40)
-% \put(0,5){\begin{picture}(30,30)
+% \begin{picture}[alt=The angle 𝛽](30,40)
+% \put(0,5){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -591,8 +639,11 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(30,40)
-% \put(0,5){\begin{picture}(30,30)
+% \begin{picture}[
+%   alt={The effect of weight variation (W ≥ 0)
+%        on rational quadratic Bezier curves},
+%   ](30,40)
+% \put(0,5){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -621,7 +672,7 @@
 % \setlength{\unitlength}{1pt}
 % \caption{The effect of weight variation ($W \geq 0$)
 %          on rational quadratic Bezier curves
-%          (\texttt{weightscale = \theweightscale} (the default)) } 
+%          (\texttt{weightscale = \theweightscale} (the default)) }
 % \label{fig:qrb}
 % \end{figure}
 %
@@ -637,12 +688,12 @@
 % \DescribeMacro{\setweightscale}
 % \DescribeMacro{\resetweightscale}
 %    Because of the way in which \TeX{} performs arithmetic, and especially
-% division, it 
+% division, it
 % is necessary to perform some scaling operations on the divisor when
 % evaluating \eqref{eq:rqfinal}. The optimum value for the
 % scaling is a complex function of the weight and the size and orientation
 % of the control polygon. The algorithm uses a heuristic approach to
-% calculate a `good' value but is not always successful. The 
+% calculate a `good' value but is not always successful. The
 % |\setweightscale{|\meta{number}|}| command can be used to specify
 % a scale factor. \meta{number} must be a positive integer. The
 % |\resetweightscale| command resets the scale factor to its default
@@ -651,8 +702,11 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(70,80)
-% \put(0,5){\begin{picture}(30,30)
+% \begin{picture}[
+%   alt={The effect of 'weightscale' on the drawing
+%        of rational quadratic Bezier curves},
+%   ](70,80)
+% \put(0,5){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -679,7 +733,7 @@
 %   \rqbezier(15,30)(0,0)(30,0)(0)
 %   \put(15,-5){\makebox(0,0)[b]{\texttt{weightscale = \theweightscale}}}
 %   \end{picture}}
-% \put(0,45){\begin{picture}(30,30)
+% \put(0,45){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -706,7 +760,7 @@
 %   \rqbezier(15,30)(0,0)(30,0)(0)
 %   \put(15,-5){\makebox(0,0)[b]{\texttt{weightscale = \theweightscale}}}
 %   \end{picture}}
-% \put(45,5){\begin{picture}(30,30)
+% \put(45,5){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -733,7 +787,7 @@
 %   \rqbezier(15,30)(0,0)(30,0)(0)
 %   \put(15,-5){\makebox(0,0)[b]{\texttt{weightscale = \theweightscale}}}
 %   \end{picture}}
-% \put(45,45){\begin{picture}(30,30)
+% \put(45,45){\begin{picture}[artifact](30,30)
 %   \put(0,0){\circle{2}}
 %   \put(-2,0){\makebox(0,0)[br]{1}}
 %   \put(15,30){\circle{2}}
@@ -768,7 +822,7 @@
 % \label{fig:qrw}
 % \end{figure}
 %
-%    Figure~\ref{fig:qrw} illustrates the effect on changing the 
+%    Figure~\ref{fig:qrw} illustrates the effect on changing the
 % \texttt{weightscale} used for drawing the same curves as shown
 % in figure~\ref{fig:qrb}. Note that the \texttt{weightscale}
 %  has no effect when
@@ -786,7 +840,7 @@
 % Therefore, to draw a circular arc the two legs must be equal in length.
 % That is, the convex hull is an isosceles triangle. In the special case
 % when the convex hull forms an equilateral triangle, the required
-% weight ($\cos \beta$, see figure~\ref{fig:beta}) for drawing a circular 
+% weight ($\cos \beta$, see figure~\ref{fig:beta}) for drawing a circular
 % arc is $\cos \beta = 0.5$. Further,
 % for any given control polygon the curves drawn with weights of
 % $\pm W$ are complementary. That is, the curve with weight $-W$ is
@@ -808,7 +862,10 @@
 % \centering
 % \setlength{\unitlength}{1mm}
 % \setweightscale{50000}
-% \begin{picture}(60,62)
+% \begin{picture}[
+%   alt={Rational quadratics with weights of ±0.5 and an equilateral
+%        triangular convex hull},
+%   ](60,62)
 %   \put(0,5){\begin{picture}(30,30)
 %     \thinlines
 %     \put(0,0){\circle{2}}
@@ -833,7 +890,7 @@
 % \resetweightscale
 % \end{figure}
 %
-%    A more robust picture of the same circle is shown in 
+%    A more robust picture of the same circle is shown in
 % figure~\ref{fig:qr3c} where the complete circle is pieced together from
 % three non-complementary circular arcs. The drawing commands of interest
 % were
@@ -846,8 +903,8 @@
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(60,62)
-%   \put(0,5){\begin{picture}(60,52)
+% \begin{picture}[alt=Three rational quadratics with weights of 0.5](60,62)
+%   \put(0,5){\begin{picture}[artifact](60,52)
 %     \thinlines
 %     \put(0,0){\circle{2}}
 % ^^A    \put(-2,0){\makebox(0,0)[br]{1}}
@@ -870,25 +927,27 @@
 %     \end{picture}}
 %   \end{picture}
 % \setlength{\unitlength}{1pt}
-% \caption{Three rational quadratics with weights of $0.5$ 
+% \caption{Three rational quadratics with weights of $0.5$
 %          (\texttt{weightscale = \theweightscale}) }
 % \label{fig:qr3c}
 % \end{figure}
 %
-%    The astute reader will have realised that the divisor in 
+%    The astute reader will have realised that the divisor in
 % \eqref{eq:rqfinal} can go to zero, and can even be negative.
 % This has interesting consequences, both when trying to do computer
 % arithmetic, and also on the kind of curve that results. Essentially,
 % the curve tends to $\infty$ as $W \rightarrow +0$. At $W = -0$ the curve
 % is at $-\infty$ and then it tends to $-0$ as $W \rightarrow -\infty$.
 % We will get a curve point at $\infty$ whenever $W = -1$ and a `negative'
-% curve for $W < -1$. 
+% curve for $W < -1$.
 %
 % \begin{figure}
 % \centering
 % \setlength{\unitlength}{1mm}
-% \begin{picture}(60,60)
-%   \put(30,20){\begin{picture}(30,20)
+% \begin{picture}[
+%   alt={A rational quadratic that has gone negative; weights of ±2},
+%   ](60,60)
+%   \put(30,20){\begin{picture}[artifact](30,20)
 %     \thinlines
 %     \put(0,10){\circle{2}}
 %     \put(30,0){\circle{2}}
@@ -903,7 +962,7 @@
 %     \end{picture}}
 %   \end{picture}
 % \setlength{\unitlength}{1pt}
-% \caption{A rational quadratic that has gone negative; weights of $\pm 2$ 
+% \caption{A rational quadratic that has gone negative; weights of $\pm 2$
 %          (\texttt{weightscale = \theweightscale}) }
 % \label{fig:neg}
 % \end{figure}
@@ -922,20 +981,20 @@
 % \section{The \Lpack{bez123} package implementation} \label{sec:bez}
 %
 %    \LaTeX{} provides a facility for drawing quadratic Bezier curves.
-% This package provides additional facilities for drawing linear, 
-% rational quadratic, and cubic Bezier curves. 
+% This package provides additional facilities for drawing linear,
+% rational quadratic, and cubic Bezier curves.
 %
 %
 % Announce the name and version of the package, which requires \LaTeXe.
 %    \begin{macrocode}
 %<*bez>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{bez123}[2009/09/02 v1.1b Bezier curves]
+\ProvidesPackage{bez123}[2026/10/11 v1.1c Bezier curves]
 %    \end{macrocode}
 % \changes{v1.1}{1998/10/14}{Added call to include multiply package}
 %    The package also requires the \Lpack{multiply} package.
 %    \begin{macrocode}
-\RequirePackage{multiply}[2009/09/02]
+\RequirePackage{multiply}
 %</bez>
 %    \end{macrocode}
 %
@@ -961,7 +1020,7 @@
 % division, the dividend should be maximised and the divisor minimised,
 % with multiplication preceding division; also remembering that there
 % is a limit on the size of an integer. To avoid multiplication overflow
-% when calculating say, $a \times b$, we must ensure that 
+% when calculating say, $a \times b$, we must ensure that
 % $\|a\| \leq \|M/b\|$.
 %
 %    When calculating polynomials, such as that in \eqref{eq:gen},
@@ -1011,7 +1070,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@lbez}
+% \begin{macro}[int]{\@lbez}
 %    The drawing macro.
 %    \begin{macrocode}
 \gdef\@lbez#1(#2,#3)(#4,#5){%
@@ -1060,7 +1119,7 @@
     \@multicnt = #1\relax
   \fi
 %    \end{macrocode}
-% 
+%
 %    Now we can prepare the constants for the plotting loop.
 %    \begin{macrocode}
   \@tempcnta = \@multicnt
@@ -1106,8 +1165,8 @@
 %
 %    As cubic curves are more complex than quadratic curves we need some
 % extra variables.
-% \begin{macro}{\@wxc}
-% \begin{macro}{\@wyc}
+% \begin{macro}[int]{\@wxc}
+% \begin{macro}[int]{\@wyc}
 %    Lengths.
 %    \begin{macrocode}
 \newlength{\@wxc}
@@ -1126,7 +1185,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cbez}
+% \begin{macro}[int]{\@cbez}
 %    The drawing macro for cubic Bezier curves.
 %    \begin{macrocode}
 \gdef\@cbez#1(#2,#3)(#4,#5)(#6,#7)(#8,#9){%
@@ -1165,7 +1224,7 @@
 %    \begin{macrocode}
     \advance\@ovxx by -\@ovdx
 %    \end{macrocode}
-% Repeat the process for the maximum Y value, finally storing 
+% Repeat the process for the maximum Y value, finally storing
 % this in |\@ovyy|.
 %    \begin{macrocode}
     \@ovyy = #3\unitlength
@@ -1275,7 +1334,7 @@
        \raise \@ydim
          \hb@xt@\z@{\kern\@xdim
                     \unhcopy\@tempboxa\hss}%
-       \advance\count@\@ne}}% 
+       \advance\count@\@ne}}%
 %    \end{macrocode}
 % The end of the definition of |\@cbez|.
 %    \begin{macrocode}
@@ -1286,14 +1345,14 @@
 %
 % \subsection{Quadratic rational Bezier curve}
 %
-%    This is the most complex of the Bezier curves that we deal with. 
+%    This is the most complex of the Bezier curves that we deal with.
 % We need yet more variables.
 %
-% \begin{macro}{\@ww}
-% \begin{macro}{\@wwa}
-% \begin{macro}{\@wwb}
-% \begin{macro}{\@wwo}
-% \begin{macro}{\@wwi}
+% \begin{macro}[int]{\@ww}
+% \begin{macro}[int]{\@wwa}
+% \begin{macro}[int]{\@wwb}
+% \begin{macro}[int]{\@wwo}
+% \begin{macro}[int]{\@wwi}
 % Variables for the weight calculations.
 %    \begin{macrocode}
 \newlength{\@ww}
@@ -1308,21 +1367,21 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\c@@pntscale}
+% \begin{macro}[int]{\c@@pntscale}
 % Scale factor for points.
 %    \begin{macrocode}
 \newcounter{@pntscale}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\c@weightscale}
+% \begin{macro}[int]{\c@weightscale}
 % Scale factor for divisor.
 %    \begin{macrocode}
 \newcounter{weightscale}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\botscale}
+% \begin{macro}[no-user-doc]{\botscale}
 % Scale factor for bottom weights.
 %    \begin{macrocode}
 \newlength{\botscale}
@@ -1359,9 +1418,9 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\@rqbez}
+% \begin{macro}[int]{\@rqbez}
 %    The drawing macro for a rational quadratic Bezier curve. If the weight
-% is such that the curve is either rational quadratic ($W = 1$) or 
+% is such that the curve is either rational quadratic ($W = 1$) or
 % linear ($W = 0$), we use the simpler drawing macro.
 %    \begin{macrocode}
 \gdef\@rqbez#1(#2,#3)(#4,#5)(#6,#7)(#8){%
@@ -1426,7 +1485,7 @@
     \@multicnt = #1\relax
   \fi
 %    \end{macrocode}
-% We are going to plot the curve in two halves in an attempt to reduce 
+% We are going to plot the curve in two halves in an attempt to reduce
 % roundoff problems. At
 % a minimum this should at least make a symmetrical curve look symmetric
 % about its mid point.
@@ -1440,7 +1499,7 @@
 % to multiplication by the weight. In \eqref{eq:rqfinal} the potentially
 % largest term is the coefficient of $t^{2}$ (i.e., $(l_{20}-2Wl_{10})$).
 % The maximum length likely to be encountered is, say, 10 inches for a
-% drawing on either A4 or US letterpaper. This is approximately 
+% drawing on either A4 or US letterpaper. This is approximately
 % $4.8\times10^{8}$sp. Doing a little arithmetic, and remembering that the
 % maximum length in \TeX{} is $M = \number\maxdimen$sp, it means that we must
 % have $\|W\| \leq 1$ to prevent overflow. However, a typical range for
@@ -1644,7 +1703,7 @@
 % \section{Multiplication without overflow: The \Lpack{multiply} package} \label{sec:mnoflow}
 %
 %    \TeX{} provides for integer arithmetic, subject to an upper limit
-% given by |\maxdim|. For at least the \Lpack{bez123} package we need to 
+% given by |\maxdim|. For at least the \Lpack{bez123} package we need to
 % be able to multiply without overflow.
 %
 %    Announce the name of the package.
@@ -1654,11 +1713,11 @@
 \ProvidesPackage{multiply}[1998/10/14 v1.1 Multiplication of lengths without overflow]
 %    \end{macrocode}
 %
-% \begin{macro}{\n@fl@wa}
-% \begin{macro}{\n@fl@wb}
-% \begin{macro}{\n@fl@wc}
-% \begin{macro}{\ifch@nge}
-%    We need three length variables for this function. 
+% \begin{macro}[int]{\n@fl@wa}
+% \begin{macro}[int]{\n@fl@wb}
+% \begin{macro}[int]{\n@fl@wc}
+% \begin{macro}[int]{\ifch@nge}
+%    We need three length variables for this function.
 % We also need a boolean flag for dealing with negative numbers.
 %    \begin{macrocode}
 \newlength{\n@fl@wa}
@@ -1671,9 +1730,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\multnooverflow}
+% \begin{macro}[no-user-doc]{\multnooverflow}
 %
-%    The routine |\multnooverflow{|\meta{a}|}{|\meta{b}|}| sets 
+%    The routine |\multnooverflow{|\meta{a}|}{|\meta{b}|}| sets
 % $a$ to the minimum of $ab$ and |\maxdimen|, preserving signs. \meta{a}
 % must be a length; it must not be a number literal.
 %
@@ -1807,21 +1866,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
