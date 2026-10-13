@@ -43,7 +43,7 @@ details of what is needed.)
 
 Note that the package [mftinc](https://www.ctan.org/pkg/mftinc) also has a
 `\\fonttable` function; the documentation explains how avoid a clash with that
-package. 
+package.
   ]]
 }
 

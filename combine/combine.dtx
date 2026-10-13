@@ -118,7 +118,7 @@
 % \changes{v0.42}{2001/04/04}{Fixed(?) problem with fancyhdr package}
 % \changes{v0.5}{2001/07/03}{Added the combnat package}
 % \changes{v0.51}{2001/07/09}{Fixed problem with \cs{appendix} in imports}
-% \changes{v0.51}{2001/07/09}{Fixed problem with ordering of 
+% \changes{v0.51}{2001/07/09}{Fixed problem with ordering of
 %                             \cs{coltocauthor} and \cs{coltoctitle}}
 % \changes{v0.52}{2001/08/25}{Fixed problem with `wrapped class' imports}
 % \changes{v0.53}{2001/09/05}{Fixed problem with spaces in ToC entries}
@@ -142,7 +142,7 @@
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
 %
-% \title{The \Lpack{combine} class and the packages\\ \Lpack{combinet}, 
+% \title{The \Lpack{combine} class and the packages\\ \Lpack{combinet},
 %       \Lpack{combnat} and \Lpack{combcite}\thanks{This file (\texttt{combine.dtx})
 %       has version number \fileversion, last revised \filedate.}}
 %
@@ -162,11 +162,11 @@
 % of individual \LaTeX{} documents into a single document,
 % such as required for a conference proceedings. Typically the documents
 % are all of the same class, but with some limitations on ordering
-% may be of different classes (e.g., several \Lpack{article}s with 
+% may be of different classes (e.g., several \Lpack{article}s with
 % one \Lpack{letter}).
 % The class requires the \Lpack{keyval} package.
 %
-% The accompanying \Lpack{combinet} and \Lpack{combnat} packages 
+% The accompanying \Lpack{combinet} and \Lpack{combnat} packages
 % respectively let
 % the titles of imported documents be added to the main ToC, and
 % enable the \Lpack{combine} class and the \Lpack{natbib} package
@@ -175,14 +175,14 @@
 % \end{abstract}
 % \tableofcontents
 %
-% 
+%
 %
 % \section{Introduction}
 %
 % Questions about making a collection of different articles into a single
-% document 
+% document
 % seem to pop up fairly regularly on the
-% \texttt{comp.text.tex} newsgroup. 
+% \texttt{comp.text.tex} newsgroup.
 %  The \Lpack{combine} class provides a solution for this problem.
 %
 % This manual is typeset according to the conventions of the
@@ -190,13 +190,13 @@
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
 %
 %    Section~\ref{sec:usc} describes the usage of the \Lpack{combine} class and
-% Sections~\ref{pack} and~\ref{natpack} describe the \Lpack{combinet} 
+% Sections~\ref{pack} and~\ref{natpack} describe the \Lpack{combinet}
 % and \Lpack{combnat} packages. Section~\ref{citepack} describes
 % the \Lpack{combcite} package.
 % Commented source code for the class is in Section~\ref{sec:code}.
 % The class requires the \Lpack{keyval} package to be available.
-% Commented source code for the \Lpack{combinet} package is in 
-% Section~\ref{packcode}, for \Lpack{combnat} is in 
+% Commented source code for the \Lpack{combinet} package is in
+% Section~\ref{packcode}, for \Lpack{combnat} is in
 % Section~\ref{natpackcode} and for \Lpack{combcite} is in
 % Section~\ref{citepackcode}.
 %
@@ -208,7 +208,7 @@
 %    The \Lpack{combine} class enables a group of individual
 % \LaTeX{} documents to be imported and assembled into a single document. All
 % the individual documents should be of the same class (e.g., all
-% \Lpack{article} or all \Lpack{report}). 
+% \Lpack{article} or all \Lpack{report}).
 %
 %    Sectioning, cross-referencing, bibliographies, etc., are local within
 % each imported document. Various means are provided for controlling local
@@ -229,28 +229,28 @@
 % \maketitle                 % main title
 % \tableofcontents           % main ToC
 % \clearpage
-% 
+%
 % \section{Editor's introduction} \label{intro}  % into main ToC (section 1)
-% 
+%
 %     In the article by A.~N.~Author on page~\pageref{art1} ...
-% 
+%
 % \begin{papers}                  % start of individual articles/papers
 % \coltoctitle{An article}        % first article title into main ToC
 % \coltocauthor{A.~N.~Author}     % first authors into main ToC
 % \label{art1}
-% \import{art1}                   % first article, may have own ToC, 
+% \import{art1}                   % first article, may have own ToC,
 %                                 % bibliography, etc.
-% \coltoctitle{Another article}   
+% \coltoctitle{Another article}
 % \coltocauthor{A.~N.~Other}
 % \label{art2}
 % \import{art2}
 % \end{papers}                    % end of individual articles/papers
-% 
+%
 % \clearpage
 % \section{Acknowledgements}      % into main ToC (section 2)
-% 
+%
 %     Among the many ...
-% 
+%
 % \end{document}
 % \end{verbatim}
 %
@@ -260,14 +260,14 @@
 % the class of the individual documents, the \Lpack{combine}
 % class provides the following additional options:
 % \begin{itemize}
-% \item \Lopt{memoir}, \Lopt{book}, \Lopt{report}, and \Lopt{letter}. 
+% \item \Lopt{memoir}, \Lopt{book}, \Lopt{report}, and \Lopt{letter}.
 %       By default the \Lpack{article}
 %       class is assumed for both the main and the imported documents.
 %       These options change the class to \Lpack{memoir}, \Lpack{book}, \Lpack{report} or
 %       \Lpack{letter}, respectively.
 % \item \Lopt{colclass=\meta{class}}. This option changes
 %       the `classes' to \meta{class}. For example, specifying
-%       |colclass=phdthesis| will use the \Lpack{phdthesis} 
+%       |colclass=phdthesis| will use the \Lpack{phdthesis}
 %       class\footnote{Whatever that is.} definitions
 %       throughout the entire document.
 %
@@ -278,37 +278,37 @@
 %       to be of different classes. For example, embedding a letter
 %       into a compendium of articles. Using this option may
 %       induce a plethora of \LaTeX{} errors and the printed results
-%       may be unpredictable. If this happens, try hitting `q' to 
+%       may be unpredictable. If this happens, try hitting `q' to
 %       put \LaTeX{} into
 %       its `quiet batch' processing mode and then examine the typeset result
-%       for usability. 
+%       for usability.
 %
 %         Different classes of imported documents should not be mixed
 %       within a single |papers| environment. Also, imported documents
-%       whose class is the same but which differs from the main class 
+%       whose class is the same but which differs from the main class
 %       should be within a single |papers| environment. For example,
 %       if several letters are to be imported into a collection
 %       of articles, the letters must not be scattered between different
-%       |papers| environments, although the imported articles can be 
+%       |papers| environments, although the imported articles can be
 %       scattered.
 %
 % \item \Lopt{packages}. By default all |\usepackage| commands in
 %       imported documents are ignored. If this is not desired,
-%       then the \Lopt{packages} option will enable the imported 
+%       then the \Lopt{packages} option will enable the imported
 %       |\usepackage| commands(s). If this option is used, then only
 %       the first occurrence of a package is actually used and is not
-%       available to any later imported documents. 
+%       available to any later imported documents.
 %
 %       Generally speaking, it is advisable to put all |\usepackage|
 %       commands into the preamble of the main document.
 %
-% \item \Lopt{layouts}. By default, a single setting of the 
+% \item \Lopt{layouts}. By default, a single setting of the
 %       page layout is used throughout the document. The \Lopt{layouts}
-%       option takes account of any changes to the |\textwidth|, 
+%       option takes account of any changes to the |\textwidth|,
 %       |\textheight|, etc., in the imported documents.
 %
 % \item \Lopt{folios}. The page numbers are sequential throughout
-%       the document. When the |plain| page style is used, the 
+%       the document. When the |plain| page style is used, the
 %       \Lopt{folios} option will display the
 %       local page numbers of imported documents as well as the
 %       the main page number. This may have unfortunate consequences
@@ -331,14 +331,14 @@
 %       in any imported document is disabled. This option causes
 %       the date(s) to be printed.
 % \item \Lopt{nomaketitle}. Disables all printing by any |\maketitle|
-%       in any imported document. 
+%       in any imported document.
 % \item \Lopt{nopubindoc}. Disables the printing of the |\published|
 %       information within an imported document.
 % \item \Lopt{nopubintoc}. Disables the printing of the |\published|
 %       information within the main ToC.
 % \item \Lopt{onebib}. Disables imported bibliographies and puts all
 %       citations in the main document's bibliography.
-% \item \Lopt{combinedbib}. Individual imported bibliographies and 
+% \item \Lopt{combinedbib}. Individual imported bibliographies and
 %       also all citations put into the main document's bibliography.
 % \end{itemize}
 %
@@ -348,7 +348,7 @@
 % doing some additional work.
 %
 % For example, if you want to have a collection of examination papers
-% which were each is originally produced using the \Lpack{exam} class, 
+% which were each is originally produced using the \Lpack{exam} class,
 % then start off with: \\
 % |\documentclass[...,colclass=exam]{combine} | \\
 % The \Lpack{exam} class, though, does a couple of things that prevent
@@ -399,14 +399,14 @@
 % provides a wrapper around imported file(s). Effectively, it modifies
 % any |\documentclass| command or |document| environment within an
 % imported file so that \LaTeX{} does not stop with an error at meeting
-% these, or preamble-only commands like |\usepackage|, in the middle 
+% these, or preamble-only commands like |\usepackage|, in the middle
 % of a document.
 %
 %    The optional argument is executed immediately at the start of
-% the environment and its default value is |\cleardoublepage|. 
+% the environment and its default value is |\cleardoublepage|.
 % To avoid any forced page breaking you can call the environment with
 % an empty optional argument (e.g., |\begin{papers}[]|).
-% 
+%
 %
 % \DescribeMacro{\import}
 % The command |\import{|\meta{texfile}|}| is a cross between the |\input|
@@ -421,11 +421,11 @@
 %
 % \DescribeMacro{\maketitle}
 % The \Lpack{combine} class provides a |\maketitle| command, together with
-% |\title|, |\author| and |\date| commands like those in the 
+% |\title|, |\author| and |\date| commands like those in the
 % \Lpack{book/report/article} classes. A \Lopt{titlepage} option is only
 % supported if the main class has a \Lopt{titlepage} option. For example,
 % if the main class is \Lpack{article} then both |\maketitle| and the
-% \Lopt{titlepage} option are supported, but if the main class is 
+% \Lopt{titlepage} option are supported, but if the main class is
 % \Lpack{letter} then only the |\maketitle| command is provided.
 %
 % \DescribeMacro{\maintitlefont}
@@ -440,7 +440,7 @@
 % |{\maintitlefont \title \postmaintitle}| \\
 % and similarly for the |\author| and |\date| commands. The |\...main...|
 % commands are initialised to mimic the normal result of |\maketitle|
-% typesetting in the \Lpack{article/report} classes. 
+% typesetting in the \Lpack{article/report} classes.
 % For example, the default definitions of the |\...maintitle...|
 % and |\...mainauthor...| commands are:\par
 % \begin{small}
@@ -454,7 +454,7 @@
 % \end{verbatim}
 % \end{small}\par
 % They can be renewed to obtain different effects, for instance removing
-% the |center| environment from |\...title...| will result in the title 
+% the |center| environment from |\...title...| will result in the title
 % being typeset as a normal paragraph.
 %
 % \DescribeMacro{\importtitlefont}
@@ -464,10 +464,10 @@
 % \DescribeMacro{\importdatefont}
 % \DescribeMacro{\postimportdate}
 %    Without any options, the |\title| and |\author| commands
-% are typeset by |\maketitle| commands in imported documents. 
+% are typeset by |\maketitle| commands in imported documents.
 % Like the main document's |\maketitle|, the typesetting is controlled
 % by these |\...import...| commands. The default definition for
-% the title and author differ a little from the main document style, 
+% the title and author differ a little from the main document style,
 % and are:\par
 % \begin{small}
 % \begin{verbatim}
@@ -491,7 +491,7 @@
 % The |\bodytitle[|\meta{short title}|]{|\meta{long title}|}| command
 % is similar
 % to a |\chapter| or |\section| command, depending on the \meta{class}
-% of document. It may be used for adding a numbered title heading into 
+% of document. It may be used for adding a numbered title heading into
 % the main
 % document and ToC for the following |\import{|\meta{texfile}|}|. There
 % is also a starred version of the command, which produces an unnumbered
@@ -500,8 +500,8 @@
 %
 % \DescribeMacro{\coltoctitle}
 % \DescribeMacro{\coltocauthor}
-% The two commands |\coltoctitle{|\meta{title}|}| and 
-% |\coltocauthor{|\meta{author}|}| are for adding \meta{title} and 
+% The two commands |\coltoctitle{|\meta{title}|}| and
+% |\coltocauthor{|\meta{author}|}| are for adding \meta{title} and
 % \meta{author} to the main ToC, where \meta{title} is the compiler's
 % choice for the title of the following |\import{|\meta{texfile}|}|
 % and \meta{author} is for the names of the authors.
@@ -530,7 +530,7 @@
 % |\setlength|. They control the extra indentation of an imported
 % document's title, authors, publication information and section
 % headings within the main ToC. The default value of |\toctitleindent|
-% is 0em and the default for the other four is 1.5em. If any values 
+% is 0em and the default for the other four is 1.5em. If any values
 % are changed, this must be
 % done before the |\tableofcontents| command in the main document.
 % For example, the title texts are aligned at the left margin;
@@ -545,15 +545,15 @@
 % Their default definitions are: \\
 % |\newcommand{\toctitlefont}{\bfseries}|  % bold titles \\
 % |\newcommand{\tocauthorfont}{\itshape}|  % italic authors \\
-% |\newcommand{\tocpubfont}{\normalfont}|  % normal font for published 
+% |\newcommand{\tocpubfont}{\normalfont}|  % normal font for published
 %
-%    The class tries to keep any group of title/author/published entries 
+%    The class tries to keep any group of title/author/published entries
 % in the ToC on one page, but sometimes TeX will insert a page break anyway.
 % The way of combating this is to make sure that the ToC page is broken
 % \emph{before} the group. You can do this like: \\
 % |\addtocontents{toc}{\protect\pagebreak}| \\
 % |\coltoctitle{...} \coltocauthor{...}| etc.
-% 
+%
 % \DescribeMacro{\erasetitling}
 %     This macro `undefines' any previous |\coltoctitle|, |\coltocauthor|
 % and/or |\published| commands; it is principally provided for use with the
@@ -565,10 +565,10 @@
 % pagestyle except that page numbers are put at the bottom outside corner
 % of the page. This is the default pagestyle for the \Lpack{combine}
 % class.
-% 
-%    Provided a |plain| (or |combine|) page style is used the pages 
+%
+%    Provided a |plain| (or |combine|) page style is used the pages
 % are numbered in sequence throughout the document. If an imported document
-% has any |empty| page style pages these will not be numbered. 
+% has any |empty| page style pages these will not be numbered.
 %
 %    Unless the \Lopt{folios} option is used, all references to page
 % numbers will be to the global page number. With the \Lopt{folios}
@@ -609,7 +609,7 @@
 %     \import{paper2}
 % ...
 % \end{verbatim}
-%  
+%
 %
 %    In order to ensure that all the material in an imported document
 % is typeset, there is an inbuilt |\clearpage| command within the
@@ -643,12 +643,12 @@
 % \section{Publication}
 % \begin{papers}[]
 % \coltoctitle{...}
-% \published{Originally published in the   
+% \published{Originally published in the
 %            \textit{Journal of Irreproducible Results}, 1987}
 % \import{mypaper}
 % \end{papers}
 % ...
-% 
+%
 % \bibliography{refs}      % main bibliography
 % \end{document}
 % \end{verbatim}
@@ -656,7 +656,7 @@
 %    Each imported file generates its own \file{.aux}, \file{.toc}, etc.,
 % files. If a BibTeX database is used for the literature references
 % in an imported document, then BibTeX must be run against the imported
-% document, \emph{not} the main document, to resolve the citations. 
+% document, \emph{not} the main document, to resolve the citations.
 % Citations are local to each imported document. There can, of course,
 % also be a bibliography for citations made in the main document, as shown
 % in the example file above.
@@ -672,12 +672,12 @@
 % versions of the |\newlength| and |\newcounter| commands.
 %
 % \DescribeMacro{\zeroextracounters}
-%    The class attempts to initialise the counters used by each imported 
+%    The class attempts to initialise the counters used by each imported
 % document. For example, the figure, equation, etc., counters are zeroed
 % for each document. The |\zeroextracounters| command can be redefined so
 % that it includes the zeroing of any additional counters that might have
 % been introduced in a package or defined by the author. For example,
-% if two different imports both define a (new) counter called, say, 
+% if two different imports both define a (new) counter called, say,
 % |mycounter|, then redefine the command like:
 % \begin{verbatim}
 % \renewcommand{\zeroextracounters}{%
@@ -700,15 +700,15 @@
 % \end{small}\par
 %
 % \DescribeMacro{\emptyAtBeginDocument}
-%  Some combinations of circumstances cause an infinite recursion at the 
-% start of an imported document; in particular the combination of 
+%  Some combinations of circumstances cause an infinite recursion at the
+% start of an imported document; in particular the combination of
 % \texttt{combine + graphicx + caption2 + pdflatex} causes this. In this case
 % the solution was to put |\emptyAtBeginDocument| immediately after the
 % initial |\begin{document}|. It may also have worked if it had been added
 % after each |\begin{papers}| or before each |\import{}|. An error message
 % about being out of stack space may indicate recursion. Judicious use
-% of |\emptyAtBeginDocument| may resolve the problem. 
-% 
+% of |\emptyAtBeginDocument| may resolve the problem.
+%
 % \subsection{Imports in subdirectories}
 %
 %    Authors may find it convenient to put the LaTeX source files for imported
@@ -721,7 +721,7 @@
 % The relevant environment variable, at least for document files, is
 % |TEXINPUTS|. An example setting for this is: \\
 % |TEXINPUTS=.//:${LOCALTEX}//:| \\
-% The fragment |.//| tells LaTeX to look for files in the current directory, 
+% The fragment |.//| tells LaTeX to look for files in the current directory,
 % and recursively in its subdirectories. The fragment |:${LOCALTEX}//| tells
 % LaTeX to look for files in the place defined by the environment variable
 % |LOCALTEX|, and recursively in its subdirectories. The final |:| tells
@@ -729,17 +729,17 @@
 %
 % \section{The \Lpack{combinet} package} \label{pack}
 %
-%    The \Lpack{combinet} (COMBINE Title) package, 
+%    The \Lpack{combinet} (COMBINE Title) package,
 % which should only be used in conjunction
 % with the \Lpack{combine} class, modifies the |\maketitle| command of
-% all imported documents so that the imported document's title and/or 
+% all imported documents so that the imported document's title and/or
 % author, if
 % defined, are automatically added to the main document's ToC.
 %
-%    This is presented as a package rather than as part of the 
+%    This is presented as a package rather than as part of the
 % \Lpack{combine} class as some unfortunate side effects may become
 % apparent.
-% 
+%
 %    If a |\coltoctitle| or |\coltocauthor| command has been given
 % immediately prior to the import, then these will be put into the main
 % ToC instead of the |\maketitle| texts. The |\erasetitling| command can
@@ -748,12 +748,12 @@
 %
 %    The package takes the following options.
 % \begin{itemize}
-% \item \Lopt{nomtitle}. Disable the |\maketitle| title 
+% \item \Lopt{nomtitle}. Disable the |\maketitle| title
 %       from being added to the main ToC.
 % \item \Lopt{nomauthor}. Disable the |\maketitle| author
 %       from being added to the main ToC.
 % \item \Lopt{nothanks}. By default, the contents of a |\thanks| command
-%       will be added to the main ToC. This option prevents that, but 
+%       will be added to the main ToC. This option prevents that, but
 %       may have unfortunate side effects if any |\title| or |\author|
 %       command has any embedded commands within the text.
 % \item \Lopt{pub}. Put the text of an immediately prior |\published|
@@ -762,7 +762,7 @@
 %      class options \Lopt{nopubindoc} and \Lopt{nopubindoc} can be used
 %      to inhibit printing of |\published| information.
 % \item \Lopt{pubtop}. Put the text of an immediately prior |\published|
-%      command at the top of the |\maketitle| typesetting, and add the 
+%      command at the top of the |\maketitle| typesetting, and add the
 %      text to the
 %      main ToC after any title or author.
 % \end{itemize}
@@ -775,7 +775,7 @@
 %
 % \section{The \Lpack{combnat} package} \label{natpack}
 %
-%     The \Lpack{combine} class and Patrick Daly's \Lpack{natbib} 
+%     The \Lpack{combine} class and Patrick Daly's \Lpack{natbib}
 % package~\cite{NATBIB}
 % both redefine some of the same basic LaTeX macros, and naturally
 % the redefinitions are incompatible\footnote{Discovered by
@@ -797,7 +797,7 @@
 %
 % \section{The \Lpack{combcite} package} \label{citepack}
 %
-%     The \Lpack{combine} class and Donald Aresneau's \Lpack{cite} 
+%     The \Lpack{combine} class and Donald Aresneau's \Lpack{cite}
 % package~\cite{CITE}
 % both redefine some of the same basic LaTeX macros, and naturally
 % the redefinitions are incompatible\footnote{Discovered by
@@ -845,7 +845,7 @@
 % defining an already defined command. These are usually caused by incorrect
 % grouping.
 %
-%    Commands, etc., defined in the main document are available to 
+%    Commands, etc., defined in the main document are available to
 % all imported
 % documents. The |papers| environment forms a group. Commands
 % defined within a group are local to the group and are not visible outside
@@ -870,7 +870,7 @@
 %       a single letter could be imported into an article class collection).
 %       If two imports in a single |papers| separately use |\new...|
 %       commands
-%       with the same \meta{name}, then these \meta{name}s will be 
+%       with the same \meta{name}, then these \meta{name}s will be
 %       visible throughout
 %       the environment. \LaTeX{} will then normally report trying to define a
 %       pre-existing \meta{name}. The solution to this is either: (a) put
@@ -883,7 +883,7 @@
 % the case again of importing letters into an article collection. If two
 % letters both define the same \meta{name}, then adding additional grouping
 % will only change the `defining a pre-existing \meta{name}' problem into
-% the `undefined |\address|' problem. A potential solution in this 
+% the `undefined |\address|' problem. A potential solution in this
 % particular case
 % would be to define all the \Lpack{letter} class specific \meta{name}s in the
 % main document.
@@ -910,14 +910,14 @@
 % \newblock \emph{Cite: Compressed, sorted lists of on-line
 %                 or superscript numerical citations}.
 % \newblock November 2003.
-% \newblock (Available from CTAN in directory 
+% \newblock (Available from CTAN in directory
 %           \texttt{macros/latex/contrib/cite})
 %
 % \bibitem[Dal99]{NATBIB}
 % Patrick W. Daly.
 % \newblock \emph{Natural Sciences Citations and References}.
 % \newblock May 1999.
-% \newblock (Available from CTAN in directory 
+% \newblock (Available from CTAN in directory
 %           \texttt{macros/latex/contrib/natbib})
 %
 % \bibitem[GMS94]{GOOSSENS94}
@@ -929,17 +929,17 @@
 % Piet van Oostrum.
 % \newblock \emph{Page layout in LaTeX}.
 % \newblock June 1996.
-% \newblock (Available from CTAN in directory 
+% \newblock (Available from CTAN in directory
 %           \texttt{macros/latex/contrib/fancyhdr})
 %
 %
 % \end{thebibliography}
 % }
 %
-% 
+%
 % \section{The \Lpack{combine} class code} \label{sec:code}
 %
-%    There are various difficulties to be overcome by the 
+%    There are various difficulties to be overcome by the
 % \Lpack{combine} code, some seemingly inherent in \TeX{} itself and
 % others by the \LaTeX{} kernel code. These include, but are not limited to:
 % \begin{itemize}
@@ -954,8 +954,8 @@
 %  \item |\label|s are global in nature, and with multiple imported
 % documents there are likely to be labels with the same name in two
 % or more of these.
-%  \item Many of the kernel (and standard classes) commands use 
-% the page number; sometimes the use is buried at the end of a chain 
+%  \item Many of the kernel (and standard classes) commands use
+% the page number; sometimes the use is buried at the end of a chain
 % of macros.
 % \end{itemize}
 %
@@ -966,7 +966,7 @@
 % of the question. Of necessity some changes have had to be made but
 % these have been limited as far as possible. I think that a collection
 % that consists of documents that are all of the same class should
-% process without interruption. 
+% process without interruption.
 %
 %    When there are mixed classes, \LaTeX{}
 % reads in the code for each class. An example is importing a \Lpack{letter}
@@ -1168,7 +1168,7 @@
 \fi
 
 %    \end{macrocode}
-% 
+%
 %
 %    At this point, load the actual class (as specified by |\c@lclass|).
 %    \begin{macrocode}
@@ -1187,7 +1187,7 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\if@titlepage}
-%    The \Lpack{letter} class (and perhaps others) does not have a 
+%    The \Lpack{letter} class (and perhaps others) does not have a
 % |\maketitle| command, and therefor neither has a \Lopt{titlepage} option.
 % In this case we need a new |\if@titlepage| for later use when dealing
 % with |\maketitle|. A side effect of this implementation is that |\maketitle|
@@ -1222,7 +1222,7 @@
 % |colpage| is a counter for storing the (current) page number for the
 % main document.
 % |c@lctr| is a counter for storing the current main document sectioning
-% number. A section counter (|\c@section|) is provided when the class 
+% number. A section counter (|\c@section|) is provided when the class
 % does not have sections.
 %    \begin{macrocode}
 \newcounter{colpage} \setcounter{colpage}{1}
@@ -1250,7 +1250,7 @@
 % \end{macro}
 % \end{macro}
 % \end{macro}
-% 
+%
 % \section{Kernel modifications (and potential additions)}
 %
 %    Much of the class code consists of new versions of \LaTeX{} kernel commands.
@@ -1266,7 +1266,7 @@
 % \begin{macro}[int]{\c@lenvb}
 % \begin{macro}[int]{\c@lthrowenv}
 %     To stop \LaTeX{} whining when multiple classes are read which happen
-% to define commands (via |\newcommand|) or environments 
+% to define commands (via |\newcommand|) or environments
 % (via |\newenvironment|) that have the same names, we need to be able
 % to make \LaTeX{} use |\providecommand| and |\provideenvironment|
 % instead. Unfortunately the kernel does not provide a |\provideenvironment|
@@ -1299,11 +1299,11 @@
 % \begin{macro}[int]{\@xnthm}
 % \begin{macro}[int]{\@ynthm}
 % \begin{macro}[int]{\@othm}
-%  As pointed out by Hendri Hondrop\footnote{Email 
+%  As pointed out by Hendri Hondrop\footnote{Email
 % from \texttt{hendri@cs.utwente.nl} on 16~May, 2000.}
 % |\newtheorem| commands in imported documents can interfere with each other.
 % My solution to this is to make the command local instead of global.
-% |\c@lnamethm| is a helper macro (removes the |\global| from the 
+% |\c@lnamethm| is a helper macro (removes the |\global| from the
 % |\@namedef|s in the original code), and the others are modifications
 % of the originals in \file{ltthm.dtx} (just removing any |\global| commands).
 % \changes{v0.3}{2000/05/20}{Added a local version of \cs{newtheorem}.}
@@ -1419,7 +1419,7 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\c@lbusepackage}
-% The |\usepackage| command (from \file{ltclass.dtx}) 
+% The |\usepackage| command (from \file{ltclass.dtx})
 % in imported documents is normally disabled.
 % This is the disabled version.
 %    \begin{macrocode}
@@ -1521,7 +1521,7 @@
 % Similarly, the |\maketitle| command is made to be |\@clamaketitle| in case
 % some other package (e.g., \Lpack{titling}) has modified |\maketitle| after
 % the \Lpack{combine} class has done its thing.
-% \changes{v0.41}{2000/06/18}{Moved \cs{maketitle} letting to 
+% \changes{v0.41}{2000/06/18}{Moved \cs{maketitle} letting to
 % \cs{c@lamaketitle} to inside \cs{c@ladocument}}
 %    \begin{macrocode}
   \g@addto@macro{\@outputpage}{\stepcounter{colpage}}  %% added
@@ -1563,7 +1563,7 @@
 % in the |\document| command. The \Lpack{article},
 % \Lpack{report} and \Lpack{letter} classes all start of with the |plain|
 % page style, which is specified within the class file. When mixed classes
-% of imported documents are used the page style definitions can get 
+% of imported documents are used the page style definitions can get
 % overwritten by the extra class(es). So, the revised |\document| command
 % resets the |plain| page style to the \Lpack{combine} class definition
 % and sets the initial page style to be |plain|.
@@ -1583,7 +1583,7 @@
     \@input{\c@lauxfile}%
   \endgroup
   \if@filesw
-    \immediate\openout\@partaux\c@lauxfile 
+    \immediate\openout\@partaux\c@lauxfile
     \immediate\write\@partaux{\relax}%
   \fi
   \process@table
@@ -1612,9 +1612,9 @@
 % Bogdanovski (\texttt{rgb@libra.astro.bas.bg}) on 2001/04/03.}.
 % \changes{v0.41}{2001/04/04}{Eliminated page style setting for imports.}
 %    \begin{macrocode}
-%%  \pagestyle{plain}    
+%%  \pagestyle{plain}
   \ifc@lfolios                 %% folios option initialises page number
-    \setcounter{page}{1}        
+    \setcounter{page}{1}
   \fi
   \ifc@lhaschapter             %% set chapter/section number
     \setcounter{c@lctr}{\value{chapter}}
@@ -1634,7 +1634,7 @@
 % \begin{macro}[int]{\c@lresetcounters}
 %    This sets various counters to zero, and is called at the beginning of
 % an imported document.
-% \changes{v0.4}{2000/05/27}{Added \cs{c@lresetcounters} and 
+% \changes{v0.4}{2000/05/27}{Added \cs{c@lresetcounters} and
 % \cs{zeroextracounters} commands}
 % \changes{v0.51}{2001/07/05}{Reset chapter/section format after possible \cs{appendix}}
 %    \begin{macrocode}
@@ -1660,7 +1660,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% 
+%
 %
 %  The |\enddocument| command (defined in \file{ltmiscen.dtx}) has
 % to be modified for both the main and imported documents. The modifications
@@ -1703,8 +1703,8 @@
   \clearpage
   \begingroup
     \if@filesw
-      \immediate\closeout\@mainaux 
-      \immediate\closeout\@partaux 
+      \immediate\closeout\@mainaux
+      \immediate\closeout\@partaux
       \let\@setckpt\@gobbletwo
       \let\@newl@bel\@testdef
       \@tempswafalse
@@ -1825,12 +1825,12 @@
   } % end non-titlepage
 
 %    \end{macrocode}
-% I use |\def\@maketitle| to account for the cases where the main class 
+% I use |\def\@maketitle| to account for the cases where the main class
 % does not have titling commands, and to ensure an existing |\@maketitle|
 % gets overridden.
 %    \begin{macrocode}
 
-  \def\@maketitle{%               
+  \def\@maketitle{%
     \newpage
     \null
     \vskip 2em%
@@ -1882,13 +1882,13 @@
     \endgroup
     \setcounter{footnote}{0}%
     \c@lmtitlempty
-  } 
+  }
 
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}[int]{\c@lmtitlempty}
-%    A helper macro to save some macro space. 
+%    A helper macro to save some macro space.
 % It empties elements of |\maketitle|.
 %    \begin{macrocode}
 \newcommand{\c@lmtitlempty}{%
@@ -1929,7 +1929,7 @@
 % \begin{macro}[int]{\c@lb@maketitle}
 % This typesets the title in an imported document. It also includes the
 % code for implementing the \Lopt{nodate}, \Lopt{notitle} and \Lopt{noauthor}
-% options. The vertical spacing is reduced slightly from normal. 
+% options. The vertical spacing is reduced slightly from normal.
 % The title and author texts are set with |\importtitlefont| and
 % |\importauthorfont| respectively. The date is set with |\importdatefont|.
 %    \begin{macrocode}
@@ -2004,7 +2004,7 @@
 % \begin{macro}[int]{\c@lbwritefile}
 % To go along with local ToC files, |\@writefile| (in \file{ltmiscen.dtx})
 % has to be modified to match. We also check if a local file exists before
-% writing to it. 
+% writing to it.
 %    \begin{macrocode}
 \newcommand{\c@lb@writefile}[2]{%
   \def\tocfname{\jobname.#1}
@@ -2018,7 +2018,7 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\c@lclosetocs}
-% At the end of each imported document, any local ToC, etc., files 
+% At the end of each imported document, any local ToC, etc., files
 % must be closed.
 %    \begin{macrocode}
 \newcommand{\c@lclosetocs}{%
@@ -2060,7 +2060,7 @@
 %
 % \begin{macro}[int]{\c@lbaddtocontents}
 % To implement the \Lopt{maintoc} option, we need a modification of
-% |\addtocontents| (in \file{ltsect.dtx}) so that it will write to 
+% |\addtocontents| (in \file{ltsect.dtx}) so that it will write to
 % both the local and the main \file{.aux} files.
 %    \begin{macrocode}
 \ifc@lmaintoc
@@ -2111,8 +2111,8 @@
 % \begin{macro}[int]{\c@lbnewlabel}
 % \begin{macro}[int]{\c@lbref}
 % \begin{macro}[int]{\c@lpagebref}
-%  For local labels and cross-references in an imported document, 
-% special versions of 
+%  For local labels and cross-references in an imported document,
+% special versions of
 % |\newlabel|, |\ref| and |\pageref| (in \file{ltxref.dtx}) are needed.
 % I use |\jobname| to distinguish identical labels in different imported
 % files.
@@ -2331,7 +2331,7 @@
 % new commands and environment implemented by the \Lpack{combine} class.
 %
 % \begin{macro}[int]{\ps@combine}
-%    A new pagestyle. Like |plain| but the page numbers are put at 
+%    A new pagestyle. Like |plain| but the page numbers are put at
 % a bottom corner instead of being centered. It also changes the
 % the |plain| style to match.
 %    \begin{macrocode}
@@ -2357,7 +2357,7 @@
 % \end{macro}
 %
 % \begin{macro}{\import}
-% |\import{|\meta{texfile}|}| attempts to find and input the file 
+% |\import{|\meta{texfile}|}| attempts to find and input the file
 % \meta{texfile}\texttt{.tex}. It is very loosely based on |\include|.
 % It also adds the |\coltoctitle|, etc., to the ToC in a useful
 % order\footnote{This need pointed out by Stefan Becuwe
@@ -2381,7 +2381,7 @@
   \fi
   \gdef\jobname{#1}
 %    \end{macrocode}
-% \changes{v0.6}{2002/08/24}{Added empty definition for nocite{*} 
+% \changes{v0.6}{2002/08/24}{Added empty definition for nocite{*}
 %                            handling to \cs{import}}
 %    \begin{macrocode}
   \expandafter\let\csname B?\jobname?@*\endcsname\@empty
@@ -2519,7 +2519,7 @@
 %
 % \begin{macro}{\coltoctitle}
 % \begin{macro}[int]{\l@coltoctitle}
-% |\coltoctitle{|\meta{title}|}| adds \meta{title} to the ToC for the 
+% |\coltoctitle{|\meta{title}|}| adds \meta{title} to the ToC for the
 % following imported document. The ToC entry is typeset by |\l@coltoctitle|.
 % \changes{v0.51}{2001/07/09}{Save the value of \cs{coltoctitle}}
 %    \begin{macrocode}
@@ -2567,7 +2567,7 @@
 %
 % \begin{macro}{\coltocauthor}
 % \begin{macro}[int]{\l@coltocauthor}
-% |\coltocauthor{|\meta{authors}|}| adds \meta{authors} to the ToC for the 
+% |\coltocauthor{|\meta{authors}|}| adds \meta{authors} to the ToC for the
 % following imported document. The ToC entry is typeset by |\l@coltocauthor|.
 % Note that a page number is not printed.
 % \changes{v0.51}{2001/07/09}{Save value of \cs{coltocauthor}}
@@ -2649,7 +2649,7 @@
 \ifc@lhaschapter
   \newcommand*\l@published[2]{%  % similar to chapter
     \ifnum \c@tocdepth >\m@ne
-      \c@ll@chapseci       
+      \c@ll@chapseci
       \setlength{\@tempdima}{\tocpubindent}% eliminate any spaces here
       \tocpubfont               %% normal font ToC entry
       \c@ll@chapsecii{#1}{}
@@ -2658,7 +2658,7 @@
 \else
   \newcommand*\l@published[2]{%  % similar to section
     \ifnum \c@tocdepth >\z@
-      \c@ll@chapseci           
+      \c@ll@chapseci
       \setlength{\@tempdima}{\tocpubindent}% eliminate any spaces here
       \tocpubfont              %% normal font ToC entry
       \c@ll@chapsecii{#1}{}
@@ -2682,8 +2682,8 @@
 %
 %
 % \begin{environment}{papers}
-%  The |papers| environment has one optional argument, 
-% default |\cleardoublepage| which gets executed at the start of the 
+%  The |papers| environment has one optional argument,
+% default |\cleardoublepage| which gets executed at the start of the
 % environment. Then the appropriate changes to the kernel commands are
 % executed.
 %    \begin{macrocode}
@@ -2698,7 +2698,7 @@
 % \end{environment}
 %
 % \begin{macro}[no-user-doc]{\setuppapers}
-% This macro executes the kernel modifications within the |papers| 
+% This macro executes the kernel modifications within the |papers|
 % environment. Various options are also checked and implemented if required.
 % Sectional numbering is reset to zero. Imported files can't |\include|
 % other files, so |\include| is replaced by |\input|. If |\chapter| is
@@ -2760,7 +2760,7 @@
 % \end{macro}
 %
 % \begin{macro}[no-user-doc]{\takedownpapers}
-% This macro executes the actions, if any, at the end of the |papers| 
+% This macro executes the actions, if any, at the end of the |papers|
 % environment.
 %    \begin{macrocode}
 \newcommand{\takedownpapers}{%
@@ -2883,9 +2883,9 @@
 % kernel commands must be extended to save their values.
 %
 %    Originally I used |\xdef| below which worked unless there was some
-% command other than |\thanks| in the title or author text. 
+% command other than |\thanks| in the title or author text.
 % David Kastrup\footnote{At \texttt{dak@neuroinformatik.ruhr-uni-bochum.de}.}
-% and Donald Arseneau\footnote{At \texttt{asnd@triumf.ca}.} 
+% and Donald Arseneau\footnote{At \texttt{asnd@triumf.ca}.}
 % both pointed out the use of |\protected@xdef|.
 % Barbara Beeton\footnote{\texttt{bnb@ams.org}} suggested adding the |\unskip|
 % to the redefinition of |\and| in order to remove any preceding spaces when
@@ -2915,7 +2915,7 @@
 %    The |\c@lbmaketitle| command is (re)defined so that it adds the title
 % and author (if given) to the main ToC. If |\coltoctitle| and/or
 % |\coltocauthor| have been used then nothing is done with the title
-% and/or author respectively. 
+% and/or author respectively.
 % \changes{v0.53}{2001/09/05}{Added empty \cs{numberline} in \cs{c@lbmaketitle}}
 % \changes{v0.64}{2004/03/06}{Changed \cs{c@laaddtocontents} for titles to
 %                             \cs{c@laaddcontentsline} in \cs{c@lbmaketitle}}
@@ -2941,14 +2941,14 @@
         \ifx\@title\@empty\else
           \ifc@lnothanks
 %    \end{macrocode}
-% I originally used 
+% I originally used
 % \begin{verbatim}
 %            \c@laaddtocontents{toc}%
 %              {\protect\contentsline{coltoctitle}%
 %              {\protect\numberline{}\c@l@title}{\thecolpage}}
 % \end{verbatim}
 % below, but James Szinger\footnote{Email, 2004/03/05, \texttt{szinger@lanl.gov}}
-% asked me to change to \verb?\c@laaddcontentsline? instead 
+% asked me to change to \verb?\c@laaddcontentsline? instead
 % (which I should have done, looking back I've no idea why I didn't) to help
 % with using hyperref, which he said required redefining
 % \verb?\c@laaddcontentsline? to be compatible with hyperref's (hyperref never
@@ -3026,14 +3026,14 @@
 %    \end{macrocode}
 %
 % For multiple bibliographies (|\c@lonebibfalse|)
-% the change consists of replacing 
+% the change consists of replacing
 % \Lpack{natbib}'s
 % naming of citation labels in the \file{.aux} files by the form
 % used by the \Lpack{combine} class. That is, the |b@| in each
-% code fragment like |b@#...| or |b@\...| is replaced by 
+% code fragment like |b@#...| or |b@\...| is replaced by
 % |B?\jobname?@...|.
 %
-% For a single main bibliography |\c@lonebibtrue|, implementation is much 
+% For a single main bibliography |\c@lonebibtrue|, implementation is much
 % easier, merely ensuring that the stuff gets written to the main
 % *.aux file.
 %
@@ -3681,9 +3681,9 @@
   \let\NAT@citex\c@lbNAT@citex
   \let\NAT@set@cites\c@lbNAT@set@cites
   \c@lbNAT@set@cites
-}  
+}
 \renewcommand{\setuppapers}{%
-  \c@loldsetuppapers 
+  \c@loldsetuppapers
   \ifc@lcombib
     \c@lNATsetuplocal
   \else
@@ -3947,7 +3947,7 @@
 %   \clearpage
 %   \begingroup
 %     \if@filesw
-%       \immediate\closeout\@mainaux 
+%       \immediate\closeout\@mainaux
 %       \let\@setckpt\@gobbletwo
 %       \let\@newl@bel\@testdef
 %       \@tempswafalse
@@ -3975,7 +3975,7 @@
 % \end{verbatim}
 % \end{small}\par
 %
-%    |\maketitle| is defined by each class. The following is from 
+%    |\maketitle| is defined by each class. The following is from
 % \file{classes.dtx} for the \Lpack{book}, \Lpack{report} and \Lpack{article}
 % classes.
 % \par\begin{small}\begin{verbatim}
@@ -4047,7 +4047,7 @@
 %     \global\let\and\relax
 %   } % end non-titlepage \maketitle
 %
-%   \def\@maketitle{%               
+%   \def\@maketitle{%
 %     \newpage
 %     \null
 %     \vskip 2em%
