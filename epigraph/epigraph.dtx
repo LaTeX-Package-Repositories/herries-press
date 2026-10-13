@@ -1,9 +1,10 @@
 % \iffalse
 %
 %     Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 %  Copyright: 1998--2004 Peter R. Wilson
 %             2009--2020 Will Robertson
+%             2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -11,13 +12,14 @@
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
@@ -28,7 +30,22 @@
 %
 % \fi
 %
-% \CheckSum{244}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -82,6 +99,7 @@
 % \changes{v1.5b}{2004/04/22}{Updated license and contact details}
 % \changes{v1.5c}{2009/09/02}{New maintainer (Will Robertson)}
 % \changes{v1.5d}{2011/08/07}{Load package `nextpage' for \cs{cleartoevenpage}}
+% \changes{v1.5f}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{epigraph.dtx}
 % \def\fileversion{v1.5}  \def\filedate{2000/02/20}
@@ -90,9 +108,9 @@
 % \def\fileversion{v1.5c} \def\filedate{2009/09/02}
 % \def\fileversion{v1.5d} \def\filedate{2011/08/07}
 % \def\fileversion{v1.5e} \def\filedate{2020/01/02}
+% \def\fileversion{v1.5f} \def\filedate{2026/10/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -112,8 +130,8 @@
 %
 % \author{%
 % Author: Peter Wilson, Herries Press\\
-% Maintainer: Will Robertson\\
-% \texttt{will dot robertson at latex-project dot org}
+% Maintainer: \LaTeX{} Project\\
+% \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\fileversion\qquad\filedate}
 % \maketitle
@@ -497,7 +515,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{epigraph}[2020/01/02 v1.5e typesetting epigraphs]
+\ProvidesPackage{epigraph}[2026/10/12 v1.5f typesetting epigraphs]
 \RequirePackage{nextpage}
 %    \end{macrocode}
 %
@@ -584,14 +602,14 @@
 % \end{environment}
 %
 %
-% \begin{macro}{\@epirule}
+% \begin{macro}[int]{\@epirule}
 %  The internal command to draw a rule between text and source.
 %    \begin{macrocode}
 \newcommand{\@epirule}{\rule[.5ex]{\epigraphwidth}{\epigraphrule}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@epitext}
+% \begin{macro}[int]{\@epitext}
 % The internal command to typeset the \meta{text}. Put it into a minipage of the
 % right size and typeset per |\textflush|.
 %    \begin{macrocode}
@@ -605,7 +623,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@episource}
+% \begin{macro}[int]{\@episource}
 %    The internal command for typesetting the \meta{source}, which is put
 % into a minipage and typeset according to |\sourceflush|.
 %    \begin{macrocode}
@@ -664,7 +682,7 @@
 \newenvironment{epigraphs}{%
 %    \end{macrocode}
 % Do the vertical space, set the font size, position according to
-% |\epigraphflush|, and put everything into a minipage.
+% |\epigraphflush|, and put everyting into a minipage.
 %    \begin{macrocode}
   \vspace{\beforeepigraphskip}\begin{\epigraphflush}
   \epigraphsize
@@ -684,7 +702,7 @@
 %
 % \subsection{Epigraphs before a chapter title}
 %
-% \begin{macro}{\@epichapapp}
+% \begin{macro}[int]{\@epichapapp}
 % \begin{macro}{\dropchapter}
 % \begin{macro}{\undodrop}
 % \changes{v1.3}{1999/12/01}{Defined chapter dropping and support commands}
@@ -704,8 +722,8 @@
 % by Piet van Oostrum~\cite{OOSTRUM96}. This is to put a zero sized
 % picture into the page header.
 %
-% \begin{macro}{\if@epirhs}
-% \begin{macro}{\if@epicenter}
+% \begin{macro}[int]{\if@epirhs}
+% \begin{macro}[int]{\if@epicenter}
 %  Two booleans for testing whether an epigraph is to be at the RH margin,
 % centered, or at the LH margin. The default is RH margin.
 %    \begin{macrocode}
@@ -715,7 +733,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@epipos}
+% \begin{macro}[int]{\@epipos}
 %    This routine sets the |\if@epi...| booleans according to the value of
 % |\epigraphflush|. If |\epigraphflush| is neither |center| nor |flushleft|
 % then it defaults to |flushright|. We have to use this to be upward
@@ -823,21 +841,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
