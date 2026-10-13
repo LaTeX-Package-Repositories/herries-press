@@ -2,7 +2,7 @@
 ------------------------------------------------------------------
 The FONTTABLE package
 
-2026-04-19 v1.6e
+2026-10-12 v1.6f
 
 Issue tracker: https://github.com/LaTeX-Package-Repositories/herries-press/issues/
 
@@ -19,6 +19,7 @@ testfont.tex.
 ------------------------------------------------------------------
 Change History
 
+1.6f (2026/10/12) - Tag documentation
 1.6e (2026/04/19) - Avoid global definitions of \h \0 \1
 1.6d (2025/03/12) - Add \relax to terminate number issue #51
 1.6c (2017/06/06) - Fix bug with fonts with `at' in their name
@@ -48,7 +49,7 @@ Change History
 ------------------------------------------------------------------
 
   Author: Peter Wilson (Herries Press)
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 2005--2009 Peter R. Wilson
   Copyright 2009--2011, 2017 Will Robertson
   Copyright 2025--  LaTeX Project
@@ -59,7 +60,7 @@ Change History
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is LaTeX Project.
+  The Current Maintainer of this work is the LaTeX Project.
 
   This work consists of the files:
    - README (this file)
@@ -87,8 +88,8 @@ To install the package:
 
 To manually generate the manual, run:
 
-    pdflatex fonttable.dtx
+    lualatex fonttable.dtx
     makeindex -s gind.ist fonttable.idx # optional
-    pdflatex fonttable.dtx
+    lualatex fonttable.dtx
 
 ------------------------------------------------------------------

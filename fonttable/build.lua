@@ -1,45 +1,53 @@
+--[=========================[--
+   L3BUILD FILE FOR FONTTABLE
+--]=========================]--
 
-module = "fonttable"
+module  = "fonttable"
+version = "2026/10/12 v1.6f"
+pkgdate = "2026/10/12"
+copyrightyear = "2026"
 
-textfiles  ={"README.md"}
+textfiles = {"README.md"}
 
-packtdszip  = false
+packtdszip = false
 
-maxprintline=10000
-checkruns = 0
+maxprintline = 10000
+typesetruns = 4
+typesetexe = "lualatex"
 
+announce = {}
+announce["2026/10/12 v1.6f"] = [[
+Tag documentation
+]]
 
+uploadconfig = {
+  pkg          = "fonttable",
+  version      = version,
+  author       = "Peter R Wilson; LaTeX Project",
+  license      = "lppl1.3c",
+  summary      = "Print font tables from a LaTeX document",
+  ctanPath     = "/macros/latex/contrib/"..module,
+  repository   = "https://github.com/LaTeX-Package-Repositories/herries-press",
+  bugtracker   = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
+  uploader     = "LaTeX Project",
+  email        = "latex-team@latex-project.org",
+  update       = true,
+  announcement = announce[version],
+  description  = [[
+This is a package version of `nfssfont.tex` (part of the LaTeX distribution);
+it enables you to print a table of the characters of a font and/or some text
+(for demonstration or testing purposes), from within a document. (Packages such
+as [testfont](https://www.ctan.org/pkg/testfont) and `nfssfont.tex` provide these
+facilities, but they run as interactive programs: the user is expected to type
+details of what is needed.)
 
-function update_tag(file,content,tagname,tagdate)
+Note that the package [mftinc](https://www.ctan.org/pkg/mftinc) also has a
+`\\fonttable` function; the documentation explains how avoid a clash with that
+package. 
+  ]]
+}
 
-local tagpattern="(%d%d%d%d[-/]%d%d[-/]%d%d) v(%d+[.])(%d+)"
-local oldv,newv
-if tagname == 'auto' then
-  local i,j,olddate,a,b
-  i,j,olddate,a,b= string.find(content, tagpattern)
-  if i == nil then
-    print('OLD TAG NOT FOUND')
-    return content
-  else
-    print ('FOUND: ' .. olddate .. ' v' .. a .. b )
-    oldv = olddate .. ' v' .. a .. b
-    newv = tagdate .. ' v'  .. a .. math.floor(b + 1)
-    print('USING OLD TAG: ' .. oldv)
-    print('USING NEW TAG: ' .. newv)
-    local oldpattern = string.gsub(oldv,"[-/]", "[-/]")
-    content=string.gsub(content,"{Version}{" .. oldpattern,'##OLDV##')
-    content=string.gsub(content,oldpattern,newv)
-    content=string.gsub(content,'##OLDV##',"{Version}{" .. oldv)
-    content=string.gsub(content,'%-%d%d%d%d Oberdiek Package','-' .. os.date("%Y") .. " Oberdiek Package")
-    content = string.gsub(content,
-        '%% \\end{History}',
-	'%%   \\begin{Version}{' .. newv .. '}\n%%   \\item Updated\n%%   \\end{Version}\n%% \\end{History}')
-    return content
-  end
-else
-  error("only automatic tagging supported")
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
 end
-
-end
-
-
