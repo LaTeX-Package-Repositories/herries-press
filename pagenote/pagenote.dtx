@@ -1,8 +1,9 @@
 % \iffalse meta-comment
 % pagenote.dtx
 % Author: Peter Wilson (The Herries Press)
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 2004 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -10,13 +11,14 @@
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 %%\OnlyDescription
@@ -28,7 +30,22 @@
 %
 % \fi
 %
-% \CheckSum{251}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -74,14 +91,15 @@
 % \changes{v1.0}{2004/09/24}{First public release}
 % \changes{v1.1}{2004/09/27}{Minor additions}
 % \changes{v1.1a}{2009/09/03}{New maintainer (Will Robertson)}
+% \changes{v1.1b}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{pagenote.dtx}
 % \def\fileversion{v1.0}  \def\filedate{2004/09/24}
 % \def\fileversion{v1.1}  \def\filedate{2004/09/27}
 % \def\fileversion{v1.1a} \def\filedate{2009/09/03}
+% \def\fileversion{v1.1b} \def\filedate{2026/10/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -92,8 +110,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -333,7 +351,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{pagenote}[2009/09/03 v1.1a page/end notes]
+\ProvidesPackage{pagenote}[2026/10/12 v1.1b page/end notes]
 %    \end{macrocode}
 %
 % The \Lpack{ifmtarg} package is required (which is included within the
@@ -346,7 +364,7 @@
 %    The following |\if...| command is for distinguishing between
 % chaptered and simpler documents. Page/end notes are more appropriate
 % when there are chapters.
-% \begin{macro}{\ifpnhaschapter}
+% \begin{macro}[int]{\ifpnhaschapter}
 %    \begin{macrocode}
 \newif\ifpnhaschapter
 \@ifundefined{chapter}{\pnhaschapterfalse}{\pnhaschaptertrue}
@@ -354,7 +372,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\f@rtoc}
+% \begin{macro}[int]{\f@rtoc}
 % In the \Lpack{memoir} class this holds the chapter title as it should
 % appear in the ToC. We need to make sure that it is defined.
 %    \begin{macrocode}
@@ -365,8 +383,8 @@
 %
 % \subsection{Options}
 %
-% \begin{macro}{\ifpnpageopt}
-% \begin{macro}{\ifpncontopt}
+% \begin{macro}[int]{\ifpnpageopt}
+% \begin{macro}[int]{\ifpncontopt}
 % We need two flags for the options.
 %    \begin{macrocode}
 \newif\ifpnpageopt
@@ -389,7 +407,7 @@
 %
 % \subsection{Main code}
 %
-% \begin{macro}{\c@pagenote}
+% \begin{macro}[int]{\c@pagenote}
 % \begin{macro}{\thepagenote}
 % We need a counter for the notes. Just how it is defined depends on the
 % \Lopt{continuous} option or the class.
@@ -409,7 +427,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\c@pnotesavechap}
+% \begin{macro}[int]{\c@pnotesavechap}
 % We also need a counter for document divisions to check if we
 % are in a new one. Initialise it to an `impossible' value.
 %    \begin{macrocode}
@@ -419,7 +437,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifmakingpagenotes}
+% \begin{macro}[int]{\ifmakingpagenotes}
 % Need to check if notes are required.
 %    \begin{macrocode}
 \newif\ifmakingpagenotes
@@ -453,7 +471,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\immediate@protected@write}
+% \begin{macro}[int]{\immediate@protected@write}
 % We might have to do some immediate writes. This is an immediate
 % version of the kernel |\protected@write|.
 %    \begin{macrocode}
@@ -469,7 +487,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@pnwrite}
+% \begin{macro}[int]{\@pnwrite}
 % If the \Lopt{page} option is used we cannot use an immediate write
 % because the page number is only known in the output routine.
 %    \begin{macrocode}
@@ -482,7 +500,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@wrpnote}
+% \begin{macro}[int]{\@wrpnote}
 % This writes the note information to the note file. It first increments the
 % note counter and calls |\notenumintext| to handle its appearance in
 % the body text.
@@ -524,7 +542,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@pagenote}
+% \begin{macro}[int]{\@pagenote}
 %    \begin{macrocode}
 \newcommand{\@pagenote}[2][]{\endgroup\@esphack}
 
@@ -569,7 +587,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\textinnotes}
+% \begin{macro}[no-user-doc]{\textinnotes}
 % |\textinnotes|\marg{id text} typesets the note's \meta{id text}.
 %    \begin{macrocode}
 \newcommand{\textinnotes}[1]{%
@@ -648,13 +666,13 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\pnofilewarn}
+% \begin{macro}[no-user-doc]{\pnofilewarn}
 % Warning when the notes file does not exist.
 %    \begin{macrocode}
 \newcommand*{\pnofilewarn}{%
   \PackageWarning{pagenote}{There is no .ent file}}
 %
-% \begin{macro}{\@sprintnotes}
+% \begin{macro}[int]{\@sprintnotes}
 % Macro implementing |\printnotes*|.
 %    \begin{macrocode}
 \newcommand*{\@sprintnotes}{%
@@ -672,7 +690,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@printnotes}
+% \begin{macro}[int]{\@printnotes}
 % Macro implementing |\printnotes|.
 %    \begin{macrocode}
 \newcommand*{\@printnotes}{%
@@ -689,7 +707,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\chapterame}
+% \begin{macro}{\chaptername}
 % \begin{macro}{\sectionname}
 % \begin{macro}{\pagenotesubhead}
 % The section heading before each set of notes.
@@ -723,21 +741,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
