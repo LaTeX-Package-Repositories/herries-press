@@ -2,8 +2,9 @@
 %
 % docmfp.dtx
 % Author: Peter Wilson (Herries Press)
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1999--2005 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -11,26 +12,16 @@
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
 %
 %<*driver>
-\documentclass[twoside]{ltxdoc}
-%% %% %%\usepackage{docmfp}
-\usepackage{url}
-\usepackage[draft=false,
-            plainpages=false,
-            pdfpagelabels,
-            bookmarksnumbered,
-            hyperindex=false
-           ]{hyperref}
-\makeatletter
-  \@mparswitchfalse
-\makeatother
-\renewcommand{\MakeUppercase}[1]{#1}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
+\pdfstringdefDisableCommands{\def\file#1{#1}}
 \pagestyle{headings}
 \EnableCrossrefs
 \CodelineIndex
@@ -43,7 +34,22 @@
 %
 % \fi
 %
-% \CheckSum{322}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -93,6 +99,7 @@
 % \changes{v1.2b}{2004/05/14}{Minor fix for checksum}
 % \changes{v1.2c}{2005/03/26}{Fixed some typos in the description part, no code changes}
 % \changes{v1.2d}{2009/09/02}{New maintainer (Will Robertson)}
+% \changes{v1.2e}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{docmfp.dtx}
 % \def\fileversion{v1.0} \def\filedate{1999/04/11}
@@ -102,9 +109,9 @@
 % \def\fileversion{v1.2b} \def\filedate{2004/05/14}
 % \def\fileversion{v1.2c} \def\filedate{2005/03/26}
 % \def\fileversion{v1.2d} \def\filedate{2009/09/02}
+% \def\fileversion{v1.2e} \def\filedate{2026/10/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -116,8 +123,8 @@
 %
 % \author{%
 % Author: Peter Wilson, Herries Press\\
-% Maintainer: Will Robertson\\
-% \texttt{will dot robertson at latex-project dot org}
+% Maintainer: \LaTeX{} Project\\
+% \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -156,7 +163,7 @@
 %
 % \DescribeMacro{\DescribeRoutine}
 % The |\DescribeRoutine{|\meta{name}|}| command is equivalent to the \Lpack{doc}
-% package |\DescribeEnv{|\meta{name}|}| command, except that it
+% package command |\DescribeEnv{|\meta{name}|}|, except that it
 % is intended to introduce the description of a \Mfp{} macro (or
 % character or picture ). It typesets \meta{name}
 % in the margin and also generates an index entry for \meta{name}.
@@ -364,16 +371,16 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{docmfp}[2009/09/02 v1.2d General coding extension to the doc package]
+\ProvidesPackage{docmfp}[2026/10/12 v1.2e General coding extension to the doc package]
 
 %    \end{macrocode}
 %
 % In order to try and avoid name clashes with other packages, each internal
 % name will include the character string \texttt{m@fp}.
 %
-% \begin{macro}{\m@fpmakeuscoreletter}
-% \begin{macro}{\m@fpmakehashletter}
-% \begin{macro}{\Makem@fpPrivateLetters}
+% \begin{macro}[int]{\m@fpmakeuscoreletter}
+% \begin{macro}[int]{\m@fpmakehashletter}
+% \begin{macro}[int]{\Makem@fpPrivateLetters}
 %  \Mfp{} names can include underscores and hash characters. The special
 % meanings of these have to be turned off.
 %    \begin{macrocode}
@@ -418,7 +425,7 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\m@fpm@cro@}
+% \begin{macro}[int]{\m@fpm@cro@}
 %  This command does all the work for both the |routine| and |variable|
 % environments. The first part is a straight copy of the \Lpack{doc}
 % package |\m@cro@| command.
@@ -495,7 +502,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\Describem@fp}
+% \begin{macro}[int]{\Describem@fp}
 % The workhorse for |\Describe|. It processes the three apparent arguments
 % to |\Describe|.
 %    \begin{macrocode}
@@ -518,7 +525,7 @@
 %    \end{macrocode}
 % \end{environment}
 %
-% \begin{macro}{\m@fpm@c}
+% \begin{macro}[int]{\m@fpm@c}
 %  This is the workhorse for the |Code| environment and processes
 % the 3 arguments apparently taken by the environment.
 %    \begin{macrocode}
@@ -546,7 +553,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\PrintMfpName}
+% \begin{macro}[no-user-doc]{\PrintMfpName}
 % This typesets the name of a \Mfp{} routine or variable, or in general
 % \meta{name}. If there is a pre-existing
 % definition, then the package does not modify it.
@@ -559,7 +566,7 @@
 % Now for the command that writes out the index entries for the |routine| and
 % |variable| environments. It is also used for the |Code| environment.
 %
-% \begin{macro}{\SpecialMainMfpIndex}
+% \begin{macro}[no-user-doc]{\SpecialMainMfpIndex}
 % The command
 % |\SpecialMainMfpIndex{|\meta{name}|}{|\meta{string}|}{|\meta{heading}|}|
 % writes \meta{name} to the \file{.idx} file, firstly as a `main' entry (flagged
@@ -597,7 +604,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\Describem@fpRoutine}
+% \begin{macro}[int]{\Describem@fpRoutine}
 % This is the macro that does the work for |\DescribeRoutine|.
 %    \begin{macrocode}
 \def\Describem@fpRoutine#1{\endgroup
@@ -617,7 +624,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\Describem@fpVariable}
+% \begin{macro}[int]{\Describem@fpVariable}
 % This is the macro that does the work for |\DescribeVariable|.
 %    \begin{macrocode}
 \def\Describem@fpVariable#1{\endgroup
@@ -627,7 +634,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\SpecialMfpIndex}
+% \begin{macro}[no-user-doc]{\SpecialMfpIndex}
 % The command
 % |\SpecialMfpIndex{|\meta{name}|}{|\meta{string}|}{|\meta{heading}|}|
 % writes \meta{name} to the \file{.idx} file, firstly as a `main' entry (flagged
@@ -654,7 +661,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\check@checksum}
+% \begin{macro}[int]{\check@checksum}
 % After some experience with using \Lpack{docmfp} for code that had
 % no resemblance at all to \LaTeX, I found that if there were no
 % backslashes present, then \Lpack{doc} whined about there being no
@@ -726,21 +733,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
