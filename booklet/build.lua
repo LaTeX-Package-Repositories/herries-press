@@ -39,7 +39,7 @@ scaled so that they can be printed as four pages per physical sheet of paper,
 two pages per side. The resulting sheets will, when folded in half, assemble
 into a booklet.
 
-Instructions on producing the manual itself as a booklet are included. 
+Instructions on producing the manual itself as a booklet are included.
   ]]
 }
 

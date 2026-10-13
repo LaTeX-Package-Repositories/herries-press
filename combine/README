@@ -13,6 +13,10 @@ provides a version of the cite package for use with the combine class.
 ______________
 Change History
 
+Version 0.7b (2026/10/12)
+- Tag documentation
+- New package maintainer (LaTeX Project)
+
 Version 0.7a (2010/07/10)
 - Previous version had a major typo, preventing the class from loading!
 
@@ -93,8 +97,9 @@ Changes in version 0.1 of combinet.sty: (2000/05/07)
 
 -----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 2001, 2002, 2003, 2004 Peter R. Wilson
+  Copyright 2026--present LaTeX Project
 
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
@@ -102,7 +107,7 @@ Changes in version 0.1 of combinet.sty: (2000/05/07)
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project.
 
   This work consists of the following files:
 README (this file)
@@ -125,10 +130,10 @@ combine.pdf (user manual)
     To install the distribution:
 - run: latex combine.ins (which will generate combine.cls,
                           combinet.sty and combnat.sty)
-- run: latex combine.dtx
+- run: lualatex combine.dtx
 - For an index, run: makeindex -s gind.ist combine
-- run: latex combine.dtx
-- Print combine.dvi for a hardcopy of the user manual
+- run: lualatex combine.dtx
+- Print combine.pdf for a hardcopy of the user manual
 - Move combine.cls, combinet.sty and combnat.sty to locations
   where LaTeX will find them (The FAQ on CTAN in /help/uktug-FAQ
   gives more information about this magic place).
