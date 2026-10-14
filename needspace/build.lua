@@ -12,11 +12,11 @@ checkruns = 2
 
 uploadconfig = {
  pkg = "needspace",
- version = "v1.3e 2025-03-13",
+ version = "v1.3f 2026-10-13",
  author = "LaTeX Project",
  license = "lppl1.3c",
  summary = "Insert pagebreak if not enough space",
- ctanPath = "/macros/latex/contrib/needspace",
+ ctanPath = "/macros/latex/contrib/"..module,
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
  uploader = "LaTeX Project",
