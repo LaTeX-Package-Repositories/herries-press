@@ -25,7 +25,6 @@ Adjust to use new heading templates with LaTeX 2026-11-01 release.
 ]]
 
 
-  
 uploadconfig = {
  pkg = "anonchap",
  version = version,
@@ -35,7 +34,7 @@ uploadconfig = {
  ctanPath = "/macros/latex/contrib/anonchap",
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
- uploader = "LaTeX Project Team",
+ uploader = "LaTeX Project",
  email = "latex-team@latex-project.org",
  update = true ,
  announcement = announce[version]
@@ -45,9 +44,3 @@ if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
 end
-  
-
-
-
-
-

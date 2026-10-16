@@ -2,16 +2,18 @@
 %
 % stdclsdv.dtx
 % Copyright 1999 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This program is provided under the terms of the
 % LaTeX Project Public License distributed from CTAN
 % archives in directory macros/latex/base/lppl.txt.
 %
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
 \EnableCrossrefs
 \CodelineIndex
 %%\OnlyDescription
@@ -23,7 +25,22 @@
 %
 % \fi
 %
-% \CheckSum{130}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -69,13 +86,14 @@
 % \changes{v1.0}{1999/01/17}{First public release}
 % \changes{v1.1}{2000/07/16}{Added koma classes}
 % \changes{v1.1a}{2009/09/04}{New maintainer (Will Robertson)}
+% \changes{v1.1b}{2026/10/05}{Tag documentation; update maintainer to LaTeX Project}
 %
 % \def\fileversion{v1.0}  \def\filedate{1999/01/17}
 % \def\fileversion{v1.1}  \def\filedate{2000/07/16}
 % \def\fileversion{v1.1a} \def\filedate{2009/09/04}
+% \def\fileversion{v1.1b} \def\filedate{2026/10/05}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -88,8 +106,8 @@
 % Peter Wilson, Herries Press\thanks{This work was originally
 % performed as
 % a Guest Researcher at the National Institute of Standards and Technology.}\\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}
 % }
 % \date{\filedate}
 % \maketitle
@@ -214,7 +232,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{stdclsdv}[2009/09/04 v1.1a Sectional divisions]
+\ProvidesPackage{stdclsdv}[2026/10/05 v1.1b Sectional divisions]
 %    \end{macrocode}
 %
 % In order to try and avoid name clashes with other packages, each macro
@@ -227,7 +245,7 @@
 % \begin{macro}{\ifSCDnodivs}
 %    These are used when we need to decide what sectional
 % divisions are supported by the document's class.
-% We will assume assume an unknown class that has |\part| and |\section| 
+% We will assume assume an unknown class that has |\part| and |\section|
 % but not
 % |\chapter| divisions.
 %    \begin{macrocode}
@@ -237,7 +255,7 @@
 \newif\ifSCDsection\SCDsectiontrue
 \newif\ifSCDnodivs\SCDnodivsfalse
 %    \end{macrocode}
-%    Check the actual class.\footnote{Thanks to David Carlisle for 
+%    Check the actual class.\footnote{Thanks to David Carlisle for
 %    information on how to check on the class.}
 %    \begin{macrocode}
 \@ifclassloaded{book}{\SCDknownclasstrue\SCDchaptertrue}{}
@@ -303,7 +321,7 @@
 % \end{macro}
 %
 % \begin{macro}{\SCDCheckCommand}
-% This is identical to the kernel |\CheckCommand| except that it sets 
+% This is identical to the kernel |\CheckCommand| except that it sets
 % the |\ifSCDSameCommand| flag rather than issuing a warning. See
 % \file{ltdefns.dtx} for the coding for |\CheckCommand|.
 %    \begin{macrocode}
@@ -313,13 +331,13 @@
   \@onlypreamble\SCDCheckCommand
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\@SCD@check@command}
+% \begin{macro}[int]{\@SCD@check@command}
 %    \begin{macrocode}
 \def\@SCD@check@command#1#2#{\@SCD@check@c#1{#2}}
   \@onlypreamble\@SCD@check@command
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\@SCD@check@c}
+% \begin{macro}[int]{\@SCD@check@c}
 %    \begin{macrocode}
 \long\def\@SCD@check@c#1#2#3{%
   \expandafter\let\csname\string\reserved@a\endcsname\relax
@@ -332,7 +350,7 @@
   \@onlypreamble\@SCD@check@c
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\@SCD@check@eq}
+% \begin{macro}[int]{\@SCD@check@eq}
 %    \begin{macrocode}
 \def\@SCD@check@eq#1#2{%
   \ifx#1#2\else
@@ -353,21 +371,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-

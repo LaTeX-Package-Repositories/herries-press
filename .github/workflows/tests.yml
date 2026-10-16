@@ -1,7 +1,7 @@
 
 name:  l3build-tests
 
-# Create pdf for all commits (perhaps should just do on main) 
+# Create pdf for all commits (perhaps should just do on main)
 on:
   push:
     branches:
@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 2
-      
+
       - name: Install TeX Live
         id: texlive
         uses: zauguin/install-texlive@v4
@@ -33,4 +33,3 @@ jobs:
       - name: checks
         # run all the package tests each time for now
         run: for i in */build.lua; do (cd `dirname $i` ; l3build check -S;) ; done
-      

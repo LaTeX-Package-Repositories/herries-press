@@ -7,7 +7,7 @@ specialformats = specialformats or {}
 specialformats["latex"] = specialformats["latex"] or
   {
     luatexdev     = {binary="luahbtex",format = "lualatex-dev"},
-  }  
+  }
 checkengines={"luatex","luatexdev"}
 
 checkruns = 2
@@ -39,7 +39,7 @@ uploadconfig = {
  ctanPath = "/macros/latex/contrib/changepage",
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
- uploader = "LaTeX Project Team",
+ uploader = "LaTeX Project",
  email = "latex-team@latex-project.org",
  update = true ,
  announcement = announce[version]

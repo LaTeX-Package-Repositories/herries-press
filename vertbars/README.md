@@ -20,7 +20,7 @@ Copyright 2010-2018 Will Robertson
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either
 version 1.3c of this license or (at your option) any
-later version: <http://www.latex-project.org/lppl.txt>
+later version: <https://www.latex-project.org/lppl.txt>
 
 This work has the LPPL maintenance status "maintained".
 The Current Maintainer of this work is Will Robertson.
@@ -33,11 +33,11 @@ MAINTENANCE
 -----------
 
 Please report bugs or request features:
-  <http://github.com/wspr/herries-press/issues>
+  <https://github.com/LaTeX-Package-Repositories/herries-press/issues>
 
 Developmental and historical versions:
-  <http://github.com/wspr/herries-press>
+  <https://github.com/LaTeX-Package-Repositories/herries-press>
 
 Current release version:
-  <http://ctan.org/pkg/vertbars>
+  <https://ctan.org/pkg/vertbars>
 

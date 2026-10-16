@@ -8,26 +8,26 @@ Version 3.0c
 ### Fixed
  - do not error if patching `\@starttoc` fails.
  - missing Reference structure in `\chapterprecis` toc entry
- 
+
 ### Changed
  - adapt templates to planned changes in latex-dev
- 
+
 ## [2026-08-21]
-Version 3.0b 
+Version 3.0b
 
 ### Fixed
  - missing cftafterZtitle, tagging/1537
  - spacing with article, issue #63
- 
+
 ## [2026-08-12]
-Version 3.0a 
- 
+Version 3.0a
+
 ### Fixed
 - added kern pair at end of toc entries for microtype, issue #56
 - use four arguments with contentsline, issue #59
 - faulty `\toclevel@X` setting, issue #60
 
-### Added 
+### Added
  - tagging support
 
 ## v2.3i
