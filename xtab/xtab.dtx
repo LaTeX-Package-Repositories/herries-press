@@ -1,10 +1,11 @@
 % \iffalse meta-comment
 %
 % xtab.dtx
-% Author: Peter Wilson (herries dot press (at) earthlink dor net)
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Author: Peter Wilson, Herries Press
+% Maintainer: LaTeX Project
 % Copyright 1998--2008 Peter R. Wilson
 % Copyright 2010--2011 Will Robertson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -21,13 +22,13 @@
 %</driver>
 %<xtab>\ProvidesPackage{xtab}
 %<*xtab>
-    [2011/07/31 v2.3f Extended supertabular package]
+    [2026/10/18 v2.4 Extended supertabular package]
 %</xtab>
 %
 %<*driver>
-\documentclass{ltxdoc}
+%\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}} % caption issue needs to be fixed first
+\documentclass{l3in2edoc}
 \usepackage{xtab}
-%\usepackage{xtab-b}
 \providecommand{\captionsize}{}
 \EnableCrossrefs
 \CodelineIndex
@@ -38,7 +39,30 @@
 %</driver>
 %
 % \fi
-% \CheckSum{1527}
+%
+%\makeatletter
+%\ExplSyntaxOn
+%\def\@doc@describe#1#2{
+%   \ifdoc@noprint\else
+%     \marginpar{\raggedleft
+%                \strut
+%                \tl_set:Ne \l__codedoc_tmpa_tl { \tl_to_str:n {#2} }
+%                \tl_replace_all:NVn \l__codedoc_tmpa_tl \c_underscore_str { / }
+%                \tl_remove_all:NV \l__codedoc_tmpa_tl \c_backslash_str
+%                \tl_put_left:Nn \l__codedoc_tmpa_tl { doc/function// }
+%                \MakeLinkTarget[macro]{}
+%                \exp_args:Ne \label { \tl_trim_spaces:V \l__codedoc_tmpa_tl }
+%                \doc@providetarget
+%                \@nameuse{PrintDescribe#1}{#2}}
+%   \fi
+%   \ifdoc@noindex\else
+%     \@nameuse{Special#1Index}{#2}
+%   \fi
+% \@esphack
+% \endgroup
+% \ignorespaces}
+%\ExplSyntaxOff
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -85,7 +109,6 @@
 % \GetFileInfo{\dtxfile}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -100,6 +123,9 @@
 % \changes{v2.3c}{2008/07/26}{Tried to eliminate all extraneous spaces}
 % \changes{v2.3d}{2009/09/04}{New maintainer (Will Robertson)}
 % \changes{v2.3f}{2011/07/31}{Escape some line-endings}
+% \changes{v2.4}{2026/10/18}{New maintainer (LaTeX Team)}
+% \changes{v2.4}{2026/10/18}{Suspend tagging during measuring}
+% \changes{v2.4}{2026/10/18}{Fix compatibility with array package (gh/89)}
 %
 % \title{The \Lpack{xtab} package\thanks{This
 %        file (\texttt{\dtxfile}) has version number \fileversion, last revised
@@ -107,8 +133,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -528,7 +554,7 @@
 %<*xtab>
 %    \end{macrocode}
 %
-% \begin{macro}{\c@tracingst}
+% \begin{macro}[int]{\c@tracingst}
 %    There are three options with the package which control the amount
 %    of information written to the log file:
 %    \begin{enumerate}
@@ -552,9 +578,9 @@
 %    \end{macrocode}
 % \end{macro}   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% \begin{macro}{\if@topcaption}
-% \begin{macro}{\topcaption}
-% \begin{macro}{\bottomcaption}
+% \begin{macro}[int]{\if@topcaption}
+% \begin{macro}[no-user-doc]{\topcaption}
+% \begin{macro}[no-user-doc]{\bottomcaption}
 %    The user-commands |\topcaption| and |\bottomcaption| set the
 %    flag |@topcaption| to determine where to put the
 %    table caption. The default is to put the caption on the top of
@@ -568,8 +594,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\PWST@thecaption}
-% \begin{macro}{\PWSTcapht}
+% \begin{macro}[int]{\PWST@thecaption}
+% \begin{macro}[no-user-doc]{\PWSTcapht}
 %  \emph{Extension:} |\PWST@thecaption| is used to store
 % the text of the table's caption. The vertical space required by
 % a caption is stored in |\PWSTcapht|.
@@ -581,8 +607,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tablecaption}
-% \begin{macro}{\@xtablecaption}
+% \begin{macro}[no-user-doc]{\tablecaption}
+% \begin{macro}[int]{\@xtablecaption}
 %    This command has to function exactly like |\caption| does except
 %    it has to store its argument (and the optional argument) for
 %    later processing \emph{within} the supertabular environment.
@@ -603,7 +629,7 @@
 % \end{macro}
 % \end{macro}
 %
-%  \begin{macro}{\ifST@star}
+%  \begin{macro}[int]{\ifST@star}
 %    This switch is used in the internal macros to remember which
 %    kind of environment was started.
 %    \begin{macrocode}
@@ -611,7 +637,7 @@
 %    \end{macrocode}
 %  \end{macro}
 %
-% \begin{macro}{\ifST@mp}
+% \begin{macro}[int]{\ifST@mp}
 %    This flag is used in the internal macros to remember if the
 %    tabular is to be put in a minipage.
 % \changes{v2}{1997/11/30}{Added ifST@mp}
@@ -620,7 +646,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-%  \begin{macro}{\ST@wd}
+%  \begin{macro}[int]{\ST@wd}
 %    For the \Lenv{supertabular*} environment it is necessary to
 %    store the intended width of the tabular.
 %    \begin{macrocode}
@@ -628,9 +654,9 @@
 %    \end{macrocode}
 %  \end{macro}
 %
-% \begin{macro}{\ST@rightskip}
-% \begin{macro}{\ST@leftskip}
-% \begin{macro}{\ST@parfillskip}
+% \begin{macro}[int]{\ST@rightskip}
+% \begin{macro}[int]{\ST@leftskip}
+% \begin{macro}[int]{\ST@parfillskip}
 %    For the \Lenv{mpsupertabular} environments we need special versions
 %    of |\leftskip|, |\rightskip| and |\parfillskip|.
 % \changes{v2}{1997/11/30}{Added ST@rightskip, ST@leftskip and ST@parfillskip}
@@ -643,7 +669,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@initisotab}
+% \begin{macro}[int]{\@initisotab}
 %    Required for ISO class, and check if class loaded.
 % \changes{v2.2a}{2000/02/15}{Added \cs{@initisotab} command}
 %    \begin{macrocode}
@@ -653,11 +679,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-%  \begin{macro}{\ST@caption}
+%  \begin{macro}[int]{\ST@caption}
 %    This is a redefinition of LaTeX's |\@caption|, |\@makecaption| is
 %    called within a group so as not to return to |\normalsize|
 %    globally. In the original a fix was made for the `feature' of the
-%    |\@makecaption| of \file{article.sty} and friends that a caption 
+%    |\@makecaption| of \file{article.sty} and friends that a caption
 %    \emph{always} gets a |\vskip 10pt| at the top and \emph{none}
 %    at the bottom; if a user
 %    wants to precede his table with a caption this results in a
@@ -690,8 +716,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tablehead}
-% \begin{macro}{\tablefirsthead}
+% \begin{macro}[no-user-doc]{\tablehead}
+% \begin{macro}[no-user-doc]{\tablefirsthead}
 %
 %    |\tablehead| activates the new tabular |\cr| commands.
 % \changes{v2}{1997/11/30}{Using version 4.1b of tablehead}
@@ -709,15 +735,15 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\c@PWSTtable}
-% \begin{macro}{\PWSTlastpage}
-% \begin{macro}{\PWSTcurpage}
-% \begin{macro}{\PWSTpenultimate}
-% \begin{macro}{\PWSTtempc}
-% \begin{macro}{\PWSTlines}
-% \begin{macro}{\PWSThead}
-% \begin{macro}{\PWSTlasthead}
-% \emph{Extension:} These are counters for the supertabular extension. 
+% \begin{macro}[int]{\c@PWSTtable}
+% \begin{macro}[no-user-doc]{\PWSTlastpage}
+% \begin{macro}[no-user-doc]{\PWSTcurpage}
+% \begin{macro}[no-user-doc]{\PWSTpenultimate}
+% \begin{macro}[no-user-doc]{\PWSTtempc}
+% \begin{macro}[no-user-doc]{\PWSTlines}
+% \begin{macro}[no-user-doc]{\PWSThead}
+% \begin{macro}[no-user-doc]{\PWSTlasthead}
+% \emph{Extension:} These are counters for the supertabular extension.
 % \Lcount{c@PWSTtable}
 % counts the number of supertabulars in case one or more are not captioned.
 % \Lcount{PWSTlastpage} is a counter holding the number of pages that a
@@ -734,7 +760,7 @@
 \newcount\PWSTcurpage
 \newcount\PWSTtempc
 %    \end{macrocode}
-% \emph{Extension:} \Lcount{PWSTlines} is used to count the number of 
+% \emph{Extension:} \Lcount{PWSTlines} is used to count the number of
 % supertabular entry
 % lines on a page. Estimates of the number of lines in the normal table
 % heading is held by \Lcount{PWSThead}, and similarly \Lcount{PWSTlasthead}
@@ -753,8 +779,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\iffirstcall}
-% \emph{Extension:} This is used by the extension code to flag if the presumed last 
+% \begin{macro}[no-user-doc]{\iffirstcall}
+% \emph{Extension:} This is used by the extension code to flag if the presumed last
 % page overflows. If overflow occurs, then |firstcall| is set to false.
 % \changes{v2}{1997/11/30}{Added iffirstcall}
 %    \begin{macrocode}
@@ -762,13 +788,13 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWST@lastht}
-% \begin{macro}{\PWST@generalht}
-% \begin{macro}{\PWST@ht}
+% \begin{macro}[int]{\PWST@lastht}
+% \begin{macro}[int]{\PWST@generalht}
+% \begin{macro}[int]{\PWST@ht}
 % \emph{Extension:} The estimated height of a table header and tail (i.e., the height of
 % an empty table) for the last page of a supertabular is stored in
 % |\PWSTlastht|. Similarly, the corresponding height of an empty table on
-% a general page (neither the first nor the last) is stored in 
+% a general page (neither the first nor the last) is stored in
 % |\PWSTgeneralht|. |\PWST@ht| is a scratch variable.
 % \changes{v2}{1997/11/30}{Added PWST@generalht, PWST@lastht and PWST@ht}
 %    \begin{macrocode}
@@ -780,11 +806,11 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tablelasthead}
-% \begin{macro}{\@table@last@head}
-% \begin{macro}{\notablelasthead}
-% \emph{Extension:} |\tablelasthead| is the extension user command 
-% to specify the heading for 
+% \begin{macro}[no-user-doc]{\tablelasthead}
+% \begin{macro}[int]{\@table@last@head}
+% \begin{macro}[no-user-doc]{\notablelasthead}
+% \emph{Extension:} |\tablelasthead| is the extension user command
+% to specify the heading for
 % the last page of a supertabular. The command |\notablelasthead|
 % switches off the last heading. This has to be used if a last headed
 % table precedes one that does not have a special last head.
@@ -801,8 +827,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tabletail}
-% \begin{macro}{\tablelasttail}
+% \begin{macro}[no-user-doc]{\tabletail}
+% \begin{macro}[no-user-doc]{\tablelasttail}
 %    |\tabletail| is the user command to specify the appearance of
 % the bottom of each tabular on a page. Special treatment is
 % given to the end of the supertabular via the |\tablelasttail|
@@ -831,13 +857,13 @@
 % \end{macro}
 % \end{macro}
 %
-%  \begin{macro}{\sttraceon}
-%  \begin{macro}{\sttraceoff}
-%    The original supertabular included a tracing mechanism to 
+%  \begin{macro}[no-user-doc]{\sttraceon}
+%  \begin{macro}[no-user-doc]{\sttraceoff}
+%    The original supertabular included a tracing mechanism to
 % follow the decisions supertabular made about page breaking.
 % This is now also used as a debugging mechanism for the
 % extension.
-% 
+%
 % \changes{v2}{1997/11/30}{Tracing revised}
 %    \begin{macrocode}
 \newcommand\sttraceon{\c@tracingst5\relax}
@@ -846,7 +872,7 @@
 %  \end{macro}
 %  \end{macro}
 %
-%  \begin{macro}{\ST@trace}
+%  \begin{macro}[int]{\ST@trace}
 %    A macro that gets the trace message as its argument
 % \changes{v2}{1997/11/30}{ST@trace revised to version 4.1b}
 %    \begin{macrocode}
@@ -857,7 +883,7 @@
 %    \end{macrocode}
 %  \end{macro}
 %
-%  \begin{macro}{\ST@pageleft}
+%  \begin{macro}[int]{\ST@pageleft}
 %    This register holds the estimate of the amount of space left over
 %    on the current page. This is used in the decision when to start a
 %    new page.
@@ -867,8 +893,8 @@
 %  \end{macro}
 %
 % \begin{macro}{\shrinkheight}
-% \begin{macro}{\setSTheight}
-%    |\shrinkheight| is a command to diminish the value of 
+% \begin{macro}[no-user-doc]{\setSTheight}
+%    |\shrinkheight| is a command to diminish the value of
 %    |\ST@pageleft| if necessary.
 %
 %    |\setSTheight| sets the value of |\ST@pageleft| if necessary.
@@ -884,7 +910,7 @@
 % \end{macro}
 %
 % \begin{macro}{\xentrystretch}
-% \begin{macro}{\PWST@xentrystretch}
+% \begin{macro}[int]{\PWST@xentrystretch}
 % \emph{Extension:} Provide a user and internal command for fudging
 % the estimated space taken by a table entry. Initialise to 10\% increase.
 % \changes{v2.3}{2000/04/09}{Added \cs{xentrystretch} command}
@@ -896,8 +922,8 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\ST@headht}
-% \begin{macro}{\ST@tailht}
+% \begin{macro}[int]{\ST@headht}
+% \begin{macro}[int]{\ST@tailht}
 %    The register |\ST@headht| holds the height of the first head of
 %    a \Lenv{supertabular}. The register |\ST@tailht| holds the
 %    height of the tail.
@@ -910,7 +936,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ST@pagesofar}
+% \begin{macro}[int]{\ST@pagesofar}
 %    Register |\ST@pagesofar| stores the estimate of the amount of the
 %    page already filled up.
 %    \begin{macrocode}
@@ -918,16 +944,16 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@pboxht}
+% \begin{macro}[int]{\ST@pboxht}
 %    The measured (total) height of a parbox argument.
 %    \begin{macrocode}
 \newdimen\ST@pboxht
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@lineht}
-% \begin{macro}{\ST@stretchht}
-% \begin{macro}{\ST@prevht}
+% \begin{macro}[int]{\ST@lineht}
+% \begin{macro}[int]{\ST@stretchht}
+% \begin{macro}[int]{\ST@prevht}
 %    The estimated height of a normal line is stored in |\ST@lineht|.
 %    The register |\ST@stretchht| is used to store the difference
 %    between the normal line height and the line height when |\arraystretch|
@@ -945,7 +971,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ST@toadd}
+% \begin{macro}[int]{\ST@toadd}
 %    When a tabular row is ended with |\\[...]| we need to temporarily
 %    store the optional argument in |\ST@toadd|.
 %    \begin{macrocode}
@@ -953,14 +979,14 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@dimen}
+% \begin{macro}[int]{\ST@dimen}
 %    A private scratch dimension register.
 %    \begin{macrocode}
 \newdimen\ST@dimen
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@pbox}
+% \begin{macro}[int]{\ST@pbox}
 %    A box register to store the contents of a parbox.
 %    \begin{macrocode}
 \newbox\ST@pbox
@@ -969,9 +995,9 @@
 % \end{macro}
 %
 %
-%  \begin{macro}{\ST@tabularcr}
-%  \begin{macro}{\ST@xtabularcr}
-% \begin{macro}{\ST@argtabularcr}
+% \begin{macro}[int]{\ST@tabularcr}
+% \begin{macro}[int]{\ST@xtabularcr}
+% \begin{macro}[int]{\ST@argtabularcr}
 %    These are redefinitions of |\@tabularcr| and |\@xtabularcr|. This
 %    is needed to include |\ST@cr| in the definition of
 %    |\@xtabularcr|.
@@ -1001,8 +1027,8 @@
 %  \end{macro}
 %
 %
-% \begin{macro}{\ST@xargarraycr}
-% \begin{macro}{\ST@yargarraycr}
+% \begin{macro}[int]{\ST@xargarraycr}
+% \begin{macro}[int]{\ST@yargarraycr}
 % \changes{v2.3e}{2010/02/06}{Allow calc use.}
 %    In this case we need to copy the value of the optional argument
 %    of |\\| in our private register |\ST@toadd|.
@@ -1027,9 +1053,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ST@startpbox}
+% \begin{macro}[int]{\ST@startpbox}
 %    The macros that deal with parbox columns need to be redefined,
-%    because we need to know the size of the parbox. 
+%    because we need to know the size of the parbox.
 % \changes{v2}{1997/11/30}{ST@startpbox changed to 4.1b version}
 % \changes{v2.3b}{2007/03/24}{Added \cs{setlength} to \cs{ST@startpbox} and
 %          \cs{ST@astartpbox} (courtesy of Heiko Oberdiek)}
@@ -1043,7 +1069,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@astartpbox}
+% \begin{macro}[int]{\ST@astartpbox}
 % \changes{v2.3e}{2010/02/06}{Allow calc use.}
 %    supertabular version of |\@astartpbox|.
 %    \begin{macrocode}
@@ -1054,8 +1080,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@endpbox}
-% \begin{macro}{\ST@aendpbox}
+% \begin{macro}[int]{\ST@endpbox}
+% \begin{macro}[int]{\ST@aendpbox}
 %    supertabular versions of |\@endpbox| and |\@aendpbox|.
 %    \begin{macrocode}
 \def\ST@endpbox{%
@@ -1081,7 +1107,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\estimate@lineht}
+% \begin{macro}[int]{\estimate@lineht}
 %    Estimates the height of normal line taking |\arraystretch| into
 %    account. Also computes the difference between a `normal' line
 %    and a stretched one.
@@ -1099,7 +1125,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@calfirstpageht}
+% \begin{macro}[int]{\@calfirstpageht}
 %    Estimates the space left on the current page and decides whether
 %    the tabular can be started on this page or on a new page. Aspects
 %    of the original code are modified for the extension.
@@ -1149,7 +1175,7 @@
       \fi
     \else
 %    \end{macrocode}
-%    When we end up here, \TeX{} has already decided it had enough 
+%    When we end up here, \TeX{} has already decided it had enough
 %    material for the first column and is building the second column.
 %    \begin{macrocode}
       \ST@trace\tw@{Second column}%
@@ -1181,30 +1207,35 @@
   \ST@trace\tw@{Available height: \the\ST@pageleft}%
 %    \end{macrocode}
 %    Now we need to know the height of the head of the table. In order
-%    to measure this we typeset it in a normal \Lenv{tabular} environment.
+%    to measure this we typeset it in a normal \Lenv{tabular} environment and suspend the tagging while measuring.
 %    \begin{macrocode}
   \ifx\@@tablehead\@empty
     \ST@headht=\z@
   \else
+    \SuspendTagging{xtab}%
     \setbox\@tempboxa=\vbox{\@arrayparboxrestore
       \ST@restore
       \expandafter\tabular\expandafter{\ST@tableformat}%
       \@@tablehead\endtabular}%
     \ST@headht=\ht\@tempboxa\advance\ST@headht\dp\@tempboxa
+    \ResumeTagging{xtab}%
   \fi
   \ST@trace\tw@{Height of head: \the\ST@headht}%
 %    \end{macrocode}
 %    To decide when to start a new page, we need to know the vertical
 %    size of the tail of the table.
+%    Again, we suspend tagging while measuring.
 %    \begin{macrocode}
   \ifx\@tabletail\@empty
     \ST@tailht=\z@
   \else
+    \SuspendTagging{xtab}%
     \setbox\@tempboxa=\vbox{\@arrayparboxrestore
       \ST@restore
       \expandafter\tabular\expandafter{\ST@tableformat}%
         \@tabletail\endtabular}%
     \ST@tailht=\ht\@tempboxa\advance\ST@tailht\dp\@tempboxa
+    \ResumeTagging{xtab}%
   \fi
 %    \end{macrocode}
 %    We add the average height of a line to this because when we
@@ -1246,7 +1277,7 @@
   \ifnum\@tempdima>\ST@pageleft
     \ST@trace\tw@{starting new page}%
 %    \end{macrocode}
-% \emph{Extension:} The next line in the original code is 
+% \emph{Extension:} The next line in the original code is
 % |\newpage\@calnextpageht|. I need to start a new page, making allowance
 % for the space required by the caption.
 %    \begin{macrocode}
@@ -1262,7 +1293,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@calnextpageht}
+% \begin{macro}[int]{\@calnextpageht}
 %    This calculates the maximum height of the tabular on all
 %    subsequent pages of the supertabular environment.
 %    \begin{macrocode}
@@ -1274,9 +1305,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWSTcalchtlines}
+% \begin{macro}[no-user-doc]{\PWSTcalchtlines}
 % \emph{Extension:} A macro to calculate the space required by an empty table
-% and the number of lines in an empty table. 
+% and the number of lines in an empty table.
 % \changes{v2.3}{2000/04/09}{Don't calculate number of head/tail lines}
 %
 %    The appropriate heads and tails are typeset in a temporary box
@@ -1285,8 +1316,9 @@
 %    \begin{macrocode}
 \newcommand{\PWSTcalchtlines}{%
 %    \end{macrocode}
-%    Measure the lasttail.
+%    Suspend tagging while measuring. Measure the lasttail.
 %    \begin{macrocode}
+  \SuspendTagging{xtab}%
   \setbox\@tempboxa=\vbox{\@arrayparboxrestore
     \ST@restore
     \expandafter\tabular\expandafter{\ST@tableformat}%
@@ -1323,13 +1355,15 @@
     \expandafter\tabular\expandafter{\ST@tableformat}%
     \@tablehead\endtabular}%
   \PWST@ht = \ht\@tempboxa\advance\PWST@ht\dp\@tempboxa
-  \global\advance\PWST@generalht by \PWST@ht}
+  \global\advance\PWST@generalht by \PWST@ht
+  \ResumeTagging{xtab}%
+  }
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWSTcalnextpageht}
-% \emph{Extension:} From some experiments that I ran it appeared as 
-% though the \Lpack{supertabular} package ignored the 
+% \begin{macro}[no-user-doc]{\PWSTcalnextpageht}
+% \emph{Extension:} From some experiments that I ran it appeared as
+% though the \Lpack{supertabular} package ignored the
 % possibility that the
 % space required for the table header and tail on pages after the
 % first one might be different. If the subsequent head/tail combination
@@ -1345,7 +1379,7 @@
   \ifnum\PWSTcurpage = \PWSTpenultimate
     \ST@trace\tw@{Calculating height of xtabular on last page}%
 %    \end{macrocode}
-%    We are on the penultimate page, so get the height of the 
+%    We are on the penultimate page, so get the height of the
 % last head/tail.
 %    \begin{macrocode}
     \PWST@ht=\PWST@lastht
@@ -1367,7 +1401,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\x@supertabular}
+% \begin{macro}[int]{\x@supertabular}
 %    The various supertabular environments share a lot of code. Thus,
 %    to avoid needless repetition, the shared code is defined
 %    in this macro.
@@ -1407,7 +1441,7 @@
   \global\let\@oldcr=\\%
 %    \end{macrocode}
 %    Save the current value of |\baselineskip|, as we need it in the
-%    calculation of the average height of a line. 
+%    calculation of the average height of a line.
 %    \begin{macrocode}
   \def\baslineskp{\baselineskip}%
 %    \end{macrocode}
@@ -1417,7 +1451,7 @@
   \ifx\undefined\@classix
 %    \end{macrocode}
 %    Save old |\@tabularcr| and insert the definition of
-%    |\@stabularcr|. 
+%    |\@stabularcr|.
 %    \begin{macrocode}
     \let\org@tabularcr\@tabularcr
     \let\@tabularcr\ST@tabularcr
@@ -1434,9 +1468,14 @@
 %    \begin{macrocode}
     \let\org@tabularcr\@arraycr
     \let\@arraycr\ST@tabularcr
-    \let\org@startpbox=\@startpbox
+    \ifx\undefined\@startpbox@action
+      \let\org@startpbox=\@startpbox
+      \let\@startpbox=\ST@astartpbox
+    \else
+      \let\org@startpbox@action=\@startpbox@action
+      \let\@startpbox@action=\ST@astartpbox
+    \fi
     \let\org@endpbox=\@endpbox
-    \let\@startpbox=\ST@astartpbox
     \let\@endpbox=\ST@aendpbox
   \fi
 %    \end{macrocode}
@@ -1463,7 +1502,7 @@
   \estimate@lineht
   \@calfirstpageht
 %    \end{macrocode}
-% \emph{Extension:} Call the macro to initialize the extension code for 
+% \emph{Extension:} Call the macro to initialize the extension code for
 %  this table.
 %    \begin{macrocode}
   \PWSTinit
@@ -1471,7 +1510,7 @@
 % \emph{Extension:} At this point I know, and have adjusted for, the
 % page on which the first part of the table will be printed. It should now
 % be safe to print the top caption, if any. Unfortunately, in spite of
-% everthing, the \TeX{} page breaking
+% everything, the \TeX{} page breaking
 % mechanism might still think that there is too little space left.
 %    \begin{macrocode}
   \if@topcaption \@process@tablecaption \fi
@@ -1488,7 +1527,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWSTinit}
+% \begin{macro}[no-user-doc]{\PWSTinit}
 % \emph{Extension:} This routine initialises the extension data.
 % \changes{v2}{1997/11/30}{Added PWSTinit routine}
 %    \begin{macrocode}
@@ -1496,7 +1535,7 @@
 %    \end{macrocode}
 %    At the end of processing each supertabular (see later) the number of
 % pages consumed by the supertabular is written to the \file{.aux} file.
-% At the start of a supertabular, after incrementing the number of 
+% At the start of a supertabular, after incrementing the number of
 % supertabulars processed, the prior number of pages are read from
 % the file. These are stored in \Lcount{PWSTlastpage}.
 %    \begin{macrocode}
@@ -1514,7 +1553,7 @@
     \PWSTlastpage=\PWSTtempc
   \fi
   \ST@trace\tw@{Table \the\c@PWSTtable: last page set to \the\PWSTlastpage}%
-%    \end{macrocode}    
+%    \end{macrocode}
 %    Set the current page counter to unity.
 %    \begin{macrocode}
   \PWSTcurpage=\@ne
@@ -1536,7 +1575,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\xtabular}
+% \begin{macro}[no-user-doc]{\xtabular}
 %    We start by looking for an optional argument, which will be duly
 %    ignored as it seems to make no sense to try to align a multipage
 %    table in the middle...
@@ -1551,7 +1590,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@supertabular}
+% \begin{macro}[int]{\@supertabular}
 %    We can now save the preamble of the tabular in a macro.
 %    \begin{macrocode}
 \def\@supertabular[#1]#2{%
@@ -1580,9 +1619,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\xtabular*}
+% \begin{macro}[no-user-doc]{\xtabular*}
 %    We start by looking for the optional argument of the tabular
-%    environment. 
+%    environment.
 %    \begin{macrocode}
 \@namedef{xtabular*}#1{%
   \@ifnextchar[{\@nameuse{@supertabular*}{#1}}%
@@ -1612,7 +1651,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\mpxtabular}
+% \begin{macro}[no-user-doc]{\mpxtabular}
 %    This version of the supertabular environment puts each tabular into
 %    a minipage, thus making footnotes possible. We start by looking for
 %    an optional argument, which will be ignored as it makes no sense
@@ -1660,7 +1699,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\mpxtabular*}
+% \begin{macro}[no-user-doc]{\mpxtabular*}
 %    We start by looking for the optional argument of the tabular environment.
 %    \begin{macrocode}
 \@namedef{mpxtabular*}#1{%
@@ -1669,7 +1708,7 @@
 }
 %    \end{macrocode}
 %
-%    Now we can save the intended width and the preamble of 
+%    Now we can save the intended width and the preamble of
 %    the \Lenv{tabular*}.
 %    \begin{macrocode}
 \@namedef{@mpsupertabular*}#1[#2]#3{%
@@ -1699,14 +1738,14 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\endxtabular}
-% \begin{macro}{\endxtabular*}
+% \begin{macro}[no-user-doc]{\endxtabular}
+% \begin{macro}[no-user-doc]{\endxtabular*}
 %    These close the \Lenv{xtabular} and \Lenv{xtabular*}
 %    environments.
 %
-%    For the extension, this macro has been modified to write out 
-% to the \file{.aux} file the 
-% number of pages used for the supertabular. 
+%    For the extension, this macro has been modified to write out
+% to the \file{.aux} file the
+% number of pages used for the supertabular.
 %    \begin{macrocode}
 \def\endxtabular{%
   \ifx\@table@last@tail\undefined
@@ -1719,7 +1758,7 @@
 %   While studying the original code to determine where additions were
 % needed for the extension, I realized that the last part of
 % the |\end...| code was common to all the environments. I have broken
-% it out into a seperate routine which also includes the modification
+% it out into a separate routine which also includes the modification
 % needed for the extension.
 %    \begin{macrocode}
   \x@endsupertabular
@@ -1737,7 +1776,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\x@endsupertabular}
+% \begin{macro}[int]{\x@endsupertabular}
 %     This macro contains the code that is common to all the |\end...|
 % commands. It includes the modification required for the extension.
 % \changes{v2}{1997/11/30}{Added x@endsupertabular routine}
@@ -1765,7 +1804,7 @@
 %%%  \global\let\@table@last@tail\undefined
   \global\let\@process@tablecaption\relax
 %    \end{macrocode}
-% \emph{Extension:} For the extension, write the number of the last page 
+% \emph{Extension:} For the extension, write the number of the last page
 % to the \file{.aux} file. Also, if we are in the \file{iso} class, reset
 % the `float' flag.
 % \changes{v2}{1997/12/02}{Added resetting of \cs{ifinfloat}}
@@ -1775,7 +1814,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWSToplastpagenum}
+% \begin{macro}[no-user-doc]{\PWSToplastpagenum}
 %  \emph{Extension:} This routine is responsible for writing the number of the
 % last page of the supertabular to the \file{.aux} file.
 %
@@ -1843,8 +1882,8 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\endmpxtabular}
-% \begin{macro}{\endmpxtabular*}
+% \begin{macro}[no-user-doc]{\endmpxtabular}
+% \begin{macro}[no-user-doc]{\endmpxtabular*}
 %    These close the \Lenv{mpxtabular} and \Lenv{mpxtabular*}
 %    environments.
 %    \begin{macrocode}
@@ -1865,7 +1904,7 @@
 %    \begin{macrocode}
   \ST@trace\tw@{Ended an mpxtabular\ifST@star*\fi}}
 %    \end{macrocode}
-% 
+%
 %    The definition of the ending of the \Lenv{mpxtabular*}
 %    environment is simple:
 %    \begin{macrocode}
@@ -1874,23 +1913,28 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ST@restore}
+% \begin{macro}[int]{\ST@restore}
 %    This macro restores the original definitions of the macros that
 %    handle parbox entries and the `end of row' macros.
 %    \begin{macrocode}
 \def\ST@restore{%
   \ifx\undefined\@classix
     \let\@tabularcr\org@tabularcr
+    \let\@startpbox\org@startpbox
   \else
     \let\@arraycr\org@tabularcr
+    \ifx\undefined\@startpbox@action
+      \let\@startpbox\org@startpbox
+    \else
+      \let\@startpbox@action\org@startpbox@action
+    \fi
   \fi
-  \let\@startpbox\org@startpbox
   \let\@endpbox\org@endpbox}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\inner@tabular}
-% \begin{macro}{\inner@tabular*}
+% \begin{macro}[int]{\inner@tabular}
+% \begin{macro}[int]{\inner@tabular*}
 %    In order to facilitate complete \Lenv{tabular} environments to be in
 %    a cell of a \Lenv{supertabular} we need to adapt the definition
 %    of the original environments. For the inner \Lenv{tabular} a
@@ -1910,14 +1954,14 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ST@cr}
+% \begin{macro}[int]{\ST@cr}
 %    This macro is called by each |\\| inside the tabular environment.
 %    It updates the estimate of the amount of space left on the
 %    current page and starts a new page if necessary.
 %    \begin{macrocode}
 \def\ST@cr{%
   \noalign{%
-    \ST@trace\thr@@{Parbox height: \the\ST@pboxht\MessageBreak 
+    \ST@trace\thr@@{Parbox height: \the\ST@pboxht\MessageBreak
                     Line height: \the\ST@lineht}%
     \ifnum\ST@pboxht<\ST@lineht
 %    \end{macrocode}
@@ -1954,7 +1998,7 @@
      \ST@trace\thr@@{Line counter incremented by one to: \the\PWSTlines}%
   }% end of noalign
 %    \end{macrocode}
-%    In general, when the |\ST@pageleft| has become negative, 
+%    In general, when the |\ST@pageleft| has become negative,
 %    the last row was so high
 %    that the supertabular doesn't fit on the current page. In this case we
 %    skip the current page and start at the top of the next one; otherwise
@@ -1975,7 +2019,7 @@
       \ST@skippage
     \else
 %    \end{macrocode}
-%    When there is not enough space left on the current page, we start 
+%    When there is not enough space left on the current page, we start
 %    a new page. To compute the amount of space needed we use the height
 %    of the previous line (|\ST@prevht|) as an estimate of the height
 %    of the next line. If we are processing an \Lenv{mpsupertabular}
@@ -2013,10 +2057,10 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWST@lastpagecr}
+% \begin{macro}[int]{\PWST@lastpagecr}
 % \emph{Extension:} This routine handles newlines on the last page
 % of a supertabular. The idea is that when we are on the last page the
-% table continues to be processed until the end without calling for a 
+% table continues to be processed until the end without calling for a
 % newpage even if the table will be too long. I do need to record whether
 % or not the table has `overflowed' the allowable space on the page.
 % The code is very similar to the last part of the code for |\ST@cr|.
@@ -2055,8 +2099,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWST@setfirstcall}
-% \emph{Extension:} This routine records that a table on the last page 
+% \begin{macro}[int]{\PWST@setfirstcall}
+% \emph{Extension:} This routine records that a table on the last page
 % has overflowed
 % by setting |firstcall| to FALSE. If it is the first such overflow
 % it also zeroes the line counter.
@@ -2071,7 +2115,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@skipfirstpart}
+% \begin{macro}[int]{\ST@skipfirstpart}
 %    This macro skips the current page and moves the entire supertabular
 %    that has been built so far to the next page.
 %    \begin{macrocode}
@@ -2108,7 +2152,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ST@newpage}
+% \begin{macro}[int]{\ST@newpage}
 %    This macro performs the actions necessary to start a new page.
 %
 %    This macro is also modified for the extension to supertabluar.
@@ -2137,7 +2181,7 @@
 %    \end{macrocode}
 % On with the output.
 %
-% \emph{Extension:} The original code had the next line as 
+% \emph{Extension:} The original code had the next line as
 % |\newpage\@calnextpageht|. However, if the general header has a
 % vertical height that differs from the first header, then the table
 % on the continuation pages may run short or, more disconcerting, long.
@@ -2148,7 +2192,7 @@
   \newpage\PWSTcalnextpageht
   \ST@trace\tw@{writing head}%
 %    \end{macrocode}
-% \emph{Extension:} The original code just let |\ST@next| to |\@tablehead|. 
+% \emph{Extension:} The original code just let |\ST@next| to |\@tablehead|.
 % The extension
 % has to handle the special case of of the heading on the last page.
 %    \begin{macrocode}
@@ -2173,7 +2217,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\PWSTsethead}
+% \begin{macro}[no-user-doc]{\PWSTsethead}
 % \emph{Extension:} This is more extension code for use within |\ST@newpage|.
 % It provides the proper table head for the page about to be processed.
 % \changes{v2}{1997/11/30}{Added PWSTsethead routine}
@@ -2187,7 +2231,7 @@
 %    \end{macrocode}
 % The current page counter is incremented
 % and it is checked against the old page counter to see if this is
-% the last page of this supertabular. 
+% the last page of this supertabular.
 %    \begin{macrocode}
   \global\advance\PWSTcurpage\@ne
   \ST@trace\tw@{Table \the\c@PWSTtable:\MessageBreak
@@ -2248,19 +2292,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
