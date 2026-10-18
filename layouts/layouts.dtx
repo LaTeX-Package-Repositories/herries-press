@@ -2,8 +2,9 @@
 %
 % layouts.dtx
 % Author: Peter Wilson (Herries Press) 
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -17,25 +18,39 @@
 %
 % 
 %<*driver>
-\documentclass[twoside]{ltxdoc}
-\usepackage{url}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass[twoside]{l3in2edoc}
 \makeatletter
   \@mparswitchfalse
 \makeatother
 \EnableCrossrefs
 \CodelineIndex
 \setcounter{StandardModuleDepth}{1}
-\renewcommand{\MakeUppercase}[1]{#1}
 \pagestyle{headings}
 \begin{document}
-  \raggedbottom
+\raggedbottom
   \DocInput{layouts.dtx}
 \end{document}
 %</driver>
 %
 % \fi
 %
-% \CheckSum{6212}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -90,9 +105,9 @@
 % \def\fileversion{v2.6b} \def\filedate{2003/11/25}
 % \def\fileversion{v2.6c} \def\filedate{2004/10/25}
 % \def\fileversion{v2.6d} \def\filedate{2009/09/02}
+% \def\fileversion{v2.6e} \def\filedate{2026/10/17}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -103,8 +118,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press \\
-%   Maintainer: Will Robertson \\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project \\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -163,10 +178,12 @@
 % \changes{v2.6a}{2002/12/12}{Cater for negative length in list layout}
 % \changes{v2.6b}{2003/11/25}{Corrected spelling and grammatical errors}
 % \changes{v2.6c}{2004/10/25}{Privatised the \cs{*inch}, etc., macros}
+% \changes{v2.6e}{2026/10/17}{Tag code and user documentation; new maintainer (LaTeX Project)}
+% \changes{v2.6e}{2026/10/17}{Add alt text to picture environments}
 %    \begin{macrocode}
 %<*lays>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{layouts}[2009/09/02 v2.6d graphical depiction of document elements]
+\ProvidesPackage{layouts}[2026/10/17 v2.6e graphical depiction of document elements]
 
 %    \end{macrocode}
 %
@@ -180,7 +197,7 @@
 %    First we define some commands, counters, etc., that will be useful
 % later on.
 %
-% \begin{macro}{\bs}
+% \begin{macro}[no-user-doc]{\bs}
 %    We will be doing a lot of printing of \LaTeX{} commands, so we
 % need a short command to print a backslash.
 % \changes{v2.4}{2001/04/30}{Better definition for the \cs{bs} command}
@@ -191,11 +208,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@yoneinch}
-% \begin{macro}{\l@yeighthalfinch}
-% \begin{macro}{\l@yteninch}
-% \begin{macro}{\l@yeleveninch}
-% \begin{macro}{\l@yonepoint}
+% \begin{macro}[int]{\l@yoneinch}
+% \begin{macro}[int]{\l@yeighthalfinch}
+% \begin{macro}[int]{\l@yteninch}
+% \begin{macro}[int]{\l@yeleveninch}
+% \begin{macro}[int]{\l@yonepoint}
 % \changes{v2.3}{1999/01/21}{Made `useful values' commands not counters}
 %    Some generally useful values. |\l@yonepoint| is set to 65536 sp and all
 % the others are set to a value in pts.
@@ -212,7 +229,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtscale}
+% \begin{macro}[int]{\l@youtscale}
 %    Internal command that stores the drawing scale factor. Initialised
 % to half scale.
 %    \begin{macrocode}
@@ -221,14 +238,14 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@ylen}
+% \begin{macro}[int]{\l@ylen}
 %    A length.
 %    \begin{macrocode}
 \newlength{\l@ylen}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\layoutsbox}
+% \begin{macro}[no-user-doc]{\layoutsbox}
 %    A box for storing something. There seems to be no reason why the user
 % should not be able to use this.
 %    \begin{macrocode}
@@ -236,15 +253,15 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@youtunitlength}
+% \begin{macro}[int]{\l@youtunitlength}
 %    This will be used for setting the |\unitlength| for a \Lenv{picture}.
 %    \begin{macrocode}
 \newlength{\l@youtunitlength}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@youtlinethick}
-% \begin{macro}{\l@youtlinethickii}
+% \begin{macro}[int]{\l@youtlinethick}
+% \begin{macro}[int]{\l@youtlinethickii}
 %    These will be used as parameters to a |\linethickness| command.
 %    \begin{macrocode}
 \newlength{\l@youtlinethick}
@@ -254,8 +271,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@ysetupparskip}%
-% \begin{macro}{\l@ysetupbaselineskip}
+% \begin{macro}[int]{\l@ysetupparskip}%
+% \begin{macro}[int]{\l@ysetupbaselineskip}
 %    Used for storing the document's |\parskip| and |\baselineskip|.
 %    \begin{macrocode}
 \newlength{\l@ysetupparskip}
@@ -265,8 +282,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@yonem}
-% \begin{macro}{\l@yonex}
+% \begin{macro}[int]{\l@yonem}
+% \begin{macro}[int]{\l@yonex}
 % Used for storing the document's value for 1em and 1ex.
 %    \begin{macrocode}
 \newlength{\l@yonem}
@@ -276,17 +293,17 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@ylmarg}
-% \begin{macro}{\l@yrmarg}
-% \begin{macro}{\l@yitmindent}
-% \begin{macro}{\l@ylblwidth}
-% \begin{macro}{\l@ylblsep}
-% \begin{macro}{\l@ylparindent}
-% \begin{macro}{\l@ytsep}
-% \begin{macro}{\l@ypskip}
-% \begin{macro}{\l@yptsep}
-% \begin{macro}{\l@ypsep}
-% \begin{macro}{\l@yitmsep}
+% \begin{macro}[int]{\l@ylmarg}
+% \begin{macro}[int]{\l@yrmarg}
+% \begin{macro}[int]{\l@yitmindent}
+% \begin{macro}[int]{\l@ylblwidth}
+% \begin{macro}[int]{\l@ylblsep}
+% \begin{macro}[int]{\l@ylparindent}
+% \begin{macro}[int]{\l@ytsep}
+% \begin{macro}[int]{\l@ypskip}
+% \begin{macro}[int]{\l@yptsep}
+% \begin{macro}[int]{\l@ypsep}
+% \begin{macro}[int]{\l@yitmsep}
 % We need to store a list environment's values for use when tabulating
 % the actual list values.
 %    \begin{macrocode}
@@ -315,7 +332,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@ytok}
+% \begin{macro}[int]{\l@ytok}
 %    A useful token
 %    \begin{macrocode}
 \newtoks\l@ytok
@@ -323,8 +340,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@youtpw}
-% \begin{macro}{\l@youtph}
+% \begin{macro}[int]{\l@youtpw}
+% \begin{macro}[int]{\l@youtph}
 %    We use these for storing the page width and height.
 %    \begin{macrocode}
 \newcount\l@youtpw
@@ -334,13 +351,13 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youthpi}
-% \begin{macro}{\l@youthpii}
-% \begin{macro}{\l@youthpiii}
-% \begin{macro}{\l@youthpiv}
-% \begin{macro}{\l@youthpv}
-% \begin{macro}{\l@youthpvi}
-% \begin{macro}{\l@youthpvii}
+% \begin{macro}[int]{\l@youthpi}
+% \begin{macro}[int]{\l@youthpii}
+% \begin{macro}[int]{\l@youthpiii}
+% \begin{macro}[int]{\l@youthpiv}
+% \begin{macro}[int]{\l@youthpv}
+% \begin{macro}[int]{\l@youthpvi}
+% \begin{macro}[int]{\l@youthpvii}
 %    Counters for horizontal drawing parameters.
 %
 %    \begin{macrocode}
@@ -361,14 +378,14 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtparskip}
-% \begin{macro}{\l@youtvpi}
-% \begin{macro}{\l@youtvpii}
-% \begin{macro}{\l@youtvpiii}
-% \begin{macro}{\l@youtvpiv}
-% \begin{macro}{\l@youtvpv}
-% \begin{macro}{\l@youtvpvi}
-% \begin{macro}{\l@youtvpvii}
+% \begin{macro}[int]{\l@youtparskip}
+% \begin{macro}[int]{\l@youtvpi}
+% \begin{macro}[int]{\l@youtvpii}
+% \begin{macro}[int]{\l@youtvpiii}
+% \begin{macro}[int]{\l@youtvpiv}
+% \begin{macro}[int]{\l@youtvpv}
+% \begin{macro}[int]{\l@youtvpvi}
+% \begin{macro}[int]{\l@youtvpvii}
 %    Counters for vertical drawing parameters.
 %
 %    \begin{macrocode}
@@ -391,14 +408,14 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youthdo}
-% \begin{macro}{\l@youthdi}
-% \begin{macro}{\l@youthdii}
-% \begin{macro}{\l@youthdiii}
-% \begin{macro}{\l@youthdiv}
-% \begin{macro}{\l@youthdv}
-% \begin{macro}{\l@youthdvi}
-% \begin{macro}{\l@youthdvii}
+% \begin{macro}[int]{\l@youthdo}
+% \begin{macro}[int]{\l@youthdi}
+% \begin{macro}[int]{\l@youthdii}
+% \begin{macro}[int]{\l@youthdiii}
+% \begin{macro}[int]{\l@youthdiv}
+% \begin{macro}[int]{\l@youthdv}
+% \begin{macro}[int]{\l@youthdvi}
+% \begin{macro}[int]{\l@youthdvii}
 %    Horizontal dimensions.
 %
 %    \begin{macrocode}
@@ -421,15 +438,15 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtvdo}
-% \begin{macro}{\l@youtvdi}
-% \begin{macro}{\l@youtvdii}
-% \begin{macro}{\l@youtvdiii}
-% \begin{macro}{\l@youtvdiv}
-% \begin{macro}{\l@youtvdv}
-% \begin{macro}{\l@youtvdvi}
-% \begin{macro}{\l@youtvdvii}
-% \begin{macro}{\l@youtvdviii}
+% \begin{macro}[int]{\l@youtvdo}
+% \begin{macro}[int]{\l@youtvdi}
+% \begin{macro}[int]{\l@youtvdii}
+% \begin{macro}[int]{\l@youtvdiii}
+% \begin{macro}[int]{\l@youtvdiv}
+% \begin{macro}[int]{\l@youtvdv}
+% \begin{macro}[int]{\l@youtvdvi}
+% \begin{macro}[int]{\l@youtvdvii}
+% \begin{macro}[int]{\l@youtvdviii}
 %    Vertical dimensions.
 %    \begin{macrocode}
 \newcount\l@youtvdo
@@ -453,12 +470,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtxci}
-% \begin{macro}{\l@youtxcii}
-% \begin{macro}{\l@youtxciii}
-% \begin{macro}{\l@youtxciv}
-% \begin{macro}{\l@youtxcv}
-% \begin{macro}{\l@youtxcvi}
+% \begin{macro}[int]{\l@youtxci}
+% \begin{macro}[int]{\l@youtxcii}
+% \begin{macro}[int]{\l@youtxciii}
+% \begin{macro}[int]{\l@youtxciv}
+% \begin{macro}[int]{\l@youtxcv}
+% \begin{macro}[int]{\l@youtxcvi}
 %    X coordinates.
 %    \begin{macrocode}
 \newcount\l@youtxci
@@ -476,14 +493,14 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtyci}
-% \begin{macro}{\l@youtycii}
-% \begin{macro}{\l@youtyciii}
-% \begin{macro}{\l@youtyciv}
-% \begin{macro}{\l@youtycv}
-% \begin{macro}{\l@youtycvi}
-% \begin{macro}{\l@youtycvii}
-% \begin{macro}{\l@youtycviii}
+% \begin{macro}[int]{\l@youtyci}
+% \begin{macro}[int]{\l@youtycii}
+% \begin{macro}[int]{\l@youtyciii}
+% \begin{macro}[int]{\l@youtyciv}
+% \begin{macro}[int]{\l@youtycv}
+% \begin{macro}[int]{\l@youtycvi}
+% \begin{macro}[int]{\l@youtycvii}
+% \begin{macro}[int]{\l@youtycviii}
 %    Y coordinates.
 %    \begin{macrocode}
 \newcount\l@youtyci
@@ -505,8 +522,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@youtxco}
-% \begin{macro}{\l@youtyco}
+% \begin{macro}[int]{\l@youtxco}
+% \begin{macro}[int]{\l@youtyco}
 %    For the (X,Y) coordinates of the bottom left hand corner of the page.
 % \changes{v2.4}{2001/04/30}{Added \cs{l@youtxco} and \cs{l@youtyco}}
 %    \begin{macrocode}
@@ -521,7 +538,7 @@
 %
 %    The following are used to set up default conditions.
 %
-% \begin{macro}{\ifoddpagelayout}
+% \begin{macro}[no-user-doc]{\ifoddpagelayout}
 %    Set TRUE to draw an oddside page.
 %    \begin{macrocode}
 \newif\ifoddpagelayout
@@ -529,7 +546,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\iftwocolumnlayout}
+% \begin{macro}[no-user-doc]{\iftwocolumnlayout}
 %    Set TRUE to draw a two column page.
 %    \begin{macrocode}
 \newif\iftwocolumnlayout
@@ -537,7 +554,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifdrawmarginpars}
+% \begin{macro}[no-user-doc]{\ifdrawmarginpars}
 %    Set TRUE to draw marginpars on a page.
 %    \begin{macrocode}
 \newif\ifdrawmarginpars
@@ -545,7 +562,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifdrawparameters}
+% \begin{macro}[no-user-doc]{\ifdrawparameters}
 %    Set TRUE to draw a layout with marked dimension lines. 
 %    \begin{macrocode}
 \newif\ifdrawparameters
@@ -553,7 +570,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\iflistaspara}
+% \begin{macro}[no-user-doc]{\iflistaspara}
 %    Set TRUE to draw lists as stand-alone paragraph.
 %    \begin{macrocode}
 \newif\iflistaspara
@@ -561,15 +578,15 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifruninhead}
+% \begin{macro}[no-user-doc]{\ifruninhead}
 %    Set TRUE to draw a run-in heading.
 %    \begin{macrocode}
 \newif\ifruninhead
-  \runinheadfalse
+\runinheadfalse
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifprintparameters}
+% \begin{macro}[no-user-doc]{\ifprintparameters}
 %    Set TRUE to print table of actual parameter values
 % \changes{v2.5}{2001/10/22}{Added \cs{ifprintparameters}}
 %    \begin{macrocode}
@@ -578,7 +595,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifdrawdimensions}
+% \begin{macro}[no-user-doc]{\ifdrawdimensions}
 %    Set TRUE to draw dimension lines
 % \changes{v2.5}{2001/10/22}{Added \cs{ifdrawdimensions}}
 %    \begin{macrocode}
@@ -587,7 +604,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifprintheadings}
+% \begin{macro}[no-user-doc]{\ifprintheadings}
 %    Set TRUE to print text about dashed lines.
 % \changes{v2.5}{2001/10/22}{Added \cs{ifprintheadings}}
 %    \begin{macrocode}
@@ -596,7 +613,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifl@ytempif}
+% \begin{macro}[int]{\ifl@ytempif}
 %    A scratch |\if|.
 % \changes{v2.5}{2001/10/22}{Added \cs{ifl@ytempif}}
 %    \begin{macrocode}
@@ -604,7 +621,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@yor}
+% \begin{macro}[int]{\l@yor}
 %    |\l@yor{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE 
 % unless \meta{ifA} is FALSE and \meta{ifB} is FALSE (i.e.,
 % |\ifl@tempif| = \meta{ifA} OR \meta{ifB}).
@@ -622,7 +639,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@ynnand}
+% \begin{macro}[int]{\l@ynnand}
 %    |\l@ynnand{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to FALSE 
 % unless \meta{ifA} is FALSE and \meta{ifB} is TRUE 
 % \changes{v2.5}{2001/10/22}{Added \cs{l@ynnand}}
@@ -638,7 +655,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@ynox}
+% \begin{macro}[int]{\l@ynox}
 %    |\l@ynox{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE 
 % unless \meta{ifA} is TRUE and \meta{ifB} is FALSE.
 % \changes{v2.5}{2001/10/22}{Added \cs{l@ynox}}
@@ -654,8 +671,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\testdrawdimensions}
-% \begin{macro}{\testprintparameters}
+% \begin{macro}[no-user-doc]{\testdrawdimensions}
+% \begin{macro}[no-user-doc]{\testprintparameters}
 % \changes{v2.5}{2001/10/21}{Added \cs{testdrawdimensions} and
 %         \cs{testprintparameters}}
 % \changes{v2.5}{2001/10/21}{Use \cs{testdrawdimensions} for check to
@@ -672,8 +689,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\setlabelfont}
-% \begin{macro}{\l@ylabelfont}
+% \begin{macro}[no-user-doc]{\setlabelfont}
+% \begin{macro}[int]{\l@ylabelfont}
 %    The font for labels in the diagrams.
 % \changes{v2.5}{2001/10/22}{Added \cs{setlabelfont} and \cs{l@ylabelfont}}
 %    \begin{macrocode}
@@ -683,8 +700,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\setparametertextfont}
-% \begin{macro}{\l@yparamfont}
+% \begin{macro}[no-user-doc]{\setparametertextfont}
+% \begin{macro}[int]{\l@yparamfont}
 %    The font size for parameters.
 % \changes{v2.5}{2001/10/22}{Added \cs{setparametertextfont} and \cs{l@yparamfont}}
 %    \begin{macrocode}
@@ -694,8 +711,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\setvaluestextsize}
-% \begin{macro}{\l@yvalsize}
+% \begin{macro}[no-user-doc]{\setvaluestextsize}
+% \begin{macro}[int]{\l@yvalsize}
 %    The font size for value tables.
 % \changes{v2.5}{2001/10/22}{Added \cs{setvaluestextsize} and \cs{l@yvalsize}}
 %    \begin{macrocode}
@@ -706,20 +723,20 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\setlayoutscale}
+% \begin{macro}[no-user-doc]{\setlayoutscale}
 %    A user command to set the drawing scale. The scale is initialised
 % to half size.
 % \changes{v2.5a}{2002/01/06}{Added warning to \cs{setlayoutscale}}
 %    \begin{macrocode}
 \newcommand{\setlayoutscale}[1]{\setlength{\l@youtunitlength}{1pt}
   \l@youtunitlength = #1\l@youtunitlength
-  \renewcommand{\l@youtscale}{#1}
+\renewcommand{\l@youtscale}{#1}
   \PackageWarning{layouts}{Layout scale set to #1}}
 %%%\setlayoutscale{0.5}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\setuplayouts}
+% \begin{macro}[no-user-doc]{\setuplayouts}
 %    The |\setuplayouts| command should be called immediately at
 % the |\begin{document}|. It must be called before any command that
 % changes font sizes or makes any change to the document layout.
@@ -741,7 +758,7 @@
 %
 %    A variety of utility commands.
 %
-% \begin{macro}{\l@yltoc}
+% \begin{macro}[int]{\l@yltoc}
 %  |\l@yltoc{|\meta{length}|}{|\meta{counter}|}| converts a length into a 
 % counter value. The counter value is to the nearest
 %  pt of the length. 
@@ -756,8 +773,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@yvuda}
-% \begin{macro}{\l@yhrda}
+% \begin{macro}[int]{\l@yvuda}
+% \begin{macro}[int]{\l@yhrda}
 % |\l@yvuda{|\meta{x}|}{|\meta{y}|}{|\meta{distance}|}| draws a line
 % vertically upwards from (\meta{x},\meta{y}) a \meta{distance} with an
 % outward pointing arrowhead at each end of the line. |\l@yhrda| is
@@ -772,8 +789,8 @@
 % \end{macro}
 % \end{macro}
 %                          
-% \begin{macro}{\l@yvudia}
-% \begin{macro}{\l@yhrdia}
+% \begin{macro}[int]{\l@yvudia}
+% \begin{macro}[int]{\l@yhrdia}
 % |\l@yvudia{|\meta{x}|}{|\meta{y}|}{|\meta{distance}|}| draws two vertical
 % arrowheads pointing to each other. One is at (\meta{x},\meta{y}) and
 % the other is at (\meta{x},\meta{y + distance}). |\l@yhrdia| is
@@ -800,8 +817,8 @@
 % \end{macro}
 % \end{macro}
 %             
-% \begin{macro}{\l@ypcmd}
-% \begin{macro}{\l@ycmd}
+% \begin{macro}[int]{\l@ypcmd}
+% \begin{macro}[int]{\l@ycmd}
 %  |\l@ypcmd{|\meta{cmdname}|}| typesets a command \meta{cmdname} (which does 
 % not include the backslash) (in a picture). For example, |\l@ypcmd{fred}|
 % prints |\fred|. The font size is given by |\l@yparamfont|. The
@@ -814,9 +831,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\printinunitsof}
-% \begin{macro}{\l@yunitperpt}
-% \begin{macro}{\l@yunits}
+% \begin{macro}[no-user-doc]{\printinunitsof}
+% \begin{macro}[int]{\l@yunitperpt}
+% \begin{macro}[int]{\l@yunits}
 % |\printinunitsof{|\meta{unit}|}| sets |\l@yunits| to the value of \meta{unit}
 % and |\l@yunitperpt| to the number of \meta{unit} in 1pt.
 % \changes{v2.5}{2001/10/21}{Added \cs{printinunitsof}, \cs{l@yunitperpt}
@@ -876,8 +893,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@ytempdima}
-% \begin{macro}{\prntlen}
+% \begin{macro}[int]{\l@ytempdima}
+% \begin{macro}[no-user-doc]{\prntlen}
 % |\l@ytempdima| is a scratch length. |\prntlen{|\meta{length}|}|
 % prints the value of \meta{length} in the units set by |\printinunitsof|.
 % \changes{v2.5}{2001/10/21}{Added \cs{l@ytempdima} and \cs{prntlen}}
@@ -893,7 +910,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\l@yval}
+% \begin{macro}[int]{\l@yval}
 % |\l@yval{|\meta{lcmd}|}| prints a value of the (length) command \meta{lcmd}
 % (which includes the backslash); for example |\l@yval{\mylength}|.
 % \changes{v2.5}{2001/10/21}{Changed the definition of \cs{l@yval}}
@@ -909,7 +926,7 @@
 %    A variety of commands are used to draw the layout of a page.
 %
 %    First some utility commands for setting the layout dimensions.
-% \begin{macro}{\trypaperwidth}
+% \begin{macro}[no-user-doc]{\trypaperwidth}
 %    Sets the |paperwidth| and stores the result in |\l@youtpw|.
 %    \begin{macrocode}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -919,119 +936,119 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trypaperheight}
+% \begin{macro}[no-user-doc]{\trypaperheight}
 %    Sets the |paperheight| and stores the result in |\l@youtph|.
 %    \begin{macrocode}
 \newcommand{\trypaperheight}[1]{\l@yltoc{#1}{\l@youtph}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryhoffset}
+% \begin{macro}[no-user-doc]{\tryhoffset}
 %    Sets the |hoffset| and stores the result in |\l@youthpi|.
 %    \begin{macrocode}
 \newcommand{\tryhoffset}[1]{\l@yltoc{#1}{\l@youthpi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryvoffset}
+% \begin{macro}[no-user-doc]{\tryvoffset}
 %    Sets the |voffset| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 \newcommand{\tryvoffset}[1]{\l@yltoc{#1}{\l@youtvpi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytopmargin}
+% \begin{macro}[no-user-doc]{\trytopmargin}
 %    Sets the |topmargin| and stores the result in |\l@youtvpii|.
 %    \begin{macrocode}
 \newcommand{\trytopmargin}[1]{\l@yltoc{#1}{\l@youtvpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryheadheight}
+% \begin{macro}[no-user-doc]{\tryheadheight}
 %    Sets the |headheight| and stores the result in |\l@youtvpiii|.
 %    \begin{macrocode}
 \newcommand{\tryheadheight}[1]{\l@yltoc{#1}{\l@youtvpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryheadsep}
+% \begin{macro}[no-user-doc]{\tryheadsep}
 %    Sets the |headsep| and stores the result in |\l@youtvpiv|.
 %    \begin{macrocode}
 \newcommand{\tryheadsep}[1]{\l@yltoc{#1}{\l@youtvpiv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytextheight}
+% \begin{macro}[no-user-doc]{\trytextheight}
 %    Sets the |textheight| and stores the result in |\l@youtvpv|.
 %    \begin{macrocode}
 \newcommand{\trytextheight}[1]{\l@yltoc{#1}{\l@youtvpv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfootskip}
+% \begin{macro}[no-user-doc]{\tryfootskip}
 %    Sets the |footskip| and stores the result in |\l@youtvpvi|.
 %    \begin{macrocode}
 \newcommand{\tryfootskip}[1]{\l@yltoc{#1}{\l@youtvpvi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryoddsidemargin}
+% \begin{macro}[no-user-doc]{\tryoddsidemargin}
 %    Sets the |oddsidemargin| and stores the result in |\l@youthpv|.
 %    \begin{macrocode}
 \newcommand{\tryoddsidemargin}[1]{\l@yltoc{#1}{\l@youthpv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryevensidemargin}
+% \begin{macro}[no-user-doc]{\tryevensidemargin}
 %    Sets the |evensidemargin| and stores the result in |\l@youthpiv|.
 %    \begin{macrocode}
 \newcommand{\tryevensidemargin}[1]{\l@yltoc{#1}{\l@youthpiv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytextwidth}
+% \begin{macro}[no-user-doc]{\trytextwidth}
 %    Sets the |textwidth| and stores the result in |\l@youthpii|.
 %    \begin{macrocode}
 \newcommand{\trytextwidth}[1]{\l@yltoc{#1}{\l@youthpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trymarginparsep}
+% \begin{macro}[no-user-doc]{\trymarginparsep}
 %    Sets the |marginparsep| and stores the result in |\l@youthpvi|.
 %    \begin{macrocode}
 \newcommand{\trymarginparsep}[1]{\l@yltoc{#1}{\l@youthpvi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trymarginparwidth}
+% \begin{macro}[no-user-doc]{\trymarginparwidth}
 %    Sets the |marginparwidth| and stores the result in |\l@youthpvii|.
 %    \begin{macrocode}
 \newcommand{\trymarginparwidth}[1]{\l@yltoc{#1}{\l@youthpvii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trymarginparpush}
+% \begin{macro}[no-user-doc]{\trymarginparpush}
 %    Sets the |marginparpush| and stores the result in |\l@youtvpvii|.
 %    \begin{macrocode}
 \newcommand{\trymarginparpush}[1]{\l@yltoc{#1}{\l@youtvpvii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trycolumnsep}
+% \begin{macro}[no-user-doc]{\trycolumnsep}
 %    Sets the |columnsep| and stores the result in |\l@youthpiii|.
 %    \begin{macrocode}
 \newcommand{\trycolumnsep}[1]{\l@yltoc{#1}{\l@youthpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trycolumnseprule}
+% \begin{macro}[no-user-doc]{\trycolumnseprule}
 %    Sets the |columnseprule| and stores the result in |\l@youtlinethick|.
 %    \begin{macrocode}
 \newcommand{\trycolumnseprule}[1]{\setlength{\l@youtlinethick}{#1}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\setfootbox}
+% \begin{macro}[no-user-doc]{\setfootbox}
 %  Sets the height and depth of the footer box and stores the results 
 % in |\l@youtvdv| and |\l@youtvdvi|.
 % \changes{v2.5a}{2002/03/05}{Added \cs{setfootbox}}
@@ -1040,12 +1057,12 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ifreversemarginpar}
-% \begin{macro}{\ifmarginparswitch}
+% \begin{macro}[no-user-doc]{\ifreversemarginpar}
+% \begin{macro}[no-user-doc]{\ifmarginparswitch}
 % Flags for where marginpars should go.
 %    \begin{macrocode}
 \newif\ifreversemarginpar
-  \reversemarginparfalse
+\reversemarginparfalse
 \newif\ifmarginparswitch
   \marginparswitchtrue
 
@@ -1053,7 +1070,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\ifl@yrightmpars}
+% \begin{macro}[int]{\ifl@yrightmpars}
 % Internal flag for marginpar location
 %    \begin{macrocode}
 \newif\ifl@yrightmpars
@@ -1062,7 +1079,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\currentpage}
+% \begin{macro}[no-user-doc]{\currentpage}
 %    This routine sets the layout page parameters to those specified
 % for the document, specifically as on the current page.
 % \changes{v2.5a}{2002/01/06}{Added footheight to \cs{currentpage}}
@@ -1086,7 +1103,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\commonl@ypage}
+% \begin{macro}[int]{\commonl@ypage}
 %    This routine sets the layout page parameters common to both the
 % standard and memoir classes, to those specified
 % for the document, specifically as on the current page.
@@ -1104,8 +1121,8 @@
   \trycolumnsep{\columnsep}%           % typically 10pt
   \trycolumnseprule{\columnseprule}%   % typically 0pt
   \setfootbox{\baselineskip}{0pt}%     % footheight = 1 line
-  \reversemarginparfalse               % reversemargin
-  \if@reversemargin \reversemarginpartrue \fi
+\reversemarginparfalse               % reversemargin
+  \if@reversemargin\reversemarginpartrue \fi
   \marginparswitchfalse               % mparswitch
   \if@mparswitch \marginparswitchtrue \fi
   \twocolumnlayoutfalse
@@ -1121,7 +1138,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawpage}
+% \begin{macro}[no-user-doc]{\drawpage}
 %    This routine draws a page layout.
 %
 %    \begin{macrocode}
@@ -1261,7 +1278,7 @@
 %
 %    \begin{macrocode}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youtpw,\l@youtph)
+  \begin{picture}[alt=Diagram displaying the page layout](\l@youtpw,\l@youtph)
     \thicklines
 %    \end{macrocode}
 %    Either reference lines for the page top and side, or the page.
@@ -1530,8 +1547,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\pagediagram}
-% \begin{macro}{\pagedesign}
+% \begin{macro}[no-user-doc]{\pagediagram}
+% \begin{macro}[no-user-doc]{\pagedesign}
 %  Shorthands.
 %    \begin{macrocode}
 \newcommand{\pagediagram}{\drawparameterstrue\drawpage}
@@ -1541,7 +1558,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\pagevalues}
+% \begin{macro}[no-user-doc]{\pagevalues}
 % This macro produces a table of the current page layout actual values.
 %    \begin{macrocode}
 \newcommand{\pagevalues}{%
@@ -1590,12 +1607,12 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}{\stockwidth}   
-% \begin{macro}{\stockwidth}   
-% \begin{macro}{\trimedge}
-% \begin{macro}{\trimtop}
-% \begin{macro}{\uppermargin}
-% \begin{macro}{\spinemargin}
+% \begin{macro}[no-user-doc]{\stockwidth}   
+% \begin{macro}[no-user-doc]{\stockwidth}   
+% \begin{macro}[no-user-doc]{\trimedge}
+% \begin{macro}[no-user-doc]{\trimtop}
+% \begin{macro}[no-user-doc]{\uppermargin}
+% \begin{macro}[no-user-doc]{\spinemargin}
 %    The memoir class has some page layout parameters that are not
 % in the standard classes. Provide these so the package will at
 % least compile with the standard classes but is highly likely to
@@ -1618,42 +1635,42 @@
 % \end{macro}
 %
 %    Now some utility commands for setting the layout dimensions.
-% \begin{macro}{\trystockwidth}
+% \begin{macro}[no-user-doc]{\trystockwidth}
 %    Sets the |stockwidth| and stores the result in |\l@youthdo|.
 %    \begin{macrocode}
 \newcommand{\trystockwidth}[1]{\l@yltoc{#1}{\l@youthdo}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trystockheight}
+% \begin{macro}[no-user-doc]{\trystockheight}
 %    Sets the |stockheight| and stores the result in |\l@youtvdo|.
 %    \begin{macrocode}
 \newcommand{\trystockheight}[1]{\l@yltoc{#1}{\l@youtvdo}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytrimedge}
+% \begin{macro}[no-user-doc]{\trytrimedge}
 %    Sets the |trimedge| and stores the result in |\l@youthpi|.
 %    \begin{macrocode}
 \newcommand{\trytrimedge}[1]{\l@yltoc{#1}{\l@youthpi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytrimtop}
+% \begin{macro}[no-user-doc]{\trytrimtop}
 %    Sets the |trimtop| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 \newcommand{\trytrimtop}[1]{\l@yltoc{#1}{\l@youtvpi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryuppermargin}
+% \begin{macro}[no-user-doc]{\tryuppermargin}
 %    Sets the |uppermargin| and stores the result in |\l@youtvpii|.
 %    \begin{macrocode}
 \newcommand{\tryuppermargin}[1]{\l@yltoc{#1}{\l@youtvpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryspinemargin}
+% \begin{macro}[no-user-doc]{\tryspinemargin}
 %    Sets the |spinemargin| and stores the result in |\l@youthpv|.
 %    \begin{macrocode}
 \newcommand{\tryspinemargin}[1]{\l@yltoc{#1}{\l@youthpv}}
@@ -1663,7 +1680,7 @@
 %
 %
 %
-% \begin{macro}{\currentstock}
+% \begin{macro}[no-user-doc]{\currentstock}
 %    This routine sets the stock layout page parameters to those specified
 % for the document.
 % \changes{2.5a}{2002/01/06}{Added default footheight to \cs{currentstock}}
@@ -1685,7 +1702,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawstock}
+% \begin{macro}[no-user-doc]{\drawstock}
 %    This routine draws a stock page layout.
 %
 %    \begin{macrocode}
@@ -1834,7 +1851,9 @@
 %
 %    \begin{macrocode}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdo,\l@youtvdo)
+  \begin{picture}[%
+    alt=Diagram displaying the page layout after trimming the stock,
+    ](\l@youthdo,\l@youtvdo)
     \thicklines
 %    \end{macrocode}
 % Draw the stock, paper, etc. 
@@ -2166,8 +2185,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\stockdiagram}
-% \begin{macro}{\stockdesign}
+% \begin{macro}[no-user-doc]{\stockdiagram}
+% \begin{macro}[no-user-doc]{\stockdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\stockdiagram}{\drawparameterstrue\drawstock}
@@ -2177,7 +2196,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\stockvalues}
+% \begin{macro}[no-user-doc]{\stockvalues}
 % This macro produces a table of the current page layout actual values.
 %    \begin{macrocode}
 \newcommand{\stockvalues}{%
@@ -2220,7 +2239,7 @@
 %
 %    First the |\try...| commands for setting trial list parameters.
 %
-% \begin{macro}{\tryitemindent}
+% \begin{macro}[no-user-doc]{\tryitemindent}
 %    Sets a trial value for |itemindent| and stores the result in |\l@youthpi|.
 %    \begin{macrocode}
 
@@ -2232,21 +2251,21 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trylabelwidth}
+% \begin{macro}[no-user-doc]{\trylabelwidth}
 %    Sets a trial value for |labelwidth| and stores the result in |\l@youthpii|.
 %    \begin{macrocode}
 \newcommand{\trylabelwidth}[1]{\l@yltoc{#1}{\l@youthpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trylabelsep}
+% \begin{macro}[no-user-doc]{\trylabelsep}
 %    Sets a trial value for |labelsep| and stores the result in |\l@youthpiii|.
 %    \begin{macrocode}
 \newcommand{\trylabelsep}[1]{\l@yltoc{#1}{\l@youthpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryleftmargin}
+% \begin{macro}[no-user-doc]{\tryleftmargin}
 %    Sets a trial value for |leftmargin| and stores the result in |\l@youthpiv|.
 %    \begin{macrocode}
 \newcommand{\tryleftmargin}[1]{\l@yltoc{#1}{\l@youthpiv}
@@ -2259,49 +2278,49 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryrightmargin}
+% \begin{macro}[no-user-doc]{\tryrightmargin}
 %    Sets a trial value for |rightmargin| and stores the result in |\l@youthpv|.
 %    \begin{macrocode}
 \newcommand{\tryrightmargin}[1]{\l@yltoc{#1}{\l@youthpv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trylistparindent}
+% \begin{macro}[no-user-doc]{\trylistparindent}
 %    Sets a trial value for |listparindent| and stores the result in |\l@youthpvi|.
 %    \begin{macrocode}
 \newcommand{\trylistparindent}[1]{\l@yltoc{#1}{\l@youthpvi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytopsep}
+% \begin{macro}[no-user-doc]{\trytopsep}
 %    Sets a trial value for |topsep| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 \newcommand{\trytopsep}[1]{\l@yltoc{#1}{\l@youtvpi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryparskip}
+% \begin{macro}[no-user-doc]{\tryparskip}
 %    Sets a trial value for |parskip| and stores the result in |\l@youtparskip|.
 %    \begin{macrocode}
 \newcommand{\tryparskip}[1]{\l@yltoc{#1}{\l@youtparskip}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trypartopsep}
+% \begin{macro}[no-user-doc]{\trypartopsep}
 %    Sets a trial value for |partopsep| and stores the result in |\l@youtvpiii|.
 %    \begin{macrocode}
 \newcommand{\trypartopsep}[1]{\l@yltoc{#1}{\l@youtvpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryparsep}
+% \begin{macro}[no-user-doc]{\tryparsep}
 %    Sets a trial value for |parsep| and stores the result in |\l@youtvpiv|.
 %    \begin{macrocode}
 \newcommand{\tryparsep}[1]{\l@yltoc{#1}{\l@youtvpiv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryitemsep}
+% \begin{macro}[no-user-doc]{\tryitemsep}
 %    Sets a trial value for |itemsep| and stores the result in |\l@youtvpv|.
 %    \begin{macrocode}
 \newcommand{\tryitemsep}[1]{\l@yltoc{#1}{\l@youtvpv}}
@@ -2309,7 +2328,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentlist}
+% \begin{macro}[no-user-doc]{\currentlist}
 %    This routine sets the trial list parameters to be those of the current
 % list environment.
 %    \begin{macrocode}
@@ -2330,7 +2349,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawlist}
+% \begin{macro}[no-user-doc]{\drawlist}
 %    This routine draws the layout of a \Lenv{list} environment.
 %    \begin{macrocode}
 \newcommand{\drawlist}{%
@@ -2430,7 +2449,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@yeighthalfinch,\l@youtvdiv)
+  \begin{picture}[%
+    alt=Diagram displaying the layout of lists,
+    ](\l@yeighthalfinch,\l@youtvdiv)
     \thinlines
 %    \end{macrocode}
 %    Draw a box |(textwidth,height)| representing the page.
@@ -2592,7 +2613,7 @@
 %    \end{macrocode}
 %
 %    We finish off the drawing with any requested vertical spacing parameters.
-% First between item2 and the suceeding text.
+% First between item2 and the succeeding text.
 %    \begin{macrocode}
       \put(\l@youtxciii,\l@youtyci){\vector(0,-1){\l@youtvdvii}}
       \put(\l@youtxciii,\l@youtyci){\begin{picture}(\l@youtvdv,\l@youtvdv)
@@ -2661,8 +2682,8 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\listdiagram}
-% \begin{macro}{\listdesign}
+% \begin{macro}[no-user-doc]{\listdiagram}
+% \begin{macro}[no-user-doc]{\listdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\listdiagram}{\drawparameterstrue\drawlist}
@@ -2672,7 +2693,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\listvalues}
+% \begin{macro}[no-user-doc]{\listvalues}
 % This macro produces a table of the current list layout actual values.
 % Be careful to get the external environment's values, not those of
 % the centered tabular.
@@ -2722,7 +2743,7 @@
 %    First the |\try...| commands for setting trial values of the footnote
 % parameters.
 %
-% \begin{macro}{\tryfootins}
+% \begin{macro}[no-user-doc]{\tryfootins}
 % Sets the trial value for |footins| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 
@@ -2734,28 +2755,28 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfootnotesep}
+% \begin{macro}[no-user-doc]{\tryfootnotesep}
 % Sets the trial value for |footnotesep| and stores the result in |\l@youtvpii|.
 %    \begin{macrocode}
 \newcommand{\tryfootnotesep}[1]{\l@yltoc{#1}{\l@youtvpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfootnotebaseline}
+% \begin{macro}[no-user-doc]{\tryfootnotebaseline}
 % Sets the trial value for |footnotebaseline| and stores the result in |\l@youtvpiii|.
 %    \begin{macrocode}
 \newcommand{\tryfootnotebaseline}[1]{\l@yltoc{#1}{\l@youtvpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfootruleheight}
+% \begin{macro}[no-user-doc]{\tryfootruleheight}
 % Sets the trial value for |footruleheight| and stores the result in |\l@youtlinethick|.
 %    \begin{macrocode}
 \newcommand{\tryfootruleheight}[1]{\setlength{\l@youtlinethick}{#1}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfootrulefrac}
+% \begin{macro}[no-user-doc]{\tryfootrulefrac}
 % Sets the trial value for |footrulefrac| and stores the result in |\l@youthdvii|.
 %    \begin{macrocode}
 \newcommand{\tryfootrulefrac}[1]{\setlength{\l@ylen}{8.5in}
@@ -2767,7 +2788,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentfootnote}
+% \begin{macro}[no-user-doc]{\currentfootnote}
 %
 %    This routine sets the trial footnote parameters to be those specified
 % for the current document. Some parameters have the values embedded as
@@ -2785,7 +2806,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawfootnote}
+% \begin{macro}[no-user-doc]{\drawfootnote}
 %
 %    This routine draws the layout of a footnote.
 %    \begin{macrocode}
@@ -2854,7 +2875,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdi,\l@youtyciv)
+  \begin{picture}[%
+    alt=Diagram displaying the layout of footnotes,
+    ](\l@youthdi,\l@youtyciv)
     \thicklines
 %    \end{macrocode}
 % Draw box 2. First the major bottom and LH side lines.
@@ -2970,8 +2993,8 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\footnotediagram}
-% \begin{macro}{\footnotedesign}
+% \begin{macro}[no-user-doc]{\footnotediagram}
+% \begin{macro}[no-user-doc]{\footnotedesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\footnotediagram}{\drawparameterstrue\drawfootnote}
@@ -2981,7 +3004,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\footnotevalues}
+% \begin{macro}[no-user-doc]{\footnotevalues}
 % This macro produces a table of the current footnote layout actual values.
 %    \begin{macrocode}
 \newcommand{\footnotevalues}{%
@@ -3012,7 +3035,7 @@
 %    First the |\try...| commands for setting trial values of the paragraph
 % parameters.
 %
-% \begin{macro}{\tryparindent}
+% \begin{macro}[no-user-doc]{\tryparindent}
 % Sets the trial value for |\parindent| and stores the result in |\l@youthdii|.
 %    \begin{macrocode}
 
@@ -3025,14 +3048,14 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\tryparlinewidth}
+% \begin{macro}[no-user-doc]{\tryparlinewidth}
 % Sets the trial value for |\linewidth| and stores the result in |\l@youthdi|.
 %    \begin{macrocode}
 \newcommand{\tryparlinewidth}[1]{\l@yltoc{#1}{\l@youthdi}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryparbaselineskip}
+% \begin{macro}[no-user-doc]{\tryparbaselineskip}
 % Sets the trial value for |\baselineskip| and stores the result in |\l@youtvdii|.
 %    \begin{macrocode}
 \newcommand{\tryparbaselineskip}[1]{\l@yltoc{#1}{\l@youtvdii}}
@@ -3040,7 +3063,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentparagraph}
+% \begin{macro}[no-user-doc]{\currentparagraph}
 %
 %    This routine sets the trial paragraph parameters to be those specified
 % for the current document. 
@@ -3055,7 +3078,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawparagraph}
+% \begin{macro}[no-user-doc]{\drawparagraph}
 %
 %    This routine draws the layout of a paragraph.
 %    \begin{macrocode}
@@ -3095,7 +3118,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdi,\l@youtvdv)
+  \begin{picture}[%
+    alt=Diagram displaying the paragraph layout,
+    ](\l@youthdi,\l@youtvdv)
     \thicklines
 %    \end{macrocode}
 % Draw paragraph box. First the major bottom and LH side lines.
@@ -3189,8 +3214,8 @@
 %
 %
 %
-% \begin{macro}{\paragraphdiagram}
-% \begin{macro}{\paragraphdesign}
+% \begin{macro}[no-user-doc]{\paragraphdiagram}
+% \begin{macro}[no-user-doc]{\paragraphdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\paragraphdiagram}{\drawparameterstrue\drawparagraph}
@@ -3200,7 +3225,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\paragraphvalues}
+% \begin{macro}[no-user-doc]{\paragraphvalues}
 % This macro produces a table of the current paragraph layout actual values.
 % Be careful to get the global, not local, values.
 %    \begin{macrocode}
@@ -3230,7 +3255,7 @@
 %    First the |\try...| commands for setting trial values for the heading
 % parameters.
 %
-% \begin{macro}{\trybeforeskip}
+% \begin{macro}[no-user-doc]{\trybeforeskip}
 %    Sets the trial value for |beforeskip| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 
@@ -3242,14 +3267,14 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryafterskip}
+% \begin{macro}[no-user-doc]{\tryafterskip}
 %    Sets the trial value for |afterskip| and stores the result in |\l@youtvpii|.
 %    \begin{macrocode}
 \newcommand{\tryafterskip}[1]{\l@yltoc{#1}{\l@youtvpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryindent}
+% \begin{macro}[no-user-doc]{\tryindent}
 %    Sets the trial value for |indent| and stores the result in |\l@youthpi|.
 %    \begin{macrocode}
 \newcommand{\tryindent}[1]{\l@yltoc{#1}{\l@youthpi}}
@@ -3257,7 +3282,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentheading}
+% \begin{macro}[no-user-doc]{\currentheading}
 %    This routine sets the trial heading parameters to some predefined
 % values that, hopefully, are reasonably representative.
 %    \begin{macrocode}
@@ -3271,7 +3296,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawheading}
+% \begin{macro}[no-user-doc]{\drawheading}
 %    This routine draws the layout of a sectional heading. The command
 % takes a single parameter, |\drawheading{|\meta{font style}|}|, which
 % specifies the size and style of the heading font. For example, \\
@@ -3372,7 +3397,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdi,\l@youtycv)
+  \begin{picture}[%
+    alt=Diagram displaying the layout of headings,
+    ](\l@youthdi,\l@youtycv)
     \ifnum\l@youtvpii < \z@
       \put(0,\l@youtyci){\begin{picture}(\l@youthdi,\l@youtyciv)
 %    \end{macrocode}
@@ -3519,8 +3546,8 @@
 %
 %
 %
-% \begin{macro}{\headingdiagram}
-% \begin{macro}{\headingdesign}
+% \begin{macro}[no-user-doc]{\headingdiagram}
+% \begin{macro}[no-user-doc]{\headingdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\headingdiagram}[1]{\drawparameterstrue\drawheading{#1}}
@@ -3530,7 +3557,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\headingvalues}
+% \begin{macro}[no-user-doc]{\headingvalues}
 % This doesn't do anything --- it's just provided for symmetry.
 %    \begin{macrocode}
 \newcommand{\headingvalues}{%
@@ -3552,7 +3579,7 @@
 %
 %    Start off with the |\try...| commands for setting trial parameter values.
 %
-% \begin{macro}{\trytextfloatsep}
+% \begin{macro}[no-user-doc]{\trytextfloatsep}
 % Sets the trial value for |textfloatsep| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 
@@ -3564,28 +3591,28 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryfloatsep}
+% \begin{macro}[no-user-doc]{\tryfloatsep}
 % Sets the trial value for |floatsep| and stores the result in |\l@youtvpii|.
 %    \begin{macrocode}
 \newcommand{\tryfloatsep}[1]{\l@yltoc{#1}{\l@youtvpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tryintextsep}
+% \begin{macro}[no-user-doc]{\tryintextsep}
 % Sets the trial value for |intextsep| and stores the result in |\l@youtvpiii|.
 %    \begin{macrocode}
 \newcommand{\tryintextsep}[1]{\l@yltoc{#1}{\l@youtvpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytopfigrule}
+% \begin{macro}[no-user-doc]{\trytopfigrule}
 % Sets the trial value for |topfigrule| and stores the result in |\l@youtlinethick|.
 %    \begin{macrocode}
 \newcommand{\trytopfigrule}[1]{\setlength{\l@youtlinethick}{#1}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trybotfigrule}
+% \begin{macro}[no-user-doc]{\trybotfigrule}
 % Sets the trial value for |botfigrule| and stores the result in |\l@youtlinethickii|.
 %    \begin{macrocode}
 \newcommand{\trybotfigrule}[1]{\setlength{\l@youtlinethickii}{#1}}
@@ -3593,7 +3620,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentfloat}
+% \begin{macro}[no-user-doc]{\currentfloat}
 %    This sets the trial float parameter values to those currently set in
 % the document, or makes a guesstimate where the value is hard-coded.
 %    \begin{macrocode}
@@ -3608,7 +3635,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawfloat}
+% \begin{macro}[no-user-doc]{\drawfloat}
 %
 % The command to draw the picture of float parameters.
 %
@@ -3625,7 +3652,7 @@
     \setlength{\l@youtlinethickii}{2pt}   % botrule height
   \fi
 %    \end{macrocode}
-% And the general drawing coodinates and lengths.
+% And the general drawing coordinates and lengths.
 %    \begin{macrocode}
 %  \l@youthdo=\textwidth                  % textwidth
 %    \divide\l@youthdo by \l@yonepoint
@@ -3675,7 +3702,9 @@
   \begin{center}
 %%%  \setlayoutscale{1}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdo,\l@youtvdo)
+  \begin{picture}[%
+    alt=Diagram displaying the spacing between text and floats,
+    ](\l@youthdo,\l@youtvdo)
     \thicklines
 %    \end{macrocode}
 % A bottom float.
@@ -3805,8 +3834,8 @@
 %
 %
 %
-% \begin{macro}{\floatdiagram}
-% \begin{macro}{\floatdesign}
+% \begin{macro}[no-user-doc]{\floatdiagram}
+% \begin{macro}[no-user-doc]{\floatdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\floatdiagram}{\drawparameterstrue\drawfloat}
@@ -3816,7 +3845,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\floatvalues}
+% \begin{macro}[no-user-doc]{\floatvalues}
 % This macro produces a table of the current float layout actual values.
 % \changes{v2.5}{2001/10/21}{Fixed counter printing in \cs{floatvalues}}
 %    \begin{macrocode}
@@ -3858,7 +3887,7 @@
 %
 %    Start off with the |\try...| commands for setting trial parameter values.
 %
-% \begin{macro}{\trytotalnumber}
+% \begin{macro}[no-user-doc]{\trytotalnumber}
 % Sets the trial value for |totalnumber| and stores the result in |\l@youtvpvi|.
 %    \begin{macrocode}
 
@@ -3870,21 +3899,21 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytopnumber}
+% \begin{macro}[no-user-doc]{\trytopnumber}
 % Sets the trial value for |topnumber| and stores the result in |\l@youtvpv|.
 %    \begin{macrocode}
 \newcommand{\trytopnumber}[1]{\l@youtvpv = #1}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trybottomnumber}
+% \begin{macro}[no-user-doc]{\trybottomnumber}
 % Sets the trial value for |bottomnumber| and stores the result in |\l@youtvpi|.
 %    \begin{macrocode}
 \newcommand{\trybottomnumber}[1]{\l@youtvpi = #1}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytopfraction}
+% \begin{macro}[no-user-doc]{\trytopfraction}
 % Sets the trial value for |topfraction| and stores the results in |\l@youtvpiv|
 % and |\l@youthdiv|.
 %    \begin{macrocode}
@@ -3898,7 +3927,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytextfraction}
+% \begin{macro}[no-user-doc]{\trytextfraction}
 % Sets the trial value for |textfraction| and stores the results in |\l@youtvpiii|
 % and |\l@youthdv|.
 %    \begin{macrocode}
@@ -3912,7 +3941,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trybottomfraction}
+% \begin{macro}[no-user-doc]{\trybottomfraction}
 % Sets the trial value for |bottomfraction| and stores the results in |\l@youtvpii|
 % and |\l@youthdvi|.
 %    \begin{macrocode}
@@ -3927,7 +3956,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currentfloatpage}
+% \begin{macro}[no-user-doc]{\currentfloatpage}
 %
 %    Sets the floatpage parameter trial values to those in the current 
 % document, or makes a guesstimate when these are hard-coded.
@@ -3944,7 +3973,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawfloatpage}
+% \begin{macro}[no-user-doc]{\drawfloatpage}
 %
 %    The command to draw a picture of the float page layout and
 % parameters.
@@ -4009,7 +4038,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdo,\l@youtvdo)
+  \begin{picture}[%
+    alt=Diagram displaying the layout of floats,
+    ](\l@youthdo,\l@youtvdo)
     \thicklines
 %    \end{macrocode}
 % Draw the page boundaries.
@@ -4098,8 +4129,8 @@
 %
 %
 %
-% \begin{macro}{\floatpagediagram}
-% \begin{macro}{\floatpagedesign}
+% \begin{macro}[no-user-doc]{\floatpagediagram}
+% \begin{macro}[no-user-doc]{\floatpagedesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\floatpagediagram}{\drawparameterstrue\drawfloatpage}
@@ -4109,7 +4140,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\floatpagevalues}
+% \begin{macro}[no-user-doc]{\floatpagevalues}
 % The same as the |\floatvalues| command.
 %    \begin{macrocode}
 \newcommand{\floatpagevalues}{\floatvalues}
@@ -4125,7 +4156,7 @@
 % As usual, start off with the |\try...| commands for setting trial values
 % of the parameters.
 %
-% \begin{macro}{\trytocindent}
+% \begin{macro}[no-user-doc]{\trytocindent}
 % Sets the trial value for |tocindent| and stores the result in |\l@youthpi|.
 %    \begin{macrocode}
 
@@ -4137,42 +4168,42 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytocnumwidth}
+% \begin{macro}[no-user-doc]{\trytocnumwidth}
 % Sets the trial value for |tocnumwidth| and stores the result in |\l@youthpii|.
 %    \begin{macrocode}
 \newcommand{\trytocnumwidth}[1]{\l@yltoc{#1}{\l@youthpii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytoclinewidth}
+% \begin{macro}[no-user-doc]{\trytoclinewidth}
 % Sets the trial value for |toclinewidth| and stores the result in |\l@youthdo|.
 %    \begin{macrocode}
 \newcommand{\trytoclinewidth}[1]{\l@yltoc{#1}{\l@youthdo}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytocrmarg}
+% \begin{macro}[no-user-doc]{\trytocrmarg}
 % Sets the trial value for |tocrmarg| and stores the result in |\l@youthpiii|.
 %    \begin{macrocode}
 \newcommand{\trytocrmarg}[1]{\l@yltoc{#1}{\l@youthpiii}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytocpnumwidth}
+% \begin{macro}[no-user-doc]{\trytocpnumwidth}
 % Sets the trial value for |tocpnumwidth| and stores the result in |\l@youthpiv|.
 %    \begin{macrocode}
 \newcommand{\trytocpnumwidth}[1]{\l@yltoc{#1}{\l@youthpiv}}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\l@ydotsep}
+% \begin{macro}[int]{\l@ydotsep}
 % Stores the actual value for the ToC dotsep.
 %    \begin{macrocode}
 \newcommand{\l@ydotsep}{\@dotsep}
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\trytocdotsep}
+% \begin{macro}[no-user-doc]{\trytocdotsep}
 % Sets the trial value for |tocdotsep| and stores the result in |\l@youthpv|.
 %    \begin{macrocode}
 \newcommand{\trytocdotsep}[1]{\renewcommand{\l@ydotsep}{#1}
@@ -4185,7 +4216,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\currenttoc}
+% \begin{macro}[no-user-doc]{\currenttoc}
 %
 %    This routine sets the trial ToC parameters to those specified for
 % the current document. For those values that are hard-coded it guesstimates
@@ -4204,7 +4235,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawtoc}
+% \begin{macro}[no-user-doc]{\drawtoc}
 %
 %    The command to draw the layout of a ToC entry.
 %    \begin{macrocode}
@@ -4265,7 +4296,9 @@
 %    \begin{macrocode}
   \begin{center}
   \setlength{\unitlength}{\l@youtunitlength}
-  \begin{picture}(\l@youthdo,\l@youtvdo)
+  \begin{picture}[%
+    alt=Diagram displaying the layout of tables of contents,
+    ](\l@youthdo,\l@youtvdo)
     \thinlines
     \put(0,0){\framebox(\l@youthdo,\l@youtvdo){}}
 %    \end{macrocode}
@@ -4424,8 +4457,8 @@
 %
 %
 %
-% \begin{macro}{\tocdiagram}
-% \begin{macro}{\tocdesign}
+% \begin{macro}[no-user-doc]{\tocdiagram}
+% \begin{macro}[no-user-doc]{\tocdesign}
 % Shorthands.
 %    \begin{macrocode}
 \newcommand{\tocdiagram}{\drawparameterstrue\drawtoc}
@@ -4435,7 +4468,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\tocvalues}
+% \begin{macro}[no-user-doc]{\tocvalues}
 % This macro produces a table of the current ToC layout actual values.
 %    \begin{macrocode}
 \newcommand{\tocvalues}{%
@@ -4463,7 +4496,7 @@
 %
 %    We provide a facility for drawing a simple double page spread.
 %
-% \begin{macro}{\drawaspread}
+% \begin{macro}[no-user-doc]{\drawaspread}
 %
 %    This command takes eight (8) parameters. These are:
 % \begin{enumerate}
@@ -4562,7 +4595,9 @@
 % Now we can draw a single column spread.
 %    \begin{macrocode}
   \ifnum\l@youthdv=\z@
-    \begin{picture}(\l@youthdiv,\l@youtvdo)
+    \begin{picture}[%
+      alt=Diagram displaying the page spread,
+      ](\l@youthdiv,\l@youtvdo)
       \thicklines
       \put(0,0){\framebox(\l@youthdiv,\l@youtvdo){}} % spread pages
       \put(\l@youthdo,0){\line(0,1){\l@youtvdo}}     % the spine
@@ -4593,7 +4628,9 @@
 %    \end{macrocode}
 % Now draw the two column spread.
 %    \begin{macrocode}
-    \begin{picture}(\l@youthdiv,\l@youtvdo)
+    \begin{picture}[%
+      alt=Diagram displaying the page spread,
+      ](\l@youthdiv,\l@youtvdo)
       \thicklines
       \put(0,0){\framebox(\l@youthdiv,\l@youtvdo){}} % spread pages
       \put(\l@youthdo,0){\line(0,1){\l@youtvdo}}     % the spine
@@ -4627,7 +4664,7 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}{\drawfontframe}
+% \begin{macro}[no-user-doc]{\drawfontframe}
 %  Draws a tightly fitting box with the text reference point marked and a
 %  dotted line along the baseline. 
 %    \begin{macrocode}
@@ -4656,7 +4693,7 @@
 % Draw a picture, with origin at the box's baseline. Use |\qbezier| to draw
 % a dotted line with a dot at intervals of 2pt.
 %    \begin{macrocode}
-  \begin{picture}(\l@youthdo,\l@youtvdii)
+  \begin{picture}[alt=#1 with its bounding box drawn](\l@youthdo,\l@youtvdii)
     \thinlines
     \put(0,0){\usebox{\layoutsbox}}
     \put(0,0){\circle*{2}}
@@ -4668,7 +4705,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\drawfontframelabel}
+% \begin{macro}[no-user-doc]{\drawfontframelabel}
 %  Draws a tightly fitting box with the text reference point marked and a
 %  dotted line along the baseline and marks the width, height and depth. 
 %    \begin{macrocode}
@@ -4711,7 +4748,10 @@
 % Draw a picture, with origin at the box's baseline. Use |\qbezier| to draw
 % a dotted line with a dot at intervals of 2pt.
 %    \begin{macrocode}
-  \begin{picture}(\l@youtxcii,\l@youtycv)
+  \begin{picture}[%
+    alt={Diagram depicting #1 with its bounding box, reference point, width,
+         height, and depth},
+    ](\l@youtxcii,\l@youtycv)
     \thinlines
     \put(0,0){\usebox{\layoutsbox}}
     \put(0,0){\circle*{2}}
@@ -4821,21 +4861,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-

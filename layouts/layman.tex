@@ -1,21 +1,16 @@
 % layman.tex  User Manual for layouts.sty
 %% Copyright 1998--2004  Peter R. Wilson
+%% Copyright 2026--present LaTeX Project
 %% All rights reserved
-%% 
+%%
 
+\DocumentMetadata{tagging=on}
 \documentclass[11pt]{article}
 \usepackage{layouts}
+\usepackage{lua-unicode-math}
+\usepackage[colorlinks]{hyperref}
 
-% pdfetex (which might become the base system) defines \pdfoutput
-% Thomas Esser (of teTeX fame) asked for the following to be removed (2004/04/03)
-%\newif\ifpdf
-%\makeatletter
-%\@ifundefined{pdfoutput}{\pdffalse}{\pdftrue}
-%\makeatother
-%\ifpdf
-%  \pdfoutput=1
-%\fi
-
+\pdfstringdefDisableCommands{\def\file#1{#1}}
 
 \setlength{\textheight}{8.0in}
 \setlength{\textwidth}{6.0in}
@@ -113,13 +108,13 @@
 \title{The \file{layouts} package: User manual}
 \author{
   Author: Peter Wilson, Herries Press \\
-  Maintainer: Will Robertson \\
-  \texttt{will dot robertson at latex-project dot org}
+  Maintainer: \LaTeX{} Project \\
+  \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 }
-\date{October 2004\thanks{Previous versions were dated 
-      November 2003, July 2002, March 2002, November 2001, July 2001 and January 1999.}}
+\date{October 2026\thanks{Previous versions were dated 
+      October 2004, November 2003, July 2002, March 2002, November 2001, July 2001 and January 1999.}}
 
- \makeindex
+\makeindex
 
 \begin{document}
 %%% \setuplayouts
@@ -189,7 +184,7 @@ Kent McPherson's \pixfile{layout.sty}~\cite{MCPHERSON88}.
        \pixcom{printheadingsfalse} is in effect.
  \item The font size used for the table is specified via the 
        \pixcom{setvaluestextsize}\marg{fontsize} macro, where
-       \meta{fontsize} is one of LaTeX's font size commands (e.g.,
+       \meta{fontsize} is one of \LaTeX's font size commands (e.g.,
        \pixcom{footnotesize}, which is the default value.).
  \end{itemize}
 
@@ -247,9 +242,9 @@ full size.
 
 \begin{quote}
 \textbf{Warning:} If an actual layout differs too much
-  from a `normal' layout then LaTeX may hiccup a time or two. The
+  from a `normal' layout then \LaTeX{} may hiccup a time or two. The
   typical problem is when a dimension that is expected to be positive
-  is actually negative; LaTeX will respond 
+  is actually negative; \LaTeX{} will respond 
   with an error message like `Bad \pcom{line} or \pcom{vector} argument'.
 \end{quote}
 
@@ -271,7 +266,7 @@ The following apply to both generic and actual layouts.
   via the command: \\
  \pixcom{setparameterstextsize}\marg{size}, 
   where \meta{size} is
- one of LaTeX's font size commands. \\
+ one of \LaTeX's font size commands. \\
  The initial setting is
  \verb|\setparameterstextsize{\footnotesize}|.
 
@@ -301,7 +296,7 @@ when using \pcom{}\textit{L}\texttt{design}, or the earlier
 \begin{quote}
 \textbf{Warning:} If you draw actual layouts with \pixcom{drawdimensionstrue}
   the drawings may be overburdened and if the layout differs too much
-  from a `normal' layout then LaTeX may hiccup a time or two (typically
+  from a `normal' layout then \LaTeX{} may hiccup a time or two (typically
   with an error message like `Bad \pcom{line} or \pcom{vector} argument').
 \end{quote}
 
@@ -327,7 +322,7 @@ of \texttt{pt} eliminates these `rubber' values. The initial setting
 is \verb|\printinunitsof{pt}|.
 
     The macro \pixcom{prntlen}\marg{length} prints the value of
-\meta{length}, where \meta{length} is a LaTeX length, using the units
+\meta{length}, where \meta{length} is a \LaTeX{} length, using the units
 specified by \pixcom{printinunitsof}. For example, the following code
 \begin{verbatim}
 The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also 
@@ -621,7 +616,7 @@ command,
 which may be used
 to specify the expected \meta{height} and \meta{depth} of the footer. Footers
 are typically a single line but may require more space than that. Note that
-there is no way to actually specify the vertical size of the footer in LaTeX,
+there is no way to actually specify the vertical size of the footer in \LaTeX,
 which will use as much space as it needs. If a footer is given a \meta{depth}
 then a dashed line is drawn at \pixcom{footskip} below the main text box.
 
@@ -722,7 +717,7 @@ Starting with version 2.5 there is no surrounding environment.
 %%\drawmarginparsfalse
 
     The \file{memoir} class~\cite{MEMOIR} provides a different set
-of page layout parameters than the standard LaTeX classes.
+of page layout parameters than the standard \LaTeX{} classes.
 
     The layout of a single page for this class is produced by the 
 \pixcom{stockdiagram} and \pixcom{stockdesign} (or \pixcom{drawstock})
@@ -1172,7 +1167,7 @@ commands have been defined in the preamble to this document as:
 \end{verbatim}
 Their effect can be seen throughout the printed result. The typical thickness
 for a \pixcom{rule} is $0.4$pt; the thickness of these rules has been
-exagerated in order to make them more noticeable. The \pixcom{topfigrule}
+exaggerated in order to make them more noticeable. The \pixcom{topfigrule}
 is drawn immediately after the top floats before the \pixcom{textfloatsep}
 spacing is applied. Similarly the \pixcom{botfigrule} is drawn after
 the \pixcom{textfloatsep} is applied for the bottom floats. Whatever is
@@ -1409,7 +1404,7 @@ Running this code is left as an exercise for the reader.
 
     Many of \LaTeX's environments are defined in terms of lists, most 
 noticeably the \pixenv{description}, \pixenv{enumerate} and \pixenv{itemize}
-environments. To change any of LaTeX's predefined list environments 
+environments. To change any of \LaTeX's predefined list environments 
 it is probably best to examine their 
 definitions in the appropriate class file (e.g., \pixfile{classes.dtx}) and
 then put your modified definitions into a package file.
@@ -1942,17 +1937,17 @@ overwrite anything that you might have saved in \verb|\layoutsbox|.
 
 \bibitem[GMS94]{GOOSSENS94}
 Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-\newblock \emph{The LaTeX Companion}.
+\newblock \emph{The \LaTeX{} Companion}.
 \newblock Addison-Wesley Publishing Company, 1994.
 
 \bibitem[Lam94]{LAMPORT94}
 Leslie Lamport.
-\newblock \emph{LaTeX: A Document Preparation System}.
+\newblock \emph{\LaTeX: A Document Preparation System}.
 \newblock Addison-Wesley Publishing Company, second edition, 1994.
 
 \bibitem[McP88]{MCPHERSON88}
 Kent McPherson.
-\newblock `{Page Layout in LaTeX}'.
+\newblock `{Page Layout in \LaTeX}'.
 \newblock \emph{TUGboat}, 9(1):78--82, April 1988.
 
 \bibitem[Wil02]{MEMOIR}
@@ -2531,4 +2526,3 @@ Peter Wilson.
 
 
 \end{document}
-
