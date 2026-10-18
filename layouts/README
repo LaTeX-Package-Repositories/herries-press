@@ -12,6 +12,12 @@ the layout parameters.
 ______________
 Change History
 
+Version v2.6e (2026/10/17)
+- Add alt text to picture environments
+- Tag code documentation
+- Tag user documentation
+- New maintainer (LaTeX Project)
+
 Version v2.6d (2009/09/02)
 - New maintainer (Will Robertson)
 
@@ -48,8 +54,9 @@ Changes in version v2.3 (1999/03/06)
 
 ----------------------------------------------------------------- 
   Author: Peter Wilson (Herries Press)
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 1998--2004 Peter R. Wilson
+  Copyright 2026--present LaTeX Project
  
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
@@ -57,7 +64,7 @@ Changes in version v2.3 (1999/03/06)
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
+  The Current Maintainer of this work is the LaTeX Project.
  
   This work consists of the files:
 README (this file)
@@ -84,13 +91,13 @@ layman.pdf      (User Manual in PDF)
   information on this.
 
     To process the user manual:
-- run: latex layman (twice) and print for the user manual
+- run: lualatex layman (twice) and print for the user manual
   
     For a printed version of the package source:
-- run: latex layouts.dtx
+- run: lualatex layouts.dtx
   If you want an index run: makeindex -s gind.ist layouts
-- run: latex layouts.dtx
-- Print layouts.dvi for a hardcopy of the package source
+- run: lualatex layouts.dtx
+- Print layouts.pdf for a hardcopy of the package source
 
 2004/10/25
 Peter Wilson
