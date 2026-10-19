@@ -111,7 +111,7 @@
   Maintainer: \LaTeX{} Project \\
   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 }
-\date{October 2026\thanks{Previous versions were dated 
+\date{October 2026\thanks{Previous versions were dated
       October 2004, November 2003, July 2002, March 2002, November 2001, July 2001 and January 1999.}}
 
 \makeindex
@@ -122,7 +122,7 @@
 \pagenumbering{roman}
 \maketitle
 \begin{abstract}
-    The \LaTeX{} \file{layouts} package enables the display of various 
+    The \LaTeX{} \file{layouts} package enables the display of various
 elements of a document's layout. The elements include the positioning
 of text on a page, the disposition of floats on a page, the geometrical
 layout of lists and footnotes, the design of section headers and their
@@ -141,7 +141,7 @@ experiment with potential layout designs.
     \LaTeX{} has several pre-defined styles for the layout of typeset
 documents~\cite{LAMPORT94}. Authors using \LaTeX{} sometimes wish to
 understand how these layouts are parameterised (or controlled). The
-\texttt{layouts} package enables the display of certain of these 
+\texttt{layouts} package enables the display of certain of these
 parameterised layouts, showing what the parameters control. It also
 provides facilities for experimenting with different values of the
 typesetting parameters, showing the results graphically.
@@ -155,7 +155,7 @@ Kent McPherson's \pixfile{layout.sty}~\cite{MCPHERSON88}.
 
     The majority of the commands provided fall into one of several categories.
 \begin{description}
-\item[Drawing] Commands of the form \pcom{draw}\textit{L}, 
+\item[Drawing] Commands of the form \pcom{draw}\textit{L},
     \pcom{}\textit{L}\texttt{diagram}, and
     \pcom{}\textit{L}\texttt{design}
     generate a \LaTeX{} \texttt{picture} of the layout \textit{L}.
@@ -167,28 +167,28 @@ Kent McPherson's \pixfile{layout.sty}~\cite{MCPHERSON88}.
     accessible, then a typical value is provided.
 
 \item[Layout values] Commands of the form \pcom{}\textit{L}\texttt{values}
-   produce a tabular listing of the current values of the parameters 
+   produce a tabular listing of the current values of the parameters
    controlling
    the layout \textit{L}. As far as possible these are the actual values.
    In some cases the values are hard-wired in the body of a macro, and in these
-   cases reasonable guesstimates are made of a `typical' value. 
+   cases reasonable guesstimates are made of a `typical' value.
    In the printed
    table, guesstimates are indicated by appending two question marks (??)
-   to the printed value. Note that the tabular listing produced by a 
+   to the printed value. Note that the tabular listing produced by a
    \pcom{}\textit{L}\texttt{values} command is not the same as a listing
    that might be produced by the corresponding \pcom{draw}\textit{L} command.
    The appearance of the table may be controlled as follows.
  \begin{itemize}
  \item The declaration \pixcom{printheadingstrue} will cause a short title
-       to be placed above the tabular; the tabular is untitled when 
+       to be placed above the tabular; the tabular is untitled when
        \pixcom{printheadingsfalse} is in effect.
- \item The font size used for the table is specified via the 
+ \item The font size used for the table is specified via the
        \pixcom{setvaluestextsize}\marg{fontsize} macro, where
        \meta{fontsize} is one of \LaTeX's font size commands (e.g.,
        \pixcom{footnotesize}, which is the default value.).
  \end{itemize}
 
-\item[User-specified parameter values] Commands of the form 
+\item[User-specified parameter values] Commands of the form
     \pcom{try}\textit{P} can be used to change the value of the layout
     parameter \textit{P}. Note that these commands do \emph{not} affect
     the layout of the document, they only modify the values used in
@@ -203,7 +203,7 @@ Kent McPherson's \pixfile{layout.sty}~\cite{MCPHERSON88}.
 \subsection{General facilities}
 
     In order to initialize the \file{layouts} package correctly for your
-document, the command \pixcom{setuplayouts} 
+document, the command \pixcom{setuplayouts}
 must be issued immediately
 after the \verb|\begin{document}|, or at least before any following command
 that changes font sizes or suchlike. Fortunately you don't have to concern
@@ -227,7 +227,7 @@ full size.
 
 \subsubsection{Layout types}
 
-    In general, two kinds of layout pictures can be produced. 
+    In general, two kinds of layout pictures can be produced.
 
 \begin{enumerate}
 \item A picture showing a generic layout and its controlling parameters
@@ -244,7 +244,7 @@ full size.
 \textbf{Warning:} If an actual layout differs too much
   from a `normal' layout then \LaTeX{} may hiccup a time or two. The
   typical problem is when a dimension that is expected to be positive
-  is actually negative; \LaTeX{} will respond 
+  is actually negative; \LaTeX{} will respond
   with an error message like `Bad \pcom{line} or \pcom{vector} argument'.
 \end{quote}
 
@@ -253,7 +253,7 @@ full size.
 \begin{quote}
     \textbf{Note:} The \pcom{}\textit{L}\texttt{diagram} and
 \pcom{}\textit{L}\texttt{design} commands were introduced in version 2.5 of
-the package. The previous method of generating pictures (via \pcom{draw}\textit{L} 
+the package. The previous method of generating pictures (via \pcom{draw}\textit{L}
 and \verb?\drawparameters...?) is mainly retained for compatibility reasons.
 \end{quote}
 
@@ -264,7 +264,7 @@ The following apply to both generic and actual layouts.
 \begin{itemize}
 \item The size of the font used for displaying the parameters is specified
   via the command: \\
- \pixcom{setparameterstextsize}\marg{size}, 
+ \pixcom{setparameterstextsize}\marg{size},
   where \meta{size} is
  one of \LaTeX's font size commands. \\
  The initial setting is
@@ -284,7 +284,7 @@ when using \pcom{}\textit{L}\texttt{design}, or the earlier
  \pixcom{drawparametersfalse} \pcom{draw}\textit{L} pairing is in effect).
 \begin{itemize}
 \item Some layouts have some explanatory header text. Putting
-  \pixcom{printheadingsfalse} prohibits these while 
+  \pixcom{printheadingsfalse} prohibits these while
   \pixcom{printheadingstrue} lets them be printed.
 
 \item In the generic layouts, the lengths controlled by the various
@@ -311,10 +311,10 @@ when using \pcom{}\textit{L}\texttt{design}, or the earlier
 
     The tabular listings of the parameter length values produced by
 the \pcom{}\textit{L}\texttt{values} macros give the lengths in TeX
-points by default. The length units may be set by the 
+points by default. The length units may be set by the
 \pixcom{printinunitsof}\marg{unit} command. The \meta{unit} argument
 may be any of TeX's length units, except for scaled point. That is, the
-allowable values are \texttt{pt}, \texttt{pc}, \texttt{in}, \texttt{mm}, 
+allowable values are \texttt{pt}, \texttt{pc}, \texttt{in}, \texttt{mm},
 \texttt{cm}, \texttt{bp}, \texttt{dd}, or \texttt{cc}; an unknown unit is
 treated as though it were \texttt{pt}. When printing in pt units any
 stretch or shrink values are printed as well; using \texttt{PT} instead
@@ -325,13 +325,13 @@ is \verb|\printinunitsof{pt}|.
 \meta{length}, where \meta{length} is a \LaTeX{} length, using the units
 specified by \pixcom{printinunitsof}. For example, the following code
 \begin{verbatim}
-The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also 
-\printinunitsof{in}\prntlen{\textwidth} or 
+The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also
+\printinunitsof{in}\prntlen{\textwidth} or
 \printinunitsof{mm}\prntlen{\textwidth}.
 \end{verbatim}
 prints out: \\
 \begingroup
-The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also 
+The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also
 \printinunitsof{in}\prntlen{\textwidth} or
 \printinunitsof{mm}\prntlen{\textwidth}.
 \endgroup
@@ -340,7 +340,7 @@ The textwidth is \printinunitsof{pt}\prntlen{\textwidth} which is also
 
     The drawing commands (i.e., \verb|\...diagram|, \verb|\...design|
 and \verb|\draw...|)
-are typically used within a 
+are typically used within a
 \pixenv{figure} environment, although they can be used in
 running text. Internally they generate a \pixenv{picture}
 and \pixenv{tabular} environment, both enclosed in their
@@ -358,7 +358,7 @@ environment.
 If it is used with too many other packages, the available number of
 counters and lengths may be exhausted. Essentially, the \file{layouts}
 package is intended to be used in short documents as an exploratory tool
-when designing the typesetting rules to be embodied in a new package or 
+when designing the typesetting rules to be embodied in a new package or
 class file.
 
 \section{Page spread}
@@ -368,7 +368,7 @@ class file.
 the proportions of the text block, and the position of the text block on
 the page. Often the width of a page is taken as the starting point.
 
-    In the following let $w$ be the width of a single page; that is, 
+    In the following let $w$ be the width of a single page; that is,
 the distance from the
 spine to the outside of the fore edge. I also use the other symbols given in
 \tref{tab:spread}.
@@ -419,13 +419,13 @@ column layout is presented.
 \begin{minipage}[b]{\pwlayi}
 \drawaspread{\pwlayii}{1.5}{1.5}{0.111}{1.5}{2.0}{0}
 \end{minipage}
-\caption{(Left) The \LaTeX{} book spread; 
-         (Right) Spread for many of Gutenberg's books} 
+\caption{(Left) The \LaTeX{} book spread;
+         (Right) Spread for many of Gutenberg's books}
 \label{fig:spread}
 \end{figure}
 
 
-    Figure~\ref{fig:spread} shows two different spreads. This was produced 
+    Figure~\ref{fig:spread} shows two different spreads. This was produced
 from the code below:
 \begin{verbatim}
 \newlength{\pwlayi}
@@ -442,13 +442,13 @@ from the code below:
 \begin{minipage}[b]{\pwlayi}
 \drawaspread{\pwlayii}{1.5}{1.5}{0.111}{1.5}{2.0}{0}
 \end{minipage}
-\caption{(Left) The \LaTeX{} book spread; 
-         (Right) Spread for many of Gutenberg's books} 
+\caption{(Left) The \LaTeX{} book spread;
+         (Right) Spread for many of Gutenberg's books}
 \label{fig:spread}
 \end{figure}
 \end{verbatim}
 
-    The \pixcom{drawaspread} command does not scale via the 
+    The \pixcom{drawaspread} command does not scale via the
 \pixcom{setlayoutscale} command. The size of the illustration is controlled
 by the value given for the width of the page.
 
@@ -469,8 +469,8 @@ by the value given for the width of the page.
 %%\drawdimensionsfalse
 %%%%%%%%%%%%%%%%%%%%%
 
-    The layout of a single page is produced by the 
-\pixcom{pagediagram} or \pixcom{pagedesign} (or \pixcom{drawpage}) command. 
+    The layout of a single page is produced by the
+\pixcom{pagediagram} or \pixcom{pagedesign} (or \pixcom{drawpage}) command.
 The kind of page drawn is
 specified via three control commands\footnote{Remember that all drawing
 commands of the form \pcom{draw...}, except for \pcom{drawaspread}, are also controlled
@@ -484,7 +484,7 @@ for an odd-numbered (i.e., right-hand) page, or
 \pixcom{oddpagelayouttrue}.
 
     Double or single column layouts are controlled by the commands
-\pcom{twocolumnlayout}\TF. 
+\pcom{twocolumnlayout}\TF.
 Using \pixcom{twocolumnlayouttrue}
 will result in a picture of a double column page layout and
 using \pixcom{twocolumnlayoutfalse}
@@ -538,12 +538,12 @@ top of the printed sheet.
 By default, \LaTeX{} makes all page layout measurements from a point
 located one inch in from the left-hand side of the printed sheet and one
 inch down from the top of the sheet. This point is marked with a circle.
-The dashed lines correspond to the vertical and horizontal offsets from 
+The dashed lines correspond to the vertical and horizontal offsets from
 this point.
 
 
     The command \pixcom{currentpage} collects together the page parameter
-settings for the current document for the page on which it is issued. 
+settings for the current document for the page on which it is issued.
 For example, it determines whether the current page is odd or even and
 in which margin any marginal notes would be placed.
 \fref{fig:ptrs} shows the odd page
@@ -557,7 +557,7 @@ following commands:
 \caption{Odd page layout for this document} \label{fig:ptrs}
 \end{figure}
 \end{verbatim}
-The resulting picture is correctly proportioned, both horizontally and 
+The resulting picture is correctly proportioned, both horizontally and
 vertically.
 
 \begin{figure}
@@ -575,10 +575,10 @@ listed at the bottom of the
 picture. This can be used, as in \fref{fig:ptrs}, to find out what the
 settings are for the current document.
 
-    Among other parameters that are set by 
-\pixcom{currentpage} are values for the page width and 
-height. If these have been specified by the 
-\pixcom{paperwidth} and \pixcom{paperheight} 
+    Among other parameters that are set by
+\pixcom{currentpage} are values for the page width and
+height. If these have been specified by the
+\pixcom{paperwidth} and \pixcom{paperheight}
 commands, these values are used. Otherwise the width and height are set to
 the size of American letter paper, which is eight by eleven and a half inches.
 
@@ -611,8 +611,8 @@ Command & Parameter \\ \hline
     There are a set of commands for experimenting with the page layout
 parameters. They are listed in \tref{tab:tpage}. Each of these commands
 takes one argument which is a length value. There is, in addition, an odd
-command, 
-\pixcom{setfootbox}\verb|{|\meta{height}\verb|}{|\meta{depth}\verb|}|, 
+command,
+\pixcom{setfootbox}\verb|{|\meta{height}\verb|}{|\meta{depth}\verb|}|,
 which may be used
 to specify the expected \meta{height} and \meta{depth} of the footer. Footers
 are typically a single line but may require more space than that. Note that
@@ -622,7 +622,7 @@ then a dashed line is drawn at \pixcom{footskip} below the main text box.
 
     The following code provides an example of the use of some of these
 commands when trying an experimental page layout. The result is shown
-in \fref{fig:pudf}. Note that 
+in \fref{fig:pudf}. Note that
 \pixcom{currentpage} is used to initialize all the appropriate
 parameter values before setting any trial values.
 \begin{verbatim}
@@ -660,14 +660,14 @@ parameter values before setting any trial values.
 \caption{An experimental page layout}\label{fig:pudf}
 \end{figure}
 
-    As can be seen, the resulting layout runs off the bottom of the 
+    As can be seen, the resulting layout runs off the bottom of the
 specified physical page; either because the page dimensions were incorrectly
 set (the designer getting a landscape page when a portrait page was desired),
 or because the text height and width parameters were set incorrectly
-for the physical page (probably 
+for the physical page (probably
 satisfactory for a portrait page but certainly wrong for the landscape page).
 
-    Note that \pixcom{printheadingsfalse} was used to delete the 
+    Note that \pixcom{printheadingsfalse} was used to delete the
 explanatory heading text, and dimensions were drawn because of
 \pixcom{drawdimensionstrue}.
 
@@ -677,8 +677,8 @@ explanatory heading text, and dimensions were drawn because of
 
     You can only specify the page layout in a document's preamble. That is,
 it is set by the class, or by a package or per document via code you write
-in the preamble. To be on the safe side and avoid strange error messages 
-like \texttt{You can't use `\bs spacefactor'\ixcom{spacefactor} 
+in the preamble. To be on the safe side and avoid strange error messages
+like \texttt{You can't use `\bs spacefactor'\ixcom{spacefactor}
 in vertical mode}, enclose all
 your preamble commands within the command pair \pixcom{makeatletter}
 and \pixcom{makeatother}.
@@ -693,7 +693,7 @@ and \pixcom{makeatother}.
 \end{verbatim}
 
 
-    The \pixcom{pagevalues} command can be used to produce a table, 
+    The \pixcom{pagevalues} command can be used to produce a table,
 as shown here, of the values of the current document's page layout
 parameters. This is the default tabulation.
 
@@ -704,8 +704,8 @@ parameters. This is the default tabulation.
 \pagevalues
 
 \begin{quote}
-\textbf{Note:} Prior to version 2.5 the tabulations were set in a 
-\pixenv{center} environment. 
+\textbf{Note:} Prior to version 2.5 the tabulations were set in a
+\pixenv{center} environment.
 Starting with version 2.5 there is no surrounding environment.
 \end{quote}
 
@@ -719,20 +719,20 @@ Starting with version 2.5 there is no surrounding environment.
     The \file{memoir} class~\cite{MEMOIR} provides a different set
 of page layout parameters than the standard \LaTeX{} classes.
 
-    The layout of a single page for this class is produced by the 
+    The layout of a single page for this class is produced by the
 \pixcom{stockdiagram} and \pixcom{stockdesign} (or \pixcom{drawstock})
 commands. The kind of page drawn is
 specified via the same control commands that are used by
 the page drawing commands. That is: \\
 \pcom{oddpagelayout}\TF, \\
-\pcom{twocolumnlayout}\TF, \\ 
+\pcom{twocolumnlayout}\TF, \\
 \pcom{drawmarginpars}\TF, \\
 \pcom{reversemarginpar}\TF, and \\
 \pcom{marginparswitch}\TF.
 
     Generally speaking, the commands for displaying and experimenting
 with the layout of a \file{memoir}
-class page are the same as, or analogous to, those for a standard page 
+class page are the same as, or analogous to, those for a standard page
 layout.
 
     As an example, \fref{fig:mempplt} is produced by the following code.
@@ -741,7 +741,7 @@ layout.
 \oddpagelayouttrue
 \twocolumnlayoutfalse
 \stockdiagram
-\caption{Right-hand page major layout parameters for 
+\caption{Right-hand page major layout parameters for
          the \file{memoir} class} \label{fig:mempplt}
 \end{figure}
 \end{verbatim}
@@ -751,18 +751,18 @@ layout.
 \twocolumnlayoutfalse
 %\drawmarginparsfalse \drawstock
 \stockdiagram
-\caption{Right-hand page major layout parameters for 
+\caption{Right-hand page major layout parameters for
          the \file{memoir} class} \label{fig:mempplt}
 \end{figure}
 
 
-    Like the \pixcom{currentpage} command, \pixcom{currentstock} collects 
+    Like the \pixcom{currentpage} command, \pixcom{currentstock} collects
 together the page parameter
-settings for the current \file{memoir} class document. 
+settings for the current \file{memoir} class document.
 
     For information on how to design a page layout the class
 documentation provides all the details~\cite{MEMOIR} (and uses the
-\file{layouts} package to illustrate them). 
+\file{layouts} package to illustrate them).
 
 \begin{table}
 \centering
@@ -798,7 +798,7 @@ may be used as well.
 
     The following code provides an example of the use of some of these
 commands when trying an experimental page layout. The result is shown
-in \fref{fig:pmemudf}. 
+in \fref{fig:pmemudf}.
 \begin{verbatim}
 \begin{figure}
 \currentstock
@@ -854,7 +854,7 @@ in \fref{fig:pmemudf}.
 \end{figure}
 
     There is also a \pixcom{stockvalues} command to print a tabulation of the
-current stock specifications. 
+current stock specifications.
 %  As this manual does not use the \file{memoir}
 %  class, calling it would only result in errors.
 
@@ -936,7 +936,7 @@ you can see the effect in \fref{fig:mpara} which was produced from:
 \end{figure}
 \end{verbatim}
 
-    The \pixcom{paragraphvalues} command can be used to produce a table, 
+    The \pixcom{paragraphvalues} command can be used to produce a table,
 shown below, of the values of the current document's paragraph layout
 parameters (as set at the time that the command is used). The tabulation
 was typeset via
@@ -946,7 +946,7 @@ was typeset via
 \paragraphvalues
 \end{center}
 \end{verbatim}
-Note the use of \pixcom{printinunitsof} to set millimetres as the unit of 
+Note the use of \pixcom{printinunitsof} to set millimetres as the unit of
 length.
 
 \begin{center}
@@ -987,7 +987,7 @@ by the following code:
 \floatpagediagram
 \caption{Float and text page parameters}\label{fig:fpp}
 \end{figure}
- 
+
     The command \pixcom{currentfloatpage} sets the drawing parameters to the
 settings for the current document. The `standard' \LaTeX{} settings are
 shown in \fref{fig:fpstd}, produced by the code below.
@@ -1023,7 +1023,7 @@ shown in \fref{fig:fpstd}, produced by the code below.
 \end{figure}
 
     The commands listed in \tref{tab:tfloatp} can be used to set trial values
-for the relevant parameters. The commands take one argument, which is either 
+for the relevant parameters. The commands take one argument, which is either
 an integer number or a decimal fraction, depending on the particular command.
 
 \begin{table}
@@ -1171,7 +1171,7 @@ exaggerated in order to make them more noticeable. The \pixcom{topfigrule}
 is drawn immediately after the top floats before the \pixcom{textfloatsep}
 spacing is applied. Similarly the \pixcom{botfigrule} is drawn after
 the \pixcom{textfloatsep} is applied for the bottom floats. Whatever is
-drawn as a \texttt{...figrule} should take no vertical space, hence the 
+drawn as a \texttt{...figrule} should take no vertical space, hence the
 use of negative vertical space in their definitions above. Note that the
 rules have been given either positive or negative vertical offsets to ensure
 some space between a float and the rule.
@@ -1181,7 +1181,7 @@ some space between a float and the rule.
     The \verb|\...number| commands are changed with the \LaTeX{}
 \pixcom{setcounter} command, while the \verb|\...fraction| commands
 have to be changed via the \pixcom{renewcommand}. For example, the preamble
-to this document contains the following (enclosed within 
+to this document contains the following (enclosed within
 \pixcom{makeatletter} and \pixcom{makeatother} commands):
 \begin{verbatim}
 \setcounter{topnumber}{2}
@@ -1194,7 +1194,7 @@ to this document contains the following (enclosed within
 
     Note that there are also the commands:
 \begin{itemize}
-\item \pixcom{dbltopnumber} for setting the maximum number of two-column 
+\item \pixcom{dbltopnumber} for setting the maximum number of two-column
       floats at the top of a two-column page (typically 2);
 \item \pixcom{dbltopfraction} for setting the maximum fraction of a
       two column page that can be occupied by the top two-column floats
@@ -1214,7 +1214,7 @@ A typical set of values might be specified as:
 \setlength{\intextsep}{\floatsep}
 \end{verbatim}
 There are corresponding separation commands for two-column floats at the
-top or bottom of a page. These are \pixcom{dblfloatsep} for inter-float 
+top or bottom of a page. These are \pixcom{dblfloatsep} for inter-float
 separation and \pixcom{dbltextfloatsep} for spacing between a two-column
 float and the text area.
 
@@ -1222,9 +1222,9 @@ float and the text area.
 
 \floatvalues
 
-    The \pixcom{floatvalues} command can be used to produce a table, 
+    The \pixcom{floatvalues} command can be used to produce a table,
 as shown here, of the values of the current document's float layout
-parameters (as set at the time that the command is used). 
+parameters (as set at the time that the command is used).
 
 
 %%%%%%
@@ -1232,9 +1232,9 @@ parameters (as set at the time that the command is used).
 \section{List layout}
 \suppressfloats[t]
 
-    The commands \pixcom{listdiagram} and \pixcom{listdesign} 
+    The commands \pixcom{listdiagram} and \pixcom{listdesign}
 (or \pixcom{drawlist}), as their names suggest, display the layout
-of list\ixenv{list} environments. 
+of list\ixenv{list} environments.
 The list parameters are shown in \fref{fig:lstp},
 which was produced by the following code:
 \begin{verbatim}
@@ -1245,7 +1245,7 @@ which was produced by the following code:
 \end{verbatim}
 
     The list layout may be controlled by the \verb|\listaspara|\TF{} commands.
-Use \pixcom{listasparatrue} for displaying the list when it is being 
+Use \pixcom{listasparatrue} for displaying the list when it is being
 treated as a paragraph,
 otherwise use \pixcom{listasparafalse}. The default is \pixcom{listasparatrue}.
 
@@ -1262,7 +1262,7 @@ graphically illustrates the layout for an \pixenv{enumerate}
 The figure was generated by the following code:
 \begin{verbatim}
 \begin{enumerate}
-\item Figure~\ref{fig:lstenum} illustrates the layout of an 
+\item Figure~\ref{fig:lstenum} illustrates the layout of an
       \texttt{enumerate} list.
   \currentlist
   \begin{figure}
@@ -1381,12 +1381,12 @@ within itself (see \fref{fig:lstudf} for the result). The code used is:
 \end{verbatim}
 \end{listX}
 
-    In \LaTeX{} many display environments, such as the \pixenv{quotation} 
+    In \LaTeX{} many display environments, such as the \pixenv{quotation}
 environment,
 are defined in terms of the generic \pixenv{list} environment, so
 the settings for these may also be explored with \pixcom{currentlist}.
     For example, the following code shows how to determine the `list'
-settings for the \pixenv{thebibliography} 
+settings for the \pixenv{thebibliography}
 environment (with apologies to Leslie Lamport).
 \begin{verbatim}
 \begin{thebibliography}{Dillo 83}
@@ -1402,10 +1402,10 @@ Running this code is left as an exercise for the reader.
 
 \subsection{Changing lists}
 
-    Many of \LaTeX's environments are defined in terms of lists, most 
+    Many of \LaTeX's environments are defined in terms of lists, most
 noticeably the \pixenv{description}, \pixenv{enumerate} and \pixenv{itemize}
-environments. To change any of \LaTeX's predefined list environments 
-it is probably best to examine their 
+environments. To change any of \LaTeX's predefined list environments
+it is probably best to examine their
 definitions in the appropriate class file (e.g., \pixfile{classes.dtx}) and
 then put your modified definitions into a package file.
 
@@ -1414,9 +1414,9 @@ then put your modified definitions into a package file.
 \listvalues
 \end{quote}
 
-    The \pixcom{listvalues} command can be used to produce a table, 
+    The \pixcom{listvalues} command can be used to produce a table,
 as shown here, of the values of the current document's list layout
-parameters (as set at the time that the command is used). 
+parameters (as set at the time that the command is used).
 This table was produced by:
 \begin{verbatim}
 \begin{quote}
@@ -1432,10 +1432,10 @@ This table was produced by:
 \section{Sectional heading layout}
 \suppressfloats[t]
 
-    In \LaTeX{} a few headings, like \pixcom{part} and \pixcom{chapter} 
+    In \LaTeX{} a few headings, like \pixcom{part} and \pixcom{chapter}
 are defined using
 special definition code. The majority, though, are defined via the internal
-\LaTeX{} \pixatcom{startsection} 
+\LaTeX{} \pixatcom{startsection}
 command. This command takes 6 arguments: \\
 \verb|\@startsection{|\meta{name}\verb|}{|%
 \meta{level}\verb|}{|%
@@ -1444,14 +1444,14 @@ command. This command takes 6 arguments: \\
 \meta{afterskip}\verb|}{|%
 \meta{font style}\verb|}|.
 
-    The commands 
+    The commands
 \verb|\headingdiagram{|\meta{font style}\verb|}|\ixcom{headingdiagram} and
 \verb|\headingdesign{|\meta{font style}\verb|}|\ixcom{headingdesign}
 (or \verb|\drawheading{|\meta{font style}\verb|}|\ixcom{drawheading})
 draw a picture of the layout for sectional headings based on the
 \pixatcom{startsection} command. Unlike the other
 drawing commands it takes one parameter, which is the specification
-of the size and/or font of the heading. For example, 
+of the size and/or font of the heading. For example,
 \verb|\drawheading{\large\itshape}|. For \pixcom{headingdiagram} (or
 \pixcom{drawheading} with \pixcom{drawparameterstrue} is
 in effect) the parameter has no effect.
@@ -1459,13 +1459,13 @@ in effect) the parameter has no effect.
     There are two kinds of headings:
 \begin{enumerate}
 \item Display headings, where the heading is set off from the text body, and
-\item Run-in headings, where the text body starts on the same line as 
+\item Run-in headings, where the text body starts on the same line as
 the heading.
 \end{enumerate}
-When \pixcom{headingdiagram} is called 
+When \pixcom{headingdiagram} is called
 (or \pixcom{drawheading} with \pixcom{drawparameterstrue} in effect)
- the pair of commands \pixcom{runinheadtrue} and 
-\pixcom{runinheadfalse} control whether a run-in head or a display head 
+ the pair of commands \pixcom{runinheadtrue} and
+\pixcom{runinheadfalse} control whether a run-in head or a display head
 will be illustrated. The default is \pixcom{runinheadfalse}.
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -1590,7 +1590,7 @@ value of \textit{afterskip} negative rather than positive, is illustrated
 in \fref{fig:hrudf}.
 
 
-   
+
 %%%%%%%%%%%%%%%%
 \clearpage
 \section{Footnote layout}
@@ -1610,7 +1610,7 @@ produced by the following code:
 \end{figure}
 \end{verbatim}
 Note the use of \pixcom{setlabelfont} to change the font used for labelling
-(the `MAIN TEXT' in this case). 
+(the `MAIN TEXT' in this case).
 
 \begin{figure}
 \setlayoutscale{0.4}
@@ -1648,7 +1648,7 @@ of 4 with respect to the horizontal dimensions.
 
     Commands for individually setting trial values for footnote parameters
 are given in \tref{tab:foot}. Except for \pixcom{tryfootrulefrac}, these all
-take a length as their parameter. The parameter value for 
+take a length as their parameter. The parameter value for
 \pixcom{tryfootrulefrac} is a decimal number representing a fraction of
 the \pixcom{textwidth}. The trial length of the footnote rule is set to
 this fraction of the width of the text block.
@@ -1708,14 +1708,14 @@ is normally a rubber length. The following is a typical set of values:
 \setlength{\skip\footins}{10pt plus 4pt minus 2pt}
 \end{verbatim}
 
-    For changing other values, see the documented class file 
+    For changing other values, see the documented class file
 \pixfile{classes.dtx}.
 
 \footnotevalues
 
-    The \pixcom{footnotevalues} command can be used to produce a table, 
+    The \pixcom{footnotevalues} command can be used to produce a table,
 as shown here, of the values of the current document's footnote layout
-parameters (as set at the time that the command is used). 
+parameters (as set at the time that the command is used).
 
 
 
@@ -1762,7 +1762,7 @@ section titles in a \textit{Table of Contents} listing based on the
 \caption{Typical Table of Contents entry for this document} \label{fig:thistoc}
 \end{figure}
 
-   Figure~\ref{fig:thistoc} was produced by the following 
+   Figure~\ref{fig:thistoc} was produced by the following
 code:\footnote{The drawing of the dotted leader is not completely accurate
 due to scaling and rounding within the drawing algorithm.}
 \begin{verbatim}
@@ -1780,7 +1780,7 @@ on those for the current document. The parameters can all be individually
 adjusted via the commands listed in \tref{tab:toc}. These commands all
 require a length as their parameter, except for the \pixcom{trytocdotsep}
 command which takes a number (integer or decimal) as its parameter value.
-This sets the trial value for the separation between dots in the leader 
+This sets the trial value for the separation between dots in the leader
 between the sectional title and the page number. The parameter is the
 separation value in \emph{mu} (math units).\footnote{There are \emph{18mu}
 units to \emph{1em} unit.}
@@ -1826,7 +1826,7 @@ eliminate the dotted leader line between the title text and the page number.
 
 \subsection{Changing the Table of Contents, etc.}
 
-    The methods of specifying the typesetting of the various entries in 
+    The methods of specifying the typesetting of the various entries in
 a Table of Contents or a List of Figures (or Tables) varies from one kind
 of entry to another. For details consult
 the documented class specification file \pixfile{classes.dtx}.
@@ -1843,13 +1843,13 @@ preamble:
 \makeatother
 \end{verbatim}
 
-    Typically, for figure and table captions, and for sectioning commands 
+    Typically, for figure and table captions, and for sectioning commands
 that are defined using the \pixatcom{startsection} command,
-table entry typesetting is specified via an \verb|\l@X| command, where 
+table entry typesetting is specified via an \verb|\l@X| command, where
 \verb|X| is \verb|figure|, \verb|table|, \verb|subsection|, etc., as
-appropriate. In turn, these commands call the \pixatcom{dottedtocline} 
+appropriate. In turn, these commands call the \pixatcom{dottedtocline}
 command. For example, to change the typesetting for a paragraph entry
-in the Table of Contents, and for a table caption you should do something 
+in the Table of Contents, and for a table caption you should do something
 like (changing the lengths as appropriate):
 \begin{verbatim}
 \makeatletter
@@ -1861,9 +1861,9 @@ like (changing the lengths as appropriate):
 
 \tocvalues
 
-    The \pixcom{tocvalues} command can be used to produce a table, 
+    The \pixcom{tocvalues} command can be used to produce a table,
 as shown here, of the values of the current document's Table of Contents layout
-parameters (as set at the time that the command is used). 
+parameters (as set at the time that the command is used).
 
 \clearpage
 \section{Font boxing}
@@ -1877,7 +1877,7 @@ Two commands are provided for this purpose.
  produces a drawing of
 \meta{text} together with its surrounding box drawn. A bullet is placed
 at the position of the reference point and a horizontal dotted line is drawn
-along the baseline. The command can be used in normal mode 
+along the baseline. The command can be used in normal mode
 or can
 be \verb|\put| in a picture environment.
 \drawfontframe{\Huge\textbf{g}}
@@ -1899,10 +1899,10 @@ Two commands are provided for this purpose.
  is similar, except
 that it labels the reference point, and the width height and depth of the
 box. The box is placed inside a picture environment that is just big enough
-to enclose the box. This means that the labels extend beyond the 
+to enclose the box. This means that the labels extend beyond the
 \texttt{picture}. If \verb|\printparameterstrue| is set before issuing the
 command, the actual values for the width, height and depth of the box
-are printed in a \texttt{center} environment following the drawing. 
+are printed in a \texttt{center} environment following the drawing.
 
     Here is a simple example created by \verb|\drawfontframelabel{\Huge Q}|
 with \verb|\printparametersfalse|.
@@ -1911,7 +1911,7 @@ with \verb|\printparametersfalse|.
 \drawfontframelabel{\Huge Q}
 \end{center}
 
-    This time with \verb|\printparameterstrue| and 
+    This time with \verb|\printparameterstrue| and
 \verb|\drawfontframelabel{\Huge\textbf{tangling}}|
 \begin{center}
 \printparameterstrue%
@@ -1920,14 +1920,14 @@ with \verb|\printparametersfalse|.
 
     If either of the \verb|\drawfont...| commands are used inside a
 \texttt{picture} environment, then the \verb|\unitlength| must be set
-to 1pt, as the drawings are meant to be exact size and the commands 
+to 1pt, as the drawings are meant to be exact size and the commands
 assume that all
 drawing lengths are in terms of pts.
 
     Internally, the commands typeset their argument inside a `save box' called
-\verb|\layoutsbox|\ixsbox{layoutsbox} and then perform the size 
-measurements on 
-\verb|\layoutsbox|. You can use \verb|\layoutsbox| for your own purposes, but if 
+\verb|\layoutsbox|\ixsbox{layoutsbox} and then perform the size
+measurements on
+\verb|\layoutsbox|. You can use \verb|\layoutsbox| for your own purposes, but if
 you do so any subsequent use of a \verb|\drawfont...| command will
 overwrite anything that you might have saved in \verb|\layoutsbox|.
 
@@ -1954,7 +1954,7 @@ Kent McPherson.
 Peter Wilson.
 \newblock \emph{The memoir class for configurable book typesetting}.
 \newblock November, 2002.
-\newblock (Available from CTAN in 
+\newblock (Available from CTAN in
            \texttt{macros/latex/contrib/memoir})
 
 \end{thebibliography}
@@ -1966,7 +1966,7 @@ Peter Wilson.
 
 %  laymanidx.tex
 %  Generated by GenIndex Version 1.1 from layman.idx
-% 
+%
 \begin{theindex}
 
 
