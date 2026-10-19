@@ -1,14 +1,14 @@
 % \iffalse meta-comment
 %
 % layouts.dtx
-% Author: Peter Wilson (Herries Press) 
+% Author: Peter Wilson (Herries Press)
 % Maintainer: LaTeX Project
 % Copyright 1998--2004 Peter R. Wilson
 % Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
-% version 1.3c of this license or (at your option) any 
+% version 1.3c of this license or (at your option) any
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
@@ -16,7 +16,7 @@
 %
 % This work consists of the files listed in the README file.
 %
-% 
+%
 %<*driver>
 \DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
 \documentclass[twoside]{l3in2edoc}
@@ -132,13 +132,13 @@
 %
 % \StopEventually{}
 %
-% 
+%
 %
 % \section{Introduction}
 %
 % This document provides the commented source for a \LaTeX{}
 % package file developed as part of a suite designed for the typesetting of
-% documents according to the rules for ISO international 
+% documents according to the rules for ISO international
 % standards~\cite{PRW96i}.
 % A separate document provides the user manual.
 %
@@ -149,7 +149,7 @@
 % features.} of various logical elements of a document.
 % This package has general applicability and is not restricted to
 % typesetting ISO documents.
-% 
+%
 % This manual is typeset according to the conventions of the
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
@@ -563,7 +563,7 @@
 % \end{macro}
 %
 % \begin{macro}[no-user-doc]{\ifdrawparameters}
-%    Set TRUE to draw a layout with marked dimension lines. 
+%    Set TRUE to draw a layout with marked dimension lines.
 %    \begin{macrocode}
 \newif\ifdrawparameters
   \drawparameterstrue
@@ -622,7 +622,7 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\l@yor}
-%    |\l@yor{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE 
+%    |\l@yor{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE
 % unless \meta{ifA} is FALSE and \meta{ifB} is FALSE (i.e.,
 % |\ifl@tempif| = \meta{ifA} OR \meta{ifB}).
 % \changes{v2.5}{2001/10/22}{Added \cs{l@yor}}
@@ -640,8 +640,8 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\l@ynnand}
-%    |\l@ynnand{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to FALSE 
-% unless \meta{ifA} is FALSE and \meta{ifB} is TRUE 
+%    |\l@ynnand{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to FALSE
+% unless \meta{ifA} is FALSE and \meta{ifB} is TRUE
 % \changes{v2.5}{2001/10/22}{Added \cs{l@ynnand}}
 %    \begin{macrocode}
 \newcommand{\l@ynnand}[2]{%
@@ -656,7 +656,7 @@
 % \end{macro}
 %
 % \begin{macro}[int]{\l@ynox}
-%    |\l@ynox{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE 
+%    |\l@ynox{|\meta{ifA}|}{|\meta{ifB}|}| sets |\ifl@ytempif| to TRUE
 % unless \meta{ifA} is TRUE and \meta{ifB} is FALSE.
 % \changes{v2.5}{2001/10/22}{Added \cs{l@ynox}}
 %    \begin{macrocode}
@@ -759,9 +759,9 @@
 %    A variety of utility commands.
 %
 % \begin{macro}[int]{\l@yltoc}
-%  |\l@yltoc{|\meta{length}|}{|\meta{counter}|}| converts a length into a 
+%  |\l@yltoc{|\meta{length}|}{|\meta{counter}|}| converts a length into a
 % counter value. The counter value is to the nearest
-%  pt of the length. 
+%  pt of the length.
 %    \begin{macrocode}
 \newcommand{\l@yltoc}[2]{\setlength{\l@ylen}{#1}%
                          \ifdim\l@ylen > \z@ \advance\l@ylen by 0.5\p@ \else
@@ -788,7 +788,7 @@
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
-%                          
+%
 % \begin{macro}[int]{\l@yvudia}
 % \begin{macro}[int]{\l@yhrdia}
 % |\l@yvudia{|\meta{x}|}{|\meta{y}|}{|\meta{distance}|}| draws two vertical
@@ -816,10 +816,10 @@
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
-%             
+%
 % \begin{macro}[int]{\l@ypcmd}
 % \begin{macro}[int]{\l@ycmd}
-%  |\l@ypcmd{|\meta{cmdname}|}| typesets a command \meta{cmdname} (which does 
+%  |\l@ypcmd{|\meta{cmdname}|}| typesets a command \meta{cmdname} (which does
 % not include the backslash) (in a picture). For example, |\l@ypcmd{fred}|
 % prints |\fred|. The font size is given by |\l@yparamfont|. The
 % |\l@ycmd| macro is similar but does not set the font size.
@@ -1049,7 +1049,7 @@
 % \end{macro}
 %
 % \begin{macro}[no-user-doc]{\setfootbox}
-%  Sets the height and depth of the footer box and stores the results 
+%  Sets the height and depth of the footer box and stores the results
 % in |\l@youtvdv| and |\l@youtvdvi|.
 % \changes{v2.5a}{2002/03/05}{Added \cs{setfootbox}}
 %    \begin{macrocode}
@@ -1084,7 +1084,7 @@
 % for the document, specifically as on the current page.
 % \changes{v2.5a}{2002/01/06}{Added footheight to \cs{currentpage}}
 % \changes{v2.6}{2002/06/09}{Added further settings in \cs{currentpage}}
-% \changes{v2.6}{2002/06/09}{Split \cs{currentpage} into two 
+% \changes{v2.6}{2002/06/09}{Split \cs{currentpage} into two
 %          (plus \cs{commonl@ypage}}
 %    \begin{macrocode}
 \newcommand{\currentpage}{%
@@ -1098,7 +1098,7 @@
   \tryevensidemargin{\evensidemargin}% % typically 39-82pt
   \trytopmargin{\topmargin}%           % typically 27pt
   \commonl@ypage%
-}  
+}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1134,7 +1134,7 @@
       \oddpagelayoutfalse
     \fi
   \fi
-}  
+}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1268,7 +1268,7 @@
   \begin{small} The circle is at 1 inch from the top and left of the
     page. Dashed lines represent (\texttt{\bs hoffset + 1 inch}) and
     (\texttt{\bs voffset + 1 inch}) from the top and left of the
-    page. 
+    page.
   \end{small} \\
   \medskip
   \fi
@@ -1290,7 +1290,7 @@
       \put(0,0){\framebox(\l@youtpw,\l@youtph){}}
     \fi
 %    \end{macrocode}
-%    Draw the offset lines and a circle 1 inch from the top LH corner 
+%    Draw the offset lines and a circle 1 inch from the top LH corner
 % of the page.
 %    \begin{macrocode}
     \put(\l@yoneinch,\l@youtycvi){\circle{12}}
@@ -1516,9 +1516,9 @@
          Lengths are to the nearest pt. \\
       \begin{ttfamily}
       \begin{tabular}{l@{\hspace{20pt}}l}
-      \textrm{page height}   = \number\l@youtph pt & 
+      \textrm{page height}   = \number\l@youtph pt &
       \textrm{page width}    = \number\l@youtpw pt  \\
-      \l@ycmd{hoffset}       = \number\l@youthpi pt         & 
+      \l@ycmd{hoffset}       = \number\l@youthpi pt         &
       \l@ycmd{voffset}       = \number\l@youtvpi pt         \\
       \ifoddpagelayout
         \l@ycmd{oddsidemargin} = \number\l@youthpv pt
@@ -1526,7 +1526,7 @@
         \l@ycmd{evensidemargin} = \number\l@youthpiv pt
       \fi
       & \l@ycmd{topmargin}   = \number\l@youtvpii pt    \\
-      \l@ycmd{headheight}    = \number\l@youtvpiii pt    & 
+      \l@ycmd{headheight}    = \number\l@youtvpiii pt    &
       \l@ycmd{headsep}       = \number\l@youtvpiv pt        \\
       \l@ycmd{textheight}    = \number\l@youtvpv pt      &
       \l@ycmd{textwidth}     = \number\l@youthpii pt      \\
@@ -1607,8 +1607,8 @@
 
 %    \end{macrocode}
 %
-% \begin{macro}[no-user-doc]{\stockwidth}   
-% \begin{macro}[no-user-doc]{\stockwidth}   
+% \begin{macro}[no-user-doc]{\stockwidth}
+% \begin{macro}[no-user-doc]{\stockwidth}
 % \begin{macro}[no-user-doc]{\trimedge}
 % \begin{macro}[no-user-doc]{\trimtop}
 % \begin{macro}[no-user-doc]{\uppermargin}
@@ -1684,7 +1684,7 @@
 %    This routine sets the stock layout page parameters to those specified
 % for the document.
 % \changes{2.5a}{2002/01/06}{Added default footheight to \cs{currentstock}}
-% \changes{2.6}{2002/06/09}{Split \cs{currentstock} into two macros 
+% \changes{2.6}{2002/06/09}{Split \cs{currentstock} into two macros
 %          (plus \cs{commonl@ypage}}
 %    \begin{macrocode}
 \newcommand{\currentstock}{%
@@ -1697,7 +1697,7 @@
   \tryspinemargin{\spinemargin}%       % typically 110pt
   \tryuppermargin{\uppermargin}%       % typically 125pt
   \commonl@ypage
-}  
+}
 
 %    \end{macrocode}
 % \end{macro}
@@ -1823,7 +1823,7 @@
 %    Now for column dependent values.
 %    \begin{macrocode}
   \l@youthdi=\l@youthpii                 % columnwidth = textwidth
-  \l@youtxciii=\l@youtxcii               % X coord of right col 
+  \l@youtxciii=\l@youtxcii               % X coord of right col
   \iftwocolumnlayout
     \advance\l@youthdi by -\l@youthpiii  % colwidth = textwidth - colsep
     \divide\l@youthdi by \tw@              % divided in half
@@ -1856,7 +1856,7 @@
     ](\l@youthdo,\l@youtvdo)
     \thicklines
 %    \end{macrocode}
-% Draw the stock, paper, etc. 
+% Draw the stock, paper, etc.
 %    \begin{macrocode}
     \put(0,0){\framebox(\l@youthdo,\l@youtvdo){}}                        % the stock
     \put(\l@youtxco,\l@youtyco){\dashbox{10}(\l@youtpw,\l@youtph){}}     % the page
@@ -1954,7 +1954,7 @@
         \put(\l@youtxcv,\l@youtyciii){\begin{picture}(\l@youtvdviii,\l@youtvdviii)
           \put(\l@youtvdviii,-\l@youtvdviii){\l@ypcmd{marginparpush}}
           \end{picture}}
-      \fi 
+      \fi
 %% calculate X coord for uppermargin/trimtop parameters
       \ifoddpagelayout
         \ifl@yrightmpars
@@ -2012,25 +2012,25 @@
         \ifl@yrightmpars
           \l@youtxcv=\l@youtxco               % X coord for paper height
             \advance\l@youtxcv by \l@youtxcii   % plus left edge of text
-            \divide\l@youtxcv by \tw@        
+            \divide\l@youtxcv by \tw@
         \else
           \l@youtxcv=\l@youtxco               % X coord for paper height
             \advance\l@youtxcv by \l@youtpw     % plus page width
             \advance\l@youtxcv by \l@youtxcii   % plus left edge of text
             \advance\l@youtxcv by \l@youthpii   % plus text width
-            \divide\l@youtxcv by \tw@        
+            \divide\l@youtxcv by \tw@
         \fi
       \else
         \ifl@yrightmpars
           \l@youtxcv=\l@youtxco               % X coord for paper height
             \advance\l@youtxcv by \l@youtxcii   % plus left edge of text
-            \divide\l@youtxcv by \tw@        
+            \divide\l@youtxcv by \tw@
         \else
           \l@youtxcv=\l@youtxco               % X coord for paper height
             \advance\l@youtxcv by \l@youtpw     % plus page width
             \advance\l@youtxcv by \l@youtxcii   % plus left edge of text
             \advance\l@youtxcv by \l@youthpii   % plus text width
-            \divide\l@youtxcv by \tw@        
+            \divide\l@youtxcv by \tw@
         \fi
       \fi
  %% do paperheight
@@ -2066,7 +2066,7 @@
         \put(\l@youthdo,\l@youtyciv){\begin{picture}(\l@youtvdviii,\l@youtvdviii)
           \put(-\l@youtvdviii,\l@youtvdviii){\l@ypcmd{trimedge}}
           \end{picture}}
-      \else 
+      \else
         \l@youtxcv=\l@youtxcii         % X coord of right edge of text
           \advance\l@youtxcv by \l@youthpii
  %% do spinemargin
@@ -2158,7 +2158,7 @@
       \begin{tabular}{l@{\hspace{20pt}}l}
       \l@ycmd{stockheight}   = \number\l@youtvdo pt    &
       \l@ycmd{stockwidth}    = \number\l@youthdo pt     \\
-      \l@ycmd{pageheight}    = \number\l@youtph pt      & 
+      \l@ycmd{pageheight}    = \number\l@youtph pt      &
       \l@ycmd{pagewidth}     = \number\l@youtpw pt       \\
       \l@ycmd{textheight}    = \number\l@youtvpv pt      &
       \l@ycmd{textwidth}     = \number\l@youthpii pt      \\
@@ -2166,7 +2166,7 @@
       \l@ycmd{trimedge}      = \number\l@youthpi pt        \\
       \l@ycmd{uppermargin}   = \number\l@youtvpii pt    &
       \l@ycmd{spinemargin}   = \number\l@youthpv pt     \\
-      \l@ycmd{headheight}    = \number\l@youtvpiii pt    & 
+      \l@ycmd{headheight}    = \number\l@youtvpiii pt    &
       \l@ycmd{headsep}       = \number\l@youtvpiv pt        \\
       \l@ycmd{footskip}      = \number\l@youtvpvi pt       &
       \l@ycmd{marginparsep}  = \number\l@youthpvi pt   \\
@@ -3066,7 +3066,7 @@
 % \begin{macro}[no-user-doc]{\currentparagraph}
 %
 %    This routine sets the trial paragraph parameters to be those specified
-% for the current document. 
+% for the current document.
 %    \begin{macrocode}
 \newcommand{\currentparagraph}{%
   \tryparindent{\parindent}
@@ -3110,7 +3110,7 @@
       \advance\l@youthdiii by -\l@youthdii
     \l@youtxci=\l@youthdi                % x coord of middle of picture
       \divide\l@youtxci by \tw@
-  \l@youthdv=10\relax                    % small value 
+  \l@youthdv=10\relax                    % small value
   \l@youthdvi=5\relax                    % 1/2 l@youthdv
 %    \end{macrocode}
 %
@@ -3528,7 +3528,7 @@
       \textit{beforeskip}      = \number\l@youtvpi pt &
       \textit{afterskip}       = \number\l@youtvpii pt \\
       \textit{indent}          = \number\l@youthpi pt &
-      \textrm{(heading font)} 
+      \textrm{(heading font)}
          \l@ycmd{baselineskip} = \number\l@youtvdii pt \\
       \l@ycmd{parskip}         = \number\l@youtparskip pt &
       \textrm{heading font}    = \string#1 \\
@@ -3870,7 +3870,7 @@
   \l@ycmd{dbltextfloatsep}      = \l@yval{\dbltextfloatsep} \\
   \l@ycmd{dbltopnumber}         = \the\c@dbltopnumber & % \l@yval{\c@dbltopnumber} &
   \l@ycmd{dbltopfraction}       = \dbltopfraction          \\
-  \l@ycmd{dblfloatpagefraction} = \dblfloatpagefraction    & 
+  \l@ycmd{dblfloatpagefraction} = \dblfloatpagefraction    &
   \l@ycmd{floatpagefraction}    = \floatpagefraction       \\
   1em = \l@yval{\l@yonem}  & 1ex = \l@yval{\l@yonex} \\
   \end{tabular}
@@ -3958,7 +3958,7 @@
 %
 % \begin{macro}[no-user-doc]{\currentfloatpage}
 %
-%    Sets the floatpage parameter trial values to those in the current 
+%    Sets the floatpage parameter trial values to those in the current
 % document, or makes a guesstimate when these are hard-coded.
 %    \begin{macrocode}
 \newcommand{\currentfloatpage}{%
@@ -4100,7 +4100,7 @@
     \fi
     \end{picture}
   \end{center}
-  \setlength{\unitlength}{1pt}    
+  \setlength{\unitlength}{1pt}
   \testprintparameters
   \ifl@ytempif
 %    \end{macrocode}
@@ -4227,9 +4227,9 @@
   \trytocindent{1.5em}                  % guesstimate
   \trytocnumwidth{2.3em}                % guesstimate
   \trytoclinewidth{\textwidth}
-  \trytocrmarg{\@tocrmarg} 
-  \trytocpnumwidth{\@pnumwidth} 
-  \trytocdotsep{\@dotsep} 
+  \trytocrmarg{\@tocrmarg}
+  \trytocpnumwidth{\@pnumwidth}
+  \trytocdotsep{\@dotsep}
 }
 
 %    \end{macrocode}
@@ -4357,7 +4357,7 @@
     \ifl@ytempif
 %    \end{macrocode}
 %
-% Draw the parameters if requested. 
+% Draw the parameters if requested.
 %
 % The top vectors (which we put into their own picture).
 %    \begin{macrocode}
@@ -4576,7 +4576,7 @@
   \setlength{\l@ylen}{#4\l@ylen}
   \l@yltoc{\l@ylen}{\l@youtvdii}          % text height
 %    \end{macrocode}
-% The height of the bottom margin was stored in |\l@youtvdi|. If the 
+% The height of the bottom margin was stored in |\l@youtvdi|. If the
 % value is zero then we calculate the height from the page, text and top
 % margin height values already obtained.
 %    \begin{macrocode}
@@ -4615,7 +4615,7 @@
       \advance\l@youthdvi by -\l@youthdv
       \divide\l@youthdvi by \tw@
 %    \end{macrocode}
-% We also need the positions of the x coordinate of the LH inner column 
+% We also need the positions of the x coordinate of the LH inner column
 % (store in |\l@youtxcii|) and of the RH outer column (store in
 % |\l@youtxciii|).
 %    \begin{macrocode}
@@ -4666,7 +4666,7 @@
 %
 % \begin{macro}[no-user-doc]{\drawfontframe}
 %  Draws a tightly fitting box with the text reference point marked and a
-%  dotted line along the baseline. 
+%  dotted line along the baseline.
 %    \begin{macrocode}
 \newcommand{\drawfontframe}[1]{%
 %    \end{macrocode}
@@ -4707,7 +4707,7 @@
 %
 % \begin{macro}[no-user-doc]{\drawfontframelabel}
 %  Draws a tightly fitting box with the text reference point marked and a
-%  dotted line along the baseline and marks the width, height and depth. 
+%  dotted line along the baseline and marks the width, height and depth.
 %    \begin{macrocode}
 \newcommand{\drawfontframelabel}[1]{%
 %    \end{macrocode}
@@ -4735,9 +4735,9 @@
 %    \begin{macrocode}
   \l@youthdvi=5\relax
 %    \end{macrocode}
-% Add |2\l@youthdvi| plus 7pt (i.e. 17pt) to the box height to allow for 
+% Add |2\l@youthdvi| plus 7pt (i.e. 17pt) to the box height to allow for
 % width label,
-% and add |2\l@youthdvi| plus 25pt (i.e 35pt) to the box width to allow 
+% and add |2\l@youthdvi| plus 25pt (i.e 35pt) to the box width to allow
 % for height label.
 %    \begin{macrocode}
   \l@youtycv=\l@youtvdii

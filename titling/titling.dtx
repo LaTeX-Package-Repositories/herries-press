@@ -130,14 +130,14 @@
 % \maketitle
 % \begin{abstract}
 %    The \Lpack{titling} package provides control over the typesetting
-% of the |\maketitle| and |\thanks| commands. 
+% of the |\maketitle| and |\thanks| commands.
 % The values of |\title|, |\author| and
 % |\date| are also retained, and there may be multiple titles in a document.
 % New titling elements may be defined for printing by |\maketitle|.
 % \end{abstract}
 % \tableofcontents
 %
-% 
+%
 %
 % \section{Introduction}
 %
@@ -150,8 +150,8 @@
 % \LaTeX{} \textsc{docstrip} utility which enables the automatic
 % extraction of the \LaTeX{} macro source files~\cite{GOOSSENS94}.
 %
-%    Section~\ref{sec:usc} describes the usage of the \Lpack{titling} 
-% package and 
+%    Section~\ref{sec:usc} describes the usage of the \Lpack{titling}
+% package and
 % commented source code is in Section~\ref{sec:code}.
 %
 % \section{The \Lpack{titling} package} \label{sec:usc}
@@ -187,16 +187,16 @@
 % \DescribeMacro{\postauthor}
 % \DescribeMacro{\predate}
 % \DescribeMacro{\postdate}
-% These six commands each have a single argument, 
+% These six commands each have a single argument,
 % like |\pretitle{|\meta{text}|}|and |\posttitle{|\meta{text}|}|.
-%  The argument to these commands control the typesetting of the 
+%  The argument to these commands control the typesetting of the
 % standard elements of the document's |\maketitle|
 % command. The |\title| is effectively processed between the |\pretitle| and
 % |\posttitle| commands; that is, like: \\
 % |{\pretitle \title \posttitle}| \\
-% and similarly for the |\author| and |\date| commands. The 
+% and similarly for the |\author| and |\date| commands. The
 % commands are initialised to mimic the normal result of |\maketitle|
-% typesetting in the \Lpack{article/report} classes. 
+% typesetting in the \Lpack{article/report} classes.
 % For example, the default definitions of the |\...title...|
 % and |\...author...| commands are:
 % \par\begin{small}\begin{verbatim}
@@ -226,10 +226,10 @@
 % was sent to me by Jason Harrison
 % (\texttt{harrison@cs.ubc.ca}) on 2002/02/18.
 % \begin{quotation}
-% I'm trying to format my latest conference paper for a conference that 
-% doesn't supply a latex class (only a MS Word example, sigh) and I ran 
-% into a problem that I'm not sure if it's an interaction of the titling 
-% package [it's not] or just no one ever cares because hitting return gets you an 
+% I'm trying to format my latest conference paper for a conference that
+% doesn't supply a latex class (only a MS Word example, sigh) and I ran
+% into a problem that I'm not sure if it's an interaction of the titling
+% package [it's not] or just no one ever cares because hitting return gets you an
 % output when latex complains:
 % \begin{verbatim}
 % ! Argument of \reserved@a has an extra }.
@@ -238,7 +238,7 @@
 % l.46         \end{tabular}}
 % ? x
 % \end{verbatim}
-% What I did was to define my 
+% What I did was to define my
 % authors list using the following methodology:
 % \begin{verbatim}
 % \preauthor{}
@@ -255,10 +255,10 @@
 % \author{\authorthing}
 % \postauthor{}
 % \end{verbatim}
-% 
-% Thus latex does not complain and I get the formatting I want.  Perhaps 
-% you'd add this to the titling documentation for those of us who can't 
-% follow the usual conventions because of the strange conventions of a 
+%
+% Thus latex does not complain and I get the formatting I want.  Perhaps
+% you'd add this to the titling documentation for those of us who can't
+% follow the usual conventions because of the strange conventions of a
 % strange conference.
 % \end{quotation}
 %
@@ -279,7 +279,7 @@
 %
 %
 % \DescribeMacro{\droptitle}
-%  The |\maketitle| command puts the title at a particular height on the 
+%  The |\maketitle| command puts the title at a particular height on the
 % page. Unless it is used with the \Lopt{titlepage} option of the standard
 % classes it starts a new page.
 %  You can change the vertical position of the title via the length
@@ -291,7 +291,7 @@
 % \DescribeMacro{\maketitlehookb}
 % \DescribeMacro{\maketitlehookc}
 % \DescribeMacro{\maketitlehookd}
-% The |\maketitle| command as defined by the \Lpack{titling} package 
+% The |\maketitle| command as defined by the \Lpack{titling} package
 % is essentially
 % \begin{verbatim}
 % \renewcommand{\maketitle}{%
@@ -321,7 +321,7 @@
 % \end{verbatim}
 % You can then say:
 % \begin{verbatim}
-% \published{Originally published in 
+% \published{Originally published in
 %           \textit{The Journal of ...}\thanks{Reprinted with permission}}
 % ...
 % \maketitle
@@ -330,12 +330,12 @@
 % that nothing extra had to be done in order to use the |\thanks| command
 % in the argument to the new |\published| command.
 %
-% 
+%
 %
 % \DescribeEnv{titlingpage}
 %    When one of the standard classes is used with the \Lopt{titlepage}
 % option, |\maketitle| puts the title elements on an unnumbered page
-% and then starts a new page numbered page 1. 
+% and then starts a new page numbered page 1.
 % The standard classes also provide
 % a |titlepage| environment which starts a new unnumbered page and at the
 % end starts a new page numbered 1. You are entirely responsible
@@ -348,10 +348,10 @@
 % environment you can use the |\maketitle| command, and any others you wish.
 % The pagestyle is |empty|;
 % ^^A given by the value of the |\titlingpagestyle| command;
-% at the end it starts another ordinary page numbered page 1. 
+% at the end it starts another ordinary page numbered page 1.
 %
 % ^^A \DescribeMacro{\titlingpagestyle}
-% ^^A The macro |\titlingpagestyle{|\meta{pstyle}|}| sets the page style 
+% ^^A The macro |\titlingpagestyle{|\meta{pstyle}|}| sets the page style
 % ^^A in the |titlingpage| environment to be \meta{pstyle}. This is
 % ^^A initially set as |\titlingpagestyle{empty}|.
 %
@@ -369,25 +369,25 @@
 %    By default, titling information is centered with respect to the
 % width of the text block.
 %    Occasionally someone asks on the \texttt{comp.text.tex} newsgroup how
-% to center the titling information on a title page 
-% with respect to the width of the physical 
+% to center the titling information on a title page
+% with respect to the width of the physical
 % page. If the textblock is centered with respect to the physical page,
 % then the default centering suffices. If the textblock is not physically
-% centered, then the titling information either has to be shifted 
+% centered, then the titling information either has to be shifted
 % horizontally or |\maketitle| has to be made to think that the textblock
-% has been shifted horizontally. 
+% has been shifted horizontally.
 %
 %    One solution is to use the |titlingpage|
 % environment and the \Lopt{chngpage} package\footnote{Available
 % from CTAN as file \texttt{chngpage.sty}.}, which lets
 % you temporarily adjust the location of the textblock. Remember that
-% TeX starts its page measurements at a distance of 1 inch + |\hoffset| 
+% TeX starts its page measurements at a distance of 1 inch + |\hoffset|
 % (default 0pt)
 % in from the left side of the
 % physical sheet; this is the zero point for the |\evensidemargin| and
-% the |\oddsidemargin|. Let $H$ be the value of (1 inch + |\hoffset|), 
+% the |\oddsidemargin|. Let $H$ be the value of (1 inch + |\hoffset|),
 % $M$ be the |\...sidemargin|, $T$ be the
-% |\textwidth| and $P$ be the width of the physical page, 
+% |\textwidth| and $P$ be the width of the physical page,
 % and let $X$ be the distance between the right-hand edge of the
 % text block and the right side of the physical sheet. Then
 % \[ H + M + T + X = P \]
@@ -401,12 +401,12 @@
 % as the amount to be added to the |\...sidemargin| to center the textblock.
 % For example,
 % assume that the |\textwidth| is 5 inches, the |\...sidemargin|s are
-% both 2 inches, and |\hoffset| is zero (i.e., $H$ is 1 inch). 
-% Then to center the textblock, 
-% 1.25 inches must be 
+% both 2 inches, and |\hoffset| is zero (i.e., $H$ is 1 inch).
+% Then to center the textblock,
+% 1.25 inches must be
 % subtracted from the margin if it is printed on US letter paper,
 % where the paper width is 8.5 inches. A different adjustment would
-% be required 
+% be required
 % if A4 paper was used instead. See the \Lopt{chngpage} documentation for
 % details, but a physically centred title can now be achieved by
 % \begin{verbatim}
@@ -419,10 +419,10 @@
 % \end{verbatim}
 %
 % \DescribeMacro{\calccentering}
-%  If you don't want to do the above calculations by hand, 
-% |\calccentering{|\meta{length}|}{|\meta{margin}|}| will do it for you. 
+%  If you don't want to do the above calculations by hand,
+% |\calccentering{|\meta{length}|}{|\meta{margin}|}| will do it for you.
 % The \meta{length}
-% argument must be the name of a pre-existing length command, 
+% argument must be the name of a pre-existing length command,
 % including the backslash, and the \meta{margin} is the value of the
 % appropriate |\evensidemargin| or |\oddsidemargin|. After calling
 % |\calccentering|, \meta{length} is the amount to be added to the
@@ -439,7 +439,7 @@
 % \end{titlingpage}
 % \end{verbatim}
 % The |\calccentering| macro requires the length |\paperwidth| to be
-% set to the physical width of the paper you will be printing on. 
+% set to the physical width of the paper you will be printing on.
 % If your paper matches the paper size option in for the document class
 % then this is done for you.
 %
@@ -461,8 +461,8 @@
 % macros used for |\maketitle| are unavailable once |\maketitle| has been
 % issued. The package provides the |\thetitle|,
 % |\theauthor| and |\thedate| commands that can be used for printing
-% these elements of the title later in the document, 
-% if desired. 
+% these elements of the title later in the document,
+% if desired.
 %
 %    The \Lpack{titling} package prevents the standard classes' habit
 % of automatically killing the titling
@@ -494,12 +494,12 @@
 % Using this command is the \Lpack{titling} package's manual version
 % of the automatic killing performed by the standard classes.
 % The |\keepthetitle| command performs a similar function, except that
-% it keeps the |\thetitle|, |\theauthor| and |\thedate| commands, while 
+% it keeps the |\thetitle|, |\theauthor| and |\thedate| commands, while
 % killing everything else.
 % The |\emptythanks| command discards any text from prior use of |\thanks|.
 % This command is useful when |\maketitle| is used multiple times ---
 % the |\thanks| commands in each use just stack up the texts for output
-% at each use, so each subsequent use of |\maketitle| will output all 
+% at each use, so each subsequent use of |\maketitle| will output all
 % previous |\thanks| texts together with any new ones. To avoid this,
 % put |\emptythanks| before each |\maketitle| after the first.
 %
@@ -514,13 +514,13 @@
 %
 % \DescribeMacro{\thanksmarkseries}
 % \DescribeMacro{\symbolthanksmark}
-%  In the standard classes, |\thanks{}| are marked with symbols in the 
+%  In the standard classes, |\thanks{}| are marked with symbols in the
 % titling and footnotes unless on a titlepage where they are marked with
 % numbers. The command |\thanksmarkseries{|\meta{format}|}| command
 % can be used to change the marking style. The \meta{format} argument
-% is the name of one of the formats for printing a counter. The name 
+% is the name of one of the formats for printing a counter. The name
 % is the same as that of a counter format but without the backslash.
-% The default matches the standard class defaults. To have the 
+% The default matches the standard class defaults. To have the
 % titlepage marks as symbols instead of numerals do:\\
 % |\thanksmarkseries{fnsymbol}| \\
 % or to use lowercase letters do: \\
@@ -541,11 +541,11 @@
 % \DescribeMacro{\thanksfootextra}
 % The |\thanksheadextra{|\meta{pre}|}{|\meta{post}|}| command will insert
 % \meta{pre} and \meta{post} before and after the thanks markers in the
-% titling block. 
+% titling block.
 %
 %     Similarly |\thanksfootextra{|\meta{pre}|}{|\meta{post}|}|
 % inserts \meta{pre} and \meta{post} before and after the thanks markers
-% in the footnotes. 
+% in the footnotes.
 %
 %    By default \meta{pre} and \meta{post} are empty in
 % both cases. For example, to put parentheses round the titling markers
@@ -556,7 +556,7 @@
 % \DescribeMacro{\thanksmark}
 % It is sometimes desirable to have the same thanks text be applied to,
 % say, four out of six authors, these being the first 3 and the last one.
-% The command |\thanksmark{|\meta{n}|}| is similar to 
+% The command |\thanksmark{|\meta{n}|}| is similar to
 % |\footnotemark[|\meta{n}|]| in that it prints a thanks mark identical
 % to that of the \meta{n}'th |\thanks| command. No changes are made
 % to any thanks in the footnotes.
@@ -564,7 +564,7 @@
 % \DescribeMacro{\thanksgap}
 % The marks in the titling block printed by the |\thanks| and |\thanksmark|
 % commands take zero space. This is acceptable if they come at the end of
-% a line, but not in the middle of a line. Use the 
+% a line, but not in the middle of a line. Use the
 % |\thanksgap{|\meta{length}|}| command immediately after a mid-line
 % |\thanks| or |\thanksmark| command to add \meta{length} amount of
 % space before the next word. For example, if there are three authors
@@ -599,7 +599,7 @@
 % \end{verbatim}
 % where |\thanksfootpre| and |\thanksfootpost| are specified via the
 % |\thanksfootextra| macro. You should not need to change the definition
-% of |\thanksfootmark| 
+% of |\thanksfootmark|
 % but you may want to change the default definitions of one or more
 % of the macros it uses.
 %
@@ -618,7 +618,7 @@
 % |\thanksfootextra{\bfseries}{.}| \\
 % will give a bold baseline mark followed by a dot.
 %
-%    Using combinations of |\thanksscript|, |\thanksmargin|, 
+%    Using combinations of |\thanksscript|, |\thanksmargin|,
 % |\thanksmarkwidth| and |\thanksfootextra| you can easily define
 % different layouts for the thanks footnotes. Here are some
 % sample combinations, but to shorten them I have ignored any
@@ -632,7 +632,7 @@
 %          |\thanksmargin{0em}| puts the baseline mark in the margin
 %          and the text left justified.
 %    \item Using |\thanksscript{#1}|, |\thanksmarkwidth{1em}| and \\
-%          |\thanksmargin{-\thanksmarkwidth}| makes the baseline mark 
+%          |\thanksmargin{-\thanksmarkwidth}| makes the baseline mark
 %          and text left adjusted.
 %    \item |\thanksscript{#1}|, |\thanksmarkwidth{1em}| and
 %          |\thanksmargin{0em}| puts the baseline mark left adjusted
@@ -640,21 +640,21 @@
 %          sentence is typeset.
 %    \end{itemize}
 %
-% \item Setting |\thanksfootextra{ }| and |\thanksscript{#1}| 
+% \item Setting |\thanksfootextra{ }| and |\thanksscript{#1}|
 %       right justifies the baseline mark and a space in the mark box:
 %    \begin{itemize}
 %    \item The normal style is
 %          defined by |\thanksmarkwidth{1.8em}| and \\
-%          |\thanksmargin{-\thanksmarkwidth}| which put the mark 
+%          |\thanksmargin{-\thanksmarkwidth}| which put the mark
 %          indented and the text left adjusted, like a normal indented
 %          paragraph.
 %    \item |\thanksmarkwidth{1.8em}| and
-%          |\thanksmargin{0em}| put the mark indented 
+%          |\thanksmargin{0em}| put the mark indented
 %          and the text indented and aligned.
 %    \end{itemize}
 %
 % \end{itemize}
-% 
+%
 % \DescribeMacro{\makethanksmark}
 % \DescribeMacro{\makethanksmarkhook}
 % The macro |\makethanksmark| typesets both the thanks marker (via
@@ -663,15 +663,15 @@
 % calls the macro |\makethanksmarkhook| before it does any typesetting.
 % The default definition of this is: \\
 % |\newcommand{\makethanksmarkhook}{}|, which does nothing.
-% 
+%
 %    You can redefine |\makethanksmarkhook| to do something useful. For
 % example, if you wanted a slightly bigger baseline skip you could do: \\
 % |\renewcommand{\makethanksmarkhook}{\fontsize{8}{11}\selectfont}| \\
-% where the numbers |8| and |11| specify the point size of the font 
+% where the numbers |8| and |11| specify the point size of the font
 % and the baseline skip
 % respectively. In this example 8pt is the normal |\footnotesize| in
 % a 10pt document, and 11pt is the baselineskip for |\footnotesize|
-% text in an 11pt document (the baseline skip is 9.5pt in a 10pt document); 
+% text in an 11pt document (the baseline skip is 9.5pt in a 10pt document);
 % adjust these numbers to suit.
 %
 % \DescribeMacro{\thanksrule}
@@ -679,17 +679,17 @@
 % \DescribeMacro{\cancelthanksrule}
 % By default, there is no rule above |\thanks|
 % text that appears in a |titlingpage| environment.
-% If you want a rule in that environment, put |\usethanksrule| 
+% If you want a rule in that environment, put |\usethanksrule|
 % before the |\maketitle| command, which will then print a rule according
 % to the current definition of |\thanksrule|.
-% |\thanksrule| is initialised to be a copy of |\footnoterule| as it 
+% |\thanksrule| is initialised to be a copy of |\footnoterule| as it
 % is defined at the
 % end of the preamble. The definition of |\thanksrule| can be changed
 % after |\begin{document}|. If the definition of |\thanksrule| is modified
 % and a |\usethanksrule| command has been issued, then the redefined
-% rule may also be used for footnotes. Issuing the command 
+% rule may also be used for footnotes. Issuing the command
 % |\cancelthanksrule| will cause the normal |\footnoterule| definition
-% to be used from thereon; another |\usethanksrule| 
+% to be used from thereon; another |\usethanksrule|
 % command can be issued later
 % if you want to swap back again.
 %
@@ -712,7 +712,7 @@
 % The total vertical distance between the bottom of the main text and
 % the baseline of the first line of the first footnote is
 % |\footnotesep + \skip\footins|.
-% 
+%
 %
 % \DescribeMacro{\footnoterule}
 %  The |\footnoterule| command is defined in the LaTeX kernel and
@@ -733,16 +733,16 @@
 % the value of |kerna| and increase that of |kernb|, and the reverse to
 % move the rule downwards.
 %
-% 
+%
 %
 % \DescribeMacro{\appendiargdef}
 %  This is only noted here as someone may find it useful
-% in another context. Get the \Lpack{patchcmd} 
+% in another context. Get the \Lpack{patchcmd}
 % package~\cite{PATCHCMD} if you need
 % to make other additions to definitions.
 % The internal command |\appendiargdef{|\meta{macro}|}{|\meta{stuff}|}|
 % appends \meta{stuff} at the end of the current definition of \meta{macro},
-% where \meta{macro} is the name of a macro (including the backslash) which 
+% where \meta{macro} is the name of a macro (including the backslash) which
 % takes a single argument. For example the following are two equivalent
 % definitions of |\mymacro|:
 % \par\begin{small}\begin{verbatim}
@@ -771,8 +771,8 @@
 % \end{verbatim}
 % \end{small}\par
 % The \Lpack{titling} package gives no assistance for doing this, but the
-% \Lpack{abstract} package~\cite{ABSTRACT} provides a command that caters for the somewhat 
-% non-intuitive 
+% \Lpack{abstract} package~\cite{ABSTRACT} provides a command that caters for the somewhat
+% non-intuitive
 % \texttt{... hand make footnotes ...} aspect.
 %
 %
@@ -801,7 +801,7 @@
 % }
 %
 %
-% 
+%
 % \section{The package code} \label{sec:code}
 %
 %    To try and avoid name clashes, all the internal commands include
@@ -837,7 +837,7 @@
 % \begin{macro}[int]{\@bspostdate}
 %    To provide some flexibility in the titling style of the document,
 % user level commands are provided that can be changed to reconfigure
-% the appearance resulting from |\maketitle|. 
+% the appearance resulting from |\maketitle|.
 % \changes{v2.0}{2001/02/24}{Revised and replaced the title configuration commands}
 %    \begin{macrocode}
 \newcommand{\pretitle}[1]{\def\@bspretitle{#1}}
@@ -946,7 +946,7 @@
 % \begin{macro}{\thanksfootextra}
 % \begin{macro}{\thanksfootpre}
 % \begin{macro}{\thanksfootpost}
-% These are for inserting stuff before and after a thanks mark in the 
+% These are for inserting stuff before and after a thanks mark in the
 % footnoting.
 %    \begin{macrocode}
 \newcommand{\thanksfootextra}[2]{%
@@ -1025,7 +1025,7 @@
 % \end{macro}
 %
 % \begin{macro}{\makethanksmark}
-% This sets the general indentations for the thanks footnote, 
+% This sets the general indentations for the thanks footnote,
 % and typesets the mark. The code is a simplified version of that
 % for typeseeting ToC entries.
 % \changes{v2.1}{2001/03/23}{Changed definition of \cs{makethanksmark}}
@@ -1082,7 +1082,7 @@
 % \end{macro}
 %
 % \begin{macro}{\droptitle}
-% A titling block has |\droptitle| amount of additional vertical space 
+% A titling block has |\droptitle| amount of additional vertical space
 % above it (normally zero).
 %    \begin{macrocode}
 \newlength{\droptitle}
@@ -1094,7 +1094,7 @@
 % \begin{macro}[no-user-doc]{\maketitle}
 % The following is a
 % modification of |\maketitle| as in the \Lpack{article}, \Lpack{report},
-% and \Lpack{book} classes 
+% and \Lpack{book} classes
 % (see Section~\ref{sec:app} for the original definition).
 % \changes{v1.2}{2001/03/23}{Added the four \cs{maketitlehook} commands
 % to \cs{maketitle}}
@@ -1124,7 +1124,7 @@
     \vfil\null
     \end{titlepage}%
     \@bscontmark  %  \setcounter{footnote}{0}%
-%%%    \@bsmtitlempty             
+%%%    \@bsmtitlempty
   } % end titlepage defs
 \else
   \renewcommand{\maketitle}{\par
@@ -1147,11 +1147,11 @@
       \thispagestyle{plain}\@thanks
     \endgroup
     \@bscontmark  %  \setcounter{footnote}{0}%
-%%%    \@bsmtitlempty 
+%%%    \@bsmtitlempty
   } % end non-titlepage
 %    \end{macrocode}
 % \begin{macro}[int]{\@maketitle}
-% I use |\def\@maketitle| to account for the cases where the main class 
+% I use |\def\@maketitle| to account for the cases where the main class
 % does not have titling commands, and to ensure an existing |\@maketitle|
 % gets overridden.
 % \changes{v1.2}{2001/03/23}{Added the four \cs{maketitlehook} commands
@@ -1160,7 +1160,7 @@
 % The trivlist environment is added to eliminate extra padding introduced by \verb|\begin{center}...\end{center}| in the default definitions of \cmd\@bspretitle\ etc. (In the standard classes the center environment wraps the entire thing.)
 % \changes{v1.2e}{2009/12/28}{Add trivlist to remove extra padding.}
 %    \begin{macrocode}
-  \def\@maketitle{%               
+  \def\@maketitle{%
     \newpage
     \null
     \vspace*{\droptitle}
@@ -1236,7 +1236,7 @@
 %
 %
 % \begin{macro}[int]{\@bsmtitlempty}
-%    |\@bsmtitlempty| is a helper macro to save some macro space. 
+%    |\@bsmtitlempty| is a helper macro to save some macro space.
 % It empties some elements of |\maketitle|.
 %    \begin{macrocode}
 \newcommand{\@bsmtitlempty}{%
@@ -1301,7 +1301,7 @@
 
 %    \end{macrocode}
 % \end{macro}
-% 
+%
 % \begin{macro}{\thetitle}
 % \begin{macro}{\theauthor}
 % \begin{macro}{\thedate}
@@ -1460,7 +1460,7 @@
 %   \par
 %   \vskip 1.5em}
 % \fi
-% 
+%
 % \end{verbatim}
 % \end{small}\par
 %
