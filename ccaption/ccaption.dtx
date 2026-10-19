@@ -2,9 +2,10 @@
 %
 % ccaption.dtx
 % Author: Peter Wilson (Herries Press)
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 1998-2005 Peter R. Wilson
 % Copyright 2011 Will Robertson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -12,7 +13,7 @@
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
@@ -23,40 +24,22 @@
 %</driver>
 %<usc>\ProvidesPackage{ccaption}
 %<*usc>
-  [2011/08/07 v3.2c Extended captioning and new floats]
+  [2026/10/18 v3.2d Extended captioning and new floats]
 %</usc>
 %<*driver>
-\documentclass[twoside]{ltxdoc}
-\usepackage{url}
-  \usepackage[draft=false,
-              plainpages=false,
-              pdfpagelabels,
-              bookmarksnumbered,
-              hyperindex=false,
-              linktocpage=true,
-             ]{hyperref}
-\providecommand{\phantomsection}{}
+%\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}% ccaption not yet tagging compatible
+\documentclass[twoside]{l3in2edoc}
 \makeatletter
   \@mparswitchfalse
 \makeatother
-% a simpler version of chngpage,sty's adjustwidth
-\newenvironment{addtomargins}[1]{
-  \begin{list}{}{%
-  \topsep 0pt
-  \addtolength{\leftmargin}{#1}%
-  \addtolength{\rightmargin}{#1}%
-  \listparindent\parindent
-  \itemindent\parindent
-  \parsep\parskip
-  }%
-  \item[]}{\end{list}}
+\usepackage{changepage}
+\newenvironment{addtomargins}[1]{\begin{adjustwidth}{#1}{#1}}{\end{adjustwidth}}
 \usepackage{ccaption}
 %%\usepackage[subfigure]{ccaption}
 %%\usepackage{subfigure}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
-\renewcommand{\MakeUppercase}[1]{#1}
 \pagestyle{headings}
 \setcounter{StandardModuleDepth}{1}
 %\setcounter{IndexColumns}{2}
@@ -68,7 +51,29 @@
 %
 % \fi
 %
-% \CheckSum{1457}
+%\makeatletter
+%\ExplSyntaxOn
+%\def\@doc@describe#1#2{
+%   \ifdoc@noprint\else
+%     \marginpar{\raggedleft
+%                \strut
+%                \tl_set:Ne \l__codedoc_tmpa_tl { \tl_to_str:n {#2} }
+%                \tl_replace_all:NVn \l__codedoc_tmpa_tl \c_underscore_str { / }
+%                \tl_remove_all:NV \l__codedoc_tmpa_tl \c_backslash_str
+%                \tl_put_left:Nn \l__codedoc_tmpa_tl { doc/function// }
+%                \MakeLinkTarget[macro]{}
+%                \exp_args:Ne \label { \tl_trim_spaces:V \l__codedoc_tmpa_tl }
+%                \doc@providetarget
+%                \@nameuse{PrintDescribe#1}{#2}}
+%   \fi
+%   \ifdoc@noindex\else
+%     \@nameuse{Special#1Index}{#2}
+%   \fi
+% \@esphack
+% \endgroup
+% \ignorespaces}
+%\ExplSyntaxOff
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -137,12 +142,12 @@
 % \changes{v3.2}{2005/03/21}{Support for bilingual captions in longtable}
 % \changes{v3.2a}{2005/03/29}{Fix bicaption labels}
 % \changes{v3.2b}{2009/09/02}{New maintainer (Will Robertson)}
+% \changes{v3.2d}{2026/10/18}{New maintainer (LaTeX Project)}
 %
 % \def\dtxfile{ccaption.dtx}
 % \GetFileInfo{\dtxfile}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -151,8 +156,8 @@
 % \title{The \Lpack{\pname} package}
 % \author{%
 % Author: Peter Wilson, Herries Press\\
-% Maintainer: Will Robertson\\
-% \texttt{will dot robertson at latex-project dot org}
+% Maintainer: \LaTeX{} Project\\
+% \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\fileversion\qquad\filedate}
 % \maketitle
@@ -187,13 +192,13 @@
 % tables use a \textit{continuation caption} on all but the first
 % part of the multi-part table. For the times where such a table
 % is specified by the author as a set of tables, the \Lpack{\pname} package
-% provides a simple `continuation' caption command to meet this 
+% provides a simple `continuation' caption command to meet this
 % requirement. It also provides
 % a facility for an `anonymous' caption which can be used in any
 % float environment. The package has been tested with the
 % \Lpack{rotating}, \Lpack{caption2}, \Lpack{sidecap},
 % \Lpack{subfigure} (v2.0 and the current version),
-% \Lpack{endfloat}, \Lpack{longtable}, \Lpack{xtab} 
+% \Lpack{endfloat}, \Lpack{longtable}, \Lpack{xtab}
 % and the \Lpack{hyperref} packages.
 %
 % Captions can be defined that are suitable for use in non-float
@@ -212,10 +217,10 @@
 %    Section~\ref{sec:usc} provides a short overview of the commands
 % in the package and shows some examples of their use. This section
 % also gives examples of how LaTeX's captioning style can be changed
-% to a limited extent without the use of any package and provides 
+% to a limited extent without the use of any package and provides
 % general information on floats. For a more comprehensive description
 % of floats read Keith Reckdahl's excellent \textit{Using Imported
-% Graphics in LaTeX2e}~\cite{EPSLATEX}, 
+% Graphics in LaTeX2e}~\cite{EPSLATEX},
 % although this was written before the advent
 % of the \Lpack{ccaption} package.
 % The implementation is given in Section~\ref{sec:code}.
@@ -249,13 +254,13 @@
 %
 % \subsection{Changing the caption style}
 %
-%    The discussion in \S\ref{sec:ltx} includes example methods for 
+%    The discussion in \S\ref{sec:ltx} includes example methods for
 % changing the typeset appearance of captions without the benefit of
-% any package. The \Lpack{caption2} and \Lpack{caption} packages 
+% any package. The \Lpack{caption2} and \Lpack{caption} packages
 % provides a set of predefined
-% captioning styles, and the \Lopt{\pname} package 
+% captioning styles, and the \Lopt{\pname} package
 % also provides an easy means
-% of changing the style. 
+% of changing the style.
 %
 % The style of subcaptions is controlled by the
 % \Lpack{subfigure} package.
@@ -271,7 +276,7 @@
 % can be used to change the delimiter. For example, to have an en-dash instead
 % \verb*?\captiondelim{-- }? will do the trick. Notice that no space is
 % put between the delimiter and the title unless it is specified in the
-% \meta{delim} parameter. 
+% \meta{delim} parameter.
 % The package initially specifies |\captiondelim{: }|
 % to give the normal delimiter.
 %
@@ -279,13 +284,13 @@
 % The \meta{font} specified by |\captionnamefont{|\meta{font}|}| is used
 % for typesetting the caption name; that is, the first part of the caption
 % up to and including the delimiter (e.g., the portion `Table 3:').
-% \meta{font} can be any kind of font specification and/or command and/or 
+% \meta{font} can be any kind of font specification and/or command and/or
 % text. This first part of the caption is treated like: |{<font> Table 3; }|,
 % so font declarations, not font text-style commands, are needed,
 % like |\captionnamefont{\Large\sffamily}| to specify a large sans-serif font.
 % The package initially specifies |\captionnamefont{}|
 % to give the normal font.
-% 
+%
 %
 % \DescribeMacro{\captiontitlefont}
 % Similarly, the \meta{font} specified by |\captiontitlefont{|\meta{font}|}|
@@ -295,12 +300,12 @@
 % to give the normal font.
 %
 % \DescribeMacro{\captionstyle}
-% By default the name and title of a caption are typeset as a block 
+% By default the name and title of a caption are typeset as a block
 % (non-indented)
 % paragraph. |\captionstyle{|\meta{style}|}| can be used to alter this.
 % Sensible values for \meta{style} are: |\centering|, |\raggedleft| or
-% |\raggedright| for styles corresponding to these declarations. 
-% The |\centerlastline| style gives a block paragraph but with the last line 
+% |\raggedright| for styles corresponding to these declarations.
+% The |\centerlastline| style gives a block paragraph but with the last line
 % centered.
 % The package initially specifies |\captionstyle{}|
 % to give the normal block paragraph style.
@@ -325,15 +330,15 @@
 % be typeset within a total width \meta{length} as specified by
 % |\captionwidth{|\meta{length}|}|. Issuing the command |\normalcaptionwidth|
 % will cause captions to be typeset as normal full width captions.
-% The package initially specifies |\normalcaptionwidth| and 
+% The package initially specifies |\normalcaptionwidth| and
 % |\captionwidth{\linewidth}|
-% to give the normal width. If a caption is being set within the 
+% to give the normal width. If a caption is being set within the
 % side captioned environments from the \Lpack{sidecap} package~\cite{SIDECAP}
 % then it must be a |\normalcaptionwidth| caption.
 %
 % \DescribeMacro{\precaption}
 % \DescribeMacro{\postcaption}
-%  The commands |\precaption{|\meta{pretext}|}| and 
+%  The commands |\precaption{|\meta{pretext}|}| and
 % |\postcaption{|\meta{posttext}|}|
 % specify \meta{pretext} and \meta{posttext} that will be processed at the
 % start and end of a caption. For example \\
@@ -343,7 +348,7 @@
 % The package initially specifies |\precaption{}| and |\postcaption{}|
 % to give the normal appearance.
 %
-% 
+%
 %    If any of the above commands are used in a float, or other, environment
 % their effect is limited to the environment. If they are used in the preamble
 % or the main text, their effect persists until replaced by a similar
@@ -352,9 +357,9 @@
 %
 % \DescribeMacro{\\}
 % The normal LaTeX command |\\[|\meta{length}|]| can be used within the
-% caption text to start a new line. Remember that |\\| is a fragile 
+% caption text to start a new line. Remember that |\\| is a fragile
 % command, so if it is
-% used within text that will be added to a \textbf{List of\ldots} 
+% used within text that will be added to a \textbf{List of\ldots}
 % it must be protected.
 % As examples: \\
 % |\caption{Title with a \protect\\ new line in both the body and List of}| \\
@@ -452,18 +457,18 @@
 % name to be centered as well as the last line of a multiline title,
 % thus giving a balanced appearance.
 %
-% 
+%
 %
 %
 % \subsection{Continuation captions and legends}
 %
 % \DescribeMacro{\contcaption}
-%    The |\contcaption{|\meta{text}|}| command can be used to put 
+%    The |\contcaption{|\meta{text}|}| command can be used to put
 % a `continuation' or `concluded'
 % caption into a float environment. It neither increments the
 % float number nor makes any entry into a float listing, but it
 % does repeat the numbering of the previous |\caption| command.
-% 
+%
 %
 %   Table~\ref{tab:m} illustrates the use of the |\contcaption|
 % command. The table was produced from the following code.
@@ -518,8 +523,8 @@
 %   \end{table}
 %
 % \DescribeMacro{\legend}
-%  The |\legend{|\meta{text}|}| command is intended to be used to put an 
-% anonymous 
+%  The |\legend{|\meta{text}|}| command is intended to be used to put an
+% anonymous
 %  caption into a float environment, but may be used anywhere.
 %
 %   \begin{table}
@@ -560,12 +565,12 @@
 % \end{verbatim}
 %
 %  You can even \legend{Legend in running text} use the |\legend|
-%  command in running text, as has been done in this sentence, 
+%  command in running text, as has been done in this sentence,
 %  but I'm not sure why one might want to do that as LaTeX already
 %  provides the |center| environment.
 %
 % If you want the legend text to be included in the \textbf{List of\ldots}
-% use the |\addcontentsline| command in conjunction with the 
+% use the |\addcontentsline| command in conjunction with the
 % |\legend|. For example:
 % \begin{verbatim}
 % \addcontentsline{lot}{table}{Titling text} % left justifified
@@ -609,7 +614,7 @@
 % \DescribeMacro{\abovelegendskip}
 % \DescribeMacro{\belowlegendskip}
 %    Correspondingly to the |\abovecaptionskip| and |\belowcaptionskip|
-% commands associated with the |\caption| command, the spacing before 
+% commands associated with the |\caption| command, the spacing before
 % and after
 % a legend is controlled by the |\abovelegendskip| and |\belowlegendskip|
 % commands. If necessary, these can be modified via the |\setlength|
@@ -650,7 +655,7 @@
 %
 %
 % \DescribeMacro{\fleg@type}
-% The macro |\fleg@type{|\meta{name}|}|, where |type| is the name 
+% The macro |\fleg@type{|\meta{name}|}|, where |type| is the name
 % of a float environment
 % (e.g., |table|) is called by the |\namedlegend| macro. It is provided
 % as a hook that defines the \meta{name} to be used as the name in
@@ -663,7 +668,7 @@
 % a |\makeatletter| and |\makeatother| pair if done in the document).
 %
 % \DescribeMacro{\flegtoc@type}
-% The macro |\flegtoc@type{|\meta{title}|}|, where |type| is the name 
+% The macro |\flegtoc@type{|\meta{title}|}|, where |type| is the name
 % of a float environment
 % (e.g., |table|) is called by the |\namedlegend| macro. It is provided
 % as a hook that can be used to add \meta{title} to the listof file.
@@ -688,12 +693,12 @@
 % The |\newfixedcaption[|\meta{capcommand}|]{|\meta{command}|}{|\meta{env}|}|
 % command, and its friends, can be used to create a new captioning
 % \meta{command} that may be used outside the float environment \meta{env}.
-% Both the environment \meta{env} and a captioning command, 
+% Both the environment \meta{env} and a captioning command,
 % \meta{capcommand}, for that environment must have been defined before
 % calling |\newfixedcaption|. Note that |\namedlegend| can be used
 % as \meta{capcommand}.
 %
-% The |\renewfixedcaption| and |\providefixedcaption| commands take the same 
+% The |\renewfixedcaption| and |\providefixedcaption| commands take the same
 % arguments as |\newfixedcaption|; the three commands are analogous
 % to those in the |\newcommand| family.
 %
@@ -709,7 +714,7 @@
 %
 % Captioning commands created by |\newfixedcaption| will be named and
 % numbered in the same style as the original \meta{capcommand}, can
-% be given a |\label|, and will appear in the appropriate 
+% be given a |\label|, and will appear in the appropriate
 % \textbf{List of \ldots}. They can also be used within floating
 % environments, but will not use the environment name as a guide to
 % the caption name or entry into the \textbf{List of \ldots}. For
@@ -754,7 +759,7 @@
 %
 % \DescribeMacro{\bitwonumcaption}
 % \DescribeMacro{\bionenumcaption}
-%  Bilingual captions can be typeset by the |\bitwonumcaption| 
+%  Bilingual captions can be typeset by the |\bitwonumcaption|
 % command. This
 % takes 6 arguments as: \\
 % |\bitwonumcaption[|\meta{label}|]{|\meta{short-1}|}{|\meta{long-1}|}{|\meta{NAME}|}{|\meta{short-2}|}{|\meta{long-2}|}|
@@ -770,7 +775,7 @@
 % for the second language. For example, if the main and secondary languages
 % are English and German and a figure is being captioned: \\
 % |\bitwonumcaption{Short}{Long}{Bild}{Kurz}{Lang}| \\
-% 
+%
 % If the short title text(s) is not required, then leave the appropriate
 % argument(s) either empty or as one or more spaces, like: \\
 % |\bitwonumcaption[fig:bi1]{}{Long}{Bild}{  }{Lang}| \\
@@ -781,7 +786,7 @@
 % \begin{figure}
 % \centering
 % EXAMPLE FIGURE WITH BITWONUMCAPTION
-% \bitwonumcaption[fig:bi1]{}{Long}{Bild}{  }{Lang} 
+% \bitwonumcaption[fig:bi1]{}{Long}{Bild}{  }{Lang}
 % \end{figure}
 %
 %  The |\bionenumcaption| command takes the same arguments as |\bitwonumcaption|.
@@ -791,12 +796,12 @@
 % \begin{figure}
 % \centering
 % EXAMPLE FIGURE WITH BIONENUMCAPTION
-% \bionenumcaption[fig:bi3]{}{Long English}{Bild}{  }{Lang Deutsch} 
+% \bionenumcaption[fig:bi3]{}{Long English}{Bild}{  }{Lang Deutsch}
 % \end{figure}
 %
 %
 % \DescribeMacro{\bicaption}
-%  When bilingual captions are typeset via the |\bicaption| 
+%  When bilingual captions are typeset via the |\bicaption|
 % command the second language text is not put into
 % the List of \ldots. The command
 % takes 5 arguments as: \\
@@ -807,14 +812,14 @@
 % the main language of the document. The value of the \meta{NAME} argument
 % is used as the caption name for the second language caption. The last
 % argument, \meta{long-2}, is the caption text
-% for the second language (which is not put into the List of). 
+% for the second language (which is not put into the List of).
 % For example, if the main and secondary languages
 % are English and German: \\
 % |\bicaption{Short}{Long}{Bild}{Langlauf}| \\
 % If the short title text is not required, then leave the appropriate
 % argument either empty or as one or more spaces.
 %
-% Figure~\ref{fig:bi2} is an example of using |\bicaption| and was 
+% Figure~\ref{fig:bi2} is an example of using |\bicaption| and was
 % produced by the following code:
 % \begin{verbatim}
 % \begin{figure}
@@ -836,7 +841,7 @@
 %
 %
 % \DescribeMacro{\bicontcaption}
-%  Bilingual continuation captions can be typeset via the |\bicontcaption| 
+%  Bilingual continuation captions can be typeset via the |\bicontcaption|
 % command. In this case, neither language text is put into
 % the List of \ldots. This command
 % takes 3 arguments as: \\
@@ -855,7 +860,7 @@
 % The bilingual captions are implemented by calling |\caption| twice,
 % once for each language. The command |\midbicaption{|\meta{midtext}|}|,
 % which is similar to the |\precaption| and |\postcaption| commands,
-% is executed 
+% is executed
 % just before calling the second |\caption|. Among other things,
 % this can be used to
 % modify the style of the second caption with respect to the first.
@@ -904,9 +909,8 @@
 % The first caption is numbered and put into the ToC. The second is neither
 % numbered nor put into the ToC.
 %
-% \DescribeMacro{\midbicaption}
-% This is not used by the \cs{longbi...} caption commands; the style of both
-% captions is the same. The spacing after a longtable caption, though, 
+% \cs{midbicaption} is not used by the \cs{longbi...} caption commands; the style of both
+% captions is the same. The spacing after a longtable caption, though,
 % is controlled
 % by the value of \cs{belowcaptionskip}.
 %
@@ -929,11 +933,11 @@
 % List of\ldots and \meta{subcaption} will be used as the text for the
 % subcaption.
 % The |\contsubbottom| command is similar but puts the \meta{subcaption}
-% at the bottom of the \meta{text}. In either case, the main caption can 
+% at the bottom of the \meta{text}. In either case, the main caption can
 % be at the top or bottom of the float.
 %
 % \DescribeMacro{\subconcluded}
-% The |\subconcluded| command is used to indicate that the continued 
+% The |\subconcluded| command is used to indicate that the continued
 % (sub) float has been concluded and the numbering
 % scheme is reinitialized. The command should be placed immediately
 % before the end of the last continued environment.
@@ -969,14 +973,14 @@
 %
 %    Depending on the age of your LaTeX distribution, you may find that
 % you have either version~2.0 or a later version of the \Lpack{subfigure}
-% package.  If you have version~2.0, 
+% package.  If you have version~2.0,
 % then call the \Lpack{\pname} package
 % as: \\
 % |\usepackage[subfigure20]{ccaption}|, otherwise as: \\
 % |\usepackage[subfigure]{ccaption}|.
 %
 %    Version~2.1 of the \Lpack{subfigure} package uses many package options
-% some of which had been provided as commands in version~2.0. 
+% some of which had been provided as commands in version~2.0.
 % The \Lpack{\pname} commands just described apply to the current version. They
 % also apply to version~2.0 except that the |\...top| and |\...bottom|
 % commands do \emph{not} take the first optional argument as:
@@ -991,7 +995,7 @@
 % and |\...table| commands cannot.
 %    In the current version of \Lpack{subfigure} the placement (top or bottom) of
 % the subcaptions and the expected placement of the main caption are set
-% by package options. Using these options in conjunction with the 
+% by package options. Using these options in conjunction with the
 % \Lpack{\pname} package may cause unexpected results, which is another
 % reason for using the generic subcaption commands.
 %
@@ -1046,8 +1050,8 @@
 %
 % \subsection{New float environments}
 %
-% The commands in the previous sections have been tested with 
-% the \Lpack{caption2} and 
+% The commands in the previous sections have been tested with
+% the \Lpack{caption2} and
 % \Lpack{rotating} packages. They will most likely fail if used with
 % the \Lpack{float} package because of the way this package redefines
 % the basic |\caption| command.
@@ -1062,7 +1066,7 @@
 % in the \Lpack{float} package.
 %
 % \DescribeMacro{\newfloatlist}
-% The command 
+% The command
 % |\newfloatlist[|\meta{within}|]{|\meta{fenv}|}{|\meta{ext}|}{|\meta{listname}|}{|\meta{capname}|}|
 % creates both a new kind of floating environment called \meta{fenv}
 % and a new kind of `List of' for \meta{fenv}; the title of this
@@ -1070,14 +1074,14 @@
 % the environment will be written out to a file with extension \meta{ext}.
 % The caption, if present, will start with \meta{capname}. For example, if this
 % command had been used to create the |figure| environment for the \Lpack{article}
-% class it would have been used as (remembering that LaTeX uses 
-% |\listfigurename| to store the `List of Figures' text 
+% class it would have been used as (remembering that LaTeX uses
+% |\listfigurename| to store the `List of Figures' text
 % and |\figurename| to store the `Figure' text): \\
 % |\newfloatlist{figure}{lof}{\listfigurename}{\figurename}| \\
 % and the command |\listoffigure| (generated by |\newfloatlist|)
 % would typeset the List of Figures.
 %
-% The optional \meta{within} argument can be used if you want the captions to be 
+% The optional \meta{within} argument can be used if you want the captions to be
 % numbered within a particular document division, as figures are within the
 % \Lpack{book} and \Lpack{report} classes with the numbering starting afresh with
 % each new chapter. Creating the figure environment for either of these classes
@@ -1090,7 +1094,7 @@
 %    The |\newfloatlist| command generates several new commands that you can
 % use for styling the new listing, similar to the facilities given by
 % the \Lpack{tocloft} package~\cite{TOCLOFT}; for more detailed information
-% you may wish to read the \Lpack{tocloft} documentation. 
+% you may wish to read the \Lpack{tocloft} documentation.
 % For ease of explanation, assume that
 % the command was called as |\newfloatlist{X}{Z}{flist}{fcap}|, so that |X|
 % corresponds to the name of the new environment \meta{fenv} and |Z|
@@ -1126,7 +1130,7 @@
 %
 % \DescribeMacro{\cftZtitlefont}
 % \DescribeMacro{\cftafterZtitle}
-% The code for typesetting the title of the new listing looks 
+% The code for typesetting the title of the new listing looks
 % roughly like this
 % \begin{verbatim}
 % \vspace*{\cftbeforeZtitleskip}
@@ -1141,18 +1145,18 @@
 % By default |\cftafterZtitle| is defined to do nothing; you can
 % change it to serve your own purposes. For example: \\
 % |\renewcommand{\cftafterZtitle}{\thispagestyle{empty}}| \\
-% will set the page style of the first page of the new listing to 
+% will set the page style of the first page of the new listing to
 % be |empty|.
 %
 % \DescribeMacro{\newfloatentry}
-% The command 
+% The command
 % |\newfloatentry[|\meta{within}|]{|\meta{counter}|}{|\meta{ext}|}{|\meta{level-1}|}|
 % is used internally by |\newfloatlist| to generate a new counter for the new
 % float environment and to generate the typesetting code for entries in the
 % new listing. The required \meta{counter} argument is the name for a new
 % counter. If the optional \meta{within} argument is used, the counter
 % \meta{counter} will be reset each time the counter \meta{within} is changed.
-% These first two arguments have the same effect as calling 
+% These first two arguments have the same effect as calling
 % |\newcounter{|\meta{counter}|}[|\meta{within}|]|. The \meta{ext} argument
 % is the extension for the file holding the entries, and \meta{level-1} is
 % one less than the `level' of the entry. Continuing the figure example, \\
@@ -1166,7 +1170,7 @@
 % then we will also have \\
 % |\newfloatentry{X}{Z}{0}|. This generates the following.
 %
-% \DescribeMacro{X}
+% ^^A\DescribeMacro{X}
 % The counter |X| matches the environment |X|. This counter is used for numbering
 % captions. Remember that it will be reset according to the \meta{within} argument.
 %
@@ -1209,7 +1213,7 @@
 % \DescribeMacro{\cftXaftersnumnb}
 %  The caption number is typeset in a box of width |\cftXnumwidth|. Within the
 % box, |\cftXpresnum| is first called, then the number is typeset, then
-% |\cftXaftersnum| is called and finally there is a |\hfil| to make the box 
+% |\cftXaftersnum| is called and finally there is a |\hfil| to make the box
 % contents flush left. After the number box is typeset |\cftXaftersnumb| is
 % called and then the caption text is typeset. By default these three macros
 % are defined to do nothing, but |\renewcommand| can be used to make them do
@@ -1218,7 +1222,7 @@
 % \DescribeMacro{\cftXleader}
 % \DescribeMacro{\cftXdotsep}
 % |\cftXleader| defines the leader between the text and the page number; it can be
-% changed by |\renewcommand|. By default it produces a dotted leader with 
+% changed by |\renewcommand|. By default it produces a dotted leader with
 % |\cftXdotsep| space between the dots. It default definition is \\
 % |\newcommand{\cftXdotsep}{4.5}| which gives a 4.5mu (math units) separation.
 % In spite of it appearing to be a length, changes to |\cftXdotsep| must be
@@ -1233,7 +1237,7 @@
 %
 %    Note that |\newfloatlist| effectively generates all the above commands. Their
 % defaults are set so that the typesetting mimics that for figure and table captions.
-% It is probable that you can ignore all of them, but if you do want to change 
+% It is probable that you can ignore all of them, but if you do want to change
 % something the \Lpack{tocloft} documentation provides many examples.
 %
 % \DescribeMacro{\setnewfloatindents}
@@ -1242,8 +1246,8 @@
 % sets the \meta{fenv}'s entry indent to the length \meta{indent}
 % and its numwidth to the length \meta{numwidth}. The \meta{fenv}
 % argument is the full name of the (sub)float.
-% 
-%    As a fuller example of |\newfloatlist|, suppose you wanted both 
+%
+%    As a fuller example of |\newfloatlist|, suppose you wanted both
 % figures (which come with the
 % standard classes), and diagrams. You could then do something like the following.
 % \begin{verbatim}
@@ -1283,12 +1287,12 @@
 % \Lopt{subfigure} option,
 % creates
 % subcaptions (|\subtop| and |\subbottom|, together with their continued
-% forms) for use within the float 
+% forms) for use within the float
 % environment \meta{fenv} previously
 % defined via |\newfloatlist[...]{|\meta{fenv}|}{...}|.
 %
 %    The |\newsubfloat| macro internally calls the |\newfloatentry| command
-% and assuming our usual 
+% and assuming our usual
 % |\newfloatlist{X}{Z}{flist}{fcap}|
 % then |\newsubfloat{X}| calls \\
 % |\newfloatentry[X]{subX}{Z}{1}| \\
@@ -1301,16 +1305,16 @@
 % list entries for \meta{fenv}. This is probably most likely to be used
 % for switching off page numbers for subfloat entries, in which case
 % it should be called as |\newfloatpagesoff{sub|\meta{fenv}|}|.
-% 
+%
 % \DescribeMacro{\newfloatpageson}
 % The |\newfloatpageson{|\meta{fenv}|}| command reverses the effect of a
 % corresponding |\newfloatpagesoff{|\meta{fenv}|}|.
-% 
+%
 %
 % \DescribeMacro{\newfloatenv}
 % \DescribeMacro{\listfloats}
-% \textbf{NOTE:} These two macros were in version 2.7 of the package but were 
-% replaced in version 3.0 by the functionally extended 
+% \textbf{NOTE:} These two macros were in version 2.7 of the package but were
+% replaced in version 3.0 by the functionally extended
 % |\newfloatlist| and |\listofX| commands, respectively.
 %
 %     There is a limit to the number of List of\ldots listings that (La)TeX
@@ -1318,7 +1322,7 @@
 % the TeX program has an upper limit on the number of files it can
 % handle. In the most limited circumstance LaTeX requires three files
 % --- the \file{log}, \file{aux} and \file{dvi} files. Further files are
-% required for things like a ToC (\file{toc}) or an index (\file{idx}). 
+% required for things like a ToC (\file{toc}) or an index (\file{idx}).
 % If you try and create
 % too many new listings LaTeX will respond with the error message:
 % \begin{center}
@@ -1330,8 +1334,8 @@
 %
 % This section provides an overview of how LaTeX creates captions and
 % gives some examples of how to change the captioning style without
-% having to use any package. 
-% The section need not be looked at more than once unless you like 
+% having to use any package.
+% The section need not be looked at more than once unless you like
 % reading LaTeX code
 % or you want to make changes to LaTeX's style of captioning.
 %
@@ -1350,7 +1354,7 @@
 % |\def\@captype{figure}|.
 %
 % \DescribeMacro{\@caption}
-% The kernel also provides the 
+% The kernel also provides the
 % |\@caption{|\meta{type}|}[|\meta{short-title}|]{|\meta{full-title}|}|
 % command as:
 % \begin{verbatim}
@@ -1419,18 +1423,18 @@
 % and the baseline of the first line of the caption
 % is the |\abovecaptionskip| plus the |\parskip| plus the |\baselineskip|.
 % If the illustration is in a |center| environment then additional space
-% will be added by the |\end{center}|; it is usually better to use 
+% will be added by the |\end{center}|; it is usually better to use
 % the |\centering| command rather than the |center| environment.
 %
 % The actual typesetting of a caption is effectively performed by the code
 % in lines marked 2 and 3 in the code for |\@makecaption|; note that
-% these are where the colon that is typeset after the number is specified. 
+% these are where the colon that is typeset after the number is specified.
 % If you want to
 % make complex changes to the default captioning style you may have to
-% create your own version of |\@caption| using 
+% create your own version of |\@caption| using
 % |\renewcommand|. On the other hand, many such changes can be achieved
-% by changing the definition of the 
-% the appropriate |\fnum@type| command(s). For example, to make the 
+% by changing the definition of the
+% the appropriate |\fnum@type| command(s). For example, to make the
 % figure name and number bold: \\
 % |\renewcommand{\fnum@figure}{\textbf{\figurename~\thefigure}}|
 %
@@ -1469,7 +1473,7 @@
 % As another example, suppose that you needed to typeset the |\figurename|
 % and its number in a bold font, replace the colon that normally appears
 % after the number by a long dash, and typeset the actual title text in
-% a sans-serif font, as is illustrated by the caption for 
+% a sans-serif font, as is illustrated by the caption for
 % Figure~\ref{fig:sf}. The following code does this.
 %
 % \makeatletter
@@ -1500,7 +1504,7 @@
 % |\textbf{\figurename~\thefigure}| \\
 % in the definition causes |\figurename| and the number to be typeset in
 % a bold font. After this comes the long dash. Finally, putting |\sffamily|
-% at the end of the redefinition causes any following text (i.e., the actual 
+% at the end of the redefinition causes any following text (i.e., the actual
 % title) to be typeset using the sans-serif font.
 %
 % If you do modify |\@makecaption|, then spaces in the definition may be
@@ -1509,7 +1513,7 @@
 %
 % You may also want to take a look at the \Lpack{caption2} package by
 % Harald Axel Sommerfeldt which provides a ready-made set of differing
-% captioning styles. This basically works by redefining the 
+% captioning styles. This basically works by redefining the
 % |\@makecaption| command to provide some hooks. Of course the \Lpack{\pname}
 % package provides the tools that you need to make most, if not all,
 % of any likely caption styles.
@@ -1520,7 +1524,7 @@
 % continuously throughout the document, while in the \Lpack{book} and
 % \Lpack{report} classes, numbering starts anew in each chapter.
 %
-% If you want captions to be numbered anew with sections in the 
+% If you want captions to be numbered anew with sections in the
 % \Lpack{article} class you can do this:
 % \begin{verbatim}
 % \makeatletter
@@ -1561,7 +1565,7 @@
 % text of the required argument is put into the LoF. In the first case,
 % the optional argument is moving, and in the second case the required
 % argument is moving. The |\footnote| command is fragile and must be
-% |\protect|ed (i.e., |\protect\footnote{}|) if it is used in a moving 
+% |\protect|ed (i.e., |\protect\footnote{}|) if it is used in a moving
 % argument. If you don't want the footnote to appear in the LoF, use a
 % footnoteless optional argument and a footnoted required argument.
 %
@@ -1584,9 +1588,9 @@
 % \end{minipage}
 % \end{figure}
 % \end{verbatim}
-% Now you may find that you get two footnotes for the price of one. 
+% Now you may find that you get two footnotes for the price of one.
 % Fortunately, if you use the \Lpack{\pname} package \emph{without} the
-% \Lopt{caption2} option, this will not occur. 
+% \Lopt{caption2} option, this will not occur.
 %
 %    When using a minipage as above, the footnote text is typeset at the
 % bottom of the minipage (i.e., within the float). If you want the footnote
@@ -1609,12 +1613,12 @@
 %
 % \section{Floats}
 %
-%     As far as LaTeX is concerned, a float is a box which certain 
-% restrictions as to where it can be placed. 
+%     As far as LaTeX is concerned, a float is a box which certain
+% restrictions as to where it can be placed.
 %
 % \subsection{Multiple floats}
 %
-%    You can effectively 
+%    You can effectively
 % put what you like inside a float box. Normally there is just a single
 % picture or tabular in a float but you can put as many of these as will
 % fit inside a float.
@@ -1637,7 +1641,7 @@
 %    The \Lpack{subfigure} package is designed for the last of these cases;
 % the others do not require a package.
 %
-%    Figure~\ref{fig:mult1} is an example of multiple illustrations 
+%    Figure~\ref{fig:mult1} is an example of multiple illustrations
 % in a single float with a single caption.
 %     This figure was produced by the following code.
 % \begin{verbatim}
@@ -1662,13 +1666,13 @@
 %   \centering
 %   ILLUSTRATION 3
 %   \caption{Illustration 3} \label{fig:mult2}
-% \end{minipage} 
+% \end{minipage}
 % \hfill
 % \begin{minipage}{0.4\textwidth}
 %   \centering
 %   ILLUSTRATION 4
 %   \caption{Illustration 4} \label{fig:mult3}
-% \end{minipage} 
+% \end{minipage}
 % \end{figure}
 % \end{verbatim}
 % In this case the illustrations (or graphics or tabulars) are put into
@@ -1683,13 +1687,13 @@
 %   \centering
 %   ILLUSTRATION 3
 %   \caption{Illustration 3} \label{fig:mult2}
-% \end{minipage} 
+% \end{minipage}
 % \hfill
 % \begin{minipage}{0.4\textwidth}
 %   \centering
 %   ILLUSTRATION 4
 %   \caption{Illustration 4} \label{fig:mult3}
-% \end{minipage} 
+% \end{minipage}
 % \end{figure}
 %
 %  Keith Reckdahl~\cite{EPSLATEX} provides more examples of this
@@ -1704,8 +1708,8 @@
 % |\begin{float}[|\meta{loc}|] ... \end{float}| or for double column floats: \\
 % |\begin{float*}[|\meta{loc}|] ... \end{float*}| \\
 % where the optional argument \meta{loc}, consisting of one or more characters,
-% specifies a location where the float may be placed. Note that the 
-% \Lpack{multicol} package only supports the starred floats and it will not 
+% specifies a location where the float may be placed. Note that the
+% \Lpack{multicol} package only supports the starred floats and it will not
 % let you have a single column float. The possible \meta{loc} values are one
 % or more of the following:
 % \begin{itemize}
@@ -1713,20 +1717,20 @@
 % to double column floats as they may only be placed at the top of a page.
 % \item[\texttt{h}] \textit{here}: if possible exactly where the float environment
 % is defined. It does not apply to double column floats.
-% \item[\texttt{p}] \textit{page}: on a separate page containing only 
+% \item[\texttt{p}] \textit{page}: on a separate page containing only
 % floats (no text).
-% \item[\texttt{t}] \textit{top}: at the top of a page. 
+% \item[\texttt{t}] \textit{top}: at the top of a page.
 % \item[\texttt{!}] make an extra effort to place the float at the earliest place
 %  specified by the rest of the argument.
 % \end{itemize}
-% The default for \meta{loc} is |tbp|, so the float may be placed at the top, 
+% The default for \meta{loc} is |tbp|, so the float may be placed at the top,
 % or bottom, or on a float-only page; the default works well 95\% of the time.
 %  Floats of the same kind are output in
 % definition order, except that a double column float may be output before
-% a later single column float of the same kind, or 
+% a later single column float of the same kind, or
 % \textit{vice-versa}\footnote{This little quirk
 % is fixed by the \Lpack{fixltx2e} package, at least for tables and figures.
-% The package is part of a normal LaTeX distribution.}. 
+% The package is part of a normal LaTeX distribution.}.
 % A float is never put on
 % an earlier page than its definition but may be put on the same or later page
 % of its definition. If a float cannot be placed, all
@@ -1736,7 +1740,7 @@
 % according the float parameters.
 % A |\clearpage| or |\cleardoublepage| or |\end{document}| flushes
 % out all unprocessed floats, irrespective of the \meta{loc} and float
-% parameters, putting them on float-only pages. 
+% parameters, putting them on float-only pages.
 %
 % \DescribeMacro{\suppressfloats}
 %    You can use the command |\suppressfloats[|\meta{pos}|]| to suppress floats
@@ -1789,11 +1793,11 @@
 % \end{addtomargins}
 % \end{table}
 %
-% Table~\ref{tab:fpp} lists the various float parameters and typical 
-% default values. All the lengths are rubber lengths, and the actual 
+% Table~\ref{tab:fpp} lists the various float parameters and typical
+% default values. All the lengths are rubber lengths, and the actual
 % defaults depend on both the class and its size option.
 %
-%    Given the displayed defaults, the height of a top float must be 
+%    Given the displayed defaults, the height of a top float must be
 % less than 70\% of the textheight and there can be no more than 2 top floats
 % on a text page. Similarly, the height of a bottom float must not
 % exceed 30\% of the textheight and there can be no more than 1 bottom
@@ -1815,24 +1819,24 @@
 % one character \meta{loc} argument:
 % \begin{itemize}
 % \item[\texttt{[b]}] means: `put the float at the bottom of a page with some
-%      text above it, and nowhere else'. The float must fit into the 
+%      text above it, and nowhere else'. The float must fit into the
 %      |\bottomfraction| space otherwise it and subsequent floats will be held up.
 % \item[\texttt{[h]}] means: `put the float at this point and nowhere else'.
-%      The float must fit into the space left on the page otherwise it and 
+%      The float must fit into the space left on the page otherwise it and
 %      subsequent floats will be held up.
 % \item[\texttt{[p]}] means: `put the float on a page that has no text but may
 %      have other floats on it'. There must be at least `|\floatpagefraction|'
 %      worth of floats to go on a float only page before the float will be
 %      be output.
 % \item[\texttt{[t]}] means: `put the float at the top of a page with some
-%      text below it, and nowhere else'. The float must fit into the 
+%      text below it, and nowhere else'. The float must fit into the
 %      |\topfraction| space otherwise it and subsequent floats will be held up.
 % \item[\texttt{[!...]}] means: `ignore the |\...fraction| values for this
 %      float'.
 % \end{itemize}
 %
 % You must try and pick a combination from these that will let LaTeX find
-% a place to put your floats. However, you can 
+% a place to put your floats. However, you can
 % also can change the float parameters to make it easier to find places
 % to put floats. Some examples are:
 % \begin{itemize}
@@ -1873,7 +1877,7 @@
 %    One of LaTeX's little quirks is that on a text page, the `height' of a float
 % is its actual height plus |\textfloatsep| or |\floatsep|, while on a float
 % page the `height' is the actual height. This means that when using the default
-% \meta{loc} of |[tbp]| at least one of the text page float fractions 
+% \meta{loc} of |[tbp]| at least one of the text page float fractions
 % (|\topfraction| and/or |\bottomfraction|) must be
 % larger than the |\floatpagefraction| by an amount sufficient to take account
 % of the maximum text page separation value.
@@ -1887,18 +1891,18 @@
 %   In an attempt to avoid name clashes with other packages, all internal
 % commands include the string |@cont|.
 %
-% Note (2001/08/03): Older versions of the \Lpack{amsmath} package did 
+% Note (2001/08/03): Older versions of the \Lpack{amsmath} package did
 % odd things with
 % |\@tempa|, |\@tempb| and |\@tempc|. I have replaced any original use
 % of these by |\@conttempa|, etc.
 %
 % Do the options first.
 %
-% \begin{macro}{\if@contsubfigxx}
-% \begin{macro}{\if@contsubfigxxi}
-% \begin{macro}{\if@contsubfig}
-% These three |\if...| are used to remember if the \Lopt{subfigure20} 
-% or \Lopt{subfigure} option has been given. 
+% \begin{macro}[int]{\if@contsubfigxx}
+% \begin{macro}[int]{\if@contsubfigxxi}
+% \begin{macro}[int]{\if@contsubfig}
+% These three |\if...| are used to remember if the \Lopt{subfigure20}
+% or \Lopt{subfigure} option has been given.
 % \changes{v3.1}{2002/02/20}{Change to subfigure options, deprecate subfigure21}
 %    \begin{macrocode}
 \newif\if@contsubfigxx
@@ -1918,8 +1922,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@contcapoption}
-% This |\if...| is used to remember if the \Lopt{caption2} 
+% \begin{macro}[int]{\if@contcapoption}
+% This |\if...| is used to remember if the \Lopt{caption2}
 % option has been given
 %    \begin{macrocode}
 \newif\if@contcapoption
@@ -1928,8 +1932,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@conttitleopt}
-% This |\if...| is used to remember if the \Lopt{titles} 
+% \begin{macro}[int]{\if@conttitleopt}
+% This |\if...| is used to remember if the \Lopt{titles}
 % option has been given
 %    \begin{macrocode}
 \newif\if@conttitleopt
@@ -1938,7 +1942,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ProcessOptions}
+% \begin{macro}[no-user-doc]{\ProcessOptions}
 % Now process the options.
 %    \begin{macrocode}
 
@@ -1950,19 +1954,19 @@
 % \subsection{Caption styling}
 %
 %    The caption styling\footnote{Thanks to Donald Arseneau and Arash
-% Esbatil for their perceptive comments on early versions of the 
+% Esbatil for their perceptive comments on early versions of the
 % styling code.}
 % is accomplished by redefining the |\@makecaption|
 % command. First, though, define and initialise the user-level commands.
 % \changes{v2.7}{2001/01/27}{Added all the styling commands}
 %
-% The styling is only defined if the \Lopt{caption2} option 
+% The styling is only defined if the \Lopt{caption2} option
 % is \emph{not} given.
-% But first we have to declare some new |\if| commands before testing 
+% But first we have to declare some new |\if| commands before testing
 % the option.
-% \begin{macro}{\if@contcw}
-% \begin{macro}{\if@conthang}
-% \begin{macro}{\if@contindent}
+% \begin{macro}[int]{\if@contcw}
+% \begin{macro}[int]{\if@conthang}
+% \begin{macro}[int]{\if@contindent}
 % For use when checking caption width and captioning styles styles.
 %    \begin{macrocode}
 \newif\if@contcw
@@ -1982,10 +1986,10 @@
      are unavailable to you}
 \else
 
-%    \end{macrocode}   
+%    \end{macrocode}
 %
 % \begin{macro}{\captiondelim}
-% \begin{macro}{\@contdelim}
+% \begin{macro}[int]{\@contdelim}
 %  For the caption delimiter.
 %    \begin{macrocode}
 \newcommand{\captiondelim}[1]{\def\@contdelim{#1}}
@@ -1996,7 +2000,7 @@
 % \end{macro}
 %
 % \begin{macro}{\captionnamefont}
-% \begin{macro}{\@contnfont}
+% \begin{macro}[int]{\@contnfont}
 % The font for the caption name.
 %    \begin{macrocode}
 \newcommand{\captionnamefont}[1]{\def\@contnfont{#1}}
@@ -2007,7 +2011,7 @@
 % \end{macro}
 %
 % \begin{macro}{\captiontitlefont}
-% \begin{macro}{\@conttfont}
+% \begin{macro}[int]{\@conttfont}
 % The font for the caption title.
 %    \begin{macrocode}
 \newcommand{\captiontitlefont}[1]{\def\@conttfont{#1}}
@@ -2017,8 +2021,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\flushleftright}
-% \begin{macro}{\centerlastline}
+% \begin{macro}[no-user-doc]{\flushleftright}
+% \begin{macro}[no-user-doc]{\centerlastline}
 % These are in addition to the |\centering|, |\raggedleft| and |\raggedright|
 % declarations for paragraphing. |\flushleftright| sets the skips to TeX's
 % normal (block) paragraphing values,
@@ -2038,7 +2042,7 @@
 % \end{macro}
 %
 % \begin{macro}{\captionstyle}
-% \begin{macro}{\@contcstyle}
+% \begin{macro}[int]{\@contcstyle}
 % The paragraphing style for the caption.
 %    \begin{macrocode}
 \newcommand{\captionstyle}[1]{\def\@contcstyle{#1}}
@@ -2048,7 +2052,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@contcwidth}
+% \begin{macro}[int]{\@contcwidth}
 % \begin{macro}{\captionwidth}
 % \begin{macro}{\changecaptionwidth}
 % \begin{macro}{\normalcaptionwidth}
@@ -2067,7 +2071,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@contindw}
+% \begin{macro}[int]{\@contindw}
 % \begin{macro}{\hangcaption}
 % \begin{macro}{\indentcaption}
 % \begin{macro}{\normalcaption}
@@ -2087,11 +2091,11 @@
 % \end{macro}
 %
 % \begin{macro}{\precaption}
-% \begin{macro}{\@contpre}
+% \begin{macro}[int]{\@contpre}
 % \begin{macro}{\postcaption}
-% \begin{macro}{\@contpost}
+% \begin{macro}[int]{\@contpost}
 % \begin{macro}{\midbicaption}
-% \begin{macro}{\@contmidbi}
+% \begin{macro}[int]{\@contmidbi}
 % The macros for the pre- and post-caption text/commands, and
 % for the mid-caption command for bilingual captions.
 %    \begin{macrocode}
@@ -2110,12 +2114,12 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@makecaption}
+% \begin{macro}[int]{\@makecaption}
 %  This is a reimplementation of the kernel |\@makecaption| command.
 % As well as including the caption typesetting commands it enables
 % captions that include forced newlines (e.g., by |\\|).
 %
-% The first part is due to 
+% The first part is due to
 % Donald Arseneau\footnote{Email: \texttt{asnd@triumf.ca}} from postings
 % to the CTT newsgroup and Email discussions. The |\topskip| strut is
 % used whenever the caption is the first part of the float. This means,
@@ -2131,13 +2135,13 @@
   \ifdim\prevdepth>-99\p@ \vskip\abovecaptionskip
   \else \def\@conttempa{\vbox to\topskip{}}\fi
 %    \end{macrocode}
-% \begin{macro}{\@contfnote}
-% \begin{macro}{\@contfmark}
+% \begin{macro}[int]{\@contfnote}
+% \begin{macro}[int]{\@contfmark}
 % The caption title will be typeset twice, firstly to measure its width
 % and secondly to actually typeset it. To avoid problems caused by
 % a footnote in the caption getting processed twice, we temporarily
 % disable the expected relevant commands.
-% \changes{v3.1b}{2002/10/18}{Added \cs{label} to nulled macros in 
+% \changes{v3.1b}{2002/10/18}{Added \cs{label} to nulled macros in
 %                             \cs{@makecaption} to stop hyperref claiming
 %                             multiple anchor points}
 %    \begin{macrocode}
@@ -2148,7 +2152,7 @@
 % \end{macro}
 % \end{macro}
 % Now measure the width of the total caption, not forgetting to take account
-% of the font specifications, and then restore the footnoting. 
+% of the font specifications, and then restore the footnoting.
 %    \begin{macrocode}
   \sbox\@tempboxa{\@contnfont #1\@contdelim \@conttfont #2}
   \let\footnote\@contfnote
@@ -2175,7 +2179,7 @@
 %    \begin{macrocode}
     \sbox\@tempboxa{\@contnfont #1\@contdelim}
     \@contpre%
-    {\@contnfont #1\@contdelim}\@conttempa 
+    {\@contnfont #1\@contdelim}\@conttempa
     {\@contcstyle\hangindent=\wd\@tempboxa\hangafter=\@ne\@conttfont #2\par}
   \else
     \if@contindent
@@ -2184,21 +2188,21 @@
 % kept in |\@contindw|.
 %    \begin{macrocode}
       \@contpre%
-      {\@contnfont #1\@contdelim}\@conttempa 
+      {\@contnfont #1\@contdelim}\@conttempa
       {\@contcstyle\hangindent=\@contindw\hangafter=\@ne\@conttfont #2\par}
     \else
 %    \end{macrocode}
 % For the normal style, just typeset the caption.
 %    \begin{macrocode}
       \@contpre%
-      {\@contnfont #1\@contdelim}\@conttempa 
+      {\@contnfont #1\@contdelim}\@conttempa
       {\@contcstyle\@conttfont #2\par}
     \fi
   \fi
 %    \end{macrocode}
 % Finish off the typesetting by processing the post-text,  and if not using
 % the normal width then close off the |\parbox|, and lastly put in some
-% vertical space. 
+% vertical space.
 %    \begin{macrocode}
   \@contpost
   \if@contcw
@@ -2222,7 +2226,7 @@
 % \subsection{Continuation captions and legends}
 %
 % \begin{macro}{\contcaption}
-%    |\contcaption{|\meta{text}|}| is a user-level command. 
+%    |\contcaption{|\meta{text}|}| is a user-level command.
 %    It is a simplified
 %    version of the normal |\caption| command as it doesn't have to deal
 %    too much with numbering or list of \dots entries.
@@ -2237,14 +2241,14 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\@contcaption}
+% \begin{macro}[int]{\@contcaption}
 %    This is the workhorse for the |\contcaption| command. In turn,
 % it uses the |\@makecaption| command (defined in the usual classes)
 % to do most of its work. It
 % uses the number of the previous |\caption| command in the same
 % type of float and its implementation includes much of the code
 % used in the LaTeX |\@caption| command.
-% 
+%
 %    \begin{macrocode}
 \long\def\@contcaption#1#2{%
   \par
@@ -2311,7 +2315,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@legend}
+% \begin{macro}[int]{\@legend}
 % |\@legend{|\meta{type}|}[|\meta{short-title}|]{|\meta{long-title}|}|
 % is the workhorse for the |\namedlegend| command. In turn, it calls
 % |\@makelegend|. It requires two commands to have been defined, namely
@@ -2336,8 +2340,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\flegtoc@table}
-% \begin{macro}{\flegtoc@figure}
+% \begin{macro}[int]{\flegtoc@table}
+% \begin{macro}[int]{\flegtoc@figure}
 %  These macros write a |\namedlegend| title to the respective listof file.
 % By default they do nothing.
 %    \begin{macrocode}
@@ -2348,8 +2352,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\fleg@table}
-% \begin{macro}{\fleg@figure}
+% \begin{macro}[int]{\fleg@table}
+% \begin{macro}[int]{\fleg@figure}
 %  These macros typeset the name before the title of a |\namedlegend|. By
 % default they are defined to mimic the normal captioning style.
 % \changes{v2.7}{2001/01/27}{Deleted the : delimiter from \cs{fleg@table}
@@ -2388,16 +2392,16 @@
 %    The bilingual caption commands all use internal grouping so
 % that any changes are kept local. This has the unfortunate side-effect
 % that any |\label| command must be within the grouping otherwise the
-% wrong number is picked up. To make the coding, if not necessarily the 
+% wrong number is picked up. To make the coding, if not necessarily the
 % use, of the commands simpler, I have not used the traditional style
 % of square brackets for optional caption text arguments. Instead, empty
-% `required' arguments are used as the implementation means. 
+% `required' arguments are used as the implementation means.
 %
-% \begin{macro}{\@if@contemptyarg}
-%  For dealing with empty arguments. 
+% \begin{macro}[int]{\@if@contemptyarg}
+%  For dealing with empty arguments.
 % |\@if@contemptyarg{|\meta{testarg}|}{|\meta{YES}|}{|\meta{NO}|}| checks
 % if \meta{testarg} is empty (consists of zero or more spaces only). If
-% it is empty then the \meta{YES} argument is processed otherwise the 
+% it is empty then the \meta{YES} argument is processed otherwise the
 % \meta{NO} argument is processed. The implementation uses code suggested
 % by Donald Arseneau (see section~\ref{sec:peril} for some background on this).
 % \changes{v2.6c}{2000/03/15}{Rewrite of \cs{@if@contemptyarg}}
@@ -2413,7 +2417,7 @@
 %
 % \begin{macro}{\bitwonumcaption}
 % \changes{v2.6}{2000/02/26}{New \cs{bitwonumcaption} command}
-%  The 6 arguments are: optional label, short and long in language 1, 
+%  The 6 arguments are: optional label, short and long in language 1,
 % name in
 % language 2, and short and long in language 2. Both texts are put
 % into the List of as numbered entries.
@@ -2501,9 +2505,9 @@
 %
 % \begin{macro}{\bicaption}
 % \changes{v2.6}{2000/02/26}{New \cs{bicaption} command}
-%  The 5 arguments are: optional labelling, 
+%  The 5 arguments are: optional labelling,
 % short and long in language 1, name in
-% language 2, and long in language 2. 
+% language 2, and long in language 2.
 % Only the first text is put into the List.
 % \changes{v3.2a}{2005/03/29}{Fix empty check in \cs{bicaption}}
 %    \begin{macrocode}
@@ -2521,7 +2525,7 @@
     \label{#1}
   \fi
 %    \end{macrocode}
-% Do the between captions code and 
+% Do the between captions code and
 % finally just use |\contcaption| for the
 % second language.
 %    \begin{macrocode}
@@ -2564,7 +2568,7 @@
 %
 % \subsection{The code for the \Lpack{longtable} package}
 %
-% \begin{macro}{\LT@makecaption}
+% \begin{macro}[int]{\LT@makecaption}
 % This is defined in the \Lpack{longtable} package and sets a caption
 % essentially as a centered multicolumn entry in the table. To utilize
 % \Lpack{ccaption}'s font settings it has to be modified.
@@ -2601,8 +2605,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cont@LT@nonumintoc}
-% \begin{macro}{\@cont@oldLT@c@ption}
+% \begin{macro}[int]{\@cont@LT@nonumintoc}
+% \begin{macro}[int]{\@cont@oldLT@c@ption}
 % We need a special version of \Lpack{longtable}'s \cs{LT@c@ption}
 % that does not put a number in the ToC.
 % \changes{v3.2}{2005/03/21}{Added \cs{@cont@LT@nonumintoc}}
@@ -2649,17 +2653,17 @@
 %    \end{macrocode}
 % \end{macro}
 %
-%  
+%
 %
 % \subsection{The \Lopt{subfigure} options}
 %
 %
-% \begin{macro}{\@contkeep}
-% \begin{macro}{\@contset}
+% \begin{macro}[int]{\@contkeep}
+% \begin{macro}[int]{\@contset}
 % \begin{macro}{\subconcluded}
-% \begin{macro}{\subfigold@contcaption}
+% \begin{macro}[int]{\subfigold@contcaption}
 %   These are common to both \Lopt{subfigure} options. |\@contkeep| stores
-% the current sub(figure/table) number in counter |@contsubnum| and 
+% the current sub(figure/table) number in counter |@contsubnum| and
 % |\@contset| sets the sub(figure/table) number to the value of |@contsubnum|.
 % |\subconcluded| sets the sub(figure/table) number to zero. The original
 % definition of |\@contcaption| is kept in |\subfigold@contcaption|.
@@ -2676,8 +2680,8 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\toclevel@subtable}
-% \begin{macro}{\toclevel@subfigure}
+% \begin{macro}[int]{\toclevel@subtable}
+% \begin{macro}[int]{\toclevel@subfigure}
 %  These are needed if the \Lpack{hyperref} package is loaded
 % as well as subfigures.
 % \changes{v2.6e}{2001/01/12}{Added toclevel@subtable and @subfigure commands for hyperref}
@@ -2689,7 +2693,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\if@contmaincaption}
+% \begin{macro}[int]{\if@contmaincaption}
 % This is set TRUE after the (cont)caption in a float has been processed.
 % (A |\newif| cannot be used within an |\if...\fi| construct.)
 %    \begin{macrocode}
@@ -2698,7 +2702,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\if@contbotsub}
+% \begin{macro}[int]{\if@contbotsub}
 % A flag indicating whether the subcaption is to be at the bottom or
 % top of the subfigure/subtable; TRUE for the subcaption at the bottom.
 %    \begin{macrocode}
@@ -2711,7 +2715,7 @@
 % \subsubsection{Option \Lopt{subfigure20}}
 %
 % \changes{v2.5}{2000/02/20}{Addition of subfigure20 section in code portion}
-%     In order to eliminate an ordering dependency between the 
+%     In order to eliminate an ordering dependency between the
 % \Lpack{subfigure} and \Lpack{\pname} packages, modifications to the
 % original \Lpack{subfigure} code have to be done at the start of the
 % document after all packages have been loaded.
@@ -2723,9 +2727,9 @@
 %
 % \begin{macro}{\caption}
 % \begin{macro}{\contcaption}
-% \begin{macro}{\@float}
-% \begin{macro}{\@dbflt}
-%  These original commands are all modified to set the value of 
+% \begin{macro}[int]{\@float}
+% \begin{macro}[int]{\@dbflt}
+%  These original commands are all modified to set the value of
 % |\if@contmaincaption|. The (cont)caption commands set it to TRUE and the
 % float commands set it FALSE. Additionally, the |\@float| and |\@dbflt|
 % commands are modified to zero the subfloat counter, if it is defined.
@@ -2749,7 +2753,7 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@subfloat}
+% \begin{macro}[int]{\@subfloat}
 % This macro from \Lopt{subfigure} v2.0 is modified to enable subcaptions
 % to be placed at either the top or bottom of the sub... (the original only
 % placed them at the bottom). First, the subfigure/table is set in a box.
@@ -2759,7 +2763,7 @@
     \@tempdima=\wd\@tempboxa
     \if@contbotsub
 %    \end{macrocode}
-% The subcaption is to be put at the bottom, so typeset the figure, followed 
+% The subcaption is to be put at the bottom, so typeset the figure, followed
 % by the caption, if any.
 %    \begin{macrocode}
       \vtop{%
@@ -2790,7 +2794,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\@subcaption}
+% \begin{macro}[int]{\@subcaption}
 % The original |\@subcaption| command produces unexpected results in the
 % ToC (i.e., |numberline| appears instead of |\numberline| because of
 % the original internal definition of |\protect|). I have also
@@ -2798,10 +2802,10 @@
 % adds the subcaption to the ToC directly.
 %
 %    Sebastien Derriere found that there were problems when fragile commands
-% were used within a continued subcaption. Steven Douglas Cochran kindly 
+% were used within a continued subcaption. Steven Douglas Cochran kindly
 % provided a fix for this.
 % \changes{v2.6d}{2001/01/02}{Applied SDC fix to @subcaption command}
-% 
+%
 %    \begin{macrocode}
   \renewcommand{\@subcaption}[2]{%
     \begingroup
@@ -2825,8 +2829,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\subfigure}
-% \begin{macro}{\subtable}
+% \begin{macro}[no-user-doc]{\subfigure}
+% \begin{macro}[no-user-doc]{\subtable}
 %  These are revised versions of the original commands. They are now
 % aliases for |\subbottom| and |\subtop| respectively. In their original
 % form they were both effectively aliases for |\subbottom| only.
@@ -2848,7 +2852,7 @@
 \if@contsubfigxx
 %    \end{macrocode}
 % \begin{macro}{\subbottom}
-% \begin{macro}{\@contsubbody}
+% \begin{macro}[int]{\@contsubbody}
 %  |\subbottom[|\meta{caption}|]{|\meta{text}|}| typesets a subcaption
 % when the main caption is at the end of the float environment. The code
 % is a slight modification of the original |\subfigure| command in that
@@ -2878,8 +2882,8 @@
 % \end{macro}
 %
 % \begin{macro}{\contsubbottom}
-% \begin{macro}{\subbody@cont}
-%  The continued version of |\subbottom|. It restores the kept subcaption 
+% \begin{macro}[int]{\subbody@cont}
+%  The continued version of |\subbottom|. It restores the kept subcaption
 % number before incrementing and keeping it. As most of the code is common
 % with |\contsubtop| it is kept in the |\subbody@cont|.
 %    \begin{macrocode}
@@ -2912,7 +2916,7 @@
 % \end{macro}
 %
 % \begin{macro}{\contsubtop}
-%  The continued version of |\subtop|. 
+%  The continued version of |\subtop|.
 %    \begin{macrocode}
   \newcommand{\contsubtop}{%
     \@contbotsubfalse
@@ -2921,7 +2925,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@contcaption}
+% \begin{macro}[int]{\@contcaption}
 % The |\@contcaption| command must be modified to add the listed
 % subcaptions (if any, and there should be none for top main captions)
 % to the ToC. A simplified version of the \Lopt{subfigure} redefinition
@@ -2941,8 +2945,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\contsubtable}
-% \begin{macro}{\contsubfigure}
+% \begin{macro}[no-user-doc]{\contsubtable}
+% \begin{macro}[no-user-doc]{\contsubfigure}
 %  Aliases for |\contsubtop| and |\contsubbottom|, respectively.
 %    \begin{macrocode}
   \let\contsubtable\contsubtop
@@ -2958,16 +2962,16 @@
 
 %    \end{macrocode}
 %
-%    This is the end of the version 2.0 code. 
+%    This is the end of the version 2.0 code.
 %
 % \subsubsection{Option \Lopt{subfigure21}}
 %
 %
 % \begin{macro}{\caption}
 % \begin{macro}{\contcaption}
-% \begin{macro}{\@float}
-% \begin{macro}{\@dbflt}
-%  These original commands are all modified to set the value of 
+% \begin{macro}[int]{\@float}
+% \begin{macro}[int]{\@dbflt}
+%  These original commands are all modified to set the value of
 % |\if@contmaincaption|. The (cont)caption commands set it to TRUE and the
 % float commands set it FALSE. Additionally, the |\@float| and |\@dbflt|
 % commands are modified to zero the subfloat counter, if it is defined.
@@ -2995,9 +2999,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\@contsubfloat}
-%  This is a version of the \Lpack{subfigure} |\subfigure| command. 
-% The revised version stores the subcounter. 
+% \begin{macro}[int]{\@contsubfloat}
+%  This is a version of the \Lpack{subfigure} |\subfigure| command.
+% The revised version stores the subcounter.
 % \changes{v3.1}{2002/02/20}{Replaced \cs{do@contsubfig} by \cs{@contsubfloat}}
 % \changes{v3.1a}{2002/04/01}{Added \cs{subfig@oldlabel} to \cs{@contsubfloat}}
 %    \begin{macrocode}
@@ -3013,7 +3017,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@@contsubfloat}
+% \begin{macro}[int]{\@@contsubfloat}
 % This is a revised version of the \Lpack{subfigure} |\@subfigure| command
 % (just the called macronames are changed).
 %    \begin{macrocode}
@@ -3025,11 +3029,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@@@contsubfloat}
+% \begin{macro}[int]{\@@@contsubfloat}
 %    This is a modified version of the \Lpack{subfigure} |\@subfloat|
 % command. Essentially the |\csname if#1topcap\endcsname| constructs are
-% replaced by |\if@contbotsub|. This is actually only required for 
-% user-defined floats where I haven't been able to work out if it is 
+% replaced by |\if@contbotsub|. This is actually only required for
+% user-defined floats where I haven't been able to work out if it is
 % possible to create new |\if#1...| commands within a command that has a
 % a parameter |#1|.
 %    \begin{macrocode}
@@ -3083,11 +3087,11 @@
     \vspace{\subfig@bottom}
   \egroup
 \egroup}
-  
+
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\cont@subfig@oldcaption}
+% \begin{macro}[int]{\cont@subfig@oldcaption}
 % Keep the definition of |\@caption|.
 %    \begin{macrocode}
 \let\cont@subfig@oldcaption\@caption
@@ -3096,10 +3100,10 @@
 % \end{macro}
 %
 % The remainder of the \Lopt{subfigure21} option code.
-% \begin{macro}{\doxxi@contcaption}
+% \begin{macro}[int]{\doxxi@contcaption}
 %  This command redefines the |\@contcaption| command to flush out any
 % pending subcaptions. The redefinition cannot be done within |\if...\fi|
-% because of the internal |\if...| creation.  The code is simplified from 
+% because of the internal |\if...| creation.  The code is simplified from
 % the \Lpack{subfigure} v2.1 redefinition of |\@caption|.
 %    \begin{macrocode}
 \newcommand{\doxxi@contcaption}{%
@@ -3122,7 +3126,7 @@
 %    \end{macrocode}
 %
 % \begin{macro}{\subbottom}
-% \begin{macro}{\@contsubbody}
+% \begin{macro}[int]{\@contsubbody}
 %    |\subbottom[|\meta{list-entry}|][|\meta{subcaption}|]{|\meta{text}|}|
 % typesets a subcaption below the \meta{text}. Most of the  work is
 % performed by the |\@contsubbody| macro.
@@ -3150,7 +3154,7 @@
 % \end{macro}
 %
 % \begin{macro}{\contsubbottom}
-% \begin{macro}{\subbody@cont}
+% \begin{macro}[int]{\subbody@cont}
 %     These are the continued versions of |\subbottom| and |\@contsubbody|.
 % \changes{v3.1a}{2002/04/01}{Added \cs{subfig@oldlabel} to \cs{subbody@cont}}
 % \begin{macrocode}
@@ -3191,7 +3195,7 @@
 % \end{macro}
 %
 
-% \begin{macro}{\contsubfigure}
+% \begin{macro}[no-user-doc]{\contsubfigure}
 %   This a simplified version of |\subfigure| in that the main caption counter
 % is not incremented (we should be in a continued float), and the subcounter
 % is restored before being incremented.
@@ -3210,8 +3214,8 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@contsf}
-% \begin{macro}{\@contst}
+% \begin{macro}[int]{\@contsf}
+% \begin{macro}[int]{\@contst}
 %  These are versions of the |\subfigure| and |\subtable| macros written
 % using the \Lpack{ccaption} style.
 %    \begin{macrocode}
@@ -3229,7 +3233,7 @@
 %
 % Now these can be used if appropriate within the |\AtBeginDocument| code.
 % But first call for the new version of |\@contcaption|.
-% \changes{v3.1b}{2002/10/18}{Added braces to bracketed arg in 
+% \changes{v3.1b}{2002/10/18}{Added braces to bracketed arg in
 %                 \cs{cont@subfig@oldcaption}, otherwise brackets
 %                 in the \cs{caption} argument confuse things.}
 %    \begin{macrocode}
@@ -3260,7 +3264,7 @@
 %
 % To define a float environment, say |fenv|, the following macros must be defined:
 % \begin{itemize}
-% \item |\fps@fenv| The default placement specifier (normally |tbp|). 
+% \item |\fps@fenv| The default placement specifier (normally |tbp|).
 % \item |\ftype@fenv| The type number which is an integer and a power of 2.
 % \item |\ext@fenv| The file extension for the contents list.
 % \item |\c@fenv| A counter for the environment (for caption numbering).
@@ -3272,16 +3276,16 @@
 % \end{itemize}
 % Note that the |\fleg...| macros are only required for the \Lpack{\pname}
 %  package, and |\toclevel@fenv| is only required if the \Lpack{hyperref}
-% package is being used. 
+% package is being used.
 % The others are required for any new float, whether or not the
 % \Lpack{\pname} package is being used.
 %
 %
 %
-% \begin{macro}{newflo@tctr}
+% \begin{macro}[int]{newflo@tctr}
 % A counter for the type number of a new float. Normally
 % figures are of type 1, tables type 2, and the next float type is then 4, and so
-% on. 
+% on.
 %    \begin{macrocode}
 \newcounter{newflo@tctr}
 \@ifundefined{c@figure}{\setcounter{newflo@tctr}{1}}{
@@ -3291,11 +3295,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\cftdot}
-% \begin{macro}{\cftdotsep}
-% \begin{macro}{\cftdotfill}
-% \begin{macro}{\@cfttocstart}
-% \begin{macro}{\@cfttocfinish}
+% \begin{macro}[no-user-doc]{\cftdot}
+% \begin{macro}[no-user-doc]{\cftdotsep}
+% \begin{macro}[no-user-doc]{\cftdotfill}
+% \begin{macro}[int]{\@cfttocstart}
+% \begin{macro}[int]{\@cfttocfinish}
 % These macros are also provided by the \Lpack{tocloft} package, but
 % we need them in any event.
 %    \begin{macrocode}
@@ -3327,11 +3331,11 @@
 %    \begin{macrocode}
 \newcommand{\newfloatentry}[4][\@empty]{%
 %    \end{macrocode}
-% \begin{macro}{\c@X}
+% \begin{macro}[int]{\c@X}
 % \begin{macro}{\theX}
 % Create the new counter. An error if it exists.
 %    \begin{macrocode}
-  \@ifundefined{c@#2}{% 
+  \@ifundefined{c@#2}{%
     \ifx \@empty#1\relax
       \newcounter{#2}
     \else
@@ -3351,7 +3355,7 @@
 % \end{macro}
 %
 % That finishes off the error checking, rest is defined in any event
-% \begin{macro}{\l@X}
+% \begin{macro}[int]{\l@X}
 % |\l@X{title}{page}| typesets the entry in the listing, but only if
 % the |Zdepth| is greater than \meta{level-1}.
 %    \begin{macrocode}
@@ -3393,7 +3397,7 @@
   \expandafter\newlength\csname cft#2numwidth\endcsname
 %    \end{macrocode}
 % Set the default values for the indent and numwidth depending
-% on the entry's level. A level of 1 (\meta{level-1} = 0) 
+% on the entry's level. A level of 1 (\meta{level-1} = 0)
 % corresponds to a figure.
 %    \begin{macrocode}
   \ifcase #4\relax  % 0
@@ -3455,7 +3459,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\toclevel@X}
+% \begin{macro}[int]{\toclevel@X}
 % This is required for the \Lpack{hyperref} package.
 %    \begin{macrocode}
   \@namedef{toclevel@#2}{#4}
@@ -3486,7 +3490,7 @@
   \fi
 %    \end{macrocode}
 %
-% \begin{macro}{\ftype@X}
+% \begin{macro}[int]{\ftype@X}
 %  Define the float type, set it to the float counter, and double
 % the counter afterwards.
 %    \begin{macrocode}
@@ -3495,9 +3499,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\ext@X}
+% \begin{macro}[int]{\ext@X}
 % \begin{macro}{Zdepth}
-% Define |\ext@X| for the file extension and set the new |Zdepth| 
+% Define |\ext@X| for the file extension and set the new |Zdepth|
 % depth counter to 1.
 %    \begin{macrocode}
   \@namedef{ext@#2}{#3}  % file extension
@@ -3549,7 +3553,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@cftmakeZtitle}
+% \begin{macro}[int]{\@cftmakeZtitle}
 % |\@cftmakeZtitle| typeset the title heading for the listing.
 %    \begin{macrocode}
   \@namedef{@cftmake#3title}{%
@@ -3592,9 +3596,9 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}{\fps@X}
-% \begin{macro}{\fnum@X}
-% \begin{macro}{\flegtoc}
+% \begin{macro}[int]{\fps@X}
+% \begin{macro}[int]{\fnum@X}
+% \begin{macro}[int]{\flegtoc@X}
 % |\fps@X| is the default float placement specification, |\fnum@X|
 % typesets the caption name and number, and |\flegtoc@X| is for
 % named legends.
@@ -3627,7 +3631,7 @@
 % \end{macro}
 %
 % \begin{macro}{\newfloatenv}
-% Up to version 2.7 of the package the command 
+% Up to version 2.7 of the package the command
 % |\newfloatenv[|\meta{within}|]{|\meta{fenv}|}{|\meta{ext}|}{|\meta{capname}|}|
 % created a new float environment. It was replaced in later versions
 % by |\newfloatlist|. Print a warning message if it is used.
@@ -3643,7 +3647,7 @@
 %
 %
 % \begin{macro}{\listfloats}
-% Up to version 2.7 the |\listfloats{|\meta{fenv}|}{|\meta{heading}|}| 
+% Up to version 2.7 the |\listfloats{|\meta{fenv}|}{|\meta{heading}|}|
 % command produced a list of floats for \meta{fenv}. It was replaced
 % in later versions by the generated command |\listoffenv|. Print
 % an error message.
@@ -3684,12 +3688,12 @@
   \newfloatentry[#1]{sub#1}{\@nameuse{ext@#1}}{1}
 %    \end{macrocode}
 %
-% \begin{macro}{\ext@subX}
+% \begin{macro}[int]{\ext@subX}
 % \begin{macro}{\thesubX}
-% \begin{macro}{\@thesubX}
-% \begin{macro}{\@@thesubX}
-% \begin{macro}{\p@subX}
-% \begin{macro}{\@makesubXcaption}
+% \begin{macro}[int]{\@thesubX}
+% \begin{macro}[int]{\@@thesubX}
+% \begin{macro}[int]{\p@subX}
+% \begin{macro}[int]{\@makesubXcaption}
 % And now for the rest of the commands for subcaptions.
 %    \begin{macrocode}
   \@namedef{ext@sub#1}{\csname ext@#1\endcsname}
@@ -3811,7 +3815,7 @@
 % a double character, like \verb?\bicaption[ccapt3]{...?, which caused
 % nasty things to happen. In these cases I had coded: \\
 % \verb?\ifx #1\@empty\else %argument present? \\
-% I really should have known better as this results in TRUE with 
+% I really should have known better as this results in TRUE with
 % \verb?apt3? being left dangling (and typeset).
 %
 % \bibliographystyle{alpha}
@@ -3878,21 +3882,3 @@
 % \PrintChanges
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-
