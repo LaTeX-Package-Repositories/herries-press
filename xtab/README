@@ -9,29 +9,35 @@ Alternatively, you may find the longtable package fits your needs better.
 ______________
 Change History
 
+v2.4 (2026/10/18)
+- New maintainer (LaTeX Team)
+- Suspend tagging during measuring
+- Fix compatibility with array package (gh/89)
+
 v2.3f (2011/07/31) - Escape some line-endings (thanks to Martin Scharrer)
 
 v2.3e (2010/02/06)
  - Allow "calc" input in columns widths and row separations (with \\[...]);
    thanks to Martin Reinders for the error report and diagnosis.
-   
+
 v2.3d (2009/09/04) - New maintainer (Will Robertson)
 v2.3c (2008/07/26) - hopefully all extraneous spaces eliminated
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
   Maintainer: Will Robertson (will dot robertson at latex-project dot org)
   Copyright 1998--2008 Peter R. Wilson
   Copyright 2010--2011 Will Robertson
- 
+  Copyright 2026--present LaTeX Project
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
- 
+  The Current Maintainer of this work is the LaTeX Project.
+
   This work consists of the files:
 README (this file)
 xtab.dtx
@@ -45,7 +51,7 @@ xtab.dtx
 xtab.ins
 xtab.pdf (user manual)
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     To install the package:
 - run: latex xtab.ins (which will generate xtab.sty)
@@ -55,7 +61,7 @@ xtab.pdf (user manual)
   https://texfaq.org/ for more information on this.
 
     To regenerate the user manual:
-- run: (pdf)latex xtab.dtx
+- run: lualatex xtab.dtx
 - run: makeindex -s gind.ist xtab
-- run: latex xtab.dtx
-- Print xtab.(pdf|dvi) for a hardcopy of the package manual 
+- run: lualatex xtab.dtx
+- Print xtab.pdf for a hardcopy of the package manual
