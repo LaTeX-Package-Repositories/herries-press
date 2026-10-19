@@ -1,0 +1,78 @@
+\documentclass[DIV=7, pagesize=auto]{scrartcl}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\cs}[1]{\texttt{\textbackslash#1}}
+\makeatletter
+\newcommand*{\cmd}[1]{\cs{\expandafter\@gobble\string#1}}
+\makeatother
+\newcommand*{\meta}[1]{\textlangle\textsl{#1}\textrangle}
+\newcommand*{\marg}[1]{\texttt{\{}\meta{#1}\texttt{\}}}
+\newcommand*{\oarg}[1]{\texttt{[}\meta{#1}\texttt{]}}
+\newcommand*{\ml}[1]{\leavevmode\marginline{\small#1}\ignorespaces}
+
+\reversemarginpar
+
+\addtokomafont{title}{\rmfamily}
+
+\title{The \pkg{chngcntr} package\thanks{This manual corresponds to \pkg{chngcntr}~v1.1b}}
+\author{Author: Peter Wilson\and Maintainer: \LaTeX{} Project}
+\date{2026/10/19}
+
+\begin{document}
+
+\maketitle
+
+This package is obsolete and does nothing if loaded with a current \LaTeX.
+The commands \cs{counterwithin} and \cs{counterwithout} have been incorporated
+into the \LaTeX{} kernel. The usage notes below are still applicable and are retained
+for historical purposes.
+
+\section{Usage}
+
+In \LaTeX, a new counter called, say `\meta{ctr}', is created by the command
+\cmd{\newcounter}\marg{ctr}\oarg{within}. If the optional \meta{within} argument is given
+the counter `\meta{ctr}' is reset to zero each time the counter `\meta{within}'
+changes. The command \cmd{\the\meta{ctr}} typesets the value of the counter \meta{ctr}.
+This is automatically defined by \cmd{\newcounter} and is initialised
+to typeset arabic numerals.	
+
+\ml{\cmd{\counterwithin}\\\cmd{\counterwithin*}}
+It is sometimes desireable to change a counter that has been defined
+by \cmd{\newcounter}\marg{ctr} to act as though it had been defined as
+\cmd{\newcounter}\marg{ctr}\oarg{within}. The package provides the command
+\cmd{\counterwithin}\marg{ctr}\marg{within} that accomplishes this. By default,
+it also redefines the \cmd{\the\meta{ctr}} command so that it typesets values
+in the style \texttt{\cmd{\the\meta{within}}.\cmd{\arabic}\marg{ctr}}. The starred version of the
+command suppresses the redefinition of \cmd{\the\meta{ctr}}
+(e.\,g., \cmd{\counter\-within*}\verb+{ctr}{within}+).
+
+\ml{\cmd{\counterwithout}\\\cmd{\counterwithout*}}
+Likewise, the command \cmd{\counterwithout}\marg{ctr}\marg{within} changes a
+counter that has been created by \cmd{\newcounter}\marg{ctr}\oarg{within} to act
+as though it had been created by \cmd{\newcounter}\marg{ctr}. By default it
+also redefines the \cmd{\the\meta{ctr}} command so that it just typesets an arabic
+numeral. The starred version of the command suppresses the redefinition
+of \cmd{\the\meta{ctr}}.
+
+Any number of \cmd{\counterwithin}\marg{ctr}\marg{\ldots} and \cmd{\counterwith\-out}\marg{ctr}\marg{\ldots}
+commands can be issued for a given counter, \meta{ctr}, if you wish to toggle
+between the two styles. The current value of \meta{ctr} is unaffected by
+\cmd{\counterwithin} and \cmd{\counterwithout}. If you want to change the value
+after one of these commands, use \cmd{\set\-counter}\marg{ctr}\marg{\ldots}, and to change
+the typesetting style use \cmd{\renew\-command}\texttt{\{}\cmd{\the\meta{ctr}}\texttt{\}}\marg{\ldots}.
+
+
+\section{Change History:}
+
+\begin{tabular}{@{}l@{ -- }l@{}}
+  v1.0a & New maintainer (Will Robertson)\\
+  v1.1a & The package commands are now defined in the format\\
+  v1.1b & Document the package's obsolescence; new maintainer (\LaTeX{} team)
+\end{tabular}
+
+\end{document}
