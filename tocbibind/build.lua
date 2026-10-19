@@ -1,3 +1,6 @@
+--[=========================[--
+   L3BUILD FILE FOR TOCBIBIND
+--]=========================]--
 
 module = "tocbibind"
 
@@ -42,4 +45,3 @@ if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
 end
-
