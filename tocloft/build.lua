@@ -25,7 +25,7 @@ announce = {}
 announce["3.0c"] = [[
   * do not error if patching `\@starttoc` fails.
   * added missing Reference structure in `\chapterprecis` toc entry
-  * adapt templates to planed changes in LaTeX
+  * adapt templates to planned changes in LaTeX
 ]]
 uploadconfig.announcement = announce[version]
 

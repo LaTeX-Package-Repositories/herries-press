@@ -1,9 +1,10 @@
 % \iffalse meta-comment
 % titling.dtx
 % Author: Peter Wilson (Herries Press)
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Copyright 2000--2004 Peter R. Wilson
 % Copyright 2009 Will Robertson
+% Copyright 2026--present LaTeX Project
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -11,13 +12,15 @@
 % later version: <https://www.latex-project.org/lppl.txt>
 %
 % This work has the LPPL maintenance status "maintained".
-% The Current Maintainer of this work is Will Robertson.
+% The Current Maintainer of this work is the LaTeX Project.
 %
 % This work consists of the files listed in the README file.
 %
 %
 %<*driver>
-\documentclass{ltxdoc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\documentclass{l3in2edoc}
+\usepackage{lua-unicode-math}
 \EnableCrossrefs
 \CodelineIndex
 %%\OnlyDescription
@@ -29,7 +32,22 @@
 %
 % \fi
 %
-% \CheckSum{493}
+%\makeatletter
+%\def\@doc@describe#1#2{^^A
+%    \ifdoc@noprint\else
+%      \marginpar{\raggedleft
+%                 \strut
+%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
+%                  \doc@providetarget
+%                 \@nameuse{PrintDescribe#1}{#2}}^^A
+%    \fi
+%    \ifdoc@noindex\else
+%      \@nameuse{Special#1Index}{#2}^^A
+%    \fi
+%  \@esphack
+%  \endgroup
+%  \ignorespaces}
+%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
@@ -80,6 +98,7 @@
 % \changes{v2.1b}{2004/05/10}{Changed license from LPPL v.10 to v1.3}
 % \changes{v2.1c}{2004/09/26}{Deleted mention of unimplemented command}
 % \changes{v2.1d}{2009/09/04}{New maintainer (Will Robertson)}
+% \changes{v2.1f}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
 %
 % \def\dtxfile{titling.dtx}
 % \def\fileversion{v0.3} \def\filedate{2000/05/20}
@@ -91,9 +110,9 @@
 % \def\fileversion{v2.1c} \def\filedate{2004/09/26}
 % \def\fileversion{v2.1d} \def\filedate{2009/09/04}
 % \def\fileversion{v2.1e} \def\filedate{2009/12/28}
+% \def\fileversion{v2.1f} \def\filedate{2026/10/12}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
-% \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
 % \newcommand*{\pstyle}[1]{\textsl {#1}}          ^^A typeset a pagestyle
 % \newcommand*{\Lenv}[1]{\texttt {#1}}            ^^A typeset an environment
@@ -104,8 +123,8 @@
 %
 % \author{
 %   Author: Peter Wilson, Herries Press\\
-%   Maintainer: Will Robertson\\
-%   \texttt{will dot robertson at latex-project dot org}
+%   Maintainer: \LaTeX{} Project\\
+%   \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\filedate}
 % \maketitle
@@ -680,7 +699,7 @@
 % and thanks notes are meant to be different.
 %
 % \DescribeMacro{\footnotesep}
-% \DescribeMacro{\skip\footins}
+% \DescribeMacro{\footins}
 % The length |\footnotesep| controls the vertical spacing between footnotes
 % (and thanks notes),
 % and is initialised by the class to give no extra spacing for a
@@ -796,7 +815,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{titling}[2009/12/28 v2.1e maketitle typesetting]
+\ProvidesPackage{titling}[2026/10/12 v2.1f maketitle typesetting]
 
 %    \end{macrocode}
 %
@@ -805,17 +824,17 @@
 %    Changes to |\maketitle| and friends are defined here.
 %
 % \begin{macro}{\pretitle}
-% \begin{macro}{\@bspretitle}
+% \begin{macro}[int]{\@bspretitle}
 % \begin{macro}{\posttitle}
-% \begin{macro}{\@bsposttitle}
+% \begin{macro}[int]{\@bsposttitle}
 % \begin{macro}{\preauthor}
-% \begin{macro}{\@bspreauthor}
+% \begin{macro}[int]{\@bspreauthor}
 % \begin{macro}{\postauthor}
-% \begin{macro}{\@bspostauthor}
+% \begin{macro}[int]{\@bspostauthor}
 % \begin{macro}{\predate}
-% \begin{macro}{\@bspredate}
+% \begin{macro}[int]{\@bspredate}
 % \begin{macro}{\postdate}
-% \begin{macro}{\@bspostdate}
+% \begin{macro}[int]{\@bspostdate}
 %    To provide some flexibility in the titling style of the document,
 % user level commands are provided that can be changed to reconfigure
 % the appearance resulting from |\maketitle|. 
@@ -888,7 +907,7 @@
 %
 %
 % \begin{macro}{\thanksmarkseries}
-% \begin{macro}{\@bsmarkseries}
+% \begin{macro}[int]{\@bsmarkseries}
 % \begin{macro}{\symbolthanksmark}
 %  These are for specifying the kind of series for thanks markers.
 % \changes{v2.0}{2001/02/24}{Added all the controls for the \cs{thanks} command.}
@@ -902,7 +921,7 @@
 % \end{macro}
 %
 % \begin{macro}{\continuousmarks}
-% \begin{macro}{\@bscontmark}
+% \begin{macro}[int]{\@bscontmark}
 % These are for (non) zeroing of the footnote counter.
 %    \begin{macrocode}
 \newcommand{\@bscontmark}{\setcounter{footnote}{0}}
@@ -912,8 +931,8 @@
 % \end{macro}
 %
 % \begin{macro}{\thanksheadextra}
-% \begin{macro}{\@bsthanksheadpre}
-% \begin{macro}{\@bsthanksheadpost}
+% \begin{macro}[int]{\@bsthanksheadpre}
+% \begin{macro}[int]{\@bsthanksheadpost}
 % These are for inserting stuff before and after a mark in the titling.
 %    \begin{macrocode}
 \newcommand{\thanksheadextra}[2]{%
@@ -954,7 +973,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\tamark}
+% \begin{macro}[no-user-doc]{\tamark}
 % This stores the current definition of |\@thefnmark|. For some reason
 % using |\@thefnmark| directly only gave the last value.
 %    \begin{macrocode}
@@ -1049,7 +1068,7 @@
 
 %    \end{macrocode}
 % \begin{macro}{\thanksrule}
-% \begin{macro}{\@bsfootnoterule}
+% \begin{macro}[int]{\@bsfootnoterule}
 % These are saved versions of the |\footnoterule| definition as it
 % is at the end of the preamble.
 %    \begin{macrocode}
@@ -1072,7 +1091,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\maketitle}
+% \begin{macro}[no-user-doc]{\maketitle}
 % The following is a
 % modification of |\maketitle| as in the \Lpack{article}, \Lpack{report},
 % and \Lpack{book} classes 
@@ -1131,7 +1150,7 @@
 %%%    \@bsmtitlempty 
   } % end non-titlepage
 %    \end{macrocode}
-% \begin{macro}{\@maketitle}
+% \begin{macro}[int]{\@maketitle}
 % I use |\def\@maketitle| to account for the cases where the main class 
 % does not have titling commands, and to ensure an existing |\@maketitle|
 % gets overridden.
@@ -1216,7 +1235,7 @@
 % \end{macro}
 %
 %
-% \begin{macro}{\@bsmtitlempty}
+% \begin{macro}[int]{\@bsmtitlempty}
 %    |\@bsmtitlempty| is a helper macro to save some macro space. 
 % It empties some elements of |\maketitle|.
 %    \begin{macrocode}
@@ -1452,21 +1471,3 @@
 % \PrintIndex
 %
 \endinput
-
-%% \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-
-

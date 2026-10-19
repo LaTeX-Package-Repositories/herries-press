@@ -2,7 +2,7 @@
 ------------------------------------------------------------------
 The FONTTABLE package
 
-2026-04-19 v1.6e
+2026-10-12 v1.6f
 
 Issue tracker: https://github.com/LaTeX-Package-Repositories/herries-press/issues/
 
@@ -19,6 +19,7 @@ testfont.tex.
 ------------------------------------------------------------------
 Change History
 
+1.6f (2026/10/12) - Tag documentation
 1.6e (2026/04/19) - Avoid global definitions of \h \0 \1
 1.6d (2025/03/12) - Add \relax to terminate number issue #51
 1.6c (2017/06/06) - Fix bug with fonts with `at' in their name
@@ -33,7 +34,7 @@ Change History
 - Eliminated a clash with the babel package.
 - Described how to avoid a clash with the mftinc package.
 
-1.5  (2009/05/12) 
+1.5  (2009/05/12)
 - Added code providing a packaged version of Donald Knuth's
   testfont.tex, principally as an aid for font designers in
   testing their font.
@@ -48,7 +49,7 @@ Change History
 ------------------------------------------------------------------
 
   Author: Peter Wilson (Herries Press)
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 2005--2009 Peter R. Wilson
   Copyright 2009--2011, 2017 Will Robertson
   Copyright 2025--  LaTeX Project
@@ -59,7 +60,7 @@ Change History
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is LaTeX Project.
+  The Current Maintainer of this work is the LaTeX Project.
 
   This work consists of the files:
    - README (this file)
@@ -80,15 +81,15 @@ The distribution consists of the following files:
 
 To install the package:
 
-- To generate fonttable.sty run: 
+- To generate fonttable.sty run:
     tex fonttable.ins
 - Move fonttable.sty to a location where LaTeX will find it, for example:
     /usr/local/texlive/texmf-local/tex/latex/fonttable.sty
 
 To manually generate the manual, run:
 
-    pdflatex fonttable.dtx
+    lualatex fonttable.dtx
     makeindex -s gind.ist fonttable.idx # optional
-    pdflatex fonttable.dtx
+    lualatex fonttable.dtx
 
 ------------------------------------------------------------------
