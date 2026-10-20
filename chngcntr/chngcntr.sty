@@ -4,12 +4,23 @@
 % Instructions for use are at the end of this file.
 %
 % Author: Peter Wilson, Herries Press
-% Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+% Maintainer: LaTeX Project
 % Released under the Latex Project Public License
 %
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{chngcntr}[2009/09/02 v1.0a change counter resetting]
+\ProvidesPackage{chngcntr}[2026/10/19 v1.1b change counter resetting]
+
+% version 1.1 this package has been adopted into the format so does not
+% need to do anything in current latex releases.
+
+\@ifundefined{counterwithout}{}{%
+\PackageInfo{chngcntr}{\string\counterwithout\space already defined.\MessageBreak
+Quitting chngcntr}%
+\endinput
+}
+
+
 %
 % This package uses David Carlisle's \@removefromreset command as
 % specified in the remreset package available from CTAN as
@@ -106,5 +117,6 @@
 %
 % Change History:
 % v1.0a - New maintainer (Will Robertson)
+% v1.1a - Do nothing if \counterwithout defined
+% v1.1b - New maintainer (LaTeX Project); document obsolescence
 %
-
