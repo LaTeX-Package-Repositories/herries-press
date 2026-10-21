@@ -598,7 +598,7 @@ TEST 1: Show PDF Tags
              rolemaps-to="H6"
              referenced-as="8"
             >
-           <?MarkedContent page="5" ?> subpara
+           <?MarkedContent page="5" ?>subpara
           </subparagraph-heading>
           <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
              id="ID.0108"
@@ -745,7 +745,7 @@ TEST 1: Show PDF Tags
              rolemaps-to="H6"
              referenced-as="15"
             >
-           <?MarkedContent page="7" ?> subpara
+           <?MarkedContent page="7" ?>subpara
           </subparagraph-heading>
           <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
              id="ID.0130"

@@ -1,7 +1,9 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+LaTeX template Warning: The key equivalent "final-code" will be deprecated on ....-..-.. on line ....
 (tagging-issue1537-article.toc)
 \tf@toc=\write...
+LaTeX template Warning: The key equivalent "final-code" will be deprecated on ....-..-.. on line ....
 (tagging-issue1537-article.lof)
 \tf@lof=\write...
 Floatstructure:28
@@ -185,8 +187,9 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -265,15 +268,18 @@ Completed box being shipped out [1]
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0 plus 1.0fil
+.....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
 .....\hbox(0.0+0.0)x0.0, direction TLT
-......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
-........\pdfdest name{section*.1} xyz
-........\pdfdest name{section*.1} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
+.........\pdfdest name{section*.1} xyz
+.........\pdfdest name{section*.1} xyz
+.........\penalty 10000
+.......\kern0.0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/24.88 C
@@ -425,17 +431,20 @@ Completed box being shipped out [1]
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0 plus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
 .....\hbox(0.0+0.0)x0.0, direction TLT
-......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
-........\pdfliteral page <lua data reference ...>
-........\pdfliteral page <lua data reference ...>
-........\pdfdest name{section*.2} xyz
-........\pdfdest name{section*.2} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
+.........\pdfdest name{section*.2} xyz
+.........\pdfdest name{section*.2} xyz
+.........\penalty 10000
+.......\kern0.0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/24.88 L
@@ -527,32 +536,35 @@ Completed box being shipped out [1]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 8.00641
-....\hbox(9.99359+2.88)x345.0, glue set 284.86566fil, direction TLT
+....\hbox(9.99359+2.88)x322.49281, glue set 284.86566fil, shifted 22.50719, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\hbox(9.4464+0.0)x22.50719, direction TLT
-......\penalty 10000
-......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
-........\pdfliteral page <lua data reference ...>
-........\pdfliteral page <lua data reference ...>
-........\pdfdest name{section.1} xyz
-........\pdfdest name{section.1} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
-......\pdfliteral page <lua data reference ...>
-......\pdfliteral page <lua data reference ...>
-......\TU/lmr/bx/n/14.4 1
-......\pdfliteral page <lua data reference ...>
-......\pdfliteral page <lua data reference ...>
-......\TU/lmr/bx/n/14.4  
-......\glue 9.0
-......\TU/lmr/bx/n/14.4  
-......\glue -5.4
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\write1{\new@label@record{heading*.2}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
+.....\hbox(9.4464+0.0)x0.0, glue set - 22.50719fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(9.4464+0.0)x22.50719, direction TLT
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
+.........\pdfdest name{section.1} xyz
+.........\pdfdest name{section.1} xyz
+.........\penalty 10000
+.......\kern0.0
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\TU/lmr/bx/n/14.4 1
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\TU/lmr/bx/n/14.4  
+.......\glue 9.0
+.......\TU/lmr/bx/n/14.4  
+.......\glue -5.4
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 B
