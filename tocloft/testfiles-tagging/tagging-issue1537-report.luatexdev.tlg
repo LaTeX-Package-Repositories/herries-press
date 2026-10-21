@@ -1,7 +1,9 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+LaTeX template Warning: The key equivalent "final-code" will be deprecated on ....-..-.. on line ....
 (tagging-issue1537-report.toc)
 \tf@toc=\write...
+LaTeX template Warning: The key equivalent "final-code" will be deprecated on ....-..-.. on line ....
 (tagging-issue1537-report.lof)
 \tf@lof=\write...
 Completed box being shipped out [1]
@@ -10,8 +12,9 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -25,12 +28,15 @@ Completed box being shipped out [1]
 ...\pdflinkstate 0
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 253.97287fil, direction TLT
+..\vbox(550.0+0.0)x345.0, glue set 263.9718fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
 ...\penalty 10000
-...\glue 40.0
+...\glue 30.0
+...\glue 0.0
+...\penalty 10000
+...\glue 0.0
 ...\glue 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
@@ -46,6 +52,7 @@ Completed box being shipped out [1]
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\penalty 10000
 ....\glue 0.0
+....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/24.88 C
@@ -182,12 +189,15 @@ Completed box being shipped out [1]
 ....\glue(\parfillskip) -25.50003
 ....\glue(\rightskip) 25.50003
 ...\penalty -300
-...\glue 0.0
+...\glue 10.0
 ...\pdfliteral page <lua data reference ...>
 ...\pdfliteral page <lua data reference ...>
 ...\rule(0.0+0.0)x*
 ...\penalty 10000
-...\glue 40.0
+...\glue 30.0
+...\glue 0.0
+...\penalty 10000
+...\glue 0.0
 ...\glue 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
@@ -203,6 +213,7 @@ Completed box being shipped out [1]
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\penalty 10000
 ....\glue 0.0
+....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/24.88 L
@@ -467,8 +478,9 @@ Completed box being shipped out [2]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -489,6 +501,9 @@ Completed box being shipped out [2]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -502,6 +517,7 @@ Completed box being shipped out [2]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.2}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
