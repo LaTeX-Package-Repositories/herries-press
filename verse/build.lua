@@ -4,8 +4,8 @@
 --]=========================]--
 
 module  = io.popen("basename `pwd`"):read()
-version = "2.4c"
-pkgdate = "2024/02/12"
+version = "2.5b"
+pkgdate = "2026/10/24"
 gittag  = module.."-v"..version
 
 uploadconfig = {
@@ -28,7 +28,10 @@ announce["2.4c"] = [[
 announce["2.5"] = [[
   * Avoid conflict with LaTeX tagging code.
 ]]
-
+announce["2.5b"] = [[
+  * Fix definition of \cs{@vsptitle} (gh/50).
+  * Set level in poemtitle instance (gh/96).
+]]
 
 --[=================[--
      MORE SETTINGS
