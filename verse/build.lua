@@ -29,7 +29,7 @@ announce["2.5"] = [[
   * Avoid conflict with LaTeX tagging code.
 ]]
 announce["2.5b"] = [[
-  * Fix definition of \cs{@vsptitle} (gh/50).
+  * Fix definition of \\@vsptitle (gh/50).
   * Set level in poemtitle instance (gh/96).
 ]]
 
