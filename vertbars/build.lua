@@ -1,104 +1,50 @@
-
 --[=========================[--
    L3BUILD FILE FOR VERTBARS
 --]=========================]--
 
-module  = "vertbars"
-version = "1.0c"
-pkgdate = "2018/12/16"
-gittag  = module.."-v"..version
+module = "vertbars"
 
-uploadconfig = {
-  version     = version,
-  author      = "Peter R Wilson; Will Robertson",
-  license     = "lppl1.3c",
-  summary     = "Mark vertical rules in margin of text",
-  ctanPath    = "/macros/latex/contrib/vertbars",
-  repository  = "https://github.com/wspr/herries-press/",
-  bugtracker  = "https://github.com/wspr/herries-press/issues",
-  description = [[
-    This package is an extension to lineno, replacing that
-    package's line numbers with bars to the left or right
-    of the text.
-  ]]
-}
+version = "2026/10/21 v1.0d"
+
+textfiles ={"README.md"}
+
+packtdszip = false
+
+maxprintline = 10000
+typesetruns = 4
+typesetexe = "lualatex"
+
+typesetfiles = {"vertbars.tex"}
+sourcefiles = {"vertbars.sty"}
+
+-- Upload meta data
 
 announce = {}
-announce["1.0c"] = [[
-  Add \par before and after the vertbar environment to avoid incorrect
-  behaviour if erroneously used within a paragraph.
+announce["2026/10/21 v1.0d"] = [[
+Tag documentation; update maintainer to the LaTeX Project
 ]]
-uploadconfig.announcement = announce[version]
 
-sourcefiles  = {"*.sty"}
-typesetfiles = {"*.tex"}
-installfiles = {"*.sty"}
-tagfiles     = {"*.sty"}
+uploadconfig = {
+ pkg = "vertbars",
+ version = version,
+ author = "LaTeX Project",
+ license = "lppl1.3c",
+ summary = "Mark vertical rules in margin of text",
+ ctanPath = "/macros/latex/contrib"..module,
+ repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
+ bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
+ uploader = "LaTeX Project",
+ email = "latex-team@latex-project.org",
+ update = true ,
+ announcement = announce[version],
+ description  = [[
+   This package is an extension to lineno, replacing that
+   package's line numbers with bars to the left or right
+   of the text.
+ ]]
+}
 
---[=================[--
-     CUSTOMISATION
---]=================]--
-
-today = os.date("%Y/%m/%d")
-if pkgdate ~= today then
-  print("Package date is not today:"..
-        "\nPkg date: "..pkgdate..
-        "\nToday:    "..today)
-end
-
--- require("l3build-wspr.lua")
-
---[===========[--
-     TAGGING
---]===========]--
-
-status_bool = false
-
-function check_status()
-  if status_bool then
-    return true
-  end
-
-  local handle = io.popen('git status --porcelain --untracked-files=no')
-  local gitstatus = string.gsub(handle:read("*a"),'%s*$','')
-  handle:close()
-  if gitstatus=="" then
-    print("Checking git status: clean")
-    status_bool = true
-    return status_bool
-  else
-    print("ABORTING, git status is not clean:")
-    print(gitstatus)
-    status_bool = false
-    return status_bool
-  end
-end
-
-function tag_hook(tagname)
-  if check_status() then
-    os.execute('git commit -a -m "Step release tag"')
-    os.execute('git tag -a -m "" ' .. gittag)
-  end
-end
-
-
-function update_tag(file,content,tagname,tagdate)
-  if content==nil then
-    print("content should not be nil!")
-  end
-
-  if not(check_status()) then
-    return content
-  end
-
-  if string.match(file, "%.sty$") then
-    local findpattern = "%d%d%d%d/%d%d/%d%d%sv%d.%d%S%s"
-    local foundtag = content:match(findpattern)
-    print("Old package date/version: " .. foundtag)
-    local newtag = pkgdate .. " v" .. version .. " "
-    print("Replaced with:            " .. newtag)
-    local newcontent = content:gsub(findpattern,newtag)
-    return newcontent
-  end
-  return content
+if options["target"] == "upload" then
+  uname=shell('git config --get user.name')
+  uploadconfig.note="Uploaded by " .. uname
 end
