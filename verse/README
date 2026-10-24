@@ -3,8 +3,14 @@ The VERSE package
 
     verse provides some aids for typesetting simple verse (poems).
 
+Changes in version 2.5b (2026-10-24)
+- Set level in poemtitle instance (gh/96)
+
+Changes in version 2.5a (2026-09-30)
+- Fix definition of \@vsptitle (gh/50)
+
 Changes in version 2.5 (2026-08-08)
-More support for LaTeX tagging
+- More support for LaTeX tagging
 
 Changes in version 2.4b (2014/05/10)
 - Documentation updates
