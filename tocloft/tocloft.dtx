@@ -1758,6 +1758,7 @@ Consider installing the current version of tocbibind.}}
     }
 %    \end{macrocode}
 % New code for the next release:
+% \changes{v3.0d}{2026-10-30}{replaced deprecated final-code key by placement-end-code}
 %    \begin{macrocode}
     {
       \DeclareInstance{headformat}{cftchapter}{display}
@@ -1775,7 +1776,7 @@ Consider installing the current version of tocbibind.}}
             unnumbered,
             after-penalty-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
             after-vspace=\UseName{cftafter#2titleskip},
-            final-code=\@cftpagestyle\@afterheading,
+            placement-end-code=\@cftpagestyle\@afterheading,
             heading-decls=\UseName{cft#2titlefont},
             headformat-instance=cftchapter,
             title-format      = ##1\UseName{cftafter\cft@listname title},
@@ -1798,7 +1799,7 @@ Consider installing the current version of tocbibind.}}
               unnumbered,
               before-vspace=\dimeval{\UseName{cftbefore#2titleskip}-\topskip},
               after-vspace=\UseName{cftafter#2titleskip},
-              final-code=\@cftpagestyle\@afterheading,
+              placement-end-code=\@cftpagestyle\@afterheading,
               heading-decls=\UseName{cft#2titlefont},
               headformat-instance=cftsection,
               title-format      = ##1\UseName{cftafter\cft@listname title},
