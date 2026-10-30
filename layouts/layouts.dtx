@@ -106,6 +106,7 @@
 % \def\fileversion{v2.6c} \def\filedate{2004/10/25}
 % \def\fileversion{v2.6d} \def\filedate{2009/09/02}
 % \def\fileversion{v2.6e} \def\filedate{2026/10/17}
+% \def\fileversion{v2.6f} \def\filedate{2026/10/23}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -180,10 +181,11 @@
 % \changes{v2.6c}{2004/10/25}{Privatised the \cs{*inch}, etc., macros}
 % \changes{v2.6e}{2026/10/17}{Tag code and user documentation; new maintainer (LaTeX Project)}
 % \changes{v2.6e}{2026/10/17}{Add alt text to picture environments}
+% \changes{v2.6f}{2026/10/23}{Add \cs{marginparwidth} to \cs{pagevalues} (gh/1)}
 %    \begin{macrocode}
 %<*lays>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{layouts}[2026/10/17 v2.6e graphical depiction of document elements]
+\ProvidesPackage{layouts}[2026/10/23 v2.6f graphical depiction of document elements]
 
 %    \end{macrocode}
 %
@@ -1580,11 +1582,13 @@
   \l@ycmd{textheight}     = \l@yval{\textheight}     \\
   \l@ycmd{textwidth}      = \l@yval{\textwidth}      &
   \l@ycmd{footskip}       = \l@yval{\footskip}       \\
-  \l@ycmd{marginparsep}   = \l@yval{\marginparsep}   &
-  \l@ycmd{marginparpush}  = \l@yval{\marginparpush}  \\
   \l@ycmd{columnsep}      = \l@yval{\columnsep}      &
   \l@ycmd{columnseprule}  = \l@yval{\columnseprule}  \\
-  1em = \l@yval{\l@yonem}  & 1ex = \l@yval{\l@yonex} \\
+  \l@ycmd{marginparsep}   = \l@yval{\marginparsep}   &
+  \l@ycmd{marginparpush}  = \l@yval{\marginparpush}  \\
+  1em = \l@yval{\l@yonem}                            &
+  \l@ycmd{marginparwidth} = \l@yval{\marginparwidth} \\
+  1ex = \l@yval{\l@yonex}                            \\
   \end{tabular}
   \endgroup
 %%  \end{center}
