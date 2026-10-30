@@ -116,6 +116,7 @@
 % \changes{v2.4c}{2024/02/11}{Avoid clash with tagging}
 % \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
 % \changes{v2.5a}{2026/09/30}{Fix definition of \cs{@vsptitle} (gh/50)}
+% \changes{v2.5b}{2026/09/30}{Set level in poemtitle instance (gh/96)}
 %
 % \def\dtxfile{verse.dtx}
 % ^^A \def\fileversion{v1.0}
@@ -137,6 +138,7 @@
 % \def\fileversion{v2.4c} \def\filedate{2024/02/12}
 % \def\fileversion{v2.5} \def\filedate{2026/08/08}
 % \def\fileversion{v2.5a} \def\filedate{2026/09/30}
+% \def\fileversion{v2.5b} \def\filedate{2026/10/24}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\file}[1]{\texttt {#1}}            ^^A typeset a file
@@ -938,7 +940,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{verse}[2026-09-30  v2.5a verse typesetting]
+\ProvidesPackage{verse}[2026-10-24 v2.5b verse typesetting]
 %    \end{macrocode}
 %
 % For reference, here is the original definition of the |verse| environment
@@ -1660,12 +1662,14 @@
 % is done by |\@vsptitle| (plain) or |\@vssptitle| (starred).
 % If tagging is enabled, we set up a heading instance and use that.
 % \changes{v2.5}{2026/08/08}{Added tagging support for \cs{poemtitle}}
+% \changes{v2.5b}{2026/09/30}{Set level in poemtitle instance (gh/96)}
 %    \begin{macrocode}
 \IfDocumentMetadataTF
   {
     \DeclareInstance{heading}{poemtitle}{display}
       {
         , name = poemtitle
+        , level = \csname toclevel@\poemtoc\endcsname
         , placement = normal
         , before-vspace = \beforepoemtitleskip
         , after-vspace = \afterpoemtitleskip
