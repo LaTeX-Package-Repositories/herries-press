@@ -106,8 +106,8 @@ LaTeX template Info: Declaring instance 'chapter' of type headformat on line ...
 [7] [8
 ] [9]<<latex-list-css.html>><<latex-align-css.html>> (anonchap-01.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~28 structure objects
-(tagpdf)             with ~32 'MC' leaf nodes.
+(tagpdf)             Writing out ~27 structure objects
+(tagpdf)             with ~41 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

@@ -17,9 +17,10 @@
 % v1.1a - New maintainer (Will Robertson)
 % v1.2  - Add support for tagged PDF (copied from tocbibind)
 % v1.2b - Add support for new heading templates
+% v1.2c - Replace deprecated template keys
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{anonchap}[2026/09/30 v1.2b typeset chapter like section]
+\ProvidesPackage{anonchap}[2026/10/31 v1.2c typeset chapter like section]
 
 \IfDocumentMetadataTF
   {%
@@ -32,9 +33,9 @@
             \DeclareInstanceCopy{headformat}{chapter-orig}{chapter}%
           }%
           \EditInstance{heading}{chapter}{%
-             prefix = #1
+             text = #1
             ,headformat-instance=chapter
-            ,prefix-decls=\Huge
+            ,text-decls=\Huge
             ,number-decls=\Huge
             ,number-format=\thechapter\simplechapterdelim
           }%
