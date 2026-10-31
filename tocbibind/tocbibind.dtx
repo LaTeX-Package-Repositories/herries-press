@@ -126,6 +126,7 @@
 % \def\fileversion{v1.5k} \def\filedate{2010/10/13}
 % \def\fileversion{v1.5l} \def\filedate{2026/06/01}
 % \def\fileversion{v1.5m} \def\filedate{2026/10/01}
+% \def\fileversion{v1.5n} \def\filedate{2026/10/31}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -469,7 +470,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tocbibind}[2026/10/01 v1.5m extra ToC listings]
+\ProvidesPackage{tocbibind}[2026/10/31 v1.5n extra ToC listings]
 %    \end{macrocode}
 %
 % \begin{macro}[int]{\PRWPackageNote}
@@ -1114,6 +1115,7 @@
 % is needed.
 % \changes{v1.5l}{2026/06/01}{Support heading templates with \cs{DocumentMetadata}}
 % \changes{v1.5m}{2026/10/01}{Fix template key names for new format, gh/72}
+% \changes{v1.5n}{2026/10/31}{Replace deprecated template key names}
 %    \begin{macrocode}
 \IfDocumentMetadataTF
   {
@@ -1132,9 +1134,9 @@
 %    use our own instance for \texttt{headformat-instance}.
 %    \begin{macrocode}
           \EditInstance{heading}{chapter}{%
-             prefix = #1
+             text = #1
             ,headformat-instance=chapter
-            ,prefix-decls=\Huge
+            ,text-decls=\Huge
             ,number-decls=\Huge
             ,number-format=\thechapter\simplechapterdelim
           }%
