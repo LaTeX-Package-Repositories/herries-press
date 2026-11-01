@@ -1,6 +1,6 @@
 # The TOCBIBIND package
 
-Version: 2026-06-01 v1.5l
+Version: 2026-10-31 v1.5n
 
 The tocbibind package can be used to add the ToC and/or bibliography
 and/or the index etc., to the Table of Contents listing.

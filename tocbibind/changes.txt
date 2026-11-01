@@ -1,10 +1,13 @@
 Change History
 
-Version 1.5m (2016/10/01)
+Version 1.5n (2026/10/31)
+- Replace deprecated template key names
+
+Version 1.5m (2026/10/01)
 -  Fix template key names for upcoming format release,
    https://github.com/LaTeX-Package-Repositories/herries-press/issues/72
 
-Version 1.5l (2016/06/01)
+Version 1.5l (2026/06/01)
 -  Add support for headings templates when \DocumentMetadata is used,
    https://github.com/latex3/tagging-project/issues/1338
 

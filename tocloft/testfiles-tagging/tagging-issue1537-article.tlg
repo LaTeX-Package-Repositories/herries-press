@@ -14,16 +14,17 @@ TEST 1: Show PDF Tags
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.007"
        title="Contents"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>Contents
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.008"
        title="toc"
@@ -69,18 +70,19 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.016"
+      rolemaps-to="Sect"
       referenced-as="1"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.017"
        title="List of Figures"
        rolemaps-to="H1"
       >
      <?MarkedContent page="1" ?>List of Figures
-    </section>
+    </section-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
        id="ID.018"
        title="lof"
@@ -109,38 +111,40 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   </section>
+   <section xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.023"
+      rolemaps-to="Sect"
      >
-    <section xmlns="https://www.latex-project.org/ns/dflt"
+    <section-heading xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.024"
        title="Body"
        rolemaps-to="H1"
+       referenced-as="2"
       >
-     <section-number xmlns="https://www.latex-project.org/ns/dflt"
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.025"
-        rolemaps-to="Span"
-        referenced-as="2"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="1" ?>1 
-     </section-number>
+      <?MarkedContent page="1" ?>1
+     </heading-number>
+     <?MarkedContent page="1" ?>  
      <?MarkedContent page="1" ?>Body
-    </section>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+    </section-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.026"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.027"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Placeholder.
-     </text>
-    </text-unit>
-   </Sect>
+     </text-block>
+    </semantic-para>
+   </section>
    <figures xmlns="https://www.latex-project.org/ns/dflt"
       id="ID.004"
       rolemaps-to="Sect"
@@ -158,14 +162,14 @@ TEST 1: Show PDF Tags
         >
        <?MarkedContent page="1" ?>Figure 1: 
       </Lbl>
-      <text xmlns="https://www.latex-project.org/ns/dflt"
+      <text-block xmlns="https://www.latex-project.org/ns/dflt"
          id="ID.031"
          xmlns:Layout="http://iso.org/pdf/ssn/Layout"
          Layout:TextAlign="Justify"
          rolemaps-to="P"
         >
        <?MarkedContent page="1" ?>x
-      </text>
+      </text-block>
      </Caption>
     </float>
    </figures>
@@ -181,8 +185,9 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -261,15 +266,18 @@ Completed box being shipped out [1]
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0 plus 1.0fil
+.....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
 .....\hbox(0.0+0.0)x0.0, direction TLT
-......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
-........\pdfdest name{section*.1} xyz
-........\pdfdest name{section*.1} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
+.........\pdfdest name{section*.1} xyz
+.........\pdfdest name{section*.1} xyz
+.........\penalty 10000
+.......\kern0.0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/24.88 C
@@ -421,17 +429,20 @@ Completed box being shipped out [1]
 ......\localrightbox=null
 .....\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0 plus 1.0fil
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
 .....\hbox(0.0+0.0)x0.0, direction TLT
-......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
-........\pdfliteral page <lua data reference ...>
-........\pdfliteral page <lua data reference ...>
-........\pdfdest name{section*.2} xyz
-........\pdfdest name{section*.2} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -30.0, direction TLT
+.........\pdfdest name{section*.2} xyz
+.........\pdfdest name{section*.2} xyz
+.........\penalty 10000
+.......\kern0.0
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/24.88 L
@@ -523,26 +534,35 @@ Completed box being shipped out [1]
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 8.00641
-....\hbox(9.99359+2.88)x345.0, glue set 284.86566fil, direction TLT
+....\hbox(9.99359+2.88)x322.49281, glue set 284.86566fil, shifted 22.50719, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\hbox(9.4464+0.0)x22.50719, direction TLT
-......\penalty 10000
-......\hbox(0.0+0.0)x0.0, direction TLT
-.......\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
-........\pdfliteral page <lua data reference ...>
-........\pdfliteral page <lua data reference ...>
-........\pdfdest name{section.1} xyz
-........\pdfdest name{section.1} xyz
-........\penalty 10000
-......\kern0.0
-......\glue 0.0
-......\TU/lmr/bx/n/14.4 1
-......\TU/lmr/bx/n/14.4  
-......\glue 9.0
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\write1{\new@label@record{heading*.2}{{pagenum}{\__property_code_pagenum: }}}
+.....\glue 0.0
+.....\hbox(9.4464+0.0)x0.0, glue set - 22.50719fil, direction TLT
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(9.4464+0.0)x22.50719, direction TLT
+.......\penalty 10000
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -18.0, direction TLT
+.........\pdfdest name{section.1} xyz
+.........\pdfdest name{section.1} xyz
+.........\penalty 10000
+.......\kern0.0
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\TU/lmr/bx/n/14.4 1
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\TU/lmr/bx/n/14.4  
+.......\glue 9.0
+.......\TU/lmr/bx/n/14.4  
+.......\glue -5.4
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\TU/lmr/bx/n/14.4 B
@@ -615,7 +635,7 @@ Completed box being shipped out [1]
 <<latex-list-css.html>><<latex-align-css.html>> (tagging-issue1537-article.aux)
 Package tagpdf Info: Finalizing the tagging structure:
 (tagpdf)             Writing out ~31 structure objects
-(tagpdf)             with ~28 'MC' leaf nodes.
+(tagpdf)             with ~29 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree
