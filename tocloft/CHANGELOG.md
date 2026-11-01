@@ -4,7 +4,7 @@ All notable changes to the `tocloft` package will be documented in this file.
 ## [2026-10-30]
 Version 3.0d
 ### Changed
- - replace deprecated final-code key
+ - replaced deprecated final-code key by placement-end-code
 
 
 ## [2026-09-12]
