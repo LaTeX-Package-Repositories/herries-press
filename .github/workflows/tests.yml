@@ -35,5 +35,5 @@ jobs:
         run: |
           set +e
           FINAL_STATUS=0
-          for i in */build.lua; do (cd $(dirname $i); l3build ...); STATUS=$?; if [ $FINAL_STATUS = 0 ]; then FINAL_STATUS=$STATUS; fi; done
+          for i in */build.lua; do (cd $(dirname $i); l3build check -S ;); STATUS=$?; if [ $FINAL_STATUS = 0 ]; then FINAL_STATUS=$STATUS; fi; done
           exit $FINAL_STATUS
