@@ -32,7 +32,7 @@ jobs:
 
       - name: checks
         # run all the package tests each time for now
-        run: >
+        run: |
           set +e
           FINAL_STATUS=0
           for i in */build.lua; do (cd $(dirname $i); l3build ...); STATUS=$?; if [ $FINAL_STATUS = 0 ]; then FINAL_STATUS=$STATUS; fi; done
