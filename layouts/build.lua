@@ -4,7 +4,7 @@
 
 module = "layouts"
 
-version = "2026-10-17 v2.6e"
+version = "2026-10-23 v2.6f"
 
 textfiles ={"README"}
 
@@ -23,6 +23,9 @@ announce["2026-10-17 v2.6e"] = [[
 - Tag code and user documentation
 - New maintainer (LaTeX Project)
 - Add alt text to picture environments
+]]
+announce["2026-10-23 v2.6f"] = [[
+- Add \\marginparwidth to \\pagevalues (gh/1)
 ]]
 
 uploadconfig = {

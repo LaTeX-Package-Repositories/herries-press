@@ -89,6 +89,7 @@
 % \def\fileversion{v2.6c} \def\filedate{2004/10/25}
 % \def\fileversion{v2.6d} \def\filedate{2009/09/02}
 % \def\fileversion{v2.6e} \def\filedate{2026/10/17}
+% \def\fileversion{v2.6f} \def\filedate{2026/10/23}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -163,10 +164,11 @@
 % \changes{v2.6c}{2004/10/25}{Privatised the \cs{*inch}, etc., macros}
 % \changes{v2.6e}{2026/10/17}{Tag code and user documentation; new maintainer (LaTeX Project)}
 % \changes{v2.6e}{2026/10/17}{Add alt text to picture environments}
+% \changes{v2.6f}{2026/10/23}{Add \cs{marginparwidth} to \cs{pagevalues} (gh/1)}
 %    \begin{macrocode}
 %<*lays>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{layouts}[2026/10/17 v2.6e graphical depiction of document elements]
+\ProvidesPackage{layouts}[2026/10/23 v2.6f graphical depiction of document elements]
 
 %    \end{macrocode}
 %
@@ -1508,16 +1510,17 @@
       \else
         \l@ycmd{evensidemargin} = \number\l@youthpiv pt
       \fi
-      & \l@ycmd{topmargin}   = \number\l@youtvpii pt    \\
-      \l@ycmd{headheight}    = \number\l@youtvpiii pt    &
-      \l@ycmd{headsep}       = \number\l@youtvpiv pt        \\
-      \l@ycmd{textheight}    = \number\l@youtvpv pt      &
-      \l@ycmd{textwidth}     = \number\l@youthpii pt      \\
-      \l@ycmd{footskip}      = \number\l@youtvpvi pt       &
-      \l@ycmd{marginparsep}  = \number\l@youthpvi pt   \\
-      \l@ycmd{marginparpush} = \number\l@youtvpvii pt &
-      \l@ycmd{columnsep}     = \number\l@youthpiii pt     \\
-      \l@ycmd{columnseprule} = \the\l@youtlinethick & \\
+      & \l@ycmd{topmargin}    = \number\l@youtvpii pt    \\
+      \l@ycmd{headheight}     = \number\l@youtvpiii pt    &
+      \l@ycmd{headsep}        = \number\l@youtvpiv pt        \\
+      \l@ycmd{textheight}     = \number\l@youtvpv pt      &
+      \l@ycmd{textwidth}      = \number\l@youthpii pt      \\
+      \l@ycmd{footskip}       = \number\l@youtvpvi pt       &
+      \l@ycmd{marginparsep}   = \number\l@youthpvi pt   \\
+      \l@ycmd{marginparpush}  = \number\l@youtvpvii pt &
+      \l@ycmd{marginparwidth} = \number\l@youthpvii pt \\
+      \l@ycmd{columnsep}      = \number\l@youthpiii pt &
+      \l@ycmd{columnseprule}  = \the\l@youtlinethick \\
       \end{tabular}
       \end{ttfamily}\end{footnotesize}
       \end{center}
@@ -1563,11 +1566,13 @@
   \l@ycmd{textheight}     = \l@yval{\textheight}     \\
   \l@ycmd{textwidth}      = \l@yval{\textwidth}      &
   \l@ycmd{footskip}       = \l@yval{\footskip}       \\
-  \l@ycmd{marginparsep}   = \l@yval{\marginparsep}   &
-  \l@ycmd{marginparpush}  = \l@yval{\marginparpush}  \\
   \l@ycmd{columnsep}      = \l@yval{\columnsep}      &
   \l@ycmd{columnseprule}  = \l@yval{\columnseprule}  \\
-  1em = \l@yval{\l@yonem}  & 1ex = \l@yval{\l@yonex} \\
+  1em = \l@yval{\l@yonem}                            &
+  1ex = \l@yval{\l@yonex}                            \\
+  \l@ycmd{marginparsep}   = \l@yval{\marginparsep}   &
+  \l@ycmd{marginparpush}  = \l@yval{\marginparpush}  \\
+  \l@ycmd{marginparwidth} = \l@yval{\marginparwidth} \\
   \end{tabular}
   \endgroup
 %%  \end{center}
@@ -2139,23 +2144,24 @@
          Lengths are to the nearest pt. \\
       \begin{ttfamily}
       \begin{tabular}{l@{\hspace{20pt}}l}
-      \l@ycmd{stockheight}   = \number\l@youtvdo pt    &
-      \l@ycmd{stockwidth}    = \number\l@youthdo pt     \\
-      \l@ycmd{pageheight}    = \number\l@youtph pt      &
-      \l@ycmd{pagewidth}     = \number\l@youtpw pt       \\
-      \l@ycmd{textheight}    = \number\l@youtvpv pt      &
-      \l@ycmd{textwidth}     = \number\l@youthpii pt      \\
-      \l@ycmd{trimtop}       = \number\l@youtvpi pt         &
-      \l@ycmd{trimedge}      = \number\l@youthpi pt        \\
-      \l@ycmd{uppermargin}   = \number\l@youtvpii pt    &
-      \l@ycmd{spinemargin}   = \number\l@youthpv pt     \\
-      \l@ycmd{headheight}    = \number\l@youtvpiii pt    &
-      \l@ycmd{headsep}       = \number\l@youtvpiv pt        \\
-      \l@ycmd{footskip}      = \number\l@youtvpvi pt       &
-      \l@ycmd{marginparsep}  = \number\l@youthpvi pt   \\
-      \l@ycmd{marginparpush} = \number\l@youtvpvii pt &
-      \l@ycmd{columnsep}     = \number\l@youthpiii pt     \\
-      \l@ycmd{columnseprule} = \the\l@youtlinethick  &  \\
+      \l@ycmd{stockheight}    = \number\l@youtvdo pt    &
+      \l@ycmd{stockwidth}     = \number\l@youthdo pt     \\
+      \l@ycmd{pageheight}     = \number\l@youtph pt      &
+      \l@ycmd{pagewidth}      = \number\l@youtpw pt       \\
+      \l@ycmd{textheight}     = \number\l@youtvpv pt      &
+      \l@ycmd{textwidth}      = \number\l@youthpii pt      \\
+      \l@ycmd{trimtop}        = \number\l@youtvpi pt         &
+      \l@ycmd{trimedge}       = \number\l@youthpi pt        \\
+      \l@ycmd{uppermargin}    = \number\l@youtvpii pt    &
+      \l@ycmd{spinemargin}    = \number\l@youthpv pt     \\
+      \l@ycmd{headheight}     = \number\l@youtvpiii pt    &
+      \l@ycmd{headsep}        = \number\l@youtvpiv pt        \\
+      \l@ycmd{footskip}       = \number\l@youtvpvi pt       &
+      \l@ycmd{marginparsep}   = \number\l@youthpvi pt   \\
+      \l@ycmd{marginparpush}  = \number\l@youtvpvii pt &
+      \l@ycmd{marginparwidth} = \number\l@youthpvii pt \\
+      \l@ycmd{columnsep}      = \number\l@youthpiii pt  &
+      \l@ycmd{columnseprule}  = \the\l@youtlinethick   \\
       \end{tabular}
       \end{ttfamily}\end{footnotesize}
       \end{center}
@@ -2205,8 +2211,9 @@
   \l@ycmd{footskip}       = \l@yval{\footskip}       &
   \l@ycmd{marginparsep}   = \l@yval{\marginparsep}   \\
   \l@ycmd{marginparpush}  = \l@yval{\marginparpush}  &
-  \l@ycmd{columnsep}      = \l@yval{\columnsep}      \\
-  \l@ycmd{columnseprule}  = \l@yval{\columnseprule}  & \\
+  \l@ycmd{marginparwidth} = \l@yval{\marginparwidth}  \\
+  \l@ycmd{columnsep}      = \l@yval{\columnsep}      &
+  \l@ycmd{columnseprule}  = \l@yval{\columnseprule}  \\
   1em = \l@yval{\l@yonem}  & 1ex = \l@yval{\l@yonex} \\
   \end{tabular}
   \endgroup
