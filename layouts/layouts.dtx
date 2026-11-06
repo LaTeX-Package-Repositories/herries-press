@@ -876,21 +876,20 @@
 % \end{macro}
 % \end{macro}
 %
-% \begin{macro}[int]{\l@ytempdima}
 % \begin{macro}[no-user-doc]{\prntlen}
-% |\l@ytempdima| is a scratch length. |\prntlen{|\meta{length}|}|
+% |\prntlen{|\meta{length}|}|
 % prints the value of \meta{length} in the units set by |\printinunitsof|.
 % \changes{v2.5}{2001/10/21}{Added \cs{l@ytempdima} and \cs{prntlen}}
+% \changes{v2.6f}{2026/11/06}{Improve printed length accuracy, gh/31}
 %    \begin{macrocode}
-\newlength{\l@ytempdima}
-\newcommand{\prntlen}[1]{%
-  \def\l@yta{pt}\ifx\l@yta\l@yunits\the#1\else
-    \def\l@yta{PT}%
-    \l@ytempdima=\l@yunitperpt #1\relax\strip@pt\l@ytempdima
-      \ifx\l@yta\l@yunits pt\else\l@yunits\fi\fi}
+\ExplSyntaxOn
+\NewDocumentCommand{\prntlen}{m}
+  {
+    \dim_to_decimal_in_unit:nn { #1 } { 1\l@yunits } \, \l@yunits
+  }
+\ExplSyntaxOff
 
 %    \end{macrocode}
-% \end{macro}
 % \end{macro}
 %
 % \begin{macro}[int]{\l@yval}
