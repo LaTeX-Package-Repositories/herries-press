@@ -12,8 +12,9 @@ the layout parameters.
 ______________
 Change History
 
-Version 2.6f (2026/10/23)
+Version 2.6f (2026/11/06)
 - Add \marginparwidth to \pagevalues (gh/1)
+- Improve printed length accuracy (gh/31)
 
 Version v2.6e (2026/10/17)
 - Add alt text to picture environments
