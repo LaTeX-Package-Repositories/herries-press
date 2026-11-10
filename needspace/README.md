@@ -2,7 +2,7 @@
 The NEEDSPACE package
 =====================
 
-Provides the \needspace and \Needspace macros for
+Provides the `\needspace` and `\Needspace` macros for
 requesting a certain amount of space on the current
 page for the following material.
 
@@ -21,7 +21,7 @@ except needspace.ins itself (and the PDF file, obviously).
 CHANGE HISTORY
 --------------
 
-See changes.txt
+See changes.txt.
 
 COPYRIGHT AND LICENSING
 -----------------------
