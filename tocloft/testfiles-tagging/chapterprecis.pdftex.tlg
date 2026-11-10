@@ -11,7 +11,9 @@ Completed box being shipped out [1]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
 ...\kern -72.26999
 ...\hbox(0.0+0.0)x0.0
+....\pdfrunninglinkoff
 ....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfrunninglinkon
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue 22.0
 .\vbox(605.36243+0.0)x345.0, shifted 35.0
@@ -29,13 +31,16 @@ Completed box being shipped out [1]
 ...\pdfrunninglinkon
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 396.00244fil
+..\vbox(550.0+0.0)x345.0, glue set 406.00244fil
 ...\hbox(0.0+0.0)x0.0
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
 ...\penalty 10000
-...\glue 40.0
+...\glue 30.0
+...\glue 0.0
+...\penalty 10000
+...\glue 0.0
 ...\glue 0.0
 ...\special{}
 ...\penalty 10000
@@ -43,10 +48,11 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 12.8301
 ...\hbox(17.1699+0.0)x345.0, glue set 243.36932fil
-....\write1{\new@label@record{mcid-1}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{1}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/Span <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x0.0
 ....\glue 0.0
+....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
+....\write1{\new@label@record{mcid-1}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{1}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/chapter-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/24.88 C
 ....\T1/cmr/bx/n/24.88 o
 ....\T1/cmr/bx/n/24.88 n
@@ -61,14 +67,14 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,1,7,Span,,,}
-...\marks4{b+,1,7,Span,,,}
-...\marks4{e-,1,7,}
-...\marks4{e+,1,7,}
+...\marks4{b-,1,6,chapter-heading,,,}
+...\marks4{b+,1,6,chapter-heading,,,}
+...\marks4{e-,1,6,}
+...\marks4{e+,1,6,}
 ...\marks1{\__mark_value:nn {1}{\MakeUppercase    []{Contents}}}
 ...\marks2{\__mark_value:nn {2}{}}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue 9.99756 plus 1.0
@@ -85,21 +91,21 @@ Completed box being shipped out [1]
 ....\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(6.48453+0.0)x14.99634, glue set 9.24774fil
 .....\pdfliteral page{EMC}
-.....\marks4{e-,2,10,}
-.....\marks4{e+,2,10,}
+.....\marks4{e-,2,9,}
+.....\marks4{e+,2,9,}
 .....\write1{\new@label@record{mcid-3}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{3}{tagmcid}{\__property_code_tagmcid: }}}
 .....\pdfliteral shipout page{/Lbl <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-.....\marks4{b-,3,11,Lbl,,,}
-.....\marks4{b+,3,11,Lbl,,,}
+.....\marks4{b-,3,10,Lbl,,,}
+.....\marks4{b+,3,10,Lbl,,,}
 .....\T1/cmr/bx/n/10 1
 .....\glue 0.0 plus 1.0fil
 .....\pdfliteral page{EMC}
-.....\marks4{e-,3,11,}
-.....\marks4{e+,3,11,}
+.....\marks4{e-,3,10,}
+.....\marks4{e+,3,10,}
 .....\write1{\new@label@record{mcid-4}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{4}{tagmcid}{\__property_code_tagmcid: }}}
 .....\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-.....\marks4{b-,4,10,Reference,,,}
-.....\marks4{b+,4,10,Reference,,,}
+.....\marks4{b-,4,9,Reference,,,}
+.....\marks4{b+,4,9,Reference,,,}
 ....\T1/cmr/bx/n/10 F
 ....\T1/cmr/bx/n/10 i
 ....\T1/cmr/bx/n/10 r
@@ -140,22 +146,22 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) -25.49379
 ....\glue(\rightskip) 25.49379
-...\marks4{b-,2,10,Reference,,,}
-...\marks4{b+,2,10,Reference,,,}
-...\marks4{e-,4,10,}
-...\marks4{e+,4,10,}
+...\marks4{b-,2,9,Reference,,,}
+...\marks4{b+,2,9,Reference,,,}
+...\marks4{e-,4,9,}
+...\marks4{e+,4,9,}
 ...\marks4{b-,5,-1,}
 ...\marks4{b+,5,-1,}
-...\marks4{e-,5,10,}
-...\marks4{e+,5,10,}
-...\marks4{b-,6,10,Reference,,,}
-...\marks4{b+,6,10,Reference,,,}
-...\marks4{e-,6,10,}
-...\marks4{e+,6,10,}
+...\marks4{e-,5,9,}
+...\marks4{e+,5,9,}
+...\marks4{b-,6,9,Reference,,,}
+...\marks4{b+,6,9,Reference,,,}
+...\marks4{e-,6,9,}
+...\marks4{e+,6,9,}
 ...\write1{\new@label@record{mcid-7}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{7}{tagmcid}{\__property_code_tagmcid: }}}
 ...\pdfliteral shipout page{/Reference <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-...\marks4{b-,7,13,Reference,,,}
-...\marks4{b+,7,13,Reference,,,}
+...\marks4{b-,7,12,Reference,,,}
+...\marks4{b+,7,12,Reference,,,}
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 3.16882
@@ -223,8 +229,8 @@ Completed box being shipped out [1]
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 25.49379
 ...\pdfliteral page{EMC}
-...\marks4{e-,7,13,}
-...\marks4{e+,7,13,}
+...\marks4{e-,7,12,}
+...\marks4{e+,7,12,}
 ...\kern -1.94397
 ...\hbox(0.0+1.94397)x0.0
 ...\glue -1.94397
@@ -253,7 +259,9 @@ Completed box being shipped out [2]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
 ...\kern -72.26999
 ...\hbox(0.0+0.0)x0.0
+....\pdfrunninglinkoff
 ....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfrunninglinkon
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue 22.0
 .\vbox(605.36243+0.0)x345.0, shifted 89.0
@@ -311,37 +319,32 @@ TEST 1: Show PDF Tags
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <chapter xmlns="https://www.latex-project.org/ns/book"
       id="ID.005"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
        id="ID.006"
        title="Contents"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.007"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-       >
-      <?MarkedContent page="1" ?>Contents
-     </Span>
-    </chapter>
+     <?MarkedContent page="1" ?>Contents
+    </chapter-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
-       id="ID.008"
+       id="ID.007"
        title="toc"
       >
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.009"
+        id="ID.008"
         title="First chapter"
        >
        <?References objects="1" ?>
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.010"
+         id="ID.009"
         >
        <?MarkedContent page="1" ?>
        <Lbl xmlns="http://iso.org/pdf2/ssn"
-          id="ID.011"
+          id="ID.010"
          >
         <?MarkedContent page="1" ?>1
        </Lbl>
@@ -350,64 +353,59 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.012"
+        id="ID.011"
        >
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.013"
+         id="ID.012"
         >
        <?MarkedContent page="1" ?>Our hero is introduced; family tree; early days.
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.014"
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.013"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.015"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.014"
        title="First chapter"
        rolemaps-to="H1"
        referenced-as="1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.016"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="3" ?>Chapter 
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.015"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="3" ?>Chapter 1
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.017"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="3" ?>First chapter
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.018"
+      <?MarkedContent page="3" ?>1
+     </heading-number>
+     <?MarkedContent page="3" ?>First chapter
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.016"
        rolemaps-to="Part"
       >
      <quote xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.019"
+        id="ID.017"
         rolemaps-to="BlockQuote"
        >
-      <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.020"
+      <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.018"
          rolemaps-to="Part"
         >
-       <text xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.021"
+       <text-block xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.019"
           xmlns:Layout="http://iso.org/pdf/ssn/Layout"
           Layout:TextAlign="Justify"
           rolemaps-to="P"
          >
         <?MarkedContent page="3" ?>Our hero is introduced; family tree; early days.
-       </text>
-      </text-unit>
+       </text-block>
+      </semantic-para>
      </quote>
-    </text-unit>
-   </Sect>
+    </semantic-para>
+   </chapter>
   </Document>
  </StructTreeRoot>
 </PDF>
@@ -420,7 +418,9 @@ Completed box being shipped out [3]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
 ...\kern -72.26999
 ...\hbox(0.0+0.0)x0.0
+....\pdfrunninglinkoff
 ....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfrunninglinkon
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue 22.0
 .\vbox(605.36243+0.0)x345.0, shifted 35.0
@@ -428,13 +428,13 @@ Completed box being shipped out [3]
 ...\glue 0.0 plus 1.0fil
 ...\pdfrunninglinkoff
 ...\pdfliteral page{/Artifact BMC}
-...\marks4{b-,15,-1,}
-...\marks4{b+,15,-1,}
+...\marks4{b-,16,-1,}
+...\marks4{b+,16,-1,}
 ...\hbox(0.0+0.0)x345.0
 ....\hbox(0.0+0.0)x345.0
 ...\pdfliteral page{EMC}
-...\marks4{e-,15,14,}
-...\marks4{e+,15,14,}
+...\marks4{e-,16,13,}
+...\marks4{e+,16,13,}
 ...\pdfrunninglinkon
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
@@ -445,16 +445,20 @@ Completed box being shipped out [3]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\special{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 10.68713
 ...\hbox(14.31287+4.03178)x345.0, glue set 123.96104fil
-....\write1{\new@label@record{mcid-12}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{12}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/Span <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x0.0
 ....\glue 0.0
+....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
+....\write1{\new@label@record{mcid-12}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{12}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/chapter-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/20.74 C
 ....\T1/cmr/bx/n/20.74 h
 ....\T1/cmr/bx/n/20.74 a
@@ -464,23 +468,34 @@ Completed box being shipped out [3]
 ....\T1/cmr/bx/n/20.74 r
 ....\penalty 10000
 ....\glue 7.33878 plus 3.66937 minus 2.44624
+....\pdffakespace
+....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-13}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{13}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/heading-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/20.74 1
 ....\pdfliteral page{EMC}
+....\write1{\new@label@record{mcid-14}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{14}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/chapter-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
-...\marks4{b-,12,16,Span,,,}
-...\marks4{b+,12,16,Span,,,}
-...\marks4{e-,12,16,}
-...\marks4{e+,12,16,}
+...\marks4{b-,12,14,chapter-heading,,,}
+...\marks4{b+,12,14,chapter-heading,,,}
+...\marks4{e-,12,14,}
+...\marks4{e+,12,14,}
+...\marks4{b-,13,15,heading-number,,,}
+...\marks4{b+,13,15,heading-number,,,}
+...\marks4{e-,13,15,}
+...\marks4{e+,13,15,}
+...\marks4{b-,14,14,chapter-heading,,,}
+...\marks4{b+,14,14,chapter-heading,,,}
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.79831
 ...\hbox(17.1699+4.8366)x345.0, glue set 98.38078fil
-....\write1{\new@label@record{mcid-13}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{13}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/Span <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x0.0
 ....\T1/cmr/bx/n/24.88 F
 ....\T1/cmr/bx/n/24.88 i
@@ -496,19 +511,17 @@ Completed box being shipped out [3]
 ....\T1/cmr/bx/n/24.88 t
 ....\T1/cmr/bx/n/24.88 e
 ....\T1/cmr/bx/n/24.88 r
-....\pdfliteral page{EMC}
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
-...\marks4{b-,13,17,Span,,,}
-...\marks4{b+,13,17,Span,,,}
-...\marks4{e-,13,17,}
-...\marks4{e+,13,17,}
+...\pdfliteral page{EMC}
+...\marks4{e-,14,14,}
+...\marks4{e+,14,14,}
 ...\marks1{\__mark_value:nn {3}{\MakeUppercase    []{Chapter\ 1. \ First chapter}}}
 ...\marks2{\__mark_value:nn {4}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}First chapter}{\thepage }{target*.2}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\rule(0.0+0.0)x*
@@ -520,8 +533,8 @@ Completed box being shipped out [3]
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 0.2762
 ...\hbox(6.8872+1.94397)x295.0122, glue set 91.25671fil, shifted 24.9939
-....\write1{\new@label@record{mcid-14}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{14}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\write1{\new@label@record{mcid-15}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{15}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/m/it/10 O
 ....\T1/cmr/m/it/10 u
 ....\T1/cmr/m/it/10 r
@@ -583,10 +596,10 @@ Completed box being shipped out [3]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,14,21,text,,,}
-...\marks4{b+,14,21,text,,,}
-...\marks4{e-,14,21,}
-...\marks4{e+,14,21,}
+...\marks4{b-,15,19,text-block,,,}
+...\marks4{b+,15,19,text-block,,,}
+...\marks4{e-,15,19,}
+...\marks4{e+,15,19,}
 ...\penalty -51
 ...\glue 10.0 plus 3.0 minus 5.0
 ...\penalty 10000
@@ -598,8 +611,8 @@ Completed box being shipped out [3]
 ...\glue 0.0
 ..\pdfrunninglinkoff
 ..\pdfliteral page{/Artifact BMC}
-..\marks4{b-,16,-1,}
-..\marks4{b+,16,-1,}
+..\marks4{b-,17,-1,}
+..\marks4{b+,17,-1,}
 ..\glue(\baselineskip) 18.87984
 ..\hbox(6.4151+0.0)x345.0
 ...\hbox(6.4151+0.0)x345.0, glue set 170.00061fil
@@ -607,8 +620,8 @@ Completed box being shipped out [3]
 ....\T1/cmr/m/n/10 3
 ....\glue 0.0 plus 1.0fil
 ..\pdfliteral page{EMC}
-..\marks4{e-,16,14,}
-..\marks4{e+,16,14,}
+..\marks4{e-,17,13,}
+..\marks4{e+,17,13,}
 ..\pdfrunninglinkon
 .\kern 0.0
 .\kern -627.36243
@@ -616,8 +629,8 @@ Completed box being shipped out [3]
 .\kern 627.36243
 <<latex-list-css.html>><<latex-align-css.html>> (chapterprecis.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~21 structure objects
-(tagpdf)             with ~16 'MC' leaf nodes.
+(tagpdf)             Writing out ~19 structure objects
+(tagpdf)             with ~17 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

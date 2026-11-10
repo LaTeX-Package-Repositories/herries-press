@@ -12,9 +12,10 @@ COPYRIGHT AND LICENSING
 -----------------------
 
 Authors: Peter Wilson (Herries Press)
-Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+Maintainer: LaTeX Project
 Copyright 2000 Peter Wilson
 Copyright 2010-2018 Will Robertson
+Copyright 2026 LaTeX Project
 
 
 This work may be distributed and/or modified under the
@@ -23,7 +24,7 @@ version 1.3c of this license or (at your option) any
 later version: <https://www.latex-project.org/lppl.txt>
 
 This work has the LPPL maintenance status "maintained".
-The Current Maintainer of this work is Will Robertson.
+The Current Maintainer of this work is the LaTeX Project.
 
 This work consists of the files vertbars.tex and vertbars.sty.
 
@@ -40,4 +41,3 @@ Developmental and historical versions:
 
 Current release version:
   <https://ctan.org/pkg/vertbars>
-

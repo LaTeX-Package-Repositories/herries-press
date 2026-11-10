@@ -4,7 +4,7 @@ The tocloft package provides control over the typography of the
 Table of Contents, List of Figures, and List of Tables. You can also
 define your own kinds of 'List of ...'
 
-Version: 2026-09-12 v3.0c
+Version: 2026-10-30 v3.0d
 
 ## Copyright (C)
 *    1998-2003 Peter R. Wilson

@@ -1,7 +1,10 @@
+--[=========================[--
+   L3BUILD FILE FOR TOCBIBIND
+--]=========================]--
 
 module = "tocbibind"
 
-version = "2026-06-01 v1.5l"
+version = "2026-10-31 v1.5n"
 
 checkengines={"pdftex"}
 checkruns = 2
@@ -17,9 +20,10 @@ typesetexe="lualatex"
 -- Upload meta data
 
 announce = {}
-announce["2026-06-01 v1.5l"] = [[
-Update to support for headings templates when \DocumentMetadata is used
-https://github.com/latex3/tagging-project/issues/1338
+announce["2026-10-31 v1.5n"] = [[
+- Replace deprecated template key names
+- Fix template key names for upcoming format release,
+  https://github.com/LaTeX-Package-Repositories/herries-press/issues/72
 ]]
 
 
@@ -42,4 +46,3 @@ if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
 end
-

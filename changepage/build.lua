@@ -1,3 +1,6 @@
+--[=========================[--
+   L3BUILD FILE FOR CHANGEPAGE
+--]=========================]--
 
 module = "changepage"
 
@@ -49,4 +52,3 @@ if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
 end
-

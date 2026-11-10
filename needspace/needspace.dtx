@@ -16,7 +16,7 @@
 %% See needspace.dtx for Copyright and other information
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{needspace}[2025/03/13 v1.3e reserve vertical space]
+\ProvidesPackage{needspace}[2026/10/13 v1.3f reserve vertical space]
 
 \newcommand{\needspace}[1]{%
   \ifhmode \ifinner \@LRmoderr \else \par \fi \fi
@@ -95,19 +95,23 @@
 %% DOCUMENTATION %%
 %%%%%%%%%%%%%%%%%%%
 
-\documentclass{ltxdoc}
-\usepackage[it,medium]{titlesec}
-\usepackage[T1]{fontenc}
+\DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
+\PassOptionsToPackage{colorlinks,linktocpage}{hyperref}
+\documentclass{l3in2edoc}
+
+\usepackage{fontspec}
+\usepackage{lum-pagella}
+\setmainfont{TeX Gyre Pagella}[Numbers=OldStyle]
 \usepackage{microtype}
-\usepackage{lmodern}
-\usepackage[sc,osf]{mathpazo}
+
 \linespread{1.1}
 \frenchspacing
 
-\usepackage{fancyvrb}
+\EditInstance{heading}{section}{heading-decls=\itshape\Large}
 
-\usepackage[svgnames]{xcolor}
-\usepackage[colorlinks,linktocpage]{hyperref}
+\usepackage{fancyvrb}
+\fvset{gobble=0}
+
 \DeclareRobustCommand\pkg{\textsf}
 
 \usepackage{needspace}
@@ -179,7 +183,7 @@ work is the \LaTeX{} Project.
   \noindent
   Copyright Peter Wilson, 1996--2003 \\
   Copyright Will Robertson, 2010, 2013\\
-  Copyright LaTeX Project, 2025
+  Copyright LaTeX Project, 2025--present
 
 \clearpage
 \parindent=0pt

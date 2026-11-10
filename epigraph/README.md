@@ -7,6 +7,10 @@ are easily configurable.
 
 ## Change History
 
+Version 1.5f (2026/10/12)
+- Tag documentation
+- New maintainer (LaTeX Project)
+
 Version 1.5e (2020/01/02)
 - Try to prevent breaks after epigraphs
 - Add \epigraphnoindent to automatically suppress indentation
@@ -42,10 +46,10 @@ Changes in Version 1.1: (1998/11/29)
 ## Copyright
 
     Author: Peter Wilson, Herries Press
-    Maintainer: Will Robertson
-                will dot robertson at latex-project dot org
+    Maintainer: LaTeX Project
     Copyright 1998--2004 Peter R. Wilson
               2009--2020 Will Robertson
+              2026--present LaTeX Project
 
     This work may be distributed and/or modified under the
     conditions of the LaTeX Project Public License, either
@@ -53,7 +57,7 @@ Changes in Version 1.1: (1998/11/29)
     later version: <https://www.latex-project.org/lppl.txt>
 
     This work has the LPPL maintenance status "maintained".
-    The Current Maintainer of this work is Will Robertson.
+    The Current Maintainer of this work is the LaTeX Project.
 
 ## Manifest
 
@@ -82,8 +86,8 @@ To install the package:
 - (or `l3build install`)
 
 To process the user manual:
-- run: latex epigraph.dtx
+- run: lualatex epigraph.dtx
 - run: makeindex -s gind.ist epigraph
-- run: latex epigraph.dtx
+- run: lualatex epigraph.dtx
 - (or `l3build doc`)
 

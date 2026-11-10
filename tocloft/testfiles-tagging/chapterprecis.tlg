@@ -8,8 +8,9 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -23,12 +24,15 @@ Completed box being shipped out [1]
 ...\pdflinkstate 0
 ..\glue 18.06749
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 396.0fil, direction TLT
+..\vbox(550.0+0.0)x345.0, glue set 406.0fil, direction TLT
 ...\write-{}
 ...\glue(\topskip) 10.0
 ...\rule(0.0+0.0)x*
 ...\penalty 10000
-...\glue 40.0
+...\glue 30.0
+...\glue 0.0
+...\penalty 10000
+...\glue 0.0
 ...\glue 0.0
 ...\latelua0{}
 ...\penalty 10000
@@ -43,6 +47,7 @@ Completed box being shipped out [1]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/24.88 C
@@ -64,8 +69,8 @@ Completed box being shipped out [1]
 ...\pdfliteral page <lua data reference ...>
 ...\marks1{\__mark_value:nn {1}{\MakeUppercase    []{Contents}}}
 ...\marks2{\__mark_value:nn {2}{}}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue 10.0 plus 1.0
@@ -242,8 +247,9 @@ Completed box being shipped out [2]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -295,36 +301,31 @@ TEST 1: Show PDF Tags
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <chapter xmlns="https://www.latex-project.org/ns/book"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
        id="ID.007"
        title="Contents"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.008"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-       >
-      <?MarkedContent page="1" ?>Contents
-     </Span>
-    </chapter>
+     <?MarkedContent page="1" ?>Contents
+    </chapter-heading>
     <TOC xmlns="http://iso.org/pdf/ssn"
-       id="ID.009"
+       id="ID.008"
        title="toc"
       >
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.010"
+        id="ID.009"
         title="First chapter"
        >
        <?References objects="1" ?>
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.011"
+         id="ID.010"
         >
        <Lbl xmlns="http://iso.org/pdf2/ssn"
-          id="ID.012"
+          id="ID.011"
          >
         <?MarkedContent page="1" ?>1
        </Lbl>
@@ -333,64 +334,59 @@ TEST 1: Show PDF Tags
       </Reference>
      </TOCI>
      <TOCI xmlns="http://iso.org/pdf/ssn"
-        id="ID.013"
+        id="ID.012"
        >
       <Reference xmlns="http://iso.org/pdf/ssn"
-         id="ID.014"
+         id="ID.013"
         >
        <?MarkedContent page="1" ?>Our hero is introduced; family tree; early days.
       </Reference>
      </TOCI>
     </TOC>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.015"
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.014"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.016"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.015"
        title="First chapter"
        rolemaps-to="H1"
        referenced-as="1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.017"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="3" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.016"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="3" ?>Chapter 1
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.018"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="3" ?>First chapter
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.019"
+      <?MarkedContent page="3" ?>1
+     </heading-number>
+     <?MarkedContent page="3" ?>First chapter
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.017"
        rolemaps-to="Part"
       >
      <quote xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.020"
+        id="ID.018"
         rolemaps-to="BlockQuote"
        >
-      <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-         id="ID.021"
+      <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+         id="ID.019"
          rolemaps-to="Part"
         >
-       <text xmlns="https://www.latex-project.org/ns/dflt"
-          id="ID.022"
+       <text-block xmlns="https://www.latex-project.org/ns/dflt"
+          id="ID.020"
           xmlns:Layout="http://iso.org/pdf/ssn/Layout"
           Layout:TextAlign="Justify"
           rolemaps-to="P"
          >
         <?MarkedContent page="3" ?>Our hero is introduced; family tree; early days.
-       </text>
-      </text-unit>
+       </text-block>
+      </semantic-para>
      </quote>
-    </text-unit>
-   </Sect>
+    </semantic-para>
+   </chapter>
   </Document>
  </StructTreeRoot>
 </PDF>
@@ -402,8 +398,9 @@ Completed box being shipped out [3]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -423,6 +420,9 @@ Completed box being shipped out [3]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -436,6 +436,7 @@ Completed box being shipped out [3]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
@@ -449,13 +450,18 @@ Completed box being shipped out [3]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 1
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.70972
@@ -493,8 +499,8 @@ Completed box being shipped out [3]
 ...\marks1{\__mark_value:nn {3}{\MakeUppercase    []{Chapter\ 1. \ First chapter}}}
 ...\marks2{\__mark_value:nn {4}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}First chapter}{\thepage }{target*.2}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\rule(0.0+0.0)x*
@@ -614,8 +620,8 @@ Completed box being shipped out [3]
 .\pdfliteral page <lua data reference ...>
 <<latex-list-css.html>><<latex-align-css.html>> (chapterprecis.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~22 structure objects
-(tagpdf)             with ~16 'MC' leaf nodes.
+(tagpdf)             Writing out ~20 structure objects
+(tagpdf)             with ~17 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

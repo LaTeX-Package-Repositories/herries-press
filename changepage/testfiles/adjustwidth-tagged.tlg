@@ -9,8 +9,9 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -32,6 +33,9 @@ Completed box being shipped out [1]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -45,6 +49,7 @@ Completed box being shipped out [1]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
@@ -58,13 +63,18 @@ Completed box being shipped out [1]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 1
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.70972
@@ -111,8 +121,8 @@ Completed box being shipped out [1]
 ...\marks1{\__mark_value:nn {1}{\MakeUppercase    []{Chapter\ 1. \ adjustwidth, no par}}}
 ...\marks2{\__mark_value:nn {2}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {1}adjustwidth, no par}{\thepage }{target*.1}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -1782,8 +1792,9 @@ Completed box being shipped out [2]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -1812,7 +1823,7 @@ Completed box being shipped out [2]
 .....\TU/lmr/m/sl/10 1
 .....\TU/lmr/m/sl/10 .
 .....\TU/lmr/m/sl/10  
-.....\glue(\spaceskip) 1.11 plus 4.99498 minus 0.37
+.....\glue(\spaceskip) 1.11 plus 4.9983 minus 0.36975
 .....\TU/lmr/m/sl/10  
 .....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
 .....\TU/lmr/m/sl/10 A
@@ -2568,8 +2579,9 @@ Completed box being shipped out [3]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -2590,6 +2602,9 @@ Completed box being shipped out [3]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -2603,6 +2618,7 @@ Completed box being shipped out [3]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
@@ -2616,13 +2632,18 @@ Completed box being shipped out [3]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 2
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.70972
@@ -2665,8 +2686,8 @@ Completed box being shipped out [3]
 ...\marks1{\__mark_value:nn {3}{\MakeUppercase    []{Chapter\ 2. \ adjustwidth, par}}}
 ...\marks2{\__mark_value:nn {4}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {2}adjustwidth, par}{\thepage }{target*.2}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -3399,8 +3420,9 @@ Completed box being shipped out [4]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -3429,7 +3451,7 @@ Completed box being shipped out [4]
 .....\TU/lmr/m/sl/10 2
 .....\TU/lmr/m/sl/10 .
 .....\TU/lmr/m/sl/10  
-.....\glue(\spaceskip) 1.11 plus 4.99498 minus 0.37
+.....\glue(\spaceskip) 1.11 plus 4.9983 minus 0.36975
 .....\TU/lmr/m/sl/10  
 .....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
 .....\TU/lmr/m/sl/10 A
@@ -4181,8 +4203,9 @@ Completed box being shipped out [5]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -4203,6 +4226,9 @@ Completed box being shipped out [5]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -4216,6 +4242,7 @@ Completed box being shipped out [5]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.2}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
@@ -4229,13 +4256,18 @@ Completed box being shipped out [5]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 3
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 7.31644
@@ -4283,8 +4315,8 @@ Completed box being shipped out [5]
 ...\marks1{\__mark_value:nn {5}{\MakeUppercase    []{Chapter\ 3. \ adjustwidth*, no par}}}
 ...\marks2{\__mark_value:nn {6}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {3}adjustwidth*, no par}{\thepage }{target*.3}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -5020,8 +5052,9 @@ Completed box being shipped out [6]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -5050,7 +5083,7 @@ Completed box being shipped out [6]
 .....\TU/lmr/m/sl/10 3
 .....\TU/lmr/m/sl/10 .
 .....\TU/lmr/m/sl/10  
-.....\glue(\spaceskip) 1.11 plus 4.99498 minus 0.37
+.....\glue(\spaceskip) 1.11 plus 4.9983 minus 0.36975
 .....\TU/lmr/m/sl/10  
 .....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
 .....\TU/lmr/m/sl/10 A
@@ -5810,8 +5843,9 @@ Completed box being shipped out [7]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -5832,6 +5866,9 @@ Completed box being shipped out [7]
 ...\penalty 10000
 ...\glue 50.0
 ...\glue 0.0
+...\penalty 10000
+...\glue 0.0 plus 1.0
+...\glue 0.0 plus -1.0
 ...\latelua0{}
 ...\penalty 10000
 ...\glue(\parskip) 0.0 plus 1.0
@@ -5845,6 +5882,7 @@ Completed box being shipped out [7]
 .....\localrightbox=null
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0
+....\write1{\new@label@record{heading*.3}{{pagenum}{\__property_code_pagenum: }}}
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 C
@@ -5858,13 +5896,18 @@ Completed box being shipped out [7]
 ....\TU/lmr/bx/n/20.74 r
 ....\penalty 10000
 ....\TU/lmr/bx/n/20.74  
-....\glue 0.0 plus 3.88875 minus 2.5925
+....\glue(\spaceskip) 0.0 plus 3.88875 minus 2.5925
+....\TU/lmr/bx/n/20.74  
+....\glue -7.7775
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
 ....\TU/lmr/bx/n/20.74 4
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0 plus 1.0fil
 ...\penalty 10000
 ...\glue 20.0
+...\glue 0.0
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 7.31644
@@ -5908,8 +5951,8 @@ Completed box being shipped out [7]
 ...\marks1{\__mark_value:nn {7}{\MakeUppercase    []{Chapter\ 4. \ adjustwidth*, par}}}
 ...\marks2{\__mark_value:nn {8}{}}
 ...\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline {4}adjustwidth*, par}{\thepage }{target*.4}\protected@file@percent }}
-...\write1{\@writefile{lof}{\protect \addvspace {10\p@ }}}
-...\write1{\@writefile{lot}{\protect \addvspace {10\p@ }}}
+...\write1{\@writefile{lof}{\addvspace {10pt}}}
+...\write1{\@writefile{lot}{\addvspace {10pt}}}
 ...\penalty 10000
 ...\glue 40.0
 ...\glue(\parskip) 0.0 plus 1.0
@@ -6648,469 +6691,449 @@ TEST 1: Show PDF Tags
   <Document xmlns="http://iso.org/pdf2/ssn"
      id="ID.002"
     >
-   <Sect xmlns="http://iso.org/pdf2/ssn"
+   <chapter xmlns="https://www.latex-project.org/ns/book"
       id="ID.006"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
        id="ID.007"
        title="adjustwidth, no par"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
+     <?MarkedContent page="1" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.008"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="1" ?>Chapter 1
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.009"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="1" ?>adjustwidth, no par
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.010"
+      <?MarkedContent page="1" ?>1
+     </heading-number>
+     <?MarkedContent page="1" ?>adjustwidth, no par
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.009"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.011"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.010"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.012"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.011"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.013"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.012"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.014"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.013"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.015"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.014"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.016"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.015"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.017"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.016"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.018"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.017"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.019"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.018"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.020"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.019"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.021"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.020"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.022"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.021"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.023"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.022"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="1" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.024"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.023"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.025"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.024"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="2" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.026"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.025"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.027"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.026"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="2" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.028"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.027"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.029"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.028"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="2" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.030"
+     </text-block>
+    </semantic-para>
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.029"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.031"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.030"
        title="adjustwidth, par"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.032"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="3" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.031"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="3" ?>Chapter 2
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.033"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="3" ?>adjustwidth, par
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.034"
+      <?MarkedContent page="3" ?>2
+     </heading-number>
+     <?MarkedContent page="3" ?>adjustwidth, par
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.032"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.035"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.033"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="3" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
       <?MarkedContent page="3" ?>lum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.034"
+       rolemaps-to="Part"
+      >
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.035"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+        rolemaps-to="P"
+       >
+      <?MarkedContent page="3" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.036"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.037"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="3" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.038"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.039"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
-      <?MarkedContent page="3" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+      <?MarkedContent page="4" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.040"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.041"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="4" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.042"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.043"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="4" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.044"
-       rolemaps-to="Part"
-      >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.045"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-        rolemaps-to="P"
-       >
-      <?MarkedContent page="4" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.046"
+     </text-block>
+    </semantic-para>
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.044"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.047"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.045"
        title="adjustwidth*, no par"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.048"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="5" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.046"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="5" ?>Chapter 3
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.049"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="5" ?>adjustwidth*, no par
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.050"
+      <?MarkedContent page="5" ?>3
+     </heading-number>
+     <?MarkedContent page="5" ?>adjustwidth*, no par
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.047"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.051"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.048"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="5" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
       <?MarkedContent page="5" ?>lum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.052"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.049"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.053"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.050"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="5" ?>X**Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.054"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.051"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.055"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.052"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="5" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.056"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.053"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.057"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.054"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="6" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.058"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.055"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.059"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.056"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="6" ?>X**Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.060"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.057"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.061"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.058"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="6" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-   </Sect>
-   <Sect xmlns="http://iso.org/pdf2/ssn"
-      id="ID.062"
+     </text-block>
+    </semantic-para>
+   </chapter>
+   <chapter xmlns="https://www.latex-project.org/ns/book"
+      id="ID.059"
+      rolemaps-to="Sect"
      >
-    <chapter xmlns="https://www.latex-project.org/ns/book"
-       id="ID.063"
+    <chapter-heading xmlns="https://www.latex-project.org/ns/book"
+       id="ID.060"
        title="adjustwidth*, par"
        rolemaps-to="H1"
       >
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.064"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
+     <?MarkedContent page="7" ?>Chapter  
+     <heading-number xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.061"
+        rolemaps-to="Lbl"
        >
-      <?MarkedContent page="7" ?>Chapter 4
-     </Span>
-     <Span xmlns="http://iso.org/pdf2/ssn"
-        id="ID.065"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Start"
-       >
-      <?MarkedContent page="7" ?>adjustwidth*, par
-     </Span>
-    </chapter>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.066"
+      <?MarkedContent page="7" ?>4
+     </heading-number>
+     <?MarkedContent page="7" ?>adjustwidth*, par
+    </chapter-heading>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.062"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.067"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.063"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="7" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
       <?MarkedContent page="7" ?>lum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.068"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.064"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.069"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.065"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="7" ?>X**Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.070"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.066"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.071"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.067"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="7" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.068"
+       rolemaps-to="Part"
+      >
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.069"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+        rolemaps-to="P"
+       >
+      <?MarkedContent page="8" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
+       id="ID.070"
+       rolemaps-to="Part"
+      >
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
+        id="ID.071"
+        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
+        Layout:TextAlign="Justify"
+        rolemaps-to="P"
+       >
+      <?MarkedContent page="8" ?>X**Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
+     </text-block>
+    </semantic-para>
+    <semantic-para xmlns="https://www.latex-project.org/ns/dflt"
        id="ID.072"
        rolemaps-to="Part"
       >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
+     <text-block xmlns="https://www.latex-project.org/ns/dflt"
         id="ID.073"
         xmlns:Layout="http://iso.org/pdf/ssn/Layout"
         Layout:TextAlign="Justify"
         rolemaps-to="P"
        >
       <?MarkedContent page="8" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.074"
-       rolemaps-to="Part"
-      >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.075"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-        rolemaps-to="P"
-       >
-      <?MarkedContent page="8" ?>X**Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-    <text-unit xmlns="https://www.latex-project.org/ns/dflt"
-       id="ID.076"
-       rolemaps-to="Part"
-      >
-     <text xmlns="https://www.latex-project.org/ns/dflt"
-        id="ID.077"
-        xmlns:Layout="http://iso.org/pdf/ssn/Layout"
-        Layout:TextAlign="Justify"
-        rolemaps-to="P"
-       >
-      <?MarkedContent page="8" ?>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris.
-     </text>
-    </text-unit>
-   </Sect>
+     </text-block>
+    </semantic-para>
+   </chapter>
   </Document>
  </StructTreeRoot>
 </PDF>
@@ -7122,8 +7145,9 @@ Completed box being shipped out [8]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\pdfliteral page <lua data reference ...>
 ....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
@@ -7152,7 +7176,7 @@ Completed box being shipped out [8]
 .....\TU/lmr/m/sl/10 4
 .....\TU/lmr/m/sl/10 .
 .....\TU/lmr/m/sl/10  
-.....\glue(\spaceskip) 1.11 plus 4.99498 minus 0.37
+.....\glue(\spaceskip) 1.11 plus 4.9983 minus 0.36975
 .....\TU/lmr/m/sl/10  
 .....\glue(\spaceskip) 0.0 plus 1.665 minus 1.11
 .....\TU/lmr/m/sl/10 A
@@ -7907,8 +7931,8 @@ Completed box being shipped out [8]
 .\pdfliteral page <lua data reference ...>
 <<latex-list-css.html>><<latex-align-css.html>> (adjustwidth-tagged.aux)
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~77 structure objects
-(tagpdf)             with ~52 'MC' leaf nodes.
+(tagpdf)             Writing out ~73 structure objects
+(tagpdf)             with ~56 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

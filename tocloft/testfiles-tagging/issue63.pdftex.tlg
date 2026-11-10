@@ -13,10 +13,12 @@ Completed box being shipped out [1]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
 ...\kern -72.26999
 ...\hbox(0.0+0.0)x0.0
+....\pdfrunninglinkoff
 ....\hbox(0.0+0.0)x0.0, shifted 794.96999
 .....\kern 0.0
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfrunninglinkon
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue 16.0
 .\vbox(617.0+0.0)x345.0, shifted 62.0
@@ -24,15 +26,15 @@ Completed box being shipped out [1]
 ...\glue 0.0 plus 1.0fil
 ...\pdfrunninglinkoff
 ...\pdfliteral page{/Artifact BMC}
-...\marks4{b-,25,-1,}
-...\marks4{b+,25,-1,}
+...\marks4{b-,26,-1,}
+...\marks4{b+,26,-1,}
 ...\hbox(0.0+0.0)x345.0
 ....\pdfcolorstack 0 push {0 g 0 G}
 ....\hbox(0.0+0.0)x345.0
 ....\pdfcolorstack 0 pop
 ...\pdfliteral page{EMC}
-...\marks4{e-,25,30,}
-...\marks4{e+,25,30,}
+...\marks4{e-,26,30,}
+...\marks4{e+,26,30,}
 ...\pdfrunninglinkon
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
@@ -43,7 +45,7 @@ Completed box being shipped out [1]
 ...\glue(\topskip) 3.8507
 ...\hbox(6.1493+0.0)x345.0, glue set 312.50427fil
 ....\write1{\new@label@record{mcid-1}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{1}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x15.0
 ....\T1/cmr/m/n/10 t
 ....\T1/cmr/m/n/10 e
@@ -53,8 +55,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,1,6,text,,,}
-...\marks4{b+,1,6,text,,,}
+...\marks4{b-,1,6,text-block,,,}
+...\marks4{b+,1,6,text-block,,,}
 ...\marks4{e-,1,6,}
 ...\marks4{e+,1,6,}
 ...\penalty -300
@@ -63,12 +65,15 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 12.8301
 ...\hbox(17.1699+0.0)x345.0, glue set 168.42569fil
+....\write1{\new@label@record{heading*.0}{{pagenum}{\__property_code_pagenum: }}}
+....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\hbox(0.0+0.0)x0.0
-.....\penalty 10000
-.....\glue 0.0
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
 ....\write1{\new@label@record{mcid-2}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{2}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/section-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/24.88 L
 ....\T1/cmr/bx/n/24.88 i
 ....\T1/cmr/bx/n/24.88 s
@@ -89,8 +94,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,2,8,section,,,}
-...\marks4{b+,2,8,section,,,}
+...\marks4{b-,2,8,section-heading,,,}
+...\marks4{b+,2,8,section-heading,,,}
 ...\marks4{e-,2,8,}
 ...\marks4{e+,2,8,}
 ...\penalty 10000
@@ -269,7 +274,7 @@ Completed box being shipped out [1]
 ...\glue(\baselineskip) 5.0989
 ...\hbox(6.9011+0.0)x345.0, glue set 211.91861fil
 ....\write1{\new@label@record{mcid-13}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{13}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/10 A
 ....\T1/cmr/bx/n/10 n
 ....\T1/cmr/bx/n/10 s
@@ -302,8 +307,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,13,17,text,,,}
-...\marks4{b+,13,17,text,,,}
+...\marks4{b-,13,17,text-block,,,}
+...\marks4{b+,13,17,text-block,,,}
 ...\marks4{e-,13,17,}
 ...\marks4{e+,13,17,}
 ...\glue(\parskip) 0.0 plus 1.0
@@ -311,7 +316,7 @@ Completed box being shipped out [1]
 ...\glue(\baselineskip) 5.8507
 ...\hbox(6.1493+0.0)x345.0, glue set 312.50427fil
 ....\write1{\new@label@record{mcid-14}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{14}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x15.0
 ....\T1/cmr/m/n/10 t
 ....\T1/cmr/m/n/10 e
@@ -321,8 +326,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,14,19,text,,,}
-...\marks4{b+,14,19,text,,,}
+...\marks4{b-,14,19,text-block,,,}
+...\marks4{b+,14,19,text-block,,,}
 ...\marks4{e-,14,19,}
 ...\marks4{e+,14,19,}
 ...\glue(\parskip) 0.0 plus 1.0
@@ -330,7 +335,7 @@ Completed box being shipped out [1]
 ...\glue(\baselineskip) 5.0989
 ...\hbox(6.9011+0.0)x345.0, glue set 197.21387fil
 ....\write1{\new@label@record{mcid-15}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{15}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/10 A
 ....\T1/cmr/bx/n/10 n
 ....\T1/cmr/bx/n/10 s
@@ -366,8 +371,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,15,21,text,,,}
-...\marks4{b+,15,21,text,,,}
+...\marks4{b-,15,21,text-block,,,}
+...\marks4{b+,15,21,text-block,,,}
 ...\marks4{e-,15,21,}
 ...\marks4{e+,15,21,}
 ...\glue(\parskip) 0.0 plus 1.0
@@ -375,7 +380,7 @@ Completed box being shipped out [1]
 ...\glue(\baselineskip) 5.8507
 ...\hbox(6.1493+0.0)x345.0, glue set 287.4826fil
 ....\write1{\new@label@record{mcid-16}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{16}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/text <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/text-block <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\hbox(0.0+0.0)x15.0
 ....\T1/cmr/m/n/10 m
 ....\T1/cmr/m/n/10 o
@@ -390,8 +395,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,16,23,text,,,}
-...\marks4{b+,16,23,text,,,}
+...\marks4{b-,16,23,text-block,,,}
+...\marks4{b+,16,23,text-block,,,}
 ...\marks4{e-,16,23,}
 ...\marks4{e+,16,23,}
 ...\penalty -300
@@ -400,12 +405,15 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.06242
 ...\hbox(9.93758+0.0)x345.0, glue set 283.1645fil
+....\write1{\new@label@record{heading*.1}{{pagenum}{\__property_code_pagenum: }}}
+....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil minus 1.0fil
 .....\hbox(0.0+0.0)x0.0
-.....\penalty 10000
-.....\glue 0.0
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
 ....\write1{\new@label@record{mcid-17}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{17}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+....\pdfliteral shipout page{/section-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/14.4 C
 ....\T1/cmr/bx/n/14.4 o
 ....\T1/cmr/bx/n/14.4 n
@@ -420,8 +428,8 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,17,25,section,,,}
-...\marks4{b+,17,25,section,,,}
+...\marks4{b-,17,25,section-heading,,,}
+...\marks4{b+,17,25,section-heading,,,}
 ...\marks4{e-,17,25,}
 ...\marks4{e+,17,25,}
 ...\penalty 10000
@@ -503,34 +511,45 @@ Completed box being shipped out [1]
 ...\glue(\parskip) 0.0 plus 1.0
 ...\glue(\parskip) 0.0
 ...\glue(\baselineskip) 8.06242
-...\hbox(9.93758+0.0)x345.0, glue set 290.45299fil
-....\write1{\new@label@record{mcid-23}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{23}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/section-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
-....\hbox(9.20918+0.0)x23.75433
-.....\hbox(0.0+0.0)x0.0
-.....\penalty 10000
-.....\glue 0.0
-.....\T1/cmr/bx/n/14.4 1
-.....\glue 15.83623
-....\pdfliteral page{EMC}
-....\write1{\new@label@record{mcid-24}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{24}{tagmcid}{\__property_code_tagmcid: }}}
-....\pdfliteral shipout page{/section <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+...\hbox(9.93758+0.0)x321.24567, glue set 290.45299fil, shifted 23.75433
+....\write1{\new@label@record{heading*.2}{{pagenum}{\__property_code_pagenum: }}}
+....\glue 0.0
+....\hbox(9.20918+0.0)x0.0, glue set - 23.75433fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(9.20918+0.0)x23.75433
+......\hbox(0.0+0.0)x0.0
+......\penalty 10000
+......\write1{\new@label@record{mcid-23}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{23}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/heading-number <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\marks4{b-,23,32,heading-number,,,}
+......\marks4{b+,23,32,heading-number,,,}
+......\T1/cmr/bx/n/14.4 1
+......\pdfliteral page{EMC}
+......\marks4{e-,23,32,}
+......\marks4{e+,23,32,}
+......\write1{\new@label@record{mcid-24}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{24}{tagmcid}{\__property_code_tagmcid: }}}
+......\pdfliteral shipout page{/section-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
+......\marks4{b-,24,31,section-heading,,,}
+......\marks4{b+,24,31,section-heading,,,}
+......\glue 15.83623
+......\pdffakespace
+......\pdfliteral page{EMC}
+......\marks4{e-,24,31,}
+......\marks4{e+,24,31,}
+....\write1{\new@label@record{mcid-25}{{tagabspage}{\__property_code_tagabspage: }{tagmcabs}{25}{tagmcid}{\__property_code_tagmcid: }}}
+....\pdfliteral shipout page{/section-heading <</MCID \flag_height:n {__tag/mcid}\flag_raise:n {__tag/mcid} >> BDC}
 ....\T1/cmr/bx/n/14.4 b
 ....\T1/cmr/bx/n/14.4 l
 ....\T1/cmr/bx/n/14.4 u
 ....\T1/cmr/bx/n/14.4 b
-....\pdfliteral page{EMC}
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\marks4{b-,23,32,section-number,,,}
-...\marks4{b+,23,32,section-number,,,}
-...\marks4{e-,23,32,}
-...\marks4{e+,23,32,}
-...\marks4{b-,24,31,section,,,}
-...\marks4{b+,24,31,section,,,}
-...\marks4{e-,24,31,}
-...\marks4{e+,24,31,}
+...\marks4{b-,25,31,section-heading,,,}
+...\marks4{b+,25,31,section-heading,,,}
+...\pdfliteral page{EMC}
+...\marks4{e-,25,31,}
+...\marks4{e+,25,31,}
 ...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}blub}{\thepage }{target*.3}\protected@file@percent }}
 ...\penalty 10000
 ...\glue 9.90036 plus 0.86089
@@ -541,8 +560,8 @@ Completed box being shipped out [1]
 ...\glue 0.0 plus 0.0001fil
 ..\pdfrunninglinkoff
 ..\pdfliteral page{/Artifact BMC}
-..\marks4{b-,26,-1,}
-..\marks4{b+,26,-1,}
+..\marks4{b-,27,-1,}
+..\marks4{b+,27,-1,}
 ..\glue(\baselineskip) 23.5849
 ..\hbox(6.4151+0.0)x345.0
 ...\pdfcolorstack 0 push {0 g 0 G}
@@ -552,8 +571,8 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ...\pdfcolorstack 0 pop
 ..\pdfliteral page{EMC}
-..\marks4{e-,26,30,}
-..\marks4{e+,26,30,}
+..\marks4{e-,27,30,}
+..\marks4{e+,27,30,}
 ..\pdfrunninglinkon
 .\kern -633.0
 .\hbox(0.0+0.0)x0.0
@@ -561,6 +580,7 @@ Completed box being shipped out [1]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
 ...\kern -72.26999
 ...\hbox(0.0+0.0)x0.0
+....\pdfrunninglinkoff
 ....\hbox(794.96999+0.0)x0.0, shifted 794.96999
 .....\kern 0.0
 .....\pdfcolorstack 0 push {0 g 0 G}
@@ -688,6 +708,7 @@ Completed box being shipped out [1]
 .....\pdfcolorstack 0 pop
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfrunninglinkon
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern 633.0
 .\kern 0.0
@@ -698,7 +719,7 @@ Completed box being shipped out [1]
 <<latex-list-css.html>><<latex-align-css.html>> (issue63.aux)
 Package tagpdf Info: Finalizing the tagging structure:
 (tagpdf)             Writing out ~32 structure objects
-(tagpdf)             with ~26 'MC' leaf nodes.
+(tagpdf)             with ~27 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree

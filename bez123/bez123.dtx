@@ -18,7 +18,6 @@
 %
 %
 %<*driver>
-\RequirePackage{trace} % see https://github.com/latex3/tagging-project/issues/1633
 \DocumentMetadata{tagging=on,pdfstandard={UA-2,A-4f}}
 \documentclass{l3in2edoc}
 \usepackage{lua-unicode-math}
@@ -32,23 +31,6 @@
 %</driver>
 %
 % \fi
-%
-%\makeatletter
-%\def\@doc@describe#1#2{^^A
-%    \ifdoc@noprint\else
-%      \marginpar{\raggedleft
-%                 \strut
-%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
-%                  \doc@providetarget
-%                 \@nameuse{PrintDescribe#1}{#2}}^^A
-%    \fi
-%    \ifdoc@noindex\else
-%      \@nameuse{Special#1Index}{#2}^^A
-%    \fi
-%  \@esphack
-%  \endgroup
-%  \ignorespaces}
-%\makeatother
 %
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}

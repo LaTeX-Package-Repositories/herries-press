@@ -10,7 +10,7 @@ page for the following material.
 INSTALLATION
 ------------
 
-Run `pdflatex` on needspace.dtx to produce the files
+Run `lualatex` on needspace.dtx to produce the files
   needspace.ins and needspace.sty,
 as well as to compile the PDF documentation.
 
@@ -30,7 +30,7 @@ Authors: Donald Arseneau and Peter Wilson (Herries Press)
 Maintainer: LaTeX Project
 Copyright 1996-2003 Peter Wilson
 Copyright 2010 Will Robertson
-Copyright 2025 LaTeX Project
+Copyright 2025-present LaTeX Project
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either

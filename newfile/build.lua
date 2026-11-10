@@ -15,10 +15,6 @@ maxprintline = 10000
 typesetruns = 4
 typesetexe = "lualatex"
 
-checkruns = 3
-recordstatus = true
-tagfiles = {"*.dtx"}
-
 announce = {}
 announce["2026/10/11 v1.0d"] = [[
 Tag documentation; new maintainer (LaTeX Project)

@@ -1,6 +1,6 @@
 # The anonchap package
 
-Version 2026/06/05 v1.2
+Version 2026/10/31 v1.2c
 
 Provides commands to make \chapter typeset like \section.
 

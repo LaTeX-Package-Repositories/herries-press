@@ -13,6 +13,10 @@ provides a version of the cite package for use with the combine class.
 ______________
 Change History
 
+Version 0.7b (2026/10/12)
+- Tag documentation
+- New package maintainer (LaTeX Project)
+
 Version 0.7a (2010/07/10)
 - Previous version had a major typo, preventing the class from loading!
 
@@ -21,7 +25,7 @@ Version 0.7 (2010/03/22)
 - Consolidate fileversion and filedate for all derived files
   I.e., combine.cls, combinet.sty, combcite.sty, combnat.sty are all now v0.7
   This is simply to make book-keeping easier
-  
+
 - Bug fix for combnat thanks to Nicola Talbot
 
 Changes in version 0.64b of combine.dtx (2009/09/02)
@@ -50,7 +54,7 @@ Changes in version 0.5 of combine.cls
 - Added options for individual bibliographies, a global bibliography,
   or both local bibliographies and a global combined bibliography.
 
-Changes in version 0.45 of combine.cls 
+Changes in version 0.45 of combine.cls
        and version 0.2 of combinet.sty (2001/09/05)
 - Fixed ToC alignment problem
 
@@ -91,19 +95,20 @@ Changes in version 0.2 of combine.cls: (2000/05/07)
 Changes in version 0.1 of combinet.sty: (2000/05/07)
 - First public release
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
   Author: Peter Wilson, Herries Press
-  Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+  Maintainer: LaTeX Project
   Copyright 2001, 2002, 2003, 2004 Peter R. Wilson
- 
+  Copyright 2026--present LaTeX Project
+
   This work may be distributed and/or modified under the
   conditions of the LaTeX Project Public License, either
-  version 1.3c of this license or (at your option) any 
+  version 1.3c of this license or (at your option) any
   later version: <https://www.latex-project.org/lppl.txt>
 
   This work has the LPPL maintenance status "maintained".
-  The Current Maintainer of this work is Will Robertson.
- 
+  The Current Maintainer of this work is the LaTeX Project.
+
   This work consists of the following files:
 README (this file)
 combine.dtx
@@ -114,7 +119,7 @@ combine.cls
 combinet.sty
 combnat.sty
 
------------------------------------------------------------------ 
+-----------------------------------------------------------------
 
     The distribution consists of the following files:
 README (this file)
@@ -125,11 +130,11 @@ combine.pdf (user manual)
     To install the distribution:
 - run: latex combine.ins (which will generate combine.cls,
                           combinet.sty and combnat.sty)
-- run: latex combine.dtx
+- run: lualatex combine.dtx
 - For an index, run: makeindex -s gind.ist combine
-- run: latex combine.dtx
-- Print combine.dvi for a hardcopy of the user manual 
-- Move combine.cls, combinet.sty and combnat.sty to locations 
+- run: lualatex combine.dtx
+- Print combine.pdf for a hardcopy of the user manual
+- Move combine.cls, combinet.sty and combnat.sty to locations
   where LaTeX will find them (The FAQ on CTAN in /help/uktug-FAQ
   gives more information about this magic place).
 

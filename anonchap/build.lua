@@ -1,7 +1,10 @@
+--[=========================[--
+   L3BUILD FILE FOR ANONCHAP
+--]=========================]--
 
 module = "anonchap"
 
-version = "2026-06-30 v1.2b"
+version = "2026-10-31 v1.2c"
 
 checkengines={"pdftex"}
 checkruns = 2
@@ -20,8 +23,9 @@ sourcefiles={"anonchap.sty"}
 -- Upload meta data
 
 announce = {}
-announce["2026-09-30 v1.2b"] = [[
-Adjust to use new heading templates with LaTeX 2026-11-01 release.
+announce["2026-10-31 v1.2c"] = [[
+- Adjust to use new heading templates with LaTeX 2026-11-01 release.
+- Replace deprecated template keys.
 ]]
 
 

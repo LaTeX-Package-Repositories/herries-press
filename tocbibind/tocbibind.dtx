@@ -31,23 +31,6 @@
 %
 % \fi
 %
-%\makeatletter
-%\def\@doc@describe#1#2{^^A
-%    \ifdoc@noprint\else
-%      \marginpar{\raggedleft
-%                 \strut
-%                  \label{doc/function//\expandafter\@gobble\string#2}^^A
-%                  \doc@providetarget
-%                 \@nameuse{PrintDescribe#1}{#2}}^^A
-%    \fi
-%    \ifdoc@noindex\else
-%      \@nameuse{Special#1Index}{#2}^^A
-%    \fi
-%  \@esphack
-%  \endgroup
-%  \ignorespaces}
-%\makeatother
-%
 % \DoNotIndex{\',\.,\@M,\@@input,\@addtoreset,\@arabic,\@badmath}
 % \DoNotIndex{\@centercr,\@cite}
 % \DoNotIndex{\@dotsep,\@empty,\@float,\@gobble,\@gobbletwo,\@ignoretrue}
@@ -97,7 +80,7 @@
 % \changes{v1.3a}{1999/09/12}{Added PackageNote commands}
 % \changes{v1.4}{2000/03/04}{Fixed shift of Index title}
 % \changes{v1.4}{2000/03/04}{Added support for numbered Listof headings}
-% \changes{v1.4a}{2000/03/04}{Added delimeter for simple chapters}
+% \changes{v1.4a}{2000/03/04}{Added delimiter for simple chapters}
 % \changes{v1.5}{2001/04/17}{Fixed \cs{addcontentsline} problem with hyperref package}
 % \changes{v1.5}{2001/04/17}{Removed requirement for the stdclsdv package}
 % \changes{v1.5a}{2001/08/07}{Made \cs{restorechapter} safer}
@@ -126,6 +109,7 @@
 % \def\fileversion{v1.5k} \def\filedate{2010/10/13}
 % \def\fileversion{v1.5l} \def\filedate{2026/06/01}
 % \def\fileversion{v1.5m} \def\filedate{2026/10/01}
+% \def\fileversion{v1.5n} \def\filedate{2026/10/31}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -469,7 +453,7 @@
 %    \begin{macrocode}
 %<*usc>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tocbibind}[2026/10/01 v1.5m extra ToC listings]
+\ProvidesPackage{tocbibind}[2026/10/31 v1.5n extra ToC listings]
 %    \end{macrocode}
 %
 % \begin{macro}[int]{\PRWPackageNote}
@@ -1114,6 +1098,7 @@
 % is needed.
 % \changes{v1.5l}{2026/06/01}{Support heading templates with \cs{DocumentMetadata}}
 % \changes{v1.5m}{2026/10/01}{Fix template key names for new format, gh/72}
+% \changes{v1.5n}{2026/10/31}{Replace deprecated template key names}
 %    \begin{macrocode}
 \IfDocumentMetadataTF
   {
@@ -1132,15 +1117,15 @@
 %    use our own instance for \texttt{headformat-instance}.
 %    \begin{macrocode}
           \EditInstance{heading}{chapter}{%
-             prefix = #1
+             text = #1
             ,headformat-instance=chapter
-            ,prefix-decls=\Huge
+            ,text-decls=\Huge
             ,number-decls=\Huge
             ,number-format=\thechapter\simplechapterdelim
           }%
 %    \end{macrocode}
 %    Instead of the default of 20pt we only want a \cs{nobreakspace} after
-%    chapter number. The other adjustment that is neccessary is to
+%    chapter number. The other adjustment that is necessary is to
 %    check if the prefix was made empty. In that case we also don't
 %    want a \cs{nobreakspace}.
 %    \begin{macrocode}

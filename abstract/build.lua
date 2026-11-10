@@ -21,7 +21,7 @@ Tag documentation; new maintainer (LaTeX Project)
 ]]
 
 uploadconfig = {
-  pkg          = "continue",
+  pkg          = "abstract",
   version      = version,
   author       = "Peter R Wilson; LaTeX Project",
   license      = "lppl1.3c",

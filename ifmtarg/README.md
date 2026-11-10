@@ -21,7 +21,7 @@ COPYRIGHT AND LICENSING
 -----------------------
 
 Authors: Donald Arseneau and Peter Wilson (Herries Press)
-Maintainer: Will Robertson (will dot robertson at latex-project dot org)
+Maintainer: LaTeX Project
 Copyright 1996 Peter Wilson
 Copyright 2000 Peter Wilson and Donald Arseneau
 Copyright 2026 LaTeX Project
