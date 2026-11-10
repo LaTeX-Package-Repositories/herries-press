@@ -35,7 +35,7 @@ uploadconfig = {
   announcement = announce[version],
   description  = [[
     The stdclsdv package is designed for package writers who need to know what sectioning divisions are provided by the document's class.
-    It also provides a version of \CheckCommand that sets a flag rather than printing a warning.
+    It also provides a version of `\\CheckCommand` that sets a flag rather than printing a warning.
   ]]
 }
 

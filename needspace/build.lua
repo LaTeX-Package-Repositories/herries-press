@@ -1,14 +1,23 @@
+--[=========================[--
+   L3BUILD FILE FOR NEEDSPACE
+--]=========================]--
 
 module = "needspace"
+version = "2026-10-13 v1.3f"
 
 textfiles  ={"README.md", "changes.txt"}
 
 packtdszip  = false
 
 maxprintline=10000
+typesetruns = 4
+typesetexe = "lualatex"
 checkruns = 2
 
--- Upload meta data
+announce = {}
+announce["2026-10-13 v1.3f"] = [[
+Tag documentation
+]]
 
 uploadconfig = {
  pkg = "needspace",
@@ -22,42 +31,15 @@ uploadconfig = {
  uploader = "LaTeX Project",
  email = "latex-team@latex-project.org",
  update = true ,
+ announcement = announce[version],
+ description = [[
+   Provides commands to disable pagebreaking within a given vertical space. If
+   there is not enough space between the command and the bottom of the page, a
+   new page will be started.
+   ]],
 }
 
 if options["target"] == "upload" then
   uname=shell('git config --get user.name')
   uploadconfig.note="Uploaded by " .. uname
-end
-
-
-function update_tag(file,content,tagname,tagdate)
-
-local tagpattern="(%d%d%d%d[-/]%d%d[-/]%d%d) v(%d+[.])(%d+)"
-local oldv,newv
-if tagname == 'auto' then
-  local i,j,olddate,a,b
-  i,j,olddate,a,b= string.find(content, tagpattern)
-  if i == nil then
-    print('OLD TAG NOT FOUND')
-    return content
-  else
-    print ('FOUND: ' .. olddate .. ' v' .. a .. b )
-    oldv = olddate .. ' v' .. a .. b
-    newv = tagdate .. ' v'  .. a .. math.floor(b + 1)
-    print('USING OLD TAG: ' .. oldv)
-    print('USING NEW TAG: ' .. newv)
-    local oldpattern = string.gsub(oldv,"[-/]", "[-/]")
-    content=string.gsub(content,"{Version}{" .. oldpattern,'##OLDV##')
-    content=string.gsub(content,oldpattern,newv)
-    content=string.gsub(content,'##OLDV##',"{Version}{" .. oldv)
-    content=string.gsub(content,'%-%d%d%d%d Oberdiek Package','-' .. os.date("%Y") .. " Oberdiek Package")
-    content = string.gsub(content,
-        '%% \\end{History}',
-	'%%   \\begin{Version}{' .. newv .. '}\n%%   \\item Updated\n%%   \\end{Version}\n%% \\end{History}')
-    return content
-  end
-else
-  error("only automatic tagging supported")
-end
-
 end

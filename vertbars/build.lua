@@ -27,10 +27,10 @@ Tag documentation; update maintainer to the LaTeX Project
 uploadconfig = {
  pkg = "vertbars",
  version = version,
- author = "LaTeX Project",
+ author = "Peter R Wilson; LaTeX Project",
  license = "lppl1.3c",
  summary = "Mark vertical rules in margin of text",
- ctanPath = "/macros/latex/contrib"..module,
+ ctanPath = "/macros/latex/contrib/"..module,
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
  uploader = "LaTeX Project",

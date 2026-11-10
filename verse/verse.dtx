@@ -17,16 +17,12 @@
 % This work consists of the files listed in the README file.
 %
 %<*driver>
+\RequirePackage{pdfmanagement}% not tagged but at least hyperlink colors consistent
 \documentclass[twoside]{ltxdoc}
 \usepackage{alltt}
 \usepackage{verse}
 \usepackage{xcolor}
-\usepackage[draft=false,
-            plainpages=false,
-            pdfpagelabels,
-            bookmarksnumbered,
-            hyperindex=false
-           ]{hyperref}
+\usepackage{hyperref}
 \usepackage{listings}
 \lstset{
  basicstyle=\small\ttfamily,

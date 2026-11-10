@@ -19,23 +19,21 @@ typesetfiles = {"layman.tex","*.dtx"}
 -- Upload meta data
 
 announce = {}
-announce["2026-10-17 v2.6e"] = [[
+announce["2026-11-06 v2.6f"] = [[
+- Add `\\marginparwidth` to `\\pagevalues` (gh/1)
+- Improve printed length accuracy (gh/31)
 - Tag code and user documentation
 - New maintainer (LaTeX Project)
 - Add alt text to picture environments
-]]
-announce["2026-11-06 v2.6f"] = [[
-- Add \\marginparwidth to \\pagevalues (gh/1)
-- Improve printed length accuracy (gh/31)
 ]]
 
 uploadconfig = {
  pkg = "layouts",
  version = version,
- author = "LaTeX Project",
+ author = "Peter Wilson; LaTeX Project",
  license = "lppl1.3c",
- summary = "Display various elements of a document’s layout",
- ctanPath = "/macros/latex/contrib"..module,
+ summary = "Display various elements of a document's layout",
+ ctanPath = "/macros/latex/contrib/"..module,
  repository = "https://github.com/LaTeX-Package-Repositories/herries-press",
  bugtracker = "https://github.com/LaTeX-Package-Repositories/herries-press/issues",
  uploader = "LaTeX Project",
