@@ -2,7 +2,7 @@
 
 Version 2026/10/31 v1.2c
 
-Provides commands to make \chapter typeset like \section.
+Provides commands to make `\chapter` typeset like `\section`.
 
 ## Author
 
