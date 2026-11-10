@@ -13,31 +13,31 @@ Version 1.5f (2026/10/12)
 
 Version 1.5e (2020/01/02)
 - Try to prevent breaks after epigraphs
-- Add \epigraphnoindent to automatically suppress indentation
-  after all \epigraph commands
+- Add `\epigraphnoindent` to automatically suppress indentation
+  after all `\epigraph` commands
 
 Version 1.5d (2011/08/07)
-- Load the nextpage package for \cleartoevenpage
+- Load the nextpage package for `\cleartoevenpage`
   (this avoids loading order conflicts)
 
 Version 1.5c (2009/09/02)
 - New maintainer (Will Robertson)
 
 Changes in Version 1.5a (2002/10/22)
-- Replaced flushleftright environment by flushepinormal environment
-  to avoid clash with the ccaption package's \flushleftright
+- Replaced `flushleftright` environment by `flushepinormal` environment
+  to avoid clash with the ccaption package's `\flushleftright`
 
 Changes in Version 1.5 (2000/02/20)
-- Generalised \cleartoevenpage command
+- Generalised `\cleartoevenpage` command
 
 Changes in Version 1.4 (2000/01/16)
-- Added flushleftright environment
+- Added `flushleftright` environment
 
 Changes in Version 1.3 (1999/12/01)
-- Added \dropchapter and \undodrop commands
+- Added `\dropchapter` and `\undodrop` commands
 
 Changes in Version 1.2 (1999/09/12)
-- Added \cleartoevenpage command
+- Added `\cleartoevenpage` command
 - Improved documentation
 
 Changes in Version 1.1: (1998/11/29)
