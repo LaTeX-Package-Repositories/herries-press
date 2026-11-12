@@ -1,0 +1,109 @@
+% !TeX TXS-program:compile = txs:///lualatex
+\DocumentMetadata{tagging=on}
+\documentclass[12pt]{article}
+\usepackage{lua-unicode-math}
+\usepackage[svgnames]{xcolor}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{printlen}
+\usepackage[colorlinks]{hyperref}
+
+\newcommand*{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\cs}[1]{\texttt{\textbackslash#1}}
+\makeatletter
+\newcommand*{\cmd}[1]{\cs{\expandafter\@gobble\string#1}}
+\makeatother
+\newcommand*{\meta}[1]{\textlangle\textsl{#1}\textrangle}
+\newcommand*{\marg}[1]{\texttt{\{}\meta{#1}\texttt{\}}}
+
+\lstset{%
+  language=[LaTeX]TeX,%
+  columns=flexible,%
+  upquote=true,%
+  numbers=left,%
+  basicstyle=\ttfamily,%
+  keywordstyle=\color{Navy},%
+  commentstyle=\color{DimGray},%
+  stringstyle=\color{SeaGreen},%
+  numberstyle=\scriptsize\color{SlateGray}%
+}
+
+\title{%
+  The \pkg{printlen} package\thanks{This manual corresponds to \pkg{printlen.sty}~v1.1b, dated~2026/10/12.}\\
+  \large
+  Print lengths in a variety of units%
+  }
+%\subtitle{Print lengths in a variety of units}
+\author{Peter Wilson, Herries Press\and Harald Harders\and Maintainer: \LaTeX{} Project\thanks{\url{https://github.com/LaTeX-Package-Repositories/herries-press}}}
+\date{2026/10/12}
+
+\begin{document}
+
+\maketitle
+
+\section{Usage}
+
+\cmd{\printlength}\marg{length} prints the value of a \LaTeX\ length in the 
+units specified by \cmd{\uselengthunit}\marg{unit}, where \meta{unit} may be any \TeX\ %
+length unit except for scaled point. That is, \meta{unit} may be any of:
+\texttt{pt}, \texttt{pc}, \texttt{in}, \texttt{mm}, \texttt{cm}, \texttt{bp}, \texttt{dd} or \texttt{cc}. When \texttt{pt} is set the printed length
+value will include any stretch or shrink values, otherwise these
+are not printed. The \meta{unit} argument may also be \texttt{PT}, in which case
+length values will be printed in pt units but without any stretch
+or shrink values. An unknown value for \meta{unit} is treated as though it
+had been specified as \texttt{pt}.
+
+The unit is separated from the number using the command
+\cmd{\unitspace} which is set to \cmd{\,} by default. In math mode the units are
+printed upright.
+
+\cmd{\rndprintlength}\marg{length} prints the rounded value of a \LaTeX\ length.
+Use \texttt{PT} instead of \texttt{pt} for rounded points if there are stretch or
+shrink values.
+
+The initial setting is \verb+\uselengthunit{pt}+.
+
+
+\subsection*{Example:}
+
+\begin{lstlisting}
+The \verb|\textwidth| is \printlength{\textwidth} which is also
+\uselengthunit{in}\printlength{\textwidth} and
+\uselengthunit{mm}\printlength{\textwidth}.
+\end{lstlisting}
+The \verb|\textwidth| is \printlength{\textwidth} which is also
+\uselengthunit{in}\printlength{\textwidth} and
+\uselengthunit{mm}\printlength{\textwidth}.
+
+\section{Change history}
+
+\subsection*{Version 1.1b (2026/10/12)}
+
+\begin{itemize}
+\item New maintainer (\LaTeX{} Project)
+\end{itemize}
+
+
+\subsection*{Version 1.1a (2009/09/03)}
+
+\begin{itemize}
+\item New maintainer (Will Robertson)
+\end{itemize}
+
+
+\subsection*{Version 1.1 (2001/12/09)}
+
+\begin{itemize}
+\item Print rounded values
+\item Space between value and units
+\end{itemize}
+
+
+\subsection*{Version 1.0 (2001/11/03)}
+
+\begin{itemize}
+\item First public release
+\end{itemize}
+
+\end{document}
