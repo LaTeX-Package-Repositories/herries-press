@@ -13,7 +13,7 @@ packtdszip = false
 
 maxprintline = 10000
 typesetruns = 4
-typesetexe = "lualatex"
+typesetexe = "lualatex-dev"
 
 checkruns = 3
 recordstatus = true
