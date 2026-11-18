@@ -13,6 +13,9 @@ provides a version of the cite package for use with the combine class.
 ______________
 Change History
 
+Version 0.7c (2026/11/17)
+- Make class compatible with current LaTeX
+
 Version 0.7b (2026/10/12)
 - Tag documentation
 - New package maintainer (LaTeX Project)

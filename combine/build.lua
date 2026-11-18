@@ -3,8 +3,8 @@
 --]=========================]--
 
 module  = "combine"
-version = "2026/10/12 v0.7b"
-pkgdate = "2026/10/12"
+version = "2026/11/17 v0.7c"
+pkgdate = "2026/11/17"
 copyrightyear = "2026"
 
 textfiles = {"README"}
@@ -15,9 +15,12 @@ maxprintline = 10000
 typesetruns = 4
 typesetexe = "lualatex"
 
+checkruns = 3
+recordstatus = true
+
 announce = {}
-announce["2026/10/12 v0.7b"] = [[
-Tag documentation; new maintainer (LaTeX Project)
+announce["2026/11/17 v0.7c"] = [[
+Make class compatible with current LaTeX
 ]]
 
 uploadconfig = {

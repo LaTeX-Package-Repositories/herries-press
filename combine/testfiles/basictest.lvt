@@ -1,0 +1,43 @@
+\input{regression-test.tex}
+\begin{filecontents}{art1.tex}
+\documentclass{article}
+\begin{document}
+\section{The first article}
+Article 1
+\end{document}
+\end{filecontents}
+\begin{filecontents}{art2.tex}
+\documentclass{article}
+\begin{document}
+\section{The second article}
+Article 2
+\end{document}
+\end{filecontents}
+\documentclass[11pt]{combine}
+\title{Proceedings of the ...}
+\author{A. N. Editor\thanks{Support ...}}
+\date{29 February, 2000}
+\begin{document}
+\START
+\showoutput
+\pagestyle{combine} % use the combine page style
+\maketitle % main title
+\tableofcontents % main ToC
+\clearpage
+\section{Editor's introduction} \label{intro} % into main ToC (section 1)
+In the article by A.~N.~Author on page~\pageref{art1} ...
+\begin{papers} % start of individual articles/papers
+\coltoctitle{An article} % first article title into main ToC
+\coltocauthor{A.~N.~Author} % first authors into main ToC
+\label{art1}
+\import{art1} % first article, may have own ToC,
+% bibliography, etc.
+\coltoctitle{Another article}
+\coltocauthor{A.~N.~Other}
+\label{art2}
+\import{art2}
+\end{papers} % end of individual articles/papers
+\clearpage
+\section{Acknowledgements} % into main ToC (section 2)
+Among the many ...
+\end{document}

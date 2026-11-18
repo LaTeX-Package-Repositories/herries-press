@@ -1,0 +1,824 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+(basictest.toc)
+\tf@toc=\write...
+Completed box being shipped out [1]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 214.32196fil
+...\write-{}
+...\glue(\topskip) 11.0
+...\hbox(0.0+0.0)x0.0
+...\glue 21.90005
+...\glue -21.90005
+...\penalty -51
+...\glue 21.90005
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 10.0
+...\hbox(12.0+3.3611)x360.0, glue set 107.11397fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.475
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.475
+....\penalty 0
+....\OT1/cmr/m/n/17.28 P
+....\OT1/cmr/m/n/17.28 r
+....\OT1/cmr/m/n/17.28 o
+....\kern0.45139
+....\OT1/cmr/m/n/17.28 c
+....\OT1/cmr/m/n/17.28 e
+....\OT1/cmr/m/n/17.28 e
+....\OT1/cmr/m/n/17.28 d
+....\OT1/cmr/m/n/17.28 i
+....\OT1/cmr/m/n/17.28 n
+....\OT1/cmr/m/n/17.28 g
+....\OT1/cmr/m/n/17.28 s
+....\glue 5.21661 plus 2.7083 minus 1.80554
+....\OT1/cmr/m/n/17.28 o
+....\OT1/cmr/m/n/17.28 f
+....\glue 5.21661 plus 2.7083 minus 1.80554
+....\OT1/cmr/m/n/17.28 t
+....\OT1/cmr/m/n/17.28 h
+....\OT1/cmr/m/n/17.28 e
+....\glue 5.21661 plus 2.7083 minus 1.80554
+....\OT1/cmr/m/n/17.28 .
+....\OT1/cmr/m/n/17.28 .
+....\OT1/cmr/m/n/17.28 .
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue 5.475
+...\glue -8.8361
+...\penalty -51
+...\glue 3.3611
+...\glue 5.475
+...\glue -5.475
+...\glue 12.0 plus 5.0 minus 6.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.83894
+...\hbox(9.79996+4.20004)x360.0, glue set 141.61143fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.475
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.475
+....\penalty 0
+....\hbox(9.79996+4.20004)x76.77713
+.....\vbox(9.79996+4.20004)x76.77713
+......\hbox(9.79996+4.20004)x76.77713
+.......\glue(\tabskip) 0.0
+.......\hbox(9.79996+4.20004)x76.77713
+........\rule(9.79996+4.20004)x0.0
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\OT1/cmr/m/n/12 A
+........\OT1/cmr/m/n/12 .
+........\glue 3.91663 plus 1.95831 minus 1.30554
+........\OT1/cmr/m/n/12 N
+........\OT1/cmr/m/n/12 .
+........\glue 3.91663 plus 1.95831 minus 1.30554
+........\OT1/cmr/m/n/12 E
+........\OT1/cmr/m/n/12 d
+........\OT1/cmr/m/n/12 i
+........\OT1/cmr/m/n/12 t
+........\OT1/cmr/m/n/12 o
+........\OT1/cmr/m/n/12 r
+........\penalty 10000
+........\hbox(8.0413+0.0)x0.0, glue set - 4.74896fil
+.........\hbox(3.6866+0.0)x4.24896, shifted -4.3547
+..........\TS1/cmr/m/n/8 *
+.........\penalty 10000
+.........\glue 0.5
+.........\kern 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue -16.20004 plus -4.0 minus -6.0
+...\penalty -51
+...\glue 4.20004
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 1.46664
+...\hbox(8.33331+2.33331)x360.0, glue set 134.22548fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.475
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.475
+....\penalty 0
+....\OT1/cmr/m/n/12 2
+....\OT1/cmr/m/n/12 9
+....\glue 3.91663 plus 1.95831 minus 1.30554
+....\OT1/cmr/m/n/12 F
+....\kern-0.97916
+....\OT1/cmr/m/n/12 e
+....\OT1/cmr/m/n/12 b
+....\OT1/cmr/m/n/12 r
+....\OT1/cmr/m/n/12 u
+....\OT1/cmr/m/n/12 a
+....\OT1/cmr/m/n/12 r
+....\OT1/cmr/m/n/12 y
+....\kern-0.97916
+....\OT1/cmr/m/n/12 ,
+....\glue 3.91663 plus 2.44789 minus 1.04443
+....\OT1/cmr/m/n/12 2
+....\OT1/cmr/m/n/12 0
+....\OT1/cmr/m/n/12 0
+....\OT1/cmr/m/n/12 0
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue 16.42503
+...\penalty -300
+...\glue 16.50099 plus 4.71457 minus 0.94289
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.7867
+...\hbox(9.87999+0.0)x360.0, glue set 296.71843fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+....\OT1/cmr/bx/n/14.4 C
+....\OT1/cmr/bx/n/14.4 o
+....\OT1/cmr/bx/n/14.4 n
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 e
+....\OT1/cmr/bx/n/14.4 n
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 10000
+...\glue 10.84352 plus 0.94289
+...\glue -10.84352 plus -0.94289
+...\glue 10.95003 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 208.1fil
+....\glue(\leftskip) 16.42503
+....\glue -16.42503
+....\hbox(7.05666+0.0)x16.42503, glue set 10.12883fil
+.....\OT1/cmr/bx/n/10.95 1
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/bx/n/10.95 E
+....\OT1/cmr/bx/n/10.95 d
+....\OT1/cmr/bx/n/10.95 i
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 o
+....\OT1/cmr/bx/n/10.95 r
+....\OT1/cmr/bx/n/10.95 '
+....\OT1/cmr/bx/n/10.95 s
+....\glue 4.19746 plus 2.09872 minus 1.39915
+....\OT1/cmr/bx/n/10.95 i
+....\OT1/cmr/bx/n/10.95 n
+....\kern-0.3498
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 r
+....\OT1/cmr/bx/n/10.95 o
+....\kern0.34978
+....\OT1/cmr/bx/n/10.95 d
+....\OT1/cmr/bx/n/10.95 u
+....\OT1/cmr/bx/n/10.95 c
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 i
+....\OT1/cmr/bx/n/10.95 o
+....\OT1/cmr/bx/n/10.95 n
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.05666+0.0)x19.51828, glue set 13.22208fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/10.95 2
+.....\kern -1.0
+.....\kern 1.0
+....\penalty 10000
+....\glue(\parfillskip) -16.97256
+....\glue(\rightskip) 16.97256
+...\penalty -300
+...\glue 10.95003 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 285.19978fil
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/bx/n/10.95 A
+....\OT1/cmr/bx/n/10.95 n
+....\glue 4.19746 plus 2.09872 minus 1.39915
+....\OT1/cmr/bx/n/10.95 a
+....\OT1/cmr/bx/n/10.95 r
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 i
+....\OT1/cmr/bx/n/10.95 c
+....\OT1/cmr/bx/n/10.95 l
+....\OT1/cmr/bx/n/10.95 e
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.05666+0.0)x19.51828, glue set 13.22208fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/10.95 3
+....\penalty 10000
+....\glue(\parfillskip) -16.97256
+....\glue(\rightskip) 16.97256
+...\penalty 301
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 213.364fil
+....\hbox(0.0+0.0)x17.0
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 l
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 o
+....\kern0.30417
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 a
+....\OT1/cmr/m/n/10.95 u
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 r
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 N
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 u
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 r
+....\OT1/cmr/m/n/10.95 3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 10.95003 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 256.05319fil
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/bx/n/10.95 A
+....\OT1/cmr/bx/n/10.95 n
+....\OT1/cmr/bx/n/10.95 o
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 h
+....\OT1/cmr/bx/n/10.95 e
+....\OT1/cmr/bx/n/10.95 r
+....\glue 4.19746 plus 2.09872 minus 1.39915
+....\OT1/cmr/bx/n/10.95 a
+....\OT1/cmr/bx/n/10.95 r
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 i
+....\OT1/cmr/bx/n/10.95 c
+....\OT1/cmr/bx/n/10.95 l
+....\OT1/cmr/bx/n/10.95 e
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.05666+0.0)x19.51828, glue set 13.22208fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/10.95 4
+....\penalty 10000
+....\glue(\parfillskip) -16.97256
+....\glue(\rightskip) 16.97256
+...\penalty 301
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 219.7515fil
+....\hbox(0.0+0.0)x17.0
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 l
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 o
+....\kern0.30417
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 a
+....\OT1/cmr/m/n/10.95 u
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 r
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 N
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 O
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 e
+....\OT1/cmr/m/n/10.95 r
+....\OT1/cmr/m/n/10.95 4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 10.95003 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+2.12917)x360.0, glue set 219.49855fil
+....\glue(\leftskip) 16.42503
+....\hbox(0.0+0.0)x0.0
+....\glue -16.42503
+....\hbox(7.05666+0.0)x16.42503, glue set 10.12883fil
+.....\OT1/cmr/bx/n/10.95 2
+.....\glue 0.0 plus 1.0fil
+....\OT1/cmr/bx/n/10.95 A
+....\OT1/cmr/bx/n/10.95 c
+....\kern-0.3498
+....\OT1/cmr/bx/n/10.95 k
+....\OT1/cmr/bx/n/10.95 n
+....\OT1/cmr/bx/n/10.95 o
+....\kern-0.3498
+....\OT1/cmr/bx/n/10.95 w
+....\OT1/cmr/bx/n/10.95 l
+....\OT1/cmr/bx/n/10.95 e
+....\OT1/cmr/bx/n/10.95 d
+....\OT1/cmr/bx/n/10.95 g
+....\OT1/cmr/bx/n/10.95 e
+....\OT1/cmr/bx/n/10.95 m
+....\OT1/cmr/bx/n/10.95 e
+....\OT1/cmr/bx/n/10.95 n
+....\kern-0.3498
+....\OT1/cmr/bx/n/10.95 t
+....\OT1/cmr/bx/n/10.95 s
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.05666+0.0)x19.51828, glue set 13.22208fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\OT1/cmr/bx/n/10.95 5
+.....\kern -1.0
+.....\kern 1.0
+....\penalty 10000
+....\glue(\parfillskip) -16.97256
+....\glue(\rightskip) 16.97256
+...\glue 0.0 plus 1.0fil
+...\glue 10.0 plus 4.0 minus 2.0
+...\kern -3.0
+...\rule(0.4+0.0)x143.9978
+...\kern 2.6
+...\hbox(7.7+3.30003)x360.0, glue set 299.90593fil
+....\hbox(6.64899+0.0)x16.64992, glue set 12.48415fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(2.8257+0.0)x3.66577, shifted -3.82329
+......\TS1/cmr/m/n/6 *
+.....\penalty 10000
+.....\glue 0.5
+.....\kern 0.0
+....\hbox(7.7+0.0)x0.0
+.....\rule(7.7+0.0)x0.0
+....\OT1/cmr/m/n/9 S
+....\OT1/cmr/m/n/9 u
+....\OT1/cmr/m/n/9 p
+....\OT1/cmr/m/n/9 p
+....\kern0.25694
+....\OT1/cmr/m/n/9 o
+....\OT1/cmr/m/n/9 r
+....\OT1/cmr/m/n/9 t
+....\glue 3.08331 plus 1.54166 minus 1.02777
+....\OT1/cmr/m/n/9 .
+....\OT1/cmr/m/n/9 .
+....\OT1/cmr/m/n/9 .
+....\penalty 10000
+....\rule(0.0+3.30003)x0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -3.30003
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.94334
+..\hbox(7.05666+0.0)x360.0
+...\hbox(7.05666+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 1
+Completed box being shipped out [2]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.90268fil
+...\write-{}
+...\glue(\topskip) 1.00002
+...\hbox(9.99998+0.0)x360.0, glue set 186.64357fil
+....\hbox(9.27998+0.0)x24.29997
+.....\glue 0.0
+.....\OT1/cmr/bx/n/14.4 1
+.....\glue 16.19998
+....\OT1/cmr/bx/n/14.4 E
+....\OT1/cmr/bx/n/14.4 d
+....\OT1/cmr/bx/n/14.4 i
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 o
+....\OT1/cmr/bx/n/14.4 r
+....\OT1/cmr/bx/n/14.4 '
+....\OT1/cmr/bx/n/14.4 s
+....\glue 5.4 plus 2.7 minus 1.79999
+....\OT1/cmr/bx/n/14.4 i
+....\OT1/cmr/bx/n/14.4 n
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 r
+....\OT1/cmr/bx/n/14.4 o
+....\kern0.45
+....\OT1/cmr/bx/n/14.4 d
+....\OT1/cmr/bx/n/14.4 u
+....\OT1/cmr/bx/n/14.4 c
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 i
+....\OT1/cmr/bx/n/14.4 o
+....\OT1/cmr/bx/n/14.4 n
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}Editor's introduction}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.84352 plus 0.94289
+...\write1{\newlabel{intro}{{1}{\thepage }{}{section.1}{}}}
+...\penalty 10000
+...\penalty 10000
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+2.12917)x360.0, glue set 151.88899fil
+....\OT1/cmr/m/n/10.95 I
+....\OT1/cmr/m/n/10.95 n
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 e
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 a
+....\OT1/cmr/m/n/10.95 r
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 i
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 l
+....\OT1/cmr/m/n/10.95 e
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 b
+....\kern-0.30418
+....\OT1/cmr/m/n/10.95 y
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 N
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 u
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 r
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 n
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 p
+....\OT1/cmr/m/n/10.95 a
+....\OT1/cmr/m/n/10.95 g
+....\OT1/cmr/m/n/10.95 e
+....\penalty 10000
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 3
+....\hbox(0.0+0.0)x0.0
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 .
+....\OT1/cmr/m/n/10.95 .
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -2.12917
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.94334
+..\hbox(7.05666+0.0)x360.0
+...\hbox(7.05666+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 2
+(art1.tex (art1.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+Completed box being shipped out [3]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.90268fil
+...\write-{}
+...\write1{\newlabel{art1}{{1}{3}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltoctitle}{\protect \numberline {}An article}{3}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltocauthor}{\protect \numberline {}A.~N.~Author}{\thepage }{}\protected@file@percent }}
+...\glue(\topskip) 1.00002
+...\hbox(9.99998+0.0)x360.0, glue set 224.55182fil
+....\hbox(9.27998+0.0)x24.29997
+.....\glue 0.0
+.....\OT1/cmr/bx/n/14.4 1
+.....\glue 16.19998
+....\OT1/cmr/bx/n/14.4 T
+....\OT1/cmr/bx/n/14.4 h
+....\OT1/cmr/bx/n/14.4 e
+....\glue 5.4 plus 2.7 minus 1.79999
+....\OT1/cmr/bx/n/14.4 ^^L (ligature fi)
+....\OT1/cmr/bx/n/14.4 r
+....\OT1/cmr/bx/n/14.4 s
+....\OT1/cmr/bx/n/14.4 t
+....\glue 5.4 plus 2.7 minus 1.79999
+....\OT1/cmr/bx/n/14.4 a
+....\OT1/cmr/bx/n/14.4 r
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 i
+....\OT1/cmr/bx/n/14.4 c
+....\OT1/cmr/bx/n/14.4 l
+....\OT1/cmr/bx/n/14.4 e
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write2{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}The first article}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.84352 plus 0.94289
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 318.2987fil
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 r
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 i
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 l
+....\OT1/cmr/m/n/10.95 e
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.94334
+..\hbox(7.05666+0.0)x360.0
+...\hbox(7.05666+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 3
+(art1.aux)) (art2.tex (art2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+Completed box being shipped out [4]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.90268fil
+...\write-{}
+...\write1{\newlabel{art2}{{1}{4}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltoctitle}{\protect \numberline {}Another article}{4}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltocauthor}{\protect \numberline {}A.~N.~Other}{\thepage }{}\protected@file@percent }}
+...\glue(\topskip) 1.00002
+...\hbox(9.99998+0.0)x360.0, glue set 205.77684fil
+....\hbox(9.27998+0.0)x24.29997
+.....\glue 0.0
+.....\OT1/cmr/bx/n/14.4 1
+.....\glue 16.19998
+....\OT1/cmr/bx/n/14.4 T
+....\OT1/cmr/bx/n/14.4 h
+....\OT1/cmr/bx/n/14.4 e
+....\glue 5.4 plus 2.7 minus 1.79999
+....\OT1/cmr/bx/n/14.4 s
+....\OT1/cmr/bx/n/14.4 e
+....\OT1/cmr/bx/n/14.4 c
+....\OT1/cmr/bx/n/14.4 o
+....\OT1/cmr/bx/n/14.4 n
+....\OT1/cmr/bx/n/14.4 d
+....\glue 5.4 plus 2.7 minus 1.79999
+....\OT1/cmr/bx/n/14.4 a
+....\OT1/cmr/bx/n/14.4 r
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 i
+....\OT1/cmr/bx/n/14.4 c
+....\OT1/cmr/bx/n/14.4 l
+....\OT1/cmr/bx/n/14.4 e
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write2{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}The second article}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.84352 plus 0.94289
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.99585
+...\hbox(7.60416+0.0)x360.0, glue set 318.2987fil
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 r
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 i
+....\OT1/cmr/m/n/10.95 c
+....\OT1/cmr/m/n/10.95 l
+....\OT1/cmr/m/n/10.95 e
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.94334
+..\hbox(7.05666+0.0)x360.0
+...\hbox(7.05666+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 4
+(art2.aux))
+Completed box being shipped out [5]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.90268fil
+...\write-{}
+...\write-{}
+...\glue(\topskip) 1.00002
+...\hbox(9.99998+2.79999)x360.0, glue set 201.30186fil
+....\hbox(9.27998+0.0)x24.29997
+.....\glue 0.0
+.....\OT1/cmr/bx/n/14.4 2
+.....\glue 16.19998
+....\OT1/cmr/bx/n/14.4 A
+....\OT1/cmr/bx/n/14.4 c
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 k
+....\OT1/cmr/bx/n/14.4 n
+....\OT1/cmr/bx/n/14.4 o
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 w
+....\OT1/cmr/bx/n/14.4 l
+....\OT1/cmr/bx/n/14.4 e
+....\OT1/cmr/bx/n/14.4 d
+....\OT1/cmr/bx/n/14.4 g
+....\OT1/cmr/bx/n/14.4 e
+....\OT1/cmr/bx/n/14.4 m
+....\OT1/cmr/bx/n/14.4 e
+....\OT1/cmr/bx/n/14.4 n
+....\kern-0.45001
+....\OT1/cmr/bx/n/14.4 t
+....\OT1/cmr/bx/n/14.4 s
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2}Acknowledgements}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.84352 plus 0.94289
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 3.19586
+...\hbox(7.60416+2.12917)x360.0, glue set 264.1874fil
+....\OT1/cmr/m/n/10.95 A
+....\OT1/cmr/m/n/10.95 m
+....\OT1/cmr/m/n/10.95 o
+....\OT1/cmr/m/n/10.95 n
+....\OT1/cmr/m/n/10.95 g
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 t
+....\OT1/cmr/m/n/10.95 h
+....\OT1/cmr/m/n/10.95 e
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 m
+....\OT1/cmr/m/n/10.95 a
+....\OT1/cmr/m/n/10.95 n
+....\kern-0.30418
+....\OT1/cmr/m/n/10.95 y
+....\glue 3.65 plus 1.825 minus 1.21666
+....\OT1/cmr/m/n/10.95 .
+....\OT1/cmr/m/n/10.95 .
+....\OT1/cmr/m/n/10.95 .
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -2.12917
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.94334
+..\hbox(7.05666+0.0)x360.0
+...\hbox(7.05666+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\OT1/cmr/m/n/10.95 5
+(basictest.aux)
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0

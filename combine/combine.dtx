@@ -26,7 +26,7 @@
 %<natpack>\ProvidesPackage{combnat}
 %<citepack>\ProvidesPackage{combcite}
 %<*usc|pck|natpack|citepack>
-  [2026/10/12 v0.7b
+  [2026/11/17 v0.7c
 %</usc|pck|natpack|citepack>
 %<usc>              collection of documents
 %<pck>              document titles in ToC
@@ -116,6 +116,7 @@
 % \changes{v0.64b}{2009/09/02}{New maintainer (Will Robertson)}
 % \changes{v0.7}{2010/03/22}{Bug fix and new (simpler) file versioning scheme}
 % \changes{v0.7b}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
+% \changes{v0.7c}{2026/11/17}{Remove \cs{endgroup} from \cs{c@ladocument} (gh/110)}
 %
 % \GetFileInfo{combine.dtx}
 %
@@ -1458,9 +1459,9 @@
 %
 % \begin{macro}[int]{\c@ladocument}
 % \begin{macro}[int]{\c@lbdocument}
+% \cs{c@ladocument} previously had a spurious initial \cs{endgroup} that is now removed.
 %    \begin{macrocode}
 \newcommand{\c@ladocument}{%
-  \endgroup
   \let\mainjobname\jobname            %% added
   \def\c@lmainauxfile{\jobname.aux}   %% added
   \ifx\@unusedoptionlist\@empty\else
