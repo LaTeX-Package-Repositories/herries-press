@@ -1,0 +1,569 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+(basictest.toc)
+\tf@toc=\write...
+Completed box being shipped out [1]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 214.23334fil
+...\write-{}
+...\glue(\topskip) 11.0
+...\hbox(0.0+0.0)x0.0
+...\glue 21.9
+...\glue -21.9
+...\penalty -51
+...\glue 21.9
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 9.86945
+...\hbox(12.13055+3.5251)x360.0, glue set 107.10431fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.47499
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.47499
+....\penalty 0
+....\TU/lmr/m/n/17.28 Proceedings
+....\glue 5.21857 plus 2.60928 minus 1.73952
+....\TU/lmr/m/n/17.28 of
+....\glue 5.21857 plus 2.60928 minus 1.73952
+....\TU/lmr/m/n/17.28 the
+....\glue 5.21857 plus 2.60928 minus 1.73952
+....\TU/lmr/m/n/17.28 ...
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue 5.47499
+...\glue -9.00009
+...\penalty -51
+...\glue 3.5251
+...\glue 5.47499
+...\glue -5.47499
+...\glue 12.0 plus 5.0 minus 6.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 0.67494
+...\hbox(9.79996+4.20004)x360.0, glue set 141.61198fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.47499
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.47499
+....\penalty 0
+....\hbox(9.79996+4.20004)x76.77603
+.....\vbox(9.79996+4.20004)x76.77603
+......\hbox(9.79996+4.20004)x76.77603
+.......\glue(\tabskip) 0.0
+.......\hbox(9.79996+4.20004)x76.77603
+........\rule(9.79996+4.20004)x0.0
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\TU/lmr/m/n/12 A.
+........\glue 3.912 plus 1.956 minus 1.304
+........\TU/lmr/m/n/12 N.
+........\glue 3.912 plus 1.956 minus 1.304
+........\TU/lmr/m/n/12 Editor
+........\penalty 10000
+........\hbox(8.0827+0.0)x0.0, glue set - 4.748fil
+.........\hbox(3.728+0.0)x4.248, shifted -4.3547
+..........\TU/lmr/m/n/8 ∗
+.........\penalty 10000
+.........\glue 0.5
+.........\kern 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue -16.20004 plus -4.0 minus -6.0
+...\penalty -51
+...\glue 4.20004
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 1.47195
+...\hbox(8.328+2.44798)x360.0, glue set 134.214fil
+....\glue(\leftskip) 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+.....\glue 0.0
+.....\glue -5.47499
+.....\hbox(0.0+0.0)x0.0
+.....\glue 5.47499
+....\penalty 0
+....\TU/lmr/m/n/12 29
+....\glue 3.912 plus 1.956 minus 1.304
+....\TU/lmr/m/n/12 February,
+....\glue 3.912 plus 2.44499 minus 1.0432
+....\TU/lmr/m/n/12 2000
+....\penalty 10000
+....\glue(\parfillskip) 0.0
+....\glue(\rightskip) 0.0 plus 1.0fil
+...\penalty -51
+...\glue 12.0 plus 4.0 minus 6.0
+...\glue 16.42499
+...\penalty -300
+...\glue 16.51808 plus 4.71945 minus 0.94386
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.50082
+...\hbox(10.0512+0.17279)x360.0, glue set 296.68323fil
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0
+....\TU/lmr/bx/n/14.4 Contents
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty 10000
+...\glue 10.85475 plus 0.94386
+...\glue -10.85475 plus -0.94386
+...\glue 10.95 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.82791
+...\hbox(7.5993+0.06569)x360.0, glue set 210.65298fil
+....\glue(\leftskip) 16.42499
+....\glue -16.42499
+....\hbox(7.17224+0.0)x16.42499, glue set 10.12874fil
+.....\TU/lmr/bx/n/10.95 1
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/bx/n/10.95 Editor’s
+....\glue 4.19385 plus 2.09692 minus 1.39795
+....\TU/lmr/bx/n/10.95 introduction
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.17224+0.0)x16.97252, glue set 10.67627fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10.95 2
+.....\kern -1.0
+.....\kern 1.0
+....\penalty 10000
+....\glue(\parfillskip) -16.97252
+....\glue(\rightskip) 16.97252
+...\penalty -300
+...\glue 10.95 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.89122
+...\hbox(7.6431+0.12044)x360.0, glue set 287.76283fil
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/bx/n/10.95 An
+....\glue 4.19385 plus 2.09692 minus 1.39795
+....\TU/lmr/bx/n/10.95 article
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.17224+0.12044)x16.97252, glue set 10.67627fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10.95 3
+....\penalty 10000
+....\glue(\parfillskip) -16.97252
+....\glue(\rightskip) 16.97252
+...\penalty 301
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.63937
+...\hbox(7.8402+0.24089)x360.0, glue set 213.64769fil
+....\hbox(0.0+0.0)x17.0
+....\TU/lmr/m/n/10.95 coltocauthor
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 A.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 N.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 Author3
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 10.95 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71602
+...\hbox(7.6431+0.06569)x360.0, glue set 258.61395fil
+....\hbox(0.0+0.0)x0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/bx/n/10.95 Another
+....\glue 4.19385 plus 2.09692 minus 1.39795
+....\TU/lmr/bx/n/10.95 article
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.1832+0.0)x16.97252, glue set 10.67627fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10.95 4
+....\penalty 10000
+....\glue(\parfillskip) -16.97252
+....\glue(\rightskip) 16.97252
+...\penalty 301
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.69412
+...\hbox(7.8402+0.24089)x360.0, glue set 219.73589fil
+....\hbox(0.0+0.0)x17.0
+....\TU/lmr/m/n/10.95 coltocauthor
+....\hbox(0.0+0.0)x0.0
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 A.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 N.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 Other4
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -300
+...\glue 10.95 plus 1.0
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.71602
+...\hbox(7.6431+2.20093)x360.0, glue set 222.40231fil
+....\glue(\leftskip) 16.42499
+....\hbox(0.0+0.0)x0.0
+....\glue -16.42499
+....\hbox(7.17224+0.0)x16.42499, glue set 10.12874fil
+.....\TU/lmr/bx/n/10.95 2
+.....\glue 0.0 plus 1.0fil
+....\TU/lmr/bx/n/10.95 Acknowledgements
+....\penalty 10000
+....\glue 0.0 plus 1.0fil
+....\penalty 10000
+....\hbox(7.17224+0.12044)x16.97252, glue set 10.67627fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\TU/lmr/bx/n/10.95 5
+.....\kern -1.0
+.....\kern 1.0
+....\penalty 10000
+....\glue(\parfillskip) -16.97252
+....\glue(\rightskip) 16.97252
+...\glue 0.0 plus 1.0fil
+...\glue 10.0 plus 4.0 minus 2.0
+...\kern -3.0
+...\rule(0.4+0.0)x143.9978
+...\kern 2.6
+...\hbox(7.7+3.30003)x360.0, glue set 300.32997fil
+....\hbox(6.6193+0.0)x16.20003, glue set 12.03403fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\hbox(2.796+0.0)x3.666, shifted -3.82329
+......\TU/lmr/m/n/6 ∗
+.....\penalty 10000
+.....\glue 0.5
+.....\kern 0.0
+....\hbox(7.7+0.0)x0.0
+.....\rule(7.7+0.0)x0.0
+....\TU/lmr/m/n/9 Support
+....\glue 3.087 plus 1.5435 minus 1.02899
+....\TU/lmr/m/n/9 ...
+....\penalty 10000
+....\rule(0.0+3.30003)x0.0
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -3.30003
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.7073
+..\hbox(7.2927+0.0)x360.0
+...\hbox(7.2927+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 1
+Completed box being shipped out [2]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.89145fil
+...\write-{}
+...\glue(\topskip) 1.00641
+...\hbox(9.99359+0.08638)x360.0, glue set 188.35207fil
+....\hbox(9.4464+0.0)x22.50719
+.....\glue 0.0
+.....\TU/lmr/bx/n/14.4 1
+.....\glue 14.4
+....\TU/lmr/bx/n/14.4 Editor’s
+....\glue 5.4 plus 2.7 minus 1.79999
+....\TU/lmr/bx/n/14.4 introduction
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}Editor's introduction}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.85475 plus 0.94386
+...\write1{\newlabel{intro}{{1}{\thepage }{}{section.1}{}}}
+...\penalty 10000
+...\penalty 10000
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.67343
+...\hbox(7.8402+2.25569)x360.0, glue set 152.19096fil
+....\TU/lmr/m/n/10.95 In
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 the
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 article
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 by
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 A.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 N.
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 Author
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 on
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 page
+....\penalty 10000
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 3
+....\hbox(0.0+0.0)x0.0
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 ...
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -2.25569
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.7073
+..\hbox(7.2927+0.0)x360.0
+...\hbox(7.2927+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 2
+(art1.tex (art1.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+Completed box being shipped out [3]
+\vbox(629.40024+0.24089)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.24089)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.89145fil
+...\write-{}
+...\write1{\newlabel{art1}{{1}{3}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltoctitle}{\protect \numberline {}An article}{3}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltocauthor}{\protect \numberline {}A.~N.~Author}{\thepage }{}\protected@file@percent }}
+...\glue(\topskip) 0.92
+...\hbox(10.08+0.08638)x360.0, glue set 226.31047fil
+....\hbox(9.4464+0.0)x22.50719
+.....\glue 0.0
+.....\TU/lmr/bx/n/14.4 1
+.....\glue 14.4
+....\TU/lmr/bx/n/14.4 The
+....\glue 5.4 plus 2.7 minus 1.79999
+....\TU/lmr/bx/n/14.4 first
+....\glue 5.4 plus 2.7 minus 1.79999
+....\TU/lmr/bx/n/14.4 article
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write2{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}The first article}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.85475 plus 0.94386
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.67343
+...\hbox(7.8402+0.12044)x360.0, glue set 318.3024fil
+....\TU/lmr/m/n/10.95 Article
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 1
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -0.12044
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.7073
+..\hbox(7.2927+0.24089)x360.0
+...\hbox(7.2927+0.24089)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 3
+(art1.aux)) (art2.tex (art2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line ....
+LaTeX Font Info:    ... okay on input line ....
+Completed box being shipped out [4]
+\vbox(629.40024+0.0)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.0)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.89145fil
+...\write-{}
+...\write1{\newlabel{art2}{{1}{4}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltoctitle}{\protect \numberline {}Another article}{4}}}
+...\write1{\@writefile{toc}{\protect \contentsline {coltocauthor}{\protect \numberline {}A.~N.~Other}{\thepage }{}\protected@file@percent }}
+...\glue(\topskip) 1.00641
+...\hbox(9.99359+0.08638)x360.0, glue set 207.54727fil
+....\hbox(9.4464+0.0)x22.50719
+.....\glue 0.0
+.....\TU/lmr/bx/n/14.4 1
+.....\glue 14.4
+....\TU/lmr/bx/n/14.4 The
+....\glue 5.4 plus 2.7 minus 1.79999
+....\TU/lmr/bx/n/14.4 second
+....\glue 5.4 plus 2.7 minus 1.79999
+....\TU/lmr/bx/n/14.4 article
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write2{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {1}The second article}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.85475 plus 0.94386
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.67343
+...\hbox(7.8402+0.12044)x360.0, glue set 318.3024fil
+....\TU/lmr/m/n/10.95 Article
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 2
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -0.12044
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.58685
+..\hbox(7.41315+0.0)x360.0
+...\hbox(7.41315+0.0)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 4
+(art2.aux))
+Completed box being shipped out [5]
+\vbox(629.40024+0.24089)x414.0
+.\glue 21.0
+.\vbox(608.40024+0.24089)x360.0, shifted 54.0
+..\vbox(12.0+0.0)x360.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x360.0
+....\hbox(0.0+0.0)x360.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(541.40024+0.0)x360.0, glue set 505.89145fil
+...\write-{}
+...\write-{}
+...\glue(\topskip) 0.92
+...\hbox(10.08+2.89438)x360.0, glue set 203.48647fil
+....\hbox(9.4464+0.0)x22.50719
+.....\glue 0.0
+.....\TU/lmr/bx/n/14.4 2
+.....\glue 14.4
+....\TU/lmr/bx/n/14.4 Acknowledgements
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {2}Acknowledgements}{\thepage }{}\protected@file@percent }}
+...\penalty 10000
+...\glue 10.85475 plus 0.94386
+...\glue(\parskip) 0.0 plus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 2.86543
+...\hbox(7.8402+2.25569)x360.0, glue set 264.18753fil
+....\TU/lmr/m/n/10.95 Among
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 the
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 many
+....\glue 3.64635 plus 1.82317 minus 1.21544
+....\TU/lmr/m/n/10.95 ...
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue -2.25569
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 22.7073
+..\hbox(7.2927+0.24089)x360.0
+...\hbox(7.2927+0.24089)x360.0, glue set 354.525fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10.95 5
+(basictest.aux)
+***************
+Compilation 1 of test file completed with exit status 0
+Compilation 2 of test file completed with exit status 0
+Compilation 3 of test file completed with exit status 0
