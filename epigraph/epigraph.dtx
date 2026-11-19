@@ -83,6 +83,7 @@
 % \changes{v1.5c}{2009/09/02}{New maintainer (Will Robertson)}
 % \changes{v1.5d}{2011/08/07}{Load package `nextpage' for \cs{cleartoevenpage}}
 % \changes{v1.5f}{2026/10/12}{Tag documentation; new maintainer (LaTeX Project)}
+% \changes{v1.5g}{2026/11/19}{Add \cs{par} at the start of \cs{epigraph}}
 %
 % \def\dtxfile{epigraph.dtx}
 % \def\fileversion{v1.5}  \def\filedate{2000/02/20}
@@ -92,6 +93,7 @@
 % \def\fileversion{v1.5d} \def\filedate{2011/08/07}
 % \def\fileversion{v1.5e} \def\filedate{2020/01/02}
 % \def\fileversion{v1.5f} \def\filedate{2026/10/12}
+% \def\fileversion{v1.5g} \def\filedate{2026/11/19}
 % \newcommand*{\Lpack}[1]{\textsf {#1}}           ^^A typeset a package
 % \newcommand*{\Lopt}[1]{\textsf {#1}}            ^^A typeset an option
 % \newcommand*{\Lcount}[1]{\textsl {\small#1}}    ^^A typeset a counter
@@ -114,6 +116,7 @@
 % \author{%
 % Author: Peter Wilson, Herries Press\\
 % Maintainer: \LaTeX{} Project\\
+% \normalsize
 % \url{https://github.com/LaTeX-Package-Repositories/herries-press}%
 % }
 % \date{\fileversion\qquad\filedate}
@@ -620,9 +623,11 @@
 %    Having got the preliminaries out of the way, here's the user command
 % for a single epigraph. This is set in a minipage to prevent breaking
 % across a page. Position it according to |\epigraphflush|.
+% \changes{v1.5g}{2026/10/12}{Add \cs{par} at start of \cs{epigraph}}
 %    \begin{macrocode}
 \newcommand{\epigraph}[2]{%
-  \vspace{\beforeepigraphskip}
+  \par
+  \vspace{\beforeepigraphskip}%
   \vbox{%
     \epigraphsize
     \begin{\epigraphflush}

@@ -7,6 +7,9 @@ are easily configurable.
 
 ## Change History
 
+Version 1.5g (2026/11/19)
+- Add `\par` at the start of `\epigraph`
+
 Version 1.5f (2026/10/12)
 - Tag documentation
 - New maintainer (LaTeX Project)

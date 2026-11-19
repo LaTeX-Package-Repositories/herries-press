@@ -3,8 +3,8 @@
 --]=========================]--
 
 module  = "epigraph"
-version = "2026/10/12 v1.5f"
-pkgdate = "2026/10/12"
+version = "2026/11/19 v1.5g"
+pkgdate = "2026/11/19"
 copyrightyear = "2026"
 
 textfiles = {"README.md"}
@@ -16,8 +16,8 @@ typesetruns = 4
 typesetexe = "lualatex"
 
 announce = {}
-announce["2026/10/12 v1.5f"] = [[
-Tag documentation; new maintainer (LaTeX Project)
+announce["2026/11/19 v1.5g"] = [[
+Add \par at the start of \epigraph
 ]]
 
 uploadconfig = {
