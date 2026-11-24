@@ -7,6 +7,9 @@ are easily configurable.
 
 ## Change History
 
+Version 1.5h (2026/11/24)
+- Version bump for CTAN
+
 Version 1.5g (2026/11/19)
 - Add `\par` at the start of `\epigraph`
 

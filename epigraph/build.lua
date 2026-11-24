@@ -3,8 +3,8 @@
 --]=========================]--
 
 module  = "epigraph"
-version = "2026/11/19 v1.5g"
-pkgdate = "2026/11/19"
+version = "2026/11/24 v1.5h"
+pkgdate = "2026/11/24"
 copyrightyear = "2026"
 
 textfiles = {"README.md"}
@@ -13,7 +13,7 @@ packtdszip = false
 
 maxprintline = 10000
 typesetruns = 4
-typesetexe = "lualatex"
+typesetexe = "lualatex-nightly"
 
 announce = {}
 
