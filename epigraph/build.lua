@@ -16,9 +16,6 @@ typesetruns = 4
 typesetexe = "lualatex"
 
 announce = {}
-announce["2026/11/19 v1.5g"] = [[
-Add \par at the start of \epigraph
-]]
 
 uploadconfig = {
   pkg          = "epigraph",
