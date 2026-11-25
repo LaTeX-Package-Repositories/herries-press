@@ -51,7 +51,7 @@ The packages in this repository are:
 [Peter Wilson](https://ctan.org/author/wilson) has produced many other TeX related packages.
 
 Maintenance of [memoir](https://ctan.org/pkg/memoir) was with Lars
-Madsen but since Novermber 2026, `memoir` is maintained in the
+Madsen but since November 2026, `memoir` is maintained in the
 [memoir](https://github.com/LaTeX-Package-Repositories/memoir)
 repository in this LaTeX-Package-Repositories organisation.
 
